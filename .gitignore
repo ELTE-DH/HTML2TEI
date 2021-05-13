@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#PyCharm
+.idea
+
+# Special
+*/*.warc.gz
+
+# *.txt
+tei_maker_output
+preparatory_output

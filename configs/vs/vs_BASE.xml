@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title></title>
+            </titleStmt>
+            <editionStmt>
+                <edition>ELTE-DH webcrawling</edition>
+                <respStmt>
+                    <resp>creator</resp>
+                    <orgName>ELTE-DH<ref type="http://elte-dh.hu"/>
+                    </orgName>
+                </respStmt>
+                <respStmt>
+                    <resp>project director</resp>
+                    <persName><surname>Palkó</surname><forename>Gábor</forename>
+                        <ref>https://orcid.org/0000-0002-4394-8577</ref></persName>
+                </respStmt>
+                <respStmt>
+                    <resp>chief programmer</resp>
+                    <persName><surname>Indig</surname><forename>Balázs</forename>
+                        <ref>https://orcid.org/0000-0001-8090-3661</ref></persName>
+                </respStmt>
+                <respStmt>
+                    <resp>TEI expert</resp>
+                    <persName><surname>Fellegi</surname><forename>Zsófia</forename>
+                        <ref>https://orcid.org/0000-0001-9199-1759</ref></persName>
+                </respStmt>
+                <respStmt>
+                    <resp>programmer</resp>
+                    <persName><surname>Sárközi-Lindner</surname><forename>Zsófia</forename>
+                        <ref>https://orcid.org/0000-0002-2558-0633</ref></persName>
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>
+                    <orgName>ELTE-DH</orgName>
+                    <ref type="url">http://elte-dh.hu/</ref>
+                </publisher>
+                <pubPlace>Budapest <ref type="url">http://www.geonames.org/3054643</ref>
+                </pubPlace>
+                <date>2020</date>
+                <availability>
+                    <p>Metadata: IN COPYRIGHT - NON-COMMERCIAL USE PERMITTED<ref type="url"
+                        >http://rightsstatements.org/vocab/InC-NC/1.0/</ref></p>
+                    <p>Text: IN COPYRIGHT <ref type="url"
+                        >http://rightsstatements.org/vocab/InC/1.0/</ref>
+                    </p>
+                </availability>
+                <idno type="PID"></idno>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>
+                    <title></title>
+                    <publisher><orgName>New Wave Media Group Kft.</orgName>
+                        <placeName>1072 Budapest, Klauzál utca 30.</placeName>
+                        <ref type="url" source="https://vs.hu/impresszum">https://doi.org/10.5281/zenodo.4638665</ref>
+                        <date when="2020-12-01"/>
+                    </publisher>
+                    <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref>>
+                    </pubPlace>
+                    <availability><p>© 2013-2020 New Wave Media Group Kft. Minden jog fenntartva. v3.2</p>
+                        <p><ref type="url" source="https://vs.hu/joginyilatkozat">https://doi.org/10.5281/zenodo.4638665</ref>
+                            <date when="2020-12-01"/></p>
+                    </availability>
+                    <date></date>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:sch="https://schema.org" xmlns:skos="http://www.w3.org/2008/05/skos-xl#">
+            <rdf:RDF>
+                <rdf:Description rdf:about="">
+                    <sch:type rdf:resource="https://schema.org/NewsArticle"/>
+                    <sch:ispartOf rdf:resource="https://vs.hu/">VS</sch:ispartOf>
+                    <sch:inLanguage>hun</sch:inLanguage>
+                    <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
+                </rdf:Description>
+            </rdf:RDF>
+        </xenoData>
+        <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:sch="https://schema.org">
+            <rdf:RDF>
+                <rdf:Description rdf:about="10.5281/zenodo.4638665">
+                    <sch:type>WARC/1.1</sch:type>
+                    <sch:sdDatePublished>2019-08-06T07:29:09/2019-08-07T09:34:49</sch:sdDatePublished>
+                    <sch:identifier rdf:about="10.5281/zenodo.4638665"/>
+                    <sch:identifier>[{'checksum': '9ccc0213f1070afbf7b5523a30b66f2f',
+                        'filename': 'hashsums',
+                        'filesize': 6989,
+                        'id': '9a8d4c17-bb3c-4a49-a36b-b1fd9b28e432',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/hashsums',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/9a8d4c17-bb3c-4a49-a36b-b1fd9b28e432'}},
+                        {'checksum': '8bb579da4c72ff5b7913a0046c3a9762',
+                        'filename': 'known_bad_urls.txt',
+                        'filesize': 397,
+                        'id': 'fa00053e-c86d-4020-8989-f14ced42e7bc',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/known_bad_urls.txt',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/fa00053e-c86d-4020-8989-f14ced42e7bc'}},
+                        {'checksum': '72950b8b08f2a363cb921b00a0f0533e',
+                        'filename': 'log.log',
+                        'filesize': 929943,
+                        'id': '5bf1e4ba-37a5-466a-abce-4e91edb22183',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/log.log',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/5bf1e4ba-37a5-466a-abce-4e91edb22183'}},
+                        {'checksum': '042a47d114cfff81971455ae7a77f3af',
+                        'filename': 'logs.zip',
+                        'filesize': 35603,
+                        'id': 'e6c01c29-430f-4d7f-9650-a687d851bbd5',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/logs.zip',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/e6c01c29-430f-4d7f-9650-a687d851bbd5'}},
+                        {'checksum': 'fc75d3e1ac7201fd7a1ce19e89a10c5d',
+                        'filename': 'script.sh',
+                        'filesize': 407,
+                        'id': '9a6a47ae-deeb-48e1-9743-6362f5b9905b',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/script.sh',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/9a6a47ae-deeb-48e1-9743-6362f5b9905b'}},
+                        {'checksum': 'a535a29516837917d07ad90f3d66af18',
+                        'filename': 'vs-archive.warc.gz',
+                        'filesize': 13044222,
+                        'id': '9f2a6211-ece0-40b6-99bb-bae55d9b3b19',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/vs-archive.warc.gz',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/9f2a6211-ece0-40b6-99bb-bae55d9b3b19'}},
+                        {'checksum': '91370318511870ed8207f3c1931298d1',
+                        'filename': 'vs-articles.warc.gz',
+                        'filesize': 1206144074,
+                        'id': 'a225848c-33e8-46de-89f0-e54e79349729',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/vs-articles.warc.gz',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/a225848c-33e8-46de-89f0-e54e79349729'}},
+                        {'checksum': '3b4ae95903b43e4e4509326ea82b6b5d',
+                        'filename': 'vs_rights_statements.warc.gz',
+                        'filesize': 344,
+                        'id': '49e61438-7de2-47a7-a3fa-ab42c9d2e796',
+                        'links': {'download': 'https://zenodo.org/api/files/29074a6b-f403-4a22-a25b-0a60407163e5/vs_rights_statements.warc.gz',
+                        'self': 'https://zenodo.org/api/deposit/depositions/4638665/files/49e61438-7de2-47a7-a3fa-ab42c9d2e796'}}]</sch:identifier>
+                    <sch:identifier>urn:uuid:986f4559-c030-4a90-bf3b-f339568c7335</sch:identifier> </rdf:Description>
+            </rdf:RDF>
+        </xenoData>
+        <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:sch="https://schema.org">
+            <rdf:RDF>
+                <rdf:Description rdf:about="teiPid">
+                    <sch:identifier></sch:identifier>
+                    <sch:type>TEI</sch:type>
+                    <sch:sdDatePublished></sch:sdDatePublished>
+                    <sch:lastReviewed></sch:lastReviewed>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-4394-8577">Palkó Gábor</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
+                    <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
+                </rdf:Description>
+            </rdf:RDF>
+        </xenoData>
+        <revisionDesc>
+            <change source="teiPID">TEI file created</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+        </body>
+    </text>
+</TEI>
+
