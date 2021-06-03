@@ -39,7 +39,7 @@ setuptools.setup(
     python_requires='>=3.6',
     install_requires=['beautifulsoup4>=4.9.0,<5.0.0', 'justext>=2.2.0,<3.0.0', 'lxml>=4.5.0,<5.0.0',
                       'newspaper3k>=0.2.8,<1.0.0', 'pyyaml>=5.3.0,<6.0.0', 'warcio>=1.7.0,<2.0.0',
-                      'webarticlecurator>=1.2.0,<2.0.0'],
+                      'webarticlecurator>=1.4.0,<2.0.0'],
     include_package_data=True,
     entry_points={
         'console_scripts': [

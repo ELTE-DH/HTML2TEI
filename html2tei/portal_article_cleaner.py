@@ -320,7 +320,7 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
     #  - the portal-specific base TEI XML in string format
     #  - the portal-specific get_meta function
     #  - the write-out mode (e.g. Custom Article Body Converter, JusText, Newspaper3k)
-    process_article_clean_params = (tei_logger, portal_xml_string, get_meta_fun_spec, write_out_mode)
+    process_article_clean_params = [tei_logger, portal_xml_string, get_meta_fun_spec, write_out_mode]  # Must be list!
     # Params for write_mode from the loaded portal-specific configuration
     #  - article root params for find_all
     #  - portal-specific decompose functions

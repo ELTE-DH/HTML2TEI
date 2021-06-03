@@ -2,7 +2,7 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
 
-from multiprocessing import Pool
+from multiprocessing import Pool, Manager
 from contextlib import contextmanager
 from os.path import isdir as os_path_isdir
 from threading import Lock as threading_Lock
@@ -106,10 +106,16 @@ def run_multiple_process(warc_filename, file_names_and_modes, main_function, sub
         (multi-page articles are handled as one entry) and yield the result after filtered through after_function
     """
     # This is parallel as it computes each page separately. Order preserved!
-    with open_multiple_files(file_names_and_modes) as fhandles, Pool() as p:
-        queue = p.imap(main_function, aggregated_multipage_articles_gen(warc_filename, sub_functions), chunksize=1000)
-        for ret in queue:  # This is single process because it writes to files
-            yield after_function(ret, after_params, fhandles)
+    with Manager() as man:
+        log_queue = man.Queue()
+        logger_obj = sub_functions[0][0]
+        with logger_obj.init_mp_logging_context(log_queue) as mp_logger, \
+                open_multiple_files(file_names_and_modes) as fhandles, Pool() as p:
+            sub_functions[0][0] = mp_logger
+            queue = p.imap(main_function, aggregated_multipage_articles_gen(warc_filename, sub_functions),
+                           chunksize=1000)
+            for ret in queue:  # This is single process because it writes to files
+                yield after_function(ret, after_params, fhandles)
 
 
 # This function is used outside of this file
