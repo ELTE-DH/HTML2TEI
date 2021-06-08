@@ -137,8 +137,8 @@ def safe_setlocale(name):
         saved = setlocale(LC_ALL)
         try:
             yield setlocale(LC_ALL, name)
-        except locale_Error:
-            raise  # Here one can implement firendly error message
+        except locale_Error as e:
+            raise e  # Here one can implement firendly error message
         finally:
             setlocale(LC_ALL, saved)
 

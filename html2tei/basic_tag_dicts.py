@@ -26,7 +26,7 @@ OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekez
                     'inline_idezet',
                     'hivatkozas',
                     'oszlop_valid', 'sor_valid', 'oszlop_sor', 'tablazat_cimsor', 'kozvetites',
-                    'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo', 'kozvetites_content', 'cimsor', 'galeria',
+                    'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo', 'kozvetites_content', 'galeria',
                     'kviz', 'kerdes', 'valaszblokk', 'valasz', 'forum', 'media_tartalom', 'beagyazott_tartalom',
                     'abra', 'hi', 'ref'}
 

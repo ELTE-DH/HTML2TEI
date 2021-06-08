@@ -19,13 +19,13 @@ def summarize_tag_bigrams(tag_dict, mode_recursive, article_url, article_body_ro
         a_tag_type_descendants = a.find_all(recursive=mode_recursive)
         if len(a_tag_type_descendants) == 0:
             a_b_name = '{0}\tTEXT'.format(a_name)
-            (frequency, urls) = tag_dict[a_b_name]
+            frequency, urls = tag_dict[a_b_name]
             frequency += 1
             urls.add(article_url)
         else:
             for b in a_tag_type_descendants:  # Second part of the bigram (b) all descendants
                 a_b_name = '{0}\t{1}'.format(a_name, to_friendly(b, excluded_tags_fun))
-                (frequency, urls) = tag_dict[a_b_name]
+                frequency, urls = tag_dict[a_b_name]
                 frequency += 1
                 urls.add(article_url)
 

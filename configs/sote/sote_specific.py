@@ -38,9 +38,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         authors = bs.find('h6', class_='entry-meta')
         if authors is not None:
             authors_string = authors.text.strip()
-            if len(authors_string) > 0:
-                if ' és ' not in authors_string:
-                    data['sch:author'] = [authors_string[authors_string.find(':')+1:]]
+            if len(authors_string) > 0 and ' és ' not in authors_string:
+                data['sch:author'] = [authors_string[authors_string.find(':')+1:]]
         else:
             tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
         keywords_root = bs.find('section', class_='tags-section')

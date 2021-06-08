@@ -124,7 +124,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
         else:
             authors = [a.text.strip() for a in bs.find_all('div', class_='szerzo')]
-            if authors is not None:
+            if len(authors) > 0:
                 data['sch:author'] = authors
             else:
                 authors = [a.text.strip() for a in bs.find_all('div', class_='c-human_details_infos')]
