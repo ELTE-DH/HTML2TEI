@@ -8,7 +8,7 @@ INLINE_TAGS = {'felkover', 'dolt', 'kiemelt', 'hivatkozas', 'alahuzott', 'athuzo
 HI_TAGS = INLINE_TAGS.difference({'media_hivatkozas', 'hivatkozas'})
 
 # article_body_converter.py
-PARAGRAPH_LIKE_TAGS = {'bekezdes', 'cimsor', 'forras', 'kozvetites_meta', 'kozvetites_content', 'kozvetites_ido'}
+PARAGRAPH_LIKE_TAGS = {'bekezdes', 'cimsor', 'forras', 'kozvetites_meta', 'kozvetites_content', 'kozvetites_ido', 'kerdes'}
 
 # article_body_converter.py
 BLOCKS = {'doboz', 'vez_bekezdes', 'lista', 'idezet', 'table_text', 'kozvetites', 'galeria', 'kviz', 'forum'}
@@ -26,7 +26,7 @@ OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekez
                     'inline_idezet',
                     'hivatkozas',
                     'oszlop_valid', 'sor_valid', 'oszlop_sor', 'tablazat_cimsor', 'kozvetites',
-                    'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo', 'kozvetites_content', 'galeria',
+                    'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo', 'kozvetites_content', 'cimsor', 'galeria',
                     'kviz', 'kerdes', 'valaszblokk', 'valasz', 'forum', 'media_tartalom', 'beagyazott_tartalom',
                     'abra', 'hi', 'ref'}
 
@@ -69,6 +69,7 @@ BLOCK_RULES = {'idezet': {'rename': {'cimsor': 'felkover'},
                            },
                'kviz': {'rename': {},
                         'default': 'bekezdes',
+                        'not_valid_inner_blocks': ['doboz', 'table_text', 'kozvetites', 'vez_bekezdes'],
                         'not_valid_as_outer_for': ['kozvetites', 'vez_bekezdes']},
                'forum': {'rename': {},
                          'default': 'bekezdes',

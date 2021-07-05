@@ -9,6 +9,9 @@ PORTAL_URL_PREFIX = 'https://dummy.hu'
 
 ARTICLE_ROOT_PARAMS_SPEC = []  # (('tagname',), {'attribute_key': 'attribute_value'})
 
+HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
+               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe'}
+
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
@@ -34,6 +37,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
+    if tag.name not in HTML_BASICS:
+        tag.name = 'else'
+    tag.attrs = {}
     return tag
 
 

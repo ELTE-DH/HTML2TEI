@@ -68,6 +68,7 @@ LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('div',), {'class': 'postend-widget'}),
           (('div',), {'class': 'post-information'}),
           (('script',), {})]
+
 MEDIA_LIST = [(('section',), {'class': 'soundcloud-container'}),
               (('figcaption',), {'class': 'soundcloud-container'}),
               (('figure',), {}),

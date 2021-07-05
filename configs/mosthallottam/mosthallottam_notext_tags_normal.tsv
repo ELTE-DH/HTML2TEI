@@ -1,3 +1,4 @@
+frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_length	URL_example	normal_name	preserved_attribute
 4	<a href=@LINK rel=attachment @NUM>	0.0	1.0	0.0	https://www.mosthallottam.hu/erzelemertelem/2016-ev-munkaszuneti-napjai-munkarend/ https://www.mosthallottam.hu/erdekes/nomad-ekszerek/ https://www.mosthallottam.hu/egyszeru-recept/egyszeru-kenyerlangos/ https://www.mosthallottam.hu/erdekes/nomad-ekszerek/	null	default
 1	<a id=@hlTargetNUM name=@NUM>	0.0	0.0	0.0	https://www.mosthallottam.hu/termeszet/izgalmas-esemenyek-a-naprendszerben-2016-ban/	null	default
 2	<a id=@NUM name=@NUM>	0.0	0.0	0.0	https://www.mosthallottam.hu/erdekes/napi-10-perc-semmitteves-csodat-tesz/ https://www.mosthallottam.hu/erdekes/szelfikbol-meggazdagodni-egyaltalan-nem-lehetetlen/	null	default

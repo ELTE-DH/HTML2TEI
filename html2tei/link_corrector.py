@@ -3,12 +3,13 @@
 
 import re
 
-URL_ENDSWITH = re.compile(r'.*\.(hu|com|org)$')
+URL_ENDSWITH = re.compile(r'.*\.(hu|com|org|ro)$')
 URL_STARTSWITH = re.compile(r'http://|https://|www.*')
-REPLACE_IN_URL = (('%2F', '/'), ('%&', '%25&'), ('[', '%5B'), (']', '%5D'), ('%?', '%25?'), ('%20', ' '), ('%3D', '='),
+REPLACE_IN_URL = (('%2F', '/'), ('%&', '%25&'), ('[', '%5B'), (']', '%5D'), ('%?', '%25?'), ('%20', '%20'), ('%3D', '='),
                   ('%3A//', '://'), ('://://', '://'), ('http://ttp://', 'http://'), ('http://ttps://', 'https://'),
                   ('\"ttp:', 'http:'), ('\\', ''), ('Http', 'http'), ('http//www.', 'http://www.'),
-                  ('\"', ''))
+                  ('\"', ''), ('http://tp://', 'http://'), ('http://ps://', 'http://'), ('https://ftp://', 'https://'),
+                  ('https://ttp://', 'https://'), (': ', '%3A '), ('https://ttps://', 'https://'))
 SLASH_DOT = {'/', '.'}
 
 
@@ -84,7 +85,7 @@ def fix_double_or_incorrect_link(link, portal_url_prefix, extra_key, a_url):
 def link_corrector(link, portal_url_prefix, extra_key, a_url):
     """This function is the main link corrector tool to be used from outside"""
     link = link.strip()
-    if link is None:
+    if link.startswith('<'):
         return None
     link = link.strip()
     if 'file://' in link:
@@ -104,7 +105,14 @@ def link_corrector(link, portal_url_prefix, extra_key, a_url):
         while link.endswith('#'):
             link = link[:-1]
         link = link[:link.find('#') + 1] + link[link.find('#') + 1:].replace('#', '%23')
-
+    if '|||' in link:
+        link = link[:(link.find('|||'))]
+    if link.endswith('%'):
+        link = link[:-1]
+    if 'edit#gid=' in link:
+        link = link[:(link.find('#gid='))]
+    if '&amp;width=' in link:
+        link = link[:(link.find('&amp;width='))]
     # Simple typographical errors at the beginning of the link
     http = link.find('http')
     www = link.find('www')
@@ -154,5 +162,8 @@ def link_corrector(link, portal_url_prefix, extra_key, a_url):
         return None
 
     link = ''.join(link.split('\n'))
+
+    if '.,' in link:
+        pass
 
     return link

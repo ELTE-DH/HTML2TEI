@@ -161,6 +161,7 @@ class ValidatorHasherCompressor:
                 close()
 
     def process_one_file(self, url, desired_filename, filename_suff, raw_xml_str):
+
         xml_etree = etree.fromstring(raw_xml_str)
         xml_filename = check_for_filename_collision(url, desired_filename, filename_suff, self._assigned_filenames,
                                                     self._tei_logger)

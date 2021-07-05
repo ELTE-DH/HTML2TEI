@@ -52,7 +52,7 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
     beauty_xml = BeautifulSoup(xml_string, features='lxml-xml')
 
     # TEI <fileDesc>
-    file_title = ''
+    file_title = beauty_xml.find('titleStmt')
     if article_title is not None:
         file_title = beauty_xml.find('titleStmt')
         file_title.title.string = article_title

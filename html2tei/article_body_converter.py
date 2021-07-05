@@ -414,11 +414,15 @@ def prepare_tei_body(art_child_tags, art_naked_text, article, bs, article_url, t
     return tei_body_contents_list
 
 
-def select_attributes_to_preserve(bs_tag, extra_k):
+def select_attributes_to_preserve(bs_tag, extra_k, article_url, tei_logger):
     """Select attributes which was marked in the dictionary as attributes to keep"""
     relevant_attrs = {}
     if extra_k != 'default':
-        relevant_attrs['target'] = bs_tag.attrs[extra_k]
+        if extra_k in bs_tag.attrs.keys():
+            relevant_attrs['target'] = bs_tag.attrs[extra_k]
+        else:
+            tei_logger.log('WARNING', f'{article_url}: ATTRIBUTE KEY IS NOT IN THE ATTRIBUTES OF THE TAG {bs_tag}, '
+                                      f'{extra_k}!')
     else:
         lang = language_attr_recognition(bs_tag)
         if lang is not None:
@@ -462,7 +466,7 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
             else:
                 tag.name = normalized_name
                 if len(tag.attrs) != 0:
-                    select_attributes_to_preserve(tag, extra_key)
+                    select_attributes_to_preserve(tag, extra_key, article_url, tei_logger)
                     if 'target' in tag.attrs.keys():
                         href = tag.attrs['target']
                         correct_and_store_link(tag, href, url_affix, extra_key, article_url)
@@ -475,7 +479,7 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
                 tag.name = 'to_unwrap'  # Tags that only currently do not contain text
         else:  # Unrated tags
             tei_logger.log('WARNING', f'{article_url} The tag is not in the dictionary.'
-                                      f'The dictionary needs to be updated ({tag.name})')
+                                      f'The dictionary needs to be updated ({tag.name}, {tag})')
             tag.name = 'to_unwrap'
 
 

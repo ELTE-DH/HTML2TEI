@@ -1,3 +1,4 @@
+frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_length	URL_example	normal_name	preserved_attribute
 1	<0_MDESC_a data-slb-active=@NUM data-slb-asset=@NUM data-slb-group=@NUM href=@LINK rel=@LINK title=@title>	0.0	1.0	0.0	https://abcug.hu/kinyitottak-kaput-es-kuldtek-kutyakat/	media_tartalom	href
 1	<0_MDESC_a data-slb-active=@NUM data-slb-asset=@NUM data-slb-group=@NUM href=@LINK rel=noopener noreferrer target=@target title=@title>	0.0	1.0	0.0	https://abcug.hu/mint-a-capa-fogai-ugy-valtjak-egymast-az-uzsorasok/	media_tartalom	href
 2	<0_MDESC_a href=@LINK rel=@LINK target=@target title=@title>	0.0	1.0	0.0	https://abcug.hu/kinyitottak-kaput-es-kuldtek-kutyakat/ https://abcug.hu/kinyitottak-kaput-es-kuldtek-kutyakat/	media_tartalom	href
