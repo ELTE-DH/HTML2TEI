@@ -15,7 +15,7 @@ from yaml import load as yaml_load, SafeLoader
 from html2tei.basic_tag_dicts import BLOCK_RULES
 from html2tei.basic_schema_removal import get_pretty_tei_article, use_justext, use_newspaper
 
-# Only read_portalspec_config and read_input_config is used outside of thisfile
+# Only read_portalspec_config and read_input_config is used outside of this file
 
 
 def check_exists(filesystem_path, tei_logger=None, check_fun=os_path_isfile, message='File not found'):
@@ -23,7 +23,7 @@ def check_exists(filesystem_path, tei_logger=None, check_fun=os_path_isfile, mes
     if tei_logger is None:
         tei_logger = Namespace(log=print)  # Hack, dummy logger! ;)
     if not check_fun(filesystem_path):
-        # File argument is necesarry for the dummy logger
+        # File argument is necessary for the dummy logger
         tei_logger.log('CRITICAL', f'{message}: {filesystem_path}', file=sys.stderr)
         exit(1)
 

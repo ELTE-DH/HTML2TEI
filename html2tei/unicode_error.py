@@ -46,7 +46,7 @@ def fix_garbage_unicode_escapes(text_tag):
 
 def extract_first_instance_of_article_text(article_body):
     """The text of the article present multiple times in a garbage HTML.
-       This function determines the end of the first instance to ingnore the rest.
+       This function determines the end of the first instance to ignore the rest.
        This problem appeared in the articles of the magyarnemzet.hu
        Helper for article_encoding_correction
     """

@@ -590,7 +590,7 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     art_naked_text, art_child_tags, art_desc_tags = imtext_children_descendants_of_tag(article)
 
     # The TEI schema does not tolerates when the direct subtrees of the article body are '<figure>-s', so an extra
-    #  <p>-level must be inserted (at least in the case of the first occurence)
+    #  <p>-level must be inserted (at least in the case of the first occurrence)
     if 'figure' in art_child_tags and len(art_child_tags) == 1:
         for art_child in article.children:
             if art_child.name == 'figure':

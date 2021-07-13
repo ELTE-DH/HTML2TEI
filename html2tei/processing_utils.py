@@ -32,7 +32,7 @@ def extract_resp_record_data(resp):
 
 def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
     """Create a generator of article, response date, WARC ID, raw HTML tuples
-       where multi-page articles are threated as one entry
+       where multi-page articles are treated as one entry
     """
     # We use these variables here, the others are passed blindly to the other processing levels
     warc_filenames, blacklist, multipage_compile, warc_logger, date_interval, next_page_of_article_fun \
@@ -90,7 +90,7 @@ def open_multiple_files(args):
 
 # This function is used outside of this file
 def run_single_process(warc_filename, file_names_and_modes, main_function, sub_functions, after_function, after_params):
-    """Read a WARC file and sequentally process all articles in it with main_function
+    """Read a WARC file and sequentially process all articles in it with main_function
         (multi-page articles are handled as one entry) and yield the result after filtered through after_function
     """
     with open_multiple_files(file_names_and_modes) as fhandles:
@@ -102,7 +102,7 @@ def run_single_process(warc_filename, file_names_and_modes, main_function, sub_f
 # This function is used outside of this file
 def run_multiple_process(warc_filename, file_names_and_modes, main_function, sub_functions, after_function,
                          after_params):
-    """Read a WARC file and sequentally process all articles in it with main_function in parallel preserving ordering
+    """Read a WARC file and sequentially process all articles in it with main_function in parallel preserving ordering
         (multi-page articles are handled as one entry) and yield the result after filtered through after_function
     """
     # This is parallel as it computes each page separately. Order preserved!
@@ -129,7 +129,7 @@ LOCALE_LOCK = threading_Lock()
 @contextmanager
 def safe_setlocale(name):
     """
-    Set locale in a context for date parsing in a threadsafe manner.
+    Set locale in a context for date parsing in a thread-safe manner.
     Original code:
     https://stackoverflow.com/questions/18593661/how-do-i-strftime-a-date-object-in-a-different-locale/24070673#24070673
     """
@@ -154,7 +154,7 @@ def parse_date(date_raw, date_format, locale='hu_HU.UTF-8'):
 
 
 def process_article(params):
-    """A generic article processsing skeleton used by multiple targets.
+    """A generic article processing skeleton used by multiple targets.
        It extracts the useful part from the html (=the body of the article), deletes the listed, irrelevant parts,
         and indicates the characteristic errors related to the body of the article (which can be detected at this level)
     """
