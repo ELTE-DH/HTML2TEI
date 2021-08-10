@@ -14,7 +14,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
     write_it = ''
-    article_root = bs.find()
+    article_root = bs.find()    # használata opcionális
     data['sch:datePublished'] = write_it
     # else: tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
     data['sch:dateModified'] = write_it
@@ -39,7 +39,7 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
-LINKS_SPEC = BASIC_LINK_ATTRS
+LINKS_SPEC = {}
 DECOMP = []
 MEDIA_LIST = []
 
