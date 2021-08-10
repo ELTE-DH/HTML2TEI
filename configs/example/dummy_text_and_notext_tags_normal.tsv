@@ -25,5 +25,5 @@ default	<quote>	default	default	default	no_example	idezet	default
 default	<figure>	default	default	default	no_example	media_tartalom	default
 default	<iframe>	default	default	default	no_example	beagyazott_tartalom	default
 default	<else>	default	default	default	no_example	default	default
-default	<script>	default	default	default	no_example	default	default
-default	<noscript>	default	default	default	no_example	default	default
+default	<script>	default	default	default	no_example	decompose	default
+default	<noscript>	default	default	default	no_example	decompose	default
