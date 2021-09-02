@@ -47,7 +47,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:keywords'] = keywords_list
         return data
     else:
-        # Single occurence: https://abcug.hu/kozeposztaly/
+        # Single occurrence: https://abcug.hu/kozeposztaly/
         title = bs.find('p', class_='matrix-item-title')
         if title is not None:
             data['sch:name'] = title.text.strip().encode('raw_unicode_escape').decode('UTF-8')

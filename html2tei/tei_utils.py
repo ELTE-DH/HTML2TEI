@@ -34,7 +34,7 @@ def to_friendly(ch, excluded_tags_fun):
 
 
 def immediate_text(tag):
-    """This function count the number of words (non-whitespace text)
+    """This function counts the number of words (non-whitespace text)
         immediately under the parameter tag excluding comments
     """
     immediate_length = sum(len(c.split()) for c in tag.children if not isinstance(c, Comment) and
