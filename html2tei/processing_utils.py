@@ -70,7 +70,7 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
 
         yield article, run_parameters  # Return the gathered article
 
-    # Return the computed date interval to the cally by modifiying the parameter
+    # Return the computed date interval to the cally by modifying the parameter
     date_interval['date_min'] = date_min
     date_interval['date_max'] = date_max
 
@@ -138,7 +138,7 @@ def safe_setlocale(name):
         try:
             yield setlocale(LC_ALL, name)
         except locale_Error as e:
-            raise e  # Here one can implement firendly error message
+            raise e  # Here one can implement a friendly error message
         finally:
             setlocale(LC_ALL, saved)
 
@@ -168,7 +168,7 @@ def process_article(params):
         else:  # article_body_root is always None...
             tei_logger.log('ERROR', 'ROOT ERROR:', article_url)
             return
-        # Checks if there is too many unicode esacaped characters present in the article body
+        # Checks if there are too many unicode escaped characters present in the article body
         if unicode_test(article_body_root.text) < 25:
             # Deleting irrelevant subtrees from the article body
             decomp_fun(article_body_root)

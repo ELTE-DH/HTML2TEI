@@ -88,7 +88,7 @@ class Hasher:
         for filename_or_bytestream in inputs:  # Calculate digest(s) for each file
             digests = self.hash_file(filename_or_bytestream)
             if digests is not None:
-                yield (filename_or_bytestream, *digests)
+                yield filename_or_bytestream, *digests
 
 
 class MtHasher(Hasher):

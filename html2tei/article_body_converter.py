@@ -124,7 +124,7 @@ def block_specific_renaming(article, block_dict, article_url, tei_logger):
     """Within special ("block") structures, some members must be given a different name.
        Mainly because of TEI rules
     """
-    tei_logger.log('DEBUG', f'block_specific_renamig in {article_url}')
+    tei_logger.log('DEBUG', f'block_specific_renaming in {article_url}')
     for block_root in reversed(article.find_all(BLOCKS)):
         # The structures (which could be recursive) can be handled safely from the inside out (hence reversed).
         #  Iterating from the outside to the inside crosses the boundaries of the levels
@@ -380,7 +380,7 @@ def prepare_tei_body(art_child_tags, art_naked_text, article, bs, article_url, t
         writing out as TEI XML.
        If it finds direct text or an inline tag by iterating through the direct subtrees of the body, it converts it
         to a paragraph.
-       This is a variant of the compex_wrapping() method, but with less copy (it is avoidable at this point
+       This is a variant of the complex_wrapping() method, but with less copy (it is avoidable at this point
         with using a list of subtrees as output)
     """
 
