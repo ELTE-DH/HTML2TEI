@@ -10,7 +10,7 @@ PORTAL_URL_PREFIX = 'https://dummy.hu'
 ARTICLE_ROOT_PARAMS_SPEC = []  # (('tagname',), {'attribute_key': 'attribute_value'})
 
 HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
-               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe'}
+               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
@@ -45,7 +45,7 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
-LINKS_SPEC = BASIC_LINK_ATTRS
+LINKS_SPEC = {}
 DECOMP = []
 MEDIA_LIST = []
 
