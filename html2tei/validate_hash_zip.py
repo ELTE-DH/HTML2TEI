@@ -58,7 +58,7 @@ def slugify(value, allow_unicode=True):
 def init_directory(bad_urls_dir, tei_logger):
     """Initialise bad_urls_dir:
        1. Resolve path (absolute or relative to the working directory)
-       2. Check if not exists and create it (warn if extsts)
+       2. Check if not exists and create it (warn if exists)
        3. Check if bad_urls_dir is a directory (fail gracefully if it is other than directory)
        4. Check if bad_urls_dir empty (warn if not)
     """

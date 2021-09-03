@@ -35,10 +35,10 @@ def main():
                     }
 
     common_params = {'input_config': (('-i', '--input-config'),
-                                      {'type': str, 'help': 'WARC filename to portal name mappig in YAML',
+                                      {'type': str, 'help': 'WARC filename to portal name mapping in YAML',
                                        'metavar': 'FILE.yaml', 'required': True}),
                      'configs_dir': (('-c', '--configs-dir'),
-                                     {'type': str, 'help': 'The directory for portal-speicific configs',
+                                     {'type': str, 'help': 'The directory for portal-specific configs',
                                       'metavar': 'DIR', 'required': True}),
                      'log_dir': (('-l', '--log-dir'),
                                  {'type': str, 'help': 'The directory for putting logs', 'metavar': 'DIR',
@@ -74,7 +74,7 @@ def main():
 
     spdict['cleaner'].add_argument('-O', '--output-debug', type=str2bool, nargs='?', const=True, default=False,
                                    help='Normal output generation (validate-hash-compress and UUID file names) '
-                                        'or print into the output directory without validation using human-firendly '
+                                        'or print into the output directory without validation using human-friendly '
                                         'names', metavar='True/False')
 
     spdict['cleaner'].add_argument('-p', '--run-parallel', type=str2bool, nargs='?', const=True, default=True,

@@ -35,7 +35,7 @@ def fix_garbage_unicode_escapes(text_tag):
         3. Add missing backslashes to Unicode escape strings
         4. Fix double Unicode escaping
        This problem appeared in the articles of the magyarnemzet.hu
-       JSON snipets in the text: \\&#8221;,\\&#8221;aktiv\\&#8221;:1}}}  ”,„aktiv”:1}}}</p>  ”,„aktiv”:„1”}}}
+       JSON snippets in the text: \\&#8221;,\\&#8221;aktiv\\&#8221;:1}}}  ”,„aktiv”:1}}}</p>  ”,„aktiv”:„1”}}}
     """
     if 'u0' in text_tag:
         encoded_article_text = text_tag.replace('\\\\', '\\').replace('”', '"').replace('u0', '\\u0'). \
@@ -46,7 +46,7 @@ def fix_garbage_unicode_escapes(text_tag):
 
 def extract_first_instance_of_article_text(article_body):
     """The text of the article present multiple times in a garbage HTML.
-       This function determines the end of the first instance to ingnore the rest.
+       This function determines the end of the first instance to ignore the rest.
        This problem appeared in the articles of the magyarnemzet.hu
        Helper for article_encoding_correction
     """

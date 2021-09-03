@@ -13,7 +13,7 @@ def diff_all_tag_table(diff_dir, old_filename, new_filename, out_filename):
          so deleting decompose and updated_old yields the fresh table.
        One must check the rows marked with NEW and may check rows with updated_new
          to allow the user to change his or her decision in the light of the new numbers
-       The 8th row of new table created from the comparison consits of the following values:
+       The 8th row of new table created from the comparison consists of the following values:
          1) OK: unchanged row
          2) decomposed: missing tag/tagname changed
          3) NEW: new tag
@@ -30,7 +30,7 @@ def diff_all_tag_table(diff_dir, old_filename, new_filename, out_filename):
             open(out_filename_w_path, 'w', encoding='UTF-8') as out_table:
         # 1) Read old table -> dict, new table -> dict
         # For convenience we split the values into two tuples:
-        #  the numberic properties (frequency, avg. len. of text, avg. no. of descendants, avg. len. of immediate text)
+        #  the numeric properties (frequency, avg. len. of text, avg. no. of descendants, avg. len. of immediate text)
         #  and the the rest which are actually compared (all links, category, normal name)
         old_dict = table_to_dict(old_table, old_filename_w_path)
         new_dict = table_to_dict(new_table, new_filename_w_path)

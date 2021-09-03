@@ -13,7 +13,7 @@ from html2tei.basic_tag_dicts import INLINE_TAGS, MEDIA_DICT, XML_CONVERT_DICT, 
 
 
 def join_list(inp_list):
-    """Helpter function used by to_friendly only"""
+    """Helper function used by to_friendly only"""
     if isinstance(inp_list, list):
         inp_list = ' '.join(i for i in inp_list)
     return inp_list
@@ -34,7 +34,7 @@ def to_friendly(ch, excluded_tags_fun):
 
 
 def immediate_text(tag):
-    """This function count the number of words (non-wthitespace text)
+    """This function counts the number of words (non-whitespace text)
         immediately under the parameter tag excluding comments
     """
     immediate_length = sum(len(c.split()) for c in tag.children if not isinstance(c, Comment) and
@@ -49,7 +49,7 @@ def real_text_length(tag):
 
 def imtext_children_descendants_of_tag(tag):
     """This function return the following information on the parameter tag:
-        1. The number of words (non-wthitespace text) immediately below the tag
+        1. The number of words (non-whitespace text) immediately below the tag
         2. The names of direct children (hence recursive=False)
         3. The names of all descendant tags (hence no parameter to find_all())
     """
@@ -96,7 +96,7 @@ def decompose_listed_subtrees_and_mark_media_descendants(article_dec, decomp, me
 
 def tei_defaultdict(mandatory_keys=('sch:url', 'sch:name'), missing_value=None):
     """Create a defaultdict preinitialized with the mandatory Schema.org keys set to default
-    :param mandatory_keys: a tuple of the keys to be expicitly present in the resulting defaultdict
+    :param mandatory_keys: a tuple of the keys to be explicitly present in the resulting defaultdict
     :param missing_value: the default value for missing (and explicitly created) keys
     :return: a defaultdict with default value: missing_value and mandatory_keys as default keys set to missing_value
 

@@ -4,7 +4,7 @@
 # Original Author: Peter Wu <peter@lekensteyn.nl>
 # Licensed under the MIT license <http://opensource.org/licenses/MIT>
 # Original source: https://git.lekensteyn.nl/scripts/tree/digest.py
-# This version of the code is avalilable at: https://github.com/ELTE-DH/multihash/
+# This version of the code is available at: https://github.com/ELTE-DH/multihash/
 
 import sys
 import hashlib
@@ -13,7 +13,7 @@ from threading import Thread
 from queue import Queue
 from argparse import ArgumentParser, FileType
 
-# All guaranteed, except varable length hashes...
+# All guaranteed, except variable length hashes...
 ALGORITHMS_GUARANTEED = tuple(sorted(hashlib.algorithms_guaranteed - {'shake_128', 'shake_256'}))
 
 
@@ -88,7 +88,7 @@ class Hasher:
         for filename_or_bytestream in inputs:  # Calculate digest(s) for each file
             digests = self.hash_file(filename_or_bytestream)
             if digests is not None:
-                yield (filename_or_bytestream, *digests)
+                yield filename_or_bytestream, *digests
 
 
 class MtHasher(Hasher):
@@ -102,7 +102,7 @@ class MtHasher(Hasher):
         self._threads = {}
 
     def _init_threads(self):
-        """Clear hashers, queues and threds and init clean instances"""
+        """Clear hashers, queues and threads and init clean instances"""
 
         self._init_hashers()
         self._queues = {}

@@ -5,7 +5,7 @@ Map the HTML schema of portals to valid [TEI XML](https://tei-c.org/) with the t
 
 The portal-specific configuration is created manually with the help of three different tools which aid evaluating
  the inventory of the tags and structures used in the HTML code. The manual evaluation of such structures
- enables one to create a valid TEI XML from the HTML source keeping all desired (text) shema elements
+ enables one to create a valid TEI XML from the HTML source keeping all desired (text) schema elements
  in a fine-grained way carefully supervised by the user. In addition to converting the article body,
  the metadata can be converted to the [Schema.org](https://schema.org/) standard.
 
@@ -40,7 +40,7 @@ The program can be run from command line or from the Python API see the details 
 There are five modes of the program:
 
 - Create _HTML Content Tree_ (`content-tree`): Read all the articles to summarize all the structures that occur
-  in the portal schema. Finally the accumulated information represents the tree structure as a nested YAML dictionary
+  in the portal schema. Finally, the accumulated information represents the tree structure as a nested YAML dictionary
   (for manual inspection)
 - The _Tag Inventory Maker_ (`inventory-maker`): Create the tag tables from the articles with their
   gathered information (it will be the basis for manual configuration of renaming)
@@ -55,8 +55,8 @@ There are five modes of the program:
 
 #### Common Arguments
 
-- `-i`, `--input-config`: WARC filename to portal name mappig in YAML
-- `-c`, `--configs-dir`: The directory for portal-speicific configs
+- `-i`, `--input-config`: WARC filename to portal name mapping in YAML
+- `-c`, `--configs-dir`: The directory for portal-specific configs
 - `-l`, `--log-dir`: The directory for putting logs
 - `-w`, `--warc-dir`: The directory to read WARCs from
 - `-o`, `--output-dir`: The directory to put output files
@@ -83,7 +83,7 @@ The files and directories must present. All arguments except `log-level` are man
 - `-m`, `--write-out-mode`: The schema removal tool to use (ELTEDH, JusText, Newspaper3k) (default: eltedh)
 - `-t`, `--task-name`: The name of the task to appear in the logs (default: Portal Article Cleaner)
 - `-O`, `--output-debug`: Normal output generation (validate-hash-compress and UUID file names) or print into
-  the output directory without validation using human-firendly names (default: False, normal output)
+  the output directory without validation using human-friendly names (default: False, normal output)
 - `-p`, `--run-parallel`: Run processing in parallel or all operation must be used sequentially
   (default: True, parallel)
 - `-d`, `--with-specific-dicts`: Load portal-specific dictionaries (tables) (default: True)
@@ -109,10 +109,10 @@ The files and directories must present. All arguments except `log-level` are man
 - `tei_defaultdict(mandatory_keys=('sch:url', 'sch:name'), missing_value=None)`:
   Create a defaultdict preinitialized with the mandatory Schema.org keys set to default
 
-# For the Main Pyhton API
+# For the Main Python API
 
 - `run_main(warc_filename, configs_dir, log_dir, warc_dir, output_dir, init_portal_fun,
-            run_params=None, logfile_level='INFO', console_level='INFO')`: Main runner funtion
+            run_params=None, logfile_level='INFO', console_level='INFO')`: Main runner function
 - `WRITE_OUT_MODES`: A dictionary to add custom write-out modes when needed
 - `diff_all_tag_table(diff_dir, old_filename, new_filename, out_filename)`: The main function to update tables
 - `tag_bigrams_init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_level_params,
@@ -130,18 +130,18 @@ The files and directories must present. All arguments except `log-level` are man
   (into a zipfile or a directory)
 - `create_new_tag_with_string(beauty_xml, tag_string, tag_name, append_to=None)`: Helper function to create
   a new XML tag containing string in it. If provided append the newly created tag to a parent tag
-- `immediate_text(tag)`: Count the number of words (non-wthitespace text) immediately under
+- `immediate_text(tag)`: Count the number of words (non-whitespace text) immediately under
   the parameter tag excluding comments
 - `to_friendly(ch, excluded_tags_fun)`: Convert tag name and sorted attributes to string in order to use it later
   (e.g. tag_freezer in the tables)
 - `run_single_process(warc_filename, file_names_and_modes, main_function, sub_functions, after_function, after_params)`:
-  Read a WARC file and sequentally process all articles in it with main_function (multi-page articles are handled
+  Read a WARC file and sequentially process all articles in it with main_function (multi-page articles are handled
   as one entry) and yield the result after filtered through `after_function`
 - `run_multiple_process(warc_filename, file_names_and_modes, main_function, sub_functions, after_function,
-  after_params)`: Read a WARC file and sequentally process all articles in it with main_function in parallel preserving
+  after_params)`: Read a WARC file and sequentially process all articles in it with main_function in parallel preserving
   ordering (multi-page articles are handled as one entry) and yield the result after filtered through `after_function`
 - `dummy_fun(*_)`: A function always returns None no matter how many arguments were given
-- `process_article`: A generic article processsing skeleton used by multiple targets
+- `process_article`: A generic article processing skeleton used by multiple targets
 
 # Licence
 
