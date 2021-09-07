@@ -298,10 +298,9 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
         tei_logger.log('CRITICAL', 'w_specific_dicts and w_specific_tei_base_file are must set to True in run_params!')
         exit(1)
 
-    get_meta_fun_spec, article_root_params, decompose_spec, excluded_tags_spec, portal_url_prefix, links, \
-        block_rules_spec, bigram_rules_spec, tag_normal_dict, portal_specific_block_rules, portal_xml_string, \
-        write_out_mode = rest_config_params
-    # TODO: ide kell a link spec lista
+    get_meta_fun_spec, article_root_params, decompose_spec, excluded_tags_spec, portal_url_prefix, \
+        portalspec_link_filter, links, block_rules_spec, bigram_rules_spec, tag_normal_dict, \
+        portal_specific_block_rules, portal_xml_string, write_out_mode = rest_config_params
 
     # The internal structure of the accumulator is defined in read_portalspec_config function
     # Get a reference to warc_date_interval to be able to use without returning it in the generator
@@ -340,7 +339,7 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
     #  - portal_url_prefix the url prefix of the portal (e.g. domain name for relative links)
     portalspec_params_and_dicts = (article_root_params, decompose_spec, excluded_tags_spec,
                                    tag_normal_dict, links, portal_specific_block_rules, bigram_rules_spec,
-                                   portal_url_prefix)
+                                   portal_url_prefix, portalspec_link_filter)
     process_article_params = (process_article_clean_params, portalspec_params_and_dicts)
 
     # Runner function (some task can be run only in single-process mode)

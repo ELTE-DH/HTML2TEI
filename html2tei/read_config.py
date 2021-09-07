@@ -1,6 +1,6 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
-
+import re
 import sys
 import importlib.util
 from copy import deepcopy
@@ -28,7 +28,8 @@ def check_exists(filesystem_path, tei_logger=None, check_fun=os_path_isfile, mes
         exit(1)
 
 
-def load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normal_fn, portal_specific_block_rules, tei_logger):
+def load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normal_fn, portal_specific_block_rules,
+                               link_filter_to_compile, tei_logger):
     """Load portal_specific TSV files (text and notext) into dictionaries"""
     with open(text_tags_normal_fn, encoding='UTF-8') as text_tags_dict, \
             open(notext_tags_normal_fn, encoding='UTF-8') as notext_tags_dict:
@@ -51,7 +52,8 @@ def load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normal_fn, porta
     for block_key, block_value in portal_specific_block_rules.items():
         for three_key, t_value in block_value.items():
             merged_portal_specific_block_rules[block_key][three_key] = t_value
-    return portal_tags_to_normal, merged_portal_specific_block_rules
+    link_filter_compiled_spec = re.compile('|'.join(link_filter_to_compile))
+    return portal_tags_to_normal, merged_portal_specific_block_rules, link_filter_compiled_spec
 
 
 def get_portal_spec_fun_and_dict_names(module_fn, tei_logger):
@@ -66,8 +68,8 @@ def get_portal_spec_fun_and_dict_names(module_fn, tei_logger):
     portal_speicific_funs_and_constants = []
     for fun_or_const in ('BLACKLIST_SPEC', 'MULTIPAGE_URL_END', 'next_page_of_article_spec',
                          'get_meta_from_articles_spec', 'ARTICLE_ROOT_PARAMS_SPEC', 'decompose_spec',
-                         'excluded_tags_spec', 'PORTAL_URL_PREFIX', 'LINKS_SPEC', 'BLOCK_RULES_SPEC',
-                         'BIGRAM_RULES_SPEC'):
+                         'excluded_tags_spec', 'PORTAL_URL_PREFIX', 'LINK_FILTER_SUBSTRINGS_SPEC', 'LINKS_SPEC',
+                         'BLOCK_RULES_SPEC', 'BIGRAM_RULES_SPEC'):
         e_loaded = getattr(portal_spec_module, fun_or_const)
         if fun_or_const is None:
             tei_logger.log('CRITICAL', f'Missing elem from config file ({module_fn}): {fun_or_const} !')
@@ -127,8 +129,8 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
     portal_spec_module_fn = os_path_join(configs_dir, portal_name, f'{portal_name}_specific.py')
     check_exists(portal_spec_module_fn, tei_logger)
     blacklist_spec, multipage_compile, next_page_of_article_fun, get_meta_fun_spec, article_root_params, \
-        decompose_spec, excluded_tags_spec, portal_url_prefix, links, block_rules_spec, bigram_rules_spec \
-        = get_portal_spec_fun_and_dict_names(portal_spec_module_fn, tei_logger)
+        decompose_spec, excluded_tags_spec, portal_url_prefix, link_filter_spec, links, block_rules_spec, \
+        bigram_rules_spec = get_portal_spec_fun_and_dict_names(portal_spec_module_fn, tei_logger)
 
     # WARC reading stuff
     warc_name = os_path_join(warc_dir, warc_name)
@@ -143,14 +145,15 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         tei_logger.log('INFO', 'Loading portal specific dicts')
         text_tags_normal_fn = os_path_join(configs_dir, portal_name, f'{portal_name}_text_tags_normal.tsv')
         check_exists(text_tags_normal_fn, tei_logger)
-        notext_tags_normla_fn = os_path_join(configs_dir, portal_name, f'{portal_name}_notext_tags_normal.tsv')
-        check_exists(notext_tags_normla_fn, tei_logger)
+        notext_tags_normal_fn = os_path_join(configs_dir, portal_name, f'{portal_name}_notext_tags_normal.tsv')
+        check_exists(notext_tags_normal_fn, tei_logger)
 
-        tag_normal_dict, portal_specific_block_rules = \
-            load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normla_fn, block_rules_spec, tei_logger)
+        tag_normal_dict, portal_specific_block_rules, link_filter_compile_spec = \
+            load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normal_fn, block_rules_spec, link_filter_spec,
+                                       tei_logger)
     else:
         tei_logger.log('INFO', 'Not loading portal specific dicts')
-        tag_normal_dict, portal_specific_block_rules = None, None
+        tag_normal_dict, portal_specific_block_rules, link_filter_compile_spec = None, None, None
 
     # Base TEI XML file reading stuff
     if run_params.get('w_specific_tei_base_file', False):
@@ -172,8 +175,8 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         tei_logger.log('INFO', f'Using {write_out_mode} write mode')
 
     return tei_logger, warc_level_params, get_meta_fun_spec, article_root_params, decompose_spec, excluded_tags_spec, \
-        portal_url_prefix, links, block_rules_spec, bigram_rules_spec, tag_normal_dict, portal_specific_block_rules, \
-        portal_xml_string, write_out_mode_fun
+        portal_url_prefix, link_filter_compile_spec, links, block_rules_spec, bigram_rules_spec, tag_normal_dict, \
+        portal_specific_block_rules, portal_xml_string, write_out_mode_fun
 
 
 def read_input_config(warc_filename):

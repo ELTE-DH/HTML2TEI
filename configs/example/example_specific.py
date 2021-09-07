@@ -50,6 +50,7 @@ def decompose_spec(article_dec):
 
 
 BLACKLIST_SPEC = []
+LINK_FILTER_SUBSTRINGS_SPEC = ['LINK_FILTER_DUMMY_STRING']
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
