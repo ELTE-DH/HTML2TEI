@@ -13,7 +13,7 @@ from html2tei.tei_utils import create_new_tag_with_string
 from html2tei.validate_hash_zip import init_output_writer
 from html2tei.processing_utils import run_single_process, run_multiple_process
 
-DUPL_METAS = {'sch:keywords', 'sch:author'}
+DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist'}
 
 
 def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents, multipage_warc_datas=None):
@@ -147,6 +147,12 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
                                  'The content of the article was not available at the time of archiving.'
         body.append(beauty_xml.new_tag('p'))
     elif isinstance(article_body_contents, list):
+        for i, main_subtrees in enumerate(article_body_contents):
+            if main_subtrees.name == "div" and 'type' in main_subtrees.attrs.keys() and \
+                    main_subtrees.attrs['type'] == 'comments_container':
+                main_subtrees.attrs['corresp'] = tei_pid
+                main_subtrees.attrs['source'] = url
+                break
         body.extend(article_body_contents)
     elif isinstance(article_body_contents, dict):
         for url, page_contents in article_body_contents.items():
@@ -295,6 +301,7 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
     get_meta_fun_spec, article_root_params, decompose_spec, excluded_tags_spec, portal_url_prefix, links, \
         block_rules_spec, bigram_rules_spec, tag_normal_dict, portal_specific_block_rules, portal_xml_string, \
         write_out_mode = rest_config_params
+    # TODO: ide kell a link spec lista
 
     # The internal structure of the accumulator is defined in read_portalspec_config function
     # Get a reference to warc_date_interval to be able to use without returning it in the generator

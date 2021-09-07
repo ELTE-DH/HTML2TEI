@@ -580,6 +580,7 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
 
     deal_with_paragraphs(article, article_url, tei_logger)
     unwrap_all(article, 'to_unwrap')
+    missing_root_replacement(bs, 'komment', False, 'komment_root', article)
 
     # 11) Rename to XML tags and insert the extra levels required by XML
     article.name = 'body'

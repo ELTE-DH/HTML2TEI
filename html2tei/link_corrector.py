@@ -3,13 +3,14 @@
 
 import re
 
-URL_ENDSWITH = re.compile(r'.*\.(hu|com|org|ro)$')
+URL_ENDSWITH = re.compile(r'.*\.(hu|com|org|ro|eu)$')
 URL_STARTSWITH = re.compile(r'http://|https://|www.*')
 REPLACE_IN_URL = (('%2F', '/'), ('%&', '%25&'), ('[', '%5B'), (']', '%5D'), ('%?', '%25?'), ('%20', '%20'), ('%3D', '='),
                   ('%3A//', '://'), ('://://', '://'), ('http://ttp://', 'http://'), ('http://ttps://', 'https://'),
                   ('\"ttp:', 'http:'), ('\\', ''), ('Http', 'http'), ('http//www.', 'http://www.'),
                   ('\"', ''), ('http://tp://', 'http://'), ('http://ps://', 'http://'), ('https://ftp://', 'https://'),
-                  ('https://ttp://', 'https://'), (': ', '%3A '), ('https://ttps://', 'https://'))
+                  ('https://ttp://', 'https://'), (': ', '%3A '), ('https://ttps://', 'https://'),
+                  ('.hu:', '.hu'), ('http%2', ''),  ('.com:', '.com'))
 SLASH_DOT = {'/', '.'}
 
 

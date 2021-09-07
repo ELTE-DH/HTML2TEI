@@ -199,6 +199,12 @@ def normal_tag_to_tei_xml_converter(bs, article):
         elif tag_name == 'kozvetites':
             tag.name = 'div'
             tag.attrs = {'type': 'feed'}
+        elif tag_name == 'komment':
+            tag.name = 'div'
+            tag.attrs = {'type': 'comment'}
+        elif tag_name == 'komment_root':
+            tag.name = 'div'
+            tag.attrs = {'type': 'comments_container'}
         elif tag_name == 'valaszblokk':
             tag.name = 'list'
             tag.attrs = {'type': 'quiz'}
