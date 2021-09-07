@@ -148,7 +148,7 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
         body.append(beauty_xml.new_tag('p'))
     elif isinstance(article_body_contents, list):
         for i, main_subtrees in enumerate(article_body_contents):
-            if main_subtrees.name == "div" and 'type' in main_subtrees.attrs.keys() and \
+            if main_subtrees.name == 'div' and 'type' in main_subtrees.attrs.keys() and \
                     main_subtrees.attrs['type'] == 'comments_container':
                 main_subtrees.attrs['corresp'] = tei_pid
                 main_subtrees.attrs['source'] = url
