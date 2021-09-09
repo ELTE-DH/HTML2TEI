@@ -35,7 +35,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             author_text = author_tag.text.strip()
             """valójában ritkán van 'és', de a köv. sor az egyszerű esetet is kezeli"""
             # https://vs.hu/sport/osszes/magyarorszag-spanyolorszag-percrol-percre-1211#!s184
-            if '–' in author_text:
+            if ' – ' in author_text:
                 author_text = author_text.split(' – ')
             elif ' és ' in author_text:
                 author_text = author_text.split(' és ')
@@ -51,7 +51,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 data['subsection'] = keywords_list[1]
             if len(keywords_list) > 2:
                 data['sch:keywords'] = keywords_list[2:]
-                print(url, keywords_list)
         else:
             tei_logger.log('WARNING', f'{url}: SUBJECT TAG NOT FOUND!')
         return data
