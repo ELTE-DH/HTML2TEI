@@ -41,6 +41,10 @@ def final_summarize_children_or_subtree(dates, out_files, tag_dict, tei_logger):
     """
     _ = dates, tei_logger  # Silence IDE
     out_notext_fh, out_text_fh = out_files
+    print('frequency\ttag\taverage_word_count\taverage_descendant_num\timmediate_texts_average_length\tURL_example'
+          '\tnormal_name\tpreserved_attribute', file=out_text_fh)
+    print('frequency\ttag\taverage_word_count\taverage_descendant_num\timmediate_texts_average_length\tURL_example'
+          '\tnormal_name\tpreserved_attribute', file=out_notext_fh)
     for root_name_attr, (freq, no_of_words, no_of_descendants, all_links, len_of_immediate_text) in tag_dict.items():
         random_links = random_sample(all_links, k=min(5, len(all_links)))
         example_links = ' '.join(random_links)

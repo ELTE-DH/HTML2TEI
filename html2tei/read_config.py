@@ -34,7 +34,7 @@ def load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normal_fn, porta
             open(notext_tags_normal_fn, encoding='UTF-8') as notext_tags_dict:
         portal_tags_to_normal = {}
         for current_file, fn in ((text_tags_dict, text_tags_normal_fn), (notext_tags_dict, notext_tags_normal_fn)):
-            for line_no, line in enumerate(current_file, start=1):
+            for line_no, line in enumerate(current_file):
                 try:
                     # One row consists of frequency, the freezed tag (tag name and attributes),
                     # the avg. len. of the texts, the avg no. of tags it contains,
