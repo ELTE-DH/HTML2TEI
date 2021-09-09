@@ -233,6 +233,7 @@ def process_article_clean(params):
         all_warc_datas_tup_for_note = None
     else:  # Process multi-page article
         # write_out_mode is passed into process_multipage_article with process_article_and_spec_params
+        # The different write_out_mode implementations are defined in basic_schema_removal.py
         # Multipage articles:
         #  - URL from the first page
         #  - WARC response datetime from the first page

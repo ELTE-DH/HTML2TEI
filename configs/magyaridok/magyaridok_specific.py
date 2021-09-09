@@ -118,7 +118,7 @@ BLACKLIST_SPEC = ['https://www.magyaridok.hu/elofizetoi-aszf/',
                   'https://www.magyaridok.hu/belfold/teszt-cikk-1105-bm-99016/',
                   'https://www.magyaridok.hu/gazdasag/lorem-ipsum-facts-692203/',
                   'https://www.magyaridok.hu/eletmod/percrol-percre-teszt-2-886234/']
-
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 

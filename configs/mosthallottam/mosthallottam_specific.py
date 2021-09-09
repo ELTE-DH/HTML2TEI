@@ -81,6 +81,8 @@ BLACKLIST_SPEC = ['https://www.mosthallottam.hu/about/',
                   'https://www.mosthallottam.hu/impresszum/',
                   'https://www.mosthallottam.hu/felhasznalasi-feltetel-es-adatvedelem/']
 
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
+
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
 
