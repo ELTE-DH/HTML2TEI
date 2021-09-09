@@ -1,7 +1,6 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
-import re
 import sys
 import importlib.util
 from copy import deepcopy
@@ -152,7 +151,7 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
                                        tei_logger)
     else:
         tei_logger.log('INFO', 'Not loading portal specific dicts')
-        tag_normal_dict, portal_specific_block_rules, link_filter_compile_spec = None, None, None
+        tag_normal_dict, portal_specific_block_rules = None, None
 
     # Base TEI XML file reading stuff
     if run_params.get('w_specific_tei_base_file', False):
