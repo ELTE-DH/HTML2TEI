@@ -529,7 +529,6 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
 
     # 4) BLOCK specific RENAMING RULES
     block_specific_renaming(article, block_dict, article_url, tei_logger)
-
     # Decompose/unwrap
     decompose_all(article, 'to_decompose')
     unwrap_all(article, 'to_unwrap')
