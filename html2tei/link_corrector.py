@@ -92,7 +92,6 @@ def link_corrector(link, portal_url_prefix, portalspec_link_filter, extra_key, a
     if 'file://' in link:
         return None
     if portalspec_link_filter.match(link):
-        print(a_url, link)
         return None
     link = correct_first_in_link_or_facs(link, portal_url_prefix, extra_key)
     if link.count('http') > 1:
