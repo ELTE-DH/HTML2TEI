@@ -189,7 +189,7 @@ def normal_tag_to_tei_xml_converter(bs, article):
             tag.wrap(bs.new_tag('floatingText', type='quiz'))
             tag.name = 'body'
         elif tag_name == 'forum':
-            tag.wrap(bs.new_tag('floatingText', type='forum'))
+            tag.wrap(bs.new_tag('div', type='forum'))
             tag.name = 'body'
         elif tag_name == 'galeria':
             tag.wrap(bs.new_tag('floatingText', type='gallery'))
