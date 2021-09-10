@@ -56,14 +56,14 @@ def use_newspaper(one_page_of_article_things, body_log, get_meta_fun, spec_body_
     return metas_in_dict, n3k_paragraphs
 
 
-def get_pretty_tei_article(article_page_tups, tei_logger, spec_get_meta_fun, normal_body_params):
+def get_pretty_tei_article(article_page_tups, tei_logger, spec_get_meta_fun, spec_body_params):
     """It executes our own metadata extraction and text extraction, normalization,
         TEI to XML conversion method per URL"""
     (one_url, warc_response_datetime, warc_id, raw_html) = article_page_tups
     bs = BeautifulSoup(raw_html, 'lxml')
     meta = spec_get_meta_fun(tei_logger, one_url, bs)
     if meta is not None:
-        converted_body_list = article_body_converter(tei_logger, one_url, raw_html, normal_body_params)
+        converted_body_list = article_body_converter(tei_logger, one_url, raw_html, spec_body_params)
         return meta, converted_body_list
     else:
         return None, None

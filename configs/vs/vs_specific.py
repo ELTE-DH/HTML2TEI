@@ -27,14 +27,21 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: DATE TAG NOT FOUND!')
         title = meta_root.find('h1', itemprop='headline')
         if title is not None:
-            data['sch:name'] = title.text.strip()
+            data['sch:name'] = title.text.strip().replace('/t', ' ')
         else:
             tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
         author_tag = meta_root.find('span', itemprop='author')
         if author_tag is not None:
             author_text = author_tag.text.strip()
             """valójában ritkán van 'és', de a köv. sor az egyszerű esetet is kezeli"""
-            data['sch:author'] = author_text.split(' és ')
+            # https://vs.hu/sport/osszes/magyarorszag-spanyolorszag-percrol-percre-1211#!s184
+            if ' – ' in author_text:
+                author_text = author_text.split(' – ')
+            elif ' és ' in author_text:
+                author_text = author_text.split(' és ')
+            else:
+                author_text = [author_text]
+            data['sch:author'] = author_text
         else:
             tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
         keywords_list = [t.text.strip() for t in meta_root.find_all('a', class_='tag')]
@@ -108,6 +115,7 @@ def decompose_spec(article_dec):
 
 BLACKLIST_SPEC = [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
                                                            'vs_BLACKLIST.txt')).readlines()]
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
