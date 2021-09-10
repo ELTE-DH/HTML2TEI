@@ -25,7 +25,7 @@ PARAGRAPH_AND_INLINES = ({'bekezdes'} | INLINE_TAGS)
 # Only article_body_converter is used outside of this file
 
 
-def correct_and_store_link(tag, link, portal_url_prefix, extra_key, article_url):
+def correct_and_store_link(tag, link, portal_url_prefix, portal_url_filter, extra_key, article_url):
     """This function stores the result of link_corrector in tag.
        The input links can be:
           - good (no repair required)
@@ -34,7 +34,7 @@ def correct_and_store_link(tag, link, portal_url_prefix, extra_key, article_url)
     """
     link_original = link
     tag.attrs.clear()
-    link_new = link_corrector(link, portal_url_prefix, extra_key, article_url)
+    link_new = link_corrector(link, portal_url_prefix, portal_url_filter, extra_key, article_url)
     if link_new is None:
         tag.attrs['original'] = link_original
     elif link_original != link_new:
@@ -441,8 +441,8 @@ def real_lead_general_test(bs_article, article_url, tei_logger):
             lead.name = 'bekezdes'
 
 
-def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict, link_attrs, url_affix, article_url,
-                                 tei_logger):
+def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict, link_attrs, url_prefix,
+                                 portal_url_filter, article_url, tei_logger):
     """This function generates the dictionary form of the tags, retrieves its normalized name from the dictionary,
         and then performs the renaming and other specific operations accordingly
     """
@@ -469,7 +469,7 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
                     select_attributes_to_preserve(tag, extra_key, article_url, tei_logger)
                     if 'target' in tag.attrs.keys():
                         href = tag.attrs['target']
-                        correct_and_store_link(tag, href, url_affix, extra_key, article_url)
+                        correct_and_store_link(tag, href, url_prefix, portal_url_filter, extra_key, article_url)
                         if normalized_name == 'media_hivatkozas' and 'target' not in tag.attrs:
                             tag.name = 'to_unwrap'
 
@@ -486,7 +486,7 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
 def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     """This function cleans and converts HTML content into a valid TEI XML"""
     article_roots, decompose_fun, excluded_tags_fun, tag_normal_dict, link_attrs, block_dict, change_by_bigram, \
-        portal_url_prefix = spec_params
+        portal_url_prefix, portal_url_filter = spec_params
     raw_html = raw_html.replace('<br>', ' ')
     bs = BeautifulSoup(raw_html, 'lxml')
     for args, kwargs in article_roots:
@@ -508,7 +508,7 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
 
     # 1) Renaming based on manually evaluated tag table(dictionary)
     normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict, link_attrs, portal_url_prefix,
-                                 article_url, tei_logger)
+                                 portal_url_filter, article_url, tei_logger)
 
     for un_tag in article.find_all('szakasz'):
         if immediate_text(un_tag) > 0:
