@@ -29,7 +29,8 @@ def check_exists(filesystem_path, tei_logger=None, check_fun=os_path_isfile, mes
 
 
 def load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normal_fn, portal_specific_block_rules, tei_logger):
-    """Load portal_specific TSV files (text and notext) into dictionaries"""
+    """Load portal_specific TSV files (text and notext) into dictionaries.
+    The header is kept in the dictionary, as it differs from the other keys (HTML tags) therefore it is ignored."""
     with open(text_tags_normal_fn, encoding='UTF-8') as text_tags_dict, \
             open(notext_tags_normal_fn, encoding='UTF-8') as notext_tags_dict:
         portal_tags_to_normal = {}
