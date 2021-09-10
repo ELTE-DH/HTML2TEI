@@ -9,11 +9,11 @@ HI_TAGS = INLINE_TAGS.difference({'media_hivatkozas', 'hivatkozas'})
 
 # article_body_converter.py
 PARAGRAPH_LIKE_TAGS = {'bekezdes', 'cimsor', 'forras', 'kerdes',
-                       'kozvetites_meta', 'kozvetites_content', 'kozvetites_ido', 'kozvetites_szerzo',
+                       'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo',
                        'komment_meta', 'komment_ido', 'komment_szerzo'}
 
 # article_body_converter.py
-BLOCKS = {'doboz', 'vez_bekezdes', 'lista', 'idezet', 'table_text', 'kozvetites', 'galeria', 'kviz', 'forum', 'komment'}
+BLOCKS = {'doboz', 'vez_bekezdes', 'lista', 'idezet', 'table_text', 'kozvetites', 'galeria', 'kviz', 'komment'}
 # article_body_converter.py
 TEMPORARILY_USED_TAGS = {'media_hivatkozas', 'hivatkozas'}
 # article_body_converter.py
@@ -28,7 +28,7 @@ OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekez
                     'inline_idezet',
                     'hivatkozas',
                     'oszlop_valid', 'sor_valid', 'oszlop_sor', 'tablazat_cimsor', 'kozvetites',
-                    'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo', 'kozvetites_content',
+                    'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo',
                     'komment', 'komment_meta', 'komment_ido', 'komment_szerzo', 'komment_root',
                     'cimsor', 'galeria',
                     'kviz', 'kerdes', 'valaszblokk', 'valasz', 'forum', 'media_tartalom', 'beagyazott_tartalom',
@@ -41,7 +41,7 @@ BASIC_LINK_ATTRS = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_i
 BLOCK_RULES = {'idezet': {'rename': {'cimsor': 'felkover'},
                           'default': 'bekezdes',
                           'not_valid_inner_blocks': [],
-                          'not_valid_as_outer_for': ['idezet', 'doboz', 'kozvetites', 'galeria', 'kviz', 'forum',
+                          'not_valid_as_outer_for': ['idezet', 'doboz', 'kozvetites', 'galeria', 'kviz',
                                                      'komment']},
                'doboz': {'rename': {
                    'oszlop': 'to_unwrap',
@@ -64,7 +64,7 @@ BLOCK_RULES = {'idezet': {'rename': {'cimsor': 'felkover'},
                               'not_valid_inner_blocks': ['doboz'],
                               'not_valid_as_outer_for': ['komment']},
                'kozvetites': {'rename': {'bekezdes': 'unwrap'},
-                              'default': 'kozvetites_content',
+                              'default': 'bekezdes',
                               'not_valid_inner_blocks': ['doboz'],
                               'not_valid_as_outer_for': []},
                'galeria': {'rename': {},
@@ -100,7 +100,7 @@ XML_CONVERT_DICT = {'bekezdes': 'p',
                     'table_text': 'table',
                     'tablazat_cimsor': 'head',
                     'kiemelt': 'hi',
-                    'valasz': 'item',
+                    'valasz': 'item'
                     }
 # tei_utils.py
 TAGNAME_AND_ATTR_TABLE = {'cimsor': ('p', 'head'),
@@ -114,11 +114,9 @@ TAGNAME_AND_ATTR_TABLE = {'cimsor': ('p', 'head'),
                           'kozvetites_meta': ('p', 'meta'),
                           'kozvetites_ido': ('p', 'time'),
                           'kozvetites_szerzo': ('p', 'author'),
-                          'kozvetites_content': ('p', 'content'),
                           'komment_meta': ('p', 'meta'),
                           'komment_ido': ('p', 'time'),
                           'komment_szerzo': ('p', 'author'),
-                          'komment_content': ('p', 'content'),
                           'kerdes': ('p', 'question')}
 
 # article_body_converter.py + tei_utils.py

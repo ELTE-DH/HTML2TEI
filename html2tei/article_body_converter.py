@@ -204,6 +204,10 @@ def correct_table_structure(article, bs, article_url, tei_logger):
         for row in tab.find_all('sor_valid'):
             if immediate_text(row) > 0:
                 complex_wrapping(bs, row, 'oszlop_valid', article_url, tei_logger)
+    for row in article.find_all('sor_valid'):
+        for main_subtree in row.find_all(recursive=False):
+            if main_subtree.name != 'oszlop_valid':
+                main_subtree.wrap(bs.new_tag('oszlop_valid'))
 
 
 def missing_root_replacement(bs, divname, rec, root_name, tab):
