@@ -44,7 +44,7 @@ def final_summarize_children_or_subtree(dates, out_files, tag_dict, tei_logger):
     print('frequency', 'tag', 'average_word_count', 'average_descendant_num', 'immediate_texts_average_length',
           'URL_example', 'normal_name', 'preserved_attribute', sep='\t', file=out_text_fh)
     print('frequency', 'tag', 'average_word_count', 'average_descendant_num', 'immediate_texts_average_length',
-          'URL_example', 'normal_name', 'preserved_attribute', sep='\t', file=out_text_fh)
+          'URL_example', 'normal_name', 'preserved_attribute', sep='\t', file=out_notext_fh)
     for root_name_attr, (freq, no_of_words, no_of_descendants, all_links, len_of_immediate_text) in tag_dict.items():
         random_links = random_sample(all_links, k=min(5, len(all_links)))
         example_links = ' '.join(random_links)
