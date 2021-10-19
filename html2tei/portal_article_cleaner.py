@@ -192,9 +192,9 @@ def merge_multipage_article_metadata(multipage_article):
             if isinstance(meta_values, datetime):
                 if meta_name == 'sch:datePublished':
                     min_pub = min(min_pub, meta_values)
-                    max_pub = max(min_pub, meta_values)
+                    max_pub = max(max_pub, meta_values)
                 elif meta_name == 'sch:dateModified':
-                    min_pub = max(max_mod, meta_values)
+                    max_mod = max(max_mod, meta_values)
             elif meta_name not in merged_meta_dict.keys():
                 merged_meta_dict[meta_name] = meta_values
             elif isinstance(meta_values, list):
@@ -209,7 +209,6 @@ def merge_multipage_article_metadata(multipage_article):
         merged_meta_dict['sch:dateModified'] = max_mod
     if 'sch:dateModified' not in merged_meta_dict.keys():
         merged_meta_dict['sch:dateModified'] = max_pub
-    print(merged_meta_dict)
     return merged_meta_dict, converted_body_dict, all_warc_datas_tup_for_note
 
 
