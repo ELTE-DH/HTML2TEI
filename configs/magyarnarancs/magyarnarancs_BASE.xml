@@ -93,7 +93,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2021-09-02 19:50:56.728409/2021-09-07 11:50:32.428843</sch:sdDatePublished>
+                    <sch:sdDatePublished>2021-09-02T19:50:56/2021-09-07T11:50:32</sch:sdDatePublished>
                     <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
                     <sch:identifier>d19a04e3-27cd-444a-8c6f-29e58d9aa3e2</sch:identifier> </rdf:Description>
