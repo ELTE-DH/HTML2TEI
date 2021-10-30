@@ -13,7 +13,7 @@ from html2tei.tei_utils import create_new_tag_with_string
 from html2tei.validate_hash_zip import init_output_writer
 from html2tei.processing_utils import run_single_process, run_multiple_process
 
-DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist'}
+DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist', 'sch:source'}
 
 
 def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents, multipage_warc_datas=None):
@@ -61,12 +61,13 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
 
     # Adding the writer in the code below because it should be in sourceDesc in the same way
     if 'sch:source' in meta_data.keys():
-        org_tag = beauty_xml.new_tag('orgName')
-        org_tag.string = meta_data['sch:source']
-        source_org_root = beauty_xml.new_tag('respStmt')
-        source_org_root.append(beauty_xml.new_tag('resp'))
-        source_org_root.append(org_tag)
-        file_title.append(source_org_root)
+        for one_source in meta_data['sch:source']:
+            org_tag = beauty_xml.new_tag('orgName')
+            org_tag.string = one_source
+            source_org_root = beauty_xml.new_tag('respStmt')
+            source_org_root.append(beauty_xml.new_tag('resp'))
+            source_org_root.append(org_tag)
+            file_title.append(source_org_root)
 
     # TEI <sourceDesc><bibl>
     sourcedesc = beauty_xml.find('sourceDesc')
