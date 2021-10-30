@@ -41,7 +41,7 @@
                     <orgName>ELTE-DH</orgName>
                     <ref type="url">http://elte-dh.hu/</ref>
                 </publisher>
-                <pubPlace>Budapest <ref type="url">http://www.geonames.org/3054643</ref>
+                <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref>
                 </pubPlace>
                 <date>2020</date>
                 <availability>
@@ -61,10 +61,7 @@
                         <ref type="url" source="https://abcug.hu/impresszum/">https://doi.org/10.5281/zenodo.3974489</ref>
                         <date when="2020-10-01"/>
                     </publisher>
-                    <pubPlace>
-                        Budapest
-                        <ref type="url">http://www.geonames.org/3054643</ref>
-                    </pubPlace>
+                    <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref></pubPlace>
                     <availability><p>Copyright © 2017 · Newslanc.com LLC. Minden jog fenntartva.</p>
                         <p><ref type="url" source="https://abcug.hu/impresszum/">https://doi.org/10.5281/zenodo.3974489</ref>
                             <date when="2020-10-01"/></p>
