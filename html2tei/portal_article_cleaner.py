@@ -13,7 +13,7 @@ from html2tei.tei_utils import create_new_tag_with_string
 from html2tei.validate_hash_zip import init_output_writer
 from html2tei.processing_utils import run_single_process, run_multiple_process
 
-DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist'}
+DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist', 'sch:source'}
 
 
 def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents, multipage_warc_datas=None):
@@ -61,12 +61,13 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
 
     # Adding the writer in the code below because it should be in sourceDesc in the same way
     if 'sch:source' in meta_data.keys():
-        org_tag = beauty_xml.new_tag('orgName')
-        org_tag.string = meta_data['sch:source']
-        source_org_root = beauty_xml.new_tag('respStmt')
-        source_org_root.append(beauty_xml.new_tag('resp'))
-        source_org_root.append(org_tag)
-        file_title.append(source_org_root)
+        for one_source in meta_data['sch:source']:
+            org_tag = beauty_xml.new_tag('orgName')
+            org_tag.string = one_source
+            source_org_root = beauty_xml.new_tag('respStmt')
+            source_org_root.append(beauty_xml.new_tag('resp'))
+            source_org_root.append(org_tag)
+            file_title.append(source_org_root)
 
     # TEI <sourceDesc><bibl>
     sourcedesc = beauty_xml.find('sourceDesc')
@@ -165,7 +166,7 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
         for url_k, (w_id, w_d) in multipage_warc_datas.items():
             note_p = beauty_xml.new_tag('p')
             create_new_tag_with_string(beauty_xml, url_k, 'ref', note_p)
-            create_new_tag_with_string(beauty_xml, w_id, 'idno', note_p)
+            create_new_tag_with_string(beauty_xml, w_id[1:-1], 'idno', note_p)
             create_new_tag_with_string(beauty_xml, w_d.isoformat(), 'date', note_p)
             note_tag.append(note_p)
         tei_change = beauty_xml.find('change', source=True)
@@ -184,9 +185,18 @@ def merge_multipage_article_metadata(multipage_article):
     # All metadata will be merged
     merged_meta_dict = {}
     meta_name_cache = defaultdict(set)
+    min_pub = datetime(MAXYEAR, 1, 1)
+    max_pub = datetime(MINYEAR, 1, 1)
+    max_mod = datetime(MINYEAR, 1, 1)
     for metas, *_ in multipage_article:
         for meta_name, meta_values in metas.items():
-            if meta_name not in merged_meta_dict.keys():
+            if isinstance(meta_values, datetime):
+                if meta_name == 'sch:datePublished':
+                    min_pub = min(min_pub, meta_values)
+                    max_pub = max(max_pub, meta_values)
+                elif meta_name == 'sch:dateModified':
+                    max_mod = max(max_mod, meta_values)
+            elif meta_name not in merged_meta_dict.keys():
                 merged_meta_dict[meta_name] = meta_values
             elif isinstance(meta_values, list):
                 valami = meta_name_cache[meta_name]
@@ -194,6 +204,12 @@ def merge_multipage_article_metadata(multipage_article):
                     if meta_value not in valami:
                         valami.add(meta_value)
                         merged_meta_dict[meta_name].append(meta_value)
+    if min_pub != datetime(MAXYEAR, 1, 1):
+        merged_meta_dict['sch:datePublished'] = min_pub
+    if max_mod != datetime(MINYEAR, 1, 1):
+        merged_meta_dict['sch:dateModified'] = max_mod
+    if 'sch:dateModified' not in merged_meta_dict.keys():
+        merged_meta_dict['sch:dateModified'] = max_pub
     return merged_meta_dict, converted_body_dict, all_warc_datas_tup_for_note
 
 
@@ -244,7 +260,6 @@ def process_article_clean(params):
         #  - Extra: All WARC data are collected for '<note>'-ing in TEI
         first_url, warc_response_datetime, warc_id, base_xml_string, metas_in_dict, converted_body, \
             all_warc_datas_tup_for_note = process_multipage_article(article_tup_list, process_article_and_spec_params)
-
     # Create TEI XML if the conversion was successful
     if metas_in_dict is not None and converted_body is not None:
         tei_data = tei_writer(warc_response_datetime, warc_id, base_xml_string, metas_in_dict, converted_body,
