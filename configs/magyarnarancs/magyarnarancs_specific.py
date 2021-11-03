@@ -50,10 +50,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             keywords_list = [t.text.strip() for t in tag_root.find_all('a')]
             if len(keywords_list) > 0:
                 data['sch:keywords'] = keywords_list
-            else:
-                tei_logger.log('WARNING', f'{url}: SUBJECT TAG NOT FOUND!')
         else:
-            tei_logger.log('WARNING', f'{url}: SUBJECT TAG NOT FOUND!')
+            tei_logger.log('WARNING', f'{url}: TAGS NOT FOUND!')
         return data
     else:
         tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
