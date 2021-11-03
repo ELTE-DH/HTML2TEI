@@ -12,8 +12,11 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'card-body'})]
 HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
                'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
+AUTH_SOURCE = {'narancs.hu', 'NARANCS.HU', 'MTI/narancs.hu', 'Narancs', 'MTI', 'narancsblog',
+               'Fizetett tartalom', 'rés a présen'}
 
-def get_meta_from_articles_spec(tei_logger, url, bs):
+
+def get_meta_from_articles_spec(tei_logger, url, bs, auth_source=AUTH_SOURCE):
     data = tei_defaultdict()
     data['sch:url'] = url
     meta_root = bs.find('div', class_='card-info')
@@ -41,11 +44,17 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         subtitle = bs.find('h3', class_='card-subtitle')
         if subtitle is not None:
             data['sch:alternateName'] = subtitle.text.strip()
-        author_list = [t.text.strip() for t in meta_root.find_all('span', class_='author-name')]
-        if len(author_list) > 0:
-            data['sch:author'] = author_list
+        author_list = [t.text.strip() for t in meta_root.find_all('span', class_='author-name') if
+                       t.text.strip() not in auth_source]
+        source_list = [t.text.strip() for t in meta_root.find_all('span', class_='author-name') if
+                       t.text.strip() in auth_source]
+        if len(author_list) > 0 or len(source_list) > 0:
+            if len(author_list) > 0:
+                data['sch:author'] = author_list
+            if len(source_list) > 0:
+                data['sch:source'] = source_list
         else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+            tei_logger.log('WARNING', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
         if tag_root is not None:
             keywords_list = [t.text.strip() for t in tag_root.find_all('a')]
             if len(keywords_list) > 0:
