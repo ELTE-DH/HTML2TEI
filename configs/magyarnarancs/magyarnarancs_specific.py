@@ -27,7 +27,26 @@ def get_meta_from_articles_spec(tei_logger, url, bs, auth_source=AUTH_SOURCE):
     meta_root = bs.find('div', class_='card-info')
     tag_root = bs.find('ul', class_='tags my-5')
     if meta_root is not None:
-        date_tag = meta_root.find_all('li')[-1]
+        # The portal does NOT store the dates consequently.
+        # The webpage uses different HTML structure for storing the date of the articles:
+        # - the articles coming from the offline version of MagyarNarancs, and
+        # - the online articles have different HTML structures to store the date metadata.
+        date_tag_list = meta_root.find_all('li')
+        # Checking for the articles coming from MagyarNarancs (offline version)
+        if '/lapszamok/' in str(date_tag_list):
+            if len(date_tag_list) == 2:
+                # Saving the relevant date_tag from the date_tag_list
+                date_tag = date_tag_list[0]
+            else:
+                # Checking for the author in the relevant element of the date_tag_list
+                if 'szerzo' in str(date_tag_list[1]):
+                    # Saving the relevant date_tag from the date_tag_list
+                    date_tag = date_tag_list[2]
+                else:
+                    # Saving the relevant date_tag from the date_tag_list
+                    date_tag = meta_root.find_all('li')[1]
+        else:
+            date_tag = meta_root.find_all('li')[-1]
         if date_tag is not None:
             date_text = date_tag.text.strip()
             if date_text is not None:
