@@ -60,7 +60,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs, auth_source=AUTH_SOURCE):
             if len(keywords_list) > 0:
                 data['sch:keywords'] = keywords_list
         else:
-            tei_logger.log('WARNING', f'{url}: TAGS NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
         return data
     else:
         tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
