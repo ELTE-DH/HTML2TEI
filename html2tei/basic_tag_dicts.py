@@ -41,8 +41,8 @@ BASIC_LINK_ATTRS = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_i
 BLOCK_RULES = {'idezet': {'rename': {'cimsor': 'felkover'},
                           'default': 'bekezdes',
                           'not_valid_inner_blocks': [],
-                          'not_valid_as_outer_for': ['idezet', 'doboz', 'kozvetites', 'galeria', 'kviz',
-                                                     'komment']},
+                          'not_valid_as_outer_for': ['idezet', 'doboz', 'kozvetites', 'galeria', 'kviz']},
+
                'doboz': {'rename': {
                    'oszlop': 'to_unwrap',
                    'sor': 'bekezdes',

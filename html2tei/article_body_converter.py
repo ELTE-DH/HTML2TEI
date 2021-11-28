@@ -182,6 +182,10 @@ def block_structure(article, bs, block_dict, article_url, tei_logger):
     for block_tag in article.find_all(BLOCKS_MINUS_CIMSOR):
         default_child_name = block_dict[block_tag.name]['default']
         complex_wrapping(bs, block_tag, default_child_name, article_url, tei_logger)
+    for a_list in article.find_all('lista'):
+        for list_root_child in a_list:
+            if list_root_child.name != 'listaelem':
+                list_root_child.wrap(bs.new_tag('listaelem'))
 
 
 def correct_table_structure(article, bs, article_url, tei_logger):
@@ -509,7 +513,6 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     article.name = 'article_body_root'
     for element in article(text=lambda text: isinstance(text, Comment)):
         element.extract()  # Delete the Comments
-
     # 1) Renaming based on manually evaluated tag table(dictionary)
     normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict, link_attrs, portal_url_prefix,
                                  portal_url_filter, article_url, tei_logger)
@@ -533,6 +536,7 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
 
     # 4) BLOCK specific RENAMING RULES
     block_specific_renaming(article, block_dict, article_url, tei_logger)
+
     # Decompose/unwrap
     decompose_all(article, 'to_decompose')
     unwrap_all(article, 'to_unwrap')

@@ -157,7 +157,8 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
         body.extend(article_body_contents)
     elif isinstance(article_body_contents, dict):
         for url, page_contents in article_body_contents.items():
-            div = beauty_xml.new_tag('div', source=url)
+            div = beauty_xml.new_tag('div')
+            div.attrs = {'source': url, 'type': 'page'}
             div.extend(page_contents)
             body.append(div)
     if multipage_warc_datas is not None:
