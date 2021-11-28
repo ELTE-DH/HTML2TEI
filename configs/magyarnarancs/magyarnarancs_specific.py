@@ -125,7 +125,8 @@ def decompose_spec(article_dec):
 
 
 BLACKLIST_SPEC = ['https://magyarnarancs.hu/film2/kinn-az orosz-vadonban-a-jegmezok-lova-national-geographic-83800',
-                  'https://magyarnarancs.hu/belpol/orban-merkel talalkozo-kiegyeznek-dontetlenben-93514']
+                  'https://magyarnarancs.hu/belpol/orban-merkel talalkozo-kiegyeznek-dontetlenben-93514',
+                  'https://magyarnarancs.hu/egotripp/-75067']
 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
