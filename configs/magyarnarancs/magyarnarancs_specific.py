@@ -21,7 +21,7 @@ SOURCE = ['narancs.hu', 'narancs. hu', 'narancs hu', 'narancs', 'narancs.', 'nar
           'Narancs.hu/MTI/OS', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom']
 
 
-def get_meta_from_articles_spec(tei_logger, url, bs, auth_source=AUTH_SOURCE):
+def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
     meta_root = bs.find('div', class_='card-info')
@@ -68,17 +68,17 @@ def get_meta_from_articles_spec(tei_logger, url, bs, auth_source=AUTH_SOURCE):
         subtitle = bs.find('h3', class_='card-subtitle')
         if subtitle is not None:
             data['sch:alternateName'] = subtitle.text.strip()
-        author_list = [t.text.strip() for t in meta_root.find_all('span', class_='author-name') if
-                       t.text.strip() not in auth_source]
-        source_list = [t.text.strip() for t in meta_root.find_all('span', class_='author-name') if
-                       t.text.strip() in auth_source]
+        author_or_source = [t.text.strip() for t in meta_root.find_all('span', class_='author-name')]
+        author_list, source_list = [], []
+        [source_list.append(creator) if creator in SOURCE else author_list.append(creator) for creator in
+         author_or_source]
         if len(author_list) > 0 or len(source_list) > 0:
             if len(author_list) > 0:
                 data['sch:author'] = author_list
             if len(source_list) > 0:
                 data['sch:source'] = source_list
         else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
         if tag_root is not None:
             keywords_list = [t.text.strip() for t in tag_root.find_all('a')]
             if len(keywords_list) > 0:
