@@ -101,8 +101,13 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS
-DECOMP = [(('div',), {'class': 'blockquote orange'}),
+DECOMP = [(('div',), {'class': 'banner-wrapper bgr mb-2 mt-2'}),
+          (('div',), {'class': 'blockquote orange'}),
+          (('div',), {'class': 'fb-like mb-4'}),
           (('div',), {'class': 'banner-wrapper'}),
+          (('h1',), {'class': 'card-title'}),
+          (('ul',), {'class': 'tags my-5'}),
+          (('div',), {'class': 'card-info'}),
           (('div',), {'class': 'share-box'}),
           (('div',), {'class': 'fb-like'}),
           (('div',), {'class': 'wrap'}),
