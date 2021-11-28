@@ -12,8 +12,13 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'card-body'})]
 HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
                'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
-AUTH_SOURCE = {'narancs.hu', 'narancs hu', 'narancs', 'narancsblog', 'MTI/narancs.hu', 'narancs.hu/MTI',
-               'narancs.hu-MTI', 'MTI', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom'}
+SOURCE = ['narancs.hu', 'narancs. hu', 'narancs hu', 'narancs', 'narancs.', 'narancs.h',
+          'Narancs', 'Narancsfül', 'narancsfül', 'narancsszem', 'Magyar Narancs', 'narancsblog', 'MTI/narancs.hu',
+          'Narancs.hu/MTI', 'narancs.hu/MTI', 'narancs.hu/M', 'Narancs.hu/MT', 'narancs.hu-MTI', 'MTI',
+          'Narancs-összeállítás', 'narancs.hu-összeállítás', 'narancs.hu/Markó Anita', 'szegeder.hu/narancs.hu',
+          'TASZ/narancs.hu', 'narancs.hu/Amnesty', 'narancs.hu/Telex', 'media1.hu/narancs.hu', 'narancs.hu/HVG',
+          'narancs.hu/Guardian', 'narancs.hu/Szabad ország', 'narancs.hu/MTA', 'Reuters/narancs.hu',
+          'Narancs.hu/MTI/OS', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs, auth_source=AUTH_SOURCE):
