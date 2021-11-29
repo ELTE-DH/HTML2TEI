@@ -19,7 +19,7 @@ SOURCE = ['narancs.hu', 'narancs. hu', 'narancs hu', 'narancs', 'narancs.', 'nar
           'TASZ/narancs.hu', 'narancs.hu/Amnesty', 'narancs.hu/Telex', 'media1.hu/narancs.hu', 'narancs.hu/HVG',
           'narancs.hu/Guardian', 'narancs.hu/Szabad ország', 'narancs.hu/MTA', 'Reuters/narancs.hu',
           'Narancs.hu/MTI/OS', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom',
-          'narancs.hu/Republikon', 'MTI/narancs', 'narancs hu.', 'MTI/Világgazdaság/narancs.hu']
+          'narancs.hu/Republikon', 'MTI/narancs', 'narancs hu.', 'MTI/Világgazdaság/narancs.hu', 'narancs.hu - B. T.']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
