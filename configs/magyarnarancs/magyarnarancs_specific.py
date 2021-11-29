@@ -18,7 +18,8 @@ SOURCE = ['narancs.hu', 'narancs. hu', 'narancs hu', 'narancs', 'narancs.', 'nar
           'Narancs-összeállítás', 'narancs.hu-összeállítás', 'narancs.hu/Markó Anita', 'szegeder.hu/narancs.hu',
           'TASZ/narancs.hu', 'narancs.hu/Amnesty', 'narancs.hu/Telex', 'media1.hu/narancs.hu', 'narancs.hu/HVG',
           'narancs.hu/Guardian', 'narancs.hu/Szabad ország', 'narancs.hu/MTA', 'Reuters/narancs.hu',
-          'Narancs.hu/MTI/OS', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom']
+          'Narancs.hu/MTI/OS', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom',
+          'narancs.hu/Republikon', 'MTI/narancs', 'narancs hu.', 'MTI/Világgazdaság/narancs.hu']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
@@ -87,7 +88,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
         return data
     else:
-        tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
+        tei_logger.log('WARNING', f'{url}: META ROOT NOT FOUND (UNKNOWN ARTICLE SCHEME)!')
         return None
 
 
