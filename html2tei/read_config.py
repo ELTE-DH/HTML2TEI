@@ -13,7 +13,7 @@ from webarticlecurator import Logger
 from yaml import load as yaml_load, SafeLoader
 
 from html2tei.basic_tag_dicts import BLOCK_RULES
-from html2tei.basic_schema_removal import get_pretty_tei_article, use_justext, use_newspaper
+from html2tei.basic_schema_removal import article_converter_factory, justext_factory, newspaper_factory
 
 # Only read_portalspec_config and read_input_config is used outside of this file
 
@@ -100,7 +100,7 @@ def import_python_file(module_name, file_path):
     return module
 
 
-WRITE_OUT_MODES = {'eltedh': get_pretty_tei_article, 'justext': use_justext, 'newspaper3k': use_newspaper}
+WRITE_OUT_MODES = {'eltedh': article_converter_factory, 'justext': justext_factory, 'newspaper3k': newspaper_factory}
 
 
 def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_dir, run_params=None,
@@ -165,10 +165,13 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         portal_xml_string = None
 
     write_out_mode = run_params.get('write_out_mode')
-    write_out_mode_fun = WRITE_OUT_MODES.get(write_out_mode)
-    if write_out_mode is not None and write_out_mode_fun is None:
+    write_out_mode_factory = WRITE_OUT_MODES.get(write_out_mode)
+    if write_out_mode is not None and write_out_mode_factory is None:
         tei_logger.log('CRITICAL', f'{write_out_mode} is not in the allowed value set ({set(WRITE_OUT_MODES.keys())})!')
         exit(1)
+
+    # Here we import optional libraries only if they are needed later
+    write_out_mode_fun = write_out_mode_factory()
 
     if write_out_mode is not None:
         tei_logger.log('INFO', f'Using {write_out_mode} write mode')

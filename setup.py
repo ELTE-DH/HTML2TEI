@@ -36,10 +36,13 @@ setuptools.setup(
         'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
         'Operating System :: POSIX :: Linux',
     ],
-    python_requires='>=3.6',
-    install_requires=['beautifulsoup4>=4.9.0,<5.0.0', 'justext>=2.2.0,<3.0.0', 'lxml>=4.5.0,<5.0.0',
-                      'newspaper3k>=0.2.8,<1.0.0', 'pyyaml>=5.3.0,<6.0.0', 'warcio>=1.7.0,<2.0.0',
-                      'webarticlecurator>=1.4.0,<2.0.0'],
+    python_requires='>=3.8',
+    install_requires=['beautifulsoup4>=4.9.0,<5.0.0', 'lxml>=4.5.0,<5.0.0', 'pyyaml>=5.3.0,<6.0.0',
+                      'warcio>=1.7.0,<2.0.0', 'webarticlecurator>=1.4.0,<2.0.0'],
+    # pip install html2tei[justext,newspaper3k]
+    extras_require={'justext': ['justext>=2.2.0,<3.0.0'],
+                    'newspaper3k': ['newspaper3k>=0.2.8,<1.0.0']
+                    },
     include_package_data=True,
     entry_points={
         'console_scripts': [

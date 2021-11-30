@@ -66,7 +66,7 @@ def main():
             p.add_argument(*args, **kwargs)
         spdict[cmd] = p
 
-    spdict['cleaner'].add_argument('-m', '--write-out-mode', type=str, choices=WRITE_OUT_MODES, default='eltedh',
+    spdict['cleaner'].add_argument('-m', '--write-out-mode', type=str, choices=WRITE_OUT_MODES.keys(), default='eltedh',
                                    help='The schema removal tool to use (ELTEDH, JusText, Newspaper3k)', metavar='MODE')
 
     spdict['cleaner'].add_argument('-t', '--task-name', type=str, default='Portal Article Cleaner',
