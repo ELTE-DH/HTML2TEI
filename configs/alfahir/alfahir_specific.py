@@ -124,6 +124,12 @@ DECOMP = [(('div',), {'class': 'field field-name-field-media-index-foto-video'})
 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 MEDIA_LIST = []
+MEDIA_LIST = [(('img',), {}),
+              (('iframe',), {}),
+              (('figure',), {}),
+              (('blockquote',), {'class': 'embedly-card'}),
+              (('div',), {'class': 'fb-page fb_iframe_widget'}),
+              (('div',), {'class': 'video-embed-field-provider-youtube video-embed-field-responsive-video form-group'})]
 
 
 def decompose_spec(article_dec):
