@@ -97,31 +97,30 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS
-DECOMP = [(('div',), {'class': 'article-footer'}),
-          (('script',), {}),
-          (('noscript',), {}),
-          (('div',), {'class': 'article-dates'}),
-          (('div',), {'class': 'field field-name-field-media-index-foto-video'}),
+DECOMP = [(('div',), {'class': 'field field-name-field-media-index-foto-video'}),
           (('div',), {'class': 'field field--name-dynamic-token-fieldnode-fb-buttons field--type-ds'
                                ' field--label-hidden field--item'}),
-          (('div',), {'class': 'article-content-authors'}),
           (('div',), {'class': 'field field--name-dynamic-copy-fieldnode-fb-buttons2 field--type-ds'
                                ' field--label-hidden field--item'}),
           (('div',), {'class': 'field field--name-dynamic-token-fieldnode-minute-html-hook'
                                ' field--type-ds field--label-hidden field--item'}),
           (('div',), {'class': 'field field--name-dynamic-block-fieldnode-legolvasottabbak'
                                ' field--type-ds field--label-above'}),
-          (('div',), {'class': 'group-left'}),
-          (('div',), {'class': 'group-header'}),
-          (('div',), {'class': 'group-footer'}),
-          (('h4',), {'class': 'esemeny-title'}),
-          (('ins',), {}),
           (('div',), {'class': 'advert_block advert_wrapper advert_mobile mobiladvert4'}),
           (('div',), {'class': 'advert_block advert_wrapper leaderboard2 advert_dektop'}),
-          (('section',), {}),
           (('div',), {'class': 'article-content-authors'}),
+          (('div',), {'class': 'article-footer'}),
+          (('div',), {'class': 'article-dates'}),
+          (('div',), {'class': 'group-header'}),
+          (('div',), {'class': 'group-footer'}),
+          (('div',), {'class': 'view-header'}),
+          (('div',), {'class': 'group-left'}),
           (('div',), {'class': 'fb-like'}),
-          (('div',), {'class': 'view-header'})]
+          (('h4',), {'class': 'esemeny-title'}),
+          (('noscript',), {}),
+          (('section',), {}),
+          (('script',), {}),
+          (('ins',), {})]
 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 MEDIA_LIST = []
