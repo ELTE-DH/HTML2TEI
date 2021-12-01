@@ -12,75 +12,67 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'wpb_wrapper'})]
 HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
                'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
-SECTION = 'roboraptor'
+SECTION_OR_SOURCE = 'roboraptor'
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
-
-    meta_root = bs.find('head')
-    if meta_root is not None:
-        date_tag = meta_root.find('meta', property='article:published_time')
-        if date_tag is None:
-            date_tag = meta_root.find('meta', itemprop='datePublished')  # for 'activity' type articles
-        if date_tag is not None:
-            parsed_date = parse_date(date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
-            if parsed_date is not None:
-                data['sch:datePublished'] = parsed_date
-            else:
-                tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
-        else:
-            tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
-
-        modified_date_tag = meta_root.find('meta', property='article:modified_time')
-        if modified_date_tag is not None:
-            parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
-            if parsed_moddate is not None:
-                data['sch:dateModified'] = parsed_moddate
-            else:
-                tei_logger.log('WARNING', f'{url}: MODIFIED DATE FORMAT ERROR!')
-        else:
-            tei_logger.log('DEBUG', f'{url}: MODIFIED DATE NOT FOUND IN URL!')
-
-        keywords = meta_root.find('meta', {'name': 'keywords', 'content': True})
-        if keywords is not None:
-            keywords_list = keywords['content'].split(',')
-            data['sch:keywords'] = keywords_list
-        else:
-            tei_logger.log('WARNING', f'{url}: KEYWORDS NOT FOUND!')
-    else:
-        tei_logger.log('WARNING', f'{url}: META ROOT NOT FOUND!')
-
     article_root = bs.find('div', class_='site-content')
-    if article_root is not None:
-        title = article_root.find('h1', class_='o-post__title')
-        if title is not None:
-            data['sch:name'] = title.text.strip()
+    if article_root is None:
+        tei_logger.log('WARNING', f'{url}: ARTICLE ROOT NOT FOUND/UNKNOWN ARTICLE SCHEME!')
+        return None
+    date_tag = bs.find('div', class_='m-author__wrapCatDateTitulus')
+    if date_tag is not None:
+        titulus = date_tag.find_all(['span', 'a'])
+        for not_date in titulus:
+            not_date.decompose()
+        parsed_date = parse_date(date_tag.text.strip(), '%Y. %m. %d. %H:%M')
+        if parsed_date is not None:
+            data['sch:datePublished'] = parsed_date
         else:
-            tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
-
-        author = article_root.find_all('a', class_='m-author__imgLink')
-        if len(author) > 0:
-            authors = [i.find('img', {'alt': True})['alt'] for i in author]
-            if SECTION in authors:
-                data['sch:source'] = [SECTION]
-                authors.remove(SECTION)
-                if len(authors) > 0:
-                    data['sch:author'] = authors
-            else:
-                data['sch:author'] = authors
-        else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-
-        section = article_root.find('a', id='post-cat-title')
-        if section is not None:
-            data['sch:articleSection'] = section.text.strip()
-        else:
-            tei_logger.log('DEBUG', f'{url}: SECTION TAG NOT FOUND!')
+            tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
     else:
-        tei_logger.log('WARNING', f'{url}: ARTICLE ROOT NOT FOUND!')
-
+        tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
+    modified_date_tag = bs.find('meta', property='article:modified_time')
+    if modified_date_tag is not None:
+        parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
+        if parsed_moddate is not None:
+            data['sch:dateModified'] = parsed_moddate
+        else:
+            tei_logger.log('WARNING', f'{url}: MODIFIED DATE FORMAT ERROR!')
+    else:
+        tei_logger.log('DEBUG', f'{url}: MODIFIED DATE NOT FOUND IN URL!')
+    keywords = bs.find('meta', {'name': 'keywords', 'content': True})
+    if keywords is not None:
+        keywords_list = keywords['content'].split(',')
+        data['sch:keywords'] = keywords_list
+    else:
+        tei_logger.log('DEBUG', f'{url}: KEYWORDS NOT FOUND!')
+    title = article_root.find('h1', class_='o-post__title')
+    if title is not None:
+        data['sch:name'] = title.text.strip()
+    else:
+        tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
+    author = article_root.find_all('a', class_='m-author__imgLink')
+    if len(author) > 0:
+        authors = []
+        for i in author:
+            author_tag = i.find('img', {'alt': True})
+            if author_tag is not None:
+                authors.append(author_tag['alt'])
+        if SECTION_OR_SOURCE in authors:
+            data['sch:source'] = [SECTION_OR_SOURCE]
+            authors.remove(SECTION_OR_SOURCE)
+        if len(authors) > 0:
+            data['sch:author'] = authors
+    else:
+        tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+    section = article_root.find('a', id='post-cat-title')
+    if section is not None:
+        data['sch:articleSection'] = section.text.strip()
+    else:
+        tei_logger.log('DEBUG', f'{url}: SECTION TAG NOT FOUND!')
     return data
 
 
