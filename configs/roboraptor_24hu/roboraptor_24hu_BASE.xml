@@ -78,7 +78,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://roboraptor.24.hu/">roboraptor.24.hu</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://roboraptor.24.hu/">24.hu - Roboraptor</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <!-- ide töltődik ki a cikkből kinyert többi meta -->
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
