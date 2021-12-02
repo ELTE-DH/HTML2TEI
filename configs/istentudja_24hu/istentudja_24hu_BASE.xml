@@ -78,7 +78,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://24.hu/isten-tudja/">24.hu/isten-tudja</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://24.hu/isten-tudja/">24.hu - Isten tudja</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <!-- ide töltődik ki a cikkből kinyert többi meta -->
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
