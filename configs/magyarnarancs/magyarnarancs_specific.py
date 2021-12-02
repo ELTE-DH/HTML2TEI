@@ -18,7 +18,9 @@ SOURCE = ['narancs.hu', 'narancs. hu', 'narancs hu', 'narancs', 'narancs.', 'nar
           'Narancs-összeállítás', 'narancs.hu-összeállítás', 'narancs.hu/Markó Anita', 'szegeder.hu/narancs.hu',
           'TASZ/narancs.hu', 'narancs.hu/Amnesty', 'narancs.hu/Telex', 'media1.hu/narancs.hu', 'narancs.hu/HVG',
           'narancs.hu/Guardian', 'narancs.hu/Szabad ország', 'narancs.hu/MTA', 'Reuters/narancs.hu',
-          'Narancs.hu/MTI/OS', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom']
+          'Narancs.hu/MTI/OS', 'narancs.hu/Police.hu', 'Police.hu', 'Fizetett tartalom',
+          'narancs.hu/Republikon', 'MTI/narancs', 'narancs hu.', 'MTI/Világgazdaság/narancs.hu', 'narancs.hu - B. T.',
+          'transindex.ro', 'MTI-OS', 'nrancs.hu']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
@@ -73,8 +75,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         [source_list.append(creator) if creator in SOURCE else author_list.append(creator) for creator in
          author_or_source]
         if len(author_list) > 0 or len(source_list) > 0:
+            author_list_corr = []
             if len(author_list) > 0:
-                data['sch:author'] = author_list
+                for auth in author_list:
+                    if ',' in auth:
+                        author_list_corr.extend(one_author.strip() for one_author in auth.split('\''))
+                    else:
+                        author_list_corr.append(auth)
+                data['sch:author'] = author_list_corr
             if len(source_list) > 0:
                 data['sch:source'] = source_list
         else:
@@ -87,7 +95,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
         return data
     else:
-        tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
+        tei_logger.log('WARNING', f'{url}: META ROOT NOT FOUND (UNKNOWN ARTICLE SCHEME)!')
         return None
 
 
