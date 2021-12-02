@@ -79,7 +79,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if len(author_list) > 0:
                 for auth in author_list:
                     if ',' in auth:
-                        print(url, auth)
                         author_list_corr.extend(one_author.strip() for one_author in auth.split('\''))
                     else:
                         author_list_corr.append(auth)
