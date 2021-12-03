@@ -1,4 +1,4 @@
-abcug-articles_new.warc.gz: abcug
+#abcug-articles_new.warc.gz: abcug
 #index_koronavirus-articles_new6.warc.gz: index_koronavirus
 #magyaridok-articles_new.warc.gz: magyaridok
 #mno-articles.warc.gz: mno
@@ -13,3 +13,7 @@ abcug-articles_new.warc.gz: abcug
 #utazomajom-articles.warc.gz: utazomajom
 #termvil-articles.warc.gz: termvil
 #rangado_24hu-articles_new2.warc.gz: rangado_24hu
+magyarnarancs-articles_new.warc.gz: magyarnarancs
+#hiradohu-articles_new2.warc.gz: hiradohu
+#istentudja_24hu-articles.warc.gz: istentudja_24hu
+#roboraptor_24hu-articles.warc.gz: roboraptor_24hu
