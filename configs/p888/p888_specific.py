@@ -21,14 +21,12 @@ SOURCE = ('MTI', ' MTI', 'Mti', 'mti', 'ATV', 'Magyar Nemzet', 'V4NA', 'Origo', 
           'szegedma.hu', 'Magyar Hírlap', 'Migrációkutató Intézet')
 
 # These are not evidently sourcenames, but are treated as such - also in the 888hu-articles_new.warc.gz articles
-# TODO the two groups can be joined together in future if distinction is not required
 SOURCE_SECONDARY = ('888.hu.', '888.hu ', '888.hu – V4NA', '888.hu-MTI', 'www.888.hu', '888; MTI', '888 ',
                     '888.hu MN', '888.huu', '888.hu - origo', '888.HU', '888.hu MTI', '888- MTI', ' 888', '888.h ',
                     '888. hu', '888.hu V4NA', '888.hu,MTI', '888.hu ; MTI', '888.hu Origo', '888-MTI', '888.hu (x)',
                     '888', '888.hu')
 
 
-# TODO changed all tei_logger functions to DEBUG except title
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
@@ -49,7 +47,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             else:
                 tei_logger.log('DEBUG', f'{url}: DATE TAG NOT FOUND!')
 
-            # ARTICLESECTION, KEYWORDS, and AUTHOR(S)
+            # ARTICLESECTION, KEYWORDS, AUTHOR(S), and NAME
             cikkholder_tag = article_main_content.find('div', {'id': 'cikkholder'})
             if cikkholder_tag is not None:
 
@@ -65,16 +63,17 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
                 # KEYWORDS
                 keyword_container_tag = cikkholder_tag.find('div', class_='text')
-                if keyword_container_tag is not None:
+                if keyword_container_tag is not None:  # there is duplication of 'a' tags without this level
                     keyword_attribute_tags = keyword_container_tag.find_all('a', {'rel': 'tag'})
                     if len(keyword_attribute_tags) > 0:
-                        # TODO get_tag used twice - may be extra work
                         keywords_list = [tag.get_text(strip=True) for tag in keyword_attribute_tags
                                          if tag.get_text(strip=True) is not None]
                         if len(keywords_list) > 0:
                             data['sch:keywords'] = keywords_list
                         else:
                             tei_logger.log('DEBUG', f'{url}: KEYWORD TAGS NOT FOUND!')
+                    else:
+                        tei_logger.log('DEBUG', f'{url}: KEYWORD CONTAINER TAG EMPTY!')
 
                 # AUTHOR(S)
                 note_block_tag = article_main_content.find('div', class_='note-block')
@@ -84,16 +83,17 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         if author_or_source in SOURCE or author_or_source in SOURCE_SECONDARY:
                             data["sch:source"] = [author_or_source]
                         else:
-                            # match any comma and space followed by either a single word, string starting with capital
-                            # letter or single word followed by comma
-                            split_list = re.split(",\s|/|\s-\s(?=\S+$|[A-Z]|\S+,)", author_or_source)
+                            # split by: ANY OF THESE ',-–' CHARACTERS FOLLOWED BY WHITESPACE '\s' AND NOT 'a ', 'az ',
+                            # 'A ' or 'Az '
+                            # TODO regex solution may be over complicated
+                            split_list = re.split("[,\-\–]\s(?!a\s|az\s|A\s|Az\s)", author_or_source)
                             if len(split_list) > 0 and split_list[0] != '':
                                 source_list, author_list = [], []
                                 for author in split_list:
                                     if author in SOURCE or author in SOURCE_SECONDARY:
-                                        source_list.append(author)
+                                        source_list.append(author.strip())
                                     else:
-                                        author_list.append(author)
+                                        author_list.append(author.strip())
                                 if len(author_list) > 0:
                                     data['sch:author'] = author_list
                                 if len(source_list) > 0:
@@ -101,8 +101,16 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
                     else:
                         tei_logger.log('DEBUG', f'{url}: AUTHOR TAG TEXT EMPTY!')
+
+                # NAME(title):
+                article_name_tag_text = cikkholder_tag.find('h1').get_text(strip=True)
+                if article_name_tag_text is not None:
+                    data['sch:name'] = article_name_tag_text
+                else:
+                    tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
+
             else:
-                tei_logger.log('DEBUG', f'{url}: AUTHOR-KEYWORDS-ARTICLESECTION TAG NOT FOUND!')
+                tei_logger.log('DEBUG', f'{url}: AUTHOR-KEYWORDS-ARTICLESECTION-NAME TAG NOT FOUND!')
 
         # DATEMODIFIED: <script type='application/ld+json'...
         meta_script_tag_text = bs.find('script', {'type': 'application/ld+json'}).get_text(strip=True)
@@ -118,12 +126,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             else:
                 tei_logger.log('DEBUG', f'{url}: MODIFICATION DATE NOT FOUND!')
 
-        # NAME(title): <meta property="og:title"></meta>
-        title_name_tag_text = bs.find('meta', {'property': 'og:title'})['content']  # TODO check if attribute exists?
-        if title_name_tag_text is not None:
-            data['sch:name'] = title_name_tag_text
-        else:
-            tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
+    else:
+        tei_logger.log('WARNING', f'{url}: UNKNOW ARTICLE SCHEMA!')
+        return None  # TODO should this just be data = None ?
 
     return data
 
@@ -132,13 +137,23 @@ def excluded_tags_spec(tag):
     if tag.name not in HTML_BASICS:
         tag.name = 'else'
     tag.attrs = {}
+
+    # TODO Add in production
+    """  
+    tag_attrs = tag.attrs
+    if tag.name == 'img' and 'data-id' in tag_attrs.keys():
+        tag_attrs['data-id'] = '@DATA-ID'
+    
+    if tag.name == 'span' and 'data-linkedarticle' in tag_attrs.keys():
+        tag_attrs['data-linkedarticle'] = '@DATA-LINKEDARTICLE'    
+    """
     return tag
 
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = {}
-DECOMP = []
+DECOMP = [(('div',), {'class': 'AdW'})]
 MEDIA_LIST = []
 
 
@@ -155,3 +170,16 @@ MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
 def next_page_of_article_spec(_):
     return None
+
+"""
+def decompose_spec(article_dec):
+    decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
+    for a in article_dec.find_all('a', {'name': True}):
+        if a.attrs['name'] in {'trackbacks', 'feedbacks', 'pingbacks', 'comments'}:
+            a.decompose()
+    for p in article_dec.find_all('p'):
+        if p.text.strip() == 'Kövesd a Határátkelőt az Instagrammon is!':
+            p.decompose()
+    return article_dec
+    
+"""
