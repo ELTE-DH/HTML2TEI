@@ -37,8 +37,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
 
-    data['sch:url'] = url
-
     body_newsfeed = bs.find('section', {'id': ['hirfolyam']})
 
     # AUTHOR(s)
