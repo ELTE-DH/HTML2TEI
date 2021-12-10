@@ -60,7 +60,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if author_list is not None:
                 data['sch:author'] = author_list
         else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
 
         if tag_root is not None:
             keywords_list = [t.text.strip() for t in tag_root.find_all('a')]
