@@ -153,7 +153,7 @@ def decompose_spec(article_dec):
     return article_dec
 
 
-BLACKLIST_SPEC = []
+BLACKLIST_SPEC = ['https://alfahir.hu/horthy_miklos_utcat_avatnak_kunhegyesen']
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
