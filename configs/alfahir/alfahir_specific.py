@@ -24,9 +24,21 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     author_root = bs.find('div', class_='field--items')
     tag_root = bs.find('div', class_='field field--name-field-tags'
                                      ' field--type-entity-reference field--label-hidden field--items')
+
     if article_root is not None:
         if percrol_root is not None:
-            pass    # TODO
+            perc_h4_title = bs.find_all('h4', class_='esemeny-title')
+            perc_h4_author_source = list(set(bs.find_all('h4')) - set(perc_h4_title))
+            if perc_h4_author_source is not None:
+                perc_author_source_list = list(dict.fromkeys([t.text.strip() for t in perc_h4_author_source]))
+                if perc_author_source_list is not None:
+                    perc_source_list = set(perc_author_source_list).intersection(SOURCE_LIST)
+                    data['sch:author'] = list(set(perc_author_source_list) - set(perc_source_list))
+                    if len(perc_source_list) > 0:
+                        data['sch:source'] = perc_source_list
+                        print(f"  perc_source: {perc_source_list}")
+            else:
+                tei_logger.log('WARNING', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
 
         date_tag = bs.find('div', class_='article-dates')
         if date_tag is not None:
