@@ -88,8 +88,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 else:
                     source_in_text_3 = article_root.find('div', class_='field field--name-body field--type-text-with-'
                                                                        'summary field--label-hidden field--item')
-                    if source_in_text_3 is not None and len(article_root.find_all('p')) > 0:
+                    if source_in_text_3 is not None and len(article_root.find_all('p')) == 3:
                         source_in_text_4 = article_root.find_all('p')[-2].text.strip()
+                        if len(source_in_text_4) < 40:
+                            data['sch:source'] = source_in_text_4.strip()
+                    elif source_in_text_3 is not None and 0 < len(article_root.find_all('p')) < 3:
+                        source_in_text_4 = article_root.find_all('p')[-1].text.strip()
                         if len(source_in_text_4) < 40:
                             data['sch:source'] = source_in_text_4.strip()
             else:
