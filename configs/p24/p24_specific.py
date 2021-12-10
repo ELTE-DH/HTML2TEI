@@ -159,11 +159,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     return data
 
 
-def excluded_tags_spec(tag):  # TODO commented out for running html2tei functions
-    # if tag.name not in HTML_BASICS:
-    #     tag.name = 'else'
-    # tag.attrs = {}
-
+def excluded_tags_spec(tag):
+    if tag.name not in HTML_BASICS:
+        tag.name = 'else'
+    tag.attrs = {}
     return tag
 
 
