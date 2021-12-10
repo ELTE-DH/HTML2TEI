@@ -59,13 +59,18 @@
                     <publisher><orgName>Kiegyensúlyozott Médiáért Alapítvány</orgName>
                         <placeName>1134 Budapest, Rózsafa utca 13-17.</placeName>
                         <ref type="url" source="https://alfahir.hu/impresszum"><!--KITÖLT https://doi.org/--></ref>
-                        <date when="2021-09-07"/><!--KITÖLT: impresszum letöltésének dátuma -->
+                        <date when="2021-09-07"/>
                     </publisher>
                     <pubPlace>
                         Budapest
                         <ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
-                    <availability><p><!--KITÖLT: portálra vonatkozó copyright , pl: Copyright © 2017 · Newslanc.com LLC. Minden jog fenntartva.--></p>
+                    <availability>
+                        <p>Az alfahir.hu tulajdonát képező írások, videók, és hanganyagok eredeti formában,
+                            forrásmegjelöléssel szabadon átvehetőek. A portálon megjelenő képek csak az eredeti
+                            cikkekkel és egyéb írásokkal együtt vehetőek át, azoknak bármilyen egyéb felhasználáshoz a
+                            kiadó vagy a szerző előzetes engedélye szükséges.
+                        </p>
                         <p>
                             <ref type="url" source="https://alfahir.hu/impresszum"><!--KITÖLT https://doi.org/--></ref>
                             <date when="2021-09-07"/>
