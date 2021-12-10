@@ -137,3 +137,5 @@ dmypy.json
 # *.txt
 tei_maker_output
 preparatory_output
+/warc2portalname.yaml
+TESZT
