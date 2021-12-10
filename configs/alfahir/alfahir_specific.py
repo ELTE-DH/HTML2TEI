@@ -36,7 +36,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     data['sch:author'] = list(set(perc_author_source_list) - set(perc_source_list))
                     if len(perc_source_list) > 0:
                         data['sch:source'] = perc_source_list
-                        print(f"  perc_source: {perc_source_list}")
             else:
                 tei_logger.log('WARNING', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
 
