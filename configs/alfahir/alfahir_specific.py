@@ -56,7 +56,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if len(keywords_list) > 0:
                 data['sch:keywords'] = keywords_list
         else:
-            tei_logger.log('WARNING', f'{url}: TAGS NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
 
         source_in_text_1 = article_root.find(
             'div', class_='field field--name-field-forras field--type-string field--label-inline')
