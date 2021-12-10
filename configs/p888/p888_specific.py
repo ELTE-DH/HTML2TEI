@@ -30,10 +30,8 @@ SOURCE_SECONDARY = ('888.hu.', '888.hu ', '888.hu – V4NA', '888.hu-MTI', 'www.
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
-
-    article_root = bs.find('div', class_='maincontent8')    # használata opcionális
+    article_root = bs.find('div', class_='maincontent8')
     if article_root is not None:
-
         # DATE: <p>2021.11.29. 13:10</p>
         article_main_content = bs.find('div', class_='main-content')
         if article_main_content is not None:
@@ -98,7 +96,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                                     data['sch:author'] = author_list
                                 if len(source_list) > 0:
                                     data['sch:source'] = source_list
-
                     else:
                         tei_logger.log('DEBUG', f'{url}: AUTHOR TAG TEXT EMPTY!')
 
@@ -128,7 +125,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     else:
         tei_logger.log('WARNING', f'{url}: UNKNOW ARTICLE SCHEMA!')
-        return None  # TODO should this just be data = None ?
+        return None
 
     return data
 
@@ -137,17 +134,17 @@ def excluded_tags_spec(tag):
     if tag.name not in HTML_BASICS:
         tag.name = 'else'
     tag.attrs = {}
-
-    # TODO Add in production
-    """  
-    tag_attrs = tag.attrs
-    if tag.name == 'img' and 'data-id' in tag_attrs.keys():
-        tag_attrs['data-id'] = '@DATA-ID'
-    
-    if tag.name == 'span' and 'data-linkedarticle' in tag_attrs.keys():
-        tag_attrs['data-linkedarticle'] = '@DATA-LINKEDARTICLE'    
-    """
     return tag
+
+
+# for more precised tag normalization/generate real tag-inventory or tag-tree use this:
+# def excluded_tags_spec(tag):
+    # tag_attrs = tag.attrs
+    # if tag.name == 'img' and 'data-id' in tag_attrs.keys():
+    #    tag_attrs['data-id'] = '@DATA-ID'
+    # if tag.name == 'span' and 'data-linkedarticle' in tag_attrs.keys():
+    #    tag_attrs['data-linkedarticle'] = '@DATA-LINKEDARTICLE'
+    # return tag
 
 
 BLOCK_RULES_SPEC = {}
@@ -170,16 +167,3 @@ MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
 def next_page_of_article_spec(_):
     return None
-
-"""
-def decompose_spec(article_dec):
-    decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
-    for a in article_dec.find_all('a', {'name': True}):
-        if a.attrs['name'] in {'trackbacks', 'feedbacks', 'pingbacks', 'comments'}:
-            a.decompose()
-    for p in article_dec.find_all('p'):
-        if p.text.strip() == 'Kövesd a Határátkelőt az Instagrammon is!':
-            p.decompose()
-    return article_dec
-    
-"""
