@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title></title>
+            </titleStmt>
+            <editionStmt>
+                <edition>ELTE-DH webcrawling</edition>
+                <respStmt>
+                    <resp>creator</resp>
+                    <orgName>ELTE-DH<ref type="http://elte-dh.hu"/>
+                    </orgName>
+                </respStmt>
+                <respStmt>
+                    <resp>project director</resp>
+                    <persName><surname>Palkó</surname><forename>Gábor</forename>
+                        <ref>https://orcid.org/0000-0002-4394-8577</ref></persName>
+                </respStmt>
+                <respStmt>
+                    <resp>chief programmer</resp>
+                    <persName><surname>Indig</surname><forename>Balázs</forename>
+                        <ref>https://orcid.org/0000-0001-8090-3661</ref></persName>
+                </respStmt>
+                <respStmt>
+                    <resp>TEI expert</resp>
+                    <persName><surname>Fellegi</surname><forename>Zsófia</forename>
+                        <ref>https://orcid.org/0000-0001-9199-1759</ref></persName>
+                </respStmt>
+                <respStmt>
+                    <resp>programmer</resp>
+                    <persName><surname>Sárközi-Lindner</surname><forename>Zsófia</forename>
+                        <ref>https://orcid.org/0000-0002-2558-0633</ref></persName>
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>
+                    <orgName>ELTE-DH</orgName>
+                    <ref type="url">http://elte-dh.hu/</ref>
+                </publisher>
+                <pubPlace>Budapest <ref type="url">http://www.geonames.org/3054643</ref>
+                </pubPlace>
+                <date>2020</date>
+                <availability>
+                    <p>Metadata: IN COPYRIGHT - NON-COMMERCIAL USE PERMITTED<ref type="url"
+                        >http://rightsstatements.org/vocab/InC-NC/1.0/</ref></p>
+                    <p>Text: IN COPYRIGHT <ref type="url"
+                        >http://rightsstatements.org/vocab/InC/1.0/</ref>
+                    </p>
+                </availability>
+                <idno type="PID"></idno>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>
+                    <title></title>
+                    <publisher><orgName>Kiegyensúlyozott Médiáért Alapítvány</orgName>
+                        <placeName>1134 Budapest, Rózsafa utca 13-17.</placeName>
+                        <ref type="url" source="https://alfahir.hu/impresszum"><!--KITÖLT https://doi.org/--></ref>
+                        <date when="2021-09-07"/>
+                    </publisher>
+                    <pubPlace>
+                        Budapest
+                        <ref type="url">http://www.geonames.org/3054643</ref>
+                    </pubPlace>
+                    <availability>
+                        <p>Az alfahir.hu tulajdonát képező írások, videók, és hanganyagok eredeti formában,
+                            forrásmegjelöléssel szabadon átvehetőek. A portálon megjelenő képek csak az eredeti
+                            cikkekkel és egyéb írásokkal együtt vehetőek át, azoknak bármilyen egyéb felhasználáshoz a
+                            kiadó vagy a szerző előzetes engedélye szükséges.
+                        </p>
+                        <p>
+                            <ref type="url" source="https://alfahir.hu/impresszum"><!--KITÖLT https://doi.org/--></ref>
+                            <date when="2021-09-07"/>
+                        </p>
+                    </availability>
+                    <date></date>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:sch="https://schema.org" xmlns:skos="http://www.w3.org/2008/05/skos-xl#">
+            <rdf:RDF>
+                <rdf:Description rdf:about="">
+                    <sch:type rdf:resource="https://schema.org/NewsArticle"/>
+                    <sch:ispartOf rdf:resource="https://alfahir.hu/">alfahir</sch:ispartOf>
+                    <sch:inLanguage>hun</sch:inLanguage>
+                    <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
+                </rdf:Description>
+            </rdf:RDF>
+        </xenoData>
+        <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:sch="https://schema.org">
+            <rdf:RDF>
+                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                    <sch:type>WARC/1.1</sch:type>
+                    <sch:sdDatePublished>2021-09-02T19:50:01/2021-09-06T18:02:46</sch:sdDatePublished>
+                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
+                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier>33acc585-f2bb-4543-82db-5596514c224d</sch:identifier> </rdf:Description>
+            </rdf:RDF>
+        </xenoData>
+        <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:sch="https://schema.org">
+            <rdf:RDF>
+                <rdf:Description rdf:about="teiPid">
+                    <sch:identifier></sch:identifier>
+                    <sch:type>TEI</sch:type>
+                    <sch:sdDatePublished></sch:sdDatePublished>
+                    <sch:lastReviewed></sch:lastReviewed>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-4394-8577">Palkó Gábor</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
+                    <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
+                </rdf:Description>
+            </rdf:RDF>
+        </xenoData>
+        <revisionDesc>
+            <change source="teiPID">TEI file created</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+        </body>
+    </text>
+</TEI>
