@@ -78,13 +78,13 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if len(list(date.children)) == 1:
             date_text = date.get_text(strip=True)
             if date_text is not None:
-                data['sch:DatePublished'] = parse_date(date_text, '%Y. %m. %d. %H:%M')
+                data['sch:datePublished'] = parse_date(date_text, '%Y. %m. %d. %H:%M')
 
         # In newsfeed formats and select articles, the date tag includes other tags such as date modified
         elif len(list(date.children)) > 1:
             date_created = date.find('span', {'class': "m-author__catDateTitulusCreateDate"}).get_text(strip=True)
             if date_created is not None:
-                data['sch:DatePublished'] = parse_date(date_created, '%Y. %m. %d. %H:%M')
+                data['sch:datePublished'] = parse_date(date_created, '%Y. %m. %d. %H:%M')
 
         else:
             tei_logger.log('WARNING', f'{url}: DATE PUBLISHED TAG NOT FOUND!')
@@ -99,7 +99,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         date_modified = date_modified_tag['content']
         if date_modified is not None:
             p_date = parse_date(date_modified.strip(), '%Y-%m-%dT%H:%M:%SZ')
-            data['sch:DateModified'] = p_date
+            data['sch:dateModified'] = p_date
         else:
             tei_logger.log('WARNING', f'{url}: DATE MODIFIED TAG NOT FOUND!')
 

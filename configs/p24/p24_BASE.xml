@@ -59,7 +59,7 @@
                     <publisher><orgName>Central Médiacsoport Zrt.</orgName>
                         <placeName>1037 Budapest, Montevideo u. 9.</placeName>
                         <ref type="url" source="https://24.hu/impresszum/"><!--KITÖLT source="impresszum url-je", literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo. --></ref>
-                        <!--<date when=""/>KITÖLT: impresszum letöltésének dátuma -->
+                        <date when="2021-12-08"/>
                     </publisher>
                     <pubPlace>
                         Budapest
