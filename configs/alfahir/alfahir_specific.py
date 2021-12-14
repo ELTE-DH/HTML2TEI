@@ -94,7 +94,11 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if date_modified_tag is not None:
                 date_text = date_modified_tag.get_text(strip=True)
                 if date_text is not None:
-                    data['sch:dateModified'] = parse_date(date_text.replace(' |', ''), '%Y. %B %d. %H:%M')
+                    parsed_data = parse_date(date_text.replace(' |', '').replace('Frissítve', ''), '%Y. %B %d. %H:%M')
+                    if parsed_data is not None:
+                        data['sch:dateModified'] = parsed_data
+                    else:
+                        tei_logger.log('WARNING', f'{url}: AUTHOR TAGS NOT FOUND!')
 
             # DATE PUBLISHED
             date_tag = bs.find('div', class_='field field--name-node-post-date '
