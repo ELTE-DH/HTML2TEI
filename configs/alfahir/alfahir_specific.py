@@ -265,7 +265,7 @@ def decompose_spec(article_dec):
 
 
 BLACKLIST_SPEC = [url.strip() for url in
-                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'valasz_BLACKLIST.txt')).readlines()]
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'alfahir_BLACKLIST.txt')).readlines()]
 # 'https://alfahir.hu/horthy_miklos_utcat_avatnak_kunhegyesen']
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
