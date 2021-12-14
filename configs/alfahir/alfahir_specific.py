@@ -2,7 +2,7 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
-
+from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://alfahir.hu'
@@ -205,6 +205,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             return data
 
         elif root_pattern == content_root_patterns[-1]:  # age_verification
+            # TODO: kill this 'elif
             root_found = True
             tei_logger.log('DEBUG', f'{url}: AGE VERIFICATION BLOCK!')
 
@@ -263,7 +264,9 @@ def decompose_spec(article_dec):
     return article_dec
 
 
-BLACKLIST_SPEC = ['https://alfahir.hu/horthy_miklos_utcat_avatnak_kunhegyesen']
+BLACKLIST_SPEC = [url.strip() for url in
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'valasz_BLACKLIST.txt')).readlines()]
+# 'https://alfahir.hu/horthy_miklos_utcat_avatnak_kunhegyesen']
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
