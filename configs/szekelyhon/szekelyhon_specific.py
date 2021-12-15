@@ -25,7 +25,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     date_and_author = article_root.find('div', class_='author')
     dates_and_author_parts = [date_part.strip() for date_part in date_and_author.text
-        .replace('\n\n\t\t\t\t\t\t', '&bullet;').split('&bullet;')]
+                                        .replace('\n\n\t\t\t\t\t\t', '&bullet;').split('&bullet;')]
     if len(dates_and_author_parts) > 0:
         parsed_date = parse_date(dates_and_author_parts[1], '%Y. %B %d., %H:%M')
         if parsed_date is not None:
@@ -93,6 +93,8 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = []
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
+
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 
 def next_page_of_article_spec(_):
