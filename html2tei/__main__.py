@@ -113,9 +113,9 @@ def main():
 
     args = vars(parent_parser.parse_args())
 
-    common_args = [args.pop(key) for key in common_params.keys()]
     command = args.pop('command')
     if command in command_dict:
+        common_args = [args.pop(key) for key in common_params.keys()]
         run_main(*common_args[:-1], command_dict[command][0], args, logfile_level=common_args[-1],
                  console_level=common_args[-1])
     elif command == 'diff-tables':
