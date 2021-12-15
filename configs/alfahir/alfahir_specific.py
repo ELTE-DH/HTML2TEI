@@ -12,6 +12,7 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'region region-content'})]
 HTML_BASICS = {'p', 'h2', 'h3', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
                'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
+# List of source formats with over 2 occurences in alfahir-articles_new2.warc.gz
 SOURCE_LIST = ['Alfahír', 'police.hu', 'Index.hu', '444.hu', 'BBC', 'mti - barikad.hu', 'MTI', 'police.hu - alfahir.hu',
                'N1TV', 'MTI nyomán alfahir.hu', 'nol.hu - alfahir.hu', 'Index - alfahir.hu', 'blikk.hu - alfahir.hu',
                'MTI nyomán – barikad.hu', 'MTI nyomán - barikad.hu', 'police.hu – alfahir.hu', 'index.hu - alfahir.hu',
@@ -34,8 +35,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                              ('div', {'class': 'riport-content'}),  # riport_root
                              ('div', {'class': 'views-infinite-scroll-content-wrapper clearfix form-group'}),  # newsfee
                              ('div', {'class': ['view-minute-by-minute-event-list']}),  # event_list
-                             ('div', {'class': 'field field-name-field-image'}),  # slideshow
-                             ('form', {'id': 'age-verification-form'})  # age_verification_form
+                             ('div', {'class': 'field field-name-field-image'})  # slideshow
                              ]
 
     root_found = False  # Might be bad design, added for root not found logging at the end
@@ -50,21 +50,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             # Newsfeed format
             percrol_root = bs.find('div', class_='group-right')
 
-            # TODO deleted this
-            # if percrol_root is not None:
-            #     perc_h4_title = bs.find_all('h4', class_='esemeny-title')
-            #     perc_h4_author_source = list(set(bs.find_all('h4')) - set(perc_h4_title))
-            #     if perc_h4_author_source is not None:
-            #         perc_author_source_list = list(dict.fromkeys([t.text.strip() for t in perc_h4_author_source]))
-            #         if perc_author_source_list is not None:
-            #             perc_source_list = set(perc_author_source_list).intersection(SOURCE_LIST)
-            #             data['sch:author'] = list(set(perc_author_source_list) - set(perc_source_list))
-            #             if len(perc_source_list) > 0:
-            #                 data['sch:source'] = perc_source_list
-            #     else:
-            #         tei_logger.log('WARNING', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
-
-            # TODO Changed it to >>>
             if percrol_root is not None:
                 # see: https://alfahir.hu/2021/09/29/ellenzeki_elovalasztas_ellenzeki_
                 # partok_dobrev_klara_karacsony_gergely_markizay_peter?page=13
@@ -87,7 +72,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         tei_logger.log('DEBUG', f'{url}: AUTHOR TAGS NOT FOUND!')
                 else:
                     tei_logger.log('DEBUG', f'{url}: AUTHOR TAGS NOT FOUND!')
-            # TODO <<< this.
 
             # DATE MODIFIED - did not add logging as most articles do not have modification date
             date_modified_tag = bs.find('div', {'class': 'field field-name-field-frissitve'})
@@ -98,13 +82,13 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     if parsed_data is not None:
                         data['sch:dateModified'] = parsed_data
                     else:
-                        tei_logger.log('WARNING', f'{url}: AUTHOR TAGS NOT FOUND!')
+                        tei_logger.log('WARNING', f'{url}: DATE MODIFIED FORMAT ERROR FAILED TO PARSE!')
 
             # DATE PUBLISHED
             date_tag = bs.find('div', class_='field field--name-node-post-date '
                                              'field--type-ds field--label-hidden field--item')
             if date_tag is not None:
-                date_text = date_tag.text.strip()
+                date_text = date_tag.get_text(strip=True)
                 if date_text is not None:
                     data['sch:datePublished'] = parse_date(date_text.replace(' |', ''), '%Y. %B %d. %H:%M')
                 else:
@@ -113,7 +97,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 tei_logger.log('WARNING', f'{url}: DATE TAG NOT FOUND!')
 
             # AUTHOR and TITLE
-
             if root_pattern == ('div', {'class': 'riport-content'}):  # riport_root reports have different author tags
 
                 # riport author
@@ -124,7 +107,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     if len(authors) > 0:
                         data['sch:author'] = authors
                     else:
-                        tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
+                        tei_logger.log('WARNING', f'{url}: AUTHOR TAG EMPTY!')
+                else:
+                    tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
 
                 # riport title
                 title_root = bs.find('div', {'class': 'field field-name-node-title'})
@@ -135,49 +120,65 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         if title_text is not None:
                             data['sch:name'] = title_text
                         else:
-                            tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
+                            tei_logger.log('WARNING', f'{url}: TITLE TEXT NOT FOUND!')
+                    else:
+                        tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
+                else:
+                    tei_logger.log('WARNING', f'{url}: TITLE ROOT NOT FOUND!')
 
             else:
                 # rest author
-                author_root = bs.find('div', class_='field--items')
+                author_root = bs.find('div', class_='field--name-field-authors')
                 if author_root is not None:
                     author_list = [t.get_text(strip=True) for t in author_root.find_all('h4')
                                    if t.get_text(strip=True) is not None]
                     if len(author_list) > 0:
                         data['sch:author'] = author_list
+                    else:
+                        tei_logger.log('WARNING', f'{url}: AUTHOR TAG EMPTY!')
                 else:
                     tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
 
                 # rest title
                 title = bs.find('h1', class_='page-title')
                 if title is not None:
-                    data['sch:name'] = title.text.strip()
+                    title_text = title.get_text(strip=True)
+                    if title_text is not None:
+                        data['sch:name'] = title_text
+                    else:
+                        tei_logger.log('WARNING', f'{url}: TITLE TEXT NOT FOUND!')
                 else:
                     tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
 
             tag_root = bs.find('div', class_='field field--name-field-tags'
                                              ' field--type-entity-reference field--label-hidden field--items')
             if tag_root is not None:
-                keywords_list = [t.text.strip() for t in tag_root.find_all('a')]
+                keywords_list = [t.get_text(strip=True) for t in tag_root.find_all('a')
+                                 if t.get_text(strip=True) is not None]
+
                 if len(keywords_list) > 0:
                     data['sch:keywords'] = keywords_list
             else:
                 tei_logger.log('DEBUG', f'{url}: KEYWORD TAGS NOT FOUND!')
 
             # SOURCE
-            # Some text articles have a source at the end
+            # Some text articles indicate source at the end
             # see: https://alfahir.hu/szaud_arabia_elhozta_a_poklot
+
+            # Sometimes explicitly
             source_in_text_tag = article_root.find(
                 'div', class_='field field--name-field-forras field--type-string field--label-inline')
             if source_in_text_tag is not None:
                 source_in_text_tag_text = source_in_text_tag.find('div', class_='field--item').get_text(strip=True)
                 if source_in_text_tag_text is not None:
                     data['sch:source'] = source_in_text_tag_text
+
+            # Sometimes implicitly inserted into a <p> tag
             else:
                 source_text = None
                 root_all_p = article_root.find_all('p')
                 if len(root_all_p) > 0:
-                    source_in_text_2 = root_all_p[-1].text.strip()
+                    source_in_text_2 = root_all_p[-1].get_text(strip=True)
                     if len(source_in_text_2) > 0:
                         if source_in_text_2[0] == '(' and source_in_text_2[-1] == ')':
                             source_text = source_in_text_2[1:-1]
@@ -190,24 +191,19 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                                                                     'summary field--label-hidden field--item')
 
                         if source_in_text_3 is not None and len(root_all_p) == 3:
-                            source_in_text_4 = root_all_p[-2].text.strip()
+                            source_in_text_4 = root_all_p[-2].get_text(strip=True)
                             if len(source_in_text_4) < 40:
                                 source_text = source_in_text_4.strip()
                         elif source_in_text_3 is not None and 0 < len(root_all_p) < 3:
-                            source_in_text_4 = root_all_p[-1].text.strip()
+                            source_in_text_4 = root_all_p[-1].get_text(strip=True)
                             if len(source_in_text_4) < 40:
                                 source_text = source_in_text_4.strip()
-                    if source_text in SOURCE_LIST:
+                    if source_text in SOURCE_LIST:  # Above code allows minimal mistakes - invalid sources are filtered
                         data['sch:source'] = source_text
                 else:
                     tei_logger.log('DEBUG', f'{url}: SOURCE TAG NOT FOUND!')
 
             return data
-
-        elif root_pattern == content_root_patterns[-1]:  # age_verification
-            # TODO: kill this 'elif
-            root_found = True
-            tei_logger.log('DEBUG', f'{url}: AGE VERIFICATION BLOCK!')
 
     if root_found is False:
         tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
