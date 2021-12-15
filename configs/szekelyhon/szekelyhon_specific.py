@@ -2,6 +2,7 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
+from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
@@ -90,7 +91,8 @@ def decompose_spec(article_dec):
     return article_dec
 
 
-BLACKLIST_SPEC = []
+BLACKLIST_SPEC = [url.strip() for url in
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'szekelyhon_BLACKLIST.txt')).readlines()]
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
