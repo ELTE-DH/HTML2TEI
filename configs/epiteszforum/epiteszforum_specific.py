@@ -5,7 +5,7 @@ import re
 
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
-PORTAL_URL_PREFIX = 'http://epiteszforum.hu'
+PORTAL_URL_PREFIX = 'https://epiteszforum.hu'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'rightGap'}),
                             (('div',), {'class': 'galleryArticle'})]
