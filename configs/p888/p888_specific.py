@@ -137,6 +137,8 @@ def excluded_tags_spec(tag):
         tag_attrs['data-id'] = '@DATA-ID'
     if tag.name == 'span' and 'data-linkedarticle' in tag_attrs.keys():
         tag_attrs['data-linkedarticle'] = '@DATA-LINKEDARTICLE'
+    if tag.name == 'span' and 'title' in tag_attrs.keys():
+        tag_attrs['title'] = '@title'
     return tag
 
 
@@ -144,7 +146,9 @@ BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = {}
 DECOMP = [(('div',), {'class': 'AdW'})]
-MEDIA_LIST = []
+MEDIA_LIST = [(('blockquote',), {'class': 'instagram-media'}),
+              (('blockquote',), {'class': 'imgur-embed-pub'}),
+              (('blockquote',), {'class': 'twitter-tweet'})]
 
 
 def decompose_spec(article_dec):
