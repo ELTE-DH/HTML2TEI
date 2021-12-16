@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
-# article_body_converter.py + tei_utils.py
+# eltedh_abc.py + tei_utils.py
 INLINE_TAGS = {'felkover', 'dolt', 'kiemelt', 'hivatkozas', 'alahuzott', 'athuzott', 'felsoindex', 'alsoindex',
                'inline_idezet', 'hi', 'ref'}
-# article_body_converter.py
+# eltedh_abc.py
 HI_TAGS = INLINE_TAGS.difference({'media_hivatkozas', 'hivatkozas'})
 
-# article_body_converter.py
+# eltedh_abc.py
 PARAGRAPH_LIKE_TAGS = {'bekezdes', 'cimsor', 'forras', 'kerdes',
                        'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo',
                        'komment_meta', 'komment_ido', 'komment_szerzo'}
 
-# article_body_converter.py
+# eltedh_abc.py
 BLOCKS = {'doboz', 'vez_bekezdes', 'lista', 'idezet', 'table_text', 'kozvetites', 'galeria', 'kviz', 'komment'}
-# article_body_converter.py
+# eltedh_abc.py
 TEMPORARILY_USED_TAGS = {'media_hivatkozas', 'hivatkozas'}
-# article_body_converter.py
+# eltedh_abc.py
 USED_NOTEXT_TAGS = {'galeria', 'media_tartalom', 'beagyazott_tartalom', 'abra', 'social_media'}
 
-# article_body_converter.py
+# eltedh_abc.py
 OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekezdes', 'cimsor',
                     'lista', 'listaelem', 'idezet', 'forras',
                     'felkover', 'dolt', 'kiemelt', 'alahuzott', 'athuzott', 'felsoindex', 'alsoindex',
@@ -81,7 +81,7 @@ BLOCK_RULES = {'idezet': {'rename': {'cimsor': 'felkover'},
                            'not_valid_inner_blocks': ['komment'],
                            'not_valid_as_outer_for': []}}
 
-# article_body_converter.py + tei_utils.py
+# eltedh_abc.py + tei_utils.py
 MEDIA_DICT = {'media_tartalom': ('media_hivatkozas', 'forras', 'bekezdes', 'hivatkozas'),
               'social_media': ('social_header', 'bekezdes', 'hivatkozas'),
               'abra': ('media_hivatkozas',),
@@ -119,7 +119,7 @@ TAGNAME_AND_ATTR_TABLE = {'cimsor': ('p', 'head'),
                           'komment_szerzo': ('p', 'author'),
                           'kerdes': ('p', 'question')}
 
-# article_body_converter.py + tei_utils.py
+# eltedh_abc.py + tei_utils.py
 FIGURE_REND_ATTRS = {'media_tartalom': 'media_content',
                      'abra': 'diagram',  # illustration
                      'beagyazott_tartalom': 'embedded_content'}
