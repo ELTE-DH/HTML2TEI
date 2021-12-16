@@ -127,8 +127,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         else:
             tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
         return data
-    elif section != 'penz':
-        # The articles of 'penz' column cannot be processed. Archiving this column is under construction.
+    elif section not in {'penz', 'sport'}:
+        # The articles of 'penz' and 'sport' column cannot be processed, because these links redirect to th main page.
+        # (Archiving these columns is under construction.)
         tei_logger.log('WARNING', f'{url}: UNKNOW ARTICLE SCHEMA!')
         return None
 
