@@ -3,15 +3,24 @@
 
 import re
 
+from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://transindex.ro'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('article',), {'class': 'page-left-side'}),
                             (('td',), {'id': 'ElsoTartalom'})   # tech, sárm
+                            # https://eletmod.transindex.ro/?hir=13920
+                            # https://multikult.transindex.ro/?cikk=14287
+                            # https://vilag.transindex.ro/?hir=19427
+                            # https://eletmod.transindex.ro/?hir=13448
+                            # https://itthon.transindex.ro/?hir=47909
+                            # https://sport.transindex.ro/?cikk=23232
+                            # https://welemeny.transindex.ro/?cikk=13959
                             # (('div',), {'class': 'entry-content clearfix'}),     # plakátmagány
                             #  https://sarm.transindex.ro/?cikk=5369  ebből sokat kell még decompose-olni
                             #  https://tech.transindex.ro/?hir=32
+
                             ]
 SECTION_DICT = {'sarm': 'Sárm',
                 'tech': 'Tech',
@@ -20,7 +29,7 @@ SECTION_DICT = {'sarm': 'Sárm',
                 'eletmod': 'Életmód',
                 'itthon': 'Itthon',
                 'vilag': 'Világ',
-                'welemeny' : 'Vélemény',
+                'welemeny': 'Vélemény',
                 'penz': 'Pénz',
                 'think': 'Think'}
 
@@ -36,7 +45,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         data['sch:articleSection'] = SECTION_DICT[section]
     else:
         tei_logger.log('WARNING', f'{url}: SECTION TAG NOT FOUND!')
-    if section not in {'tech', 'sarm', 'penz', 'multikult', 'sport'}:
+    if section not in {'tech', 'sarm', 'penz'}:  # 'multikult', 'sport'}:
         header = bs.find_all('header')
         if len(header) > 1:
             header = header[1]
@@ -78,20 +87,26 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 data['sch:keywords'] = [author.text.strip()]
             else:
                 tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
-        #return data
-    else:
+
+            return data
+
+    elif section in {'tech', 'sarm'}:
         date_tag = bs.find('ul', {'id': 'UtolsoModP1'})
-        if date_tag is not None:    # 2007. március 22.
-            date_tag = date_tag.find('b')
+        if date_tag is not None:
+            # <li>Utolsó frissítés: 16:54 GMT +2, <b>2007. március 22.</b></li>
+            date_day = date_tag.find('b')
             hour_min = date_tag.find('li').text.strip()[18:23]  # Utolsó frissítés: 16:54 GMT +2,
-            date = f'{date_tag.text.strip()} {hour_min}'
-            if date_tag is not None:
-                parsed_date = parse_date(date_tag.text.strip(), '%Y. %B %d. %H:%M')
+            date = f'{date_day.text.strip()} {hour_min}'
+            parsed_date = parse_date(date, '%Y. %B %d. %H:%M')
+            if parsed_date is not None:
+                data['sch:datePublished'] = parsed_date
+            else:
+                # <ul id="UtolsoModP1"><li>Utolsó frissítés: 12: 1 GMT +2, <b>2007. 2-.</b></li></ul>
+                parsed_date = parse_date(date_day.text.strip()[:4], '%Y')
                 if parsed_date is not None:
                     data['sch:datePublished'] = parsed_date
                 else:
-                    tei_logger.log('WARNING', f'{url}: DATE TEXT FORMAT ERROR!')
-
+                    tei_logger.log('WARNING', f'{url}: DATE/YEAR TEXT FORMAT ERROR!')
         else:
             tei_logger.log('WARNING', f'{url}: DATE TAG NOT FOUND!')
         title = bs.find('span', class_='MagazinCim')
@@ -110,15 +125,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if author is not None:
             data['sch:author'] = [author.text.strip()]
         else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-
-        #data['sch:keywords'] = []
-        # else: tei_logger.log('WARNING', f'{url}: TAGS NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
         return data
-
-        #tei_logger.log('WARNING', f'{url}: This article cannot be processed. Archiving this column is under '
-        #                          f'construction. ')
-        #return None
+    elif section != 'penz':
+        # The articles of 'penz' column cannot be processed. Archiving this column is under construction.
+        tei_logger.log('WARNING', f'{url}: UNKNOW ARTICLE SCHEMA!')
+        return None
 
 
 def excluded_tags_spec(tag):
@@ -159,7 +171,8 @@ def decompose_spec(article_dec):
     return article_dec
 
 
-BLACKLIST_SPEC = []
+BLACKLIST_SPEC = [url.strip() for url in
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'transindex_BLACKLIST.txt')).readlines()]
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
