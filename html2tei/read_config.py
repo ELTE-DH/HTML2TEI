@@ -6,19 +6,18 @@ import importlib.util
 from copy import deepcopy
 from argparse import Namespace
 from collections import Counter
-from os.path import join as os_path_join, isfile as os_path_isfile, isdir as os_path_isdir
+from os.path import join as os_path_join, isfile, isdir, abspath, dirname
 
 from lxml import etree
 from webarticlecurator import Logger
 from yaml import load as yaml_load, SafeLoader
 
 from html2tei.basic_tag_dicts import BLOCK_RULES
-from html2tei.basic_schema_removal import get_pretty_tei_article, use_justext, use_newspaper
 
 # Only read_portalspec_config and read_input_config is used outside of this file
 
 
-def check_exists(filesystem_path, tei_logger=None, check_fun=os_path_isfile, message='File not found'):
+def check_exists(filesystem_path, tei_logger=None, check_fun=isfile, message='File not found'):
     """Common helper function to check if file/directory exists"""
     if tei_logger is None:
         tei_logger = Namespace(log=print)  # Hack, dummy logger! ;)
@@ -100,7 +99,10 @@ def import_python_file(module_name, file_path):
     return module
 
 
-WRITE_OUT_MODES = {'eltedh': get_pretty_tei_article, 'justext': use_justext, 'newspaper3k': use_newspaper}
+dirname_of_abcs = os_path_join(dirname(abspath(__file__)), 'article_body_converters')
+WRITE_OUT_MODES = {'eltedh': os_path_join(dirname_of_abcs, 'eltedh_abc.py'),
+                   'justext': os_path_join(dirname_of_abcs, 'justext_abc.py'),
+                   'newspaper3k': os_path_join(dirname_of_abcs, 'newspaper_abc.py')}
 
 
 def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_dir, run_params=None,
@@ -112,7 +114,7 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
 
     # Init logfile
     log_filename = os_path_join(log_dir, f'tei_writing_{portal_name}.log')
-    check_exists(log_dir, check_fun=os_path_isdir, message='Directory not found')
+    check_exists(log_dir, check_fun=isdir, message='Directory not found')
     tei_logger = Logger(log_filename=log_filename, logfile_mode='w', logfile_level=logfile_level,
                         console_level=console_level)
 
@@ -165,10 +167,14 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         portal_xml_string = None
 
     write_out_mode = run_params.get('write_out_mode')
-    write_out_mode_fun = WRITE_OUT_MODES.get(write_out_mode)
-    if write_out_mode is not None and write_out_mode_fun is None:
+
+    write_out_mode_file = WRITE_OUT_MODES.get(write_out_mode)
+    if write_out_mode is not None and write_out_mode_file is None:
         tei_logger.log('CRITICAL', f'{write_out_mode} is not in the allowed value set ({set(WRITE_OUT_MODES.keys())})!')
         exit(1)
+
+    # Here we import optional libraries only if they are needed later
+    write_out_mode_fun = getattr(import_python_file('article_body_converters', write_out_mode_file), 'process_article')
 
     if write_out_mode is not None:
         tei_logger.log('INFO', f'Using {write_out_mode} write mode')

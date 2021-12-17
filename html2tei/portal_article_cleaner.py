@@ -250,7 +250,7 @@ def process_article_clean(params):
         all_warc_datas_tup_for_note = None
     else:  # Process multi-page article
         # write_out_mode is passed into process_multipage_article with process_article_and_spec_params
-        # The different write_out_mode implementations are defined in basic_schema_removal.py
+        # The different write_out_mode implementations are defined in article_body_converters
         # Multipage articles:
         #  - URL from the first page
         #  - WARC response datetime from the first page
@@ -345,7 +345,7 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
     #  - the write-out mode (e.g. Custom Article Body Converter, JusText, Newspaper3k)
     process_article_clean_params = [tei_logger, portal_xml_string, get_meta_fun_spec, write_out_mode]  # Must be list!
     # Params for write_out_mode from the loaded portal-specific configuration
-    # The different write_out_mode implementations are defined in basic_schema_removal.py"
+    # The different write_out_mode implementations are defined in article_body_converters"
     #  - article root params for find_all
     #  - portal-specific decompose functions
     #  - portal-specific simplification rules for the different parts of the attributes,

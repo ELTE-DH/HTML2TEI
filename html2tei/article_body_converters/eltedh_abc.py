@@ -22,7 +22,19 @@ TABLES_VALID = {'sor_valid', 'oszlop_sor', 'oszlop_valid'}
 PARAGRAPH_AND_INLINES = ({'bekezdes'} | INLINE_TAGS)
 
 
-# Only article_body_converter is used outside of this file
+# Only process_article is used outside of this file
+
+def process_article(article_page_tups, tei_logger, spec_get_meta_fun, spec_body_params):
+    """It executes our own metadata extraction and text extraction, normalization,
+        TEI to XML conversion method per URL"""
+    (one_url, warc_response_datetime, warc_id, raw_html) = article_page_tups
+    bs = BeautifulSoup(raw_html, 'lxml')
+    meta = spec_get_meta_fun(tei_logger, one_url, bs)
+    if meta is not None:
+        converted_body_list = article_body_converter(tei_logger, one_url, raw_html, spec_body_params)
+        return meta, converted_body_list
+    else:
+        return None, None
 
 
 def correct_and_store_link(tag, link, portal_url_prefix, portal_url_filter, extra_key, article_url):
