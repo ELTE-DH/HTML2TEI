@@ -167,16 +167,15 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         portal_xml_string = None
 
     write_out_mode = run_params.get('write_out_mode')
-
+    write_out_mode_fun = None
     write_out_mode_file = WRITE_OUT_MODES.get(write_out_mode)
     if write_out_mode is not None and write_out_mode_file is None:
         tei_logger.log('CRITICAL', f'{write_out_mode} is not in the allowed value set ({set(WRITE_OUT_MODES.keys())})!')
         exit(1)
-
-    # Here we import optional libraries only if they are needed later
-    write_out_mode_fun = getattr(import_python_file('article_body_converters', write_out_mode_file), 'process_article')
-
-    if write_out_mode is not None:
+    elif write_out_mode is not None:
+        # Here we import optional libraries only if they are needed later
+        write_out_mode_fun = getattr(import_python_file('article_body_converters', write_out_mode_file),
+                                     'process_article')
         tei_logger.log('INFO', f'Using {write_out_mode} write mode')
 
     return tei_logger, warc_level_params, get_meta_fun_spec, article_root_params, decompose_spec, excluded_tags_spec, \
