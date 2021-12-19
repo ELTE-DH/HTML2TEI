@@ -95,7 +95,7 @@
                     </sch:sdDatePublished>
                     <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
-                    <sch:identifier>efbd675f-4eb2-4c84-b3db-9f578fc2aaaf</sch:identifier> </rdf:Description>
+                    <sch:identifier>urn:uuid:efbd675f-4eb2-4c84-b3db-9f578fc2aaaf</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
