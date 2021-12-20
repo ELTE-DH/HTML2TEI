@@ -145,7 +145,9 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = {}
-DECOMP = [(('div',), {'class': 'AdW'})]
+DECOMP = [(('div',), {'class': 'AdW'}),
+          (('div',), {'id': 'portfolioEzekIsErdekelhetnek'})]
+
 MEDIA_LIST = [(('blockquote',), {'class': 'instagram-media'}),
               (('blockquote',), {'class': 'imgur-embed-pub'}),
               (('blockquote',), {'class': 'twitter-tweet'})]
