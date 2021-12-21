@@ -61,11 +61,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:source'] = source_list
         if len(authors) > 0:
             data['sch:author'] = authors
-        # author = author.text.strip()
-        # if author in SOURCE:
-        #     data['sch:source'] = [author]
-        # else:
-        #     data['sch:author'] = [author]
     else:
         tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
     section = article_root.find('a', id='post-cat-title')
