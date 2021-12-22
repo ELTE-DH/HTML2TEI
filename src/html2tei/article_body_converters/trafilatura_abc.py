@@ -6,7 +6,7 @@ from trafilatura import extract
 from html2tei.tei_utils import tei_defaultdict, create_new_tag_with_string
 
 
-def process_article_with_extract(one_page_of_article_things, body_log, get_meta_fun, spec_body_params):
+def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_body_params):
 
     def create_empty_paragraph_list():
         # Logging is required in both use cases of this function
@@ -43,7 +43,7 @@ def process_article_with_extract(one_page_of_article_things, body_log, get_meta_
             if len(keywords) > 0:
                 metas_in_dict['sch:keywords'] = doc['tags']
 
-    main = doc.find('main')
+    main = soup.find('main')
     if main is not None:
         paragraph_list = [paragraph for paragraph in main.find_all() if paragraph.get_text(strip=True) is not None]
         if len(paragraph_list) > 0:
