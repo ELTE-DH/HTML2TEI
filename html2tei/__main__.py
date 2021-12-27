@@ -25,7 +25,7 @@ def str2bool(v):
         raise ArgumentTypeError('Boolean value expected.')
 
 
-def main():
+def entrypoint():
     parent_parser = ArgumentParser(prog='html2tei')
 
     command_dict = {'cleaner': (portal_article_cleaner_init_portal, 'Portal Article Cleaner'),
@@ -126,4 +126,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    entrypoint()

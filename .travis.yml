@@ -1,0 +1,30 @@
+language: python
+dist: focal
+sudo: true
+python:
+  - '3.8'
+before_install:
+  - pip install poetry
+install:
+  # Install packages with APT
+  # - make install-dep-packages
+  # When cython is needed to be installed separately
+  # - pip install cython
+  - make venv
+  # - make install-dep-packages
+script:
+  - make install test
+deploy:
+    provider: releases
+    skip_cleanup: true
+    # Create a personal access token and store it in travis-ci as an environment variable
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: dist/*
+    on:
+        repo: ELTE-DH/HTML2TEI
+        branch: master
+        tags: true
+        condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
+    notifications:
+        email: false
