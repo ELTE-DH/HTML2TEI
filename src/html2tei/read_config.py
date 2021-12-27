@@ -102,7 +102,8 @@ def import_python_file(module_name, file_path):
 dirname_of_abcs = os_path_join(dirname(abspath(__file__)), 'article_body_converters')
 WRITE_OUT_MODES = {'eltedh': os_path_join(dirname_of_abcs, 'eltedh_abc.py'),
                    'justext': os_path_join(dirname_of_abcs, 'justext_abc.py'),
-                   'newspaper3k': os_path_join(dirname_of_abcs, 'newspaper_abc.py')}
+                   'newspaper3k': os_path_join(dirname_of_abcs, 'newspaper_abc.py'),
+                   'trafilatura': os_path_join(dirname_of_abcs, 'trafilatura_abc.py')}
 
 
 def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_dir, run_params=None,
