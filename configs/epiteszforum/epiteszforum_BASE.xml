@@ -58,7 +58,7 @@
                     <title></title>
                     <publisher>felelős kiadó: <orgName>Építészfórum Kft.</orgName>
                         <placeName>1062 Budapest, Andrássy út 122.</placeName>
-                        <ref type="url" source="https://epiteszforum.hu/impresszum"><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM--></ref>
+                        <ref type="url" source="https://epiteszforum.hu/impresszum">https://doi.org/10.5281/zenodo.5802316</ref>
                         <date when="2021-08-09"/>
                     </publisher>
                     <pubPlace>
@@ -67,7 +67,7 @@
                     </pubPlace>
                     <availability><p>Az epiteszforum.hu oldalon és az epiteszforum.hu aloldalain (például: http://mediadij.epiteszforum.hu/)  (a továbbiakban együtt: lap) található tartalom az Építészfórum Kft. (a továbbiakban: Kiadó) szellemi tulajdona.</p>
                         <p>© 2000-2021 Építészfórum</p>
-                        <p><ref type="url" source="https://epiteszforum.hu/szerzoi-jogok"><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM--></ref>-->
+                        <p><ref type="url" source="https://epiteszforum.hu/szerzoi-jogok">https://doi.org/10.5281/zenodo.5802316</ref>-->
                             <date when="2021-08-09"/></p>
                     </availability>
                     <date></date>
@@ -88,11 +88,11 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM-->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.5802316">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2021-08-01T20:44:42/2021-08-01T22:57:06</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM-->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.5802316"/>
+                    <sch:identifier>[{"checksum":"6e3128f12537ac948a52a478710c2f1a","filename":"epiteszforum-archive.warc.gz","filesize":8759973,"id":"33235ca9-aeab-431f-a811-de4e116b7d07","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/epiteszforum-archive.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5802316/files/33235ca9-aeab-431f-a811-de4e116b7d07"}},{"checksum":"579decaea97a08d9b0c419f344477bd2","filename":"epiteszforum-articles.warc.gz","filesize":339963435,"id":"2bbbdb9a-2ce8-4f43-96ea-8c2474195a8e","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/epiteszforum-articles.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5802316/files/2bbbdb9a-2ce8-4f43-96ea-8c2474195a8e"}},{"checksum":"30674387c44f88556323d2e9c4e44539","filename":"epiteszforum_rights_statements.warc.gz","filesize":31862,"id":"170b2ecc-40cd-403a-a2ac-47dc7c887d14","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/epiteszforum_rights_statements.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5802316/files/170b2ecc-40cd-403a-a2ac-47dc7c887d14"}},{"checksum":"d6f82f803f92cc0279e1cb9b887c3445","filename":"hashsums","filesize":6007,"id":"560565d4-1c33-4dc3-97a2-597e4436775a","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/hashsums","self":"https://zenodo.org/api/deposit/depositions/5802316/files/560565d4-1c33-4dc3-97a2-597e4436775a"}},{"checksum":"30e1a3a5aa769a3075e62b3b275ade0c","filename":"log.log","filesize":50611,"id":"ce436a31-ade2-4198-a6a2-bef5a22a5940","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/log.log","self":"https://zenodo.org/api/deposit/depositions/5802316/files/ce436a31-ade2-4198-a6a2-bef5a22a5940"}},{"checksum":"75bba02205c0336f8e5dad45f40c08d1","filename":"logs.zip","filesize":291395,"id":"4d16611f-bc75-4e88-b7e6-57143b01f1f1","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/logs.zip","self":"https://zenodo.org/api/deposit/depositions/5802316/files/4d16611f-bc75-4e88-b7e6-57143b01f1f1"}},{"checksum":"dce896c8c979ea9e68eda1ac03bcebd1","filename":"script.sh","filesize":375,"id":"de5fce32-750f-4d21-b550-955775beaea7","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/script.sh","self":"https://zenodo.org/api/deposit/depositions/5802316/files/de5fce32-750f-4d21-b550-955775beaea7"}}]</sch:identifier>
                     <sch:identifier>urn:uuid:1418eba0-176a-4127-b6a9-496483bfd37f</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
