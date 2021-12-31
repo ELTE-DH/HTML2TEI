@@ -1,0 +1,508 @@
+frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_length	URL_example	normal_name	preserved_attribute
+2666930	<br>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=36941 https://vilag.transindex.ro/?hir=12327 https://multikult.transindex.ro/?hir=9233 https://multikult.transindex.ro/?hir=2962 https://itthon.transindex.ro/?hir=30199	null	default
+157482	<section class=fb-comment>	0.0	1.1434957645953188	0.0	https://vilag.transindex.ro/?hir=15186 https://eletmod.transindex.ro/?hir=25000 https://itthon.transindex.ro/?hir=10604 https://vilag.transindex.ro/?cikk=24555 https://multikult.transindex.ro/?cikk=2669	null	default
+90040	<fb:comments href=@LINK num_posts=@NUM width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=53861 https://itthon.transindex.ro/?hir=25985 https://multikult.transindex.ro/?hir=8573 https://eletmod.transindex.ro/?cikk=21364 https://eletmod.transindex.ro/?cikk=26077	null	default
+10377	<div id=MagazinBelsoReklam>	0.0	4.0	0.0	https://sarm.transindex.ro/?cikk=12294 https://tech.transindex.ro/?hir=7195 https://tech.transindex.ro/?hir=5399 https://tech.transindex.ro/?hir=8884 https://tech.transindex.ro/?hir=8594	null	default
+38550	<script type=text/javascript>	0.0	0.0	52.69520103761349	https://itthon.transindex.ro/?cikk=21952 https://tech.transindex.ro/?hir=5121 https://multikult.transindex.ro/?cikk=14738 https://tech.transindex.ro/?hir=5300 https://welemeny.transindex.ro/?cikk=13685	decompose	default
+31127	<img alt=@alt border=@NUM src=@LINK>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=7574 https://tech.transindex.ro/?hir=8807 https://tech.transindex.ro/?hir=8841 https://tech.transindex.ro/?hir=932 https://sarm.transindex.ro/?cikk=10334	null	default
+20752	<br clear=all>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=4196 https://tech.transindex.ro/?hir=6691 https://tech.transindex.ro/?hir=9237 https://tech.transindex.ro/?hir=2434 https://tech.transindex.ro/?hir=5737	null	default
+10377	<div class=like>	0.0	1.0	0.0	https://tech.transindex.ro/?hir=1324 https://tech.transindex.ro/?hir=7155 https://tech.transindex.ro/?hir=2017 https://tech.transindex.ro/?hir=8465 https://tech.transindex.ro/?hir=5360	null	default
+11686	<fb:like action=like colorscheme= href=@LINK layout=button_count show_faces=@STYLE width=@STYLE>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8776 https://tech.transindex.ro/?hir=326 https://tech.transindex.ro/?hir=7208 https://tech.transindex.ro/?hir=1967 https://tech.transindex.ro/?hir=2289	null	default
+10375	<ul class=HirReklam>	0.0	10.0	0.0	https://tech.transindex.ro/?cikk=1197 https://tech.transindex.ro/?hir=7731 https://tech.transindex.ro/?hir=877 https://tech.transindex.ro/?hir=628 https://tech.transindex.ro/?hir=8529	null	default
+9072	<img alt=@alt src=@LINK>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=7465 https://tech.transindex.ro/?hir=2899 https://tech.transindex.ro/?hir=3709 https://tech.transindex.ro/?hir=6288 https://tech.transindex.ro/?hir=8456	null	default
+4184	<object height=@STYLE width=@STYLE>	0.0	3.002868068833652	0.0	https://vilag.transindex.ro/?cikk=23789 https://vilag.transindex.ro/?hir=21333 https://multikult.transindex.ro/?cikk=13319 https://eletmod.transindex.ro/?hir=19620 https://eletmod.transindex.ro/?hir=19470	null	default
+4186	<param name=movie value=@LINK>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=14650 https://multikult.transindex.ro/?hir=4316 https://multikult.transindex.ro/?hir=6021 https://multikult.transindex.ro/?cikk=14094 https://eletmod.transindex.ro/?hir=15695	null	default
+4182	<param name=wmode value=transparent>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=16518 https://multikult.transindex.ro/?cikk=9486 https://vilag.transindex.ro/?cikk=20223 https://eletmod.transindex.ro/?hir=14894 https://eletmod.transindex.ro/?hir=13633	null	default
+4177	<embed height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=12494 https://multikult.transindex.ro/?cikk=17136 https://itthon.transindex.ro/?cikk=10357 https://tech.transindex.ro/?cikk=12945 https://itthon.transindex.ro/?cikk=24454	null	default
+1309	<div class=like style=@STYLE>	0.0	1.0	0.0	https://tech.transindex.ro/?cikk=7194 https://sarm.transindex.ro/?cikk=2978 https://sarm.transindex.ro/?cikk=10213 https://sarm.transindex.ro/?cikk=6084 https://tech.transindex.ro/?cikk=1190	null	default
+1309	<div class=addthis_toolbox @STYLE style=@STYLE>	0.0	1.0	0.0	https://tech.transindex.ro/?cikk=6495 https://sarm.transindex.ro/?cikk=11124 https://tech.transindex.ro/?cikk=13642 https://sarm.transindex.ro/?cikk=16678 https://tech.transindex.ro/?cikk=3658	null	default
+1309	<a class=addthis_button_compact href=@LINK style=@STYLE>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=11447 https://sarm.transindex.ro/?cikk=16319 https://sarm.transindex.ro/?cikk=1472 https://sarm.transindex.ro/?cikk=3249 https://tech.transindex.ro/?cikk=1234	null	default
+1369	<script src=@LINK type=text/javascript>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=10970 https://sarm.transindex.ro/?cikk=2666 https://sarm.transindex.ro/?cikk=9200 https://sarm.transindex.ro/?cikk=8890 https://sarm.transindex.ro/?cikk=6778	null	default
+2027	<script>	0.0	0.0	10.752343364578195	https://sarm.transindex.ro/?cikk=1380 https://itthon.transindex.ro/?hir=38418 https://vilag.transindex.ro/?hir=22667 https://sarm.transindex.ro/?cikk=9121 https://sarm.transindex.ro/?cikk=19722	decompose	default
+1309	<a class=iwiw href=@LINK onclick=return iwiwshare_click() target=@target title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=1546 https://tech.transindex.ro/?cikk=904 https://sarm.transindex.ro/?cikk=63 https://tech.transindex.ro/?cikk=13475 https://sarm.transindex.ro/?cikk=13355	null	default
+1307	<a class=@STYLE href=@LINK target=@target title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=1214 https://tech.transindex.ro/?cikk=1303 https://tech.transindex.ro/?cikk=6898 https://tech.transindex.ro/?cikk=97 https://sarm.transindex.ro/?cikk=16504	null	default
+1307	<a class=twitter href=@LINK target=@target title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=12014 https://tech.transindex.ro/?cikk=3698 https://sarm.transindex.ro/?cikk=16564 https://sarm.transindex.ro/?cikk=2478 https://tech.transindex.ro/?cikk=1698	null	default
+1309	<a class=google href=@LINK title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=6273 https://tech.transindex.ro/?cikk=1370 https://sarm.transindex.ro/?cikk=1895 https://tech.transindex.ro/?cikk=5853 https://sarm.transindex.ro/?cikk=18678	null	default
+1307	<a class=myspace href=@LINK target=@target title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=8012 https://tech.transindex.ro/?cikk=4331 https://sarm.transindex.ro/?cikk=8506 https://sarm.transindex.ro/?cikk=15142 https://tech.transindex.ro/?cikk=6920	null	default
+1285	<a class=ym href=@LINK title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=17361 https://sarm.transindex.ro/?cikk=8707 https://sarm.transindex.ro/?cikk=8274 https://sarm.transindex.ro/?cikk=12691 https://sarm.transindex.ro/?cikk=5863	null	default
+22169	<div id=X>	0.0	2.0	0.0	https://multikult.transindex.ro/?cikk=20918 https://welemeny.transindex.ro/?cikk=17371 https://itthon.transindex.ro/?cikk=14547 https://eletmod.transindex.ro/?cikk=627 https://multikult.transindex.ro/?cikk=15217	null	default
+44338	<div class=@NUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=19445 https://think.transindex.ro/?cikk=28177 https://eletmod.transindex.ro/?cikk=2592 https://multikult.transindex.ro/?cikk=17445 https://welemeny.transindex.ro/?cikk=12735	null	default
+48397	<img src=@LINK>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=25227 https://itthon.transindex.ro/?cikk=25955 https://itthon.transindex.ro/?cikk=27125 https://eletmod.transindex.ro/?cikk=12270 https://multikult.transindex.ro/?cikk=27815	null	default
+44338	<div class=clear>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=1977 https://welemeny.transindex.ro/?cikk=11738 https://itthon.transindex.ro/?cikk=27460 https://eletmod.transindex.ro/?cikk=4956 https://itthon.transindex.ro/?cikk=27089	null	default
+22188	<script src=@LINK>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=18183 https://itthon.transindex.ro/?cikk=12248 https://vilag.transindex.ro/?cikk=13440 https://eletmod.transindex.ro/?cikk=2836 https://itthon.transindex.ro/?cikk=12819	null	default
+5832	<img alt=@alt src=@LINK title=@title>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=27626 https://itthon.transindex.ro/?hir=54242 https://itthon.transindex.ro/?hir=56473 https://multikult.transindex.ro/?hir=11487 https://itthon.transindex.ro/?hir=54899	null	default
+3915	<section class=image>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=26761 https://itthon.transindex.ro/?cikk=26455 https://itthon.transindex.ro/?cikk=27398 https://welemeny.transindex.ro/?cikk=26121 https://eletmod.transindex.ro/?cikk=28989	null	default
+800	<iframe allow=@LONG allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28080 https://itthon.transindex.ro/?hir=57116 https://multikult.transindex.ro/?hir=11309 https://multikult.transindex.ro/?hir=11180 https://think.transindex.ro/?cikk=28319	null	default
+1634	<script async= charset=@NUM src=@LINK>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=24737 https://vilag.transindex.ro/?hir=31333 https://eletmod.transindex.ro/?hir=24850 https://vilag.transindex.ro/?hir=37630 https://vilag.transindex.ro/?hir=24113	null	default
+1210	<script language=javascript src=@LINK type=text/javascript>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8759 https://tech.transindex.ro/?hir=8617 https://tech.transindex.ro/?hir=8515 https://tech.transindex.ro/?hir=8687 https://tech.transindex.ro/?hir=8705	null	default
+1210	<script language=JavaScript>	0.0	0.0	183.0	https://tech.transindex.ro/?cikk=9394 https://tech.transindex.ro/?hir=9010 https://tech.transindex.ro/?cikk=12677 https://tech.transindex.ro/?cikk=12117 https://tech.transindex.ro/?hir=9261	decompose	default
+2420	<p align=@STYLE>	0.0	4.0	0.0	https://tech.transindex.ro/?hir=9217 https://tech.transindex.ro/?hir=8394 https://tech.transindex.ro/?hir=8553 https://tech.transindex.ro/?hir=8527 https://tech.transindex.ro/?hir=9266	null	default
+1210	<img border=@NUM height=@STYLE id=kommentek src=@LINK width=@STYLE>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=11760 https://tech.transindex.ro/?hir=8555 https://tech.transindex.ro/?cikk=14084 https://tech.transindex.ro/?cikk=9937 https://tech.transindex.ro/?hir=8599	null	default
+1210	<p class=Hhiba id=HHhiba>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8822 https://tech.transindex.ro/?hir=8657 https://tech.transindex.ro/?hir=8301 https://tech.transindex.ro/?hir=8575 https://tech.transindex.ro/?hir=9124	null	default
+1210	<p id=kommentValaszolok>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=12110 https://sarm.transindex.ro/?cikk=10788 https://tech.transindex.ro/?hir=8511 https://tech.transindex.ro/?hir=8309 https://tech.transindex.ro/?hir=8482	null	default
+1210	<input class=InputMezo name=HNev size=@STYLE type=text>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8686 https://tech.transindex.ro/?hir=8984 https://tech.transindex.ro/?hir=9300 https://tech.transindex.ro/?cikk=9937 https://tech.transindex.ro/?hir=9057	null	default
+1210	<input class=InputMezo name=HEmail size=@STYLE type=text>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8692 https://tech.transindex.ro/?hir=9244 https://tech.transindex.ro/?hir=9114 https://tech.transindex.ro/?hir=9054 https://tech.transindex.ro/?cikk=11167	null	default
+1210	<textarea class=InputMezo cols=@NUM id=Htartalom name=Htartalom rows=@NUM>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8647 https://tech.transindex.ro/?hir=8305 https://tech.transindex.ro/?hir=8373 https://tech.transindex.ro/?hir=9278 https://tech.transindex.ro/?hir=8284	null	default
+1210	<input name=Hhonnan type=hidden value=@LINK>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=9200 https://tech.transindex.ro/?hir=8973 https://tech.transindex.ro/?hir=8660 https://tech.transindex.ro/?hir=8225 https://tech.transindex.ro/?hir=9060	null	default
+1210	<input name=cikk type=hidden value=@NUM>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8656 https://tech.transindex.ro/?hir=8324 https://tech.transindex.ro/?cikk=10238 https://tech.transindex.ro/?hir=8536 https://tech.transindex.ro/?hir=8780	null	default
+1160	<input name=subdom type=hidden value=tech>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8412 https://tech.transindex.ro/?cikk=9984 https://tech.transindex.ro/?hir=8318 https://tech.transindex.ro/?hir=8623 https://tech.transindex.ro/?hir=9067	null	default
+1059	<input name=miaz type=hidden value=hir>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8915 https://tech.transindex.ro/?hir=8546 https://tech.transindex.ro/?hir=9264 https://tech.transindex.ro/?hir=8713 https://tech.transindex.ro/?hir=8556	null	default
+1210	<input id=reply_id name=reply_id type=hidden value=@NUM>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=9068 https://tech.transindex.ro/?hir=8537 https://tech.transindex.ro/?hir=8618 https://tech.transindex.ro/?hir=9090 https://tech.transindex.ro/?hir=9198	null	default
+1210	<input id=szint name=szint type=hidden value=@NUM>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=9118 https://tech.transindex.ro/?hir=9208 https://tech.transindex.ro/?hir=8770 https://tech.transindex.ro/?hir=8869 https://tech.transindex.ro/?hir=8776	null	default
+1210	<input id=HGomb name=Hmehet type=submit value=Hozzászól>	0.0	0.0	0.0	https://tech.transindex.ro/?hir=8885 https://tech.transindex.ro/?hir=8859 https://tech.transindex.ro/?hir=9137 https://tech.transindex.ro/?hir=8764 https://tech.transindex.ro/?hir=8395	null	default
+151	<input name=miaz type=hidden value=cikk>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=10136 https://tech.transindex.ro/?cikk=5242 https://tech.transindex.ro/?cikk=12993 https://sarm.transindex.ro/?cikk=11406 https://sarm.transindex.ro/?cikk=11274	null	default
+1	<img alt=@alt forr= kibocs= sor= src=@LINK title=@title youtube=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=27702	null	default
+379	<iframe allow=@LONG allowfullscreen=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=25054 https://itthon.transindex.ro/?hir=62742 https://itthon.transindex.ro/?hir=62922 https://itthon.transindex.ro/?cikk=28980 https://eletmod.transindex.ro/?cikk=28780	null	default
+192	<iframe allow=autoplay; encrypted-media allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27212 https://eletmod.transindex.ro/?hir=23486 https://itthon.transindex.ro/?hir=53262 https://itthon.transindex.ro/?hir=51949 https://multikult.transindex.ro/?hir=10627	null	default
+2	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@gallafNUM data-game-info=false data-recommend=false data-shares=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25392 https://eletmod.transindex.ro/?cikk=25077	null	default
+138	<script async= defer= src=@LINK>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=25211 https://eletmod.transindex.ro/?hir=20975 https://eletmod.transindex.ro/?hir=22804 https://vilag.transindex.ro/?cikk=26287 https://eletmod.transindex.ro/?cikk=26359	null	default
+389	<video height=@STYLE poster=@LINK src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=14344 https://eletmod.transindex.ro/?cikk=21651 https://eletmod.transindex.ro/?cikk=11419 https://eletmod.transindex.ro/?cikk=7288 https://multikult.transindex.ro/?cikk=10254	null	default
+1046	<iframe allow=encrypted-media allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=11362 https://itthon.transindex.ro/?hir=53880 https://itthon.transindex.ro/?hir=56924 https://itthon.transindex.ro/?hir=57682 https://eletmod.transindex.ro/?hir=24460	null	default
+1108	<br clear=left>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=8715 https://eletmod.transindex.ro/?cikk=18222 https://multikult.transindex.ro/?cikk=14655 https://eletmod.transindex.ro/?cikk=16130 https://multikult.transindex.ro/?cikk=20319	null	default
+8589	<a class=highslide href=@LINK onclick=return hs.expand(this)>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=13531 https://itthon.transindex.ro/?cikk=21735 https://eletmod.transindex.ro/?hir=19287 https://eletmod.transindex.ro/?cikk=16768 https://itthon.transindex.ro/?cikk=20384	null	default
+12875	<img alt=@alt class=latest_img src=@LINK title=@title width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=28277 https://vilag.transindex.ro/?cikk=24347 https://eletmod.transindex.ro/?cikk=18118 https://itthon.transindex.ro/?hir=31422 https://eletmod.transindex.ro/?cikk=20167	null	default
+12852	<a class=pin-it-button count-layout=horizontal href=@LINK target=@target>	0.0	1.0	0.0	https://itthon.transindex.ro/?cikk=23339 https://multikult.transindex.ro/?cikk=17192 https://multikult.transindex.ro/?cikk=15744 https://eletmod.transindex.ro/?cikk=14243 https://eletmod.transindex.ro/?cikk=17804	null	default
+12875	<img border=@NUM src=@LINK title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=14354 https://itthon.transindex.ro/?cikk=24776 https://eletmod.transindex.ro/?hir=17890 https://multikult.transindex.ro/?cikk=24793 https://eletmod.transindex.ro/?cikk=20797	null	default
+12875	<div class=like-button>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=17847 https://itthon.transindex.ro/?hir=28302 https://eletmod.transindex.ro/?hir=17890 https://multikult.transindex.ro/?hir=7447 https://itthon.transindex.ro/?cikk=16806	null	default
+12875	<fb:like href=@LINK layout=button_count send=false show_faces=@STYLE width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=18457 https://multikult.transindex.ro/?cikk=18127 https://multikult.transindex.ro/?cikk=17204 https://itthon.transindex.ro/?cikk=16351 https://itthon.transindex.ro/?hir=25563	null	default
+4286	<a class=galeria_kozepso highslide href=@LINK onclick=return hs.expand(this)>	0.0	1.0	0.0	https://eletmod.transindex.ro/?hir=17320 https://multikult.transindex.ro/?hir=8014 https://itthon.transindex.ro/?cikk=15975 https://itthon.transindex.ro/?cikk=24093 https://multikult.transindex.ro/?cikk=14354	null	default
+3534	<div class=galeria_valaszt>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=22473 https://itthon.transindex.ro/?cikk=17100 https://eletmod.transindex.ro/?cikk=24537 https://multikult.transindex.ro/?cikk=18196 https://multikult.transindex.ro/?cikk=20320	null	default
+790	<br clear=right>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=6555 https://eletmod.transindex.ro/?cikk=14159 https://multikult.transindex.ro/?cikk=23415 https://multikult.transindex.ro/?cikk=20049 https://tech.transindex.ro/?cikk=14676	null	default
+26	<iframe align=@STYLE allowfullscreen= frameborder=@NUM height=@STYLE hspace=@NUM marginheight=@STYLE marginwidth=@STYLE scrolling=No src=@LINK vspace=@NUM width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=44529 https://itthon.transindex.ro/?hir=51143 https://itthon.transindex.ro/?hir=52504 https://itthon.transindex.ro/?hir=53510 https://vilag.transindex.ro/?hir=34518	null	default
+578	<div id=fb-root>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=22667 https://itthon.transindex.ro/?hir=38225 https://itthon.transindex.ro/?hir=41807 https://eletmod.transindex.ro/?hir=21015 https://vilag.transindex.ro/?cikk=24879	null	default
+201	<iframe frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=7368 https://vilag.transindex.ro/?cikk=22948 https://itthon.transindex.ro/?cikk=24288 https://eletmod.transindex.ro/?hir=18223 https://itthon.transindex.ro/?cikk=24276	null	default
+6	<div class=flourish-embed data-src=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27829 https://itthon.transindex.ro/?hir=57523 https://itthon.transindex.ro/?hir=55626 https://itthon.transindex.ro/?cikk=27914 https://itthon.transindex.ro/?hir=55696	null	default
+2	<div class=playbuzz data-id=@LONG data-show-info=false>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27706 https://itthon.transindex.ro/?cikk=27170	null	default
+411	<iframe allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=26252 https://eletmod.transindex.ro/?hir=22631 https://think.transindex.ro/?cikk=26012 https://itthon.transindex.ro/?hir=45667 https://itthon.transindex.ro/?hir=47094	null	default
+32	<iframe allowfullscreen= frameborder=@NUM height=@STYLE mozallowfullscreen= src=@LINK webkitallowfullscreen= width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26269 https://multikult.transindex.ro/?cikk=26138 https://multikult.transindex.ro/?hir=10520 https://multikult.transindex.ro/?cikk=26219 https://multikult.transindex.ro/?hir=9667	null	default
+1273	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=44070 https://multikult.transindex.ro/?cikk=26184 https://multikult.transindex.ro/?cikk=25042 https://eletmod.transindex.ro/?hir=21541 https://welemeny.transindex.ro/?cikk=26994	null	default
+413	<input name=poolid type=hidden value=@NUM>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=1475 https://eletmod.transindex.ro/?cikk=15867 https://sarm.transindex.ro/?cikk=2666 https://itthon.transindex.ro/?cikk=25470 https://eletmod.transindex.ro/?cikk=22522	null	default
+2626	<input id=@valaszidNUM name=valaszid type=radio value=@NUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=13974 https://eletmod.transindex.ro/?cikk=1956 https://eletmod.transindex.ro/?cikk=12124 https://multikult.transindex.ro/?cikk=14798 https://eletmod.transindex.ro/?cikk=12111	null	default
+412	<input class=s name=Submit type=submit value=Szavazz!>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=1444 https://itthon.transindex.ro/?cikk=24765 https://sarm.transindex.ro/?cikk=1531 https://eletmod.transindex.ro/?cikk=4097 https://welemeny.transindex.ro/?cikk=24456	null	default
+769	<iframe allowfullscreen=true allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=33513 https://eletmod.transindex.ro/?cikk=26283 https://eletmod.transindex.ro/?cikk=27000 https://eletmod.transindex.ro/?cikk=25930 https://itthon.transindex.ro/?hir=57621	null	default
+19	<div class=infogram-embed data-id=@LONG data-title=Koronavírus data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=61516 https://itthon.transindex.ro/?hir=61921 https://itthon.transindex.ro/?hir=62294 https://itthon.transindex.ro/?hir=63484 https://itthon.transindex.ro/?hir=62555	null	default
+20	<iframe allow=encrypted-media allowfullscreen= frameborder=@NUM gesture=media height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=50014 https://vilag.transindex.ro/?cikk=27039 https://eletmod.transindex.ro/?hir=23003 https://welemeny.transindex.ro/?cikk=27042 https://itthon.transindex.ro/?hir=50065	null	default
+42	<script id=@LONG src=@LINK type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=24973 https://itthon.transindex.ro/?cikk=25070 https://eletmod.transindex.ro/?cikk=25279 https://itthon.transindex.ro/?cikk=25004 https://itthon.transindex.ro/?cikk=24982	null	default
+98	<img alt=@alt src=@LINK style=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=38084 https://itthon.transindex.ro/?hir=38017 https://multikult.transindex.ro/?hir=9057 https://eletmod.transindex.ro/?hir=20494 https://eletmod.transindex.ro/?hir=20726	null	default
+114	<svg height=@STYLE version=1.1 viewbox=0 0 60 60 width=@STYLE xmlns=@LINK xmlns:xlink=@LINK>	0.0	4.0	0.0	https://vilag.transindex.ro/?hir=35094 https://think.transindex.ro/?cikk=27891 https://vilag.transindex.ro/?hir=34631 https://eletmod.transindex.ro/?hir=23947 https://eletmod.transindex.ro/?hir=23507	null	default
+114	<g fill=none fill-rule=evenodd stroke=none stroke-width=@STYLE>	0.0	3.0	0.0	https://eletmod.transindex.ro/?hir=23695 https://multikult.transindex.ro/?hir=11037 https://vilag.transindex.ro/?cikk=28514 https://eletmod.transindex.ro/?hir=23894 https://multikult.transindex.ro/?cikk=27608	null	default
+114	<g fill=#000000 transform=@LONG>	0.0	2.0	0.0	https://vilag.transindex.ro/?hir=34631 https://vilag.transindex.ro/?hir=36586 https://eletmod.transindex.ro/?cikk=28412 https://eletmod.transindex.ro/?hir=23507 https://vilag.transindex.ro/?hir=35094	null	default
+114	<g>	0.0	1.0	0.0	https://multikult.transindex.ro/?hir=11037 https://multikult.transindex.ro/?cikk=28054 https://vilag.transindex.ro/?hir=34902 https://vilag.transindex.ro/?hir=37584 https://eletmod.transindex.ro/?hir=23580	null	default
+118	<path d=@LONG>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27655 https://eletmod.transindex.ro/?cikk=28325 https://vilag.transindex.ro/?hir=34631 https://vilag.transindex.ro/?cikk=28514 https://vilag.transindex.ro/?hir=35094	null	default
+116	<script async= src=@LINK>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=28514 https://multikult.transindex.ro/?cikk=27947 https://eletmod.transindex.ro/?hir=23887 https://vilag.transindex.ro/?hir=35094 https://think.transindex.ro/?cikk=27645	null	default
+29	<iframe allow=@LONG allowfullscreen= frameborder=100% height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=11165 https://multikult.transindex.ro/?cikk=27858 https://multikult.transindex.ro/?hir=11167 https://multikult.transindex.ro/?cikk=27630 https://multikult.transindex.ro/?cikk=27848	null	default
+399	<img class=Kiskep src=@LINK>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=5237 https://tech.transindex.ro/?cikk=832 https://sarm.transindex.ro/?cikk=2309 https://sarm.transindex.ro/?cikk=2174 https://sarm.transindex.ro/?cikk=2550	null	default
+7	<iframe allow=autoplay frameborder=no height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=10978 https://multikult.transindex.ro/?hir=10950 https://multikult.transindex.ro/?hir=11121 https://multikult.transindex.ro/?cikk=27600	null	default
+35	<img alt=@alt height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=24850 https://eletmod.transindex.ro/?hir=22559 https://eletmod.transindex.ro/?hir=22072 https://eletmod.transindex.ro/?cikk=26254 https://eletmod.transindex.ro/?hir=22667	null	default
+63	<script id=@LONG src=@LINK title=Koronavíurs type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=61777 https://itthon.transindex.ro/?hir=60138 https://itthon.transindex.ro/?hir=62335 https://itthon.transindex.ro/?hir=61292 https://itthon.transindex.ro/?hir=61977	null	default
+112	<script id=@LONG src=@LINK title=Koronavíurs Short type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=60542 https://itthon.transindex.ro/?hir=59950 https://itthon.transindex.ro/?hir=60889 https://itthon.transindex.ro/?hir=60556 https://itthon.transindex.ro/?hir=59852	null	default
+115	<script id=@LONG src=@LINK title=Koronavírus megbetegedések type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=61178 https://itthon.transindex.ro/?hir=60852 https://itthon.transindex.ro/?hir=60738 https://itthon.transindex.ro/?hir=59852 https://itthon.transindex.ro/?hir=61111	null	default
+54	<iframe allow=encrypted-media allowfullscreen=true allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=60842 https://vilag.transindex.ro/?cikk=28655 https://think.transindex.ro/?cikk=28356 https://itthon.transindex.ro/?hir=59167 https://vilag.transindex.ro/?hir=36767	null	default
+34	<iframe frameborder=@NUM height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=24696 https://vilag.transindex.ro/?cikk=24246 https://itthon.transindex.ro/?hir=38026 https://vilag.transindex.ro/?cikk=25115 https://itthon.transindex.ro/?hir=37046	null	default
+16	<iframe height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=22765 https://itthon.transindex.ro/?cikk=27612 https://itthon.transindex.ro/?cikk=27755 https://eletmod.transindex.ro/?cikk=26920 https://eletmod.transindex.ro/?cikk=26931	null	default
+1	<img a= alt=@alt b= bez= mi= src=@LINK szekr= title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27612	null	default
+29	<div class=tableauPlaceholder id=@NUM style=@STYLE>	0.0	15.931034482758621	0.0	https://itthon.transindex.ro/?hir=44996 https://itthon.transindex.ro/?hir=55706 https://itthon.transindex.ro/?hir=55656 https://itthon.transindex.ro/?hir=57454 https://itthon.transindex.ro/?hir=45048	null	default
+29	<object class=tableauViz style=@STYLE>	0.0	11.931034482758621	0.0	https://itthon.transindex.ro/?hir=44932 https://itthon.transindex.ro/?hir=57496 https://itthon.transindex.ro/?hir=55656 https://itthon.transindex.ro/?hir=44962 https://itthon.transindex.ro/?cikk=27325	null	default
+60	<param name=host_url value=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=57527 https://itthon.transindex.ro/?hir=42989 https://itthon.transindex.ro/?hir=38145 https://itthon.transindex.ro/?hir=43031 https://itthon.transindex.ro/?hir=37999	null	default
+18	<param name=embed_code_version value=@NUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55636 https://itthon.transindex.ro/?hir=55625 https://itthon.transindex.ro/?hir=55656 https://itthon.transindex.ro/?hir=53116 https://itthon.transindex.ro/?hir=57454	null	default
+2	<param name=path value=@LONG>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=57506 https://itthon.transindex.ro/?hir=57701	null	default
+60	<param name=toolbar value=yes>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=38051 https://itthon.transindex.ro/?hir=38114 https://itthon.transindex.ro/?cikk=25478 https://itthon.transindex.ro/?hir=38030 https://itthon.transindex.ro/?hir=57506	null	default
+60	<param name=static_image value=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=38113 https://itthon.transindex.ro/?hir=38145 https://itthon.transindex.ro/?hir=55706 https://itthon.transindex.ro/?hir=38017 https://itthon.transindex.ro/?hir=53116	null	default
+60	<param name=animate_transition value=yes>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=38145 https://itthon.transindex.ro/?hir=42985 https://itthon.transindex.ro/?hir=57496 https://itthon.transindex.ro/?hir=38113 https://itthon.transindex.ro/?hir=38070	null	default
+60	<param name=display_static_image value=yes>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=38016 https://itthon.transindex.ro/?hir=43009 https://itthon.transindex.ro/?hir=42997 https://itthon.transindex.ro/?hir=38083 https://itthon.transindex.ro/?hir=57484	null	default
+60	<param name=display_spinner value=yes>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55706 https://itthon.transindex.ro/?hir=57527 https://itthon.transindex.ro/?hir=37999 https://itthon.transindex.ro/?hir=38115 https://itthon.transindex.ro/?hir=45009	null	default
+60	<param name=display_overlay value=yes>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27325 https://itthon.transindex.ro/?hir=38145 https://itthon.transindex.ro/?hir=45009 https://itthon.transindex.ro/?hir=38115 https://itthon.transindex.ro/?hir=45048	null	default
+60	<param name=display_count value=yes>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=57454 https://itthon.transindex.ro/?hir=57709 https://itthon.transindex.ro/?hir=57701 https://itthon.transindex.ro/?hir=38067 https://itthon.transindex.ro/?hir=55706	null	default
+17	<param name=filter value=publish=yes>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27325 https://itthon.transindex.ro/?hir=55625 https://itthon.transindex.ro/?hir=55656 https://itthon.transindex.ro/?hir=57484 https://itthon.transindex.ro/?hir=57496	null	default
+22	<iframe height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=21590 https://eletmod.transindex.ro/?hir=20557	null	default
+19	<div class=infogram-embed data-id=@LONG data-title= data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27614 https://itthon.transindex.ro/?hir=54919 https://vilag.transindex.ro/?cikk=28045 https://itthon.transindex.ro/?cikk=26311 https://itthon.transindex.ro/?cikk=27822	null	default
+55	<param name=site_root value=>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=38061 https://itthon.transindex.ro/?hir=57472 https://itthon.transindex.ro/?hir=38118 https://itthon.transindex.ro/?cikk=26007 https://itthon.transindex.ro/?hir=42995	null	default
+28	<param name=name value=@LONG>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27325 https://itthon.transindex.ro/?hir=38145 https://itthon.transindex.ro/?hir=38070 https://itthon.transindex.ro/?hir=38067 https://itthon.transindex.ro/?hir=38115	null	default
+55	<param name=tabs value=no>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=43031 https://itthon.transindex.ro/?hir=55656 https://itthon.transindex.ro/?cikk=27325 https://itthon.transindex.ro/?hir=55636 https://itthon.transindex.ro/?hir=42989	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=IMAS közvélemény-kutatás data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=58373	null	default
+42	<script id=@LONG src=@LINK title= type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26311 https://eletmod.transindex.ro/?cikk=25934 https://itthon.transindex.ro/?hir=43079 https://eletmod.transindex.ro/?cikk=26076 https://itthon.transindex.ro/?cikk=26106	null	default
+33	<iframe frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=35233 https://vilag.transindex.ro/?hir=33804 https://vilag.transindex.ro/?cikk=27505 https://itthon.transindex.ro/?cikk=24817 https://itthon.transindex.ro/?hir=34227	null	default
+2	<div class=exco data-id=@LONG data-show-info=false data-show-share=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28811 https://itthon.transindex.ro/?cikk=28622	null	default
+9	<iframe allowfullscreen=true frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=24759 https://eletmod.transindex.ro/?hir=21544 https://eletmod.transindex.ro/?hir=22411 https://eletmod.transindex.ro/?cikk=23268	null	default
+21	<param name=name value=@DashboardNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=44962 https://itthon.transindex.ro/?hir=44932 https://itthon.transindex.ro/?hir=42995 https://itthon.transindex.ro/?cikk=25478 https://itthon.transindex.ro/?hir=42989	null	default
+3	<iframe allowfullscreen=allowfullscreen frameborder=@NUM height=@STYLE mozallowfullscreen=mozallowfullscreen src=@LINK webkitallowfullscreen=webkitallowfullscreen width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=8225 https://eletmod.transindex.ro/?hir=19799 https://eletmod.transindex.ro/?cikk=26584	null	default
+31	<div class=tableauPlaceholder style=@STYLE>	0.0	15.419354838709678	0.0	https://itthon.transindex.ro/?hir=38084 https://itthon.transindex.ro/?hir=38017 https://itthon.transindex.ro/?hir=42951 https://itthon.transindex.ro/?hir=38051 https://itthon.transindex.ro/?hir=38070	null	default
+31	<object class=tableauViz height=@STYLE style=@STYLE width=@STYLE>	0.0	11.419354838709678	0.0	https://itthon.transindex.ro/?hir=38145 https://itthon.transindex.ro/?hir=38033 https://itthon.transindex.ro/?hir=38113 https://itthon.transindex.ro/?hir=38118 https://itthon.transindex.ro/?hir=42989	null	default
+2	<param name=showVizHome value=no>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25478 https://itthon.transindex.ro/?cikk=24532	null	default
+11	<param name=showTabs value=y>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=42997 https://itthon.transindex.ro/?cikk=24532 https://itthon.transindex.ro/?hir=42995 https://itthon.transindex.ro/?hir=43009 https://itthon.transindex.ro/?hir=43031	null	default
+1	<param name=bootstrapWhenNotified value=true>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25478	null	default
+10	<script id=@LONG src=@LINK title=Koronavírus type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63575 https://itthon.transindex.ro/?hir=62782 https://itthon.transindex.ro/?hir=62770 https://itthon.transindex.ro/?hir=62740 https://itthon.transindex.ro/?hir=63548	null	default
+1	<iframe height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=23193	null	default
+1	<a bogdan= class=pin-it-button count-layout=horizontal d= epaminonda= href=@LINK rendez= target=@target tiotiu= ulmu=>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=15024	null	default
+50	<input name=subdom type=hidden value=sarm>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=12604 https://sarm.transindex.ro/?cikk=10477 https://sarm.transindex.ro/?cikk=16019 https://sarm.transindex.ro/?cikk=10085 https://sarm.transindex.ro/?cikk=12353	null	default
+1	<div id=TTvideoAncuþa Morariu>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=46498	null	default
+26	<script id=@LONG src=@LINK title=@LONG type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26437 https://itthon.transindex.ro/?hir=55694 https://itthon.transindex.ro/?cikk=27898 https://itthon.transindex.ro/?cikk=25736 https://itthon.transindex.ro/?hir=45068	null	default
+1	<img a= addig= alliter= alt=@alt az= egy= f= gyakoribb= h= haszn= jelz= kar= kellemes= kiv= leggyakoribb= m= mert= mindig= most= mostans= nemzeti= olyan= src=@LINK sz= tal= title=@title volt=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28348	null	default
+1	<img alt=@alt src=@LINK title=@title toj=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28348	null	default
+1	<param name=name value=@ElnkvlasztsNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=57709	null	default
+4	<iframe allowfullscreen= height=@STYLE mozallowfullscreen= src=@LINK webkitallowfullscreen= width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=8789 https://multikult.transindex.ro/?cikk=23471 https://multikult.transindex.ro/?hir=8705 https://eletmod.transindex.ro/?hir=19574	null	default
+6	<script id=@infogramNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25202 https://eletmod.transindex.ro/?cikk=25279 https://itthon.transindex.ro/?hir=40288 https://itthon.transindex.ro/?cikk=25503 https://itthon.transindex.ro/?hir=40361	null	default
+21	<iframe frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=17554 https://itthon.transindex.ro/?hir=53917 https://itthon.transindex.ro/?hir=54829 https://vilag.transindex.ro/?hir=27773 https://vilag.transindex.ro/?cikk=23066	null	default
+2	<img border=@NUM src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=24673	null	default
+1	<param name=name value=@ReszveteliadatokNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=38016	null	default
+3	<script id=@LONG src=@LINK title=Esetek száma országonként: type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=60474 https://vilag.transindex.ro/?hir=36231 https://vilag.transindex.ro/?hir=35728	null	default
+1	<a blitzkrieg= class=pin-it-button count-layout=horizontal href=@LINK s= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=20851	null	default
+1	<script height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=20822	null	default
+1	<script id=@LONG src=@LINK title=Adat type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27460	null	default
+3	<div class=exco data-id=@LONG>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28905 https://multikult.transindex.ro/?cikk=28933	null	default
+39	<param name=movie value=@LONG>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=3489 https://eletmod.transindex.ro/?cikk=6252 https://tech.transindex.ro/?cikk=5502 https://eletmod.transindex.ro/?cikk=4833 https://multikult.transindex.ro/?cikk=3316	null	default
+78	<param name=quality value=high>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=6252 https://eletmod.transindex.ro/?cikk=5652 https://eletmod.transindex.ro/?cikk=3882 https://eletmod.transindex.ro/?cikk=3489 https://eletmod.transindex.ro/?cikk=3343	null	default
+79	<param name=bgcolor value=#FFFFFF>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=3324 https://eletmod.transindex.ro/?cikk=3882 https://eletmod.transindex.ro/?cikk=3619 https://sarm.transindex.ro/?cikk=3855 https://eletmod.transindex.ro/?cikk=3717	null	default
+39	<param name=pluginurl value=@LINK>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=3316 https://eletmod.transindex.ro/?cikk=5759 https://tech.transindex.ro/?cikk=5502 https://sarm.transindex.ro/?cikk=4849 https://multikult.transindex.ro/?cikk=3292	null	default
+39	<img height=@STYLE src=@LINK>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=6252 https://multikult.transindex.ro/?cikk=3354 https://eletmod.transindex.ro/?cikk=4833 https://eletmod.transindex.ro/?cikk=3391 https://eletmod.transindex.ro/?cikk=3882	null	default
+39	<td colspan=@NUM>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=3619 https://eletmod.transindex.ro/?cikk=3391 https://tech.transindex.ro/?cikk=5502 https://eletmod.transindex.ro/?cikk=3343 https://eletmod.transindex.ro/?cikk=6252	null	default
+35	<iframe frameborder=no height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=39479 https://multikult.transindex.ro/?cikk=25855 https://itthon.transindex.ro/?hir=56580 https://itthon.transindex.ro/?hir=38545 https://multikult.transindex.ro/?cikk=24670	null	default
+27	<iframe frameborder=@NUM height=@STYLE marginheight=@STYLE marginwidth=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=20822 https://itthon.transindex.ro/?cikk=17100 https://vilag.transindex.ro/?cikk=22941 https://vilag.transindex.ro/?hir=17338 https://vilag.transindex.ro/?cikk=23096	null	default
+1	<img a= alt=@alt azonoss= gondolkod= l= src=@LINK title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27649	null	default
+1	<img alt=@alt az= filoz= hegel= p= src=@LINK title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27649	null	default
+1	<img a= alt=@alt amellyel= az= boldogs= fegyver= filoz= igaz= megval= src=@LINK title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27649	null	default
+1	<a class=pin-it-button count-layout=horizontal href=@LINK osthoffen= target=@target>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=19186	null	default
+3	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@LONG data-game-info=false data-height=@STYLE data-key=Default data-margin-top=@NUM data-recommend=false data-shares=true data-tags=All>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=24909 https://itthon.transindex.ro/?cikk=24925 https://eletmod.transindex.ro/?cikk=24928	null	default
+1	<script id=@LONG src=@LINK title=Jegyek type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27898	null	default
+1	<script id=@LONG src=@LINK title=Erdélyi megyék érettségi type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27898	null	default
+1	<a class=ym dekadens= href=@LINK kromosz= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=3089	null	default
+4	<script id=@LONG src=@LINK title=@RészvételNUM type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55629 https://eletmod.transindex.ro/?cikk=28839 https://itthon.transindex.ro/?hir=55617 https://itthon.transindex.ro/?hir=55662	null	default
+1	<param name=name value=@MegyeibontsNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55706	null	default
+1	<figure style=@STYLE>	0.0	1.0	0.0	https://vilag.transindex.ro/?hir=32598	null	default
+17	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=26795 https://eletmod.transindex.ro/?hir=25074 https://itthon.transindex.ro/?hir=57550 https://itthon.transindex.ro/?hir=56881 https://itthon.transindex.ro/?hir=40031	null	default
+1	<a angelina= b= class=ym hamupip= href=@LINK jolie-t= title=@title veri=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=4400	null	default
+3	<iframe allowfullscreen= allowtransparency=true frameborder=@NUM height=@STYLE id=iframe mozallowfullscreen= msallowfullscreen= oallowfullscreen= scrolling=no src=@LINK webkitallowfullscreen= width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=18170	null	default
+1	<a art= class=pin-it-button count-layout=horizontal href=@LINK s= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=23905	null	default
+2	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game-info=false data-item=@LONG data-recommend=false data-shares=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26777 https://multikult.transindex.ro/?cikk=26497	null	default
+5	<iframe allowfullscreen= frameborder=@NUM mozallowfullscreen= scrolling=no src=@LINK style=@STYLE webkitallowfullscreen=>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=33580 https://eletmod.transindex.ro/?hir=22442 https://eletmod.transindex.ro/?hir=21941	null	default
+1	<img alt=@alt egyik= erd= f= l= mil= nev= src=@LINK sz= title=@title toronyh= z=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28726	null	default
+1	<img a= alapj= alt=@alt az= blanc= ezen= fal= haszn= is= jean= k= klasszikus= mint= nouvel= p= patrick= src=@LINK talajt= terve= title=@title z=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28726	null	default
+1	<img alt=@alt amit= beton= forr= jelenleg= jonkers= src=@LINK tesztelnek.= title=@title z=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28726	null	default
+5	<iframe allowfullscreen=true frameborder=@NUM src=@LINK style=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=23518 https://vilag.transindex.ro/?hir=36368 https://eletmod.transindex.ro/?cikk=27546 https://eletmod.transindex.ro/?hir=23542	null	default
+1	<img a= alt=@alt gy= himnusza= kozmoszban= orsz= src=@LINK szovjet= title=@title>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=27599	null	default
+1	<div class=issuuembed data-configid=0/37789260 style=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=22107	null	default
+4	<script async=true src=@LINK type=text/javascript>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=10043 https://multikult.transindex.ro/?hir=7191 https://eletmod.transindex.ro/?hir=22107 https://itthon.transindex.ro/?cikk=27730	null	default
+1	<script id=@LONG src=@LINK title=A nõk helyzete Romániában type=text/javascript>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=25638	null	default
+1	<a az= class=ym href=@LINK megmaradok= mellett...= sima= szex= title=@title van=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=2164	null	default
+1	<img alt=@alt bel= egy= kifejezett= megk= n= src=@LINK title=@title>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=27684	null	default
+1	<script id=@LONG src=@LINK title=Haláleset type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28845	null	default
+20	<div class=infogram-embed data-id=@LONG data-title=@LONG data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27047 https://itthon.transindex.ro/?hir=59444 https://eletmod.transindex.ro/?cikk=26848 https://itthon.transindex.ro/?cikk=27709 https://eletmod.transindex.ro/?cikk=27054	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Nemzeti identitás Erdélyben data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26839	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Nyelvhasználat data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26839	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Vallásosság data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26839	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Szabadidõs tevékenység data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26839	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Fesztiválokon való részvétel data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26839	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Fõtevékenység data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26839	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Külföldi munkavállalási tervek data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26839	null	default
+13	<img alt=@alt src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=19518 https://itthon.transindex.ro/?cikk=20112 https://vilag.transindex.ro/?cikk=20697 https://vilag.transindex.ro/?hir=21199 https://eletmod.transindex.ro/?hir=19233	null	default
+5	<img alt=@alt height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=20251 https://vilag.transindex.ro/?hir=20252 https://vilag.transindex.ro/?cikk=20697	null	default
+2	<div class=infogram-embed data-id=@iskolazottsagNUM data-title=Iskolázottság data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26661	null	default
+1	<div class=infogram-embed data-id=@foglalkozasNUM data-title=Foglalkozás data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26661	null	default
+1	<div class=infogram-embed data-id=@zsebpenzNUM data-title=Zsebpénz data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26661	null	default
+1	<div class=infogram-embed data-id=szakvalasztasi_motivacio data-title=Szakválasztási motiváció data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26661	null	default
+10	<iframe align=@STYLE allowfullscreen= frameborder=@NUM height=@STYLE hspace=@NUM marginheight=@STYLE marginwidth=@STYLE scrolling=no src=@LINK vspace=@NUM width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=59939 https://itthon.transindex.ro/?hir=62096 https://itthon.transindex.ro/?hir=59722 https://eletmod.transindex.ro/?hir=24726 https://itthon.transindex.ro/?hir=62016	null	default
+2	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game-info=false data-item=@LONG data-recommend=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26695 https://itthon.transindex.ro/?cikk=26566	null	default
+1	<a atelier= class=pin-it-button count-layout=horizontal href=@LINK k= kolozsv= target=@target>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=18275	null	default
+1	<a atelier= class=pin-it-button count-layout=horizontal href=@LINK k= target=@target>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=18275	null	default
+2	<iframe allowfullscreen= aria-hidden=false frameborder=@NUM height=@STYLE src=@LINK style=@STYLE tabindex=@NUM width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28422 https://eletmod.transindex.ro/?hir=24473	null	default
+1	<a class=ym href=@LINK ilyen= magyar= p= rom= szinglil= title=@title van=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=3790	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=A munkába járás fõ eszköze: data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27054	null	default
+1	<img alt=@alt k= kaf.= l= src=@LINK szatm= title=@title zsolt=>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=28229	null	default
+1	<a href=@LINK https:=>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55103	null	default
+1	<div class=infogram-embed data-id=@UWYWDxRaraNUM data-title=@PaturiNUM data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=61593	null	default
+9	<iframe height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=64028 https://itthon.transindex.ro/?cikk=25126 https://itthon.transindex.ro/?hir=63692 https://itthon.transindex.ro/?hir=63696 https://itthon.transindex.ro/?hir=64026	null	default
+4	<iframe allowfullscreen= class=giphy-embed frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27197 https://itthon.transindex.ro/?cikk=28464 https://eletmod.transindex.ro/?cikk=26288	null	default
+1	<iframe allowfullscreen= border=@NUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=32723	null	default
+2	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=21762	null	default
+1	<script id=@ifjusagkutatasNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25202	null	default
+1	<a align=@STYLE href=@LINK title=@title width=@STYLE>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=4640	null	default
+1	<a class=ym foltokban= href=@LINK internet= title=@title vir=>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=483	null	default
+10	<iframe allowfullscreen= frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=23355 https://vilag.transindex.ro/?hir=36953 https://vilag.transindex.ro/?hir=37203 https://think.transindex.ro/?cikk=27779 https://vilag.transindex.ro/?cikk=28729	null	default
+2	<div class=playbuzz data-id=@LONG>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27691 https://multikult.transindex.ro/?cikk=27190	null	default
+6	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@LONG data-game-info=false data-recommend=false data-shares=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25467 https://itthon.transindex.ro/?cikk=26093 https://itthon.transindex.ro/?cikk=25270 https://eletmod.transindex.ro/?cikk=25458 https://eletmod.transindex.ro/?cikk=25482	null	default
+1	<div class=issuuembed data-configid=0/39644015 style=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=10043	null	default
+8	<param name=allowscriptaccess value=always>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=21448 https://vilag.transindex.ro/?hir=25683 https://multikult.transindex.ro/?hir=3596 https://multikult.transindex.ro/?hir=6174 https://eletmod.transindex.ro/?cikk=13087	null	default
+8	<param name=allowFullScreen value=true>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=5332 https://multikult.transindex.ro/?cikk=24687 https://multikult.transindex.ro/?hir=3596 https://vilag.transindex.ro/?hir=25683 https://multikult.transindex.ro/?hir=6174	null	default
+5	<embed allowfullscreen=true allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=5332 https://multikult.transindex.ro/?hir=6174 https://vilag.transindex.ro/?hir=25683	null	default
+1	<img alt=@alt az= dolgoznak= ell= folyamatos= gy= minden= src=@LINK title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=19565	null	default
+1	<img akarnak= alt=@alt biztos= de= egy= f= fokot= h= ker= kimeleg= lak= legal= lejbe= mint= src=@LINK szob= t= title=@title van=>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=19565	null	default
+7	<iframe allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=8840 https://multikult.transindex.ro/?hir=9183 https://eletmod.transindex.ro/?hir=19986 https://multikult.transindex.ro/?cikk=23537 https://vilag.transindex.ro/?cikk=22181	null	default
+1	<iframe allow=@LONG allowfullscreen=true frameborder=@NUM height=@STYLE mozallowfullscreen=true src=@LINK webkitallowfullscreen=true width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=36664	null	default
+1	<img a= alt=@alt black= blm-= ellen= gyilkol= lives= matter= rasszizmus= rend= rom= src=@LINK szolidarit= title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=60212	null	default
+1	<iframe loading=lazy src=@LINK style=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=29044	null	default
+1	<script id=@tipperedmenyekNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25133	null	default
+1	<script id=@szamszeruNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25133	null	default
+1	<a burger= class=pin-it-button count-layout=horizontal href=@LINK king= s= target=@target vagy=>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=17806	null	default
+1	<script id=@tevenezokNUM src=@LINK title=A tévénézõk aránya type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25640	null	default
+1	<script id=@LONG src=@LINK title=A tévéadók nézettsége type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25640	null	default
+1	<script id=@LONG src=@LINK title=Rádiók hallgatottsága type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25640	null	default
+1	<script id=@infogramNUM src=@LINK title=Írott sajtó type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25640	null	default
+1	<img a= alt=@alt az= egy= ep-k= is= lemondott= magyar= partin= r= src=@LINK telex.hu= title=@title vett= via=>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=36986	null	default
+1	<script id=@menekultekNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=40723	null	default
+1	<div class=infogram-embed data-id=@ecEmnRAzwIgeBqqeEqSNUM data-title=Scenarii deschidere scoli data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28883	null	default
+1	<param name=name value=@SzockonyhaMegyeNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26458	null	default
+12	<iframe frameborder=@NUM height=@STYLE scrolling=auto src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=24948 https://eletmod.transindex.ro/?cikk=21019 https://vilag.transindex.ro/?hir=36344	null	default
+18	<div id=@TTvideoNUM>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=22830 https://multikult.transindex.ro/?hir=59 https://multikult.transindex.ro/?cikk=14290 https://multikult.transindex.ro/?cikk=14530 https://multikult.transindex.ro/?cikk=11977	null	default
+1	<a honlapja= href=@LINK https:= hunor=>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=10377	null	default
+1	<img a= alt=@alt itt= j= k= ki= napot= src=@LINK title=@title tonitza= van=>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27818	null	default
+1	<a class=pin-it-button count-layout=horizontal cover= href=@LINK n= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=17208	null	default
+5	<video controls= height=@STYLE width=@STYLE>	0.0	3.0	0.0	https://itthon.transindex.ro/?cikk=28431	null	default
+5	<source class=video src=@LINK type=@videoNUM>	0.0	1.0	0.0	https://itthon.transindex.ro/?cikk=28431	null	default
+1	<iframe allowfullscreen= frameborder=@NUM gesture=media height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26944	null	default
+1	<img adaptil.com= alt=@alt el= menj= src=@LINK title=@title>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=27995	null	default
+1	<span class=kekcim Olcsó, eldobható reklámfelület – jön az összegyûrhetõ képernyõ>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2279	null	default
+4	<iframe allow=autoplay; fullscreen allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55704 https://multikult.transindex.ro/?cikk=28125 https://think.transindex.ro/?cikk=28230 https://multikult.transindex.ro/?cikk=28735	null	default
+1	<a class=ym formalinban= href=@LINK mennyei= title=@title tizenegy= vibr=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=1313	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@LONG data-game-info=false data-key=Default data-margin-top=@NUM data-recommend=false data-shares=false data-tags=All>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=24903	null	default
+1	<script id=@LONG src=@LINK title=Erste Liga - tabella type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=22852	null	default
+1	<script id=@LONG src=@LINK title=Végzettség szerinti megoszlás type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=45108	null	default
+1	<script id=@LONG src=@LINK title=Lakhely szerinti megoszlás type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=45108	null	default
+1	<script id=@LONG src=@LINK title=Életkor szerinti megoszlás type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=45108	null	default
+1	<img alt=@alt hat= src=@LINK title=@title>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=28237	null	default
+1	<img alt=@alt gyakorlatot.= j= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28277	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Vizsgákon megjelenõk száma data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27292	null	default
+1	<img alt=@alt animals= avagy:= src=@LINK title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27590	null	default
+1	<script id=@buntetesekNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25070	null	default
+1	<img a= alt=@alt amelynek= fel= gondot= jellegzetes= k= karbantart= m= nevezett= okozott= sok= src=@LINK szocre= tapst= title=@title v=>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28810	null	default
+5	<script data-beam-id=@LONG src=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26594	null	default
+4	<script language=javascript src=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=36054 https://itthon.transindex.ro/?hir=36020 https://eletmod.transindex.ro/?cikk=27157 https://itthon.transindex.ro/?hir=36148	null	default
+1	<img a= al= alt=@alt cs= is= ker= kiz= kolozsv= koncentr= kritikus= marosv= mellett= mutat= no2= por= src=@LINK sz= szint= tartom= title=@title z=>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=58957	null	default
+15	<div class=playbuzz data-id=@LONG data-show-info=false data-show-share=false>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27678 https://itthon.transindex.ro/?hir=54614 https://eletmod.transindex.ro/?cikk=27279 https://itthon.transindex.ro/?cikk=28285 https://eletmod.transindex.ro/?cikk=28108	null	default
+1	<a a= class=pin-it-button count-layout=horizontal diversity= est= href=@LINK notional= pas= pipe:= target=@target tomato= une=>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=13456	null	default
+3	<iframe allow=autoplay allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55322 https://think.transindex.ro/?cikk=27564 https://itthon.transindex.ro/?hir=51040	null	default
+1	<div class=infogram-embed data-id=@boldogsagindexNUM data-title= data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=22540	null	default
+1	<img a= alt=@alt az= azaz= befel= benne= egy= egyik= egyre= elvezetett= feh= forr= fot= haladva= j= k= kinga= mely= menek= pince= src=@LINK sz= szerepet.= szerint= szolg= szomsz= tal= telep= title=@title uradalmi= v=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28847	null	default
+1	<img a= alt=@alt az= b= borvid= cser= egyike.= fajt= feh= filox= fot= is= itt= k= kinga= mag= pinceutc= puszt= src=@LINK sz= szakemberek= t= title=@title tudj=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28847	null	default
+3	<iframe allowfullscreen= src=@LINK style=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=54656 https://itthon.transindex.ro/?hir=55963 https://itthon.transindex.ro/?hir=51921	null	default
+1	<a class=ym href=@LINK kr= m= sz= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=1116	null	default
+1	<a c= class=pin-it-button count-layout=horizontal href=@LINK k= mazsol= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?hir=6971	null	default
+1	<script id=@LONG src=@LINK title=@óraRészvételNUM type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55644	null	default
+1	<script id=@irnhXfrRkBNUM src=@LINK title=országok type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=42426	null	default
+1	<img alt=@alt b= src=@LINK title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27576	null	default
+1	<iframe class=scribd_iframe_embed data-aspect-ratio=undefined data-auto-height=@STYLE frameborder=@NUM height=@STYLE id=@NUM scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=24425	null	default
+1	<img a= alt=@alt el= f= fogott= hat= k= l= m= marosv= munk= nyugd= src=@LINK title=@title>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28263	null	default
+1	<div class=infogram-embed data-id=minimum_ennyibe_kerul_egy_nap_ data-title=@LONG data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26690	null	default
+1	<img alt=@alt az= el= eredm= falatok= nyugodt= src=@LINK title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=55665	null	default
+1	<a class=pin-it-button count-layout=horizontal href=@LINK igyunk= ne= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=17883	null	default
+1	<a class=pin-it-button count-layout=horizontal href=@LINK rajong= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=17883	null	default
+1	<a align=@STYLE href=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27057	null	default
+1	<input type=submit value=SZAVAZOK>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=7161	null	default
+1	<a class=ym href=@LINK simab= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=3605	null	default
+1	<script id=@felekezetiNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25004	null	default
+1	<param name=name value=@MegyeinterNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26007	null	default
+1	<iframe allowfullscreen= frameborder=@NUM scrolling=no src=@LINK style=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=23143	null	default
+2	<script id=@LONG src=@LINK title=Gyergyó type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=24968 https://eletmod.transindex.ro/?hir=24965	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@csillagokNUM data-game-info=false data-recommend=false data-shares=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25700	null	default
+1	<img a= alt=@alt besz= egyik= ethnologue= forr= k= ki.= n= nyelv= r= src=@LINK szuper= t= teszik= title=@title vil=>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27757	null	default
+3	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@LONG data-recommend=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25195 https://eletmod.transindex.ro/?cikk=25007 https://itthon.transindex.ro/?cikk=25479	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=erste liga - tabella data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26904	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Mozgás data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=23724	null	default
+1	<a class=pin-it-button count-layout=horizontal csatlakozni= h= href=@LINK nem= s= siker= target=@target>	0.0	1.0	0.0	https://tech.transindex.ro/?cikk=15415	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-item=@LONG data-recommend=false data-version=@NUM>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26807	null	default
+1	<img a= alt=@alt amely= c= festm= k= kapitalist= kl= militarist= nacionalista= pelleng= pill= politikust= src=@LINK t= title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27570	null	default
+1	<a a= bev= class=pin-it-button count-layout=horizontal href=@LINK idegenvezet= magyar= target=@target>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=14565	null	default
+1	<a class=pin-it-button count-layout=horizontal hamburgerezd= href=@LINK marg= n= s= target=@target v=>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=14565	null	default
+1	<script id=@LONG src=@LINK title=Elégedettség szintje type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25804	null	default
+1	<script id=@LONG src=@LINK title=Így látják a városukat type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25804	null	default
+1	<script id=@kornyezetNUM src=@LINK title=Környezet type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25804	null	default
+1	<script id=@szemelyesNUM src=@LINK title=Személyes helyzet type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25804	null	default
+1	<img alt=@alt feh= fot= kinga= src=@LINK title=@title zs=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28693	null	default
+1	<img alt=@alt feh= fot= kinga= src=@LINK szab= title=@title wikipedia.org=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28693	null	default
+1	<script id=@infogramNUM src=@LINK title=országok type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=41486	null	default
+1	<img a= alt=@alt az= cs= elkezden= felsz= ha= kezemmel= nem= seg= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2409	null	default
+1	<img a= akar= alt=@alt ez= letenni= nem= seg= src=@LINK title=@title valami=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2409	null	default
+1	<img a= alt=@alt h= innen= j= l= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2409	null	default
+1	<img a= alt=@alt ebben= ha= helyzetben= kell= mit= pisilnem= speci= src=@LINK tegyek= title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2409	null	default
+1	<img alt=@alt az= ett= extr= mindig= r= sportt= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2409	null	default
+1	<img alt=@alt barab= d= m= sallangos= sem.= src=@LINK sz= technika= title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27720	null	default
+1	<script id=@LONG src=@LINK title=@nézettségeNUM type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=41547	null	default
+1	<img alt=@alt led= src=@LINK title=@title>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=28563	null	default
+1	<iframe allowfullscreen= frameborder=@NUM height=@STYLE marginheight=@STYLE marginwidth=@STYLE name=myiFrame scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=28563	null	default
+1	<img src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=23508	null	default
+1	<iframe allowfullscreen=true allowtransparency=true frameborder=100% height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=34827	null	default
+2	<embed allowfullscreen=true allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=13087 https://multikult.transindex.ro/?hir=3596	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Copy: Koronavírus az Unióban data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=59444	null	default
+2	<div class=playbuzz data-comments=false data-id=@LONG data-show-info=false data-show-share=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27760 https://eletmod.transindex.ro/?cikk=27247	null	default
+1	<div class=pb_feed data-embed-by=@LONG data-item=@LONG data-version=@NUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26809	null	default
+1	<object data=@LINK height=@STYLE type=application/x-shockwave-flash width=@STYLE>	0.0	4.0	0.0	https://itthon.transindex.ro/?cikk=21448	null	default
+1	<param name=allowfullscreen value=true>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=21448	null	default
+1	<param name=flashvars value=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=21448	null	default
+1	<div id=@giphyNUM style=@STYLE>	0.0	0.0	0.0	https://welemeny.transindex.ro/?cikk=25817	null	default
+1	<img alt=@alt csak= halljunk= is= j= src=@LINK title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=58014	null	default
+1	<img a= alt=@alt azt= h= hogy= humorist= is= j= koll= megk= mellett= merik= nem= politikusok= sajt= src=@LINK szerep= title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28281	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Nõk Romániában! data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27139	null	default
+2	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK type=text/html width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=24811 https://eletmod.transindex.ro/?hir=20777	null	default
+1	<a class=ym egy= href=@LINK n= szeret.= title=@title van=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=1403	null	default
+1	<img alt=@alt src=@LINK sz= title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28614	null	default
+1	<img a= alt=@alt felirat= fot= lesz= mellett.= minden= rendben= src=@LINK sziv= title=@title wikipediacommons.=>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=28343	null	default
+1	<a class=pin-it-button count-layout=horizontal gorman= href=@LINK kili= target=@target turner=>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=14993	null	default
+1	<img a= alt=@alt ar= kolozsv= kuk= mellett.= okos= src=@LINK title=@title>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=27880	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@mennyireNUM data-game-info=true data-height=@STYLE data-key=Default data-margin-top=@NUM data-recommend=false data-shares=true data-tags=All>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=24977	null	default
+1	<iframe data-audio-widget-jspf=@LINK frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=7116	null	default
+1	<a a= class=ym erk= href=@LINK id= micsoda= rom= szerelmi= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=2444	null	default
+2	<iframe allowfullscreen=true mozallowfullscreen=true scrolling=no src=@LINK style=@STYLE webkitallowfullscreen=true>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=49548	null	default
+1	<a a= class=ym divat= href=@LINK k= m= menni= meztelen= szex= title=@title volt=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=3830	null	default
+3	<param name=path value=@sharedNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=24532 https://itthon.transindex.ro/?hir=57484 https://itthon.transindex.ro/?hir=57454	null	default
+2	<iframe allowfullscreen= frameborder=@NUM height=@STYLE mozallowfullscreen= msallowfullscreen= oallowfullscreen= src=@LINK webkitallowfullscreen= width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=27109 https://itthon.transindex.ro/?cikk=25648	null	default
+2	<iframe allowfullscreen=@NUM frameborder=@NUM height=@STYLE mozallowfullscreen=@NUM scrolling=no src=@LINK style=@STYLE webkitallowfullscreen=@NUM width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=25115 https://itthon.transindex.ro/?cikk=23596	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@gallafNUM data-game-info=false data-recommend=false>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=25081	null	default
+1	<img alatt= alt=@alt b= bloomberg.= dupl= forr= k= n= src=@LINK title=@title>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=27763	null	default
+1	<script id=@infogramNUM src=@LINK title=szavazás type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=42346	null	default
+3	<iframe allowfullscreen= frameborder=@NUM mozallowfullscreen= src=@LINK style=@STYLE webkitallowfullscreen=>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=31815	null	default
+1	<img a= alt=@alt botanikusok= de= f= fajgazdag= ink= legal= legel= megk= n= src=@LINK title=@title tudnak=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28247	null	default
+1	<img a= alt=@alt biodiverzit= eg= fenntart= figyel= gyepek= hozz= is= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28247	null	default
+1	<img a= alt=@alt hely= is= itt= lakni.= meg= miatt= src=@LINK sz= title=@title>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28534	null	default
+1	<img a= alapon= alatta= alt=@alt emberek= f= felirat= higyj= jelenlegi= kore= laibach= logoj= pedig= rajta= rakj= s= src=@LINK title=@title v=>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27654	null	default
+1	<img alt=@alt az= forr= gyenge= jobboldalon= src=@LINK title=@title v= wikip=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28023	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Vírusvariánsok data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28965	null	default
+1	<div class=issuuembed data-configid=0/1677044 style=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=7191	null	default
+1	<script id=@LONG src=@LINK title=posztok type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=26311	null	default
+1	<img .= alt=@alt fot= src=@LINK title=@title transindex=>	0.0	0.0	0.0	https://welemeny.transindex.ro/?cikk=29046	null	default
+1	<iframe border=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=47400	null	default
+1	<a a= amivel= bar= class=ym dicsekedsz= hogy= href=@LINK legyen= mint= olyan= szex= t= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=3700	null	default
+1	<img alt=@alt az= elhagy= f= fenyegetted= ha= igazs= ki= l= meg= pillanata= src=@LINK szerelmedet= title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=64204	null	default
+3	<iframe class=vine-embed frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=20375 https://eletmod.transindex.ro/?cikk=20705	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Az exit poll eredmények data-type=interactive>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=32253	null	default
+1	<div class=issuuembed data-configid=37141128/68709321 style=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27730	null	default
+1	<param name=retry value=true>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=24532	null	default
+1	<a class=ym f= href=@LINK ig= is= t= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=1073	null	default
+1	<img alt=@alt attila= az= fot= kedvenc= lelkesedett= nagyon= nem= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27663	null	default
+1	<script id=@romaniabanNUM src=@LINK type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=21006	null	default
+1	<iframe class=imgur-album frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=24354	null	default
+1	<script id=@LONG src=@LINK title=@tabellaNUM type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=22849	null	default
+1	<script id=@infogramNUM src=@LINK title=bizalom március type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=42387	null	default
+1	<iframe frameborder=no framespacing=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=23124	null	default
+3	<iframe allowfullscreen= frameborder=@NUM height=@STYLE mozallowfullscreen= scrolling=no src=@LINK webkitallowfullscreen= width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=28713 https://vilag.transindex.ro/?cikk=24055 https://vilag.transindex.ro/?hir=30207	null	default
+1	<img alt=@alt csernobilj= fot= k= src=@LINK title=@title wikipedia.org.=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28707	null	default
+1	<img alt=@alt felhaszn= pixabay.= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28963	null	default
+1	<iframe allow=encrypted-media allowtransparency=true frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=11527	null	default
+1	<script id=@LONG src=@LINK title=Oktatas type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63445	null	default
+1	<a asszonyka= class=ym href=@LINK k= lejt= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=3034	null	default
+3	<iframe frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=61925 https://itthon.transindex.ro/?hir=61651 https://itthon.transindex.ro/?hir=61607	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Exit poll eredmények data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=57495	null	default
+1	<div id=TTvideoRúzsa Magdi>	0.0	0.0	0.0	https://multikult.transindex.ro/?hir=5847	null	default
+1	<iframe allow=encrypted-media frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28899	null	default
+1	<script id=@LONG src=@LINK title=@fakitermelésNUM type=text/javascript>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=26012	null	default
+1	<script id=@LONG src=@LINK title=erdõirtás erdõradar type=text/javascript>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=26012	null	default
+1	<script async= crossorigin=anonymous defer= nonce=@NUM src=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=62064	null	default
+4	<script id=@infogramNUM src=@LINK title=bizalom type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=41474	null	default
+1	<a a= class=ym hogy= href=@LINK k= st= title=@title valami= van=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=9320	null	default
+1	<script id=@LONG src=@LINK title=Tesztek type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28939	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Lakhatás data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=25116	null	default
+1	<param name=name value=@KpviselhzNUM>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=45069	null	default
+1	<img alt=@alt border=@NUM src=@LINK width=@STYLE>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=26469	null	default
+1	<div class=pb_feed data-embed-by=@LONG data-item=@LONG>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26806	null	default
+1	<a class=@STYLE hallak= href=@LINK nem= target=@target title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=556	null	default
+1	<a class=twitter hallak= href=@LINK nem= target=@target title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=556	null	default
+1	<a class=myspace hallak= href=@LINK nem= target=@target title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=556	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Választ data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=62378	null	default
+1	<img alt=@alt az= carol= csaba= eln= emnp= forr= istv= j= karlend= kiszner= megyei= mezei= pop= presasm.ro= src=@LINK szatm= title=@title zolt=>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=60930	null	default
+1	<div id=TTvideoAntal János>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=39129	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@LONG data-game-info=false data-height=@STYLE data-key=Default data-margin-top=@NUM data-recommend=false data-shares=false data-tags=All>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=24933	null	default
+4	<iframe scrolling=no src=@LINK style=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583 https://itthon.transindex.ro/?hir=11245	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@sorozattesztNUM data-game-info=true data-height=@STYLE data-key=Default data-margin-top=@NUM data-recommend=false data-shares=true data-tags=All>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=24923	null	default
+2	<img alt=@alt funkci= is= jelenik= lev= meg= nem= olvas= src=@LINK title=@title toader=>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=54698 https://itthon.transindex.ro/?hir=54700	null	default
+1	<script id=@LONG src=@LINK title=@eurobarometerNUM type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25969	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Részleges eredmények: data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=57512	null	default
+2	<div class=infogram-embed data-id=@LONG data-title=PISA data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28156	null	default
+1	<a data-pin-do=embedPin href=@LINK>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=27645	null	default
+1	<a class=pin-it-button count-layout=horizontal href=@LINK is= k= n= target=@target tov=>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=23237	null	default
+1	<script async= data-telegram-post=@bbbreakingNUM data-width=@STYLE src=@LINK>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=34966	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Column Chart data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27752	null	default
+1	<a cs= fell= href=@LINK https:=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2822	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Születések száma data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28962	null	default
+1	<a class=ym h= hetenk= href=@LINK pantita= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=2155	null	default
+1	<iframe class=rep-video-embed frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=25455	null	default
+1	<script id=@bevandorlasNUM src=@LINK title=Bevándorlás type=text/javascript>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=27225	null	default
+1	<img a= alt=@alt amelyeket= az= besz= dolgok= fot= kapcsolataik= kivitelezhet= m= ma= mccutcheon= megtehettek= nem= sharon= src=@LINK tegnap= title=@title unsplash.com=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28315	null	default
+1	<img a= alt=@alt anastasiia= chepinska= fot= hogy= ideig= igaz= is= lebeg= lehet= leveg= m= megoszlik= mennyi= nem= src=@LINK szakemberek= title=@title tudni= unsplash.com= v=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28315	null	default
+1	<script id=@LONG src=@LINK title=A városok közbiztonsága type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26437	null	default
+1	<script id=@LONG src=@LINK title=Az erdélyi városok negyedei type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26437	null	default
+1	<a a= class=ym csak= dologra= gondoltam:= href=@LINK k= kaj= szexre= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=2318	null	default
+1	<img a= alt=@alt az= besz= egy= felv= filoz= fot= gy= ide= ny= src=@LINK szerz= title=@title vissza=>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27917	null	default
+2	<iframe allowfullscreen= frameborder=@NUM height=@STYLE marginheight=@STYLE marginwidth=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=26183 https://eletmod.transindex.ro/?cikk=22508	null	default
+8	<iframe allowfullscreen=allowfullscreen frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=24861	null	default
+1	<img alt=@alt class=attachment-large height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=27133	null	default
+1	<a a= aj= amelyet= besz= el= folytat= helysz= href=@LINK humorist= hvmlrwhygkg= jobb= k= klub= megtekinteni= mint= partiumi= r= showder= sz= szerint:= ut=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=21608	null	default
+1	<a gds1deio7y4= href=@LINK>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=21608	null	default
+1	<img a= alt=@alt az= be= csak= de= egy= elker= elod= ezek= ezekkel= falakkal= hat= int= ker= kialak= m= megfelel= megold= nem= pedig= src=@LINK sz= szab= szakember= szerint= teraszokat= title=@title v= vend=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28746	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Bar Chart data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27150	null	default
+2	<iframe allowfullscreen=yes frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0.0	0.0	0.0	https://welemeny.transindex.ro/?cikk=26362	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Egészségügyi érintettség data-type=interactive>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28353	null	default
+1	<div class=flourish-embed flourish-chart data-src=@LINK>	0.0	1.0	0.0	https://vilag.transindex.ro/?hir=37005	null	default
+1	<script id=@LONG src=@LINK title=Legpihentetõbb tevékenységek type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=26223	null	default
+1	<a catalyst= contact= emailje= href=@LINK>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=95	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Oktatas data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63349	null	default
+1	<img a= alt=@alt aresel= el= ereje= rom= src=@LINK title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27808	null	default
+1	<a class=ym f= href=@LINK megbocs= te= title=@title vagy...=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=1091	null	default
+1	<a a= class=ym fagyi= h= href=@LINK j= title=@title vagina=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=2285	null	default
+1	<link href=@LINK rel=@STYLE type=text/css>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27157	null	default
+1	<style>	0.0	0.0	13.0	https://eletmod.transindex.ro/?cikk=27157	decompose	default
+1	<input name=@NUM type=hidden value=@LONG>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27157	null	default
+18	<input name=@NUM style=@STYLE type=checkbox value=@NUM>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27157	null	default
+2	<a class=qp_btna href=@LINK style=@STYLE>	0.0	0.5	0.0	https://eletmod.transindex.ro/?cikk=27157	null	default
+1	<input btype=v name=@NUM style=@STYLE type=submit value=Vote>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=27157	null	default
+1	<a class=ym d= hogyan= href=@LINK j= magduska= r= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=1609	null	default
+1	<script id=@DZmPCtgmuwDHENUM src=@LINK title=@LONG type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=42497	null	default
+1	<script id=@infogramNUM src=@LINK title=@LONG type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=42497	null	default
+1	<script id=@infogramNUM src=@LINK title=egyház type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=42497	null	default
+1	<a a= bizonytalankod= class=ym divattervez= egy= hagyni= href=@LINK nagy= nyomot= p= title=@title tud=>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=16805	null	default
+1	<a a= class=ym egy= felment= g= href=@LINK macsk= pillanat= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=4876	null	default
+1	<div class=infogram-embed data-id=@FBOVWoNUM data-title=@LONG data-type=interactive>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=37434	null	default
+1	<span class=date data-time=2021-05-22 18:12:40>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<span class=date data-time=2021-05-22 14:55:36>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<span class=date data-time=2021-05-22 13:18:02>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<span class=date data-time=2021-05-22 11:39:24>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+3	<div class=ad>	0.0	2.6666666666666665	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<div class=moveup>	0.0	2.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<div class=separator>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<a class=main href=@LINK>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<div class=tablet-side>	0.0	6.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<section class=infografika>	0.0	2.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<img src=@LINK srcset=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<img src=@LINK srcset=@LONG>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<a class=logo href=@LINK>	0.0	1.0	0.0	https://itthon.transindex.ro/?hir=63583	null	default
+1	<script id=trfc_trafic_script type=text/javascript>	0.0	0.0	45.0	https://itthon.transindex.ro/?hir=63583	decompose	default
+1	<a class=pin-it-button count-layout=horizontal g= href=@LINK target=@target>	0.0	1.0	0.0	https://eletmod.transindex.ro/?hir=18193	null	default
+1	<a a= anyagokb= az= class=pin-it-button count-layout=horizontal csak= gabonaterm= hogy= href=@LINK kell= kisiskol= mi= milli= mint= okt= orsz= propaganda= rekord= t= target=@target tonn= tudj= tudn= volt=>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=27991	null	default
+1	<img alt=@alt antal= asken= bazilika= bolg= g= info-sud-est.ro= k= katedr= katolikus= m= mecset= metamorphosis= mikl= ortodox= p= rom= romai= src=@LINK szt.= templom= title=@title vagy= zsinag=>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=27908	null	default
+1	<a class=pin-it-button count-layout=horizontal href=@LINK images= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=18859	null	default
+7	<a class=myPlayer href=@LINK style=@STYLE>	0.0	3.0	0.0	https://multikult.transindex.ro/?cikk=11320	null	default
+7	<img border=@NUM class=png_img src=@LINK style=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=11320	null	default
+1	<script id=@LONG src=@LINK title=Térkép type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27829	null	default
+1	<div class=cpi-node data-embed=map>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=54242	null	default
+1	<iframe class=juxtapose frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=27974	null	default
+1	<iframe allowfullscreen= frameborder=@NUM src=@LINK>	0.0	0.0	0.0	https://vilag.transindex.ro/?hir=32789	null	default
+1	<img alt=@alt cs= src=@LINK title=@title>	0.0	0.0	0.0	https://vilag.transindex.ro/?cikk=28651	null	default
+1	<a class=ym egy= href=@LINK pl= title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=858	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Koronavíurs data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=59701	null	default
+1	<img a= adal= almarost= alt=@alt az= be= de= egy= elcseszett= eredm= fogyaszthat= k= kem= kutat= mutatja= rostszeletnek= speci= src=@LINK t= term= title=@title v=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28144	null	default
+1	<zerobyte>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=2072	null	default
+1	<div class=pb_feed data-comments=false data-embed-by=@LONG data-game=@LONG data-game-info=true data-height=@STYLE data-key=Default data-margin-top=@NUM data-recommend=false data-shares=true data-tags=All>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=24950	null	default
+1	<script id=@romaniabanNUM src=@LINK title=@RomániábanNUM type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25686	null	default
+1	<script id=@romaniabanNUM src=@LINK title=idõsek Romániában type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25686	null	default
+1	<img alt=@alt hallja= src=@LINK title=@title>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=28222	null	default
+1	<script id=@infogramNUM src=@LINK title=Bizalom type=text/javascript>	0.0	0.0	0.0	https://itthon.transindex.ro/?hir=41446	null	default
+1	<iframe allowfullscreen= allowtransparency=true frameborder=@NUM height=@STYLE mozallowfullscreen= msallowfullscreen= oallowfullscreen= src=@LINK webkitallowfullscreen= width=@STYLE>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=25484	null	default
+1	<script id=@LONG src=@LINK title=Elhízás type=text/javascript>	0.0	0.0	0.0	https://eletmod.transindex.ro/?hir=25018	null	default
+1	<a az= class=pin-it-button count-layout=horizontal emberk= feh= fekete= felirattal.= gypsies= href=@LINK mi.= n= piros= rajta= saj= sz= t= target=@target vagy= z=>	0.0	1.0	0.0	https://eletmod.transindex.ro/?cikk=14344	null	default
+1	<object classid=@LONG codebase=@LINK height=@STYLE id=flashObj width=@STYLE>	0.0	9.0	0.0	https://multikult.transindex.ro/?cikk=24687	null	default
+1	<param name=flashVars value=@LINK>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=24687	null	default
+1	<param name=base value=@LINK>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=24687	null	default
+1	<param name=seamlesstabbing value=false>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=24687	null	default
+1	<param name=swLiveConnect value=true>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=24687	null	default
+1	<param name=allowScriptAccess value=always>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=24687	null	default
+1	<embed allowfullscreen=true allowscriptaccess=always base=@LINK bgcolor= flashvars=@LINK height=@STYLE name=flashObj pluginspage=@LINK seamlesstabbing=false src=@LINK swliveconnect=true type=application/x-shockwave-flash width=@STYLE>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=24687	null	default
+1	<div class=infogram-embed data-id=@LONG data-title=Koronavírus megbetegedések data-type=interactive>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28375	null	default
+1	<img akkor= alt=@alt arr= fogsz= h= ha= hogy= hogyan= kapni= lehet= megk= megval= mit= src=@LINK szak= title=@title v=>	0.0	0.0	0.0	https://multikult.transindex.ro/?cikk=28909	null	default
+1	<a class=ym emberek= href=@LINK nyugalom= title=@title>	0.0	0.0	0.0	https://tech.transindex.ro/?cikk=644	null	default
+1	<a class=pin-it-button count-layout=horizontal facebook-oldala=@STYLE href=@LINK images= target=@target>	0.0	1.0	0.0	https://multikult.transindex.ro/?cikk=18915	null	default
+1	<a as= class=@STYLE evek= href=@LINK target=@target title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=12907	null	default
+1	<a as= class=twitter evek= href=@LINK target=@target title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=12907	null	default
+1	<a as= class=myspace evek= href=@LINK target=@target title=@title>	0.0	0.0	0.0	https://sarm.transindex.ro/?cikk=12907	null	default
+1	<img a= alt=@alt el= fiatalabb= figyelj= fot= is= kih= koroszt= mert= most= pixabay.com.= src=@LINK t= title=@title wokandapix=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=29002	null	default
+1	<img a= alt=@alt biztos= egy= figyelm= fot= jelenl= m= mellett= mi= pixabay.com= seg= src=@LINK szakmai= title=@title tov=>	0.0	0.0	0.0	https://eletmod.transindex.ro/?cikk=29002	null	default
+1	<a bond.= class=pin-it-button count-layout=horizontal href=@LINK m= target=@target vagabond.=>	0.0	1.0	0.0	https://itthon.transindex.ro/?cikk=16351	null	default
+1	<img a= alt=@alt felel= fot= hat= k= magyar= magyarok= sors= src=@LINK title=@title>	0.0	0.0	0.0	https://itthon.transindex.ro/?cikk=28135	null	default
+1	<img a= alt=@alt bartha= botond-zsolt= druzsb= felh= fot= ism= k= metsz= okozott= src=@LINK szatm= title=@title z=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28284	null	default
+1	<img a= alt=@alt amit= coic= csin= csonk= dorel= elfogadhatatlannak= ez= f= felsz= fot= hivatal= hogy= mondta.= polg= src=@LINK szatmar.ro= tartom= title=@title v= vessen=>	0.0	0.0	0.0	https://think.transindex.ro/?cikk=28284	null	default
