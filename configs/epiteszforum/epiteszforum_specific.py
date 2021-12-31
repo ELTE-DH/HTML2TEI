@@ -50,9 +50,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             elif p.text.strip().startswith('Vélemények:') or p.text.strip().startswith('További') \
                     or p.text.strip().startswith('Letölthető'):
                 break
-            else:  # if p_text.startswith('Címkék') or p_text.startswith('Dosszié'):
+            else:
                 rest_as_keyword.extend([a.text.strip() for a in p.find_all('a') if len(a.text.strip()) > 0])
-        # metadata categories can be developed with: Cég, szervezet:
+        # metadata categories can be developed with the followings:
+        # Cég, szervezet:
         # https://epiteszforum.hu/irodahazak-ejszakaja-vi-well-iroda   sourceOrganization Termék, technológia:
         # https://epiteszforum.hu/tetoablak-trend-energiamegtakaritas-es-ujrahasznosithatosag Letölthető
         # dokumentumok: https://epiteszforum.hu/belteri-falfelulet-megformalasa-a-nyiregyhazi-foiskola-tanszeki
