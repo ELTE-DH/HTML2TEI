@@ -1,6 +1,6 @@
 language: python
+os: linux
 dist: focal
-sudo: true
 python:
   - '3.8'
 before_install:
@@ -15,16 +15,25 @@ install:
 script:
   - make install test
 deploy:
-    provider: releases
-    skip_cleanup: true
+  - provider: releases
+    cleanup: false
     # Create a personal access token and store it in travis-ci as an environment variable
-    api_key: $GITHUB_TOKEN
+    token: $GITHUB_TOKEN
     file_glob: true
     file: dist/*
     on:
-        repo: ELTE-DH/HTML2TEI
-        branch: master
-        tags: true
-        condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
-    notifications:
-        email: false
+      repo: ELTE-DH/HTML2TEI
+      branch: main
+      tags: true
+      condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
+  - provider: script
+    # Upload to PyPi with poetry (create a token and store it in travis-ci as PYPI_TOKEN environment variable)
+    script: make upload
+    cleanup: false
+    on:
+      repo: ELTE-DH/HTML2TEI
+      branch: main
+      tags: true
+      condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
+notifications:
+    email: false

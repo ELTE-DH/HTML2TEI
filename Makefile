@@ -23,21 +23,8 @@ __clean-extra-deps:
 
 # From here only generic parts
 
-# Parse version string and create new version. Originally from: https://github.com/mittelholcz/contextfun
-# Variable is empty in Travis-CI if not git tag present
-TRAVIS_TAG ?= ""
-OLDVER := $$(grep -P -o '(?<=version = ")[^"]+' pyproject.toml)
-
-MAJOR := $$(echo $(OLDVER) | sed -r s"/([0-9]+)\.([0-9]+)\.([0-9]+)/\1/")
-MINOR := $$(echo $(OLDVER) | sed -r s"/([0-9]+)\.([0-9]+)\.([0-9]+)/\2/")
-PATCH := $$(echo $(OLDVER) | sed -r s"/([0-9]+)\.([0-9]+)\.([0-9]+)/\3/")
-
-NEWMAJORVER="$$(( $(MAJOR)+1 )).0.0"
-NEWMINORVER="$(MAJOR).$$(( $(MINOR)+1 )).0"
-NEWPATCHVER="$(MAJOR).$(MINOR).$$(( $(PATCH)+1 ))"
-
-all: clean venv test
-	@echo "all: clean, venv, test"
+all: clean venv install test
+	@echo "all: clean, venv, install, test"
 .PHONY: all
 
 install-dep-packages:
@@ -66,6 +53,11 @@ install: build
 	 @poetry run pip install --upgrade dist/*.whl
 .PHONY: install
 
+# Upload to PyPi with poetry (with token if $$PYPI_TOKEN is specified)
+upload:
+	@[[ ! -z "$(PYPI_TOKEN)" ]] && poetry publish --username "__token__" --password $(PYPI_TOKEN) || poetry publish
+.PHONY: upload
+
 test:
 	poetry run pytest --verbose tests/
 .PHONY: test
@@ -75,34 +67,39 @@ clean: __clean-extra-deps
 .PHONY: clean
 
 # Do actual release with new version. Originally from: https://github.com/mittelholcz/contextfun
-# poetry version will modify pyproject.toml only. The other steps must be done manually.
 release-major:
-	@poetry version major
-	@make -s __release NEWVER=$(NEWMAJORVER)
+	@make -s __release BUMP="major"
 .PHONY: release-major
 
 release-minor:
-	@poetry version minor
-	@make -s __release NEWVER=$(NEWMINORVER)
+	@make -s __release BUMP="minor"
 .PHONY: release-minor
 
 release-patch:
-	@poetry version patch
-	@make -s __release NEWVER=$(NEWPATCHVER)
+	@make -s __release BUMP="patch"
 .PHONY: release-patch
 
 __release:
-	@[[ ! -z "$(NEWVER)" ]] || \
+	@[[ "$(BUMP)" == "major" || "$(BUMP)" == "minor" || "$(BUMP)" == "patch" ]] || \
 		(echo -e "$(RED)Do not call this target!\nUse 'release-major', 'release-minor' or 'release-patch'!$(NOCOLOR)"; \
 		 exit 1)
 	@[[ -z $$(git status --porcelain) ]] || (echo "$(RED)Working dir is dirty!$(NOCOLOR)"; exit 1)
-	@echo "NEW VERSION: $(NEWVER)"
-	# Clean install, test and tidy up
-	@make clean test build
+	# poetry version will modify pyproject.toml only. The other steps must be done manually.
+	@poetry version $(BUMP)
 	@git add $(MODULE)/pyproject.toml
+	# Clean install with (built package) and test
+	@make all
+	# Create release commit and git tag
+	@make -S __commit_to_origin NEWVER=$$(poetry run python $(MODULE)/version.py)
+.PHONY: __release
+
+__commit_to_origin:
+	@[[ ! -z "$(NEWVER)" ]] || \
+		(echo -e "$(RED)Do not call this target!\nUse 'release-major', 'release-minor' or 'release-patch'!$(NOCOLOR)"; \
+		 exit 1)
+	@echo "NEW VERSION: $(NEWVER)"
 	@git commit -m "Release $(NEWVER)"
 	@git tag -a "v$(NEWVER)" -m "Release $(NEWVER)"
 	@git push
 	@git push --tags
-	@poetry publish
-.PHONY: __release
+.PHONY: __commit_to_origin

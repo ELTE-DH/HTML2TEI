@@ -25,6 +25,7 @@ For other commits the CI system shows if testing is failed or passed
 
 1) Register at Travis-CI
 2) Generate a [personal access token](https://github.com/settings/tokens/new) on github (for users only). Make sure that all subsidiaries of `Full control of private repositories` are checked
-3) Save the generated token as `$GITHUB_TOKEN` environment variable in Travis-CI and enable the repository
-4) Place an appropriate `.travis.yml` file in the root directory of the repository
-5) Create a new commit to test
+3) Generate a [token on PyPi](https://pypi.org/manage/account/token/)
+4) Save the generated tokens as `$GITHUB_TOKEN` and `$PYPI_TOKEN` environment variables in Travis-CI and enable the repository
+5) Place an appropriate `.travis.yml` file in the root directory of the repository
+6) Create a new commit to test
