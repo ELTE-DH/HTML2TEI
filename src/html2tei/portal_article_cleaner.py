@@ -9,7 +9,7 @@ from datetime import datetime, MAXYEAR, MINYEAR
 
 from bs4 import BeautifulSoup
 
-from src.html2tei.tei_utils import create_new_tag_with_string
+from html2tei.tei_utils import create_new_tag_with_string
 from html2tei.validate_hash_zip import init_output_writer
 from html2tei.processing_utils import run_single_process, run_multiple_process
 

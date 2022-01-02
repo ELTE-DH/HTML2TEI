@@ -655,6 +655,7 @@ python-versions = ">=3.6"
 pyyaml = "*"
 
 [extras]
+full = ["justext", "newspaper3k"]
 justext = ["justext"]
 newspaper3k = ["newspaper3k"]
 trafilatura = ["trafilatura"]
