@@ -655,7 +655,7 @@ python-versions = ">=3.6"
 pyyaml = "*"
 
 [extras]
-full = ["justext", "newspaper3k"]
+full = ["justext", "newspaper3k", "trafilatura"]
 justext = ["justext"]
 newspaper3k = ["newspaper3k"]
 trafilatura = ["trafilatura"]
@@ -663,7 +663,7 @@ trafilatura = ["trafilatura"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "fae15f1fc24cb559fa3e06d9220de03da593b360f2183317e331ea6057b91aab"
+content-hash = "cfc1e7d02310810e46b1965988ee3dfd8bebbd9d00cd70947066bd67b8ae6752"
 
 [metadata.files]
 atomicwrites = [
