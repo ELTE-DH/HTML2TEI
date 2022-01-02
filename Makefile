@@ -59,11 +59,11 @@ upload:
 .PHONY: upload
 
 test:
-	poetry run pytest --verbose tests/
+	@poetry run python -m pytest --verbose tests/
 .PHONY: test
 
 clean: __clean-extra-deps
-	rm -rf dist/ build/ $(MODULE).egg-info/ $$(poetry env info -p)
+	@rm -rf dist/ build/ $(MODULE).egg-info/ $$(poetry env info -p)
 .PHONY: clean
 
 # Do actual release with new version. Originally from: https://github.com/mittelholcz/contextfun
@@ -84,9 +84,12 @@ __release:
 		(echo -e "$(RED)Do not call this target!\nUse 'release-major', 'release-minor' or 'release-patch'!$(NOCOLOR)"; \
 		 exit 1)
 	@[[ -z $$(git status --porcelain) ]] || (echo "$(RED)Working dir is dirty!$(NOCOLOR)"; exit 1)
+	# Update dependencies before buiding and testing (closest to clean install)
+	@poetry update
 	# poetry version will modify pyproject.toml only. The other steps must be done manually.
 	@poetry version $(BUMP)
-	@git add $(MODULE)/pyproject.toml
+	# Add modified files to git before commit
+	@git add pyproject.toml poetry.lock
 	# Clean install with (built package) and test
 	@make all
 	# Create release commit and git tag
