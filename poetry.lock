@@ -491,13 +491,14 @@ python-versions = ">=3.6"
 pyyaml = "*"
 
 [extras]
+full = ["justext", "newspaper3k"]
 justext = ["justext"]
 newspaper3k = ["newspaper3k"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "b9755be2a7a28ac5e770d0db17a2e1e140ca530273846da2e9c78dc7685d4428"
+content-hash = "d30f1edf82229591503a632111dc633254b85ad21fa496ff22035cf3777b0b02"
 
 [metadata.files]
 atomicwrites = [

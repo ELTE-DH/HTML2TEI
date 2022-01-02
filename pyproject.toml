@@ -31,6 +31,7 @@ newspaper3k = { version = "^0.2.8", optional = true }
 [tool.poetry.extras]
 justext = ["justext"]
 newspaper3k = ["newspaper3k"]
+full = ["justext", "newspaper3k"]
 
 [tool.poetry.dev-dependencies]
 pytest = "^6"

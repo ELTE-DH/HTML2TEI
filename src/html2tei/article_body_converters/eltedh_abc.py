@@ -6,9 +6,9 @@ from bs4 import BeautifulSoup
 from bs4.element import NavigableString, Tag, Comment
 
 from html2tei.basic_tag_dicts import *
-from src.html2tei.link_corrector import link_corrector
+from html2tei.link_corrector import link_corrector
 from html2tei.unicode_error import unicode_test, article_encoding_correction
-from src.html2tei.tei_utils import immediate_text, imtext_children_descendants_of_tag, to_friendly, \
+from html2tei.tei_utils import immediate_text, imtext_children_descendants_of_tag, to_friendly, \
     real_text_length, language_attr_recognition, complex_wrapping, normal_tag_to_tei_xml_converter, unwrap_all, \
     decompose_all
 

@@ -6,7 +6,7 @@ from collections import defaultdict
 from os.path import join as os_path_join
 from json import dumps as json_dumps, loads as json_loads
 
-from src.html2tei.tei_utils import to_friendly
+from html2tei.tei_utils import to_friendly
 from html2tei.processing_utils import run_single_process, dummy_fun, process_article
 
 

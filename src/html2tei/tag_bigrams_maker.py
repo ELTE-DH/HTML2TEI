@@ -5,7 +5,7 @@ from collections import defaultdict
 from os.path import join as os_path_join
 from random import sample as random_sample
 
-from src.html2tei.tei_utils import to_friendly
+from html2tei.tei_utils import to_friendly
 from html2tei.processing_utils import run_single_process, dummy_fun, process_article
 
 
