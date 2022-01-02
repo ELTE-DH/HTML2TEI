@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "html2tei"
+version = "1.2.1"
+description = "Map the HTML schema of portals to valid TEI XML with the tags and structures used in them using small manual portal-specific configurations."
+readme = "README.md"
+repository = "https://github.com/ELTE-DH/HTML2TEI"
+authors = ["dlazesz", "sarkozizsofia"]
+license = "LGPLv3"
+# License and required Python version is automatically added
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable",
+]
+
+[tool.poetry.scripts]
+html2tei = "html2tei.__main__:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+beautifulsoup4 = "^4.9.0"
+lxml = "^4.5.0"
+pyyaml = "^6.0.0"
+warcio = "^1.7.0"
+webarticlecurator = "^1.4.0"
+# A list of all of the optional dependencies, some of which are included in the
+# below `extras`. They can be opted into by apps.
+justext = { version = "^3.0.0", optional = true }
+newspaper3k = { version = "^0.2.8", optional = true }
+
+[tool.poetry.extras]
+justext = ["justext"]
+newspaper3k = ["newspaper3k"]
+
+[tool.poetry.dev-dependencies]
+pytest = "^6"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

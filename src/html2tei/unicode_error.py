@@ -5,7 +5,7 @@ import re
 
 from bs4 import BeautifulSoup, NavigableString
 
-from html2tei.tei_utils import unwrap_all, create_new_tag_with_string
+from src.html2tei.tei_utils import unwrap_all, create_new_tag_with_string
 
 
 def unicode_test(article_text, unicode_strings=re.compile(r'[uU][0-9]([0-9]{3}|[0-9][a-f])')):

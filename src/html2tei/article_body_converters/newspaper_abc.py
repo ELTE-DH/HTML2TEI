@@ -4,7 +4,7 @@
 from bs4 import BeautifulSoup
 from newspaper import Article
 
-from html2tei.tei_utils import tei_defaultdict, create_new_tag_with_string
+from src.html2tei.tei_utils import tei_defaultdict, create_new_tag_with_string
 
 
 def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_body_params):

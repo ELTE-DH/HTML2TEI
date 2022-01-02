@@ -13,7 +13,7 @@ The conversion process is automatic and scales well on large portals with the sa
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.8+
 - For Newspaper3k, the installation of the following packages must precede the installation of this program:
   `python3-dev libxml2-dev libxslt-dev libjpeg-dev zlib1g-dev libpng12-dev`
 
@@ -26,7 +26,7 @@ The conversion process is automatic and scales well on large portals with the sa
 ### Manual
 
 1. `git clone https://github.com/ELTE-DH/HTML2TEI.git`
-2. Run `python3 setup.py install` (you may have to use `sudo` at the beginning of this command)
+2. Run `make venv build install`
 
 ## Usage
 
