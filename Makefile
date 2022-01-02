@@ -8,16 +8,15 @@ PYTHON := python3
 
 # Module specific parameters
 MODULE := html2tei
-MODULE_PARAMS :=
 
 # These targets do not show as possible target with bash completion
 __extra-deps:
-	# Do extra stuff (e.g. compiling, downloading) before building the package
+	@# Do extra stuff (e.g. compiling, downloading) before building the package
 	@exit 0
 .PHONY: __extra-deps
 
 __clean-extra-deps:
-	# e.g. @rm -rf stuff
+	@# e.g. @rm -rf stuff
 	@exit 0
 .PHONY: __clean-extra-deps
 
@@ -31,7 +30,7 @@ install-dep-packages:
 	@echo "Installing needed packages from Aptfile..."
 	@command -v apt-get >/dev/null 2>&1 || \
 			(echo >&2 "$(RED)Command 'apt-get' could not be found!$(NOCOLOR)"; exit 1)
-	# Aptfile can be omited if empty
+	@# Aptfile can be omited if empty
 	@[[ ! -f "$(CURDIR)/Aptfile" ]] || \
 	    ([[ $$(dpkg -l | grep -wcf $(CURDIR)/Aptfile) -eq $$(cat $(CURDIR)/Aptfile | wc -l) ]] || \
 		(sudo -E apt-get update && \
@@ -63,7 +62,7 @@ test:
 .PHONY: test
 
 clean: __clean-extra-deps
-	@rm -rf dist/ build/ $(MODULE).egg-info/ $$(poetry env info -p)
+	@rm -rf dist/ .pytest_cache/ $$(poetry env info -p)
 .PHONY: clean
 
 # Do actual release with new version. Originally from: https://github.com/mittelholcz/contextfun
@@ -84,16 +83,16 @@ __release:
 		(echo -e "$(RED)Do not call this target!\nUse 'release-major', 'release-minor' or 'release-patch'!$(NOCOLOR)"; \
 		 exit 1)
 	@[[ -z $$(git status --porcelain) ]] || (echo "$(RED)Working dir is dirty!$(NOCOLOR)"; exit 1)
-	# Update dependencies before buiding and testing (closest to clean install)
+	@# Update dependencies before buiding and testing (closest to clean install)
 	@poetry update
-	# poetry version will modify pyproject.toml only. The other steps must be done manually.
+	@# poetry version will modify pyproject.toml only. The other steps must be done manually.
 	@poetry version $(BUMP)
-	# Add modified files to git before commit
+	@# Add modified files to git before commit
 	@git add pyproject.toml poetry.lock
-	# Clean install with (built package) and test
+	@# Clean install with (built package) and test
 	@make all
-	# Create release commit and git tag
-	@make -S __commit_to_origin NEWVER=$$(poetry run python $(MODULE)/version.py)
+	@# Create release commit and git tag
+	@make -S __commit_to_origin NEWVER=$$(poetry run python src/$(MODULE)/version.py)
 .PHONY: __release
 
 __commit_to_origin:
