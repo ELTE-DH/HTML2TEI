@@ -101,7 +101,7 @@ __commit_to_origin:
 		 exit 1)
 	@echo "NEW VERSION: $(NEWVER)"
 	@git commit -m "Release $(NEWVER)"
-	@git tag -a "v$(NEWVER)" -m "Release $(NEWVER)"
+	@git tag -a "v$(NEWVER)" -m "Release v$(NEWVER)"
 	@git push
 	@git push --tags
 .PHONY: __commit_to_origin
