@@ -23,10 +23,28 @@ The conversion process is automatic and scales well on large portals with the sa
 
 `pip3 install html2tei`
 
+The following extras can be installed:
+
+- Newspaper3k: `newspaper`
+- JusText: `justext`
+- All the above: `full`
+
+E.g. `pip3 install html2tei[full]`
+
 ### Manual
 
+[_Poetry_](https://python-poetry.org/) and (optionally) [_GNU Make_](https://www.gnu.org/software/make/) are reqired.
+
 1. `git clone https://github.com/ELTE-DH/HTML2TEI.git`
-2. Run `make venv build install`
+2. Run `make`
+
+On Windows or without Make (after cloning the repository):
+
+1. `poetry install --no-root`
+2. `poetry build`
+3. `poetry run pip install --upgrade dist/*.whl` (the correct filename must be specified on Windows)
+
+To install extras run: `poetry install -E [NAME OF THE EXTRA TO INSTALL]`
 
 ## Usage
 
