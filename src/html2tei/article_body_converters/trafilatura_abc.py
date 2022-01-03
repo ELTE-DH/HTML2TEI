@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
-from dateutil.parser import parse
-
 from bs4 import BeautifulSoup
 from trafilatura import extract
 
@@ -32,10 +30,7 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
     if doc is not None:
 
         if 'date' in doc.attrs.keys():
-            # TODO added date parsing. Default is str in both extract, and extract_metadata functions
-            #  If date is in uniform format we do not need dateutils to parse it!
-            date = parse(doc['date'])
-            metas_in_dict['sch:datePublished'] = date
+            metas_in_dict['sch:datePublished'] = doc['date']  # uniform str
 
         if 'author' in doc.attrs.keys():
             metas_in_dict['sch:author'] = doc['author']
@@ -50,12 +45,10 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
 
     main = soup.find('main')
     if main is not None:
-        # TODO Append paragraph without stripping?
         paragraph_list = [paragraph for paragraph in main.find_all() if paragraph.get_text(strip=True) is not None]
-        if len(paragraph_list) > 0:  # TODO  ???
+        if len(paragraph_list) == 0:
             paragraph_list = _create_empty_paragraph_list(url, body_log)
     else:
         paragraph_list = _create_empty_paragraph_list(url, body_log)
 
     return metas_in_dict, paragraph_list
-
