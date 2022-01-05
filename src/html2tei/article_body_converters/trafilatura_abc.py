@@ -27,7 +27,7 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
     extracted_metadata = extract_metadata(raw_html)
 
     if 'date' in extracted_metadata.keys():
-        metas_in_dict['sch:datePublished'] = datetime.fromisoformat(extracted_metadata['date'])
+        metas_in_dict['sch:datePublished'] = datetime.strptime(extracted_metadata['date'], "%Y-%m-%d")
 
     if 'author' in extracted_metadata.keys():
         metas_in_dict['sch:author'] = extracted_metadata['author']
