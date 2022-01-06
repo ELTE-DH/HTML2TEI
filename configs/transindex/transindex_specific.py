@@ -17,10 +17,8 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('article',), {'class': 'page-left-side'}),
                             # https://itthon.transindex.ro/?hir=47909
                             # https://sport.transindex.ro/?cikk=23232
                             # https://welemeny.transindex.ro/?cikk=13959
-                            # (('div',), {'class': 'entry-content clearfix'}),     # plakátmagány
-                            #  https://sarm.transindex.ro/?cikk=5369  ebből sokat kell még decompose-olni
+                            #  https://sarm.transindex.ro/?cikk=5369
                             #  https://tech.transindex.ro/?hir=32
-
                             ]
 SECTION_DICT = {'sarm': 'Sárm',
                 'tech': 'Tech',
@@ -33,11 +31,8 @@ SECTION_DICT = {'sarm': 'Sárm',
                 'penz': 'Pénz',
                 'think': 'Think'}
 
-# https://tv.transindex.ro/?film=1158&csinaljuk_maskepp_sztercey_szabolcs
-
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
-    tei_logger.log('DEBUG', 'EXAMPLE LOG MESSAGE!')
     data = tei_defaultdict()
     data['sch:url'] = url
     section = url[url.find('://') + 3:url.find('.')]
@@ -45,7 +40,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         data['sch:articleSection'] = SECTION_DICT[section]
     else:
         tei_logger.log('WARNING', f'{url}: SECTION TAG NOT FOUND!')
-    if section not in {'tech', 'sarm', 'penz'}:  # 'multikult', 'sport'}:
+    if section not in {'tech', 'sarm', 'penz'}:
         header = bs.find_all('header')
         if len(header) > 1:
             header = header[1]
@@ -139,7 +134,7 @@ def excluded_tags_spec(tag):
 
 
 BLOCK_RULES_SPEC = {}
-BIGRAM_RULES_SPEC = {}
+BIGRAM_RULES_SPEC = {'kviz': {('kiemelt', 'det_by_any_desc'): ('kviz', 'kerdes')}}
 LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [  # (('header',), {}),
     (('div',), {'class': 'like-box'}),
@@ -148,15 +143,18 @@ DECOMP = [  # (('header',), {}),
     (('div',), {'class': 'fb-like'}),
     (('div',), {'id': 'lajkolj'}),
     (('section',), {'class': 'page-left-side rovat'}),
-    (('iframe',), {'title': True}),  # plakátmagány / ajánlók a cikk végén
-    (('p',), {'class': 'MagazinCikk'}),  # sárm, tech dolgai köv
+    (('iframe',), {'title': True}),
+    (('p',), {'class': 'MagazinCikk'}),
     (('ul',), {'class': 'HirReklam'}),
     (('p',), {'class': 'HirReklamP'}),
     (('div',), {'id': "Kapcsolodok"}),
     (('div',), {'class': "kommentBigDiv"}),
     (('div',), {'class': 'like'}),
     (('div',), {'id': 'MagazinReklam'}),
-    (('ul',), {'id': 'UtolsoModP1'})]
+    (('ul',), {'id': 'UtolsoModP1'}),
+    (('script',), {}), (('section',), {'class': 'related'}),
+    (('div',), {'id': 'CikkHozzaszolas'})
+]
 
 MEDIA_LIST = []
 
