@@ -116,7 +116,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<footer>	28	50	0	https://itthon.transindex.ro/?hir=63583	decompose	default	
 356	<form action= class=magszavopt method=post name=szavazogep>	22.03932584	20.24438202	0	https://eletmod.transindex.ro/?cikk=22757 https://eletmod.transindex.ro/?cikk=1507 https://eletmod.transindex.ro/?cikk=6532 https://eletmod.transindex.ro/?cikk=1684 https://multikult.transindex.ro/?cikk=7319	valaszblokk	default	
 55	<form action=@LINK class=magszavopt method=post name=szavazogep>	34.87272727	26.43636364	0	https://sarm.transindex.ro/?cikk=4734 https://tech.transindex.ro/?cikk=9954 https://sarm.transindex.ro/?cikk=16116 https://sarm.transindex.ro/?cikk=4388 https://sarm.transindex.ro/?cikk=4702	valaszblokk	default	
-1	<form action=@LINK id=@NUM method=post style=@STYLE target=@target>	84	60	0	https://eletmod.transindex.ro/?cikk=27157	valaszblokk	default	
+1	<form action=@LINK id=@NUM method=post style=@STYLE target=@target>	84	60	0	https://eletmod.transindex.ro/?cikk=27157	decompose	default	
 1210	<form action=@LINK id=HUrlap method=post name=HUrlap onsubmit=return mehete(this);>	7	18	0	https://tech.transindex.ro/?hir=8651 https://tech.transindex.ro/?cikk=14673 https://tech.transindex.ro/?hir=9028 https://tech.transindex.ro/?hir=8610 https://tech.transindex.ro/?hir=8622	valaszblokk	default	ez eltűnik a CikkHozzaszolas decompose-al
 1	<form action=@LINK id=szavazogepf method=post name=szavazogepf>	59	27	0	https://itthon.transindex.ro/?hir=63583	valaszblokk	default	
 1	<form action=@NUM method=post>	20	17	0	https://vilag.transindex.ro/?cikk=7161	valaszblokk	default	

@@ -152,9 +152,15 @@ DECOMP = [  # (('header',), {}),
     (('div',), {'class': 'like'}),
     (('div',), {'id': 'MagazinReklam'}),
     (('ul',), {'id': 'UtolsoModP1'}),
-    (('script',), {}), (('section',), {'class': 'related'}),
-    (('div',), {'id': 'CikkHozzaszolas'})
+    (('script',), {}),
+    (('STYLE',), {}),
+    (('style',), {}),
+    (('section',), {'class': 'related'}),
+    (('div',), {'id': 'CikkHozzaszolas'}),
+    (('aside',), {'id': 'popup'}),
+    (('span',), {'class': 'elval'})
 ]
+
 
 MEDIA_LIST = []
 
