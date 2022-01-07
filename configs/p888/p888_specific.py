@@ -83,7 +83,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         else:
                             # split by: ANY OF THESE ',-–' CHARACTERS FOLLOWED BY WHITESPACE '\s' AND NOT 'a ', 'az ',
                             # 'A ' or 'Az '
-                            # TODO regex solution may be over complicated
+                            # regex solution may be over complicated
                             split_list = re.split("[,\-\–]\s(?!a\s|az\s|A\s|Az\s)", author_or_source)
                             if len(split_list) > 0 and split_list[0] != '':
                                 source_list, author_list = [], []
@@ -119,39 +119,38 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 if parsed_modification_date is not None:
                     data['sch:dateModified'] = parsed_modification_date
                 else:
-                    tei_logger.log('DEBUG', f'{url}: MODIFICAION DATE FORMAT ERROR!')
+                    tei_logger.log('DEBUG', f'{url}: MODIFICATION DATE FORMAT ERROR!')
             else:
                 tei_logger.log('DEBUG', f'{url}: MODIFICATION DATE NOT FOUND!')
 
     else:
-        tei_logger.log('WARNING', f'{url}: UNKNOW ARTICLE SCHEMA!')
+        tei_logger.log('WARNING', f'{url}: UNKNOWN ARTICLE SCHEMA!')
         return None
 
     return data
 
 
 def excluded_tags_spec(tag):
-    if tag.name not in HTML_BASICS:
-        tag.name = 'else'
-    tag.attrs = {}
+    # for more precised tag normalization/generate real tag-inventory or tag-tree use this:
+    tag_attrs = tag.attrs
+    if tag.name == 'img' and 'data-id' in tag_attrs.keys():
+        tag_attrs['data-id'] = '@DATA-ID'
+    if tag.name == 'span' and 'data-linkedarticle' in tag_attrs.keys():
+        tag_attrs['data-linkedarticle'] = '@DATA-LINKEDARTICLE'
+    if tag.name == 'span' and 'title' in tag_attrs.keys():
+        tag_attrs['title'] = '@title'
     return tag
-
-
-# for more precised tag normalization/generate real tag-inventory or tag-tree use this:
-# def excluded_tags_spec(tag):
-    # tag_attrs = tag.attrs
-    # if tag.name == 'img' and 'data-id' in tag_attrs.keys():
-    #    tag_attrs['data-id'] = '@DATA-ID'
-    # if tag.name == 'span' and 'data-linkedarticle' in tag_attrs.keys():
-    #    tag_attrs['data-linkedarticle'] = '@DATA-LINKEDARTICLE'
-    # return tag
 
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = {}
-DECOMP = [(('div',), {'class': 'AdW'})]
-MEDIA_LIST = []
+DECOMP = [(('div',), {'class': 'AdW'}),
+          (('div',), {'id': 'portfolioEzekIsErdekelhetnek'})]
+
+MEDIA_LIST = [(('blockquote',), {'class': 'instagram-media'}),
+              (('blockquote',), {'class': 'imgur-embed-pub'}),
+              (('blockquote',), {'class': 'twitter-tweet'})]
 
 
 def decompose_spec(article_dec):

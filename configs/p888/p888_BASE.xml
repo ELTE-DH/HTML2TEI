@@ -58,7 +58,7 @@
                     <title></title>
                     <publisher><orgName>Mediaworks Hungary Zrt.</orgName>
                         <placeName>1034 Budapest, Bécsi út 122-124.</placeName>
-                        <ref type="url" source="https://888.hu/impresszum/">https://doi.org/</ref>
+                        <ref type="url" source="https://888.hu/impresszum/"><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM--></ref>
                         <date when="2021-11-29"/>
                     </publisher>
                     <pubPlace>
@@ -67,7 +67,7 @@
                     </pubPlace>
                     <availability><p>A 888.hu kiadója a Mediaworks Hungary Zrt. © Minden jog fenntartva</p>
                         <p>
-                            <ref type="url" source="https://888.hu/page-szerzoi-jogok/">https://doi.org/</ref>
+                            <ref type="url" source="https://888.hu/page-szerzoi-jogok/"><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM--></ref>
                             <date when="2021-11-29"/>
                         </p>
                     </availability>
@@ -80,7 +80,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://888.hu/">888.hu></sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://888.hu/">888.hu</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -89,11 +89,10 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about=""><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM-->
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished><!--KITÖLT: a crawling időintervalluma pl 2020-01-01T23:40:00/2020-01-01T23:45:00 (a html2tei bármely log-jának végéről kiolvasható a teljes warc futtatásával)-->
-                    </sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
+                    <sch:sdDatePublished>2021-10-10T15:44:53/2021-10-12T16:27:25</sch:sdDatePublished>
+                    <sch:identifier rdf:about=""/><!--https://doi.org/10.5281/zenodo.#WARC_LATESTVERSION_NUM-->
                     <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
                     <sch:identifier>urn:uuid:a9bce381-65e0-4aa3-aac5-46d91f7df76a</sch:identifier> </rdf:Description>
             </rdf:RDF>
