@@ -144,7 +144,8 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
-LINKS_SPEC = {}
+LINKS_SPEC = BASIC_LINK_ATTRS
+
 DECOMP = [(('div',), {'class': 'AdW'}),
           (('div',), {'id': 'portfolioEzekIsErdekelhetnek'})]
 
