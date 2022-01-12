@@ -33,7 +33,7 @@ E.g. `pip3 install html2tei[full]`
 
 ### Manual
 
-[_Poetry_](https://python-poetry.org/) and (optionally) [_GNU Make_](https://www.gnu.org/software/make/) are reqired.
+[_Poetry_](https://python-poetry.org/) and (optionally) [_GNU Make_](https://www.gnu.org/software/make/) are required.
 
 1. `git clone https://github.com/ELTE-DH/HTML2TEI.git`
 2. Run `make`

@@ -17,7 +17,7 @@ BLOCKS = {'doboz', 'vez_bekezdes', 'lista', 'idezet', 'table_text', 'kozvetites'
 # eltedh_abc.py
 TEMPORARILY_USED_TAGS = {'media_hivatkozas', 'hivatkozas'}
 # eltedh_abc.py
-USED_NOTEXT_TAGS = {'galeria', 'media_tartalom', 'beagyazott_tartalom', 'abra', 'social_media'}
+USED_NOTEXT_TAGS = {'galeria', 'media_tartalom', 'beagyazott_tartalom', 'abra', 'social_media', 'beagyazott_social'}
 
 # eltedh_abc.py
 OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekezdes', 'cimsor',
@@ -32,7 +32,7 @@ OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekez
                     'komment', 'komment_meta', 'komment_ido', 'komment_szerzo', 'komment_root',
                     'cimsor', 'galeria',
                     'kviz', 'kerdes', 'valaszblokk', 'valasz', 'forum', 'media_tartalom', 'beagyazott_tartalom',
-                    'abra', 'hi', 'ref'}
+                    'beagyazott_social', 'abra', 'hi', 'ref'}
 
 # configs/*
 BASIC_LINK_ATTRS = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_iframe'}
@@ -85,7 +85,8 @@ BLOCK_RULES = {'idezet': {'rename': {'cimsor': 'felkover'},
 MEDIA_DICT = {'media_tartalom': ('media_hivatkozas', 'forras', 'bekezdes', 'hivatkozas'),
               'social_media': ('social_header', 'bekezdes', 'hivatkozas'),
               'abra': ('media_hivatkozas',),
-              'beagyazott_tartalom': ('bekezdes', 'hivatkozas', 'media_hivatkozas', 'media_tartalom')
+              'beagyazott_tartalom': ('bekezdes', 'hivatkozas', 'media_hivatkozas', 'media_tartalom'),
+              'beagyazott_social': ('bekezdes', 'hivatkozas', 'media_hivatkozas', 'media_tartalom')
               }
 
 # tei_utils.py
@@ -122,4 +123,5 @@ TAGNAME_AND_ATTR_TABLE = {'cimsor': ('p', 'head'),
 # eltedh_abc.py + tei_utils.py
 FIGURE_REND_ATTRS = {'media_tartalom': 'media_content',
                      'abra': 'diagram',  # illustration
-                     'beagyazott_tartalom': 'embedded_content'}
+                     'beagyazott_tartalom': 'embedded_content',
+                     'beagyazott_social': 'embedded_social_media_content'}
