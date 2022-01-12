@@ -48,24 +48,26 @@ To install extras run: `poetry install -E [NAME OF THE EXTRA TO INSTALL]`
 
 ## Usage
 
-This program is designed to be used with [WebArticleCurator](https://github.com/elte-dh/WebArticleCurator/).
-The article WARC files should be placed in a directory (`warc-dir`) and a configuration YAML must
- map the WARC files to the specific portal configuration.
-The program can be run from command line or from the Python API see the details below 
+This program is designed to be used with [WebArticleCurator](https://github.com/elte-dh/WebArticleCurator/) (WAC).
+The article WARC files (created with the WAC) should be placed in a directory (`warc-dir`) and a configuration YAML must
+ map the WARC files to the specific portal configuration (`warcfilename: configdirectoryname`).
+The program can be run from command line or from the Python API see the details below. 
 
 ### Modes
 
 There are five modes of the program:
 
-- Create _HTML Content Tree_ (`content-tree`): Read all the articles to summarize all the structures that occur
-  in the portal schema. Finally, the accumulated information represents the tree structure as a nested YAML dictionary
+- Create _HTML Content Tree_ (`content-tree`): Read the whole warc file to summarize all the structures that occur
+  in the portal schema. Finally, the accumulated information represents the aggregated tree structure of all articles 
+  from the portal as a nested YAML dictionary
   (for manual inspection)
-- The _Tag Inventory Maker_ (`inventory-maker`): Create the tag tables from the articles with their
-  gathered information (it will be the basis for manual configuration of renaming)
+- The _Tag Inventory Maker_ (`inventory-maker`): Create a _text_ and _notext_ tag table from all articles within a warc
+  file with their gathered information (it will be the basis for manual configuration of renaming unique tag occurances 
+  in order to translate them to TEI-XML format)
 - The _Tag Bigrams Maker_ (`bigram-maker`): Create the bigram tag table from the articles with their
   gathered information (this table is an add-on that can be used to map the schema)
 - The _Portal Article Cleaner_ (`cleaner`): Create the TEI XMLs from the site-specific configuration and
-  from the tables supplemented with new label names
+  from the tables supplemented with new, manually created label names
 - _Diff Tag Tables_ (`diff-tables`): Compare and update the generated (and modified) tables if there are new data
   for the same portal
 
