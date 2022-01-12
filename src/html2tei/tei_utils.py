@@ -123,6 +123,7 @@ def language_attr_recognition(original_tag):
     """It saves the attribute that contains language code. Filtering is very basic"""
     for k, v in original_tag.attrs.items():
         if ('lang' in k or 'data-lang' in k) and isinstance(v, str) and len(v) < 6 and '-' not in v:
+            v = v.replace('„', '').replace('”', '')
             return v
     return None
 

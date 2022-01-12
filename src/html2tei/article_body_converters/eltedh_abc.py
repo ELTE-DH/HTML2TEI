@@ -16,7 +16,7 @@ TABLE_CELL = {'oszlop', 'tablazat_cimsor'}
 
 BLOCKS_MINUS_CIMSOR = BLOCKS
 
-MEDIA_MINUS_FIG = {'social_media', 'abra', 'beagyazott_tartalom'}
+MEDIA_MINUS_FIG = {'social_media', 'abra', 'beagyazott_tartalom', 'beagyazott_social'}
 UNUSED_TAGS = {'unwrap', 'null', 'default'}
 TABLES_VALID = {'sor_valid', 'oszlop_sor', 'oszlop_valid'}
 PARAGRAPH_AND_INLINES = ({'bekezdes'} | INLINE_TAGS)
@@ -492,7 +492,8 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
                         correct_and_store_link(tag, href, url_prefix, portal_url_filter, extra_key, article_url)
                         if normalized_name == 'media_hivatkozas' and 'target' not in tag.attrs:
                             tag.name = 'to_unwrap'
-
+            if tag.name == 'social_media' and len(tag.text.strip()) == 0:
+                tag.name = 'beagyazott_social'
             if len(tag.text.strip()) == 0 and tag.name not in TEMPORARILY_USED_TAGS \
                     and tag.name not in MEDIA_DICT.keys() and tag.name not in USED_NOTEXT_TAGS \
                     and tag.name not in link_attrs and tag.name != 'to_decompose':
