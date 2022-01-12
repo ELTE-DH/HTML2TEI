@@ -52,14 +52,6 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
 
             tei_tag_list = [tag for tag in tei_body.find_all(recursive=False)]
 
-    # get rid of empty 'p' tags
-    for base_tag in tei_tag_list:
-        for tag in base_tag.find_all('p'):
-
-            if len(tag.find_all()) == 0 and len(tag.text.strip()) == 0:
-                print(tag)
-                tag.decompose()
-
     if len(tei_tag_list) == 0:
         tei_tag_list = _create_empty_paragraph_list(url, body_log)
 
