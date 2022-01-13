@@ -30,7 +30,12 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
         metas_in_dict['sch:datePublished'] = datetime.strptime(extracted_metadata['date'], "%Y-%m-%d")
 
     if 'author' in extracted_metadata.keys():
-        metas_in_dict['sch:author'] = extracted_metadata['author']
+        print(extracted_metadata['author'])
+        authors = extracted_metadata['author']
+        if authors is not None:
+            metas_in_dict['sch:author'] = [author.strip() for author in authors.split('; ')]
+        else:
+            metas_in_dict['sch:author'] = authors
 
     if 'title' in extracted_metadata.keys():
         metas_in_dict['sch:name'] = extracted_metadata['title']
