@@ -244,7 +244,8 @@ DECOMP = [(('div',), {'class': 'field field-name-field-media-index-foto-video'})
           (('noscript',), {}),
           (('section',), {}),
           (('script',), {}),
-          (('ins',), {})]
+          (('ins',), {})
+          ]
 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 MEDIA_LIST = [(('img',), {}),
