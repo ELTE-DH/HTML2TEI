@@ -44,7 +44,7 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
         metas_in_dict['sch:keywords'] = extracted_metadata['tags']
 
     # article is extracted into a ready tei format, from which only the body tags are taken.
-    extracted_tei_xml = extract(raw_html, target_language='hu', output_format='xmltei')
+    extracted_tei_xml = extract(raw_html, target_language='hu', output_format='xmltei', tei_validation=True)
     soup = BeautifulSoup(extracted_tei_xml, 'lxml-xml')
 
     tei_tag_list = []
