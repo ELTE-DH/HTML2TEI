@@ -3,7 +3,8 @@
 from datetime import datetime
 
 from bs4 import BeautifulSoup
-from trafilatura import extract, extract_metadata
+from lxml.etree import tostring
+from trafilatura import extract, extract_metadata, bare_extraction
 
 from html2tei.tei_utils import tei_defaultdict, create_new_tag_with_string
 
@@ -23,39 +24,54 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
     metas_in_dict = tei_defaultdict()
     metas_in_dict['sch:url'] = url
 
-    # metadata is extracted into a dict
-    extracted_metadata = extract_metadata(raw_html)
 
-    if 'date' in extracted_metadata.keys():
-        metas_in_dict['sch:datePublished'] = datetime.strptime(extracted_metadata['date'], "%Y-%m-%d")
+    # metadata and text content is extracted into a dict
+    extracted_bare = bare_extraction(raw_html,
+                                     target_language="hu",
+                                     output_format="xmltei",
+                                     favor_precision=True,
+                                     include_links=True,
+                                     include_images=True,
+                                     include_tables=True,
+                                     include_formatting=True)
 
-    if 'author' in extracted_metadata.keys():
-        print(extracted_metadata['author'])
-        authors = extracted_metadata['author']
+    if 'date' in extracted_bare.keys():
+        metas_in_dict['sch:datePublished'] = datetime.strptime(extracted_bare['date'], "%Y-%m-%d")
+
+    if 'author' in extracted_bare.keys():
+        print(extracted_bare['author'])
+        authors = extracted_bare['author']
         if authors is not None:
             metas_in_dict['sch:author'] = [author.strip() for author in authors.split('; ')]
         else:
             metas_in_dict['sch:author'] = authors
 
-    if 'title' in extracted_metadata.keys():
-        metas_in_dict['sch:name'] = extracted_metadata['title']
+    if 'title' in extracted_bare.keys():
+        metas_in_dict['sch:name'] = extracted_bare['title']
 
-    if 'tags' in extracted_metadata.keys() and len(extracted_metadata['tags']) > 0:
-        metas_in_dict['sch:keywords'] = extracted_metadata['tags']
+    if 'tags' in extracted_bare.keys() and len(extracted_bare['tags']) > 0:
+        metas_in_dict['sch:keywords'] = extracted_bare['tags']
 
-    # article is extracted into a ready tei format, from which only the body tags are taken.
-    extracted_tei_xml = extract(raw_html, target_language='hu', output_format='xmltei', tei_validation=True)
-    soup = BeautifulSoup(extracted_tei_xml, 'lxml-xml')
+    # bare extraction creates 'body' key with tei format etree.Element / has to be parsed as string to create bs4
+    body_as_string = tostring(extracted_bare['body'], pretty_print=True, encoding=str)
+    soup = BeautifulSoup(body_as_string, 'lxml-xml')
 
     tei_tag_list = []
+    tei_body = soup.find('body')
+    if tei_body is not None:
 
-    tei_text_section = soup.find('text')
-    if tei_text_section is not None:
-        tei_body = soup.find('body')
+        # invalid correnctions
+        # 1. head
+        heads = tei_body.find_all('head')
+        if len(heads) > 1:
+            for head in heads:  # [1:] ?
+                if 'rend' in head.attrs.keys() and head['rend'] == 'h1':
+                    head.name = 'p'
+                    head['rend'] = 'head'
+                else:
+                    print(head.name, head.attrs)
 
-        if tei_body is not None:
-
-            tei_tag_list = [tag for tag in tei_body.find_all(recursive=False)]
+        tei_tag_list = [tag for tag in tei_body.find_all(recursive=False)]
 
     if len(tei_tag_list) == 0:
         tei_tag_list = _create_empty_paragraph_list(url, body_log)
