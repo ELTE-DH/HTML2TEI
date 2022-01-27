@@ -7,9 +7,8 @@ from collections import defaultdict
 from bs4 import Tag
 from bs4.element import NavigableString, Comment
 
-from html2tei.excluded_tags_collection import simplified_tags_spec
-from html2tei.basic_tag_dicts import INLINE_TAGS, MEDIA_DICT, XML_CONVERT_DICT, TAGNAME_AND_ATTR_TABLE, \
-    FIGURE_REND_ATTRS
+from .excluded_tags_collection import simplified_tags_spec
+from .basic_tag_dicts import INLINE_TAGS, MEDIA_DICT, XML_CONVERT_DICT, TAGNAME_AND_ATTR_TABLE, FIGURE_REND_ATTRS
 
 
 def join_list(inp_list):

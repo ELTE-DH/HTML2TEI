@@ -12,7 +12,7 @@ from lxml import etree
 from webarticlecurator import Logger
 from yaml import load as yaml_load, SafeLoader
 
-from html2tei.basic_tag_dicts import BLOCK_RULES
+from .basic_tag_dicts import BLOCK_RULES
 
 # Only read_portalspec_config and read_input_config is used outside of this file
 
