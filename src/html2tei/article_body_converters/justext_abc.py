@@ -4,7 +4,7 @@
 from bs4 import BeautifulSoup
 from justext import get_stoplist, justext
 
-from html2tei.tei_utils import tei_defaultdict, create_new_tag_with_string
+from ..tei_utils import tei_defaultdict, create_new_tag_with_string
 
 stoplist = get_stoplist('Hungarian')
 
