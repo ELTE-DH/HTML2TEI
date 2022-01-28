@@ -60,18 +60,24 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
     tei_body = soup.find('body')
     if tei_body is not None:
 
-        # invalid correnctions
-        # 1. head
+        # INVALID CORRECTIONS
+        # 1. head h1 or h2
         heads = tei_body.find_all('head')
         if len(heads) > 0:
-            for head in heads:  # [1:] ?
+            for head in heads:
                 if head.get_text(strip=True) == extracted_bare['title']:
-                    head.decompose()
+                    head.decompose()  # HTML2TEI inserts head as title - removed from result to avoid duplication
                 elif 'rend' in head.attrs.keys() and head['rend'] == 'h1' or head['rend'] == 'h2':
                     head.name = 'p'
                     head['rend'] = 'head'
                 else:
                     print(head.name, head.attrs)
+
+        # 2. cell tag
+        # 3. hi tag
+        # 4. graphic tag
+        # 5. graphic tag attributes
+        # 6. ref tag
 
         tei_tag_list = [tag for tag in tei_body.find_all(recursive=False)]
 
