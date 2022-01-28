@@ -13,7 +13,7 @@ from os.path import basename as os_path_basename, isabs as os_path_isabs, isdir 
 
 from lxml import etree
 
-from .digest import MtHasher, ALGORITHMS_GUARANTEED
+from mthasher import MtHasher, ALGORITHMS_GUARANTEED
 
 NOT_ALNUM_WS_OR_DASH = re_compile(r'[^\w\s-]')
 MORE_DASH_OR_WS = re_compile(r'[-\s]+')
