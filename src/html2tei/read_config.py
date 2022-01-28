@@ -90,21 +90,20 @@ def read_portal_tei_base_file(tei_base_dir_and_name, tei_logger):
     return portal_xml_string
 
 
-def import_python_file(file_path):
+def import_python_file(file_path, package=None):
     """Import module from file:
        https://stackoverflow.com/questions/2349991/how-to-import-other-python-files/55892361#55892361"""
     abs_file_path = abspath(file_path)
     pathname, filename = os_path_split(abs_file_path)
     sys.path.append(pathname)
     modname = splitext(filename)[0]
-    module = importlib.import_module(modname)
+    module = importlib.import_module(modname, package)
     return module
 
 
-dirname_of_abcs = os_path_join(dirname(abspath(__file__)), 'article_body_converters')
-WRITE_OUT_MODES = {'eltedh': os_path_join(dirname_of_abcs, 'eltedh_abc.py'),
-                   'justext': os_path_join(dirname_of_abcs, 'justext_abc.py'),
-                   'newspaper3k': os_path_join(dirname_of_abcs, 'newspaper_abc.py')}
+WRITE_OUT_MODES = {'eltedh': ('.article_body_converters.eltedh_abc.py', 'html2tei'),
+                   'justext': ('.article_body_converters.justext_abc.py', 'html2tei'),
+                   'newspaper3k': ('.article_body_converters.newspaper_abc.py', 'html2tei')}
 
 
 def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_dir, run_params=None,
@@ -176,7 +175,7 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         exit(1)
     elif write_out_mode is not None:
         # Here we import optional libraries only if they are needed later
-        write_out_mode_fun = getattr(import_python_file(write_out_mode_file), 'process_article')
+        write_out_mode_fun = getattr(import_python_file(*write_out_mode_file), 'process_article')
         tei_logger.log('INFO', f'Using {write_out_mode} write mode')
 
     return tei_logger, warc_level_params, get_meta_fun_spec, article_root_params, decompose_spec, excluded_tags_spec, \
