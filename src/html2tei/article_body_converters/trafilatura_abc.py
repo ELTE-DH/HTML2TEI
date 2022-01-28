@@ -63,9 +63,11 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
         # invalid correnctions
         # 1. head
         heads = tei_body.find_all('head')
-        if len(heads) > 1:
+        if len(heads) > 0:
             for head in heads:  # [1:] ?
-                if 'rend' in head.attrs.keys() and head['rend'] == 'h1':
+                if head.get_text(strip=True) == extracted_bare['title']:
+                    head.decompose()
+                elif 'rend' in head.attrs.keys() and head['rend'] == 'h1' or head['rend'] == 'h2':
                     head.name = 'p'
                     head['rend'] = 'head'
                 else:
