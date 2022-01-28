@@ -6,10 +6,10 @@ import importlib.util
 from copy import deepcopy
 from argparse import Namespace
 from collections import Counter
-from os.path import join as os_path_join, isfile, isdir, abspath, dirname, splitext, split as os_path_split
+from os.path import join as os_path_join, split as os_path_split, isfile, isdir, abspath, splitext
 
 from lxml import etree
-from webarticlecurator import Logger
+from mplogger import Logger
 from yaml import load as yaml_load, SafeLoader
 
 from .basic_tag_dicts import BLOCK_RULES

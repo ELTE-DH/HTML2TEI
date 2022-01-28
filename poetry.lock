@@ -183,6 +183,14 @@ htmlsoup = ["beautifulsoup4"]
 source = ["Cython (>=0.29.7)"]
 
 [[package]]
+name = "mplogger"
+version = "1.0.0"
+description = "Multi-processing capable print-like logger for Python"
+category = "main"
+optional = false
+python-versions = ">=3.8,<4.0"
+
+[[package]]
 name = "mthasher"
 version = "2.0.4"
 description = "Calculate multiple hash digests for a piece of data in parallel, one algo/thread."
@@ -467,7 +475,7 @@ six = "*"
 
 [[package]]
 name = "webarticlecurator"
-version = "1.10.0"
+version = "1.10.1"
 description = "A crawler program to download content from portals (news, forums, blogs) and convert it to the desired output format according to the configuration."
 category = "main"
 optional = false
@@ -477,6 +485,7 @@ python-versions = ">=3.8,<4.0"
 beautifulsoup4 = ">=4.9.0,<5.0.0"
 chardet = ">=4.0.0,<5.0.0"
 lxml = ">=4.5.0,<5.0.0"
+mplogger = ">=1.0.0,<2.0.0"
 pyyaml = ">=6.0.0,<7.0.0"
 ratelimit = ">=2.2.1,<3.0.0"
 requests = ">=2.26.0,<3.0.0"
@@ -507,7 +516,7 @@ newspaper3k = ["newspaper3k"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "70a940427bc26c6ab4e40d67b5a90b4c3798b357c570fb9064d24058d009622f"
+content-hash = "713b3fc663d5c420fba72469184e9e58e57b392ec55abe2fef61fc28a7049562"
 
 [metadata.files]
 atomicwrites = [
@@ -637,6 +646,10 @@ lxml = [
     {file = "lxml-4.7.1-pp38-pypy38_pp73-manylinux_2_12_i686.manylinux2010_i686.manylinux_2_24_i686.whl", hash = "sha256:8e54945dd2eeb50925500957c7c579df3cd07c29db7810b83cf30495d79af267"},
     {file = "lxml-4.7.1-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl", hash = "sha256:447d5009d6b5447b2f237395d0018901dcc673f7d9f82ba26c1b9f9c3b444b60"},
     {file = "lxml-4.7.1.tar.gz", hash = "sha256:a1613838aa6b89af4ba10a0f3a972836128801ed008078f8c1244e65958f1b24"},
+]
+mplogger = [
+    {file = "mplogger-1.0.0-py3-none-any.whl", hash = "sha256:192e02cdd48cdcb6a72e7af2dec69f47c0c77dcc8487488ba8b5cbbbc13aa23d"},
+    {file = "mplogger-1.0.0.tar.gz", hash = "sha256:928b92ea5984742fc94f4419236ee48bc8d68d330a875ca8be8307f352d92007"},
 ]
 mthasher = [
     {file = "mthasher-2.0.4-py3-none-any.whl", hash = "sha256:8c37d16755a7f01b45bb08c87bb6f8843235e82ea9611c2abbca0c17de04c693"},
@@ -865,8 +878,8 @@ warcio = [
     {file = "warcio-1.7.4.tar.gz", hash = "sha256:e1889dad9ecac654de5b0973247f335a55827b1b14a8203772d18c749143ea51"},
 ]
 webarticlecurator = [
-    {file = "webarticlecurator-1.10.0-py3-none-any.whl", hash = "sha256:226eafe20017e9bdd081e8608a5585cab84b0b85c3d73efa129bb5f2487f903b"},
-    {file = "webarticlecurator-1.10.0.tar.gz", hash = "sha256:c7910886f1f1ec705ad038f11463e4bf461b79d231ff89c9e27e6a8054aec8db"},
+    {file = "webarticlecurator-1.10.1-py3-none-any.whl", hash = "sha256:0989af96b196d4da4d44fd8c2f228cdaf880080b00743d309e266e1be8caaea6"},
+    {file = "webarticlecurator-1.10.1.tar.gz", hash = "sha256:5b8b6f2e79ab9ad24cc831cc797bea40f476258e7d108619a500874b250f5111"},
 ]
 yamale = [
     {file = "yamale-4.0.2-py3-none-any.whl", hash = "sha256:619967952d419335b84c58cdcb3bc5976d0bf3d7ec3e93c173fe15fc81f7edce"},
