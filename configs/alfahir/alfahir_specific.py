@@ -7,7 +7,8 @@ from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and
 
 PORTAL_URL_PREFIX = 'https://alfahir.hu'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'region region-content'})]
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'region region-content'})  # everything / always there, but too much
+                            ]
 
 HTML_BASICS = {'p', 'h2', 'h3', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
                'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
