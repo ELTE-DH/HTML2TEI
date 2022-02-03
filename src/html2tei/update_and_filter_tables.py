@@ -4,7 +4,7 @@
 import sys
 from os.path import join as os_path_join
 
-from html2tei.read_config import check_exists
+from .read_config import check_exists
 
 
 def diff_all_tag_table(diff_dir, old_filename, new_filename, out_filename):
