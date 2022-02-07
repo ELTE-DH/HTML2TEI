@@ -101,7 +101,10 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
                 for dupl in v:
                     create_new_tag_with_string(beauty_xml, dupl, k, xeno_meta_datas)
             else:
-                create_new_tag_with_string(beauty_xml, v, k, xeno_meta_datas)
+                if k == 'sch:inLanguage':
+                    xeno_meta_datas.find('sch:inLanguage').string = v
+                else:
+                    create_new_tag_with_string(beauty_xml, v, k, xeno_meta_datas)
 
     # XENODATA 2: warc data
     xeno_tei_rdf = ''
