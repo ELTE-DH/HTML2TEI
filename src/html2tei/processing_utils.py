@@ -12,8 +12,8 @@ from locale import setlocale, LC_ALL, Error as locale_Error
 from bs4 import BeautifulSoup
 from webarticlecurator import WarcCachingDownloader
 
-from html2tei.unicode_error import unicode_test
-from html2tei.read_config import check_exists, read_input_config, read_portalspec_config
+from .unicode_error import unicode_test
+from .read_config import check_exists, read_input_config, read_portalspec_config
 
 
 def extract_resp_record_data(resp):
