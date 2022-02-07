@@ -29,11 +29,13 @@ mplogger = "^1.0.0"
 # below `extras`. They can be opted into by apps.
 justext = { version = "^3.0.0", optional = true }
 newspaper3k = { version = "^0.2.8", optional = true }
+trafilatura = { version = "^1.0.0", optional = true }
 
 [tool.poetry.extras]
 justext = ["justext"]
 newspaper3k = ["newspaper3k"]
-full = ["justext", "newspaper3k"]
+trafilatura = ["trafilatura"]
+full = ["justext", "newspaper3k", "trafilatura"]
 
 [tool.poetry.dev-dependencies]
 pytest = "^6"
