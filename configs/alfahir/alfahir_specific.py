@@ -55,47 +55,61 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 # see: https://alfahir.hu/2021/09/29/ellenzeki_elovalasztas_ellenzeki_
                 # partok_dobrev_klara_karacsony_gergely_markizay_peter?page=13
 
+                # AUTHORS - newsfeed has several authors
                 author_info_divs = bs.find_all('div', class_='group-left')
-
                 if len(author_info_divs) > 0:
-
                     auth_tags = []
                     for author_div in author_info_divs:
                         author_name_tag = author_div.find('h4')
                         if author_name_tag is not None:
                             auth_tags.append(author_name_tag)
-
                     author_list = [au.get_text(strip=True) for au in auth_tags if au.get_text(strip=True) is not None]
-
                     if len(author_list) > 0:
                         data['sch:author'] = set(author_list)
                     else:
-                        tei_logger.log('DEBUG', f'{url}: AUTHOR TAGS NOT FOUND!')
+                        tei_logger.log('DEBUG', f'{url}: NEWSFEED AUTHOR TAGS NOT FOUND!')
                 else:
-                    tei_logger.log('DEBUG', f'{url}: AUTHOR TAGS NOT FOUND!')
+                    tei_logger.log('DEBUG', f'{url}: NEWSFEED AUTHOR TAGS NOT FOUND!')
 
-            # DATE MODIFIED - did not add logging as most articles do not have modification date
-            date_modified_tag = bs.find('div', {'class': 'field field-name-field-frissitve'})
-            if date_modified_tag is not None:
-                date_text = date_modified_tag.get_text(strip=True)
-                if date_text is not None:
-                    parsed_data = parse_date(date_text.replace(' |', '').replace('Frissítve', ''), '%Y. %B %d. %H:%M')
-                    if parsed_data is not None:
-                        data['sch:dateModified'] = parsed_data
+                # DATES - newsfeed dates are calculated according to min and max post times
+                all_post_dates = bs.find_all('div', {'class': 'field field-name-field-time'})
+                parsed_dates = []
+                if len(all_post_dates) > 0:
+                    for tag in all_post_dates:
+                        time_tag = tag.find('time')
+                        if time_tag is not None and 'datetime' in time_tag.attrs.keys():
+                            print(time_tag['datetime'])
+                            parsed_dates.append(parse_date(time_tag['datetime'], '%Y-%m-%dT%H:%M:%SZ'))
+                else:
+                    tei_logger.log('WARNING', f'{url}: NEWSFEED POST TIMES NOT FOUND!')
+                if len(parsed_dates) > 0:
+                    data['sch:datePublished'] = min(parsed_dates)
+                    data['sch:dateModified'] = max(parsed_dates)
+
+            # DATES - Non newsfeed dates are handled normally
+            if percrol_root is None:
+                # DATE MODIFIED - did not add logging as most articles do not have modification date
+                date_modified_tag = bs.find('div', {'class': 'field field-name-field-frissitve'})
+                if date_modified_tag is not None:
+                    date_text = date_modified_tag.get_text(strip=True)
+                    if date_text is not None:
+                        parsed_data = parse_date(date_text.replace(' |', '').replace('Frissítve', ''), '%Y. %B %d. %H:%M')
+                        if parsed_data is not None:
+                            data['sch:dateModified'] = parsed_data
+                        else:
+                            tei_logger.log('WARNING', f'{url}: DATE MODIFIED FORMAT ERROR FAILED TO PARSE!')
+
+                # DATE PUBLISHED
+                date_tag = bs.find('div', class_='field field--name-node-post-date '
+                                                 'field--type-ds field--label-hidden field--item')
+                if date_tag is not None:
+                    date_text = date_tag.get_text(strip=True)
+                    if date_text is not None:
+                        data['sch:datePublished'] = parse_date(date_text.replace(' |', ''), '%Y. %B %d. %H:%M')
                     else:
-                        tei_logger.log('WARNING', f'{url}: DATE MODIFIED FORMAT ERROR FAILED TO PARSE!')
-
-            # DATE PUBLISHED
-            date_tag = bs.find('div', class_='field field--name-node-post-date '
-                                             'field--type-ds field--label-hidden field--item')
-            if date_tag is not None:
-                date_text = date_tag.get_text(strip=True)
-                if date_text is not None:
-                    data['sch:datePublished'] = parse_date(date_text.replace(' |', ''), '%Y. %B %d. %H:%M')
+                        tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
                 else:
-                    tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
-            else:
-                tei_logger.log('WARNING', f'{url}: DATE TAG NOT FOUND!')
+                    tei_logger.log('WARNING', f'{url}: DATE TAG NOT FOUND!')
 
             # AUTHOR and TITLE
             if root_pattern == ('div', {'class': 'riport-content'}):  # riport_root reports have different author tags
