@@ -236,10 +236,10 @@ DECOMP = [(('div',), {'class': 'field field-name-field-media-index-foto-video'})
           (('div',), {'class': 'article-content-authors'}),
           (('div',), {'class': 'article-footer'}),
           (('div',), {'class': 'article-dates'}),
-          (('div',), {'class': 'group-header'}),
+          # (('div',), {'class': 'group-header'}), # contains post time
           (('div',), {'class': 'group-footer'}),
           (('div',), {'class': 'view-header'}),
-          (('div',), {'class': 'group-left'}),
+          # (('div',), {'class': 'group-left'}),  # can contain post authors (not always)
           (('div',), {'class': 'fb-like'}),
           (('h4',), {'class': 'esemeny-title'}),
           (('noscript',), {}),
