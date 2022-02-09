@@ -7,7 +7,14 @@ from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and
 
 PORTAL_URL_PREFIX = 'https://alfahir.hu'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'region region-content'})  # everything / always there, but too much
+_paragraphs_class = "field field--name-field-paragraphs field--type-entity-reference-revisions " \
+                    "field--label-hidden field--items"
+_newsfeed_class = "percrol-percre node node--type-article node--view-mode-full ds-1col clearfix"
+_article_content_class = "article-content"
+
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': _paragraphs_class}),
+                            (('div',), {'class': _newsfeed_class}),
+                            (('div',), {'class': _article_content_class})
                             ]
 
 HTML_BASICS = {'p', 'h2', 'h3', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
