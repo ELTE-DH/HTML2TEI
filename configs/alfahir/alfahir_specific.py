@@ -7,7 +7,7 @@ from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and
 
 PORTAL_URL_PREFIX = 'https://alfahir.hu'
 
-_only_video_class = 'field field-name-field-video-hozzaadasa'
+_only_video_class = 'node node--type-video node--view-mode-full ds-1col clearfix'
 _paragraphs_class = 'field field--name-field-paragraphs field--type-entity-reference-revisions ' \
                     'field--label-hidden field--items'
 _newsfeed_class = 'percrol-percre node node--type-article node--view-mode-full ds-1col clearfix'
@@ -272,13 +272,13 @@ DECOMP = [(('div',), {'class': 'field field-name-field-media-index-foto-video'})
           ]
 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
-MEDIA_LIST = [(('img',), {}),
-              (('iframe',), {}),
-              (('figure',), {}),
-              (('blockquote',), {'class': 'embedly-card'}),
-              (('div',), {'class': 'fb-page fb_iframe_widget'}),
-              (('div',), {'class': 'video-embed-field-provider-youtube video-embed-field-responsive-video form-group'})]
-
+MEDIA_LIST = []
+# (('img',), {}),
+#               (('iframe',), {}),
+#               (('figure',), {}),
+#               (('blockquote',), {'class': 'embedly-card'}),
+#               (('div',), {'class': 'fb-page fb_iframe_widget'}),
+#               (('div',), {'class': 'video-embed-field-provider-youtube video-embed-field-responsive-video form-group'})
 
 def decompose_spec(article_dec):
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)

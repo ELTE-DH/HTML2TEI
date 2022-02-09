@@ -1098,4 +1098,4 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<0_MDESC_figcaption>	49	6	0	https://alfahir.hu/2018/10/01/szlovakia_ujsagirogyilkossag_jan_kuciak	default	default
 1	<0_MDESC_div id=@NUM style=@STYLE>	23	1	0	https://alfahir.hu/meg_egy_jo_hir_mara_az_emih_vezeto_rabbija_fogadta_az_lmp_tarselnoket	default	default
 1	<0_MDESC_blockquote class=embedly-card>	49	3	0	https://alfahir.hu/2018/10/01/szlovakia_ujsagirogyilkossag_jan_kuciak	default	default
-1	<0_MDESC_a href=@LINK style=@STYLE target=@target>	2	0	2	https://alfahir.hu/kozzetettek_a_hangfelvetelt_igy_kert_segitseget_a_robbantasban_megserult_rendor	default	default
+1	<0_MDESC_a href=@LINK style=@STYLE target=@target>	2	0	2	https://alfahir.hu/kozzetettek_a_hangfelvetelt_igy_kert_segitseget_a_robbantasban_megserult_rendor	hivatkozas	href
