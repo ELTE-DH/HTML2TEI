@@ -103,8 +103,9 @@ def import_python_file(file_path, package=None):
 
 WRITE_OUT_MODES = {'eltedh': ('.article_body_converters.eltedh_abc.py', 'html2tei'),
                    'justext': ('.article_body_converters.justext_abc.py', 'html2tei'),
-                   'newspaper3k': ('.article_body_converters.newspaper_abc.py', 'html2tei')}
-
+                   'newspaper3k': ('.article_body_converters.newspaper_abc.py', 'html2tei'),
+                   'trafilatura': ('.article_body_converters.trafilatura_abc.py', 'html2tei'),
+                   }
 
 def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_dir, run_params=None,
                            logfile_level='INFO', console_level='INFO'):
