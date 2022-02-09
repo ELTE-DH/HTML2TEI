@@ -7,12 +7,14 @@ from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and
 
 PORTAL_URL_PREFIX = 'https://alfahir.hu'
 
-_paragraphs_class = "field field--name-field-paragraphs field--type-entity-reference-revisions " \
-                    "field--label-hidden field--items"
-_newsfeed_class = "percrol-percre node node--type-article node--view-mode-full ds-1col clearfix"
-_article_content_class = "article-content"
+_only_video_class = 'field field-name-field-video-hozzaadasa'
+_paragraphs_class = 'field field--name-field-paragraphs field--type-entity-reference-revisions ' \
+                    'field--label-hidden field--items'
+_newsfeed_class = 'percrol-percre node node--type-article node--view-mode-full ds-1col clearfix'
+_article_content_class = 'article-content'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': _paragraphs_class}),
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': _only_video_class}),
+                            (('div',), {'class': _paragraphs_class}),
                             (('div',), {'class': _newsfeed_class}),
                             (('div',), {'class': _article_content_class})
                             ]
@@ -264,7 +266,7 @@ DECOMP = [(('div',), {'class': 'field field-name-field-media-index-foto-video'})
           (('div',), {'class': 'fb-like'}),
           (('h4',), {'class': 'esemeny-title'}),
           (('noscript',), {}),
-          (('section',), {}),
+          # (('section',), {}),
           (('script',), {}),
           (('ins',), {})
           ]
