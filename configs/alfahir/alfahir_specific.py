@@ -87,7 +87,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     for tag in all_post_dates:
                         time_tag = tag.find('time')
                         if time_tag is not None and 'datetime' in time_tag.attrs.keys():
-                            print(time_tag['datetime'])
                             parsed_dates.append(parse_date(time_tag['datetime'], '%Y-%m-%dT%H:%M:%SZ'))
                 else:
                     tei_logger.log('WARNING', f'{url}: NEWSFEED POST TIMES NOT FOUND!')
@@ -245,7 +244,7 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS
-DECOMP = [(('div',), {'class': 'field field-name-field-media-index-foto-video'}),
+DECOMP = [# (('div',), {'class': 'field field-name-field-media-index-foto-video'}),
           (('div',), {'class': 'field field--name-dynamic-token-fieldnode-fb-buttons field--type-ds'
                                ' field--label-hidden field--item'}),
           (('div',), {'class': 'field field--name-dynamic-copy-fieldnode-fb-buttons2 field--type-ds'
