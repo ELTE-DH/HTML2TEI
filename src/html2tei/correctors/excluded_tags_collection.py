@@ -6,7 +6,7 @@ from re import compile as re_compile
 
 COLOR = re_compile(r'.*color.*')
 LINKS_PATTERNS_TUPLE = ('http', 'www')
-LINKS = {'href', 'url', 'data-mce-href', 'src', 'data-src'}
+GENERAL_LINK_ATTRS = {'href', 'url', 'data-mce-href', 'src', 'data-src'}
 REFERENCE_TAGS = {'a', 'img', '0_MDESC_a', '0_MDESC_img'}
 ATTR_TO_DEL = re_compile(r'(highlight|width|height|align|style|sizset|sizcache|size|face)')
 ATTR_TO_DEL_TUP = ('highlight', 'width', 'height', 'align', 'style', 'sizset', 'sizcache', 'size', 'face')
@@ -15,7 +15,7 @@ TABLE_TAGS = {'table', '0_MDESC_table', 'td', 'tr', 'th', 'thead', 'tbody', '0_M
               '0_MDESC_thead', '0_MDESC_tbody'}
 
 
-# Only excluded_tags is used outside of this file
+# Only excluded_tags_general is used outside of this file
 
 
 def simplify_alphanumeric_values(tag_attr_value):
@@ -63,7 +63,7 @@ def simplify_style_like_attributes(curr_attr, value_ind, value):
         curr_attr[value_ind] = simplify_alphanumeric_values(value)
 
 
-def simplified_tags_spec(tag):
+def excluded_tags_general(tag):
     """This function is used in all places outside of this file where the dictionary shape of the tags is required"""
     tag_attrs = tag.attrs
     if tag.name in REFERENCE_TAGS and (tag.has_attr('title') or tag.has_attr('alt') or tag.has_attr('data-title')):
@@ -79,7 +79,7 @@ def simplified_tags_spec(tag):
         attr_val = str(tag_attrs[attr_key])
         if any(elem in attr_key for elem in ATTR_TO_DEL_TUP):
             tag_attrs[attr_key] = '@STYLE'
-        elif any(elem in attr_val for elem in LINKS_PATTERNS_TUPLE) or attr_key in LINKS:
+        elif any(elem in attr_val for elem in LINKS_PATTERNS_TUPLE) or attr_key in GENERAL_LINK_ATTRS:
             tag_attrs[attr_key] = '@LINK'
         elif COLOR.match(attr_key):
             tag_attrs[attr_key] = ''

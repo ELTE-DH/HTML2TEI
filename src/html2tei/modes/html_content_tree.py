@@ -6,8 +6,8 @@ from collections import defaultdict
 from os.path import join as os_path_join
 from json import dumps as json_dumps, loads as json_loads
 
-from .tei_utils import to_friendly
-from .processing_utils import run_single_process, dummy_fun, process_article
+from ..tei_utils import to_friendly
+from ..workflow_helpers.processing_utils import run_single_process, dummy_fun, process_article
 
 
 def collect_tags_recursively(out_dict, article_url, tag, excluded_tags_fun):

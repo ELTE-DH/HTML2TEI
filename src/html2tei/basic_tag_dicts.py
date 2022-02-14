@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
+
 # eltedh_abc.py + tei_utils.py
 INLINE_TAGS = {'felkover', 'dolt', 'kiemelt', 'hivatkozas', 'alahuzott', 'athuzott', 'felsoindex', 'alsoindex',
                'inline_idezet', 'hi', 'ref'}

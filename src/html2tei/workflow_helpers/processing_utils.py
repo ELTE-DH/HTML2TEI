@@ -12,8 +12,8 @@ from locale import setlocale, LC_ALL, Error as locale_Error
 from bs4 import BeautifulSoup
 from webarticlecurator import WarcCachingDownloader
 
-from .unicode_error import unicode_test
-from .read_config import check_exists, read_input_config, read_portalspec_config
+from ..correctors.unicode_error import unicode_test
+from ..workflow_helpers.read_config import check_exists, read_input_config, read_portalspec_config
 
 
 def extract_resp_record_data(resp):
@@ -35,8 +35,8 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
        where multi-page articles are treated as one entry
     """
     # We use these variables here, the others are passed blindly to the other processing levels
-    warc_filenames, blacklist, multipage_compile, warc_logger, date_interval, next_page_of_article_fun \
-        = warc_level_params
+    warc_filenames, blacklist, multipage_compile, warc_logger, date_interval, next_page_of_article_fun, \
+        transform_to_html_fun = warc_level_params
 
     # Init WARC cache
     warc_reader = WarcCachingDownloader(warc_filenames, None, warc_logger, just_cache=True,
@@ -56,6 +56,7 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
             warc_response_datetime, warc_id, raw_html = extract_resp_record_data(resp)
             date_min = min(date_min, warc_response_datetime)
             date_max = max(date_max, warc_response_datetime)
+            raw_html = transform_to_html_fun(article_url, raw_html, warc_logger)
             article.append((article_url, warc_response_datetime, warc_id, raw_html))
 
             # Generate next page URL
@@ -89,18 +90,19 @@ def open_multiple_files(args):
 
 
 # This function is used outside of this file
-def run_single_process(warc_filename, file_names_and_modes, main_function, sub_functions, after_function, after_params):
+def run_single_process(warc_level_params, file_names_and_modes, main_function, sub_functions, after_function,
+                       after_params):
     """Read a WARC file and sequentially process all articles in it with main_function
         (multi-page articles are handled as one entry) and yield the result after filtered through after_function
     """
     with open_multiple_files(file_names_and_modes) as fhandles:
-        for params in aggregated_multipage_articles_gen(warc_filename, sub_functions):
+        for params in aggregated_multipage_articles_gen(warc_level_params, sub_functions):
             ret = main_function(params)
             yield after_function(ret, after_params, fhandles)
 
 
 # This function is used outside of this file
-def run_multiple_process(warc_filename, file_names_and_modes, main_function, sub_functions, after_function,
+def run_multiple_process(warc_level_params, file_names_and_modes, main_function, sub_functions, after_function,
                          after_params):
     """Read a WARC file and sequentially process all articles in it with main_function in parallel preserving ordering
         (multi-page articles are handled as one entry) and yield the result after filtered through after_function
@@ -112,7 +114,7 @@ def run_multiple_process(warc_filename, file_names_and_modes, main_function, sub
         with logger_obj.init_mp_logging_context(log_queue) as mp_logger, \
                 open_multiple_files(file_names_and_modes) as fhandles, Pool() as p:
             sub_functions[0][0] = mp_logger
-            queue = p.imap(main_function, aggregated_multipage_articles_gen(warc_filename, sub_functions),
+            queue = p.imap(main_function, aggregated_multipage_articles_gen(warc_level_params, sub_functions),
                            chunksize=1000)
             for ret in queue:  # This is single process because it writes to files
                 yield after_function(ret, after_params, fhandles)
