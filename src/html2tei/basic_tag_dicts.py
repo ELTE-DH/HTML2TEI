@@ -31,7 +31,7 @@ OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekez
                     'oszlop_valid', 'sor_valid', 'oszlop_sor', 'tablazat_cimsor', 'kozvetites',
                     'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo',
                     'komment', 'komment_meta', 'komment_ido', 'komment_szerzo', 'komment_root',
-                    'cimsor', 'galeria',
+                    'galeria',  # 'cimsor',
                     'kviz', 'kerdes', 'valaszblokk', 'valasz', 'forum', 'media_tartalom', 'beagyazott_tartalom',
                     'beagyazott_social', 'abra', 'hi', 'ref'}
 
