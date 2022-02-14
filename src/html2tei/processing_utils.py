@@ -158,9 +158,10 @@ def process_article(params):
        It extracts the useful part from the html (=the body of the article), deletes the listed, irrelevant parts,
         and indicates the characteristic errors related to the body of the article (which can be detected at this level)
     """
-    article_list, (tei_logger, article_roots, decomp_fun, excluded_tags_fun, sub_fun, sub_fun_params) = params
+    article_list, \
+        (tei_logger, create_soup_fun, article_roots, decomp_fun, excluded_tags_fun, sub_fun, sub_fun_params) = params
     for article_url, warc_date, warc_id, raw_html in article_list:
-        bs = BeautifulSoup(raw_html, 'lxml')
+        bs = create_soup_fun(raw_html, tei_logger)
         for args, kwargs in article_roots:
             article_body_root = bs.find(*args, **kwargs)
             if article_body_root is not None:

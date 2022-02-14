@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
+from bs4 import BeautifulSoup
+
+
+def default_create_soup_fun(raw_html, tei_logger):
+    _ = tei_logger
+    return BeautifulSoup(raw_html, 'lxml')
+
+
 # eltedh_abc.py + tei_utils.py
 INLINE_TAGS = {'felkover', 'dolt', 'kiemelt', 'hivatkozas', 'alahuzott', 'athuzott', 'felsoindex', 'alsoindex',
                'inline_idezet', 'hi', 'ref'}
