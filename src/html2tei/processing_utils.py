@@ -35,8 +35,8 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
        where multi-page articles are treated as one entry
     """
     # We use these variables here, the others are passed blindly to the other processing levels
-    warc_filenames, blacklist, multipage_compile, warc_logger, date_interval, next_page_of_article_fun \
-        = warc_level_params
+    warc_filenames, blacklist, multipage_compile, warc_logger, date_interval, next_page_of_article_fun, \
+        transform_to_html = warc_level_params
 
     # Init WARC cache
     warc_reader = WarcCachingDownloader(warc_filenames, None, warc_logger, just_cache=True,
@@ -56,6 +56,7 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
             warc_response_datetime, warc_id, raw_html = extract_resp_record_data(resp)
             date_min = min(date_min, warc_response_datetime)
             date_max = max(date_max, warc_response_datetime)
+            raw_html = transform_to_html(raw_html)
             article.append((article_url, warc_response_datetime, warc_id, raw_html))
 
             # Generate next page URL
@@ -158,10 +159,9 @@ def process_article(params):
        It extracts the useful part from the html (=the body of the article), deletes the listed, irrelevant parts,
         and indicates the characteristic errors related to the body of the article (which can be detected at this level)
     """
-    article_list, \
-        (tei_logger, create_soup_fun, article_roots, decomp_fun, excluded_tags_fun, sub_fun, sub_fun_params) = params
+    article_list, (tei_logger, article_roots, decomp_fun, excluded_tags_fun, sub_fun, sub_fun_params) = params
     for article_url, warc_date, warc_id, raw_html in article_list:
-        bs = create_soup_fun(raw_html, tei_logger)
+        bs = BeautifulSoup(raw_html, 'lxml')
         for args, kwargs in article_roots:
             article_body_root = bs.find(*args, **kwargs)
             if article_body_root is not None:

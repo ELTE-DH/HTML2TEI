@@ -147,7 +147,7 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
 
     warc_date_interval = {}  # Actually the maximal date interval for HTTP responses in the WARC file
     warc_level_params = (warc_name, blacklist_spec, multipage_compile, tei_logger, warc_date_interval,
-                         next_page_of_article_fun)
+                         next_page_of_article_fun, create_soup_fun)
 
     # Portal specific TSV dictionaries stuff
     if run_params.get('w_specific_dicts', False):
@@ -186,8 +186,8 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         tei_logger.log('INFO', f'Using {write_out_mode} write mode')
 
     return tei_logger, warc_level_params, get_meta_fun_spec, article_root_params, decompose_spec, excluded_tags_spec, \
-        create_soup_fun, portal_url_prefix, link_filter_spec, links, block_rules_spec, bigram_rules_spec, \
-        tag_normal_dict, portal_specific_block_rules, portal_xml_string, write_out_mode_fun
+        portal_url_prefix, link_filter_spec, links, block_rules_spec, bigram_rules_spec, tag_normal_dict, \
+        portal_specific_block_rules, portal_xml_string, write_out_mode_fun
 
 
 def read_input_config(warc_filename):
