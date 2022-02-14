@@ -12,7 +12,7 @@ from lxml import etree
 from mplogger import Logger
 from yaml import load as yaml_load, SafeLoader
 
-from .basic_tag_dicts import BLOCK_RULES, default_create_soup_fun
+from .basic_tag_dicts import BLOCK_RULES, default_transform_to_html_fun
 
 # Only read_portalspec_config and read_input_config is used outside of this file
 
@@ -75,7 +75,7 @@ def get_portal_spec_fun_and_dict_names(module_fn, tei_logger):
         portal_speicific_funs_and_constants.append(e_loaded)
 
     # Optional parameters
-    for fun_or_const, def_value in (('create_soup_fun', default_create_soup_fun),):
+    for fun_or_const, def_value in (('transform_to_html', default_transform_to_html_fun),):
         e_loaded = getattr(portal_spec_module, fun_or_const, def_value)
         portal_speicific_funs_and_constants.append(e_loaded)
 
@@ -139,7 +139,7 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
     check_exists(portal_spec_module_fn, tei_logger)
     blacklist_spec, multipage_compile, next_page_of_article_fun, get_meta_fun_spec, article_root_params, \
         decompose_spec, excluded_tags_spec, portal_url_prefix, link_filter_spec, links, block_rules_spec, \
-        bigram_rules_spec, create_soup_fun = get_portal_spec_fun_and_dict_names(portal_spec_module_fn, tei_logger)
+        bigram_rules_spec, transform_to_html_fun = get_portal_spec_fun_and_dict_names(portal_spec_module_fn, tei_logger)
 
     # WARC reading stuff
     warc_name = os_path_join(warc_dir, warc_name)
@@ -147,7 +147,7 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
 
     warc_date_interval = {}  # Actually the maximal date interval for HTTP responses in the WARC file
     warc_level_params = (warc_name, blacklist_spec, multipage_compile, tei_logger, warc_date_interval,
-                         next_page_of_article_fun, create_soup_fun)
+                         next_page_of_article_fun, transform_to_html_fun)
 
     # Portal specific TSV dictionaries stuff
     if run_params.get('w_specific_dicts', False):

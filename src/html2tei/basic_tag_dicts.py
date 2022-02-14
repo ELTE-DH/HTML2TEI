@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
-from bs4 import BeautifulSoup
 
-
-def default_create_soup_fun(raw_html, tei_logger):
+def default_transform_to_html_fun(raw_html, tei_logger):
     _ = tei_logger
-    return BeautifulSoup(raw_html, 'lxml')
+    return raw_html
 
 
 # eltedh_abc.py + tei_utils.py

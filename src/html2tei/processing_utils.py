@@ -36,7 +36,7 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
     """
     # We use these variables here, the others are passed blindly to the other processing levels
     warc_filenames, blacklist, multipage_compile, warc_logger, date_interval, next_page_of_article_fun, \
-        transform_to_html = warc_level_params
+        transform_to_html_fun = warc_level_params
 
     # Init WARC cache
     warc_reader = WarcCachingDownloader(warc_filenames, None, warc_logger, just_cache=True,
@@ -56,7 +56,7 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
             warc_response_datetime, warc_id, raw_html = extract_resp_record_data(resp)
             date_min = min(date_min, warc_response_datetime)
             date_max = max(date_max, warc_response_datetime)
-            raw_html = transform_to_html(raw_html)
+            raw_html = transform_to_html_fun(raw_html)
             article.append((article_url, warc_response_datetime, warc_id, raw_html))
 
             # Generate next page URL
