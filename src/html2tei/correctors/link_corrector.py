@@ -161,7 +161,4 @@ def link_corrector(link, portal_url_prefix, portalspec_link_filter, extra_key, a
 
     link = ''.join(link.split('\n'))
 
-    if '.,' in link:
-        pass
-
     return link

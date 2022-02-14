@@ -15,7 +15,6 @@ SECTION_DICT = {'aktualis': 'Aktuális', 'vilag': 'Világ', 'sport': 'Sport', 'm
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
-    write_it = ''
     for args, kwargs in ARTICLE_ROOT_PARAMS_SPEC:
         article_root = bs.find(*args, **kwargs)
         if article_root is not None:
@@ -26,7 +25,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     date_and_author = article_root.find('div', class_='author')
     dates_and_author_parts = [date_part.strip() for date_part in date_and_author.text
-                                        .replace('\n\n\t\t\t\t\t\t', '&bullet;').split('&bullet;')]
+                              .replace('\n\n\t\t\t\t\t\t', '&bullet;').split('&bullet;')]
     if len(dates_and_author_parts) > 0:
         parsed_date = parse_date(dates_and_author_parts[1], '%Y. %B %d., %H:%M')
         if parsed_date is not None:
