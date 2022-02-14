@@ -7,7 +7,7 @@ from collections import defaultdict
 from bs4 import Tag
 from bs4.element import NavigableString, Comment
 
-from .excluded_tags_collection import simplified_tags_spec
+from .correctors.excluded_tags_collection import excluded_tags_general
 from .basic_tag_dicts import INLINE_TAGS, MEDIA_DICT, XML_CONVERT_DICT, TAGNAME_AND_ATTR_TABLE, FIGURE_REND_ATTRS
 
 
@@ -23,7 +23,7 @@ def to_friendly(ch, excluded_tags_fun):
        (e.g. tag_freezer in the tables)
     """
     ch = excluded_tags_fun(ch)
-    ch = simplified_tags_spec(ch)
+    ch = excluded_tags_general(ch)
     attrs = ' ' + ' '.join(k + '=' + join_list(v) for k, v in sorted(ch.attrs.items()))
     if len(attrs) == 1:
         attrs = ''

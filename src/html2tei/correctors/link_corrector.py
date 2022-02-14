@@ -14,13 +14,16 @@ REPLACE_IN_URL = (('%2F', '/'), ('%&', '%25&'), ('[', '%5B'), (']', '%5D'), ('%?
 SLASH_DOT = {'/', '.'}
 
 
+# Only link_corrector is used outside of this file
+
+
 def correct_first_in_link_or_facs(link, portal_url_prefix, extra_key):
     """Helper function (for link_corrector) which corrects links without prefixes (relative URL) and replaces escapes
         due to eronously concatenated URLs (facs = facsimile = href in TEI)
     """
-    for origi, new in REPLACE_IN_URL:
+    for original, new in REPLACE_IN_URL:
         # This problem appeared in the articles of vs.hu, valasz.hu.
-        link = link.replace(origi, new)
+        link = link.replace(original, new)
     link = link.strip()
     if link.startswith('//'):
         link = f'https:{link}'

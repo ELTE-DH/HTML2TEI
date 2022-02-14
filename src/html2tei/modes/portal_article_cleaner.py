@@ -9,9 +9,9 @@ from datetime import datetime, MAXYEAR, MINYEAR
 
 from bs4 import BeautifulSoup
 
-from .tei_utils import create_new_tag_with_string
-from .validate_hash_zip import init_output_writer
-from .processing_utils import run_single_process, run_multiple_process
+from ..tei_utils import create_new_tag_with_string
+from ..workflow_helpers.validate_hash_zip import init_output_writer
+from ..workflow_helpers.processing_utils import run_single_process, run_multiple_process
 
 DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist', 'sch:source'}
 

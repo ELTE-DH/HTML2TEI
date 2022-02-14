@@ -3,13 +3,13 @@
 
 from argparse import ArgumentParser, ArgumentTypeError
 
-from .processing_utils import run_main
-from .read_config import WRITE_OUT_MODES
-from .update_and_filter_tables import diff_all_tag_table
-from .tag_bigrams_maker import init_portal as tag_bigrams_init_portal
-from .html_content_tree import init_portal as content_tree_init_portal
-from .tag_inventory_maker import init_portal as tag_inventory_init_portal
-from .portal_article_cleaner import init_portal as portal_article_cleaner_init_portal
+from .workflow_helpers.processing_utils import run_main
+from .workflow_helpers.read_config import WRITE_OUT_MODES
+from .modes.update_and_filter_tables import diff_all_tag_table
+from .modes.tag_bigrams_maker import init_portal as tag_bigrams_init_portal
+from .modes.html_content_tree import init_portal as content_tree_init_portal
+from .modes.tag_inventory_maker import init_portal as tag_inventory_init_portal
+from .modes.portal_article_cleaner import init_portal as portal_article_cleaner_init_portal
 
 
 def str2bool(v):

@@ -5,8 +5,8 @@ from collections import defaultdict
 from os.path import join as os_path_join
 from random import sample as random_sample
 
-from .tei_utils import immediate_text, to_friendly
-from .processing_utils import run_single_process, dummy_fun, process_article
+from ..tei_utils import immediate_text, to_friendly
+from ..workflow_helpers.processing_utils import run_single_process, dummy_fun, process_article
 
 
 def summarize_children_or_subtree(tag_dict, recursive, article_url, article_body_root, excluded_tags_fun):

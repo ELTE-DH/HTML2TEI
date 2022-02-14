@@ -12,7 +12,9 @@ from lxml import etree
 from mplogger import Logger
 from yaml import load as yaml_load, SafeLoader
 
-from .basic_tag_dicts import BLOCK_RULES, default_transform_to_html_fun
+from ..basic_tag_dicts import BLOCK_RULES
+from ..json_utils import default_transform_to_html_fun
+
 
 # Only read_portalspec_config and read_input_config is used outside of this file
 
