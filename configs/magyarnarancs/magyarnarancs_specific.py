@@ -107,7 +107,9 @@ def excluded_tags_spec(tag):
 
 
 BLOCK_RULES_SPEC = {}
-BIGRAM_RULES_SPEC = {}
+BIGRAM_RULES_SPEC = {'table_text': {('media_hivatkozas', 'det_by_any_desc'): ('media_tartalom', 'media_hivatkozas')},
+                    'lista': {('media_tartalom', 'det_by_any_desc'): ('to_unwrap', 'media_tartalom')}}
+
 LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('div',), {'class': 'banner-wrapper bgr mb-2 mt-2'}),
           (('div',), {'class': 'blockquote orange'}),
