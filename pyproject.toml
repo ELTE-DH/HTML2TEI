@@ -22,7 +22,8 @@ beautifulsoup4 = "^4.9.0"
 lxml = "^4.5.0"
 pyyaml = "^6.0.0"
 warcio = "^1.7.0"
-webarticlecurator = "^1.10.1"
+certifi = "^2021.10.8"
+webarticlecurator = "^1.10.2"
 mthasher = "^2.0.4"
 mplogger = "^1.0.0"
 # A list of all of the optional dependencies, some of which are included in the
@@ -38,7 +39,7 @@ trafilatura = ["trafilatura"]
 full = ["justext", "newspaper3k", "trafilatura"]
 
 [tool.poetry.dev-dependencies]
-pytest = "^6"
+pytest = "^7"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
