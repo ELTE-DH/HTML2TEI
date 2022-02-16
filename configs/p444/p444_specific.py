@@ -8,8 +8,7 @@ from bs4 import BeautifulSoup
 from html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://444.hu/'
-ARTICLE_ROOT_PARAMS_SPEC = [(('main',), {'id': 'content-main'})]
-                            # ,(('section',), {'id': 'main-section'})]
+ARTICLE_ROOT_PARAMS_SPEC = [(('main',), {'id': 'content-main'})]  # ,(('section',), {'id': 'main-section'})]
 
 HIGHLIGHT = re.compile(r'.*highlight.*')
 A_TAGS = {'a', '0_MDESC_a'}
@@ -18,14 +17,15 @@ A_TAGS = {'a', '0_MDESC_a'}
 # https://444.hu/2016/06/15/oroszorszag-szlovakia-elo?page=3 közvetítés author, section
 # https://444.hu/2016/02/10/ejjel-erkezem-mondta-a-ciklon  üresnek írja de nem az jelenleg
 # https://444.hu/2014/05/10/orban-viktor-eskuszik-elo?page=2
-#https://444.hu/2021/02/18/mar-megint-24-ora-a-kozmediaval?page=6
+# https://444.hu/2021/02/18/mar-megint-24-ora-a-kozmediaval?page=6
+
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
     basic_article = True
     raw_meta = bs.find('div', {'id': 'headline'})
-    articles = bs.find_all('article')
+    articles = bs.find_all('article')  # TODO
     report = bs.find_all('article', {'class': 'report', 'data-content-id': True})
     if raw_meta is not None:
         """if len(articles) > 1 and all('class' in art.attrs.keys() and art.attrs['class'] == ['report']

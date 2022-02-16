@@ -14,13 +14,16 @@ REPLACE_IN_URL = (('%2F', '/'), ('%&', '%25&'), ('[', '%5B'), (']', '%5D'), ('%?
 SLASH_DOT = {'/', '.'}
 
 
+# Only link_corrector is used outside of this file
+
+
 def correct_first_in_link_or_facs(link, portal_url_prefix, extra_key):
     """Helper function (for link_corrector) which corrects links without prefixes (relative URL) and replaces escapes
         due to eronously concatenated URLs (facs = facsimile = href in TEI)
     """
-    for origi, new in REPLACE_IN_URL:
+    for original, new in REPLACE_IN_URL:
         # This problem appeared in the articles of vs.hu, valasz.hu.
-        link = link.replace(origi, new)
+        link = link.replace(original, new)
     link = link.strip()
     if link.startswith('//'):
         link = f'https:{link}'
@@ -131,42 +134,31 @@ def link_corrector(link, portal_url_prefix, portalspec_link_filter, extra_key, a
             return None
 
     link = fix_double_or_incorrect_link(link, portal_url_prefix, portalspec_link_filter, extra_key, a_url)
-    if link is None:
-        return None
-    if link.count('/') < 3 and ('.' not in link[link.find('://') + 3:] or link.endswith('.')):
+    if link is None or link.endswith('.') or \
+            (link.count('/') < 3 and ('.' not in link[link.find('://') + 3:] or link.endswith('.'))):
         # It filters out if plain text content if there is not / after :// at least a .something should present,
         #  else it will be treated as plain text content  e.g.
         #  https://vs.hu/kozelet/osszes/putyin-a-pok-1110 http://Center for East European Policy Studies
-        return None
-    elif link.endswith('.'):
         return None
 
     if ' ' in link and not link.endswith('.pdf') and link.count('/') < 3:
         # Those URLs which contains whitespace at this point are simple text, but could be still corrected
         #  e.g. space in the middle of the URL
         link_rep = link.replace(' - ', '-').replace('/ ', '/').replace('- ', '-')
-        if link_rep == link:
+        if (link_rep != link and ' ' in link_rep) or link_rep == link:
             # https://vs.hu/kozelet/osszes/buda-cash-az-mnb-szerint-alaptalanok-az-ellenzek-vadjai-0302
             # http://xn--rogn antal arrl beszlt-qkc7xvk: a Fidesz kommunik%C3%A1ci%C3%B3j%C3%A1ban az %C3%BCgynek
             # %C3%BAgy kell megjelennie, hogy a Kulcs%C3%A1r-botr%C3%A1ny ut%C3%A1n a %E2%80%9Em%C3%A1sodik
             # szocialista br%C3%B3kerbotr%C3%A1nyb%C3%B3l%E2%80%9D van sz%C3%B3./
             return None
-        elif link_rep != link and ' ' in link_rep:
-            return None
         link = link_rep
 
-    if link.endswith('./') or link.isalpha():
-        return None
-
-    if not URL_STARTSWITH.match(link):
+    if link.endswith('./') or link.isalpha() or not URL_STARTSWITH.match(link):
         # https://vs.hu/magazin/osszes/van-valami-a-dunaujvarosi-levegoben-1226 oki.antsz.hu/#tab_levego
         # https://vs.hu/kozelet/osszes/balog-zoltan-koszoni-a-roma-holokausztrol-szolo-anyagot-0804
         # httphu.tdf-cdn.com/4638/_demand/0077ea0c_6408785.mp3
         return None
 
     link = ''.join(link.split('\n'))
-
-    if '.,' in link:
-        pass
 
     return link

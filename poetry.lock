@@ -64,7 +64,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "charset-normalizer"
-version = "2.0.11"
+version = "2.0.12"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -158,7 +158,7 @@ sgmllib3k = "*"
 
 [[package]]
 name = "filelock"
-version = "3.4.2"
+version = "3.5.0"
 description = "A platform independent file lock."
 category = "main"
 optional = true
@@ -170,14 +170,14 @@ testing = ["covdefaults (>=1.2.0)", "coverage (>=4)", "pytest (>=4)", "pytest-co
 
 [[package]]
 name = "htmldate"
-version = "1.0.0"
-description = "Fast and robust extraction of original and updated publication dates from web pages."
+version = "1.0.1"
+description = "Fast and robust extraction of original and updated publication dates from URLs and web pages."
 category = "main"
 optional = true
 python-versions = ">=3.6"
 
 [package.dependencies]
-charset-normalizer = ">=2.0.7"
+charset-normalizer = ">=2.0.12"
 dateparser = ">=1.1.0"
 lxml = ">=4.6.4"
 python-dateutil = ">=2.8.2"
@@ -368,7 +368,7 @@ diagrams = ["jinja2", "railroad-diagrams"]
 
 [[package]]
 name = "pytest"
-version = "6.2.5"
+version = "7.0.1"
 description = "pytest: simple powerful testing with Python"
 category = "dev"
 optional = false
@@ -382,10 +382,10 @@ iniconfig = "*"
 packaging = "*"
 pluggy = ">=0.12,<2.0"
 py = ">=1.8.2"
-toml = "*"
+tomli = ">=1.0.0"
 
 [package.extras]
-testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
+testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
 name = "python-dateutil"
@@ -543,12 +543,12 @@ requests = ">=2.1.0"
 requests-file = ">=1.4"
 
 [[package]]
-name = "toml"
-version = "0.10.2"
-description = "Python Library for Tom's Obvious, Minimal Language"
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
 category = "dev"
 optional = false
-python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+python-versions = ">=3.7"
 
 [[package]]
 name = "tqdm"
@@ -639,7 +639,7 @@ six = "*"
 
 [[package]]
 name = "webarticlecurator"
-version = "1.10.1"
+version = "1.10.2"
 description = "A crawler program to download content from portals (news, forums, blogs) and convert it to the desired output format according to the configuration."
 category = "main"
 optional = false
@@ -663,7 +663,7 @@ full = ["newspaper3k (>=0.2.8,<0.3.0)"]
 
 [[package]]
 name = "yamale"
-version = "4.0.2"
+version = "4.0.3"
 description = "A schema and validator for YAML."
 category = "main"
 optional = false
@@ -681,7 +681,7 @@ trafilatura = ["trafilatura"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "292ff7f589449edc84d28af901b651c76370d64b192651f9e2af6629fa25c72d"
+content-hash = "358f8099ac49795984fa9e6b6c1ba93d415319c7ae8dc7b449e5269952aea7d4"
 
 [metadata.files]
 atomicwrites = [
@@ -723,8 +723,8 @@ chardet = [
     {file = "chardet-4.0.0.tar.gz", hash = "sha256:0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa"},
 ]
 charset-normalizer = [
-    {file = "charset-normalizer-2.0.11.tar.gz", hash = "sha256:98398a9d69ee80548c762ba991a4728bfc3836768ed226b3945908d1a688371c"},
-    {file = "charset_normalizer-2.0.11-py3-none-any.whl", hash = "sha256:2842d8f5e82a1f6aa437380934d5e1cd4fcf2003b06fed6940769c164a480a45"},
+    {file = "charset-normalizer-2.0.12.tar.gz", hash = "sha256:2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597"},
+    {file = "charset_normalizer-2.0.12-py3-none-any.whl", hash = "sha256:6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -754,12 +754,12 @@ feedparser = [
     {file = "feedparser-6.0.8.tar.gz", hash = "sha256:5ce0410a05ab248c8c7cfca3a0ea2203968ee9ff4486067379af4827a59f9661"},
 ]
 filelock = [
-    {file = "filelock-3.4.2-py3-none-any.whl", hash = "sha256:cf0fc6a2f8d26bd900f19bf33915ca70ba4dd8c56903eeb14e1e7a2fd7590146"},
-    {file = "filelock-3.4.2.tar.gz", hash = "sha256:38b4f4c989f9d06d44524df1b24bd19e167d851f19b50bf3e3559952dddc5b80"},
+    {file = "filelock-3.5.0-py3-none-any.whl", hash = "sha256:a7141afb4feca60925cfc090b411fb9faaf542d06d58ece4f93d940265e6b995"},
+    {file = "filelock-3.5.0.tar.gz", hash = "sha256:137b661e657f7850eec9def2a001efadba3414be523b87cd3f9a037372d80a15"},
 ]
 htmldate = [
-    {file = "htmldate-1.0.0-py3-none-any.whl", hash = "sha256:075456bc736508f0343bbb6645e9f9c5dc97a30e4692e5c6b1e1c5a897454007"},
-    {file = "htmldate-1.0.0.tar.gz", hash = "sha256:3767aed93c72a9ac0a68ff907eefc373c183593507a8354e899229bac621da1b"},
+    {file = "htmldate-1.0.1-py3-none-any.whl", hash = "sha256:09ea467a0cd3cb814230f119a1e83aec4001b06c0fc414f080ea5a0efc70b01f"},
+    {file = "htmldate-1.0.1.tar.gz", hash = "sha256:c0061640b9c126832aea9b90d6c51dbe1c999b6cf77195c2de1bfb1d37247122"},
 ]
 idna = [
     {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
@@ -916,8 +916,8 @@ pyparsing = [
     {file = "pyparsing-3.0.7.tar.gz", hash = "sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea"},
 ]
 pytest = [
-    {file = "pytest-6.2.5-py3-none-any.whl", hash = "sha256:7310f8d27bc79ced999e760ca304d69f6ba6c6649c0b60fb0e04a4a77cacc134"},
-    {file = "pytest-6.2.5.tar.gz", hash = "sha256:131b36680866a76e6781d13f101efb86cf674ebb9762eb70d3082b6f29889e89"},
+    {file = "pytest-7.0.1-py3-none-any.whl", hash = "sha256:9ce3ff477af913ecf6321fe337b93a2c0dcf2a0a1439c43f5452112c1e4280db"},
+    {file = "pytest-7.0.1.tar.gz", hash = "sha256:e30905a0c131d3d94b89624a1cc5afec3e0ba2fbdb151867d8e0ebd49850f171"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
@@ -1084,9 +1084,9 @@ tldextract = [
     {file = "tldextract-3.1.2-py2.py3-none-any.whl", hash = "sha256:f55e05f6bf4cc952a87d13594386d32ad2dd265630a8bdfc3df03bd60425c6b0"},
     {file = "tldextract-3.1.2.tar.gz", hash = "sha256:d2034c3558651f7d8fdadea83fb681050b2d662dc67a00d950326dc902029444"},
 ]
-toml = [
-    {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
-    {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
+tomli = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 tqdm = [
     {file = "tqdm-4.62.3-py2.py3-none-any.whl", hash = "sha256:8dd278a422499cd6b727e6ae4061c40b48fce8b76d1ccbf5d34fca9b7f925b0c"},
@@ -1113,10 +1113,10 @@ warcio = [
     {file = "warcio-1.7.4.tar.gz", hash = "sha256:e1889dad9ecac654de5b0973247f335a55827b1b14a8203772d18c749143ea51"},
 ]
 webarticlecurator = [
-    {file = "webarticlecurator-1.10.1-py3-none-any.whl", hash = "sha256:0989af96b196d4da4d44fd8c2f228cdaf880080b00743d309e266e1be8caaea6"},
-    {file = "webarticlecurator-1.10.1.tar.gz", hash = "sha256:5b8b6f2e79ab9ad24cc831cc797bea40f476258e7d108619a500874b250f5111"},
+    {file = "webarticlecurator-1.10.2-py3-none-any.whl", hash = "sha256:2cb30fbaba186ff9c336c91c9f2e3b2a7af3c6c1030d1ebc5df736389729f987"},
+    {file = "webarticlecurator-1.10.2.tar.gz", hash = "sha256:e0b7dad6ab31f46120d840d8e72729b03d707811a6532a7fd579977d0b0f269e"},
 ]
 yamale = [
-    {file = "yamale-4.0.2-py3-none-any.whl", hash = "sha256:619967952d419335b84c58cdcb3bc5976d0bf3d7ec3e93c173fe15fc81f7edce"},
-    {file = "yamale-4.0.2.tar.gz", hash = "sha256:4168f8b3650cece80552fd32edd894ab9081dd9ef959cadd9f1f23795629e4f2"},
+    {file = "yamale-4.0.3-py3-none-any.whl", hash = "sha256:0fe07b81db43003401108fe8eb1a2874337b0e08af8d4210a5c3a760f8dc748c"},
+    {file = "yamale-4.0.3.tar.gz", hash = "sha256:1efb07da8de7dbebecfd353daab9b42334d5e4904a7a2d4b454839d81ae01bfd"},
 ]

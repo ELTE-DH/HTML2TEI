@@ -83,7 +83,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         if len(source_in_text_2) < 40:
                             data['sch:source'] = source_in_text_2.strip()
                     else:
-                        if len(source_in_text_2) < 40:
+                        if len(source_in_text_2) < 40:  # TODO
                             data['sch:source'] = source_in_text_2.strip()
                 else:
                     source_in_text_3 = article_root.find('div', class_='field field--name-body field--type-text-with-'

@@ -9,9 +9,9 @@ from datetime import datetime, MAXYEAR, MINYEAR
 
 from bs4 import BeautifulSoup
 
-from .tei_utils import create_new_tag_with_string
-from .validate_hash_zip import init_output_writer
-from .processing_utils import run_single_process, run_multiple_process
+from ..tei_utils import create_new_tag_with_string
+from ..workflow_helpers.validate_hash_zip import init_output_writer
+from ..workflow_helpers.processing_utils import run_single_process, run_multiple_process
 
 DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist', 'sch:source'}
 
@@ -359,9 +359,9 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
     #  - bigram_rules_spec portal-specific bigram rules
     #  - portal_url_prefix the url prefix of the portal (e.g. domain name for relative links)
     #  - portalspec_link_filter substring list to filter non-repairable links
-    portalspec_params_and_dicts = (article_root_params, decompose_spec, excluded_tags_spec,
-                                   tag_normal_dict, links, portal_specific_block_rules, bigram_rules_spec,
-                                   portal_url_prefix, portalspec_link_filter)
+    portalspec_params_and_dicts = (article_root_params, decompose_spec, excluded_tags_spec, tag_normal_dict, links,
+                                   portal_specific_block_rules, bigram_rules_spec, portal_url_prefix,
+                                   portalspec_link_filter)
     process_article_params = (process_article_clean_params, portalspec_params_and_dicts)
 
     # Runner function (some task can be run only in single-process mode)

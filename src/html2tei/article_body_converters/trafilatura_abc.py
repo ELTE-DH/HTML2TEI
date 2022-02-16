@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
+
 from datetime import datetime
 
 from bs4 import BeautifulSoup
 from lxml.etree import tostring
 from trafilatura import extract, extract_metadata, bare_extraction
 
-from html2tei.tei_utils import tei_defaultdict, create_new_tag_with_string
+from ..tei_utils import tei_defaultdict, create_new_tag_with_string
 
 
 def _create_empty_paragraph_list(url, body_log):
@@ -23,7 +24,6 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
     url, warc_response_datetime, warc_id, raw_html = one_page_of_article_things
     metas_in_dict = tei_defaultdict()
     metas_in_dict['sch:url'] = url
-
 
     # metadata and text content is extracted into a dict
     extracted_bare = bare_extraction(raw_html,
