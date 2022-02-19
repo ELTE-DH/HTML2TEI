@@ -31,7 +31,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             parsed_mod_date = parse_date(date_mod_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
             data['sch:dateModified'] = parsed_mod_date
         title = article_root.find('h1')
-        if title:
+        if title is not None:
             data['sch:name'] = title.text.strip()
         else:
             tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
