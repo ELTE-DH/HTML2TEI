@@ -500,7 +500,7 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
                 tag.name = 'to_unwrap'  # Tags that only currently do not contain text
         else:  # Unrated tags
             tei_logger.log('WARNING', f'{article_url} The tag is not in the dictionary.'
-                                      f'The dictionary needs to be updated ({tag.name}, {tag})')
+                                      f'The dictionary needs to be updated ({tag.name}, {tag_exl}, {tag})')
             tag.name = 'to_unwrap'
 
 
