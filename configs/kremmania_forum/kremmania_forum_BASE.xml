@@ -56,20 +56,16 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName>Mediaworks Hungary Zrt.</orgName>
-                        <placeName>1034 Budapest, Bécsi út 122-124.</placeName>
-                        <ref type="url" source="https://888.hu/impresszum/">https://doi.org/10.5281/zenodo.583321</ref>
-                        <date when="2021-11-29"/>
+                    <publisher><orgName>Centrál Médiacsoport Zrt.</orgName>
+                        <placeName>Budapest, 1037 Montevideo u. 9.</placeName>
+                        <ref type="url" source="https://kremmania.hu/impresszum">https://doi.org/10.5281/zenodo.5537018</ref>
+                        <date when="2021-08-09"/>
                     </publisher>
-                    <pubPlace>
-                        Budapest
-                        <ref type="url">http://www.geonames.org/3054643</ref>
+                    <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
-                    <availability><p>A 888.hu kiadója a Mediaworks Hungary Zrt. © Minden jog fenntartva</p>
-                        <p>
-                            <ref type="url" source="https://888.hu/page-szerzoi-jogok/">https://doi.org/10.5281/zenodo.583321</ref>
-                            <date when="2021-11-29"/>
-                        </p>
+                    <availability><p>© 2014 KrémMánia Minden jog fenntartva.</p>
+                        <p><ref type="url" source="https://kremmania.hu/felhasznalasifeltetelek">https://doi.org/10.5281/zenodo.5537018</ref>
+                            <date when="2021-08-09"/></p>
                     </availability>
                     <date></date>
                 </bibl>
@@ -80,7 +76,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://888.hu/">888.hu</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="">Krémmánia - Fórum</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -89,12 +85,12 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.583321">
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.5537018">
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2021-10-10T15:44:53/2021-10-12T16:27:25</sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.5833218"/>
-                    <sch:identifier>[{'checksum': '46db94d4b0c42c2598fc1085f0704347', 'filename': '888hu-archive_new.warc.gz', 'filesize': 356143941, 'id': '36e416ea-f5f5-49b7-be14-a5c122084c41', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu-archive_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/36e416ea-f5f5-49b7-be14-a5c122084c41'}}, {'checksum': '7cadc66be083653a6e07c7b77b8b164b', 'filename': '888hu-articles_new.warc.gz', 'filesize': 3095315288, 'id': 'ae1da51b-8780-4fa7-90f6-2ba10837912c', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu-articles_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/ae1da51b-8780-4fa7-90f6-2ba10837912c'}}, {'checksum': '2912a2beae7be9c7a9d285dad0bd5fbb', 'filename': '888hu_rights_statements.warc.gz', 'filesize': 15255, 'id': '3808e83e-fcf0-4367-a99e-c5a07583e514', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/3808e83e-fcf0-4367-a99e-c5a07583e514'}}, {'checksum': 'f329e9d74df0e18ab350845b3032bc8d', 'filename': 'log.log', 'filesize': 101947193, 'id': '201b2d52-6e35-41d0-9118-ecffcb09aa47', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/201b2d52-6e35-41d0-9118-ecffcb09aa47'}}, {'checksum': '33a5ced5fb03e496bac04adc73a93387', 'filename': 'logs.zip', 'filesize': 3750323, 'id': '5e48fcec-37cc-4392-8202-cc506cea75d3', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/5e48fcec-37cc-4392-8202-cc506cea75d3'}}, {'checksum': '9916528c413936cc63625ff13a70868b', 'filename': 'script.sh', 'filesize': 405, 'id': '1d7a5415-df7d-48d7-948e-f4a8da29bd4a', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/1d7a5415-df7d-48d7-948e-f4a8da29bd4a'}}]"]</sch:identifier>
-                    <sch:identifier>urn:uuid:a9bce381-65e0-4aa3-aac5-46d91f7df76a</sch:identifier> </rdf:Description>
+                    <sch:sdDatePublished>2021-09-27T11:18:34/2021-09-27T11:48:27</sch:sdDatePublished>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.5537018"/>
+                    <sch:identifier>[{"checksum":"c461547fa9f1f30a7c946fb229db6332","filename":"hashsums","filesize":6024,"id":"26630178-fb9a-4985-a6bf-c2fe03d2b089","links":{"download":"https://zenodo.org/api/files/d96836b1-7230-4d4a-876c-c7259c3b242d/hashsums","self":"https://zenodo.org/api/deposit/depositions/5537018/files/26630178-fb9a-4985-a6bf-c2fe03d2b089"}},{"checksum":"3731a24c68cbd8f681e7e354b4999752","filename":"kremmania_forum-archive_new.warc.gz","filesize":240961,"id":"58d2c851-d19f-4a13-a180-6b438d2ab024","links":{"download":"https://zenodo.org/api/files/d96836b1-7230-4d4a-876c-c7259c3b242d/kremmania_forum-archive_new.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5537018/files/58d2c851-d19f-4a13-a180-6b438d2ab024"}},{"checksum":"3d7dd5b64c88e6c6dacb86d0dddefa6d","filename":"kremmania_forum-articles_new.warc.gz","filesize":131374272,"id":"13a310d5-505e-459a-b22a-9ab3daa979bf","links":{"download":"https://zenodo.org/api/files/d96836b1-7230-4d4a-876c-c7259c3b242d/kremmania_forum-articles_new.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5537018/files/13a310d5-505e-459a-b22a-9ab3daa979bf"}},{"checksum":"de0d3b70bd814050418f1c1ec0208718","filename":"kremmania_forum_rights_statements.warc.gz","filesize":46116,"id":"24c196be-fbdf-43f4-b8b5-78d68e0e24a6","links":{"download":"https://zenodo.org/api/files/d96836b1-7230-4d4a-876c-c7259c3b242d/kremmania_forum_rights_statements.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5537018/files/24c196be-fbdf-43f4-b8b5-78d68e0e24a6"}},{"checksum":"d01cb33135c315c6e85cd5a6e772575f","filename":"log.log","filesize":1502,"id":"8b2de05e-9a5b-49bd-a65e-5721472d73ca","links":{"download":"https://zenodo.org/api/files/d96836b1-7230-4d4a-876c-c7259c3b242d/log.log","self":"https://zenodo.org/api/deposit/depositions/5537018/files/8b2de05e-9a5b-49bd-a65e-5721472d73ca"}},{"checksum":"8d62c0c091c1c22ad3f512e8d59b567a","filename":"logs.zip","filesize":20066,"id":"46f67209-7cb5-493e-b6d2-70c76f5d3cd1","links":{"download":"https://zenodo.org/api/files/d96836b1-7230-4d4a-876c-c7259c3b242d/logs.zip","self":"https://zenodo.org/api/deposit/depositions/5537018/files/46f67209-7cb5-493e-b6d2-70c76f5d3cd1"}},{"checksum":"4ad952edf9df63993e428b4a6c1609ee","filename":"script.sh","filesize":391,"id":"7113d838-d674-4154-8895-e53013782793","links":{"download":"https://zenodo.org/api/files/d96836b1-7230-4d4a-876c-c7259c3b242d/script.sh","self":"https://zenodo.org/api/deposit/depositions/5537018/files/7113d838-d674-4154-8895-e53013782793"}}]</sch:identifier>
+                    <sch:identifier>urn:uuid:3824b41c-d3c2-4b5a-a832-11f7b31293ab</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

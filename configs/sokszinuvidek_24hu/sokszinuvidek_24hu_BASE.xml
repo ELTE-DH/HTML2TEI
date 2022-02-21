@@ -56,22 +56,20 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName>Mediaworks Hungary Zrt.</orgName>
-                        <placeName>1034 Budapest, Bécsi út 122-124.</placeName>
-                        <ref type="url" source="https://888.hu/impresszum/">https://doi.org/10.5281/zenodo.583321</ref>
-                        <date when="2021-11-29"/>
+                    <publisher><orgName>Central Médiacsoport</orgName>
+                        <placeName>1037 Budapest, Montevideo u. 9.</placeName>
+                        <ref type="url" source="https://24.hu/impresszum/"><!--KITÖLT portál DOI-ja pl https://doi.org/10.5281/zenodo. --></ref>
+                        <date when="2021-09-07"/>
                     </publisher>
                     <pubPlace>
                         Budapest
                         <ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
-                    <availability><p>A 888.hu kiadója a Mediaworks Hungary Zrt. © Minden jog fenntartva</p>
-                        <p>
-                            <ref type="url" source="https://888.hu/page-szerzoi-jogok/">https://doi.org/10.5281/zenodo.583321</ref>
-                            <date when="2021-11-29"/>
-                        </p>
+                    <availability><p>Copyright © 2021 Central Médiacsoport Zrt.</p>
+                        <p><ref type="url" source="https://24.hu/felhasznalasi-feltetelek/"><!--KITÖLT https://doi.org/--></ref>
+                        <date when="2021-09-07"/></p>
                     </availability>
-                    <date></date>
+                    <date></date><!-- cikk megjelenésének dátuma 'when' attribútumba /nem ismert (a kód tölti)-->
                 </bibl>
             </sourceDesc>
         </fileDesc>
@@ -80,8 +78,9 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://888.hu/">888.hu</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://sokszinuvidek.24.hu/">24.hu Sokszínű Vidék</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
+                    <!-- ide töltődik ki a cikkből kinyert többi meta -->
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
             </rdf:RDF>
@@ -89,12 +88,14 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.583321">
+                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2021-10-10T15:44:53/2021-10-12T16:27:25</sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.5833218"/>
-                    <sch:identifier>[{'checksum': '46db94d4b0c42c2598fc1085f0704347', 'filename': '888hu-archive_new.warc.gz', 'filesize': 356143941, 'id': '36e416ea-f5f5-49b7-be14-a5c122084c41', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu-archive_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/36e416ea-f5f5-49b7-be14-a5c122084c41'}}, {'checksum': '7cadc66be083653a6e07c7b77b8b164b', 'filename': '888hu-articles_new.warc.gz', 'filesize': 3095315288, 'id': 'ae1da51b-8780-4fa7-90f6-2ba10837912c', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu-articles_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/ae1da51b-8780-4fa7-90f6-2ba10837912c'}}, {'checksum': '2912a2beae7be9c7a9d285dad0bd5fbb', 'filename': '888hu_rights_statements.warc.gz', 'filesize': 15255, 'id': '3808e83e-fcf0-4367-a99e-c5a07583e514', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/3808e83e-fcf0-4367-a99e-c5a07583e514'}}, {'checksum': 'f329e9d74df0e18ab350845b3032bc8d', 'filename': 'log.log', 'filesize': 101947193, 'id': '201b2d52-6e35-41d0-9118-ecffcb09aa47', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/201b2d52-6e35-41d0-9118-ecffcb09aa47'}}, {'checksum': '33a5ced5fb03e496bac04adc73a93387', 'filename': 'logs.zip', 'filesize': 3750323, 'id': '5e48fcec-37cc-4392-8202-cc506cea75d3', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/5e48fcec-37cc-4392-8202-cc506cea75d3'}}, {'checksum': '9916528c413936cc63625ff13a70868b', 'filename': 'script.sh', 'filesize': 405, 'id': '1d7a5415-df7d-48d7-948e-f4a8da29bd4a', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/1d7a5415-df7d-48d7-948e-f4a8da29bd4a'}}]"]</sch:identifier>
-                    <sch:identifier>urn:uuid:a9bce381-65e0-4aa3-aac5-46d91f7df76a</sch:identifier> </rdf:Description>
+                    <sch:sdDatePublished>
+                        2021-10-16T10:37:23/2021-10-16T13:04:25
+                    </sch:sdDatePublished>
+                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
+                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier>urn:uuid:efbd675f-4eb2-4c84-b3db-9f578fc2aaaf</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -104,7 +105,7 @@
                     <sch:identifier></sch:identifier>
                     <sch:type>TEI</sch:type>
                     <sch:sdDatePublished></sch:sdDatePublished>
-                    <sch:lastReviewed></sch:lastReviewed>
+                    <sch:lastReviewed></sch:lastReviewed><!-- warc/cikk repsonse dátuma (küldi a response_warc_record_gen) -->
                     <sch:contributor rdf:resource="https://orcid.org/0000-0002-4394-8577">Palkó Gábor</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>

@@ -56,20 +56,19 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName>Mediaworks Hungary Zrt.</orgName>
-                        <placeName>1034 Budapest, Bécsi út 122-124.</placeName>
-                        <ref type="url" source="https://888.hu/impresszum/">https://doi.org/10.5281/zenodo.583321</ref>
-                        <date when="2021-11-29"/>
+                    <publisher>felelős kiadó: <orgName>Építészfórum Kft.</orgName>
+                        <placeName>1062 Budapest, Andrássy út 122.</placeName>
+                        <ref type="url" source="https://epiteszforum.hu/impresszum">https://doi.org/10.5281/zenodo.5802316</ref>
+                        <date when="2021-08-09"/>
                     </publisher>
                     <pubPlace>
                         Budapest
                         <ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
-                    <availability><p>A 888.hu kiadója a Mediaworks Hungary Zrt. © Minden jog fenntartva</p>
-                        <p>
-                            <ref type="url" source="https://888.hu/page-szerzoi-jogok/">https://doi.org/10.5281/zenodo.583321</ref>
-                            <date when="2021-11-29"/>
-                        </p>
+                    <availability><p>Az epiteszforum.hu oldalon és az epiteszforum.hu aloldalain (például: http://mediadij.epiteszforum.hu/)  (a továbbiakban együtt: lap) található tartalom az Építészfórum Kft. (a továbbiakban: Kiadó) szellemi tulajdona.</p>
+                        <p>© 2000-2021 Építészfórum</p>
+                        <p><ref type="url" source="https://epiteszforum.hu/szerzoi-jogok">https://doi.org/10.5281/zenodo.5802316</ref>-->
+                            <date when="2021-08-09"/></p>
                     </availability>
                     <date></date>
                 </bibl>
@@ -80,7 +79,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://888.hu/">888.hu</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="http://epiteszforum.hu/">Építészfórum</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -89,12 +88,12 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.583321">
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.5802316">
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2021-10-10T15:44:53/2021-10-12T16:27:25</sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.5833218"/>
-                    <sch:identifier>[{'checksum': '46db94d4b0c42c2598fc1085f0704347', 'filename': '888hu-archive_new.warc.gz', 'filesize': 356143941, 'id': '36e416ea-f5f5-49b7-be14-a5c122084c41', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu-archive_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/36e416ea-f5f5-49b7-be14-a5c122084c41'}}, {'checksum': '7cadc66be083653a6e07c7b77b8b164b', 'filename': '888hu-articles_new.warc.gz', 'filesize': 3095315288, 'id': 'ae1da51b-8780-4fa7-90f6-2ba10837912c', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu-articles_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/ae1da51b-8780-4fa7-90f6-2ba10837912c'}}, {'checksum': '2912a2beae7be9c7a9d285dad0bd5fbb', 'filename': '888hu_rights_statements.warc.gz', 'filesize': 15255, 'id': '3808e83e-fcf0-4367-a99e-c5a07583e514', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/888hu_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/3808e83e-fcf0-4367-a99e-c5a07583e514'}}, {'checksum': 'f329e9d74df0e18ab350845b3032bc8d', 'filename': 'log.log', 'filesize': 101947193, 'id': '201b2d52-6e35-41d0-9118-ecffcb09aa47', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/201b2d52-6e35-41d0-9118-ecffcb09aa47'}}, {'checksum': '33a5ced5fb03e496bac04adc73a93387', 'filename': 'logs.zip', 'filesize': 3750323, 'id': '5e48fcec-37cc-4392-8202-cc506cea75d3', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/5e48fcec-37cc-4392-8202-cc506cea75d3'}}, {'checksum': '9916528c413936cc63625ff13a70868b', 'filename': 'script.sh', 'filesize': 405, 'id': '1d7a5415-df7d-48d7-948e-f4a8da29bd4a', 'links': {'download': 'https://zenodo.org/api/files/ed10038b-7cd4-4a04-9bc1-5dd4615cfd0c/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/5833218/files/1d7a5415-df7d-48d7-948e-f4a8da29bd4a'}}]"]</sch:identifier>
-                    <sch:identifier>urn:uuid:a9bce381-65e0-4aa3-aac5-46d91f7df76a</sch:identifier> </rdf:Description>
+                    <sch:sdDatePublished>2021-08-01T20:44:42/2021-08-01T22:57:06</sch:sdDatePublished>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.5802316"/>
+                    <sch:identifier>[{"checksum":"6e3128f12537ac948a52a478710c2f1a","filename":"epiteszforum-archive.warc.gz","filesize":8759973,"id":"33235ca9-aeab-431f-a811-de4e116b7d07","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/epiteszforum-archive.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5802316/files/33235ca9-aeab-431f-a811-de4e116b7d07"}},{"checksum":"579decaea97a08d9b0c419f344477bd2","filename":"epiteszforum-articles.warc.gz","filesize":339963435,"id":"2bbbdb9a-2ce8-4f43-96ea-8c2474195a8e","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/epiteszforum-articles.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5802316/files/2bbbdb9a-2ce8-4f43-96ea-8c2474195a8e"}},{"checksum":"30674387c44f88556323d2e9c4e44539","filename":"epiteszforum_rights_statements.warc.gz","filesize":31862,"id":"170b2ecc-40cd-403a-a2ac-47dc7c887d14","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/epiteszforum_rights_statements.warc.gz","self":"https://zenodo.org/api/deposit/depositions/5802316/files/170b2ecc-40cd-403a-a2ac-47dc7c887d14"}},{"checksum":"d6f82f803f92cc0279e1cb9b887c3445","filename":"hashsums","filesize":6007,"id":"560565d4-1c33-4dc3-97a2-597e4436775a","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/hashsums","self":"https://zenodo.org/api/deposit/depositions/5802316/files/560565d4-1c33-4dc3-97a2-597e4436775a"}},{"checksum":"30e1a3a5aa769a3075e62b3b275ade0c","filename":"log.log","filesize":50611,"id":"ce436a31-ade2-4198-a6a2-bef5a22a5940","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/log.log","self":"https://zenodo.org/api/deposit/depositions/5802316/files/ce436a31-ade2-4198-a6a2-bef5a22a5940"}},{"checksum":"75bba02205c0336f8e5dad45f40c08d1","filename":"logs.zip","filesize":291395,"id":"4d16611f-bc75-4e88-b7e6-57143b01f1f1","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/logs.zip","self":"https://zenodo.org/api/deposit/depositions/5802316/files/4d16611f-bc75-4e88-b7e6-57143b01f1f1"}},{"checksum":"dce896c8c979ea9e68eda1ac03bcebd1","filename":"script.sh","filesize":375,"id":"de5fce32-750f-4d21-b550-955775beaea7","links":{"download":"https://zenodo.org/api/files/52f74499-b7eb-4a82-9f33-ec56bddac865/script.sh","self":"https://zenodo.org/api/deposit/depositions/5802316/files/de5fce32-750f-4d21-b550-955775beaea7"}}]</sch:identifier>
+                    <sch:identifier>urn:uuid:1418eba0-176a-4127-b6a9-496483bfd37f</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
