@@ -17,7 +17,23 @@ SOURCE = ['hvg.hu', 'MTI', 'MTI/hvg.hu', 'MTI / hvg.hu', 'Marabu', 'HVG', 'Eduli
           'Zgut Edit', 'Index', 'foodnetwork', 'mult-kor.hu', 'MT Zrt.', 'élelmiszer online', 'atlatszo.blog.hu',
           'Blikk', 'HVG Extra Business', 'Origo', 'Bors', '- esel -', 'Magyar Nemzet', 'EFE', 'merites.hu',
           'Népszabadság', 'Inforádió', 'HVG Extra Pszichológia', 'MTI-OS', 'MLF', 'ITAR-TASZSZ', 'MNO',
-          'MR1-Kossuth Rádió', 'HavariaPress', 'CNN', 'Bank360.hu', 'Bankmonitor.hu', 'ingatlanmenedzser.hu']
+          'MR1-Kossuth Rádió', 'HavariaPress', 'CNN', 'Bank360.hu', 'Bankmonitor.hu', 'ingatlanmenedzser.hu', 
+          'HavariaPress/hvg.hu', 'Jobline.hu', 'MTI/honvedelem.hu', 'Adozona.hu', 'f1-live.hu', 'eduline.hu', 
+          'pecsma.hu', 'hvg.hu/vendeglatasmagazin.hu', 'MTI-OS/hvg.hu', 'hvg.hu/termekmix.hu', 'hvg.hu/D.P.', 
+          'Utinform.hu', 'szoljon.hu', 'hvg.hu/napi.hu', 'police.hu', 'delmagyar.hu', 'sonline.hu', 
+          'hvg.hu/atlatszo.blog.hu', 'I.N./hvg.hu', 'kisalföld.hu', 'hvg.hu/MTI/Blikk', 'hvg.hu/VinceBudapest', 
+          'hvg.hu/muosz.hu', 'hvg.hu/transindex.ro', 'hvg.hu/manna.ro', 'nso.hu', 'f1-live/hvg.hu', 'kemma.hu', 
+          'met.hu', 'baon.hu', 'HVG/hvg.hu', 'Számlázz.hu', 'VG/hvg.hu', 'hvg.hu/merites.hu', 'teol.hu', 'dehir.hu', 
+          'hvg.hu/Blikk', 'hvg.hu/Origo', 'hvg.hu/MTI', 'Napi.hu', 'hvg.hu/Travellina', 'hirado.hu', 'indohaz.hu', 
+          'hvg.hu/HVG', 'portfolio.hu', 'hvg.hu/HavariaPress', 'hvg.hu/turizmus.com', 'hvg.hu/mult-kor.hu', 'hvg.hu/benke', 
+          'hvg.hu/Index', 'hvg.hu/MTI/HavariaPress', 'BiztosDöntés.hu', 'hvg.hu/termekmix.com', 'nyugat.hu', 
+          'bankmonitor.hu', 'Népszava/hvg.hu', 'hvg.hu/foodnetwork', 'hvg.hu/businesstraveller', 'MTI/HavariaPress', 
+          'MTI/AP/REUTERS', 'MTI/Reuters', 'MTI/Reuters/DPA', 'MTI/Észak-Magyarország', 'MTI/Reuters/AFP', 
+          'MTI/Világgazdaság', 'TV2/Tények', 'MTI/AFP/AP/Reuters', 'HavariaPress/MTI', 'MTI/ITAR-TASZSZ', 
+          'MTI/dpa/EFE/Reuters', 'MTI/Népszabadság', 'MTI/AFP/DPA', 'MTI/Kisalföld', 'MTI/EFE', 'MTI/AFP', 
+          'MTI/DPA/AP', 'MTI/AP/AFP', 'MTI/Index', 'MTI/DPA', 'MTI/AFP/AP/ITAR-TASZSZ', 'MTI/InfoRádió', 
+          'MTI/Népszava', 'MTI/dpa/Hszinhua', 'OTS/MTI', 'BBC/MTI', 'MTI/Bors', 'MTI/Reuters/AP', 'MTI/AP', 
+          'MTI/AFP/Reuters', 'MTI/Reuters/Hszinhua', 'MTI/Blikk', 'HVG/MTI']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
