@@ -48,7 +48,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         elif source is not None:
             data['sch:source'] = source.text.strip()
         else:
-            tei_logger.log('WARNING', f'{url}  AUTHOR AND SOURCE TAG NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}  AUTHOR AND SOURCE TAG NOT FOUND!')
         section_tag = article_root.find('span', class_='en-article-header-column')
         if section_tag is not None:
             sections = [c.text.strip() for c in section_tag.find_all('a') if c.text.strip() != 'Archívum']
