@@ -6,7 +6,7 @@ import re
 from bs4 import BeautifulSoup
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 
-from src.html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict, BASIC_LINK_ATTRS
 
 PORTAL_URL_PREFIX = 'https://444.hu/'
 ARTICLE_ROOT_PARAMS_SPEC = [(('section',), {'id': 'main-section'})]
@@ -138,7 +138,7 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {'szakasz': {('temp_table_id', 'det_by_child'): ('table_text', 'temp')}}
 
-LINKS_SPEC = {'a': 'href', '0_MDESC_a': 'href', 'img': 'href', '0_MDESC_img': 'href'}
+LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('div',), {'id': 'headline'}),
           (('div',), {'class': 'hide-print'}),
           (('div',), {'class': 'hide-for-print'}),  # class=row hide-for-print
