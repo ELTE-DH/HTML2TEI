@@ -106,7 +106,8 @@ BLACKLIST_SPEC = [url.strip() for url in open(os_path_join(os_path_dirname(os_pa
                  + ['https://www.magyaridok.hu/belfold/kinek-a-kulturalis-diktaturaja-szakacs-arpad-cikksorozata'
                     '-3287285/',
                      'https://www.magyaridok.hu/kulfold/groteszk-lehallgatasi-botrany-parizsban-2815667/',
-                     'https://www.magyaridok.hu/sport/futball-eb/program-junius-10-tol-julius-10-ig-736987/'] + \
+                     'https://www.magyaridok.hu/sport/futball-eb/program-junius-10-tol-julius-10-ig-736987/',
+                    'https://magyarnemzet.hu/archivum-archivum/2004/02/falinaptar-online-rendeles'] + \
                  [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
                                                            'mno_isempty.txt')).readlines()]
 
