@@ -25,8 +25,10 @@ def extract_resp_record_data(resp):
         date_format = '%Y-%m-%dT%H:%M:%SZ'
     warc_response_datetime = datetime.strptime(warc_response_date, date_format)
     warc_id = resp.rec_headers.get_header('WARC-Record-ID')
-    raw_html = resp.content_stream().read().decode(resp.rec_headers.get_header('WARC-X-Detected-Encoding'))
-
+    try:
+        raw_html = resp.content_stream().read().decode(resp.rec_headers.get_header('WARC-X-Detected-Encoding'))
+    except UnicodeDecodeError:
+        raw_html = None
     return warc_response_datetime, warc_id, raw_html
 
 
@@ -54,6 +56,10 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
             # Process URL and append page data to article list
             _, _, resp = warc_reader.get_records(article_url)  # From WebArticleCurator
             warc_response_datetime, warc_id, raw_html = extract_resp_record_data(resp)
+            if raw_html is None:
+                warc_logger.log('CRITICAL', f'UnicodeDecodeError {article_url} in the archive {warc_filenames}!')
+                article_url = None
+
             date_min = min(date_min, warc_response_datetime)
             date_max = max(date_max, warc_response_datetime)
             raw_html = transform_to_html_fun(article_url, raw_html, warc_logger)
