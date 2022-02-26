@@ -169,6 +169,9 @@ def process_article(params):
     """
     article_list, (tei_logger, article_roots, decomp_fun, excluded_tags_fun, sub_fun, sub_fun_params) = params
     for article_url, warc_date, warc_id, raw_html in article_list:
+        if raw_html is None:
+            tei_logger.log('CRITICAL', f'UnicodeDecodeError {article_url}!')
+            return 
         bs = BeautifulSoup(raw_html, 'lxml')
         for args, kwargs in article_roots:
             article_body_root = bs.find(*args, **kwargs)
