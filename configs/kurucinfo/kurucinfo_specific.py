@@ -53,7 +53,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 tag_text = possible_author_tag.get_text(strip=True).replace('- Kuruc.info', '').strip()
                 split_t = tag_text.split(' ')
                 if 1 < len(split_t) <= 3 and ('(' or ')') not in tag_text and all([w[0].isupper() for w in split_t]):
-                    data['sch:author'] = tag_text
+                    data['sch:author'] = [tag_text]
+                    data['originalAuthorString'] = possible_author_tag.get_text(strip=True)
                 else:
                     tei_logger.log('DEBUG', f'{url}: AUTHOR TAG EMPTY!')
             else:
@@ -110,7 +111,7 @@ BIGRAM_RULES_SPEC = {}
 
 # <span class=cikklead> ebben nem lehet megbízni! 
 
-LINKS_SPEC = {}
+LINKS_SPEC = BASIC_LINK_ATTRS | {'param', 'embed'}
 DECOMP = []
 MEDIA_LIST = []
 

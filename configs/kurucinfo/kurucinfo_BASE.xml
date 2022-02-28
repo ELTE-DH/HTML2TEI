@@ -58,16 +58,17 @@
                     <title></title>
                     <publisher><orgName>WBY Ltd. - Kuruc.info</orgName>
                         <placeName><!--KITÖLT kiadó székhelye --></placeName>
-                        <!--<ref type="url" source="">KITÖLT source="impresszum url-je", literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo. </ref>-->
-                        <!--<date when=""/>KITÖLT: impresszum letöltésének dátuma -->
+                        <ref type="url" source="https://kuruc.info/r/32/9072/"><!--KITÖLT source="impresszum url-je", literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo.--> </ref>
+                        <date when="2022-02-24"/>
                     </publisher>
                     <pubPlace>
-                        <!--KITÖLT:  pl: Budapest -->
-                        <ref type="url"><!--KITÖLT:  pl: http://www.geonames.org/3054643 --></ref>
+                        <ref type="url"></ref>
                     </pubPlace>
                     <availability><p>Készült a Kuruc.info által, minden jog fenntartva © 2006-2022</p>
-                        <p><ref type="url" source="https://kuruc.info/r/40/27071/"><!--https://doi.org/--></ref>
-                            <!-- ^ ez van benne a warc-ban, de az impresszumosat nem találom benne |<date when=""/> when: impresszum/jognyil crawl dátum --></p>
+                        <p>
+                            <ref type="url" source="https://kuruc.info/r/32/9072/"> <!--https://doi.org/--></ref>
+                            <date when="2022-02-24"/> 
+                        </p>
                     </availability>
                     <date></date>
                 </bibl>
