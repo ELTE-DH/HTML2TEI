@@ -97,7 +97,7 @@ def excluded_tags_spec(tag):
 
 
 BLOCK_RULES_SPEC = {}
-BIGRAM_RULES_SPEC = {}  
+BIGRAM_RULES_SPEC = {'doboz': {('doboz', 'det_by_any_desc'): ('doboz', 'to_unwrap')}}  
 # a spec-et lehet kéne kezelni - amikor <dic class=cikktext> direkt
 # leszármazottja akkor lehet címsornak
 # és ha <b> tag van cikktexben egyedül akkor lehet vez_bekezd
@@ -123,6 +123,10 @@ def decompose_spec(article_dec):
 
 BLACKLIST_SPEC = []
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
+# http://images.multiply.com/multiply/multv.swf
+# http://files.indavideo.hu/player/gup.swf
+# http://files.indavideo.hu/player/gup.swf
+# http://player.ordienetworks.com/flash/fodplayer.swf
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
