@@ -243,7 +243,7 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
-LINKS_SPEC = BASIC_LINK_ATTRS
+LINKS_SPEC = BASIC_LINK_ATTRS | {'object', 'params'}
 DECOMP = [# (('div',), {'class': 'field field-name-field-media-index-foto-video'}),
           (('div',), {'class': 'field field--name-dynamic-token-fieldnode-fb-buttons field--type-ds'
                                ' field--label-hidden field--item'}),
