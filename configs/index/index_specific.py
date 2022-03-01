@@ -161,7 +161,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     if post_author is not None:
                         data['sch:author'] = [post_author.text.strip()]
                     else:
-                        tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+                        tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
 
         cimkek = bs.find('ul', class_=["cikk-cimkek", "m-tag-list"])
         if cimkek is not None:
@@ -211,11 +211,11 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tags = [a.text.strip() for a in cimkek.find_all('a', class_='cimke-rovat-light')]
             if len(tags) > 0:
                 data['sch:keywords'] = tags[1:]
-        section = cimkek.find('a', class_='cimke-rovat')
-        if section is not None:
-            data['sch:articleSection'] = section.text.strip()
-        else:
-            tei_logger.log('WARNING', f'{url}: TAGS AND SECTION NOT FOUND!')
+            section = cimkek.find('a', class_='cimke-rovat')
+            if section is not None:
+                data['sch:articleSection'] = section.text.strip()
+            else:
+                tei_logger.log('DEBUG', f'{url}: TAGS AND SECTION NOT FOUND!')
         return data
 
     elif 'https://divany.hu/' in url:
