@@ -5,7 +5,7 @@ import re
 
 from bs4 import BeautifulSoup, NavigableString
 
-from html2tei.tei_utils import unwrap_all, create_new_tag_with_string
+from ..tei_utils import unwrap_all, create_new_tag_with_string
 
 
 def unicode_test(article_text, unicode_strings=re.compile(r'[uU][0-9]([0-9]{3}|[0-9][a-f])')):
@@ -23,12 +23,12 @@ def article_encoding_correction(article, decompose_fun):
     decompose_fun(article, 'media_unwrap')
     soup = BeautifulSoup('a', 'lxml')
     unwrap_all(article, True)
-    ret = extract_first_instance_of_article_text(article)
+    ret = _extract_first_instance_of_article_text(article)
     article = create_new_tag_with_string(soup, ret, 'root')
     return article
 
 
-def fix_garbage_unicode_escapes(text_tag):
+def _fix_garbage_unicode_escapes(text_tag):
     """Helper function for quick_encoding_fix
         1. Fix double escaped backslashes
         2. Fix quotations
@@ -44,13 +44,13 @@ def fix_garbage_unicode_escapes(text_tag):
     return text_tag
 
 
-def extract_first_instance_of_article_text(article_body):
+def _extract_first_instance_of_article_text(article_body):
     """The text of the article present multiple times in a garbage HTML.
        This function determines the end of the first instance to ignore the rest.
        This problem appeared in the articles of the magyarnemzet.hu
        Helper for article_encoding_correction
     """
-    ret_tags = [fix_garbage_unicode_escapes(cont.strip()) for cont in article_body.contents
+    ret_tags = [_fix_garbage_unicode_escapes(cont.strip()) for cont in article_body.contents
                 if isinstance(cont, NavigableString) and len(cont.strip()) > 0]
     ret_text = ' '.join(ret_tags)
     encoded_article_text = ret_text.replace('aktiv":1}}}', 'STOP').replace('\\&#8221;aktiv\\&#8221;:1}}}', 'STOP').\

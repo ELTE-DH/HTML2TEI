@@ -5,8 +5,8 @@ from collections import defaultdict
 from os.path import join as os_path_join
 from random import sample as random_sample
 
-from html2tei.tei_utils import to_friendly
-from html2tei.processing_utils import run_single_process, dummy_fun, process_article
+from ..tei_utils import to_friendly
+from ..workflow_helpers.processing_utils import run_single_process, dummy_fun, process_article
 
 
 def summarize_tag_bigrams(tag_dict, mode_recursive, article_url, article_body_root, excluded_tags_fun):

@@ -22,19 +22,24 @@ beautifulsoup4 = "^4.9.0"
 lxml = "^4.5.0"
 pyyaml = "^6.0.0"
 warcio = "^1.7.0"
-webarticlecurator = "^1.4.0"
+certifi = "^2021.10.8"
+webarticlecurator = "^1.10.2"
+mthasher = "^2.0.4"
+mplogger = "^1.0.0"
 # A list of all of the optional dependencies, some of which are included in the
 # below `extras`. They can be opted into by apps.
 justext = { version = "^3.0.0", optional = true }
 newspaper3k = { version = "^0.2.8", optional = true }
+trafilatura = { version = "^1.0.0", optional = true }
 
 [tool.poetry.extras]
 justext = ["justext"]
 newspaper3k = ["newspaper3k"]
-full = ["justext", "newspaper3k"]
+trafilatura = ["trafilatura"]
+full = ["justext", "newspaper3k", "trafilatura"]
 
 [tool.poetry.dev-dependencies]
-pytest = "^6"
+pytest = "^7"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -9,9 +9,9 @@ from datetime import datetime, MAXYEAR, MINYEAR
 
 from bs4 import BeautifulSoup
 
-from html2tei.tei_utils import create_new_tag_with_string
-from html2tei.validate_hash_zip import init_output_writer
-from html2tei.processing_utils import run_single_process, run_multiple_process
+from ..tei_utils import create_new_tag_with_string
+from ..workflow_helpers.validate_hash_zip import init_output_writer
+from ..workflow_helpers.processing_utils import run_single_process, run_multiple_process
 
 DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist', 'sch:source'}
 
@@ -87,6 +87,18 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
             file_title.append(author_tag)
             sourcedesc_author = copy(author_tag)
             sourcedesc.find('title').insert_after(sourcedesc_author)
+    # Editorial note on the interpretation of authors and sources, modification of the original string.
+    if 'originalAuthorString' in meta_data.keys():
+        original_author_string = meta_data['originalAuthorString']
+        del meta_data['originalAuthorString']
+        note_tag_auth = beauty_xml.new_tag('note')
+        note_tag_auth.string = 'The string indicated as the author or source needed to be interpreted and normalized.' \
+                               'The original contains the following strings: '
+        for auth in original_author_string:
+            create_new_tag_with_string(beauty_xml, auth, 'p', note_tag_auth)
+
+        tei_change = beauty_xml.find('change', source=True)
+        tei_change.append(note_tag_auth)
 
     # XENODATA 1: metadata of article source
     xeno_meta_datas = beauty_xml.find('rdf:Description')
@@ -101,7 +113,10 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
                 for dupl in v:
                     create_new_tag_with_string(beauty_xml, dupl, k, xeno_meta_datas)
             else:
-                create_new_tag_with_string(beauty_xml, v, k, xeno_meta_datas)
+                if k == 'sch:inLanguage':
+                    xeno_meta_datas.find('sch:inLanguage').string = v
+                else:
+                    create_new_tag_with_string(beauty_xml, v, k, xeno_meta_datas)
 
     # XENODATA 2: warc data
     xeno_tei_rdf = ''
@@ -356,9 +371,9 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
     #  - bigram_rules_spec portal-specific bigram rules
     #  - portal_url_prefix the url prefix of the portal (e.g. domain name for relative links)
     #  - portalspec_link_filter substring list to filter non-repairable links
-    portalspec_params_and_dicts = (article_root_params, decompose_spec, excluded_tags_spec,
-                                   tag_normal_dict, links, portal_specific_block_rules, bigram_rules_spec,
-                                   portal_url_prefix, portalspec_link_filter)
+    portalspec_params_and_dicts = (article_root_params, decompose_spec, excluded_tags_spec, tag_normal_dict, links,
+                                   portal_specific_block_rules, bigram_rules_spec, portal_url_prefix,
+                                   portalspec_link_filter)
     process_article_params = (process_article_clean_params, portalspec_params_and_dicts)
 
     # Runner function (some task can be run only in single-process mode)

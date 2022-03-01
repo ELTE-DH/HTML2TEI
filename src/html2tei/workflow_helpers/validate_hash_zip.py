@@ -11,9 +11,9 @@ from os import getcwd, makedirs, listdir
 from os.path import basename as os_path_basename, isabs as os_path_isabs, isdir as os_path_isdir, \
     exists as os_path_exists, abspath as os_path_abspath, join as os_path_join
 
+import certifi
 from lxml import etree
-
-from html2tei.digest import MtHasher, ALGORITHMS_GUARANTEED
+from mthasher import MtHasher, ALGORITHMS_GUARANTEED
 
 NOT_ALNUM_WS_OR_DASH = re_compile(r'[^\w\s-]')
 MORE_DASH_OR_WS = re_compile(r'[-\s]+')
@@ -133,7 +133,7 @@ class ValidatorHasherCompressor:
         self._zipfile = ZipFile(zipfile_name, 'w')
 
         # Setup RelaxNG validator
-        with urlopen(tei_schema) as response:
+        with urlopen(tei_schema, cafile=certifi.where()) as response:
             tei_schema_str = response.read()
         relaxng_doc = etree.fromstring(tei_schema_str)
         # LXML FAQ: You can share RelaxNG, XMLSchema and (with restrictions) XSLT objects between threads.
