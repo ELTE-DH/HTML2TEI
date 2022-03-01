@@ -74,7 +74,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                             auth_tags.append(author_name_tag)
                     author_list = [au.get_text(strip=True) for au in auth_tags if au.get_text(strip=True) is not None]
                     if len(author_list) > 0:
-                        data['sch:author'] = set(author_list)
+                        data['sch:author'] = list(set(author_list))
                     else:
                         tei_logger.log('DEBUG', f'{url}: NEWSFEED AUTHOR TAGS NOT FOUND!')
                 else:
@@ -222,7 +222,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                             if len(source_in_text_4) < 40:
                                 source_text = source_in_text_4.strip()
                     if source_text in SOURCE_LIST:  # Above code allows minimal mistakes - invalid sources are filtered
-                        data['sch:source'] = source_text
+                        data['sch:source'] = [source_text]
                 else:
                     tei_logger.log('DEBUG', f'{url}: SOURCE TAG NOT FOUND!')
 
@@ -243,7 +243,7 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
-LINKS_SPEC = BASIC_LINK_ATTRS | {'object', 'params'}
+LINKS_SPEC = BASIC_LINK_ATTRS | {'object', 'params', 'blockquote'}
 DECOMP = [# (('div',), {'class': 'field field-name-field-media-index-foto-video'}),
           (('div',), {'class': 'field field--name-dynamic-token-fieldnode-fb-buttons field--type-ds'
                                ' field--label-hidden field--item'}),
@@ -270,7 +270,12 @@ DECOMP = [# (('div',), {'class': 'field field-name-field-media-index-foto-video'
           (('ins',), {})
           ]
 
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
+# links can be made valid with the urllib.parse.quote() function / 
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([
+    re.escape('https://widget.nava.hu/neumann_l.swf?query=nava%20vil%E1gh%EDrad%F3%20k%FCl%F6ngy%u0171jtem%E9ny&sort=0&startpage=0&results=0&filmID=1719&wmode=2&uID=57013482088'),
+    re.escape('https://widget.nava.hu/neumann_l.swf?query=nava%20vil%E1gh%EDrad%F3%20k%FCl%F6ngy%u0171jtem%E9ny&sort=0&startpage=0&results=0&filmID=4065&wmode=2&uID=67296504136')
+    ]))
+
 MEDIA_LIST = []
 # (('img',), {}),
 #               (('iframe',), {}),
