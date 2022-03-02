@@ -174,7 +174,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if len(tags) > 0:
                 data['sch:keywords'] = tags
             else:
-                tei_logger.log('WARNING', f'{url}: TAGS NOT FOUND!')
+                tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
             if 'index.hu' in url:
                 section = cimkek.find('a', class_='cimke-rovat')
                 if section is not None:
@@ -261,7 +261,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             else:
                 tei_logger.log('WARNING', f'{url}: SECTION NOT FOUND!')
         else:
-            tei_logger.log('WARNING', f'{url}: TAGS NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
         return data
 
 
