@@ -11,7 +11,8 @@ from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees
 
 PORTAL_URL_PREFIX = 'https://index.hu/24ora/?cimke=koronav%C3%ADrus'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'mindenkozben_post_content'}),  # Mindeközben
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'id': 'tab-content'}),  # velvet report
+                            (('div',), {'class': 'mindenkozben_post_content'}),  # Mindeközben
                             (('div',), {'class': 'pp-list main'}),  # Index reports
                             (('div',), {'class': 'cikk-torzs-container'}),  # Index, totalcar, totalbike
                             (('div',), {'class': 't-article-container_main'})]  # Dívány
