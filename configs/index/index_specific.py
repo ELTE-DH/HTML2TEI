@@ -6,7 +6,8 @@ from os.path import join as os_path_join, dirname as os_path_dirname, abspath as
 
 from bs4 import BeautifulSoup
 
-from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants,\
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://index.hu/24ora/?cimke=koronav%C3%ADrus'
 
@@ -19,6 +20,10 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'mindenkozben_post_content'}), 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
+    report_post = bs.find('span', {'class': 'pp-list-navi-btn'})
+    rep = bs.find('a', {'class': 'back_to_the_kozvetites'})
+    if report_post is not None or rep is not None:
+        return None
     if bs.find('div', class_='mindenkozben_post_content content'):
         # MINDEKÖZBEN: 'https://index.hu/mindekozben/poszt/2020/12/21/virusbiztos_pulcsi_karacsonyra/'
         data['sch:articleSection'] = 'Mindeközben'
