@@ -266,7 +266,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
-    tag_attrs = tag.attrs
+    """    tag_attrs = tag.attrs
     if tag.name == 'a' and 'name' in tag_attrs.keys():
         tag_attrs['name'] = '@name'
     # <div class=esemeny-doboz serules @serulesNUM>
@@ -275,7 +275,7 @@ def excluded_tags_spec(tag):
             tag_attrs['data-aspect-rati'] = '@rat'
         elif 'class' in tag_attrs.keys() and 'esemeny-doboz' in tag_attrs['class']:
             tag_attrs['class'] = '@esemeny-doboz'
-
+    """
     return tag
 
 
@@ -340,6 +340,8 @@ MULTIPAGE_URL_END = re.compile(r'.*/\?p=.*')
 
 # https://index.hu/belfold/2020/02/29/eloben_kozvetitjuk_az_eddigi_legnagyobb_magyar_lottonyeremeny_kihuzasa/?p=1
 # TODO https://velvet.hu/trend/noferfi1108/
+# TODO https://totalcar.hu/tesztek/pathfinderle/
+# TODO https://index.hu/kulfold/2011/02/03/harom_tengerig_nyulo_tervet_dedelgetunk/
 # <nav class=pager default tobboldalas_cikk id=pager_bottom>
 
 
