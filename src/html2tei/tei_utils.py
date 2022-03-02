@@ -93,7 +93,7 @@ def decompose_listed_subtrees_and_mark_media_descendants(article_dec, decomp, me
     mark_media_descendants(article_dec, media_list)
 
 
-def tei_defaultdict(mandatory_keys=('sch:url', 'sch:name'), missing_value=None):
+def tei_defaultdict(mandatory_keys=('sch:url', 'sch:name', 'sch:datePublished'), missing_value=None):
     """Create a defaultdict preinitialized with the mandatory Schema.org keys set to default
     :param mandatory_keys: a tuple of the keys to be explicitly present in the resulting defaultdict
     :param missing_value: the default value for missing (and explicitly created) keys
