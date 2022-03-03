@@ -57,16 +57,17 @@
                 <bibl>
                     <title></title>
                     <publisher><orgName>WBY Ltd. - Kuruc.info</orgName>
-                        <placeName><!--KITÖLT kiadó székhelye --></placeName>
+                        <placeName></placeName>
                         <ref type="url" source="https://kuruc.info/r/32/9072/"><!--KITÖLT source="impresszum url-je", literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo.--> </ref>
                         <date when="2022-02-24"/>
                     </publisher>
                     <pubPlace>
                         <ref type="url"></ref>
                     </pubPlace>
-                    <availability><p>Készült a Kuruc.info által, minden jog fenntartva © 2006-2022</p>
+                    <availability>
+                        <p>Készült a Kuruc.info által, minden jog fenntartva © 2006-2022</p>
                         <p>
-                            <ref type="url" source="https://kuruc.info/r/32/9072/"> <!--https://doi.org/--></ref>
+                            <ref type="url" source="https://kuruc.info/r/32/9072/"><!--https://doi.org/--></ref>
                             <date when="2022-02-24"/> 
                         </p>
                     </availability>
@@ -90,11 +91,10 @@
             <rdf:RDF>
                 <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished><!--KITÖLT: a crawling időintervalluma pl 2020-01-01T23:40:00/2020-01-01T23:45:00 (a html2tei bármely log-jának végéről kiolvasható a teljes warc futtatásával)-->
-                    </sch:sdDatePublished>
+                    <sch:sdDatePublished>2021-12-13T12:35:30/2022-02-17T21:40:18</sch:sdDatePublished>
                     <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
-                    <sch:identifier><!-- KITÖLT:a WARCINFO-ból kiolvasható (zcat WARCNAME.warc.gz | less) WARC-Record-ID, pl: 930b53b8-ef8e-4406-be4d-37ad64e9a549--></sch:identifier> </rdf:Description>
+                    <sch:identifier>5ab02219-bee7-4dd6-8ceb-e1063ae51fa7</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -109,6 +109,7 @@
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-0577-8706">Nagy Mihály</sch:contributor>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
                 </rdf:Description>
             </rdf:RDF>

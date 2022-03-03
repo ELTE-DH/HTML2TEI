@@ -6,7 +6,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 74998	<span class=zoom-icon>	0	1	0	https://kuruc.info/r/4/193980/ https://kuruc.info/r/3/137093/ https://kuruc.info/r/4/159985/ https://kuruc.info/r/2/182692/ https://kuruc.info/r/4/186275/	null	default						
 63875	<img alt=@alt src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/7/135454/ https://kuruc.info/r/3/24621/ https://kuruc.info/r/35/17019/ https://kuruc.info/r/1/7839/ https://kuruc.info/r/1/11108/	media_hivatkozas	src						style
 16372	<br style=@STYLE>	0	0	0	https://kuruc.info/r/1/10683/ https://kuruc.info/r/1/9511/ https://kuruc.info/r/1/11340/ https://kuruc.info/r/1/9828/ https://kuruc.info/r/1/7658/	null	default						
-5736	<param name=movie value=@LINK>	0	0	0	https://kuruc.info/r/2/58783/ https://kuruc.info/r/34/70854/ https://kuruc.info/r/34/77773/ https://kuruc.info/r/34/67504/ https://kuruc.info/r/34/59905/	beagyazott_tartalom	value						
+5736	<param name=movie value=@LINK>	0	0	0	https://kuruc.info/r/2/58783/ https://kuruc.info/r/34/70854/ https://kuruc.info/r/34/77773/ https://kuruc.info/r/34/67504/ https://kuruc.info/r/34/59905/	null	default						
 5484	<br type=_moz>	0	0	0	https://kuruc.info/r/4/156711/ https://kuruc.info/r/2/219333/ https://kuruc.info/r/2/126281/ https://kuruc.info/r/3/177352/ https://kuruc.info/r/49/115420/	null	default						
 5220	<param name=allowFullScreen value=true>	0	0	0	https://kuruc.info/r/34/46546/ https://kuruc.info/r/34/59501/ https://kuruc.info/r/35/53846/ https://kuruc.info/r/26/60401/ https://kuruc.info/r/3/70471/	null	default						
 5001	<embed allowfullscreen=true allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/70362/ https://kuruc.info/r/6/62952/ https://kuruc.info/r/34/41112/ https://kuruc.info/r/35/41387/ https://kuruc.info/r/34/69244/	beagyazott_tartalom	src						
@@ -19,7 +19,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 712	<iframe allow=@LONG allowfullscreen=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0.002808988764	0	https://kuruc.info/r/23/221720/ https://kuruc.info/r/64/220582/ https://kuruc.info/r/2/237946/ https://kuruc.info/r/2/234675/ https://kuruc.info/r/2/222293/	beagyazott_tartalom	src						
 572	<iframe allow=encrypted-media allowfullscreen=true allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0.001748251748	0	https://kuruc.info/r/49/198454/ https://kuruc.info/r/34/214534/ https://kuruc.info/r/64/218168/ https://kuruc.info/r/6/198416/ https://kuruc.info/r/34/194735/	beagyazott_tartalom	src						
 503	<iframe allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0.003976143141	0	https://kuruc.info/r/6/161866/ https://kuruc.info/r/4/177531/ https://kuruc.info/r/4/183407/ https://kuruc.info/r/2/171643/ https://kuruc.info/r/2/169674/	beagyazott_tartalom	src						
-456	<embed height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/21527/ https://kuruc.info/r/34/14754/ https://kuruc.info/r/39/24263/ https://kuruc.info/r/34/15151/ https://kuruc.info/r/2/21467/	media_hivatkozas	src						
+456	<embed height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/21527/ https://kuruc.info/r/34/14754/ https://kuruc.info/r/39/24263/ https://kuruc.info/r/34/15151/ https://kuruc.info/r/2/21467/	beagyazott_tartalom	src						
 440	<param name=wmode value=transparent>	0	0	0	https://kuruc.info/r/6/22519/ https://kuruc.info/r/34/25138/ https://kuruc.info/r/2/67096/ https://kuruc.info/r/6/69680/ https://kuruc.info/r/34/26988/	null	default						
 357	<iframe frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0	0.002801120448	0	https://kuruc.info/r/6/120257/ https://kuruc.info/r/4/128467/ https://kuruc.info/r/4/115916/ https://kuruc.info/r/2/200493/ https://kuruc.info/r/56/142592/	beagyazott_tartalom	src						
 354	<iframe allowfullscreen=true id=@videoplayerNUM mozallowfullscreen=true src=@LINK style=@STYLE webkitallowfullscreen=true>	0	0.01129943503	0	https://kuruc.info/r/2/188114/ https://kuruc.info/r/35/177904/ https://kuruc.info/r/4/189192/ https://kuruc.info/r/2/224691/ https://kuruc.info/r/2/191940/	beagyazott_tartalom	src						
@@ -37,7 +37,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 116	<iframe allowfullscreen= class=youtube-player frameborder=@NUM height=@STYLE src=@LINK title=YouTube video player type=text/html width=@STYLE>	0	0	0	https://kuruc.info/r/34/73503/ https://kuruc.info/r/2/73343/ https://kuruc.info/r/35/73360/ https://kuruc.info/r/34/73036/ https://kuruc.info/r/6/73113/	beagyazott_tartalom	src						
 110	<object classid=@LONG codebase=@LINK height=@STYLE width=@STYLE>	0	7.590909091	0	https://kuruc.info/r/52/56173/ https://kuruc.info/r/2/50250/ https://kuruc.info/r/35/54168/ https://kuruc.info/r/26/61960/ https://kuruc.info/r/26/30210/	null	default						
 110	<iframe allowfullscreen=yes frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/35/221712/ https://kuruc.info/r/2/207162/ https://kuruc.info/r/34/216775/ https://kuruc.info/r/35/208721/ https://kuruc.info/r/35/214715/	beagyazott_tartalom	src						
-107	<param name=src value=@LINK>	0	0	0	https://kuruc.info/r/6/54403/ https://kuruc.info/r/35/54168/ https://kuruc.info/r/26/63508/ https://kuruc.info/r/34/53387/ https://kuruc.info/r/26/49401/	beagyazott_tartalom	value						
+107	<param name=src value=@LINK>	0	0	0	https://kuruc.info/r/6/54403/ https://kuruc.info/r/35/54168/ https://kuruc.info/r/26/63508/ https://kuruc.info/r/34/53387/ https://kuruc.info/r/26/49401/	null	default						
 97	<iframe frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0.0412371134	0	https://kuruc.info/r/26/200245/ https://kuruc.info/r/6/224604/ https://kuruc.info/r/4/166619/ https://kuruc.info/r/6/200305/ https://kuruc.info/r/6/228546/	beagyazott_tartalom	src						
 95	<iframe allow=autoplay allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/6/224864/ https://kuruc.info/r/6/205305/ https://kuruc.info/r/2/224500/ https://kuruc.info/r/6/214459/ https://kuruc.info/r/59/181371/	beagyazott_tartalom	src						
 94	<param name=allowfullscreen value=true>	0	0	0	https://kuruc.info/r/34/51882/ https://kuruc.info/r/6/27176/ https://kuruc.info/r/2/49443/ https://kuruc.info/r/34/48350/ https://kuruc.info/r/22/63765/	null	default						
@@ -56,15 +56,15 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 59	<g fill=#000000 transform=@LONG>	0	2	0	https://kuruc.info/r/6/206014/ https://kuruc.info/r/4/201125/ https://kuruc.info/r/4/195172/ https://kuruc.info/r/64/207831/ https://kuruc.info/r/6/191171/	null	default						
 59	<g>	0	1	0	https://kuruc.info/r/6/203252/ https://kuruc.info/r/4/209151/ https://kuruc.info/r/4/195172/ https://kuruc.info/r/59/205364/ https://kuruc.info/r/6/221359/	null	default						
 59	<path d=@LONG>	0	0	0	https://kuruc.info/r/6/203252/ https://kuruc.info/r/2/197722/ https://kuruc.info/r/6/212925/ https://kuruc.info/r/6/222524/ https://kuruc.info/r/6/198940/	null	default						
-53	<embed height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/35/22142/ https://kuruc.info/r/34/19977/ https://kuruc.info/r/35/20560/ https://kuruc.info/r/34/45159/ https://kuruc.info/r/34/20740/	media_hivatkozas	src						
+53	<embed height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/35/22142/ https://kuruc.info/r/34/19977/ https://kuruc.info/r/35/20560/ https://kuruc.info/r/34/45159/ https://kuruc.info/r/34/20740/	beagyazott_tartalom	src						
 48	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/1/192203/ https://kuruc.info/r/4/148644/ https://kuruc.info/r/1/166288/ https://kuruc.info/r/22/176876/ https://kuruc.info/r/2/163058/	beagyazott_tartalom	src						
 47	<script src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/8/111681/ https://kuruc.info/r/2/85480/ https://kuruc.info/r/2/203085/ https://kuruc.info/r/64/209497/ https://kuruc.info/r/64/238337/	decompose	default						
-46	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=@guPlayerNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/7/46661/ https://kuruc.info/r/34/45125/ https://kuruc.info/r/34/52283/ https://kuruc.info/r/22/49466/ https://kuruc.info/r/6/38522/	beagyazott_tartalom	default						
+46	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=@guPlayerNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/7/46661/ https://kuruc.info/r/34/45125/ https://kuruc.info/r/34/52283/ https://kuruc.info/r/22/49466/ https://kuruc.info/r/6/38522/	beagyazott_tartalom	src						
 46	<a class=abp-objtab visible ontop href=@LINK style=@STYLE title=@title>	0	0	0	https://kuruc.info/r/39/18352/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/1/15282/ https://kuruc.info/r/1/12085/ https://kuruc.info/r/34/19786/	hivatkozas	href						
 45	<embed allowfullscreen=true allowscriptaccess=always id=VideoPlayback src=@LINK style=@STYLE type=application/x-shockwave-flash>	0	0	0	https://kuruc.info/r/34/32607/ https://kuruc.info/r/34/37991/ https://kuruc.info/r/2/33945/ https://kuruc.info/r/34/33505/ https://kuruc.info/r/39/32848/	beagyazott_tartalom	src						
-45	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@autostartNUM height=@STYLE name=@guPlayerNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/6/81355/ https://kuruc.info/r/35/80748/ https://kuruc.info/r/6/80932/ https://kuruc.info/r/34/55639/ https://kuruc.info/r/34/53581/	beagyazott_tartalom	default						
+45	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@autostartNUM height=@STYLE name=@guPlayerNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/6/81355/ https://kuruc.info/r/35/80748/ https://kuruc.info/r/6/80932/ https://kuruc.info/r/34/55639/ https://kuruc.info/r/34/53581/	beagyazott_tartalom	src						
 42	<object align=@STYLE height=@STYLE width=@STYLE>	0	5	0	https://kuruc.info/r/34/26507/ https://kuruc.info/r/6/28634/ https://kuruc.info/r/35/28684/ https://kuruc.info/r/34/24288/ https://kuruc.info/r/7/22787/	null	default						
-42	<embed align=@STYLE allowscriptaccess=always bg= height=@STYLE pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/29304/ https://kuruc.info/r/6/22103/ https://kuruc.info/r/6/23530/ https://kuruc.info/r/34/22042/ https://kuruc.info/r/6/20306/	media_hivatkozas	src						
+42	<embed align=@STYLE allowscriptaccess=always bg= height=@STYLE pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/29304/ https://kuruc.info/r/6/22103/ https://kuruc.info/r/6/23530/ https://kuruc.info/r/34/22042/ https://kuruc.info/r/6/20306/	beagyazott_tartalom	src						
 42	<object style=@STYLE>	0	4	0	https://kuruc.info/r/4/77716/ https://kuruc.info/r/26/78016/ https://kuruc.info/r/35/77762/ https://kuruc.info/r/22/77663/ https://kuruc.info/r/2/77730/	null	default						
 40	<div class=fb-like-box data-header=false data-href=@LINK data-show-faces=@STYLE data-stream=false data-width=@STYLE>	0	0	0	https://kuruc.info/r/7/90652/ https://kuruc.info/r/6/103848/ https://kuruc.info/r/26/102061/ https://kuruc.info/r/6/112744/ https://kuruc.info/r/2/88961/	null	default						
 40	<iframe allowtransparency=true alt=@LONG frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104267/ https://kuruc.info/r/34/104268/ https://kuruc.info/r/34/63724/ https://kuruc.info/r/34/106971/ https://kuruc.info/r/34/60021/	beagyazott_tartalom	src						
@@ -79,58 +79,58 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 24	<img alt=@alt height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/2/72939/ https://kuruc.info/r/1/18369/ https://kuruc.info/r/1/10394/ https://kuruc.info/r/58/178013/ https://kuruc.info/r/2/23062/	media_hivatkozas	src						
 24	<iframe frameborder=no height=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0.04166666667	0	https://kuruc.info/r/1/179344/ https://kuruc.info/r/39/107507/ https://kuruc.info/r/1/123218/ https://kuruc.info/r/2/182206/ https://kuruc.info/r/2/108657/	beagyazott_tartalom	src						
 24	<img alt=@alt data-file-height=@STYLE data-file-width=@STYLE height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/49/131543/	media_hivatkozas	src						
-23	<embed height=@STYLE name=flvplayer src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/1/6651/ https://kuruc.info/r/35/11165/ https://kuruc.info/r/1/13495/ https://kuruc.info/r/34/24456/ https://kuruc.info/r/1/23491/	media_hivatkozas	src						
+23	<embed height=@STYLE name=flvplayer src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/1/6651/ https://kuruc.info/r/35/11165/ https://kuruc.info/r/1/13495/ https://kuruc.info/r/34/24456/ https://kuruc.info/r/1/23491/	beagyazott_tartalom	src						
 23	<img alt=@alt border=@NUM hspace=@NUM src=@LINK title=@title vspace=@NUM>	0	0	0	https://kuruc.info/r/1/51484/ https://kuruc.info/r/1/51233/ https://kuruc.info/r/1/49955/ https://kuruc.info/r/1/50350/	media_hivatkozas	src						
 20	<iframe allowfullscreen=true frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/2/165096/ https://kuruc.info/r/6/182539/ https://kuruc.info/r/2/146688/ https://kuruc.info/r/2/181504/ https://kuruc.info/r/3/174784/	beagyazott_tartalom	src						
 19	<script id=@LONG src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/2/142416/ https://kuruc.info/r/2/141476/ https://kuruc.info/r/2/144760/ https://kuruc.info/r/8/142223/ https://kuruc.info/r/58/147545/	decompose	default						
 19	<iframe frameborder=@NUM scrolling=auto src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/2/199705/ https://kuruc.info/r/2/192366/ https://kuruc.info/r/2/202790/ https://kuruc.info/r/2/204690/ https://kuruc.info/r/2/179204/	beagyazott_tartalom	src						
 19	<hr>	0	0	0	https://kuruc.info/r/6/184017/ https://kuruc.info/r/35/22365/ https://kuruc.info/r/34/77813/ https://kuruc.info/r/34/151855/ https://kuruc.info/r/2/1167/	null	default						
 18	<embed allowfullscreen=true height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/2/42480/ https://kuruc.info/r/6/45815/ https://kuruc.info/r/35/46221/ https://kuruc.info/r/22/37501/ https://kuruc.info/r/34/46095/	beagyazott_tartalom	src						
-18	<param name=flashvars value=@LINK>	0	0	0	https://kuruc.info/r/34/38943/ https://kuruc.info/r/4/69059/ https://kuruc.info/r/6/131203/ https://kuruc.info/r/34/54327/ https://kuruc.info/r/35/59999/	beagyazott_tartalom	value						
+18	<param name=flashvars value=@LINK>	0	0	0	https://kuruc.info/r/34/38943/ https://kuruc.info/r/4/69059/ https://kuruc.info/r/6/131203/ https://kuruc.info/r/34/54327/ https://kuruc.info/r/35/59999/	null	default						
 18	<div class=cikkkepc>	0	3.555555556	0	https://kuruc.info/r/50/85360/ https://kuruc.info/r/6/81006/ https://kuruc.info/r/1/50209/ https://kuruc.info/r/50/67352/ https://kuruc.info/r/50/87336/	null	default						
-17	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE pluginspage=@LINK scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=opaque>	0	0	0	https://kuruc.info/r/52/55958/ https://kuruc.info/r/52/58220/ https://kuruc.info/r/52/56127/ https://kuruc.info/r/52/56232/ https://kuruc.info/r/52/56105/	beagyazott_tartalom	flashvars						
+17	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE pluginspage=@LINK scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=opaque>	0	0	0	https://kuruc.info/r/52/55958/ https://kuruc.info/r/52/58220/ https://kuruc.info/r/52/56127/ https://kuruc.info/r/52/56232/ https://kuruc.info/r/52/56105/	beagyazott_tartalom	src						
 17	<param name=flashvars value=@LONG>	0	0	0	https://kuruc.info/r/21/102793/ https://kuruc.info/r/4/86811/ https://kuruc.info/r/46/85484/ https://kuruc.info/r/4/63781/ https://kuruc.info/r/1/79531/	null	default						
 17	<iframe allow=autoplay frameborder=no height=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/2/231339/ https://kuruc.info/r/2/233733/ https://kuruc.info/r/2/182171/ https://kuruc.info/r/2/182710/ https://kuruc.info/r/2/182233/	beagyazott_tartalom	src						
 16	<embed allowfullscreen=true allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/81522/ https://kuruc.info/r/2/80580/ https://kuruc.info/r/34/79762/ https://kuruc.info/r/2/79387/ https://kuruc.info/r/34/79344/	beagyazott_tartalom	src						
 16	<script async= defer= src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/2/171657/ https://kuruc.info/r/49/186292/ https://kuruc.info/r/4/178179/ https://kuruc.info/r/4/183750/ https://kuruc.info/r/49/175410/	decompose	default						
 16	<meta content=@charsetNUM http-equiv=content-type>	0	0	0	https://kuruc.info/r/35/65781/ https://kuruc.info/r/35/61535/ https://kuruc.info/r/35/60200/ https://kuruc.info/r/35/61026/ https://kuruc.info/r/35/61807/	null	default						
-15	<param name=FlashVars value=@LINK>	0	0	0	https://kuruc.info/r/26/34776/ https://kuruc.info/r/6/20701/ https://kuruc.info/r/6/73448/ https://kuruc.info/r/22/22763/ https://kuruc.info/r/6/19625/	beagyazott_tartalom	value						
+15	<param name=FlashVars value=@LINK>	0	0	0	https://kuruc.info/r/26/34776/ https://kuruc.info/r/6/20701/ https://kuruc.info/r/6/73448/ https://kuruc.info/r/22/22763/ https://kuruc.info/r/6/19625/	null	default						
 14	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@autostartNUM height=@STYLE name=@guPlayerNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/35/64436/ https://kuruc.info/r/26/61960/ https://kuruc.info/r/26/63508/ https://kuruc.info/r/21/64487/ https://kuruc.info/r/6/69680/	beagyazott_tartalom	src						
 13	<object classid=@LONG codebase=@LINK height=@STYLE id=@playerNUM width=@STYLE>	0	9	0	https://kuruc.info/r/6/76675/ https://kuruc.info/r/7/91577/ https://kuruc.info/r/22/65342/ https://kuruc.info/r/4/73354/ https://kuruc.info/r/34/84383/	null	default						
-13	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LONG height=@STYLE id=@playerNUM menu=false quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/4/73354/ https://kuruc.info/r/6/76675/ https://kuruc.info/r/22/65342/ https://kuruc.info/r/6/76172/ https://kuruc.info/r/34/80800/	null	default						
+13	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LONG height=@STYLE id=@playerNUM menu=false quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/4/73354/ https://kuruc.info/r/6/76675/ https://kuruc.info/r/22/65342/ https://kuruc.info/r/6/76172/ https://kuruc.info/r/34/80800/	beagyazott_tartalom	src						
 13	<iframe allowfullscreen= frameborder=@NUM height=@STYLE mozallowfullscreen= scrolling=no src=@LINK webkitallowfullscreen= width=@STYLE>	0	0	0	https://kuruc.info/r/49/160447/ https://kuruc.info/r/4/176214/ https://kuruc.info/r/6/195528/ https://kuruc.info/r/4/178211/ https://kuruc.info/r/4/196245/	beagyazott_tartalom	src						
-11	<embed flashvars= id=VideoPlayback src=@LINK style=@STYLE type=application/x-shockwave-flash>	0	0	0	https://kuruc.info/r/34/20503/ https://kuruc.info/r/34/24840/ https://kuruc.info/r/34/20743/ https://kuruc.info/r/34/23888/ https://kuruc.info/r/34/23787/	media_hivatkozas	src						
+11	<embed flashvars= id=VideoPlayback src=@LINK style=@STYLE type=application/x-shockwave-flash>	0	0	0	https://kuruc.info/r/34/20503/ https://kuruc.info/r/34/24840/ https://kuruc.info/r/34/20743/ https://kuruc.info/r/34/23888/ https://kuruc.info/r/34/23787/	beagyazott_tartalom	src						
 11	<span class=person>	0	0	0	https://kuruc.info/r/1/4966/ https://kuruc.info/r/1/47/ https://kuruc.info/r/1/3814/ https://kuruc.info/r/3/4965/ https://kuruc.info/r/1/4201/	null	default						
 11	<iframe allowtransparency=true alt=@NUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/106971/ https://kuruc.info/r/34/63724/ https://kuruc.info/r/34/104268/ https://kuruc.info/r/34/104267/	beagyazott_tartalom	src						
 10	<iframe allowfullscreen= class=giphy-embed frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0	0.4	0	https://kuruc.info/r/4/161964/ https://kuruc.info/r/4/166366/ https://kuruc.info/r/4/156159/ https://kuruc.info/r/4/159018/ https://kuruc.info/r/4/156560/	beagyazott_tartalom	src						
-10	<embed src=@LINK style=@STYLE type=application/x-shockwave-flash>	0	0	0	https://kuruc.info/r/2/90958/ https://kuruc.info/r/2/93770/ https://kuruc.info/r/23/112488/ https://kuruc.info/r/2/85468/ https://kuruc.info/r/3/106006/	null	default						
-10	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE name=flvplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/6/87800/ https://kuruc.info/r/22/90830/ https://kuruc.info/r/3/88723/ https://kuruc.info/r/3/56661/ https://kuruc.info/r/34/53597/	beagyazott_tartalom	flashvars						
+10	<embed src=@LINK style=@STYLE type=application/x-shockwave-flash>	0	0	0	https://kuruc.info/r/2/90958/ https://kuruc.info/r/2/93770/ https://kuruc.info/r/23/112488/ https://kuruc.info/r/2/85468/ https://kuruc.info/r/3/106006/	beagyazott_tartalom	src						
+10	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE name=flvplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/6/87800/ https://kuruc.info/r/22/90830/ https://kuruc.info/r/3/88723/ https://kuruc.info/r/3/56661/ https://kuruc.info/r/34/53597/	beagyazott_tartalom	src						
 10	<a class=@buttonNUM>	0	0	0	https://kuruc.info/r/1/4759/ https://kuruc.info/r/35/44091/	hivatkozas	default						
-10	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE name=flvplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/51493/ https://kuruc.info/r/26/43623/ https://kuruc.info/r/34/38435/ https://kuruc.info/r/34/49837/ https://kuruc.info/r/34/40953/	beagyazott_tartalom	flashvars						
+10	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE name=flvplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/51493/ https://kuruc.info/r/26/43623/ https://kuruc.info/r/34/38435/ https://kuruc.info/r/34/49837/ https://kuruc.info/r/34/40953/	beagyazott_tartalom	src						
 9	<iframe allowfullscreen= frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/4/181439/ https://kuruc.info/r/64/224665/ https://kuruc.info/r/4/181895/ https://kuruc.info/r/4/177349/ https://kuruc.info/r/34/227351/	beagyazott_tartalom	src						
 9	<div class=flourish-embed flourish-chart data-src=@LINK>	0	0.5555555556	0	https://kuruc.info/r/2/203287/ https://kuruc.info/r/2/203085/ https://kuruc.info/r/64/209497/ https://kuruc.info/r/64/238337/ https://kuruc.info/r/2/228490/	null	default						
 9	<param name=allowScriptAccess value=sameDomain>	0	0	0	https://kuruc.info/r/2/92360/ https://kuruc.info/r/34/48276/ https://kuruc.info/r/34/44773/ https://kuruc.info/r/1/32699/ https://kuruc.info/r/34/38139/	null	default						
-9	<embed height=@STYLE menu=false pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/68288/ https://kuruc.info/r/6/44155/ https://kuruc.info/r/50/50347/ https://kuruc.info/r/22/59540/ https://kuruc.info/r/22/48071/	null	default						
+9	<embed height=@STYLE menu=false pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/68288/ https://kuruc.info/r/6/44155/ https://kuruc.info/r/50/50347/ https://kuruc.info/r/22/59540/ https://kuruc.info/r/22/48071/	beagyazott_tartalom	src						
 9	<iframe allowfullscreen= frameborder=@NUM height=@STYLE id=molvideoplayer scrolling=no src=@LINK title=MailOnline Embed Player width=@STYLE>	0	0	0	https://kuruc.info/r/6/208356/ https://kuruc.info/r/4/219780/ https://kuruc.info/r/6/229082/ https://kuruc.info/r/6/220209/ https://kuruc.info/r/6/204701/	beagyazott_tartalom	src						
 9	<span id=@NUM style=@STYLE>	0	0	0	https://kuruc.info/r/9/23599/ https://kuruc.info/r/4/22453/ https://kuruc.info/r/3/27033/ https://kuruc.info/r/53/193506/ https://kuruc.info/r/52/56872/	null	default						
 9	<iframe frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0.1111111111	0	https://kuruc.info/r/6/129518/ https://kuruc.info/r/34/110117/ https://kuruc.info/r/6/109689/ https://kuruc.info/r/2/214417/ https://kuruc.info/r/34/19109/	beagyazott_tartalom	src						
 9	<col style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/2/115123/ https://kuruc.info/r/2/115198/ https://kuruc.info/r/2/115339/	null	default						
-8	<embed allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/22/61593/ https://kuruc.info/r/34/87245/ https://kuruc.info/r/6/72593/ https://kuruc.info/r/34/93482/ https://kuruc.info/r/35/28408/	null	default						
+8	<embed allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/22/61593/ https://kuruc.info/r/34/87245/ https://kuruc.info/r/6/72593/ https://kuruc.info/r/34/93482/ https://kuruc.info/r/35/28408/	beagyazott_tartalom	src						
 8	<embed allowfullscreen=true allowscriptaccess=always height=@STYLE name=flvplayer src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/35/36837/ https://kuruc.info/r/34/37069/ https://kuruc.info/r/34/37081/ https://kuruc.info/r/6/36419/ https://kuruc.info/r/34/37645/	beagyazott_tartalom	src						
 8	<param name=wmode value=window>	0	0	0	https://kuruc.info/r/4/84063/ https://kuruc.info/r/2/92360/ https://kuruc.info/r/4/52121/ https://kuruc.info/r/40/45195/ https://kuruc.info/r/40/39048/	null	default						
-8	<embed allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/64718/ https://kuruc.info/r/34/43834/ https://kuruc.info/r/6/89317/ https://kuruc.info/r/22/63499/	null	default						
+8	<embed allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/64718/ https://kuruc.info/r/34/43834/ https://kuruc.info/r/6/89317/ https://kuruc.info/r/22/63499/	beagyazott_tartalom	src						
 8	<hr style=@STYLE>	0	0	0	https://kuruc.info/r/7/16173/ https://kuruc.info/r/35/9239/ https://kuruc.info/r/22/14677/ https://kuruc.info/r/26/14659/	null	default						
 8	<embed allowfullscreen=true allownetworking=all allowscriptaccess=always bg= height=@STYLE pluginspage=@LINK scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/35/34891/ https://kuruc.info/r/4/38849/ https://kuruc.info/r/35/42420/ https://kuruc.info/r/2/48205/ https://kuruc.info/r/34/50628/	beagyazott_tartalom	src						
 8	<skype:span class=skype_tb_nop>	0	0	0	https://kuruc.info/r/3/14812/	null	default						
 7	<iframe allowfullscreen= src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/4/189198/ https://kuruc.info/r/6/206580/ https://kuruc.info/r/2/234616/ https://kuruc.info/r/4/188388/ https://kuruc.info/r/2/238233/	beagyazott_tartalom	src						
-7	<embed autostart=false border=@NUM height=@STYLE loop=false src=@LINK type=video/x-ms-wmv width=@STYLE>	0	0	0	https://kuruc.info/r/39/18352/ https://kuruc.info/r/34/22145/ https://kuruc.info/r/2/30539/ https://kuruc.info/r/1/17698/ https://kuruc.info/r/39/32631/	null	default						
+7	<embed autostart=false border=@NUM height=@STYLE loop=false src=@LINK type=video/x-ms-wmv width=@STYLE>	0	0	0	https://kuruc.info/r/39/18352/ https://kuruc.info/r/34/22145/ https://kuruc.info/r/2/30539/ https://kuruc.info/r/1/17698/ https://kuruc.info/r/39/32631/	beagyazott_tartalom	src						
 7	<v:f eqn=@NUM>	0	8	0	https://kuruc.info/r/1/164/	null	default						
 7	<img alt=@alt class=img_galeria src=@LINK>	0	0	0	https://kuruc.info/r/35/75654/	media_hivatkozas	src						
 6	<object classid=@LONG height=@STYLE id=@viddlerNUM width=@STYLE>	0	4.166666667	0	https://kuruc.info/r/6/39143/ https://kuruc.info/r/34/37225/ https://kuruc.info/r/34/40474/ https://kuruc.info/r/34/30230/	null	default						
 6	<param name=bgcolor value=#ffffff>	0	0	0	https://kuruc.info/r/22/39645/ https://kuruc.info/r/2/88549/ https://kuruc.info/r/34/38139/ https://kuruc.info/r/2/88162/ https://kuruc.info/r/6/98926/	null	default						
 6	<iframe allowfullscreen= frameborder=@NUM src=@LINK>	0	0	0	https://kuruc.info/r/6/195121/ https://kuruc.info/r/6/177369/ https://kuruc.info/r/6/203924/ https://kuruc.info/r/4/163421/ https://kuruc.info/r/4/228447/	beagyazott_tartalom	src						
-6	<object data=@LINK height=@STYLE id=@audioplayerNUM type=application/x-shockwave-flash width=@STYLE>	0	5	0	https://kuruc.info/r/1/17606/ https://kuruc.info/r/1/16214/ https://kuruc.info/r/6/20701/ https://kuruc.info/r/6/19625/ https://kuruc.info/r/26/31633/	null	default						
-6	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/4/66346/ https://kuruc.info/r/2/98467/ https://kuruc.info/r/4/69059/ https://kuruc.info/r/35/42239/ https://kuruc.info/r/4/54647/	beagyazott_tartalom	flashvars						
+6	<object data=@LINK height=@STYLE id=@audioplayerNUM type=application/x-shockwave-flash width=@STYLE>	0	5	0	https://kuruc.info/r/1/17606/ https://kuruc.info/r/1/16214/ https://kuruc.info/r/6/20701/ https://kuruc.info/r/6/19625/ https://kuruc.info/r/26/31633/	beagyazott_tartalom	data						
+6	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/4/66346/ https://kuruc.info/r/2/98467/ https://kuruc.info/r/4/69059/ https://kuruc.info/r/35/42239/ https://kuruc.info/r/4/54647/	beagyazott_tartalom	src						
 6	<param name=@STYLE value=@NUM>	0	0	0	https://kuruc.info/r/35/42979/ https://kuruc.info/r/35/29623/ https://kuruc.info/r/35/32669/	null	default						
 6	<img alt=@alt class=attachment-large @STYLE height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/4/179963/	media_hivatkozas	src						
 5	<embed allowfullscreen=true allowscriptaccess=always height=@STYLE name=@viddlerNUM src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/30230/ https://kuruc.info/r/6/39143/ https://kuruc.info/r/34/40474/	beagyazott_tartalom	src						
@@ -139,19 +139,19 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 5	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK title=Pixter Videó lejátszó width=@STYLE>	0	0	0	https://kuruc.info/r/20/99814/ https://kuruc.info/r/2/90034/ https://kuruc.info/r/2/82276/ https://kuruc.info/r/2/88091/	beagyazott_tartalom	src						
 5	<param name=scale value=noscale>	0	0	0	https://kuruc.info/r/40/39048/ https://kuruc.info/r/26/30210/ https://kuruc.info/r/4/84063/ https://kuruc.info/r/35/29623/ https://kuruc.info/r/40/45195/	null	default						
 5	<iframe allowfullscreen= frameborder=@NUM src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/4/193521/ https://kuruc.info/r/4/231883/ https://kuruc.info/r/4/177650/ https://kuruc.info/r/4/187215/ https://kuruc.info/r/4/190715/	beagyazott_tartalom	src						
-5	<embed allowscriptaccess=sameDomain height=@STYLE quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/38039/ https://kuruc.info/r/34/74332/ https://kuruc.info/r/34/37887/ https://kuruc.info/r/6/27176/ https://kuruc.info/r/34/43281/	null	default						
+5	<embed allowscriptaccess=sameDomain height=@STYLE quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/38039/ https://kuruc.info/r/34/74332/ https://kuruc.info/r/34/37887/ https://kuruc.info/r/6/27176/ https://kuruc.info/r/34/43281/	beagyazott_tartalom	src						
 5	<script id=@LONG src=@LINK title= type=@LONG>	0	0	0	https://kuruc.info/r/4/162502/ https://kuruc.info/r/2/164629/ https://kuruc.info/r/2/176944/	decompose	default						
 5	<param name=bgcolor value=#FFFFFF>	0	0	0	https://kuruc.info/r/6/115176/ https://kuruc.info/r/34/55269/ https://kuruc.info/r/4/18375/ https://kuruc.info/r/1/32699/ https://kuruc.info/r/4/54916/	null	default						
 5	<iframe allowfullscreen= class=giphy-embed frameborder=@NUM height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/2/187741/ https://kuruc.info/r/4/197583/ https://kuruc.info/r/1/196078/ https://kuruc.info/r/35/189917/ https://kuruc.info/r/4/202944/	beagyazott_tartalom	src						
-5	<param name=url value=@LINK>	0	0	0	https://kuruc.info/r/2/50843/ https://kuruc.info/r/1/21435/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/35/21810/ https://kuruc.info/r/34/27712/	beagyazott_tartalom	value						
+5	<param name=url value=@LINK>	0	0	0	https://kuruc.info/r/2/50843/ https://kuruc.info/r/1/21435/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/35/21810/ https://kuruc.info/r/34/27712/	null	default						
 5	<param name=autoStart value=false>	0	0	0	https://kuruc.info/r/2/50843/ https://kuruc.info/r/34/27712/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/1/21435/ https://kuruc.info/r/35/21810/	null	default						
 5	<a class=@objtabNUM visible href=@LINK style=@STYLE title=@title>	0	0	0	https://kuruc.info/r/6/19625/	hivatkozas	href						
 5	<div class=infogram-embed data-id=@LONG data-title=@LONG data-type=interactive>	0	0	0	https://kuruc.info/r/2/236623/	null	default						
 4	<iframe class=youtube-player frameborder=@NUM height=@STYLE src=@LINK type=text/html width=@STYLE>	0	0	0	https://kuruc.info/r/2/65437/ https://kuruc.info/r/37/65325/ https://kuruc.info/r/2/65410/ https://kuruc.info/r/34/65400/	beagyazott_tartalom	src						
-4	<param name=host_url value=@LINK>	0	0	0	https://kuruc.info/r/2/174418/ https://kuruc.info/r/4/156305/	beagyazott_tartalom	value						
+4	<param name=host_url value=@LINK>	0	0	0	https://kuruc.info/r/2/174418/ https://kuruc.info/r/4/156305/	null	default						
 4	<param name=site_root value= /><param name=>	0	0	0	https://kuruc.info/r/4/156305/ https://kuruc.info/r/2/174418/	null	default						
 4	<param name=tabs value=no>	0	0	0	https://kuruc.info/r/4/156305/ https://kuruc.info/r/2/174418/	null	default						
-4	<param name=static_image value=@LINK>	0	0	0	https://kuruc.info/r/4/156305/ https://kuruc.info/r/2/174418/	beagyazott_tartalom	value						
+4	<param name=static_image value=@LINK>	0	0	0	https://kuruc.info/r/4/156305/ https://kuruc.info/r/2/174418/	null	default						
 4	<param name=animate_transition value=yes>	0	0	0	https://kuruc.info/r/4/156305/ https://kuruc.info/r/2/174418/	null	default						
 4	<param name=display_static_image value=yes>	0	0	0	https://kuruc.info/r/2/174418/ https://kuruc.info/r/4/156305/	null	default						
 4	<param name=display_spinner value=yes>	0	0	0	https://kuruc.info/r/2/174418/ https://kuruc.info/r/4/156305/	null	default						
@@ -160,19 +160,19 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 4	<embed allowfullscreen=true height=@STYLE name=flvplayer src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/35/32669/ https://kuruc.info/r/6/33363/ https://kuruc.info/r/35/31129/ https://kuruc.info/r/1/12869/	beagyazott_tartalom	src						
 4	<embed allowfullscreen=true allowscriptaccess=always height=@STYLE name=viddler src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/29436/ https://kuruc.info/r/2/29919/ https://kuruc.info/r/34/30128/ https://kuruc.info/r/34/29989/	beagyazott_tartalom	src						
 4	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LONG height=@STYLE name=@MetacafeNUM pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/73946/ https://kuruc.info/r/6/70403/ https://kuruc.info/r/34/48114/ https://kuruc.info/r/34/56719/	beagyazott_tartalom	src						
-4	<embed flashvars=@LONG height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/54161/ https://kuruc.info/r/34/42431/ https://kuruc.info/r/34/41933/	null	default						
+4	<embed flashvars=@LONG height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/54161/ https://kuruc.info/r/34/42431/ https://kuruc.info/r/34/41933/	beagyazott_tartalom	src						
 4	<iframe allow=autoplay; fullscreen allowfullscreen= frameborder=@NUM height=@STYLE mozallowfullscreen= scrolling=no src=@LINK webkitallowfullscreen= width=@STYLE>	0	0	0	https://kuruc.info/r/4/195103/ https://kuruc.info/r/6/203924/ https://kuruc.info/r/4/201160/ https://kuruc.info/r/4/195577/	beagyazott_tartalom	src						
 4	<param name=quality value=autohigh>	0	0	0	https://kuruc.info/r/1/32699/ https://kuruc.info/r/6/42136/	null	default						
 4	<img alt=@alt class=@STYLE @STYLE @imageNUM height=@STYLE src=@LINK title=@title width=@STYLE>	0	0	0	https://kuruc.info/r/40/29070/	media_hivatkozas	src						
-4	<embed height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/20/23603/ https://kuruc.info/r/34/19489/ https://kuruc.info/r/35/20491/ https://kuruc.info/r/2/24166/	null	default						
-4	<embed height=@STYLE src=@LINK width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/1/3127/ https://kuruc.info/r/1/17862/ https://kuruc.info/r/34/23542/	null	default						
+4	<embed height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/20/23603/ https://kuruc.info/r/34/19489/ https://kuruc.info/r/35/20491/ https://kuruc.info/r/2/24166/	beagyazott_tartalom	src						
+4	<embed height=@STYLE src=@LINK width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/1/3127/ https://kuruc.info/r/1/17862/ https://kuruc.info/r/34/23542/	beagyazott_tartalom	src						
 4	<path d=@NUM fill=#fff stroke=#fff stroke-linecap=round stroke-miterlimit=@NUM stroke-width=@STYLE>	0	0	0	https://kuruc.info/r/35/44091/ https://kuruc.info/r/1/4759/	null	default						
 4	<iframe class=lazy-loaded data-lazy-type=iframe data-src=@LINK frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0.25	0	https://kuruc.info/r/2/219422/ https://kuruc.info/r/6/201510/ https://kuruc.info/r/2/216768/ https://kuruc.info/r/6/201260/	beagyazott_tartalom	data-src						
 4	<span class=cikkkepr>	0	5	0	https://kuruc.info/r/22/69731/ https://kuruc.info/r/22/69730/ https://kuruc.info/r/22/69728/ https://kuruc.info/r/50/64560/	null	default						
 4	<iframe allowfullscreen= height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/4/187214/ https://kuruc.info/r/4/205786/ https://kuruc.info/r/4/218514/ https://kuruc.info/r/4/215598/	beagyazott_tartalom	src						
 4	<embed allowfullscreen=true allowscriptaccess=always bgcolor= height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/4/71176/ https://kuruc.info/r/34/113727/ https://kuruc.info/r/4/66640/ https://kuruc.info/r/6/71101/	beagyazott_tartalom	src						
 4	<img alt=@alt border=@NUM height=@STYLE hspace=@NUM src=@LINK vspace=@NUM width=@STYLE>	0	0	0	https://kuruc.info/r/4/21838/	media_hivatkozas	src						
-4	<param name=base value=@LINK>	0	0	0	https://kuruc.info/r/1/32699/ https://kuruc.info/r/34/55269/ https://kuruc.info/r/6/115176/ https://kuruc.info/r/4/54916/	beagyazott_tartalom	value						
+4	<param name=base value=@LINK>	0	0	0	https://kuruc.info/r/1/32699/ https://kuruc.info/r/34/55269/ https://kuruc.info/r/6/115176/ https://kuruc.info/r/4/54916/	null	default						
 4	<object classid=@LONG codebase=@LINK height=@STYLE id=@playerNUM standby=Videó töltése... type=application/x-oleobject width=@STYLE>	0	10	0	https://kuruc.info/r/26/14492/ https://kuruc.info/r/35/21810/ https://kuruc.info/r/1/21435/ https://kuruc.info/r/34/27712/	null	default						
 4	<param name=uiMode value=mini>	0	0	0	https://kuruc.info/r/1/21435/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/34/27712/ https://kuruc.info/r/35/21810/	null	default						
 4	<param name=PlayCount value=@NUM>	0	0	0	https://kuruc.info/r/34/27712/ https://kuruc.info/r/35/21810/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/1/21435/	null	default						
@@ -181,11 +181,11 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 4	<param name=enableContextMenu value=@NUM>	0	0	0	https://kuruc.info/r/35/21810/ https://kuruc.info/r/1/21435/ https://kuruc.info/r/34/27712/ https://kuruc.info/r/26/14492/	null	default						
 4	<param name=stretchToFit value=@NUM>	0	0	0	https://kuruc.info/r/35/21810/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/1/21435/ https://kuruc.info/r/34/27712/	null	default						
 4	<param name=Volume value=@NUM>	0	0	0	https://kuruc.info/r/35/21810/ https://kuruc.info/r/1/21435/ https://kuruc.info/r/34/27712/ https://kuruc.info/r/26/14492/	null	default						
-4	<embed autostart=@NUM enablecontextmenu=@NUM height=@STYLE id=@playerNUM loop=false playcount=@NUM pluginspage=@LINK showcontrols=@NUM showstatusbar=@NUM src=@LINK type=video/x-ms-asf-plugin uimode=mini width=@STYLE>	0	0	0	https://kuruc.info/r/1/21435/ https://kuruc.info/r/35/21810/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/34/27712/	null	default						
+4	<embed autostart=@NUM enablecontextmenu=@NUM height=@STYLE id=@playerNUM loop=false playcount=@NUM pluginspage=@LINK showcontrols=@NUM showstatusbar=@NUM src=@LINK type=video/x-ms-asf-plugin uimode=mini width=@STYLE>	0	0	0	https://kuruc.info/r/1/21435/ https://kuruc.info/r/35/21810/ https://kuruc.info/r/26/14492/ https://kuruc.info/r/34/27712/	beagyazott_tartalom	src						
 4	<img alt=@alt border=@NUM src=@LINK title=@title>	0	0	0	https://kuruc.info/r/26/93351/ https://kuruc.info/r/2/75547/ https://kuruc.info/r/34/27758/	media_hivatkozas	src						
 4	<iframe border=@NUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/3/93276/ https://kuruc.info/r/3/60651/ https://kuruc.info/r/26/57080/ https://kuruc.info/r/3/56355/	beagyazott_tartalom	src						
 4	<div class=addthis_toolbox alcikklista gradback style=@STYLE>	0	5.5	0	https://kuruc.info/r/22/75872/ https://kuruc.info/r/35/44091/ https://kuruc.info/r/22/75016/ https://kuruc.info/r/1/75103/	null	default						
-4	<object data=@LINK height=@STYLE id=@playerNUM name=@playerNUM type=application/x-shockwave-flash width=@STYLE>	0	5	0	https://kuruc.info/r/2/88162/ https://kuruc.info/r/6/100124/ https://kuruc.info/r/6/98926/ https://kuruc.info/r/2/88549/	null	default						
+4	<object data=@LINK height=@STYLE id=@playerNUM name=@playerNUM type=application/x-shockwave-flash width=@STYLE>	0	5	0	https://kuruc.info/r/2/88162/ https://kuruc.info/r/6/100124/ https://kuruc.info/r/6/98926/ https://kuruc.info/r/2/88549/	beagyazott_tartalom	data						
 4	<colgroup>	0	2.75	0	https://kuruc.info/r/2/181951/ https://kuruc.info/r/2/115198/ https://kuruc.info/r/2/115123/ https://kuruc.info/r/2/115339/	null	default						
 4	<iframe allowfullscreen=true frameborder=@NUM height=@STYLE id=nyt_video_player marginheight=@STYLE marginwidth=@STYLE scrolling=no src=@LINK title=@LONG width=@STYLE>	0	0	0	https://kuruc.info/r/4/191000/ https://kuruc.info/r/59/178937/ https://kuruc.info/r/4/207008/ https://kuruc.info/r/4/207181/	beagyazott_tartalom	src						
 4	<iframe allowfullscreen= frameborder=@NUM mozallowfullscreen= scrolling=no src=@LINK style=@STYLE webkitallowfullscreen=>	0	0	0	https://kuruc.info/r/49/160590/	beagyazott_tartalom	src						
@@ -196,14 +196,14 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 3	<param name=toolbar value=no>	0	0	0	https://kuruc.info/r/2/174418/	null	default						
 3	<div class=flourish-embed data-src=@LINK>	0	0.6666666667	0	https://kuruc.info/r/2/235814/ https://kuruc.info/r/2/228490/ https://kuruc.info/r/2/184782/	null	default						
 3	<source src=@LINK type=@videoNUM>	0	0	0	https://kuruc.info/r/6/184017/ https://kuruc.info/r/34/160137/ https://kuruc.info/r/2/185518/	null	default						
-3	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE pluginspage=@LINK quality=autohigh src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/6/42136/	beagyazott_tartalom	flashvars						
+3	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE pluginspage=@LINK quality=autohigh src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/6/42136/	beagyazott_tartalom	src						
 3	<img alt=@alt hspace=@NUM src=@LINK vspace=@NUM>	0	0	0	https://kuruc.info/r/39/21786/	media_hivatkozas	src						
 3	<script id=@LONG src=@LINK title=@ElemeznekNUM type=@LONG>	0	0	0	https://kuruc.info/r/2/185927/	decompose	default						
-3	<object data=@LINK height=@STYLE id=FlowPlayer type=application/x-shockwave-flash width=@STYLE>	0	6	0	https://kuruc.info/r/34/44773/ https://kuruc.info/r/22/82876/ https://kuruc.info/r/34/48276/	null	default						
+3	<object data=@LINK height=@STYLE id=FlowPlayer type=application/x-shockwave-flash width=@STYLE>	0	6	0	https://kuruc.info/r/34/44773/ https://kuruc.info/r/22/82876/ https://kuruc.info/r/34/48276/	beagyazott_tartalom	data						
 3	<param name=scale value=noScale>	0	0	0	https://kuruc.info/r/22/82876/ https://kuruc.info/r/34/44773/ https://kuruc.info/r/34/48276/	null	default						
 3	<img alt=@alt class=@STYLE @imageNUM height=@STYLE src=@LINK title=@title width=@STYLE>	0	0	0	https://kuruc.info/r/40/29070/	media_hivatkozas	src						
 3	<iframe allow=@LONG allowfullscreen= height=@STYLE sandbox=allow-scripts allow-presentation allow-same-origin src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/64/239860/ https://kuruc.info/r/34/239327/ https://kuruc.info/r/34/239675/	beagyazott_tartalom	src						
-3	<object data=@LINK height=@STYLE type=application/x-shockwave-flash width=@STYLE>	0	6.333333333	0	https://kuruc.info/r/35/59999/ https://kuruc.info/r/6/80000/ https://kuruc.info/r/34/48350/	null	default						
+3	<object data=@LINK height=@STYLE type=application/x-shockwave-flash width=@STYLE>	0	6.333333333	0	https://kuruc.info/r/35/59999/ https://kuruc.info/r/6/80000/ https://kuruc.info/r/34/48350/	beagyazott_tartalom	data						
 3	<param name=@STYLE value=LT>	0	0	0	https://kuruc.info/r/40/39048/ https://kuruc.info/r/4/84063/ https://kuruc.info/r/40/45195/	null	default						
 3	<iframe frameborder=@NUM height=@STYLE src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/6/139486/ https://kuruc.info/r/2/141220/ https://kuruc.info/r/4/139002/	beagyazott_tartalom	src						
 3	<object classid=@LONG height=@STYLE id=ep width=@STYLE>	0	6	0	https://kuruc.info/r/4/71176/ https://kuruc.info/r/6/71101/ https://kuruc.info/r/4/66640/	null	default						
@@ -217,7 +217,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 3	<param name=allowNetworking value=all>	0	0	0	https://kuruc.info/r/34/54771/ https://kuruc.info/r/34/79752/ https://kuruc.info/r/4/64396/	null	default						
 3	<object align=@STYLE classid=@LONG codebase=@LINK height=@STYLE id=vidixplayer width=@STYLE>	0	7.333333333	0	https://kuruc.info/r/2/92360/ https://kuruc.info/r/2/25302/ https://kuruc.info/r/35/28989/	null	default						
 3	<object classid=@LONG height=@STYLE id=seyretpl name=seyretpl width=@STYLE>	0	6	0	https://kuruc.info/r/34/51921/ https://kuruc.info/r/34/51882/ https://kuruc.info/r/34/54327/	null	default						
-3	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=seyretp name=seyretp src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/54327/ https://kuruc.info/r/34/51882/ https://kuruc.info/r/34/51921/	beagyazott_tartalom	flashvars						
+3	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=seyretp name=seyretp src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/54327/ https://kuruc.info/r/34/51882/ https://kuruc.info/r/34/51921/	beagyazott_tartalom	src						
 3	<hr align=@STYLE noshade=noshade size=@STYLE>	0	0	0	https://kuruc.info/r/35/44299/	null	default						
 3	<iframe frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/2/234228/	beagyazott_tartalom	src						
 3	<skype:span class=skype_tb_imgFlag id=@skypeNUM style=@STYLE>	0	0	0	https://kuruc.info/r/3/14812/ https://kuruc.info/r/2/10874/	null	default						
@@ -236,7 +236,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 2	<span class=Title>	0	0	0	https://kuruc.info/r/1/14666/	null	default						
 2	<script id=@LONG src=@LINK title=Untitled report type=@LONG>	0	0	0	https://kuruc.info/r/2/238729/	decompose	default						
 2	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK webkitallowfullscreen= width=@STYLE>	0	0	0	https://kuruc.info/r/62/84885/ https://kuruc.info/r/6/85064/	beagyazott_tartalom	src						
-2	<param name=fileName value=@LINK>	0	0	0	https://kuruc.info/r/34/46654/ https://kuruc.info/r/2/50843/	beagyazott_tartalom	value						
+2	<param name=fileName value=@LINK>	0	0	0	https://kuruc.info/r/34/46654/ https://kuruc.info/r/2/50843/	null	default						
 2	<div class=@NUM @STYLE @STYLE style=@STYLE>	0	15	0	https://kuruc.info/r/1/4759/ https://kuruc.info/r/35/44091/	null	default						
 2	<a class=@twitterNUM>	0	0	0	https://kuruc.info/r/1/4759/ https://kuruc.info/r/35/44091/	hivatkozas	default						
 2	<a class=@whatsappNUM>	0	0	0	https://kuruc.info/r/1/4759/ https://kuruc.info/r/35/44091/	hivatkozas	default						
@@ -245,14 +245,14 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 2	<svg focusable=false viewbox=0 0 32 32 xmlns=@LINK>	0	3	0	https://kuruc.info/r/1/4759/ https://kuruc.info/r/35/44091/	null	default						
 2	<path d=@LONG fill=none stroke=#fff stroke-linecap=round stroke-miterlimit=@NUM stroke-width=@STYLE>	0	0	0	https://kuruc.info/r/35/44091/ https://kuruc.info/r/1/4759/	null	default						
 2	<a class=@outlookNUM>	0	0	0	https://kuruc.info/r/35/44091/ https://kuruc.info/r/1/4759/	hivatkozas	default						
-2	<embed allowfullscreen=true flashvars=@LINK height=@STYLE loop=false pluginspage=@LINK scale=exactfit src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/47276/ https://kuruc.info/r/49/53119/	beagyazott_tartalom	flashvars						
+2	<embed allowfullscreen=true flashvars=@LINK height=@STYLE loop=false pluginspage=@LINK scale=exactfit src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/47276/ https://kuruc.info/r/49/53119/	beagyazott_tartalom	src						
 2	<img align=@STYLE alt=@alt border=@NUM hspace=@NUM src=@LINK vspace=@NUM>	0	0	0	https://kuruc.info/r/1/5340/ https://kuruc.info/r/1/640/	media_hivatkozas	src						
 2	<iframe allowfullscreen=allowfullscreen frameborder=@NUM src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/2/189854/ https://kuruc.info/r/4/204527/	beagyazott_tartalom	src						
 2	<meta content=@charsetNUM http-equiv=CONTENT-TYPE>	0	0	0	https://kuruc.info/r/23/47571/ https://kuruc.info/r/4/63381/	null	default						
 2	<meta content=@OpenOfficeNUM name=GENERATOR>	0	0	0	https://kuruc.info/r/23/47571/ https://kuruc.info/r/4/63381/	null	default						
 2	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK title=vimeo-player width=@STYLE>	0	0	0	https://kuruc.info/r/34/203699/ https://kuruc.info/r/58/206567/	beagyazott_tartalom	src						
-2	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=@guPlayerNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/37/51507/ https://kuruc.info/r/34/41429/	null	default						
-2	<embed height=@STYLE src=@LINK style=@STYLE type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/1/9876/ https://kuruc.info/r/34/19750/	null	default						
+2	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=@guPlayerNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/37/51507/ https://kuruc.info/r/34/41429/	beagyazott_tartalom	src						
+2	<embed height=@STYLE src=@LINK style=@STYLE type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/1/9876/ https://kuruc.info/r/34/19750/	beagyazott_tartalom	src						
 2	<br clear=all>	0	0	0	https://kuruc.info/r/4/21838/ https://kuruc.info/r/1/9050/	null	default						
 2	<div class=flourish-embed flourish-map data-src=@LINK>	0	1	0	https://kuruc.info/r/2/235043/ https://kuruc.info/r/2/234758/	null	default						
 2	<param name=flashvars value=@NUM>	0	0	0	https://kuruc.info/r/2/52080/ https://kuruc.info/r/40/36269/	null	default						
@@ -269,20 +269,20 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 2	<param name=flashVars value=@LONG>	0	0	0	https://kuruc.info/r/34/55269/ https://kuruc.info/r/4/54916/	null	default						
 2	<embed allowfullscreen=true allowscriptaccess=always base=@LINK bgcolor= flashvars=@LONG height=@STYLE name=flashObj pluginspage=@LINK seamlesstabbing=false src=@LINK swliveconnect=true type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/55269/ https://kuruc.info/r/4/54916/	beagyazott_tartalom	src						
 2	<col>	0	0	0	https://kuruc.info/r/2/181951/	null	default						
-2	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/35/23154/ https://kuruc.info/r/4/85779/	beagyazott_tartalom	flashvars						
+2	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/35/23154/ https://kuruc.info/r/4/85779/	beagyazott_tartalom	src						
 2	<script async=true src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/2/141230/ https://kuruc.info/r/3/151973/	decompose	default						
 2	<span class=inline center style=@STYLE>	0	5	0	https://kuruc.info/r/26/20571/	null	default						
 2	<a data-cf-modified-7f9b0d038b9f5b80030b80a6-= href=@LINK onclick=@LONG target=@target>	0	1	0	https://kuruc.info/r/26/20571/	hivatkozas	href						
 2	<img alt=@alt class=image img_assist_custom height=@STYLE src=@LINK title=@title width=@STYLE>	0	0	0	https://kuruc.info/r/26/20571/	media_hivatkozas	src						
 2	<span class=caption style=@STYLE>	0	2	0	https://kuruc.info/r/26/20571/	null	default						
 2	<a class=abp-objtab visible ontop href=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/34/10332/ https://kuruc.info/r/34/19786/	hivatkozas	href						
-2	<embed bg= flashvars=@LINK height=@STYLE id=MultiBoxMedia name=MultiBoxMedia quality=high salign=@STYLE scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/39/36093/ https://kuruc.info/r/35/35439/	null	default						
-2	<object data=@LINK style=@STYLE type=application/x-shockwave-flash>	0	5	0	https://kuruc.info/r/34/23165/ https://kuruc.info/r/34/32888/	null	default						
-2	<embed flashvars=@LINK height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/1/16151/ https://kuruc.info/r/40/33930/	null	default						
-2	<embed align=@STYLE allowscriptaccess=sameDomain bg= height=@STYLE menu=false name=vidixplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/35/28989/ https://kuruc.info/r/2/25302/	null	default						
+2	<embed bg= flashvars=@LINK height=@STYLE id=MultiBoxMedia name=MultiBoxMedia quality=high salign=@STYLE scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/39/36093/ https://kuruc.info/r/35/35439/	beagyazott_tartalom	src						
+2	<object data=@LINK style=@STYLE type=application/x-shockwave-flash>	0	5	0	https://kuruc.info/r/34/23165/ https://kuruc.info/r/34/32888/	beagyazott_tartalom	data						
+2	<embed flashvars=@LINK height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/1/16151/ https://kuruc.info/r/40/33930/	beagyazott_tartalom	src						
+2	<embed align=@STYLE allowscriptaccess=sameDomain bg= height=@STYLE menu=false name=vidixplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/35/28989/ https://kuruc.info/r/2/25302/	beagyazott_tartalom	src						
 2	<iframe allowfullscreen= height=@STYLE id=lbry-iframe src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/2/230309/ https://kuruc.info/r/2/231788/	beagyazott_tartalom	src						
 2	<object classid=@LONG codebase=@LINK height=@STYLE id=embeddedplayer width=@STYLE>	0	9	0	https://kuruc.info/r/40/45195/ https://kuruc.info/r/40/39048/	null	default						
-2	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE id=embeddedplayer menu=false name=immersiveplayer play=false pluginspage=@LINK quality=high salign=@STYLE scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=window>	0	0	0	https://kuruc.info/r/40/39048/ https://kuruc.info/r/40/45195/	beagyazott_tartalom	flashvars						
+2	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE id=embeddedplayer menu=false name=immersiveplayer play=false pluginspage=@LINK quality=high salign=@STYLE scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=window>	0	0	0	https://kuruc.info/r/40/39048/ https://kuruc.info/r/40/45195/	beagyazott_tartalom	src						
 2	<div id=inlinedisq style=@STYLE>	0	1	0	https://kuruc.info/r/34/151855/ https://kuruc.info/r/2/165957/	null	default						
 2	<div id=disqus_thread>	0	0	0	https://kuruc.info/r/34/151855/ https://kuruc.info/r/2/165957/	null	default						
 2	<script charset=@NUM src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/4/182040/ https://kuruc.info/r/4/158762/	decompose	default						
@@ -299,14 +299,14 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 2	<param name=cachebusting value=true>	0	0	0	https://kuruc.info/r/6/80000/ https://kuruc.info/r/2/58380/	null	default						
 2	<iframe allowfullscreen=allowfullscreen frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/2/187901/ https://kuruc.info/r/2/201515/	beagyazott_tartalom	src						
 2	<iframe allowtransparency=true alt=@kiralyNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/106971/	beagyazott_tartalom	src						
-2	<object data=@LINK height=@STYLE id=@embeddedNUM type=application/x-shockwave-flash width=@STYLE>	0	7	0	https://kuruc.info/r/6/131203/ https://kuruc.info/r/34/128634/	null	default						
+2	<object data=@LINK height=@STYLE id=@embeddedNUM type=application/x-shockwave-flash width=@STYLE>	0	7	0	https://kuruc.info/r/6/131203/ https://kuruc.info/r/34/128634/	beagyazott_tartalom	data						
 2	<script id=@LONG src=@LINK title=lista type=@LONG>	0	0	0	https://kuruc.info/r/2/234685/ https://kuruc.info/r/2/234842/	decompose	default						
 2	<script id=@LONG src=@LINK title=minjelölteklista type=@LONG>	0	0	0	https://kuruc.info/r/2/234685/ https://kuruc.info/r/2/234842/	decompose	default						
 2	<iframe class=scribd_iframe_embed data-aspect-ratio=null data-auto-height=@STYLE frameborder=@NUM height=@STYLE scrolling=no src=@LINK title=@LONG width=@STYLE>	0	0	0	https://kuruc.info/r/2/190204/	beagyazott_tartalom	src						
 2	<a class=abp-objtab visible href=@LINK style=@STYLE title=@title>	0	0	0	https://kuruc.info/r/34/18045/	hivatkozas	href						
-2	<embed height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/34708/ https://kuruc.info/r/34/28614/	null	default						
+2	<embed height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/34708/ https://kuruc.info/r/34/28614/	beagyazott_tartalom	src						
 2	<iframe allowtransparency=true alt=@HamupipNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104268/	beagyazott_tartalom	src						
-2	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=flvplayer name=flvplayer quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/43782/	beagyazott_tartalom	flashvars						
+2	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=flvplayer name=flvplayer quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/43782/	beagyazott_tartalom	src						
 2	<script id=@LONG src=@LINK title=autópályadíjak type=@LONG>	0	0	0	https://kuruc.info/r/2/189854/	decompose	default						
 2	<param name=showVizHome value=no>	0	0	0	https://kuruc.info/r/4/156305/	null	default						
 2	<span class=@videoNUM>	0	0	0	https://kuruc.info/r/35/44091/	null	default						
@@ -327,7 +327,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<span class=inline inline-center>	0	2	0	https://kuruc.info/r/34/38139/	null	default						
 1	<img alt=@alt class=image image-_original height=@STYLE src=@LINK title=@title width=@STYLE>	0	0	0	https://kuruc.info/r/34/38139/	media_hivatkozas	src						
 1	<object align=@STYLE classid=@LONG codebase=@LINK height=@STYLE id=miniplayer width=@STYLE>	0	5	0	https://kuruc.info/r/34/38139/	null	default						
-1	<embed align=@STYLE allowscriptaccess=sameDomain bg= height=@STYLE name=miniplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/38139/	null	default						
+1	<embed align=@STYLE allowscriptaccess=sameDomain bg= height=@STYLE name=miniplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/38139/	beagyazott_tartalom	src						
 1	<img align=@STYLE alt=@alt hspace=@NUM src=@LINK vspace=@NUM>	0	0	0	https://kuruc.info/r/39/21786/	media_hivatkozas	src						
 1	<script id=@HPIuxAefAbmPqJaNUM src=@LINK title=Szabálysértési bírságok type=@LONG>	0	0	0	https://kuruc.info/r/2/157160/	decompose	default						
 1	<script id=@STYLE src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/6/151021/	decompose	default						
@@ -337,27 +337,27 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<param name=AutoStart value=False>	0	0	0	https://kuruc.info/r/34/46654/	null	default						
 1	<param name=uiMode value=none>	0	0	0	https://kuruc.info/r/34/46654/	null	default						
 1	<param name=PlayCount value=none>	0	0	0	https://kuruc.info/r/34/46654/	null	default						
-1	<embed autostart=false designtimesp=@NUM height=@STYLE id=mediaPlayer name=mediaPlayer pluginspage=@LINK src=@LINK stretchtofit=True type=@applicationNUM width=@STYLE>	0	0	0	https://kuruc.info/r/34/46654/	null	default						
+1	<embed autostart=false designtimesp=@NUM height=@STYLE id=mediaPlayer name=mediaPlayer pluginspage=@LINK src=@LINK stretchtofit=True type=@applicationNUM width=@STYLE>	0	0	0	https://kuruc.info/r/34/46654/	beagyazott_tartalom	src						
 1	<param name=quality value=best>	0	0	0	https://kuruc.info/r/34/48350/	null	default						
 1	<param name=scale value=showAll>	0	0	0	https://kuruc.info/r/34/48350/	null	default						
-1	<embed base=@LINK bgcolor= flashvars=@LINK height=@STYLE name=flashObj pluginspage=@LINK seamlesstabbing=false src=@LINK swliveconnect=true type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/4/112570/	null	default						
+1	<embed base=@LINK bgcolor= flashvars=@LINK height=@STYLE name=flashObj pluginspage=@LINK seamlesstabbing=false src=@LINK swliveconnect=true type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/4/112570/	beagyazott_tartalom	src						
 1	<a id=@NUM name=@NUM>	0	0	0	https://kuruc.info/r/35/35044/	hivatkozas	default						
 1	<iframe allowfullscreen=true frameborder=@NUM src=@LINK style=@STYLE title=@leépítésNUM>	0	0	0	https://kuruc.info/r/2/191234/	beagyazott_tartalom	src						
 1	<iframe allowfullscreen=true frameborder=@NUM src=@LINK style=@STYLE title=Hangfelvétel az egyezkedésről>	0	0	0	https://kuruc.info/r/2/205297/	beagyazott_tartalom	src						
 1	<object classid=@LONG codebase=@LINK height=@STYLE id=@TelegraphPlayerNUM width=@STYLE>	0	9	0	https://kuruc.info/r/4/84063/	null	default						
 1	<param name=FlashVars value=@STYLE>	0	0	0	https://kuruc.info/r/4/84063/	null	default						
-1	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@STYLE height=@STYLE menu=false name=@TelegraphPlayerNUM play=false pluginspage=@LINK quality=high salign=@STYLE scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=window>	0	0	0	https://kuruc.info/r/4/84063/	null	default						
+1	<embed allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@STYLE height=@STYLE menu=false name=@TelegraphPlayerNUM play=false pluginspage=@LINK quality=high salign=@STYLE scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=window>	0	0	0	https://kuruc.info/r/4/84063/	beagyazott_tartalom	src						
 1	<a name=Fidesz-kozlemeny>	0	0	0	https://kuruc.info/r/2/39234/	hivatkozas	default						
-1	<embed allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE pluginspage=@LINK scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=opaque>	0	0	0	https://kuruc.info/r/39/42365/	beagyazott_tartalom	default						
+1	<embed allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE pluginspage=@LINK scale=noscale src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=opaque>	0	0	0	https://kuruc.info/r/39/42365/	beagyazott_tartalom	src						
 1	<video class=videoContent controls=controls id=@videoPlayerNUM poster=@LONG preload=none style=@STYLE>	0	2	0	https://kuruc.info/r/6/184017/	null	default						
 1	<track kind=subtitles src=@LINK srclang=hu type=text/vtt>	0	0	0	https://kuruc.info/r/6/184017/	null	default						
 1	<iframe allow=encrypted-media allowfullscreen= class=embedVideoIframe frameborder=@NUM height=@STYLE id=embediframe src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/59/198115/	beagyazott_tartalom	src						
 1	<title>	0	0	0	https://kuruc.info/r/4/63381/	null	default						
 1	<iframe allowfullscreen=true frameborder=@NUM src=@LINK style=@STYLE title=Magyarok őrizetben Dominikán>	0	0	0	https://kuruc.info/r/4/206548/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=@késésNUM type=@LONG>	0	0	0	https://kuruc.info/r/2/195840/	decompose	default						
-1	<embed flashvars= id=VideoPlayback src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/34/23508/	null	default						
-1	<embed align=@STYLE allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/2/27666/	null	default						
-1	<embed allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/38943/	beagyazott_tartalom	flashvars						
+1	<embed flashvars= id=VideoPlayback src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/34/23508/	beagyazott_tartalom	src						
+1	<embed align=@STYLE allowscriptaccess=always height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/2/27666/	beagyazott_tartalom	src						
+1	<embed allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/38943/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=Eloszlás megyénként type=@LONG>	0	0	0	https://kuruc.info/r/2/210280/	decompose	default						
 1	<script id=@LONG src=@LINK title=Budapesti megoszlás type=@LONG>	0	0	0	https://kuruc.info/r/2/210280/	decompose	default						
 1	<script id=@LONG src=@LINK title=vakcinák hatékonysága type=@LONG>	0	0	0	https://kuruc.info/r/2/236569/	decompose	default						
@@ -370,9 +370,9 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<img align=@STYLE alt=@alt class=keretes height=@STYLE src=@LINK title=@title width=@STYLE>	0	0	0	https://kuruc.info/r/1/20091/	media_hivatkozas	src						
 1	<script id=@LONG src=@LINK title=@májusNUM type=@LONG>	0	0	0	https://kuruc.info/r/2/186910/	decompose	default						
 1	<iframe allowfullscreen=true frameborder=@NUM height=@STYLE id=videoplayer mozallowfullscreen=true scrolling=no src=@LINK title= European Council (Main feed) webkitallowfullscreen=true width=@STYLE>	0	0	0	https://kuruc.info/r/2/230171/	beagyazott_tartalom	src						
-1	<object data=@LINK height=@STYLE type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	3	0	https://kuruc.info/r/1/15282/	null	default						
+1	<object data=@LINK height=@STYLE type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	3	0	https://kuruc.info/r/1/15282/	beagyazott_tartalom	data						
 1	<object align=@STYLE class=strPlayer classid=@LONG codebase=@LINK height=@STYLE id=flashplayerObj width=@STYLE>	0	8	0	https://kuruc.info/r/4/18375/	null	default						
-1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=sameDomain bg= class=class= flashvars=@LONG height=@STYLE name=flashplayerObj pluginspage=@LINK quality=high src=@LINK strplayer= type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/4/18375/	null	default						
+1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=sameDomain bg= class=class= flashvars=@LONG height=@STYLE name=flashplayerObj pluginspage=@LINK quality=high src=@LINK strplayer= type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/4/18375/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=osszes type=@LONG>	0	0	0	https://kuruc.info/r/2/202408/	decompose	default						
 1	<script id=@LONG src=@LINK title=fizika type=@LONG>	0	0	0	https://kuruc.info/r/2/202408/	decompose	default						
 1	<script id=@LONG src=@LINK title=kémia type=@LONG>	0	0	0	https://kuruc.info/r/2/202408/	decompose	default						
@@ -390,7 +390,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<embed allowfullscreen=true allowscriptaccess=never flashvars=@gameIdNUM height=@STYLE name=@flashContainerNUM quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/22/67559/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=külföldiek type=@LONG>	0	0	0	https://kuruc.info/r/2/208955/	decompose	default						
 1	<script id=@LONG src=@LINK title=Pártlapítványok type=@LONG>	0	0	0	https://kuruc.info/r/2/216732/	decompose	default						
-1	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/2/90969/	beagyazott_tartalom	flashvars						
+1	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE pluginspage=@LINK src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/2/90969/	beagyazott_tartalom	src						
 1	<div class=swftools-wrapper swftools-swf>	0	12	0	https://kuruc.info/r/1/32699/	null	default						
 1	<div class=swftools>	0	11	0	https://kuruc.info/r/1/32699/	null	default						
 1	<param name=scale value=showall>	0	0	0	https://kuruc.info/r/1/32699/	null	default						
@@ -419,7 +419,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<div class=issuuembed data-configid=0/31740161 style=@STYLE>	0	0	0	https://kuruc.info/r/3/151973/	null	default						
 1	<video controls= height=@STYLE width=@STYLE>	0	2	0	https://kuruc.info/r/34/160137/	null	default						
 1	<source src=@LINK type=video/webm>	0	0	0	https://kuruc.info/r/34/160137/	null	default						
-1	<object data=@LINK height=@STYLE id=@NUM pluginspage=@LINK quality=high type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	8	0	https://kuruc.info/r/34/54771/	null	default						
+1	<object data=@LINK height=@STYLE id=@NUM pluginspage=@LINK quality=high type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	8	0	https://kuruc.info/r/34/54771/	beagyazott_tartalom	data						
 1	<param name=scaleMode value=showAll>	0	0	0	https://kuruc.info/r/34/54771/	null	default						
 1	<param name=FlashVars value=@LONG>	0	0	0	https://kuruc.info/r/34/54771/	null	default						
 1	<span class=allvideos>	0	10	0	https://kuruc.info/r/34/32888/	null	default						
@@ -427,7 +427,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<param name=bgcolor value=>	0	0	0	https://kuruc.info/r/34/32888/	null	default						
 1	<param name=autoplay value=false>	0	0	0	https://kuruc.info/r/34/32888/	null	default						
 1	<pre style=@STYLE>	0	3	0	https://kuruc.info/r/22/1903/	null	default						
-1	<embed height=@STYLE pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/22/47108/	null	default						
+1	<embed height=@STYLE pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/22/47108/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=Pártok támogatottsága type=@LONG>	0	0	0	https://kuruc.info/r/2/182850/	decompose	default						
 1	<iframe allowfullscreen= height=@STYLE scrolling=no seamless=seamless src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/4/200312/	beagyazott_tartalom	src						
 1	<iframe allowfullscreen=allowfullscreen mozallowfullscreen=mozallowfullscreen poster=@LINK src=@LINK style=@STYLE webkitallowfullscreen=webkitallowfullscreen>	0	0	0	https://kuruc.info/r/6/236998/	beagyazott_tartalom	src						
@@ -439,7 +439,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<script id=@LONG src=@LINK title=koronavírus-fertőzöttség type=@LONG>	0	0	0	https://kuruc.info/r/2/235285/	decompose	default						
 1	<script id=@LONG src=@LINK title=oltási hajlandóság type=@LONG>	0	0	0	https://kuruc.info/r/2/235285/	decompose	default						
 1	<object classid=@LONG height=@STYLE id=@playerNUM width=@STYLE>	0	5	0	https://kuruc.info/r/40/36269/	null	default						
-1	<embed allowfullscreen=true allowscriptaccess=always flashvars=@NUM height=@STYLE name=@playerNUM quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/40/36269/	null	default						
+1	<embed allowfullscreen=true allowscriptaccess=always flashvars=@NUM height=@STYLE name=@playerNUM quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/40/36269/	beagyazott_tartalom	src						
 1	<object classid=@LONG height=@STYLE id=player width=@STYLE>	0	10	0	https://kuruc.info/r/2/50843/	null	default						
 1	<param name=showControls value=true>	0	0	0	https://kuruc.info/r/2/50843/	null	default						
 1	<param name=showStatusbar value=true>	0	0	0	https://kuruc.info/r/2/50843/	null	default						
@@ -459,11 +459,11 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<script id=@LONG src=@LINK title=tao évente type=@LONG>	0	0	0	https://kuruc.info/r/2/193646/	decompose	default						
 1	<object height=@STYLE id=otvPlayer width=@STYLE>	0	5	0	https://kuruc.info/r/4/64396/	null	default						
 1	<embed allowfullscreen=true allownetworking=all allowscriptaccess=always height=@STYLE id=otvPlayer src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/4/64396/	beagyazott_tartalom	src						
-1	<object data=@LINK height=@STYLE id=player type=application/x-shockwave-flash width=@STYLE>	0	7	0	https://kuruc.info/r/34/70357/	null	default						
+1	<object data=@LINK height=@STYLE id=player type=application/x-shockwave-flash width=@STYLE>	0	7	0	https://kuruc.info/r/34/70357/	beagyazott_tartalom	data						
 1	<iframe allowfullscreen=allowfullscreen frameborder=@NUM scrolling=no src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/6/206002/	beagyazott_tartalom	src						
 1	<iframe allowfullscreen=true frameborder=@NUM src=@LINK style=@STYLE title=Jobbik: ez nem pártszakadás>	0	0	0	https://kuruc.info/r/7/186794/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=minimálbéremelés type=@LONG>	0	0	0	https://kuruc.info/r/2/192767/	decompose	default						
-1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=guPlayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/2/35813/	null	default						
+1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=guPlayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/2/35813/	beagyazott_tartalom	src						
 1	<param name=AllowFullscreen value=true>	0	0	0	https://kuruc.info/r/34/23165/	null	default						
 1	<iframe allowfullscreen= frameborder=@NUM height=@STYLE marginheight=@STYLE marginwidth=@STYLE mozallowfullscreen= scrolling=no src=@LINK style=@STYLE webkitallowfullscreen= width=@STYLE>	0	0	0	https://kuruc.info/r/1/114388/	beagyazott_tartalom	src						
 1	<iframe src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/4/176985/	beagyazott_tartalom	src						
@@ -480,9 +480,9 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<iframe allowtransparency=true alt=@mezeinyNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/63724/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@pelikanmadarNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/63724/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@pulikutyaNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/63724/	beagyazott_tartalom	src						
-1	<embed allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/34/41398/	beagyazott_tartalom	flashvars						
+1	<embed allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/34/41398/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=@statisztikaNUM type=@LONG>	0	0	0	https://kuruc.info/r/2/217692/	decompose	default						
-1	<object data=@LINK height=@STYLE id=video type=application/x-shockwave-flash width=@STYLE>	0	4	0	https://kuruc.info/r/34/79752/	null	default						
+1	<object data=@LINK height=@STYLE id=video type=application/x-shockwave-flash width=@STYLE>	0	4	0	https://kuruc.info/r/34/79752/	beagyazott_tartalom	data						
 1	<script id=@LONG src=@LINK title=Pártok hirdetései a Facebookon type=@LONG>	0	0	0	https://kuruc.info/r/2/198283/	decompose	default						
 1	<script id=@LONG src=@LINK title=szénelnyelés type=@LONG>	0	0	0	https://kuruc.info/r/6/201972/	decompose	default						
 1	<v:shapetype coordsize=@STYLE filled=f id=@NUM o:preferrelative=t o:spt=@NUM path=@NUM stroked=f>	0	17	0	https://kuruc.info/r/1/164/	null	default						
@@ -495,7 +495,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<img alt=@alt height=@STYLE id=imceimage-field_cik_front_kep- src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/2/75547/	media_hivatkozas	src						
 1	<br kuruc= tisztelt=>	0	0	0	https://kuruc.info/r/4/7737/	null	default						
 1	<script id=@LONG src=@LINK title=The Europe of ISIS — POLITICO type=@LONG>	0	0	0	https://kuruc.info/r/6/151271/	decompose	default						
-1	<embed allowscriptaccess=always height=@STYLE src=@LINK width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/6/26870/	null	default						
+1	<embed allowscriptaccess=always height=@STYLE src=@LINK width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/6/26870/	beagyazott_tartalom	src						
 1	<iframe class=scribd_iframe_embed data-aspect-ratio= data-auto-height=@STYLE frameborder=@NUM height=@STYLE id=@NUM scrolling=no src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/35/100977/	beagyazott_tartalom	src						
 1	<script id=@menedekkerokdubliniNUM src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/2/146537/	decompose	default						
 1	<script id=@menekulttaborokNUM src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/2/146537/	decompose	default						
@@ -505,23 +505,23 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<iframe class=scribd_iframe_embed data-aspect-ratio=0.7074509803921568 data-auto-height=@STYLE frameborder=@NUM height=@STYLE id=@NUM scrolling=no src=@LINK title=@LONG width=@STYLE>	0	0	0	https://kuruc.info/r/2/184316/	beagyazott_tartalom	src						
 1	<div class=addthis_toolbox alcikklista style=@STYLE>	0	0	0	https://kuruc.info/r/22/59540/	null	default						
 1	<iframe allowfullscreen=true frameborder=@NUM src=@LINK style=@STYLE title=Csak a jobbikos nem támogatta>	0	0	0	https://kuruc.info/r/2/180602/	beagyazott_tartalom	src						
-1	<param name=flashVars value=@LINK>	0	0	0	https://kuruc.info/r/6/115176/	beagyazott_tartalom	value						
+1	<param name=flashVars value=@LINK>	0	0	0	https://kuruc.info/r/6/115176/	null	default						
 1	<embed allowfullscreen=true allowscriptaccess=always base=@LINK bgcolor= flashvars=@LINK height=@STYLE name=flashObj pluginspage=@LINK seamlesstabbing=false src=@LINK swliveconnect=true type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/6/115176/	beagyazott_tartalom	src						
 1	<td bgcolor=>	0	2	0	https://kuruc.info/r/34/62120/	oszlop	default						
 1	<iframe allowfullscreen= frameborder=@NUM height=@STYLE mozallowfullscreen=true src=@LINK webkitallowfullscreen=true width=@STYLE>	0	0	0	https://kuruc.info/r/6/235430/	beagyazott_tartalom	src						
 1	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LONG height=@STYLE quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/22/60052/	beagyazott_tartalom	src						
-1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE name=rtlklub_player pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/6/73448/	beagyazott_tartalom	flashvars						
+1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bgcolor= flashvars=@LINK height=@STYLE name=rtlklub_player pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/6/73448/	beagyazott_tartalom	src						
 1	<object classid=@LONG codebase=@LINK height=@STYLE name=flvplayer width=@STYLE>	0	6	0	https://kuruc.info/r/35/32669/	null	default						
 1	<param name=name value=flvplayer>	0	0	0	https://kuruc.info/r/35/32669/	null	default						
 1	<object data=@LINK height=@STYLE id=flashcontent_api type=application/x-shockwave-flash width=@STYLE>	0	7	0	https://kuruc.info/r/2/58380/	null	default						
-1	<embed base=@LINK bg= flashvars=@LINK height=@STYLE name=flashObj pluginspage=@LINK seamlesstabbing=false src=@LINK swliveconnect=true type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/34246/	null	default						
+1	<embed base=@LINK bg= flashvars=@LINK height=@STYLE name=flashObj pluginspage=@LINK seamlesstabbing=false src=@LINK swliveconnect=true type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/34246/	beagyazott_tartalom	src						
 1	<script id=@valasztasNUM src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/2/141902/	decompose	default						
 1	<iframe id=@videoplayerNUM src=@LINK style=@STYLE>	0	0	0	https://kuruc.info/r/34/91967/	beagyazott_tartalom	src						
 1	<iframe allowfullscreen= height=@STYLE mozallowfullscreen= src=@LINK webkitallowfullscreen= width=@STYLE>	0	0	0	https://kuruc.info/r/6/122252/	beagyazott_tartalom	src						
 1	<iframe bgcolor= border=@NUM frameborder=no height=@STYLE marginheight=@STYLE marginwidth=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/6/86773/	beagyazott_tartalom	src						
 1	<iframe height=@STYLE p= scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/64/218476/	beagyazott_tartalom	src						
 1	<span id=@lbLeadNUM>	0	1	0	https://kuruc.info/r/4/213100/	null	default						
-1	<embed flashvars=@LINK height=@STYLE loop=false pluginspage=@LINK scale=exactfit src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/4/36135/	null	default						
+1	<embed flashvars=@LINK height=@STYLE loop=false pluginspage=@LINK scale=exactfit src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/4/36135/	beagyazott_tartalom	src						
 1	<script id=@infogramNUM src=@LINK title=forrás: Medián type=@LONG>	0	0	0	https://kuruc.info/r/2/155846/	decompose	default						
 1	<img align=@STYLE alt=@alt height=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/6/4888/	media_hivatkozas	src						
 1	<iframe allowfullscreen= frameborder=no height=@STYLE marginheight=@STYLE marginwidth=@STYLE mozallowfullscreen= noresize=@STYLE scrolling=no src=@LINK webkitallowfullscreen= width=@STYLE>	0	0	0	https://kuruc.info/r/4/174816/	beagyazott_tartalom	src						
@@ -538,7 +538,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<iframe allowtransparency=true alt=@SzuszaNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/106971/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@TancikaNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/106971/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@farkasNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/106971/	beagyazott_tartalom	src						
-1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=@guPlayeraNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/37489/	null	default						
+1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@autostartNUM height=@STYLE name=@guPlayeraNUM pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/34/37489/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@selyemrNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104267/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@ndisznNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104267/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@kalapNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104267/	beagyazott_tartalom	src						
@@ -557,7 +557,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<iframe allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no seamless=seamless src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/10/116384/	beagyazott_tartalom	src						
 1	<center style=@STYLE>	0	4	0	https://kuruc.info/r/34/18045/	null	default						
 1	<script id=@LONG src=@LINK title=@gazdaglistaNUM type=@LONG>	0	0	0	https://kuruc.info/r/2/237942/	decompose	default						
-1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=polyshowEmbed name=polyshowEmbed pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/4/99467/	beagyazott_tartalom	falshvars						
+1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=polyshowEmbed name=polyshowEmbed pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/4/99467/	beagyazott_tartalom	src						
 1	<param name=menu value=falsae>	0	0	0	https://kuruc.info/r/6/20701/	null	default						
 1	<embed allowfullscreen=true allowscriptaccess=always bg= classid=@LONG codebase=@LINK height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=window>	0	0	0	https://kuruc.info/r/4/52121/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@gedetlenNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104268/	beagyazott_tartalom	src						
@@ -567,8 +567,8 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<iframe allowtransparency=true alt=@CerceruskaNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104268/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@EgyszemNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104268/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@csapasraNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/104268/	beagyazott_tartalom	src						
-1	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=flvplayer name=flvplayer quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/43742/	beagyazott_tartalom	flashvars						
-1	<object data=@LINK height=@STYLE type=application/x-shockwave-flash width=@STYLE wmode=>	0	3	0	https://kuruc.info/r/34/43742/	null	default						
+1	<embed allowfullscreen=true allowscriptaccess=always flashvars=@LINK height=@STYLE id=flvplayer name=flvplayer quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/34/43742/	beagyazott_tartalom	src						
+1	<object data=@LINK height=@STYLE type=application/x-shockwave-flash width=@STYLE wmode=>	0	3	0	https://kuruc.info/r/34/43742/	beagyazott_tartalom	data						
 1	<param name=wmode value=true>	0	0	0	https://kuruc.info/r/34/43742/	null	default						
 1	<cnter>	0	1	0	https://kuruc.info/r/35/42420/	null	default						
 1	<iframe allowfullscreen= embed= frameborder=@NUM height=@STYLE kugcbpi04qu= width=@STYLE www.youtube.com=>	0	0	0	https://kuruc.info/r/34/78840/	beagyazott_tartalom	default						
@@ -581,17 +581,17 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<source src=@LINK type=audio/mpeg>	0	0	0	https://kuruc.info/r/2/235399/	null	default						
 1	<div class=fb-comment-embed data-href=@LINK data-include-parent=false data-width=@STYLE>	0	0	0	https://kuruc.info/r/6/182429/	null	default						
 1	<script id=@LONG src=@LINK title=rendőrök type=@LONG>	0	0	0	https://kuruc.info/r/2/200254/	decompose	default						
-1	<embed bg= height=@STYLE pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/22/39645/	null	default						
+1	<embed bg= height=@STYLE pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE wmode=transparent>	0	0	0	https://kuruc.info/r/22/39645/	beagyazott_tartalom	src						
 1	<div class=fb-video data-allowfullscreen=true data-href=@LONG>	0	4	0	https://kuruc.info/r/2/142383/	null	default						
 1	<fb:like-box header=false href=@LINK show_faces=@STYLE stream=false width=@STYLE>	0	0	0	https://kuruc.info/r/50/76720/	null	default						
-1	<embed allowscriptaccess=sameDomain bgcolor= height=@STYLE id=vidilife_movie loop=false name=vidilife_movie play=true pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/22/36153/	null	default						
+1	<embed allowscriptaccess=sameDomain bgcolor= height=@STYLE id=vidilife_movie loop=false name=vidilife_movie play=true pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/22/36153/	beagyazott_tartalom	src						
 1	<div class=flourish-embed flourish-map data-src=@LINK data-url=@LINK>	0	1	0	https://kuruc.info/r/2/215125/	null	default						
-1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE name=rtlklub_player pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/34776/	beagyazott_tartalom	flashvars						
+1	<embed align=@STYLE allowfullscreen=true allowscriptaccess=always bg= flashvars=@LINK height=@STYLE name=rtlklub_player pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/26/34776/	beagyazott_tartalom	src						
 1	<iframe allowfullscreen= frameborder=no framespacing=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/35/186818/	beagyazott_tartalom	src						
 1	<script id=@LONG src=@LINK title=Várakozók számának változása type=@LONG>	0	0	0	https://kuruc.info/r/2/193782/	decompose	default						
 1	<iframe allowtransparency=true frameborder=@NUM height=@STYLE scrolling=no src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/4/122930/	beagyazott_tartalom	src						
 1	<script async= data-telegram-post=@breakingmashNUM data-width=@STYLE src=@LINK type=@LONG>	0	0	0	https://kuruc.info/r/4/206944/	decompose	default						
-1	<embed align=@STYLE allowscriptaccess=sameDomain bg= devicefont=true height=@STYLE name=flvplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/22/39393/	null	default						
+1	<embed align=@STYLE allowscriptaccess=sameDomain bg= devicefont=true height=@STYLE name=flvplayer pluginspage=@LINK quality=high src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/22/39393/	beagyazott_tartalom	src						
 1	<object class=tableauViz height=@STYLE style=@STYLE width=@STYLE>	0	13	0	https://kuruc.info/r/4/156305/	null	default						
 1	<param name=toolbar value=yes>	0	0	0	https://kuruc.info/r/4/156305/	null	default						
 1	<param name=showTabs value=y>	0	0	0	https://kuruc.info/r/4/156305/	null	default						
@@ -608,7 +608,7 @@ frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_
 1	<iframe allowtransparency=true alt=@kekfestoNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/60021/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@kerekNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/60021/	beagyazott_tartalom	src						
 1	<iframe allowtransparency=true alt=@aranyhajuNUM frameborder=@NUM height=@STYLE scrolling=no src=@LINK style=@STYLE width=@STYLE>	0	0	0	https://kuruc.info/r/34/60021/	beagyazott_tartalom	src						
-1	<embed border=@NUM height=@STYLE seekable=@NUM src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/35/28061/	null	default						
+1	<embed border=@NUM height=@STYLE seekable=@NUM src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/35/28061/	beagyazott_tartalom	src						
 1	<object classid=@LONG height=@STYLE id=@NUM width=@STYLE>	0	6	0	https://kuruc.info/r/34/113727/	null	default						
 1	<iframe allowfullscreen=yes frameborder=@NUM height=@STYLE marginheight=@STYLE marginwidth=@STYLE src=@LINK width=@STYLE>	0	0	0	https://kuruc.info/r/50/180633/	beagyazott_tartalom	src						
 1	<iframe allowfullscreen=true bgcolor= height=@STYLE src=@LINK type=application/x-shockwave-flash width=@STYLE>	0	0	0	https://kuruc.info/r/58/197139/	beagyazott_tartalom	src						

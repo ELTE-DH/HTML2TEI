@@ -2,13 +2,13 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
+from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://kuruc.info'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'cikktext gallery', 'itemprop': 'articleBody'}),
-                            ]
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'cikktext gallery', 'itemprop': 'articleBody'})]
 
 HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
                'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
@@ -54,7 +54,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 split_t = tag_text.split(' ')
                 if 1 < len(split_t) <= 3 and ('(' or ')') not in tag_text and all([w[0].isupper() for w in split_t]):
                     data['sch:author'] = [tag_text]
-                    data['originalAuthorString'] = possible_author_tag.get_text(strip=True)
+                    data['originalAuthorString'] = [possible_author_tag.get_text(strip=True)]
                 else:
                     tei_logger.log('DEBUG', f'{url}: AUTHOR TAG EMPTY!')
             else:
@@ -97,21 +97,10 @@ def excluded_tags_spec(tag):
 
 
 BLOCK_RULES_SPEC = {}
-BIGRAM_RULES_SPEC = {'doboz': {('doboz', 'det_by_any_desc'): ('doboz', 'to_unwrap')}}  
-# a spec-et lehet kéne kezelni - amikor <dic class=cikktext> direkt
-# leszármazottja akkor lehet címsornak
-# és ha <b> tag van cikktexben egyedül akkor lehet vez_bekezd
+BIGRAM_RULES_SPEC = {'doboz': {('doboz', 'det_by_any_desc'): ('doboz', 'to_unwrap')}}
 
-# néhol csak ömlesztve van a szöveg sé <br>-ek választják el a paragrafusokat
-# lásd: https://kuruc.info/r/9/219243/   https://kuruc.info/r/1/524/
 
-# Egy ilyet lehet akárhogy feldolgozni? https://kuruc.info/r/1/18437
-
-# hogy viselkedik a beagyazott tartalom a social media-val ? https://kuruc.info/r/2/150191
-
-# <span class=cikklead> ebben nem lehet megbízni! 
-
-LINKS_SPEC = BASIC_LINK_ATTRS | {'param', 'embed'}
+LINKS_SPEC = BASIC_LINK_ATTRS | {'param', 'embed', 'object'}
 DECOMP = []
 MEDIA_LIST = []
 
@@ -122,11 +111,11 @@ def decompose_spec(article_dec):
 
 
 BLACKLIST_SPEC = []
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
-# http://images.multiply.com/multiply/multv.swf
-# http://files.indavideo.hu/player/gup.swf
-# http://files.indavideo.hu/player/gup.swf
-# http://player.ordienetworks.com/flash/fodplayer.swf
+
+error_urls = [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
+                                            'kurucinfo_bad_url_ref_list.txt')).readlines()]
+
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(u) for u in error_urls]))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
