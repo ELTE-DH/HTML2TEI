@@ -44,6 +44,7 @@ def correct_and_store_link(tag, link, portal_url_prefix, portal_url_filter, extr
           - repairable
           - unrepairable
     """
+    link = link.strip()
     link_original = link
     tag.attrs.clear()
     link_new = link_corrector(link, portal_url_prefix, portal_url_filter, extra_key, article_url)
