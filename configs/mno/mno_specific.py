@@ -14,7 +14,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
     article_root = bs.find('article')
-    if article_root is not None:
+    if article_root is None:
+        return None
+    else:
         date_tag = bs.find('span', class_='en-article-dates-main')
         if date_tag is not None:
             parsed_date = parse_date(date_tag.text.strip(), '%Y. %B %d. %A %H:%M')
@@ -66,8 +68,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         else:
             tei_logger.log('DEBUG', f'{url}  KEYWORDS NOT FOUND!')
         return data
-    else:
-        return None
 
 
 def excluded_tags_spec(tag):
@@ -102,13 +102,14 @@ def decompose_spec(article_dec):
 
 
 BLACKLIST_SPEC = [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
-                                                           'mno_BLACKLIST.txt')).readlines()] \
+                                                           'mno_BLACKLIST_bad_encoding.txt')).readlines()] \
                  + ['https://www.magyaridok.hu/belfold/kinek-a-kulturalis-diktaturaja-szakacs-arpad-cikksorozata'
                     '-3287285/',
                      'https://www.magyaridok.hu/kulfold/groteszk-lehallgatasi-botrany-parizsban-2815667/',
-                     'https://www.magyaridok.hu/sport/futball-eb/program-junius-10-tol-julius-10-ig-736987/'] + \
+                     'https://www.magyaridok.hu/sport/futball-eb/program-junius-10-tol-julius-10-ig-736987/',
+                    'https://magyarnemzet.hu/archivum-archivum/2004/02/falinaptar-online-rendeles'] + \
                  [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
-                                                           'mno_isempty.txt')).readlines()]
+                                                           'mno_BLACKLIST_empty.txt')).readlines()]
 
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
