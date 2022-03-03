@@ -14,7 +14,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
     article_root = bs.find('article')
-    if article_root is not None:
+    if article_root is None:
+        return None
+    else:
         date_tag = bs.find('span', class_='en-article-dates-main')
         if date_tag is not None:
             parsed_date = parse_date(date_tag.text.strip(), '%Y. %B %d. %A %H:%M')
@@ -66,8 +68,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         else:
             tei_logger.log('DEBUG', f'{url}  KEYWORDS NOT FOUND!')
         return data
-    else:
-        return None
 
 
 def excluded_tags_spec(tag):
