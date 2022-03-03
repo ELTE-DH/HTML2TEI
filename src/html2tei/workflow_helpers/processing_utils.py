@@ -66,7 +66,8 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
             article.append((article_url, warc_response_datetime, warc_id, raw_html))
 
             # Generate next page URL
-            article_url = next_page_of_article_fun(raw_html)
+            if article_url is not None:
+                article_url = next_page_of_article_fun(raw_html)
 
             if article_url is None or article_url in blacklist:
                 article_url = None
