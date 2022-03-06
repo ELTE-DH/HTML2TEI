@@ -49,7 +49,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if title is not None:
             data['sch:name'] = title.text.strip()
         else:
-            tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
+            tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
         authors_list = raw_meta.find(class_='byline__authors')
         if authors_list is not None:
             authors_list = [a.text.strip() for a in authors_list.find_all('a')]
@@ -76,7 +76,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         # https://444.hu/2015/11/16/orban-viktor-europat-megtamadtak-elo
         report_dates = bs.find_all('a', class_='report__date')
         if report_dates:
-            if report_dates[0].find('div', class_='report__time'): # 2016. 06. 14., kedd
+            if report_dates[0].find('div', class_='report__time'):  # 2016. 06. 14., kedd
                 for one_date_tag in report_dates:
                     datetime_str = ''
                     for d in one_date_tag.contents:
@@ -84,7 +84,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         if len(d_str) == 5:
                             datetime_str = d_str
                         elif len(d_str) > 5:
-                            datetime_str = d_str[0:13]+' '+datetime_str
+                            datetime_str = f'{d_str[0:13]} {datetime_str}'
                     parsed_date = parse_date(datetime_str, '%Y. %m. %d. %H:%M')
                     if parsed_date:
                         report_dates_cont.append(parsed_date)
@@ -114,7 +114,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         title = bs.find('h1', {'class': 'livestream__title'})
         if title is not None:
             data['sch:name'] = title.text.strip()
-
+        else:
+            tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
     if len(report_dates_cont) > 0:
         data['sch:datePublished'] = min(report_dates_cont)
         data['sch:dateModified'] = max(report_dates_cont)
@@ -205,7 +206,6 @@ def decompose_spec(article_dec):
             print(h2)
             a.decompose()
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
-
     return article_dec
 
 
