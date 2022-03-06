@@ -5,18 +5,15 @@ import json
 from bs4 import BeautifulSoup
 import re
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
-from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, \
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://budapestbeacon.com'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'id': 'primary'})]  # [(('main',), {'class': 'post-main'})]
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'id': 'primary'})]
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
-    # <span class="posted-on">8:47, 12.04.2017</span>
-    # <span class="byline"> - Lestyánszky Ádám</span>
-    # <p class="posted-on-line">
-
     data = tei_defaultdict()
     data['sch:url'] = url
     if bs.html.attrs['lang'] == 'en-US':
@@ -106,7 +103,6 @@ def decompose_spec(article_dec):
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     for f in reversed(article_dec.find_all()):
         if 'Amennyiben tetszett a cikkünk' in f.text:
-            print(f)
             f.decompose()
             break
     return article_dec
