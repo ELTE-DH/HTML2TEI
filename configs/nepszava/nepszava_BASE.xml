@@ -58,13 +58,13 @@
                     <title></title>
                     <publisher><orgName>XXI. század Média Kft.</orgName>
                         <placeName>Kiadó és szerkesztőség: 1191 Budapest, Vak Bottyán u. 75/A-C.</placeName>
-                        <ref type="url" source="https://nepszava.hu/oldal/impresszum/">https://doi.org/10.5281/zenodo.</ref>
+                        <ref type="url" source="https://nepszava.hu/oldal/impresszum/">https://doi.org/10.5281/zenodo.6327180</ref>
                         <date when="2021-09-13"/>
                     </publisher>
                     <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
                     <availability><p>Copyright (©) 2022 – XXI. század Média Kft.</p>
-                        <p><ref type="url" source="https://nepszava.hu/oldal/impresszum/">https://doi.org/</ref>
+                        <p><ref type="url" source="https://nepszava.hu/oldal/impresszum/">https://doi.org/10.5281/zenodo.6327180</ref>
                             <date when="2021-09-13"/></p>
                     </availability>
                     <date></date>
@@ -85,11 +85,11 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: Zenodo link -->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6327180">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2021-10-13 17:20:25/2021-10-16 12:55:35</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ZENODO -->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6327180"/>
+                    <sch:identifier>[{'checksum': '17e1d28046468dd8e42116e7062861c5', 'filename': 'hashsums', 'filesize': 6003, 'id': 'ba609bee-6c47-4b64-9fee-f13d59229204', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/hashsums', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/ba609bee-6c47-4b64-9fee-f13d59229204'}}, {'checksum': 'ac7809903322bda6339c31950efd4dac', 'filename': 'log.log', 'filesize': 17204879, 'id': 'd0481af5-3516-47e9-a50a-35c9df9c096e', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/d0481af5-3516-47e9-a50a-35c9df9c096e'}}, {'checksum': 'a5d87a3ee2975d8dd1888ecd7137115a', 'filename': 'logs.zip', 'filesize': 6916693, 'id': '3dd472f9-26d5-41ab-8713-96581244f3b8', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/3dd472f9-26d5-41ab-8713-96581244f3b8'}}, {'checksum': '2b02d101a71c89699ef95969b3d75e59', 'filename': 'nepszava-archive_new.warc.gz', 'filesize': 72685409, 'id': 'f0f69a95-8bc5-44f5-9b18-84e56aa2383b', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/nepszava-archive_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/f0f69a95-8bc5-44f5-9b18-84e56aa2383b'}}, {'checksum': '0098bd012f3a7da1d1cbfd22eb12f206', 'filename': 'nepszava-articles_new.warc.gz', 'filesize': 691915808, 'id': 'f79fe481-c904-42a1-ae28-7d2c872d32e1', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/nepszava-articles_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/f79fe481-c904-42a1-ae28-7d2c872d32e1'}}, {'checksum': '739e2b78e7fc77d09f84312b26e35201', 'filename': 'nepszava_rights_statements.warc.gz', 'filesize': 30841, 'id': 'f712070b-2f5d-4ac9-894d-2214476b0658', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/nepszava_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/f712070b-2f5d-4ac9-894d-2214476b0658'}}, {'checksum': '565330926b28223a394ef0bb4adfe4f9', 'filename': 'script.sh', 'filesize': 419, 'id': 'd6e873a8-f81b-4c88-a949-78552a93659e', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/d6e873a8-f81b-4c88-a949-78552a93659e'}}]</sch:identifier>
                     <sch:identifier>9d184181-3cf0-45aa-9ff2-54decaf902a8</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
