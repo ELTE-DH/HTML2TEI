@@ -58,16 +58,16 @@
                     <title></title>
                     <publisher><orgName>Real Reporting Foundation</orgName>
                         <placeName>1377-C Spencer Avenue, Lancaster, PA 17603, USA</placeName>
-                        <ref type="url" source="https://hu.budapestbeacon.com/impresszum/">https://doi.org/</ref>
-                        <ref type="url" source="https://budapestbeacon.com/contact-us/">https://doi.org/</ref>
+                        <ref type="url" source="https://hu.budapestbeacon.com/impresszum/">https://doi.org/10.5281/zenodo.6327438</ref>
+                        <ref type="url" source="https://budapestbeacon.com/contact-us/">https://doi.org/10.5281/zenodo.6327438</ref>
                         <date when="2020-01-17"/>
                     </publisher>
                     <pubPlace>Lancaster <ref type="url">https://www.geonames.org/5197079</ref>
                     </pubPlace>
                     <availability><p>A méltányos használatra vonatkozó megjegyzéssel összhangban a honlapon található bármely anyag felhasználható mások által „méltányos használatnak” tekintendő módon. Arra ösztönözzük olvasóinkat, hogy osszák meg és tegyék ismét közzé a Budapest Beacon honlapján található anyagokat, ugyanakkor azt kérjük, hogy ilyen esetben megfelelő módon tüntessék fel a szerzőt.
                         Amennyiben a méltányos használatra vonatkozó előírásokon túl is szeretne a honlapon található, szerzői joggal védett anyagokat felhasználni, úgy ehhez feltétlenül szükséges a szerzői jog tulajdonosának hozzájárulását megszerezni.</p>
-                        <p><ref type="url" source="https://hu.budapestbeacon.com/felhasznalasi-feltetelek/">https://doi.org/</ref>
-                            <ref type="url" source="https://hu.budapestbeacon.com/us/">https://doi.org/</ref>
+                        <p><ref type="url" source="https://hu.budapestbeacon.com/felhasznalasi-feltetelek/">https://doi.org/10.5281/zenodo.6327438</ref>
+                            <ref type="url" source="https://hu.budapestbeacon.com/us/">hhttps://doi.org/10.5281/zenodo.6327438</ref>
                             <date when="2020-01-17"/></p>
                     </availability>
                     <date></date>
@@ -88,11 +88,11 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--https://doi.org/10.5281/-->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6327438">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2020-11-27T20:55:58/2020-11-28 21:06:14</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!--https://doi.org/10.5281/-->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6327438"/>
+                    <sch:identifier>[{'checksum': '8724e50056a59811a44f69136ece340d', 'filename': 'bbeacon-archive_new2.warc.gz', 'filesize': 38286196, 'id': '2a6eb0c8-f18e-4965-847d-0091d9e4b2d1', 'links': {'download': 'https://zenodo.org/api/files/d26127c3-20d0-4243-888f-4b7adbc4506b/bbeacon-archive_new2.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327438/files/2a6eb0c8-f18e-4965-847d-0091d9e4b2d1'}}, {'checksum': 'df10f3620ce8cff3e980b363be556202', 'filename': 'bbeacon-articles_new2.warc.gz', 'filesize': 585071399, 'id': '593e68ea-0aaf-4e4e-ad6e-0e7ed7b1e353', 'links': {'download': 'https://zenodo.org/api/files/d26127c3-20d0-4243-888f-4b7adbc4506b/bbeacon-articles_new2.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327438/files/593e68ea-0aaf-4e4e-ad6e-0e7ed7b1e353'}}, {'checksum': '858ecaaeabf9df9d03419be076dc4c8a', 'filename': 'bbeacon_rights_statements.warc.gz', 'filesize': 128556, 'id': '91d273f7-b34c-4c1b-b349-65293bf5dbb3', 'links': {'download': 'https://zenodo.org/api/files/d26127c3-20d0-4243-888f-4b7adbc4506b/bbeacon_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327438/files/91d273f7-b34c-4c1b-b349-65293bf5dbb3'}}, {'checksum': '36f729314b04db71adcf663976870781', 'filename': 'hashsums', 'filesize': 6002, 'id': '7998f43c-4f68-4604-92d6-5b7affca3dca', 'links': {'download': 'https://zenodo.org/api/files/d26127c3-20d0-4243-888f-4b7adbc4506b/hashsums', 'self': 'https://zenodo.org/api/deposit/depositions/6327438/files/7998f43c-4f68-4604-92d6-5b7affca3dca'}}, {'checksum': 'fa7f1f0f376c9db7b6e59726d1a454f5', 'filename': 'log.log', 'filesize': 138171, 'id': 'bfad85ae-59a8-4341-9dba-09ebb02ed4d5', 'links': {'download': 'https://zenodo.org/api/files/d26127c3-20d0-4243-888f-4b7adbc4506b/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/6327438/files/bfad85ae-59a8-4341-9dba-09ebb02ed4d5'}}, {'checksum': '0dafbcf114b60dc79bde076beb7697c7', 'filename': 'logs.zip', 'filesize': 483578, 'id': '3b78ec89-7ead-4781-9344-9b16f9e63f5d', 'links': {'download': 'https://zenodo.org/api/files/d26127c3-20d0-4243-888f-4b7adbc4506b/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/6327438/files/3b78ec89-7ead-4781-9344-9b16f9e63f5d'}}, {'checksum': '5962e50a62af6f115fe754c529922ab9', 'filename': 'script.sh', 'filesize': 446, 'id': 'b51674f8-3fdb-473f-a619-0a17978e74b6', 'links': {'download': 'https://zenodo.org/api/files/d26127c3-20d0-4243-888f-4b7adbc4506b/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/6327438/files/b51674f8-3fdb-473f-a619-0a17978e74b6'}}]</sch:identifier>
                     <sch:identifier>urn:uuid:c8ebd4e1-6481-4d6f-993f-4eb9ec1342c4</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
