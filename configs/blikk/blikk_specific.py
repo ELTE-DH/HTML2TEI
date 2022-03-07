@@ -75,6 +75,8 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = ['https://www.blikk.hu/prospektus/penny-market/penny-market-marciusi-akcios-ujsag/kyvtf51',
                   'https://www.blikk.hu/prospektus/aldi/aldi-aprilisi-akcios-ujsag/2c457l2']
 
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
+
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
 
