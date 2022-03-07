@@ -22,15 +22,20 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     report_dates_cont = []
 
     raw_meta = bs.find('div', {'id': 'headline'})
+    title = bs.find('meta', {'name': 'title'})
+    if title is not None:
+        data['sch:name'] = title.text.strip()
+    else:
+        tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
 
     if raw_meta is not None:
         basic_article = False
+        print('NOT BASIC', url)
     else:
         tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
         return None
     if basic_article in [True, False]:
-        date_tag = bs.find('meta', property='article:published_time')
-        # 2021-05-11T19:31:11+02:00"
+        date_tag = bs.find('meta', property='article:published_time')  # 2021-05-11T19:31:11+02:00"
         if date_tag is not None:
             parsed_date = parse_date(date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
             report_dates_cont.append(parsed_date)
@@ -45,11 +50,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:abstract'] = lead_text
 
     if basic_article is True:
-        title = raw_meta.find('h1')
-        if title is not None:
-            data['sch:name'] = title.text.strip()
-        else:
-            tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
         authors_list = raw_meta.find(class_='byline__authors')
         if authors_list is not None:
             authors_list = [a.text.strip() for a in authors_list.find_all('a')]
@@ -111,11 +111,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         section = bs.find('meta', {'itemprop': 'articleSection'})
         if section is not None and 'content' in section.attrs.keys():
             data['sch:articleSection'] = section.attrs['content'].strip()
-        title = bs.find('h1', {'class': 'livestream__title'})
-        if title is not None:
-            data['sch:name'] = title.text.strip()
-        else:
-            tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
     if len(report_dates_cont) > 0:
         data['sch:datePublished'] = min(report_dates_cont)
         data['sch:dateModified'] = max(report_dates_cont)
