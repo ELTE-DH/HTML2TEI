@@ -58,12 +58,12 @@
                     <title></title>
                     <publisher><orgName>Van Másik Kft.</orgName>
                         <placeName>1022. Budapest, Bég u. 7., 2. em. 7.</placeName>
-                        <ref type="url" source="https://telex.hu/dokumentum/impresszum">https://doi.org/10.5281/zenodo</ref><!--ZENODO-->
+                        <ref type="url" source="https://telex.hu/dokumentum/impresszum">https://doi.org/10.5281/zenodo.6327003</ref>
                         <date when="2021-02-01"/>
                     </publisher>
                     <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref></pubPlace>
                     <availability><p>© 2021 Telex – Van Másik Kft.</p>
-                        <p><ref type="url" source="https://telex.hu/dokumentum/adatkezelesi-tajekoztato">https://doi.org/10.5281/zenodo</ref><!--ZENODO-->
+                        <p><ref type="url" source="https://telex.hu/dokumentum/adatkezelesi-tajekoztato">https://doi.org/10.5281/zenodo.6327003</ref>
                             <date when="2021-02-01"/></p>
                     </availability>
                     <date></date>
@@ -85,11 +85,11 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo."><!--ZENODO-->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6327003">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2022-02-14 17:38:18/2022-02-16 22:33:59</sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo."/><!--ZENODO-->
-                    <sch:identifier></sch:identifier>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6327003"/>
+                    <sch:identifier>[{'checksum': 'dd6c323a07c7290e6f03f1bed2e9045b', 'filename': 'hashsums', 'filesize': 5996, 'id': '16500889-5b42-4c8a-abfd-71063d672759', 'links': {'download': 'https://zenodo.org/api/files/68973d23-967a-4c44-ab0c-8fb89dfeda76/hashsums', 'self': 'https://zenodo.org/api/deposit/depositions/6327003/files/16500889-5b42-4c8a-abfd-71063d672759'}}, {'checksum': 'b842ac7b96e4b9e52a393de4ae193cc5', 'filename': 'log.log', 'filesize': 96669, 'id': '178edbf5-cfa3-4ffa-a708-7caf72c6f879', 'links': {'download': 'https://zenodo.org/api/files/68973d23-967a-4c44-ab0c-8fb89dfeda76/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/6327003/files/178edbf5-cfa3-4ffa-a708-7caf72c6f879'}}, {'checksum': '832fff359a375fc08d7f281d9c510dd7', 'filename': 'logs.zip', 'filesize': 890672, 'id': '3dfa8c7d-33ee-4ded-817d-544b6ee11913', 'links': {'download': 'https://zenodo.org/api/files/68973d23-967a-4c44-ab0c-8fb89dfeda76/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/6327003/files/3dfa8c7d-33ee-4ded-817d-544b6ee11913'}}, {'checksum': 'f8bb2f93ed8c07eebbfa084fe0236d5e', 'filename': 'script.sh', 'filesize': 413, 'id': 'abf2ae80-de19-4bc5-b9fa-6db7ec0fddc0', 'links': {'download': 'https://zenodo.org/api/files/68973d23-967a-4c44-ab0c-8fb89dfeda76/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/6327003/files/abf2ae80-de19-4bc5-b9fa-6db7ec0fddc0'}}, {'checksum': 'd457949de732f68dab40ac275fbc22e9', 'filename': 'telex-archive_new4.warc.gz', 'filesize': 27714748, 'id': '8d0b70b7-7e42-48e3-895e-4c345e41320d', 'links': {'download': 'https://zenodo.org/api/files/68973d23-967a-4c44-ab0c-8fb89dfeda76/telex-archive_new4.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327003/files/8d0b70b7-7e42-48e3-895e-4c345e41320d'}}, {'checksum': 'dfbd7c92947d5182056e4c629b50f2d1', 'filename': 'telex-articles_new4.warc.gz', 'filesize': 711593628, 'id': 'ee20cbf3-049f-4a29-ab66-b07f47a33db3', 'links': {'download': 'https://zenodo.org/api/files/68973d23-967a-4c44-ab0c-8fb89dfeda76/telex-articles_new4.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327003/files/ee20cbf3-049f-4a29-ab66-b07f47a33db3'}}, {'checksum': 'e8086b34a6000e44f7914ac7acb203c1', 'filename': 'telex_rights_statements.warc.gz', 'filesize': 52740, 'id': 'b5a8a7a1-6084-4a5e-aaf4-67f77264e72d', 'links': {'download': 'https://zenodo.org/api/files/68973d23-967a-4c44-ab0c-8fb89dfeda76/telex_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327003/files/b5a8a7a1-6084-4a5e-aaf4-67f77264e72d'}}]</sch:identifier>
                     <sch:identifier>e98f46bc-877f-4e70-8651-1b0a4a8238f71</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
