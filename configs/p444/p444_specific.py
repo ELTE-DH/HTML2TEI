@@ -136,7 +136,7 @@ BIGRAM_RULES_SPEC = {'szakasz': {('temp_table_id', 'det_by_child'): ('table_text
 LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('div',), {'id': 'headline'}),
           (('div',), {'class': 'hide-print'}),
-          (('div',), {'class': 'hide-for-print'}),  # class=row hide-for-print
+          (('div',), {'class': 'hide-for-print'}),
           (('aside',), {'id': 'content-sidebar'}),
           (('div',), {'id': 'ep-banner'}),
           (('div',), {'class': 'widget-recommendation'}),
@@ -173,6 +173,7 @@ DECOMP = [(('div',), {'id': 'headline'}),
           (('div',), {'class': 'livestream__featured-list'}),
           (('div',), {'class': 'show-md'}),
           (('a',), {'class': 'pr-box'}),  # ??
+          (('div',), {'id': 'mc_embed_signup'})
           ]
 
 MEDIA_LIST = [(('div',), {'id': 'bodyContent'}),  # 1 wikipedia cikk
