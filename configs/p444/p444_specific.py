@@ -30,7 +30,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     if raw_meta is not None:
         basic_article = False
-        print('NOT BASIC', url)
     else:
         tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
         return None
