@@ -58,7 +58,7 @@
                     <title></title>
                     <publisher><orgName>WBY Ltd. - Kuruc.info</orgName>
                         <placeName></placeName>
-                        <ref type="url" source="https://kuruc.info/r/32/9072/"><!--KITÖLT source="impresszum url-je", literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo.--> </ref>
+                        <ref type="url" source="https://kuruc.info/r/32/9072/">https://doi.org/10.5281/zenodo.6334479</ref>
                         <date when="2022-02-24"/>
                     </publisher>
                     <pubPlace>
@@ -67,7 +67,7 @@
                     <availability>
                         <p>Készült a Kuruc.info által, minden jog fenntartva © 2006-2022</p>
                         <p>
-                            <ref type="url" source="https://kuruc.info/r/32/9072/"><!--https://doi.org/--></ref>
+                            <ref type="url" source="https://kuruc.info/r/32/9072/">https://doi.org/10.5281/zenodo.6334479</ref>
                             <date when="2022-02-24"/> 
                         </p>
                     </availability>
@@ -78,7 +78,7 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org" xmlns:skos="http://www.w3.org/2008/05/skos-xl#">
             <rdf:RDF>
-                <rdf:Description rdf:about="">
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6334479">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
                     <sch:ispartOf rdf:resource="https://kuruc.info/">Kuruc.info</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
@@ -89,11 +89,49 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6334479">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2021-12-13T12:35:30/2022-02-17T21:40:18</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6334479"/>
+                    <sch:identifier>[{'checksum': '3f00b1f5c96c423dec4060833b9f12fd', 
+                    'filename': 'hashsums', 
+                    'filesize': 6010, 
+                    'id': '9ecf196f-dbc8-43e4-befd-7a866fbaca1d', 
+                    'links': {'download': 'https://zenodo.org/api/files/10a8cf84-6c86-4c03-87c6-c4c82426f825/hashsums', 
+                    'self': 'https://zenodo.org/api/deposit/depositions/6334479/files/9ecf196f-dbc8-43e4-befd-7a866fbaca1d'}}, 
+                    {'checksum': '0d8cde9884b2868aeb100d8c47aaa142', 
+                    'filename': 'kurucinfo-archive_new13.warc.gz', 
+                    'filesize': 370904521, 
+                    'id': '17bf2965-de4e-4fe8-aa81-337c61d3a909', 
+                    'links': {'download': 'https://zenodo.org/api/files/10a8cf84-6c86-4c03-87c6-c4c82426f825/kurucinfo-archive_new13.warc.gz', 
+                    'self': 'https://zenodo.org/api/deposit/depositions/6334479/files/17bf2965-de4e-4fe8-aa81-337c61d3a909'}}, 
+                    {'checksum': '57a7d1a4b81e17e41fa675619a44357e', 
+                    'filename': 'kurucinfo-articles_new13.warc.gz', 
+                    'filesize': 4295293057, 
+                    'id': '460d0e38-cdd9-40ed-a5ff-6a0bc6a226fe', 
+                    'links': {'download': 'https://zenodo.org/api/files/10a8cf84-6c86-4c03-87c6-c4c82426f825/kurucinfo-articles_new13.warc.gz', 
+                    'self': 'https://zenodo.org/api/deposit/depositions/6334479/files/460d0e38-cdd9-40ed-a5ff-6a0bc6a226fe'}}, 
+                    {'checksum': 'c225a39b9edde2878ad69b45f3db763e', 
+                    'filename': 'kurucinfo_rights_statements.warc.gz', 
+                    'filesize': 80488, 'id': 'dff8659d-8398-44c3-abe5-75cbf5553ecb', 
+                    'links': {'download': 'https://zenodo.org/api/files/10a8cf84-6c86-4c03-87c6-c4c82426f825/kurucinfo_rights_statements.warc.gz', 
+                    'self': 'https://zenodo.org/api/deposit/depositions/6334479/files/dff8659d-8398-44c3-abe5-75cbf5553ecb'}}, 
+                    {'checksum': 'adf686f813fa4de31ebc5c69b1796054', 
+                    'filename': 'log.log', 
+                    'filesize': 1956688, 
+                    'id': 'fd103d84-f8c2-41c2-a612-1540977b51e6', 
+                    'links': {'download': 'https://zenodo.org/api/files/10a8cf84-6c86-4c03-87c6-c4c82426f825/log.log', 
+                    'self': 'https://zenodo.org/api/deposit/depositions/6334479/files/fd103d84-f8c2-41c2-a612-1540977b51e6'}}, 
+                    {'checksum': '5f02ec697cdad8d6e1de70666bca5f47', 
+                    'filename': 'logs.zip', 
+                    'filesize': 1001854, 
+                    'id': 'f0900324-ba8b-4b5d-807d-28be87cfa8d1', 
+                    'links': {'download': 'https://zenodo.org/api/files/10a8cf84-6c86-4c03-87c6-c4c82426f825/logs.zip', 
+                    'self': 'https://zenodo.org/api/deposit/depositions/6334479/files/f0900324-ba8b-4b5d-807d-28be87cfa8d1'}}, 
+                    {'checksum': '17b5714a7bf426541ee4ee310ef256f6', 
+                    'filename': 'script.sh', 'filesize': 552, 'id': 'b0fefc42-858f-4c1d-8daf-ccc7cf4fd84e', 
+                    'links': {'download': 'https://zenodo.org/api/files/10a8cf84-6c86-4c03-87c6-c4c82426f825/script.sh', 
+                    'self': 'https://zenodo.org/api/deposit/depositions/6334479/files/b0fefc42-858f-4c1d-8daf-ccc7cf4fd84e'}}]</sch:identifier>
                     <sch:identifier>5ab02219-bee7-4dd6-8ceb-e1063ae51fa7</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
