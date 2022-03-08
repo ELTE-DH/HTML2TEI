@@ -133,7 +133,7 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {'szakasz': {('temp_table_id', 'det_by_child'): ('table_text', 'temp')}}
 
-LINKS_SPEC = BASIC_LINK_ATTRS
+LINKS_SPEC = BASIC_LINK_ATTRS.add('blockquote')
 DECOMP = [(('div',), {'id': 'headline'}),
           (('div',), {'class': 'hide-print'}),
           (('div',), {'class': 'hide-for-print'}),
