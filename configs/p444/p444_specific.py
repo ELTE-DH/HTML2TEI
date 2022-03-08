@@ -22,9 +22,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     report_dates_cont = []
 
     raw_meta = bs.find('div', {'id': 'headline'})
-    title = bs.find('meta', {'name': 'title'})
+    title = bs.find('meta', {'property': 'og:title', 'content': True})
     if title is not None:
-        data['sch:name'] = title.text.strip()
+        data['sch:name'] = title['content'].strip()
     else:
         tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
 
