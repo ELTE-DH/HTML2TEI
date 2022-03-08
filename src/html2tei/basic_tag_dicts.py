@@ -11,7 +11,7 @@ HI_TAGS = INLINE_TAGS.difference({'media_hivatkozas', 'hivatkozas'})
 # eltedh_abc.py
 PARAGRAPH_LIKE_TAGS = {'bekezdes', 'cimsor', 'forras', 'kerdes',
                        'kozvetites_meta', 'kozvetites_ido', 'kozvetites_szerzo',
-                       'komment_meta', 'komment_ido', 'komment_szerzo'}
+                       'komment_meta', 'komment_ido', 'komment_szerzo', 'editorial_note'}
 
 # eltedh_abc.py
 BLOCKS = {'doboz', 'vez_bekezdes', 'lista', 'idezet', 'table_text', 'kozvetites', 'galeria', 'kviz', 'komment'}
@@ -33,7 +33,8 @@ OUR_BUILTIN_TAGS = {'to_decompose', 'to_unwrap', 'bekezdes', 'doboz', 'vez_bekez
                     'komment', 'komment_meta', 'komment_ido', 'komment_szerzo', 'komment_root',
                     'galeria',  # 'cimsor',
                     'kviz', 'kerdes', 'valaszblokk', 'valasz', 'forum', 'media_tartalom', 'beagyazott_tartalom',
-                    'beagyazott_social', 'abra', 'hi', 'ref'}
+                    'beagyazott_social', 'abra', 'hi', 'ref',
+                    'editorial_note'}
 
 # configs/*
 BASIC_LINK_ATTRS = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_iframe'}
