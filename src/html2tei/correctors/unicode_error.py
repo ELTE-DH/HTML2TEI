@@ -20,7 +20,7 @@ def article_encoding_correction(article, decompose_fun):
     """Finds useful text in a mixture of json snippets and incorrectly encoded text.
        It also tries to repair damaged (ill-formed HTML) articles
     """
-    decompose_fun(article, 'media_unwrap')
+    decompose_fun(article)  # , 'media_unwrap'
     soup = BeautifulSoup('a', 'lxml')
     unwrap_all(article, True)
     ret = _extract_first_instance_of_article_text(article)
