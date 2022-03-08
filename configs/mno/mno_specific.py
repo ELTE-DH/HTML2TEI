@@ -107,7 +107,8 @@ BLACKLIST_SPEC = [url.strip() for url in open(os_path_join(os_path_dirname(os_pa
                     '-3287285/',
                      'https://www.magyaridok.hu/kulfold/groteszk-lehallgatasi-botrany-parizsban-2815667/',
                      'https://www.magyaridok.hu/sport/futball-eb/program-junius-10-tol-julius-10-ig-736987/',
-                    'https://magyarnemzet.hu/archivum-archivum/2004/02/falinaptar-online-rendeles'] + \
+                    'https://magyarnemzet.hu/archivum-archivum/2004/02/falinaptar-online-rendeles',
+                    'https://magyarnemzet.hu/archivum/archivum-archivum/falinaptar-online-rendeles-5210003/'] + \
                  [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
                                                            'mno_BLACKLIST_empty.txt')).readlines()] + \
                  [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
