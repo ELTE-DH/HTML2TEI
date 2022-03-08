@@ -97,9 +97,7 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = []
 
 MULTIPAGE_URL_END = re.compile(r'.*oldal=.')
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok'
-                                                   '-hazai-kuton?utm_source%3_Dtelex&amp;utm_medium=article&amp'
-                                                   ';utm_campaign=kifogyott_premium_uzemanyag']))
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok']))
 
 
 def next_page_of_article_spec(curr_html):  # https://telex.hu/koronavirus/2020/11/12/koronavirus-pp-2020-11-12/elo

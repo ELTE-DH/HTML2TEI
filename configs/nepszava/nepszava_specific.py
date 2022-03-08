@@ -62,8 +62,7 @@ BLACKLIST_SPEC = ['https://nepszava.hu/json/cikk.json?id=1029976_felpalyas-utzar
                   'https://nepszava.hu/json/cikk.json?id=1029970_emelkedtek-az-indexek-europaban',
                   'https://nepszava.hu/json/cikk.json?id=1029966_reumatapaszra-csaptak-le-a-vamosok']
 
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok-hazai-kuton?utm_source']))
-# https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok-hazai-kuton?utm_source%3_Dtelex&amp;utm_medium=article&amp;utm_campaign=kifogyott_premium_uzemanyag
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['data:text/html;charset=utf-8']))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
