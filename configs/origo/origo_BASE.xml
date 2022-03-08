@@ -68,10 +68,10 @@
                     </pubPlace>
                     <availability><p>AZ ORIGO KIADÓJA A NEW WAVE MEDIA GROUP KFT. © MINDEN JOG FENNTARTVA.</p>
                         <p>
-							<ref type="url" source="https://www.origo.hu/impresszum/index.html">
-                                <!--KITÖLT: https://doi.org/ --></ref>
+			    <ref type="url" source="https://www.origo.hu/impresszum/index.html">
+                            <!--KITÖLT: https://doi.org/ --></ref>
                             <!--<date when=""/> when: impresszum/jognyil crawl dátum -->
-						</p>
+			</p>
                     </availability>
                     <date></date>
                 </bibl>
