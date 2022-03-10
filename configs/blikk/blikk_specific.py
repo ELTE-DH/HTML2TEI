@@ -3,7 +3,7 @@
 
 import re
 
-from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, \
+from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, \
     tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://www.blikk.hu'
@@ -33,6 +33,58 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     """author tag does not exist"""
     data = tei_defaultdict()
     data['sch:url'] = url
+
+    article_root = bs.find('section', {'class': 'leftSide'})
+    if article_root is not None:
+
+        # NAME
+        title_tag = article_root.find('section', {'class': 'mainTitle'})
+        if title_tag is not None:
+            title_text_tag = title_tag.find('h1')
+            if title_text_tag is not None:
+                title_text = title_text_tag.get_text(strip=True)
+                if len(title_text) > 0:
+                    data['sch:name'] = title_text
+                else:
+                    tei_logger.log('WARNING', f'{url}: TITLE TEXT EMPTY!')
+            else:
+                tei_logger.log('WARNING', f'{url}: TITLE TEXT TAG NOT FOUND!')
+        else:
+            tei_logger.log('WARNING', f'{url}: TITLE SECTION TAG NOT FOUND!')
+
+        # DATE PUBLISHED
+        date_published = article_root.find('div', {'class': 'dates d-flex flex-column flex-md-row'}).get_text(strip=True)
+        if date_published is not None:
+            data['sch:datePublished'] = parse_date(date_published, "%Y. %b %d. %H:%M")  # TODO error handling?
+        else:
+            tei_logger.log('WARNING', f'{url}: DATE PUBLISHED TAG NOT FOUND!')
+
+        # DATE MODIFIED
+
+        # AUTHORS
+        authors_section = article_root.find('div', {'id': 'authors'})
+        if authors_section is not None:
+            authors = authors_section.find_all('p', {'class': 'authorName'})
+            if len(authors) > 0:  # TODO it has Blikk-információ
+                data['sch:author'] = [t.get_text(strip=True) for t in authors if len(t.get_text(strip=True)) > 0]
+            else:
+                tei_logger.log('DEBUG', f'{url}: NO AUTHORS FOUND!')
+        else:
+            tei_logger.log('DEBUG', f'{url}: NO AUTHOR SECTION FOUND!')
+
+        # ARTICLE SECTION
+        # TODO article section in url or meta?
+
+        # KEYWORDS
+        keywords_section = article_root.find('section', {'class': 'row w-100 mt-2 mb-3 bottomTags'})
+        if keywords_section is not None:
+            kw_tags = keywords_section.find_all('a')
+            if len(kw_tags) > 0:
+                data['sch:keywords'] = [t.get_text(strip=True) for t in kw_tags if len(t.get_text(strip=True)) > 0]
+            else:
+                tei_logger.log('DEBUG', f'{url}: NO KEYWORD TAGS FOUND!')
+        else:
+            tei_logger.log('DEBUG', f'{url}: NO KEYWORDS SECTION FOUND!')
 
     return data
 
