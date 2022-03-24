@@ -14,6 +14,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
 
+    # TITLE
     article_head = bs.find('header', class_='article-head')
     if article_head is not None:
         title = article_head.find('h1', class_='article-title')
@@ -27,12 +28,16 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     article_info = bs.find('div', class_='article-info')
     if article_info is not None:
+
+        # AUTHOR
         author = article_info.find('span', class_='article-author')
         if author is not None:
             data['sch:author'] = [author.text.strip()]
             print(f'{[author.text.strip()]}')
         else:
             tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+
+        # DATE PUBLISHED
         date_tag = article_info.find('div', class_='article-date')
         if date_tag is not None and 'datetime' in date_tag.attrs.keys():
             parsed_date = parse_date(date_tag.attrs['datetime'], '%Y-%m-%dT%H:%M')
