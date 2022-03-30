@@ -155,7 +155,22 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             else:  # format 4 közvetítés
                 sports_feed_header = bs.find('div', class_='sportonline_header')
                 if sports_feed_header is not None:
-                    print('SPORTS FEED')  # TODO write sports feed format
+                    # TODO write sports feed format
+                    title_tag = bs.find('title')
+                    if title_tag is not None:
+                        title = title_tag.get_text(strip=True)
+                        if len(title) > 0:
+                            data['sch:title'] = title
+                    # format 4 publish date
+                    pub_date_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
+                    if pub_date_tag is not None:
+                        pub_date = parse_date(pub_date_tag['content'], '%Y-%m-%d')
+                        if pub_date is not None:
+                            data['sch:datePublished'] = pub_date
+                        else:
+                            tei_logger.log('WARNING', f'{url} FAILED TO PARSE PUBDATE OF GALLERY ARTICLE')
+
+
 
                 else:  # if neither format 1 or 2 or 3 are recognized
                     tei_logger.log('WARNING', f'{url} ARTICLE FORMAT UNACCOUNTED FOR')
