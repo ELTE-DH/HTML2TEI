@@ -143,6 +143,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     data['sch:keywords'] = ['galéria']
                 elif split_url[4] == 'olimpia' and split_url[5] == 'galeria':
                     data['sch:keywords'] = ['olimpia', 'galéria']
+                elif split_url[5] == 'galeria':
+                    data['sch:keywords'] = ['galéria']
                 else:
                     tei_logger.log('WARNING', f'{url} GALLERY LINK FAILED TO PARSE')
                 # format 3 article section is only available from link
@@ -160,7 +162,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     if title_tag is not None:
                         title = title_tag.get_text(strip=True)
                         if len(title) > 0:
-                            data['sch:title'] = title
+                            data['sch:name'] = title
                     # format 4 publish date
                     pub_date_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
                     if pub_date_tag is not None:
@@ -170,6 +172,20 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         else:
                             tei_logger.log('WARNING', f'{url} FAILED TO PARSE PUBDATE OF GALLERY ARTICLE')
 
+                    # format 4 article section
+                    split_url = url.split('/')
+                    if split_url[3] in SUBJ_DICT.keys():
+                        data['sch:articleSection'] = SUBJ_DICT[split_url[3]]
+                    else:
+                        tei_logger.log('WARNING', f'{url} GALLERY ARTICLE SECTION UNACCOUNTED FOR')
+
+                    # format 4 keywords taken from url
+                    if split_url[4] == 'kozvetites':
+                        data['sch:keywords'] = ['közvetítés']
+                    elif split_url[4] == 'olimpia' and split_url[5] == 'kozvetites':
+                        data['sch:keywords'] = ['olimpia', 'közvetítés']
+                    elif split_url[4] == 'focieb' and split_url[5] == 'kozvetites':
+                        data['sch:keywords'] = ['focieb', 'közvetítés']
 
 
                 else:  # if neither format 1 or 2 or 3 are recognized
