@@ -20,6 +20,8 @@ SUBJ_DICT = {'auto': 'Autó',
              'tudomany': 'Tudomány'
              }
 
+NON_AUTHORS = ['', 'MTI']  # Empty string and Sources
+
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
@@ -37,9 +39,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         # format 1 author and date published
         article_info = bs.find('div', class_='article-info')
         if article_info is not None:
-            author = article_info.find('span', class_='article-author')
-            if author is not None:
-                data['sch:author'] = [author.text.strip()]
+            authors = article_info.find_all('span', class_='article-author')
+            if len(authors) > 0:
+                authors = [a.get_text(strip=True) for a in authors if a.get_text(strip=True) not in NON_AUTHORS]
+                sources = [a.get_text(strip=True) for a in authors if a.get_text(strip=True) in NON_AUTHORS[1:]]
+                if len(authors) > 0:
+                    data['sch:author'] = authors
+                if len(sources) > 0:
+                    data['sch:source'] = sources
             else:
                 tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
             date_tag = article_info.find('div', class_='article-date')
@@ -86,11 +93,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             # format 2 date published and author
             d_and_a_tag = article_head_format_2.find('div', {'class': 'address top'})
             if d_and_a_tag is not None:
-                author_tag = d_and_a_tag.find('span', {'class': 'article-author'})
-                if author_tag is not None:
-                    author = author_tag.get_text(strip=True)
-                    if len(author) > 0:
-                        data['sch:authors'] = [author]  # INSERT sch:source OPTIONS
+                author_tags = d_and_a_tag.find_all('span', {'class': 'article-author'})
+                if len(author_tags) > 0:
+                    authors = [a.get_text(strip=True) for a in author_tags if a.get_text(strip=True) not in NON_AUTHORS]
+                    sources = [a.get_text(strip=True) for a in author_tags if a.get_text(strip=True) in NON_AUTHORS[1:]]
+                    if len(authors) > 0:
+                        data['sch:authors'] = authors  # INSERT sch:source OPTIONS
+                    if len(sources) > 0:
+                        data['sch:source'] = sources
                     else:
                         tei_logger.log('WARNING', f'{url}: AUTHOR STRING NOT PRESENT IN TAG!')
                 date_pub_tag = d_and_a_tag.find('span', {'id': 'article-date', 'pubdate': 'pubdate', 'datetime': True})
@@ -186,7 +196,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         data['sch:keywords'] = ['olimpia', 'közvetítés']
                     elif split_url[4] == 'focieb' and split_url[5] == 'kozvetites':
                         data['sch:keywords'] = ['focieb', 'közvetítés']
-
 
                 else:  # if neither format 1 or 2 or 3 are recognized
                     tei_logger.log('WARNING', f'{url} ARTICLE FORMAT UNACCOUNTED FOR')
