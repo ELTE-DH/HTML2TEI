@@ -204,15 +204,33 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 def excluded_tags_spec(tag):
     tag_attrs = tag.attrs
+
+    done = False
+
     if tag.name == 'div' and 'data-embed-id' in tag_attrs.keys():
         tag_attrs['data-embed-id'] = '@DATA-EMBED-ID'
+
+    if tag.name == 'div' and tag_attrs == {'class': ['mvpLoading']}:
+        done = True
+        link_container_tag = tag.find('div', {'data-run-module':True, 'data-params':True})
+        if link_container_tag is not None:
+            url_beginning = '"url":"'
+            index1 = link_container_tag['data-params'].find(url_beginning) + len(url_beginning)
+            index2 = link_container_tag['data-params'][index1:].find('"')
+            link_from_json_string = link_container_tag['data-params'][index1:index1+index2]
+            tag['href'] = link_from_json_string
+            print('\n', tag['href'], '\n')
+        # print(tag)
+
+    if done == True:
+        print('\n', tag.attrs, '\n')
     return tag
 
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 
-LINKS_SPEC = BASIC_LINK_ATTRS
+LINKS_SPEC = BASIC_LINK_ATTRS | {'div'}
 DECOMP = [(('style',), {}),
           (('script',), {}),
           (('footer',), {}),
@@ -229,7 +247,8 @@ DECOMP = [(('style',), {}),
           (('h4',), {'class': 'mb-3'}),
           (('div',), {'id': 'fb-root'}),
           (('section',), {'id': 'comments'}),
-          (('div',), {'class':'detailRightSide'})  # featured articles on right side
+          (('div',), {'class':'detailRightSide'}),  # featured articles on right side
+          (('section',), {'class':'bottomTags'})  # keywords row at bottom of article
           ]
 
 
