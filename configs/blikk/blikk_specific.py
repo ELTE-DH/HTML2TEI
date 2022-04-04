@@ -2,8 +2,10 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
+import json
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 
+from bs4 import BeautifulSoup
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, \
     tei_defaultdict
 
@@ -205,25 +207,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 def excluded_tags_spec(tag):
     tag_attrs = tag.attrs
 
-    done = False
 
     if tag.name == 'div' and 'data-embed-id' in tag_attrs.keys():
         tag_attrs['data-embed-id'] = '@DATA-EMBED-ID'
 
-    if tag.name == 'div' and tag_attrs == {'class': ['mvpLoading']}:
-        done = True
-        link_container_tag = tag.find('div', {'data-run-module':True, 'data-params':True})
-        if link_container_tag is not None:
-            url_beginning = '"url":"'
-            index1 = link_container_tag['data-params'].find(url_beginning) + len(url_beginning)
-            index2 = link_container_tag['data-params'][index1:].find('"')
-            link_from_json_string = link_container_tag['data-params'][index1:index1+index2]
-            tag['href'] = link_from_json_string
-            print('\n', tag['href'], '\n')
-        # print(tag)
-
-    if done == True:
-        print('\n', tag.attrs, '\n')
     return tag
 
 
@@ -295,3 +282,27 @@ MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
 def next_page_of_article_spec(_):
     return None
+
+
+def transform_to_html(url, raw_html, warc_logger):
+    _ = url  # , warc_logger
+
+    soup = BeautifulSoup(raw_html, 'html.parser')
+    mvp_tag = soup.find('div', {'class': ['mvpLoading']})
+    if mvp_tag is not None:
+
+        json_container_tag = mvp_tag.find('div', {'data-params':True, 'data-run-module':True})
+        if json_container_tag is not None:
+
+            try:
+                json_data = json.loads(json_container_tag['data-params'])
+                if 'parameters' in json_data.keys() and 'embedCode' in json_data['parameters'].keys():
+                    new_tag = BeautifulSoup(json_data['parameters']['embedCode'], 'html.parser')
+                    mvp_tag.append(new_tag)
+                    json_container_tag.decompose()
+                    print(mvp_tag)
+                    return str(soup)
+            except json.JSONDecodeError:
+                warc_logger.log('WARNING', f'{url}: FAILED TO TRANSFORM JSON!')
+
+    return raw_html
