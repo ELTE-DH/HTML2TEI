@@ -4,16 +4,17 @@
 import re
 
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
-from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://www.vadhajtasok.hu/'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'entry-content content-article'})]
 
-HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
-               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
+# HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
+#               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
 SOURCE_1 = ['Forrás:', 'Írta:']
+# https://www.vadhajtasok.hu/2019/01/05/nagy-szrban-a-9-11-legendaja-hackerek-megszereztek-a-titkos-aktait
 SOURCE_2 = ['Vadhajtasok.hu', 'Pestisracok.hu', '888.hu', 'MTI', 'Magyar Nemzet', 'HVG']
 # If we stay at the current solution (see the get_meta_from_articles_spec function) and use
 # both SOURCE_1 and SOURCE_2 lists, then we will be able to find the majority of the sources but not all of them.
@@ -76,16 +77,18 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             # If there is only one element in source_root, we use SOURCE_1,
             # because we would like to find only the source-related texts.
             if any(src in source_raw for src in SOURCE_1):
+                data['originalAuthorString'] = [source_raw]
                 source = source_raw.replace('Forrás: ', '').replace('Írta: ', '')
-                data['sch:source'] = source
+                data['sch:source'] = source.split(',')
         elif len(source_root) > 1:
             # If there are several elements in source_root, we use the latest one of them,
             # because that's where the sources are stored in the majority of the cases.
             source_raw = source_root[-1].text.strip()
             # In this case we use both SOURCE_1 and SOURCE_2.
             if any(src in source_raw for src in (SOURCE_1 + SOURCE_2)):
+                data['originalAuthorString'] = [source_raw]
                 source = source_raw.replace('Forrás: ', '').replace('Írta: ', '')
-                data['sch:source'] = source
+                data['sch:source'] = source.split(',')
         else:
             tei_logger.log('DEBUG', f'{url}: SOURCE NOT FOUND!')
         return data
@@ -95,9 +98,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
-    if tag.name not in HTML_BASICS:
+    """if tag.name not in HTML_BASICS:
         tag.name = 'else'
-    tag.attrs = {}
+    tag.attrs = {}"""
     return tag
 
 
@@ -106,11 +109,7 @@ BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('script',), {})]
 
-MEDIA_LIST = [(('table',), {}),
-              (('figure',), {}),
-              (('img',), {}),
-              (('iframe',), {}),
-              (('div',), {'class': 'twitter-tweet twitter-tweet-rendered'})]
+MEDIA_LIST = []
 
 
 def decompose_spec(article_dec):
@@ -121,7 +120,7 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = [url.strip() for url in open(
     os_path_join(os_path_dirname(os_path_abspath(__file__)), 'vadhajtasok_BLACKLIST.txt')).readlines()]
 
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['http://%20Kov%C3%A1cs,%20Andr%C3%A1s%20%3Ckovacs.andras3@origo.hu%3E%202:12%20pm%20%287%20minutes%20ago%29%20to%20%C3%96rs%20%20https//v4na.com/hu/ennyi-penzert-vehetnek-gyereket-a-belga-melegparok%20%20']))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
