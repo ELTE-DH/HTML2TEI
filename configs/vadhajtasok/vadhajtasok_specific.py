@@ -15,7 +15,8 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'entry-content content-article'
 
 SOURCE_1 = ['Forrás:', 'Írta:']
 # https://www.vadhajtasok.hu/2019/01/05/nagy-szrban-a-9-11-legendaja-hackerek-megszereztek-a-titkos-aktait
-SOURCE_2 = ['Vadhajtasok.hu', 'Pestisracok.hu', '888.hu', 'MTI', 'Magyar Nemzet', 'HVG']
+SOURCE_2 = ['Vadhajtasok.hu','', 'Pestisracok.hu', '888.hu', 'MTI', 'Magyar Nemzet', 'HVG', 'Demokrata', 'Index',
+            'Mandiner', 'Origo', 'Vadhajtások', 'Magyar Hírlap', 'hirado.hu', 'Magyar Hírlap']
 # If we stay at the current solution (see the get_meta_from_articles_spec function) and use
 # both SOURCE_1 and SOURCE_2 lists, then we will be able to find the majority of the sources but not all of them.
 # Note: the SOURCE_2 list is not complete, can still be improved but with the current routine it is not necessary.
@@ -27,7 +28,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     article_root = bs.find('div', class_='entry-content content-article')
     info_root = bs.find('div', class_='cs-entry__header-info')
     if article_root is not None:
-        if info_root is not None:
+        if info_root is None:
+            tei_logger.log('WARNING', f'{url}: META ROOT NOT FOUND!')
+        else:
             section_date_tag = info_root.find('div', class_='cs-entry__post-meta f16 meta-tiny')
             if section_date_tag is not None:
                 section_main = section_date_tag.find('a', class_='meta-categories')
@@ -59,9 +62,11 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             title = info_root.find('h1', class_='cs-entry__title')
             if title is not None:
                 article_title = title.find('span')
-                data['sch:name'] = article_title.text.strip()
+                if article_title is not None:
+                    data['sch:name'] = article_title.text.strip()
             else:
                 tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
+
         keywords_root = bs.find('ul', class_='post-categories')
         if keywords_root is not None:
             keywords_list = [t.text.strip() for t in keywords_root.find_all('a', class_='news-tag')]
@@ -71,22 +76,23 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
         # Problem: the sources of the articles are NOT handled in a standard manner at vadhajtasok.hu
         # This routine tries to reach as many sources as possible in an automated manner but it can be improved.
-        source_root = bs.find_all('strong')
-        if len(source_root) == 1:
-            source_raw = source_root[0].text.strip()
+        # CHECK: The source extracting method had been simplified,
+        # because the previous gave us too many false authors.
+        source_root = article_root.find_all(recursive=False)
+
+        if len(source_root) > 0:
+            # if source_root[-1].name == 'strong':
+            #    print(source_root[-1], url)
+            source_raw = source_root[-1].text.strip()
             # If there is only one element in source_root, we use SOURCE_1,
             # because we would like to find only the source-related texts.
-            if any(src in source_raw for src in SOURCE_1):
-                data['originalAuthorString'] = [source_raw]
-                source = source_raw.replace('Forrás: ', '').replace('Írta: ', '')
-                data['sch:source'] = source.split(',')
-        elif len(source_root) > 1:
             # If there are several elements in source_root, we use the latest one of them,
             # because that's where the sources are stored in the majority of the cases.
-            source_raw = source_root[-1].text.strip()
-            # In this case we use both SOURCE_1 and SOURCE_2.
-            if any(src in source_raw for src in (SOURCE_1 + SOURCE_2)):
+            # if any(src in source_raw for src in (SOURCE_1 + SOURCE_2)):
+            if source_raw[:8].startswith('Forrás:') or source_raw[:8].startswith('Írta:') or source_raw in SOURCE_2:
                 data['originalAuthorString'] = [source_raw]
+                # if 'Forrás' not in source_raw and 'Írta' not in source_raw:
+                    # print(url, source_raw)
                 source = source_raw.replace('Forrás: ', '').replace('Írta: ', '')
                 data['sch:source'] = source.split(',')
         else:
