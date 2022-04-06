@@ -300,7 +300,6 @@ def transform_to_html(url, raw_html, warc_logger):
                     new_tag = BeautifulSoup(json_data['parameters']['embedCode'], 'html.parser')
                     mvp_tag.append(new_tag)
                     json_container_tag.decompose()
-                    print(mvp_tag)
                     return str(soup)
             except json.JSONDecodeError:
                 warc_logger.log('WARNING', f'{url}: FAILED TO TRANSFORM JSON!')
