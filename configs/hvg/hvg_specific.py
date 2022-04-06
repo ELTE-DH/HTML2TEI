@@ -84,8 +84,88 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 tei_logger.log('WARNING', f'{url}: SECTION TAG NOT FOUND!')
         return data
     else:
-        tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND!')
-        return None
+        # hvg360 format https://hvg.hu/360/20210704_Hatvanpuszta_major_orban_Viktor_orban_Gyozo
+        hvg360format = bs.find('div', {'class': ['article-body']})
+        if hvg360format is not None:
+            # author
+            script_tags = bs.find_all('script', {'type': True})
+            if len(script_tags) > 1:
+                script_tags = bs.find_all('script', {'type': True})[1].get_text()
+                author_beg = script_tags.find('author:{id')
+                author_end = author_beg+script_tags[author_beg:].find('}')
+                auth_string = script_tags[author_beg:author_end]
+                beg = auth_string.find('"')
+                end = auth_string[beg+1:].find('"')+beg
+                if beg != -1 and end != -1:
+                    author = auth_string[beg+1:end+1]
+                    data['sch:author'] = [author]
+                else:
+                    tei_logger.log('DEBUG', f'{url} NO AUTHOR FOUND!')
+
+            # title
+            article_tag = bs.find('article')
+            if article_tag is not None:
+                title_tag = article_tag.find('h1')
+                if title_tag is not None:
+                    title = title_tag.get_text(strip=True)
+                    if len(title) > 0:
+                        data['sch:name'] = title
+                    else:
+                        tei_logger.log('WARNING', f'{url} TITLE TAG EMPTY!')
+                else:
+                    tei_logger.log('WARNING', f'{url} TITLE TAG NOT FOUND!')
+
+            # date published and date modified
+            header_tag = bs.find('div', {'class': 'meta column mb-4 mb-xl-5'})
+            if header_tag is not None:
+                p_tags = header_tag.find_all('p', {'class': 'text-bold'})
+                if len(p_tags) > 1:
+                    pub_date_text = p_tags[-1].get_text(strip=True)
+                    if len(pub_date_text) > 0:
+                        parsed_pub = parse_date(pub_date_text, '%Y.%m.%d. %H:%M')
+                        if parsed_pub is not None:
+                            data['sch:datePublished'] = parsed_pub
+                        else:
+                            tei_logger.log('WARNING', f'{url} FAILED TO PARSE PUBLISH DATE!')
+                    else:
+                        tei_logger.log('WARNING', f'{url} PUBLISH DATE TAG EMPTY!')
+                else:
+                    tei_logger.log('WARNING', f'{url} PUBLISH DATE TAG NOT FOUND!')
+                # date modified
+                modified_tag = header_tag.find('div', {'class': 'item d-none d-xl-inline-block'})
+                if modified_tag is not None:
+                    date_modified_tag = modified_tag.find('p')
+                    if date_modified_tag is not None:
+                        date_modified = date_modified_tag.get_text(strip=True)
+                        if len(date_modified) > 0:
+                            parsed_mod = parse_date(date_modified, '%Y.%m.%d. %H:%M')
+                            if parsed_mod is not None:
+                                data['sch:dateModified'] = parsed_mod
+                            else:
+                                tei_logger.log('WARNING', f'{url} FAILED TO PARSE MODIFICATION DATE!')
+                        else:
+                            tei_logger.log('DEBUG', f'{url} MODIFICATION DATE TAG EMPTY!')
+            # article section
+            article_section_tag = bs.find('span', {'class':'tag text-nowrap tag-big tag-inactive'})
+            if article_section_tag is not None:
+                article_section = article_section_tag.get_text(strip=True)
+                if article_section is not None:
+                    data['sch:articleSection'] = article_section
+            else:
+                tei_logger.log('WARNING', f'{url} ARTICLE SECTION NOT FOUND!')
+
+            # keywords
+            keywords_meta = bs.find('meta', {'data-n-head': True, 'name': 'exclusiontags', 'content': True})
+            if keywords_meta is not None:
+                keywords = keywords_meta['content'].split(',')
+                if len(keywords) > 0:
+                    data['sch:keywords'] = keywords
+            else:
+                tei_logger.log('DEBUG', f'{url} NO KEYWORDS FOUND')
+
+        else:
+            tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND!')
+    return data
 
 
 def excluded_tags_spec(tag):
