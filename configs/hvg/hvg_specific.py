@@ -50,7 +50,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         modified_date_tag = bs.find('time', class_='lastdate')
         if modified_date_tag is not None and 'datetime' in modified_date_tag.attrs.keys():
             parsed_modified_date = parse_date(modified_date_tag.attrs['datetime'][:19], '%Y-%m-%dT%H:%M:%S')
-            data['sch:datePublished'] = parsed_modified_date
+            data['sch:dateModified'] = parsed_modified_date
         else:
             tei_logger.log('DEBUG', f'{url}: MODIFIED DATE TAG NOT FOUND!')
         title = article_root.find('div', class_='article-title article-title')
