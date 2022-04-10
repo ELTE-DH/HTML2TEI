@@ -10,13 +10,11 @@ PORTAL_URL_PREFIX = 'https://www.vadhajtasok.hu/'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'entry-content content-article'})]
 
-# HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
-#               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
 SOURCE_1 = ['Forrás:', 'Írta:']
 # https://www.vadhajtasok.hu/2019/01/05/nagy-szrban-a-9-11-legendaja-hackerek-megszereztek-a-titkos-aktait
-SOURCE_2 = ['Vadhajtasok.hu','', 'Pestisracok.hu', '888.hu', 'MTI', 'Magyar Nemzet', 'HVG', 'Demokrata', 'Index',
-            'Mandiner', 'Origo', 'Vadhajtások', 'Magyar Hírlap', 'hirado.hu', 'Magyar Hírlap']
+SOURCE_2 = ['Vadhajtasok.hu', 'Pestisracok.hu', '888.hu', 'MTI', 'Magyar Nemzet', 'HVG', 'Demokrata', 'Index',
+            'Mandiner', 'Origo', 'Vadhajtások', 'Magyar Hírlap', 'hirado.hu', 'Magyar Hírlap', 'V4NA']
 # If we stay at the current solution (see the get_meta_from_articles_spec function) and use
 # both SOURCE_1 and SOURCE_2 lists, then we will be able to find the majority of the sources but not all of them.
 # Note: the SOURCE_2 list is not complete, can still be improved but with the current routine it is not necessary.
@@ -77,24 +75,22 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         # Problem: the sources of the articles are NOT handled in a standard manner at vadhajtasok.hu
         # This routine tries to reach as many sources as possible in an automated manner but it can be improved.
         # CHECK: The source extracting method had been simplified,
-        # because the previous gave us too many false authors.
+        # because the previous solution gave us too many false authors.
         source_root = article_root.find_all(recursive=False)
 
         if len(source_root) > 0:
-            # if source_root[-1].name == 'strong':
-            #    print(source_root[-1], url)
             source_raw = source_root[-1].text.strip()
             # If there is only one element in source_root, we use SOURCE_1,
             # because we would like to find only the source-related texts.
             # If there are several elements in source_root, we use the latest one of them,
             # because that's where the sources are stored in the majority of the cases.
             # if any(src in source_raw for src in (SOURCE_1 + SOURCE_2)):
-            if source_raw[:8].startswith('Forrás:') or source_raw[:8].startswith('Írta:') or source_raw in SOURCE_2:
+            if len(source_raw) > 0 and len(source_raw.split()) < 6 and \
+                    (source_raw.startswith('Forrás:') or source_raw.startswith('Írta:') or
+                     source_raw in SOURCE_2):
                 data['originalAuthorString'] = [source_raw]
-                # if 'Forrás' not in source_raw and 'Írta' not in source_raw:
-                    # print(url, source_raw)
-                source = source_raw.replace('Forrás: ', '').replace('Írta: ', '')
-                data['sch:source'] = source.split(',')
+                # source = source_raw.replace('Forrás: ', '').replace('Írta: ', '')
+                # data['sch:source'] = source.split(',')    # ' - '
         else:
             tei_logger.log('DEBUG', f'{url}: SOURCE NOT FOUND!')
         return data
@@ -104,9 +100,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
-    """if tag.name not in HTML_BASICS:
-        tag.name = 'else'
-    tag.attrs = {}"""
     return tag
 
 
@@ -126,7 +119,7 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = [url.strip() for url in open(
     os_path_join(os_path_dirname(os_path_abspath(__file__)), 'vadhajtasok_BLACKLIST.txt')).readlines()]
 
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['http://%20Kov%C3%A1cs,%20Andr%C3%A1s%20%3Ckovacs.andras3@origo.hu%3E%202:12%20pm%20%287%20minutes%20ago%29%20to%20%C3%96rs%20%20https//v4na.com/hu/ennyi-penzert-vehetnek-gyereket-a-belga-melegparok%20%20']))
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['http://%20Kov%C3%A1cs,%20Andr%C3%A1s%20%3Ckovacs.andras3@origo.']))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 

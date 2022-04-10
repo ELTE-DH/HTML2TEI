@@ -91,10 +91,10 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                   xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about=""><!--KITÖLT:  pl: https://doi.org/10.5281/zenodo.-->
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2021-12-13T12:32:22/2021-12-13T23:19:44</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
+                    <sch:identifier rdf:about=""/><!-- KITÖLT https://doi.org/10.5281/ -->
                     <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
                     <sch:identifier>b0d41bc0-01bb-4845-b7bd-45f95be24f0e</sch:identifier> </rdf:Description>
             </rdf:RDF>
