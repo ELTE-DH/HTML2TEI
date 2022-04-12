@@ -262,6 +262,13 @@ def decompose_spec(article_dec):
                     if link_tag is not None and 'blikk.hu' in link_tag['href']:
                         f.decompose()
 
+
+    # recent news tag in the middle of the article - not needed
+    recent_news_tags = [p for p in detail_section.find_all('p') if 'legfrissebb hírek itt' in p.get_text()]
+    if len(recent_news_tags) > 0:
+        recent_news_tag = recent_news_tags[0]
+        recent_news_tag.decompose()
+
     return article_dec
 
 
@@ -298,6 +305,9 @@ def transform_to_html(url, raw_html, warc_logger):
                 json_data = json.loads(json_container_tag['data-params'])
                 if 'parameters' in json_data.keys() and 'embedCode' in json_data['parameters'].keys():
                     new_tag = BeautifulSoup(json_data['parameters']['embedCode'], 'html.parser')
+                    for t in new_tag.find_all():
+                        if t.string is not None:
+                            t.string.replace_with('')
                     mvp_tag.append(new_tag)
                     json_container_tag.decompose()
                     return str(soup)
