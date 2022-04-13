@@ -176,6 +176,7 @@ BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('script',), {}),
+          (('meta',), {}),
           (('div',), {'class': 'placeholder-ad'}),
           (('div',), {'class': 'article-series-box'})
           ]
