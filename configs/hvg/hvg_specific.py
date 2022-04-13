@@ -183,9 +183,25 @@ DECOMP = [(('script',), {}),
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 MEDIA_LIST = []
 
-
+hvg_fb_links = ['https://www.facebook.com/pg/hvgkult',
+                'https://www.facebook.com/hvghunagyitas/', 
+                'https://www.facebook.com/hvg.hu.eletstilus']
+                
 def decompose_spec(article_dec):
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
+    # Somehow get rid of facebook embeds of hvg fcebook page
+    
+    for f in reversed(article_dec.find_all('div', {'class':'fb-page', 'data-href': True})):
+        if f['data-href'] in hvg_fb_links:
+            f.decompose()
+    # Getting rid of embedded hvg.hu articles
+    blockquotes = article_dec.find_all('blockquote')
+    for bl in blockquotes:
+        bl_a = bl.find('a', {'href':True})
+        if bl_a is not None and bl_a['href'].split('/')[2] == 'hvg.hu':
+            bl.decompose()
+
+
     return article_dec
 
 
