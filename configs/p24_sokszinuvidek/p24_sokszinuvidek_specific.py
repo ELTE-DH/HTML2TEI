@@ -5,13 +5,12 @@ import re
 
 from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
-PORTAL_URL_PREFIX = 'https://istentudja.24.hu/'
+PORTAL_URL_PREFIX = 'https://sokszinuvidek.24.hu/'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post'})]
 
 
-SOURCE = '24.hu'
-SECTION = 'isten tudja'
+SOURCE = ['Sokszínű Vidék', 'Szponzorált tartalom']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
@@ -21,11 +20,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     if article_root is None:
         tei_logger.log('WARNING', f'{url}: ARTICLE ROOT NOT FOUND/UNKNOWN ARTICLE SCHEME!')
         return None
-    date_tag = bs.find('div', class_='m-author__wrapCatDateTitulus')
+    date_tag = bs.find('span', class_='o-post__date')
     if date_tag is not None:
-        titulus = date_tag.find('span')
-        if titulus is not None:
-            titulus.decompose()
         parsed_date = parse_date(date_tag.text.strip(), '%Y. %m. %d. %H:%M')
         if parsed_date is not None:
             data['sch:datePublished'] = parsed_date
@@ -45,31 +41,31 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     keywords = bs.find('meta', {'name': 'keywords', 'content': True})
     if keywords is not None:
         keywords_list = keywords['content'].split(',')
-        while SECTION in keywords_list:
-            keywords_list.remove(SECTION)
         data['sch:keywords'] = keywords_list
     else:
-        tei_logger.log('WARNING', f'{url}: KEYWORDS NOT FOUND!')
+        tei_logger.log('DEBUG', f'{url}: KEYWORDS NOT FOUND!')
     title = article_root.find('h1', class_='o-post__title')
     if title is not None:
         data['sch:name'] = title.text.strip()
     else:
         tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
-    author = article_root.find_all('a', class_='m-author__imgLink')
+    author = article_root.find_all('a', class_='m-author__name')
     if len(author) > 0:
+        source_list = []
         authors = []
-        for i in author:
-            author_tag = i.find('img', {'alt': True})
-            if author_tag is not None:
-                authors.append(author_tag['alt'])
-        if SOURCE in authors:
-            data['sch:source'] = [SOURCE]
-            authors.remove(SOURCE)
+        author = [i.text.strip() for i in author]
+        [authors.append(i) if i not in SOURCE else source_list.append(i) for i in author]
+        if len(source_list) > 0:
+            data['sch:source'] = source_list
         if len(authors) > 0:
             data['sch:author'] = authors
     else:
         tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-    data['sch:articleSection'] = SECTION
+    section = article_root.find('a', id='post-cat-title')
+    if section is not None:
+        data['sch:articleSection'] = section.text.strip()
+    else:
+        tei_logger.log('DEBUG', f'{url}: SECTION TAG NOT FOUND!')
     return data
 
 
@@ -80,20 +76,18 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS
-DECOMP = [(('div',), {'class': 'o-post__author'}),
-          (('div',), {'class': 'o-post__summary'}),
-          (('h1',), {'class': 'o-post__title'}),
-          (('div',), {'class': 'banner-container'}),
-          (('div',), {'class': 'shareItemLikeBox'}),
-          (('p',), {'class': '_ce_measure_widget'}),
-          (('div',), {'id': 'post-tags-section-1'}),
-          (('div',), {'id': 'post-tags-section-2'}),
+
+DECOMP = [(('div',), {'class': 'm-articRecommend'}),
+          (('div',), {'class': 'o-articleHead'}),
+          (('a',), {'class': '-articleHead'}),
+          (('div',), {'class': 'o-post__head'}),
+          (('div',), {'id': 'content-toggle-placeholder'}),
+          (('div',), {'class': 'm-fbComment__txtAndIframeWrap'}),
           (('div',), {'class': 'a-hirstartRecommender'}),
-          (('div',), {'class': 'm-articRecommend__cntWrap'}),
-          (('div',), {'class': 'm-post__wrap'}),
-          (('div',), {'data-ce-measure-widget': 'Cikkvégi gombok'}),
-          (('script',), {}),
-          (('style',), {})]
+          (('div',), {'class': 'banner_container'}),
+          (('div',), {'class': 'm-articleListWidget'}),
+          (('div',), {'id': 'post-tags-section'}),
+          (('script',), {})]
 
 MEDIA_LIST = []
 
@@ -104,7 +98,6 @@ def decompose_spec(article_dec):
 
 
 BLACKLIST_SPEC = []
-
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy

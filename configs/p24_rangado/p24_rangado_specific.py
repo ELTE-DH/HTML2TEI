@@ -3,15 +3,13 @@
 
 import re
 
-from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://sokszinuvidek.24.hu/'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post'})]
 
-HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
-               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
-
+# TODO
 SOURCE = ['Sokszínű Vidék', 'Szponzorált tartalom']
 
 
@@ -72,9 +70,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
-    if tag.name not in HTML_BASICS:
-        tag.name = 'else'
-    tag.attrs = {}
     return tag
 
 
@@ -94,8 +89,7 @@ DECOMP = [(('div',), {'class': 'm-articRecommend'}),
           (('div',), {'id': 'post-tags-section'}),
           (('script',), {})]
 
-MEDIA_LIST = [(('iframe',), {}),
-              (('img',), {})]
+MEDIA_LIST = []
 
 
 def decompose_spec(article_dec):
