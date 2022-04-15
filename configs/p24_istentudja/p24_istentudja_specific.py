@@ -74,6 +74,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
+    tag_attrs = tag.attrs
+    if 'data-hash' in tag_attrs.keys():
+        tag_attrs['data-hash'] = '@data-hash'
     return tag
 
 
