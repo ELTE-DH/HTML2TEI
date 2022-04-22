@@ -182,7 +182,15 @@ DECOMP = [(('script',), {}),
           (('button',), {}),
           (('div',), {'class': 'G-pagination'}),
           ]
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
+
+bad_url_list = ['https://hvg.hu//2016.03.10 14:25:00', 
+                'https://hvg.hu//2019.11.12 20:03:00',
+                'https://hvg.hu//2020.09.10 11:03:00',
+                'https://hvg.hu//Előző számaink tartalmából',
+                'https://www.consilium.europa.eu/hu/press/press-releases/2021/05/',
+                'https://hvg.hu//Az%20als%C3%B3%20rakparti%20utak%20lez%C3%A1r%C3%A1sa%20miatt%20Budapest%20bels%C5%91%20ter%C3%BCletein%20%C3%A9s%20gerinc%C3%BAtvonalain%20jelent%C5%91sen%20megn%C3%B6vekedett%20a%20k%C3%B6z%C3%BAti%20forgalom,%20ez%C3%A9rt%20az%20ott%20k%C3%B6zleked%C5%91%20j%C3%A1rataink%20eset%C3%A9ben%20is%20n%C5%91tt%20a%20menetid%C5%91.%20Jelenleg%20az%20al%C3%A1bbi%20aut%C3%B3buszj%C3%A1ratainkon%20kell%20hosszabb%20menetid%C5%91re%20sz%C3%A1m%C3%ADtani',
+                ]
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(s) for s in bad_url_list]))
 MEDIA_LIST = []
 
 hvg_fb_links = ['hvgkult',
