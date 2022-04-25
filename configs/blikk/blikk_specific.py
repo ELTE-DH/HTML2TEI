@@ -276,11 +276,16 @@ BLACKLIST_SPEC = [url.strip() for url in open(os_path_join(os_path_dirname(os_pa
                                                            'blikk_empty_BLACKLIST.txt')).readlines()] + \
                  ['https://www.blikk.hu/prospektus/penny-market/penny-market-marciusi-akcios-ujsag/kyvtf51',
                   'https://www.blikk.hu/prospektus/aldi/aldi-aprilisi-akcios-ujsag/2c457l2',
-                  'https://www.blikk.hu/teszt/kxd74tx']
+                  'https://www.blikk.hu/teszt/kxd74tx',
+                  'https://www.blikk.hu//qqq9s32']
 
 bad_url_list = ['http://read://https_www.foxnews.com/?url=https%3A%2F%2Fwww.foxnews.com%2Fentertainment%2Fcharlize-theron-dating-herself-her-daughter-said-she-needs-boyfriend',
                 'http://read://https_www.foxnews.com/?url=https://www.foxnews.com/entertainment/charlize-theron-dating-herself-her-daughter-said-she-needs-boyfriend',
-                '//gdehu.hit.gemius.pl/_%%CACHEBUSTER%%/redot.gif?id=0nHlDa9qUQ.ZK6S5vQMx2pPanOju_9hLgs1k4l88n_H.p7/fastid=faqnnauibqujdjjoncywdnnoisla/stparam=onhehpijse/nc=0']
+                'gemadhu.hit.gemius.pl/redot.gif?',
+                '//gdehu.hit.gemius.pl/_%%CACHEBUSTER%%/redot.gif?id=0nHlDa9qUQ.ZK6S5vQMx2pPanOju_9hLgs1k4l88n_H.p7/fastid=faqnnauibqujdjjoncywdnnoisla/stparam=onhehpijse/nc=0'
+                ]
+                
+        
 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(s) for s in bad_url_list]))
 
