@@ -299,8 +299,17 @@ BLACKLIST_SPEC = [
 #             return fixed_string
 #     return raw_html
 
-MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
+MULTIPAGE_URL_END = re.compile(r'.*\?isPrintView.*')
+# https://hvg.hu/sport/20210614_foci_eb_euro_2020_junius_14_percrol_percre/2?isPrintView=False&liveReportItemId=0&isPreview=False&ver=1&order=desc
 
 
-def next_page_of_article_spec(_):
+def next_page_of_article_spec(curr_html):
+    bs = BeautifulSoup(curr_html, 'lxml')
+    if bs.find('div', class_='G-pagination') is not None:
+        next_tag = bs.find('a', {'class': 'arrow next', 'rel': 'next', 'href': True})
+        if next_tag is not None:
+            next_link = next_tag.attrs['href'].replace('amp;', '')
+            link = f'https://hvg.hu{next_link}'
+            print(link)
+            return link
     return None
