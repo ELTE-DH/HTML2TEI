@@ -169,6 +169,11 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
+    tag_attrs = tag.attrs
+    if tag.name == 'time' and 'title' in tag_attrs.keys():  # title attribute contains timestamp
+        tag_attrs['title'] = '@TITLE'
+    if tag.name == 'meta' and 'content' in tag_attrs.keys():  # content attribute contains timestamp
+        tag_attrs['content'] = '@CONTENT'
     return tag
 
 
