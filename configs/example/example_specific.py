@@ -50,6 +50,8 @@ def decompose_spec(article_dec):
 
 
 BLACKLIST_SPEC = []
+
+# with complicated links, its best to use re.compile('|'.join([re.escape(s) for s in url_list]))
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy

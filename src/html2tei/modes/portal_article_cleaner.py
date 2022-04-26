@@ -87,6 +87,18 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
             file_title.append(author_tag)
             sourcedesc_author = copy(author_tag)
             sourcedesc.find('title').insert_after(sourcedesc_author)
+    # Editorial note on the interpretation of authors and sources, modification of the original string.
+    if 'originalAuthorString' in meta_data.keys():
+        original_author_string = meta_data['originalAuthorString']
+        del meta_data['originalAuthorString']
+        note_tag_auth = beauty_xml.new_tag('note')
+        note_tag_auth.string = 'The string indicated as the author or source needed to be interpreted and normalized.' \
+                               'The original contains the following strings: '
+        for auth in original_author_string:
+            create_new_tag_with_string(beauty_xml, auth, 'p', note_tag_auth)
+
+        tei_change = beauty_xml.find('change', source=True)
+        tei_change.append(note_tag_auth)
 
     # XENODATA 1: metadata of article source
     xeno_meta_datas = beauty_xml.find('rdf:Description')

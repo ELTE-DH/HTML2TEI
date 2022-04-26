@@ -56,25 +56,18 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName>Kiegyensúlyozott Médiáért Alapítvány</orgName>
-                        <placeName>1134 Budapest, Rózsafa utca 13-17.</placeName>
-                        <ref type="url" source="https://alfahir.hu/impresszum">https://doi.org/10.5281/zenodo.6334400</ref>
-                        <date when="2021-09-07"/>
+                    <publisher><orgName>Central Médiacsoport Zrt.</orgName>
+                        <placeName>1037 Budapest, Montevideo u. 9.</placeName>
+                        <ref type="url" source="https://24.hu/impresszum/"><!--KITÖLT source="impresszum url-je", literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo. --></ref>
+                        <date when="2021-12-08"/>
                     </publisher>
                     <pubPlace>
                         Budapest
                         <ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
-                    <availability>
-                        <p>Az alfahir.hu tulajdonát képező írások, videók, és hanganyagok eredeti formában,
-                            forrásmegjelöléssel szabadon átvehetőek. A portálon megjelenő képek csak az eredeti
-                            cikkekkel és egyéb írásokkal együtt vehetőek át, azoknak bármilyen egyéb felhasználáshoz a
-                            kiadó vagy a szerző előzetes engedélye szükséges.
-                        </p>
-                        <p>
-                            <ref type="url" source="https://alfahir.hu/impresszum">https://doi.org/10.5281/zenodo.6334400</ref>
-                            <date when="2021-09-07"/>
-                        </p>
+                    <availability><p>Copyright © 2021 Central Médiacsoport Zrt. </p>
+                        <p><ref type="url" source="https://24.hu/impresszum/"><!--https://doi.org/--></ref>
+                            <date when="2021-12-08"/></p>
                     </availability>
                     <date></date>
                 </bibl>
@@ -85,7 +78,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://alfahir.hu/">alfahir</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://24.hu/">24.hu</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -94,52 +87,13 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6334400">
+                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2021-09-02T19:50:01/2021-10-27T22:13:33</sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6334400"/>
-                    <sch:identifier>[{'checksum': 'deb59200fd9d02963e1acd44e96419d6', 
-                    'filename': 'alfahir-archive_new2.warc.gz', 
-                    'filesize': 142163010, 
-                    'id': '842e90ab-c241-4198-a201-11720f4ad4fc', 
-                    'links': {'download': 'https://zenodo.org/api/files/a5b6539a-d62f-46b2-ab49-f344de29b9d0/alfahir-archive_new2.warc.gz', 
-                    'self': 'https://zenodo.org/api/deposit/depositions/6334400/files/842e90ab-c241-4198-a201-11720f4ad4fc'}}, 
-                    {'checksum': 'e218246765e2dae02ef1d913d3da609d', 
-                    'filename': 'alfahir-articles_new2.warc.gz', 
-                    'filesize': 1837444472, 
-                    'id': '3c85cde3-bfb9-456a-8004-9eadb6aa6dbd', 
-                    'links': {'download': 'https://zenodo.org/api/files/a5b6539a-d62f-46b2-ab49-f344de29b9d0/alfahir-articles_new2.warc.gz', 
-                    'self': 'https://zenodo.org/api/deposit/depositions/6334400/files/3c85cde3-bfb9-456a-8004-9eadb6aa6dbd'}}, 
-                    {'checksum': '7c2819d5a7c54d12c6ee016f2de6b0eb', 
-                    'filename': 'alfahir_rights_statements.warc.gz', 
-                    'filesize': 30373, 
-                    'id': 'b9af0a5f-5369-41a3-a0c0-8c3633054d60', 
-                    'links': {'download': 'https://zenodo.org/api/files/a5b6539a-d62f-46b2-ab49-f344de29b9d0/alfahir_rights_statements.warc.gz', 
-                    'self': 'https://zenodo.org/api/deposit/depositions/6334400/files/b9af0a5f-5369-41a3-a0c0-8c3633054d60'}}, 
-                    {'checksum': '3575e8916beb791f946e15dab3ae6223', 
-                    'filename': 'hashsums', 
-                    'filesize': 6002, 
-                    'id': '08bf609d-1970-49ea-ac2f-76cb25060475', 
-                    'links': {'download': 'https://zenodo.org/api/files/a5b6539a-d62f-46b2-ab49-f344de29b9d0/hashsums', 
-                    'self': 'https://zenodo.org/api/deposit/depositions/6334400/files/08bf609d-1970-49ea-ac2f-76cb25060475'}}, 
-                    {'checksum': 'a3e4626fc6900f1dddb927e680279d0a', 
-                    'filename': 'log.log', 'filesize': 1613617, 
-                    'id': '2ade4128-9617-4e60-8139-6ac7fbc4edab', 
-                    'links': {'download': 'https://zenodo.org/api/files/a5b6539a-d62f-46b2-ab49-f344de29b9d0/log.log', 
-                    'self': 'https://zenodo.org/api/deposit/depositions/6334400/files/2ade4128-9617-4e60-8139-6ac7fbc4edab'}}, 
-                    {'checksum': '76f8ff8e8e9a38da96ecc4b1f84d65ef', 
-                    'filename': 'logs.zip', 
-                    'filesize': 2925273, 
-                    'id': 'e7633c4b-1082-463c-ad5d-6f9ca161b583', 
-                    'links': {'download': 'https://zenodo.org/api/files/a5b6539a-d62f-46b2-ab49-f344de29b9d0/logs.zip', 
-                    'self': 'https://zenodo.org/api/deposit/depositions/6334400/files/e7633c4b-1082-463c-ad5d-6f9ca161b583'}}, 
-                    {'checksum': '5f222a44cb763481ae1e38f341308cbe', 
-                    'filename': 'script.sh', 
-                    'filesize': 470, 
-                    'id': 'e2ce0f3c-b322-4e6f-812d-aa4c08f87534', 
-                    'links': {'download': 'https://zenodo.org/api/files/a5b6539a-d62f-46b2-ab49-f344de29b9d0/script.sh', 
-                    'self': 'https://zenodo.org/api/deposit/depositions/6334400/files/e2ce0f3c-b322-4e6f-812d-aa4c08f87534'}}]</sch:identifier>
-                    <sch:identifier>33acc585-f2bb-4543-82db-5596514c224d</sch:identifier> </rdf:Description>
+                    <sch:sdDatePublished><!--KITÖLT: a crawling időintervalluma pl 2020-01-01T23:40:00/2020-01-01T23:45:00 (a html2tei bármely log-jának végéről kiolvasható a teljes warc futtatásával)-->
+                    </sch:sdDatePublished>
+                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
+                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier><!-- KITÖLT:a WARCINFO-ból kiolvasható (zcat WARCNAME.warc.gz | less) WARC-Record-ID, pl: 930b53b8-ef8e-4406-be4d-37ad64e9a549--></sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -154,7 +108,6 @@
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
-                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-0577-8706">Nagy Mihály</sch:contributor>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
                 </rdf:Description>
             </rdf:RDF>

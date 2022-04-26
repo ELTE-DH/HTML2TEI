@@ -47,7 +47,8 @@
                 <availability>
                     <p>Metadata: IN COPYRIGHT - NON-COMMERCIAL USE PERMITTED<ref type="url"
                         >http://rightsstatements.org/vocab/InC-NC/1.0/</ref></p>
-                    <p>Text: IN COPYRIGHT <ref type="url">http://rightsstatements.org/vocab/InC/1.0/</ref>
+                    <p>Text: IN COPYRIGHT <ref type="url"
+                        >http://rightsstatements.org/vocab/InC/1.0/</ref>
                     </p>
                 </availability>
                 <idno type="PID"></idno>
@@ -55,15 +56,22 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName>Magyar Jeti Zrt.</orgName>
-                        <placeName>1024 Budapest, Margit krt. 5/b</placeName>
-                        <ref type="url" source="https://444.hu/impresszum">https://doi.org/10.5281/zenodo.6326248</ref>
-                        <date when="2020-12-01"/>
+                    <publisher><orgName><!--KITÖLT kiadó az impresszumból --></orgName>
+                        <placeName><!--KITÖLT kiadó székhelye --></placeName>
+                        <ref type="url" source="https://www.vadhajtasok.hu/impresszum">
+                            <!--KITÖLT: a portál DOI-ja pl.: https://doi.org/10.5281/zenodo --></ref>
+                         <date when="2022-02-13"/><!-- JAVÍTANI: az impresszum letöltésének dátuma -->
                     </publisher>
-                    <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref></pubPlace>
-                    <availability><p>© 2021 Magyar Jeti Zrt.<date when="2020-12-01"/></p>
-                        <p><ref type="url" source="https://444.hu/szerzoi-jogok">https://doi.org/10.5281/zenodo.6326248</ref>
-                            <date when="2021-01-07"/></p>
+                    <pubPlace>
+                        <!--KITÖLT:  pl: Budapest -->
+                        <ref type="url"><!--KITÖLT:  pl: http://www.geonames.org/3054643 --></ref>
+                    </pubPlace>
+                    <availability><p>© 2018 Vadhajtások.hu</p>
+                        <p>
+							<ref type="url" source="https://www.vadhajtasok.hu/impresszum">
+                                <!--KITÖLT: https://doi.org/ --></ref>
+                            <date when="2022-02-13"/><!-- JAVÍTANI: impresszum/jognyil crawl dátum -->
+						</p>
                     </availability>
                     <date></date>
                 </bibl>
@@ -74,7 +82,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://444.hu/">444</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://www.vadhajtasok.hu/">Vadhajtasok</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -83,12 +91,12 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6326248">
+                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2019-03-13T13:25:02/2021-03-09T10:03:26</sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6326248"/>
-                    <sch:identifier>[{'checksum': 'c9272e29d5cbfde5d5260b9d9324e37d', 'filename': '444-archive_new4.warc.gz', 'filesize': 129489098, 'id': '672e1a69-b165-451c-850a-3828ccd75eae', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/444-archive_new4.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/672e1a69-b165-451c-850a-3828ccd75eae'}}, {'checksum': '213e443482c6410d3152ab62f5a4bfca', 'filename': '444-articles_new4.warc.gz', 'filesize': 3251973099, 'id': 'a5c61e6f-59f9-478c-855f-8a79606ceef7', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/444-articles_new4.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/a5c61e6f-59f9-478c-855f-8a79606ceef7'}}, {'checksum': 'ea2f52cefa8691226d97247e66236622', 'filename': '444_rights_statements.warc.gz', 'filesize': 40599, 'id': '76d74fba-dc20-4d90-aa99-d1a33b5a7242', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/444_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/76d74fba-dc20-4d90-aa99-d1a33b5a7242'}}, {'checksum': '6d4ee25cf8c8bcd8c7e20e564fbc0c64', 'filename': 'hashsums', 'filesize': 5990, 'id': 'a1330d6f-b3d2-49eb-99dd-bd2b0c28375d', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/hashsums', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/a1330d6f-b3d2-49eb-99dd-bd2b0c28375d'}}, {'checksum': '3427dcee6e76ae826fb6acc60ac0a5d1', 'filename': 'log.log', 'filesize': 383296, 'id': 'a41d8c78-c5c9-488c-9ca6-74466fe0ce51', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/a41d8c78-c5c9-488c-9ca6-74466fe0ce51'}}, {'checksum': '1ee67cd1a9d28a3335e1ceace5bdf6be', 'filename': 'logs.zip', 'filesize': 4718057, 'id': 'caebdf59-948c-4d09-a600-0de213f98e93', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/caebdf59-948c-4d09-a600-0de213f98e93'}}, {'checksum': '95f5668c5d7109604b58a46346ea966b', 'filename': 'script.sh', 'filesize': 529, 'id': '4e0c3848-253b-4c3d-96b2-de98cf931735', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/4e0c3848-253b-4c3d-96b2-de98cf931735'}}]</sch:identifier>
-                    <sch:identifier>9d8abc05-9925-4a6f-bd2e-cda364f58997</sch:identifier> </rdf:Description>
+                    <sch:sdDatePublished>2021-12-13T12:32:22/2021-12-13T23:19:44</sch:sdDatePublished>
+                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
+                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier>b0d41bc0-01bb-4845-b7bd-45f95be24f0e</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -116,4 +124,3 @@
         </body>
     </text>
 </TEI>
-
