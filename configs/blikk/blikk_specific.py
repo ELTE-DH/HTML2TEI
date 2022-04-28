@@ -129,11 +129,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: TITLE SECTION TAG NOT FOUND!')
 
         # DATE PUBLISHED
-        date_published_tag = article_root.find('div', {'class': 'dates d-flex flex-column flex-md-row'})
+        date_published_tag = bs.find('meta', {'property': 'article:published_time', 'content': True})
         if date_published_tag is not None:
-            date_published = date_published_tag.get_text(strip=True)
+            print(date_published_tag)
+            date_published = date_published_tag['content']
             if len(date_published) > 0:
-                data['sch:datePublished'] = parse_date(date_published, "%Y. %b %d. %H:%M")  # TODO error handling?
+                data['sch:datePublished'] = parse_date(date_published, "%Y-%m-%d %H:%M:%S%z")
             else:
                 tei_logger.log('WARNING', f'{url}: DATE PUBLISHED TAG TEXT EMPTY!')
         else:
