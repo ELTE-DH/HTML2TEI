@@ -77,6 +77,8 @@ def excluded_tags_spec(tag):
         tag_attrs['data-desc'] = '@data-desc'
     if 'data-title' in tag_attrs.keys():
         tag_attrs['data-title'] = '@data-title'
+    elif tag.name == 'a' and 'id' in tag_attrs.keys():
+        tag_attrs['id'] = '@id'
     return tag
 
 

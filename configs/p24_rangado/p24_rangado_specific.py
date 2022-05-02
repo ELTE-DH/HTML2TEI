@@ -73,7 +73,11 @@ def excluded_tags_spec(tag):
     tag_attrs = tag.attrs
     if 'data-hash' in tag_attrs.keys():
         tag_attrs['data-hash'] = '@data-hash'
-    elif tag.name == 'a' and 'class' in tag_attrs and 'link-anchor' in tag_attrs['class'] and 'id' in tag_attrs.keys():
+    if 'data-desc' in tag_attrs.keys():
+        tag_attrs['data-desc'] = '@data-desc'
+    if 'data-title' in tag_attrs.keys():
+        tag_attrs['data-title'] = '@data-title'
+    elif tag.name == 'a' and 'id' in tag_attrs.keys():
         tag_attrs['id'] = '@id'
     return tag
 
