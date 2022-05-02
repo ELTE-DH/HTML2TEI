@@ -81,6 +81,8 @@ def excluded_tags_spec(tag):
         tag_attrs['id'] = '@id'
     elif tag.name == 'meta' and 'content' in tag_attrs.keys():
         tag_attrs['content'] = '@content'
+    elif tag.name == 'iframe' and 'title' in tag_attrs.keys():
+        tag_attrs['title'] = '@title'
     return tag
 
 
@@ -100,7 +102,7 @@ DECOMP = [(('div',), {'class': 'm-articRecommend'}),
           (('div',), {'id': 'post-tags-section'}),
           (('script',), {})]
 
-MEDIA_LIST = []
+MEDIA_LIST = [(('iframe',), {'class': 'tableauViz'})]
 
 
 def decompose_spec(article_dec):
