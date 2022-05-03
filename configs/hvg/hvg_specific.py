@@ -25,13 +25,13 @@ SOURCE = ['hvg.hu', 'MTI', 'MTI/hvg.hu', 'MTI / hvg.hu', 'Marabu', 'HVG', 'Eduli
           'hvg.hu/muosz.hu', 'hvg.hu/transindex.ro', 'hvg.hu/manna.ro', 'nso.hu', 'f1-live/hvg.hu', 'kemma.hu', 
           'met.hu', 'baon.hu', 'HVG/hvg.hu', 'Számlázz.hu', 'VG/hvg.hu', 'hvg.hu/merites.hu', 'teol.hu', 'dehir.hu', 
           'hvg.hu/Blikk', 'hvg.hu/Origo', 'hvg.hu/MTI', 'Napi.hu', 'hvg.hu/Travellina', 'hirado.hu', 'indohaz.hu', 
-          'hvg.hu/HVG', 'portfolio.hu', 'hvg.hu/HavariaPress', 'hvg.hu/turizmus.com', 'hvg.hu/mult-kor.hu', 'hvg.hu/benke', 
-          'hvg.hu/Index', 'hvg.hu/MTI/HavariaPress', 'BiztosDöntés.hu', 'hvg.hu/termekmix.com', 'nyugat.hu', 
-          'bankmonitor.hu', 'Népszava/hvg.hu', 'hvg.hu/foodnetwork', 'hvg.hu/businesstraveller', 'MTI/HavariaPress', 
-          'MTI/AP/REUTERS', 'MTI/Reuters', 'MTI/Reuters/DPA', 'MTI/Észak-Magyarország', 'MTI/Reuters/AFP', 
-          'MTI/Világgazdaság', 'TV2/Tények', 'MTI/AFP/AP/Reuters', 'HavariaPress/MTI', 'MTI/ITAR-TASZSZ', 
-          'MTI/dpa/EFE/Reuters', 'MTI/Népszabadság', 'MTI/AFP/DPA', 'MTI/Kisalföld', 'MTI/EFE', 'MTI/AFP', 
-          'MTI/DPA/AP', 'MTI/AP/AFP', 'MTI/Index', 'MTI/DPA', 'MTI/AFP/AP/ITAR-TASZSZ', 'MTI/InfoRádió', 
+          'hvg.hu/HVG', 'portfolio.hu', 'hvg.hu/HavariaPress', 'hvg.hu/turizmus.com', 'hvg.hu/mult-kor.hu',
+          'hvg.hu/benke', 'hvg.hu/Index', 'hvg.hu/MTI/HavariaPress', 'BiztosDöntés.hu', 'hvg.hu/termekmix.com',
+          'nyugat.hu', 'bankmonitor.hu', 'Népszava/hvg.hu', 'hvg.hu/foodnetwork', 'hvg.hu/businesstraveller',
+          'MTI/HavariaPress', 'MTI/AP/REUTERS', 'MTI/Reuters', 'MTI/Reuters/DPA', 'MTI/Észak-Magyarország',
+          'MTI/Reuters/AFP', 'MTI/Világgazdaság', 'TV2/Tények', 'MTI/AFP/AP/Reuters', 'HavariaPress/MTI',
+          'MTI/ITAR-TASZSZ', 'MTI/dpa/EFE/Reuters', 'MTI/Népszabadság', 'MTI/AFP/DPA', 'MTI/Kisalföld', 'MTI/EFE',
+          'MTI/AFP', 'MTI/DPA/AP', 'MTI/AP/AFP', 'MTI/Index', 'MTI/DPA', 'MTI/AFP/AP/ITAR-TASZSZ', 'MTI/InfoRádió',
           'MTI/Népszava', 'MTI/dpa/Hszinhua', 'OTS/MTI', 'BBC/MTI', 'MTI/Bors', 'MTI/Reuters/AP', 'MTI/AP', 
           'MTI/AFP/Reuters', 'MTI/Reuters/Hszinhua', 'MTI/Blikk', 'HVG/MTI']
 
@@ -146,7 +146,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                         else:
                             tei_logger.log('DEBUG', f'{url} MODIFICATION DATE TAG EMPTY!')
             # article section
-            article_section_tag = bs.find('span', {'class':'tag text-nowrap tag-big tag-inactive'})
+            article_section_tag = bs.find('span', {'class': 'tag text-nowrap tag-big tag-inactive'})
             if article_section_tag is not None:
                 article_section = article_section_tag.get_text(strip=True)
                 if article_section is not None:
@@ -193,7 +193,14 @@ bad_url_list = ['/2016.03.10 14:25:00',
                 '/2019.11.12 20:03:00',
                 '/Előző számaink tartalmából:',
                 'https://www.consilium.europa.eu/hu/press/press-releases/2021/05/',
-                'https://hvg.hu//Az%20als%C3%B3%20rakparti%20utak%20lez%C3%A1r%C3%A1sa%20miatt%20Budapest%20bels%C5%91%20ter%C3%BCletein%20%C3%A9s%20gerinc%C3%BAtvonalain%20jelent%C5%91sen%20megn%C3%B6vekedett%20a%20k%C3%B6z%C3%BAti%20forgalom,%20ez%C3%A9rt%20az%20ott%20k%C3%B6zleked%C5%91%20j%C3%A1rataink%20eset%C3%A9ben%20is%20n%C5%91tt%20a%20menetid%C5%91.%20Jelenleg%20az%20al%C3%A1bbi%20aut%C3%B3buszj%C3%A1ratainkon%20kell%20hosszabb%20menetid%C5%91re%20sz%C3%A1m%C3%ADtani',
+                'https://hvg.hu//Az%20als%C3%B3%20rakparti%20utak%20lez%C3%A1r%C3%A1sa%20miatt%20Budapest%20bels%C5%91'
+                '%20ter%C3%BCletein%20%C3%A9s%20gerinc%C3%BAtvonalain%20jelent%C5%91sen%20megn%C3%B6vekedett%20a%20k%C3'
+                '%B6z%C3%BAti%20forgalom,%20ez%C3%A9rt%20az%20ott%20k%C3%B6zleked%C5%91%20j%C3%A1rataink%20eset%C3%A9be'
+                'n%20is%20n%C5%91tt%20a%20menetid%C5%91.%20Jelenleg%20az%20al%C3%A1bbi%20aut%C3%B3buszj%C3%A1ratainkon%'
+                '20kell%20hosszabb%20menetid%C5%91re%20sz%C3%A1m%C3%ADtani',
+                'alsó rakparti utak lezárása miatt Budapest belső területein és gerincútvonalain jelentősen megnöveked'
+                'ett a közúti forgalom, ezért az ott közlekedő járataink esetében is nőtt a menetidő. Jelenleg az alább'
+                'i autóbuszjáratainkon kell hosszabb menetidőre számítani'
                 ]
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(s) for s in bad_url_list]))
 MEDIA_LIST = []
@@ -209,6 +216,7 @@ hvg_fb_links = ['hvgkult',
                 'hvghu',
                 'hvgextraano']
 
+
 def decompose_spec(article_dec):
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     # Delete menu h2 tag for news feed articles
@@ -216,11 +224,11 @@ def decompose_spec(article_dec):
         if f.find('div', {'class': 'article-pp_change_order'}) is not None:
             f.decompose()
     # Delete mid-page facebook embeds of hvg facebook page
-    for f in reversed(article_dec.find_all('div', {'class':'fb-page', 'data-href': True})):
+    for f in reversed(article_dec.find_all('div', {'class': 'fb-page', 'data-href': True})):
         if f['data-href'] in hvg_fb_links:
             f.decompose()
     # Delete end of article hvg facebook page embed
-    for t in article_dec.find_all('iframe', {'src':True}):
+    for t in article_dec.find_all('iframe', {'src': True}):
         if any(s in t['src'] for s in hvg_fb_links):
             t.decompose()
 
@@ -232,7 +240,7 @@ def decompose_spec(article_dec):
     # Delete embedded hvg.hu articles
     blockquotes = article_dec.find_all('blockquote')
     for bl in blockquotes:
-        bl_a = bl.find('a', {'href':True})
+        bl_a = bl.find('a', {'href': True})
         if bl_a is not None and len(bl_a['href'].split('/')) > 2 and bl_a['href'].split('/')[2] == 'hvg.hu':
             bl.decompose()
 
@@ -242,23 +250,28 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = [
     # Faulty html - extra <!DOCTYPE html> tag
     'https://hvg.hu/ingatlan/20171031_Megint_lokhet_egyet_a_lakashitelesek_ugyen_az_MNB',
-    'https://hvg.hu/gazdasag/20171011_Lakast_vasarol_es_lecsapna_az_allami_ingyenpenzre_Mutatjuk_a_nyolc_kezenfekvo_megoldast',
+    'https://hvg.hu/gazdasag/20171011_Lakast_vasarol_es_lecsapna_az_allami_ingyenpenzre_Mutatjuk_a_nyolc_kezenfekvo_'
+    'megoldast',
     'https://hvg.hu/gazdasag/20170925_Gyereknek_lakast_hitelbol',
     'https://hvg.hu/ingatlan/20171109_Tenyleg_jobban_megeri_ingatlankozvetitot_nyitni_mint_a_lakaskiadassal_bibelodni',
     'https://hvg.hu/ingatlan/20171028_Nyaralot_venne_Jobban_jar_ha_var_vele',
     'https://hvg.hu/gazdasag/20171016_Mire_eleg_egy_tizmillios_lakashitel_Egyetlen_abran_minden_az_orszagos_arakrol',
     'https://hvg.hu/gazdasag/20171103_Duplajara_nott_az_epitesi_kedv_nagyobbak_a_lakasok_is',
     'https://hvg.hu/gazdasag/20180215_hitel_kolcson_penz_atveres_csalas_bankok_tudnivalo_video',
-    'https://hvg.hu/gazdasag/20180208_Sokkolo_szamok_a_nyugateuropaiaknak_tizszer_annyi_megtakaritasuk_van_mint_a_magyaroknak',
-    'https://hvg.hu/ingatlan/20171026_Alcazott_probavasarlok_teszteltek_a_lakashiteleket_ajanlo_bankokat_itt_az_eredmeny',
+    'https://hvg.hu/gazdasag/20180208_Sokkolo_szamok_a_nyugateuropaiaknak_tizszer_annyi_megtakaritasuk_van_mint_a_'
+    'magyaroknak',
+    'https://hvg.hu/ingatlan/20171026_Alcazott_probavasarlok_teszteltek_a_lakashiteleket_ajanlo_bankokat_itt_az_'
+    'eredmeny',
     'https://hvg.hu/gazdasag/20171215_Tudja_mi_a_lakashitelt_igenylok_nagy_dilemmaja_Mutatjuk_es_segitunk_feloldani',
     'https://hvg.hu/gazdasag/20171025_A_fiatal_par_szinte_nullara_hozta_ki_a_lakashitel_kamatat_mutatjuk_hogyan',
-    'https://hvg.hu/gazdasag/20171103_Mennyit_es_meddig_kell_felretenni_lakastakarekba_hogy_lakas_is_legyen_belole_Itt_az_orszagos_abra',
+    'https://hvg.hu/gazdasag/20171103_Mennyit_es_meddig_kell_felretenni_lakastakarekba_hogy_lakas_is_legyen_belole_Itt_'
+    'az_orszagos_abra',
     'https://hvg.hu/ingatlan/20171109_Csak_akkor_csereld_a_panelt_lakoparkra_ha_ezeket_merlegeled',
     'https://hvg.hu/gazdasag/20171020_Jovore_erik_a_gyerek_Mutatjuk_milyen_kiadasokkal_jar_ez_a_csaladnak',
     'https://hvg.hu/gazdasag/20171130_A_bank_vagy_a_lakastakarek_a_nyero_ha_hitel_kell_a_lakasvasarlashoz_Kiszamoltuk',
     'https://hvg.hu/gazdasag/20180216_befektetes_penz_nyereseg_lakastakarek_hozam_kamat_haszon',
-    'https://hvg.hu/gazdasag/20180221_Nagyobb_lakasba_koltozne_a_csalad_Mutatjuk_a_kethiteles_kevesek_altal_ismert_megoldast',
+    'https://hvg.hu/gazdasag/20180221_Nagyobb_lakasba_koltozne_a_csalad_Mutatjuk_a_kethiteles_kevesek_altal_ismert_'
+    'megoldast',
     'https://hvg.hu/gazdasag/20171013_Alberlethez_igenyelne_tamogatast_Van_egy_jo_es_eleg_sok_rossz_hirunk',
     'https://hvg.hu/ingatlan/20180324_Itt_eri_meg_most_a_lakasbefektetes_de_bukni_is_lehet',
     # HVG 360 articles:
@@ -283,26 +296,6 @@ BLACKLIST_SPEC = [
     'https://hvg.hu/elet/20200509_Csak_ugy_potyognak_az_elefantbebik_a_pragai_allatkertben',
     'https://hvg.hu/vilag/20130215_Oroszorszag_meteor',
 ]
-
-# def transform_to_html(url, raw_html, warc_logger):
-#     _ = url  # , warc_logger
-
-#     soup = BeautifulSoup(raw_html, 'html.parser')
-#     html_tags = soup.find_all('html')
-#     if len(html_tags) == 2:
- 
-#         # a few websites contain faulty html code: an extra <!DOCTYPE html> is included
-#         doctype_text = '<!DOCTYPE html>'
-#         first_index = str(soup).find(doctype_text)
-#         first_index = first_index + len(doctype_text)
-#         second_index = str(soup)[first_index:].find(doctype_text)
-#         if second_index != -1:
-#             second_index = second_index + first_index
-#             end_index = str(soup)[second_index:].find('</html>')
-#             end_index = second_index + end_index + len('</html>')
-#             fixed_string = str(soup).replace(str(soup)[second_index:end_index], '')
-#             return fixed_string
-#     return raw_html
 
 MULTIPAGE_URL_END = re.compile(r'.*\?isPrintView.*')
 # https://hvg.hu/sport/20210614_foci_eb_euro_2020_junius_14_percrol_percre/2?isPrintView=False&liveReportItemId=0&isPreview=False&ver=1&order=desc
