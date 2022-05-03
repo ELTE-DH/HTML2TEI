@@ -165,6 +165,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
         else:
             tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND!')
+            return None
     return data
 
 
@@ -310,6 +311,6 @@ def next_page_of_article_spec(curr_html):
         if next_tag is not None:
             next_link = next_tag.attrs['href'].replace('amp;', '')
             link = f'https://hvg.hu{next_link}'
-            print(link)
+            
             return link
     return None
