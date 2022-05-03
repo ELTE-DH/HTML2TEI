@@ -128,16 +128,32 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: TITLE SECTION TAG NOT FOUND!')
 
         # DATE PUBLISHED
-        date_published_tag = bs.find('meta', {'property': 'article:published_time', 'content': True})
+
+        # First extract publish time from meta tag
+        pubdate_from_meta = None
+        date_published_meta_tag = bs.find('meta', {'property': 'article:published_time', 'content': True})
+        if date_published_meta_tag is not None:
+            date_published_from_meta = date_published_meta_tag['content']
+            if len(date_published_from_meta) > 0:
+                pubdate_from_meta = parse_date(date_published_from_meta, "%Y-%m-%d %H:%M:%S%z")
+
+        # Second extract publish time from visible html
+        pubdate_from_html = None
+        date_published_tag = article_root.find('div', {'class': 'dates d-flex flex-column flex-md-row'})
         if date_published_tag is not None:
-            print(date_published_tag)
-            date_published = date_published_tag['content']
+            date_published = date_published_tag.get_text(strip=True)
             if len(date_published) > 0:
-                data['sch:datePublished'] = parse_date(date_published, "%Y-%m-%d %H:%M:%S%z")
+                pubdate_from_html = parse_date(date_published, "%Y. %b %d. %H:%M")
+
+        if pubdate_from_html is None and pubdate_from_meta is not None:
+            data['sch:datePublished'] = pubdate_from_meta
+        elif pubdate_from_meta is not None and pubdate_from_html is not None:
+            if pubdate_from_meta.replace(tzinfo=None) == pubdate_from_html:
+                data['sch:datePublished'] = pubdate_from_meta
             else:
-                tei_logger.log('WARNING', f'{url}: DATE PUBLISHED TAG TEXT EMPTY!')
+                data['sch:datePublished'] = pubdate_from_html
         else:
-            tei_logger.log('WARNING', f'{url}: DATE PUBLISHED TAG NOT FOUND!')
+            tei_logger.log('WARNING', f'{url}: DATE PUBLISHED NOT FOUND!')
 
         # DATE MODIFIED - no date modified information found
 
