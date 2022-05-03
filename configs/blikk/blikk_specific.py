@@ -104,7 +104,6 @@ SUBJECT_DICT = {'eletmod': 'életmód',
                 }
 
 
-
 def get_meta_from_articles_spec(tei_logger, url, bs):
     """author tag does not exist"""
     data = tei_defaultdict()
