@@ -199,10 +199,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
             # possible keywords are manually collated in the SUBJECT DICT dictionary. 
             for extra_keyword in section_path_elements:
-                if extra_keyword in SUBJECT_DICT.keys() and extra_keyword != data['sch:artcleSection']:
+                if extra_keyword in SUBJECT_DICT.keys() and extra_keyword != data['sch:articleSection']:
                     keywords.append(SUBJECT_DICT[extra_keyword])
                 else:
-                    tei_logger.log('DEBUG', f'{url}: SECTION PATH KEYWORD NOT IN SPECIFIC FILE SUBJECT DICT!')
+                    tei_logger.log('WARNING', f'{url}: SECTION PATH KEYWORD NOT IN SPECIFIC FILE SUBJECT DICT!')
 
         # additional text is taken from the subtitle tag which is sometimes used to annotate sponsored articles
         # these elements are considered keywords
