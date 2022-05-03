@@ -242,6 +242,9 @@ def normal_tag_to_tei_xml_converter(bs, article):
         elif tag_name == 'valaszblokk':
             tag.name = 'list'
             tag.attrs = {'type': 'quiz'}
+        elif tag_name == 'editorial_note':
+            tag.name = 'note'
+            tag.attrs = {'type': 'editorial'}
         elif tag_name == 'social_media':
             flo_root = bs.new_tag('floatingText')
             flo_root.attrs = {'type': 'social_media_content'}
