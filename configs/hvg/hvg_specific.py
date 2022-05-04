@@ -199,10 +199,9 @@ bad_url_list = ['/2016.03.10 14:25:00',
                 '%B6z%C3%BAti%20forgalom,%20ez%C3%A9rt%20az%20ott%20k%C3%B6zleked%C5%91%20j%C3%A1rataink%20eset%C3%A9be'
                 'n%20is%20n%C5%91tt%20a%20menetid%C5%91.%20Jelenleg%20az%20al%C3%A1bbi%20aut%C3%B3buszj%C3%A1ratainkon%'
                 '20kell%20hosszabb%20menetid%C5%91re%20sz%C3%A1m%C3%ADtani',
-                'alsó rakparti utak lezárása miatt Budapest belső területein és gerincútvonalain jelentősen megnöveked'
-                'ett a közúti forgalom, ezért az ott közlekedő járataink esetében is nőtt a menetidő. Jelenleg az alább'
-                'i autóbuszjáratainkon kell hosszabb menetidőre számítani'
+                '/Az alsó rakparti utak lezárása miatt Budapest belső területein és gerincútvonalain jelentősen megnövekedett a közúti forgalom, ezért az ott közlekedő járataink esetében is nőtt a menetidő. Jelenleg az alábbi autóbuszjáratainkon kell hosszabb menetidőre számítani:'
                 ]
+
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(s) for s in bad_url_list]))
 MEDIA_LIST = []
 
@@ -221,6 +220,7 @@ hvg_fb_links = ['hvgkult',
 def decompose_spec(article_dec):
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     # Delete menu h2 tag for news feed articles
+
     for f in article_dec.find_all('h2', {'class': 'larger-header'}):
         if f.find('div', {'class': 'article-pp_change_order'}) is not None:
             f.decompose()
