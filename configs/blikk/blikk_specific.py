@@ -100,7 +100,8 @@ SUBJECT_DICT = {'eletmod': 'életmód',
                 'lol': 'lol',
                 'vizes-vb': 'vizes-vb',
                 'foci-vb-2018': 'foci-vb-2018',
-                'magyar-japan-noi-vizilabda': 'magyar-japan-noi-vizilabda'
+                'magyar-japan-noi-vizilabda': 'magyar-japan-noi-vizilabda',
+                'egyeni': 'egyéni'
                 }
 
 
@@ -136,6 +137,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             date_published_from_meta = date_published_meta_tag['content']
             if len(date_published_from_meta) > 0:
                 pubdate_from_meta = parse_date(date_published_from_meta, "%Y-%m-%d %H:%M:%S%z")
+                if pubdate_from_meta is not None:
+                    pubdate_from_meta = pubdate_from_meta.replace(tzinfo=None)
 
         # Second extract publish time from visible html
         pubdate_from_html = None
@@ -148,7 +151,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if pubdate_from_html is None and pubdate_from_meta is not None:
             data['sch:datePublished'] = pubdate_from_meta
         elif pubdate_from_meta is not None and pubdate_from_html is not None:
-            if pubdate_from_meta.replace(tzinfo=None) == pubdate_from_html:
+            if pubdate_from_meta == pubdate_from_html:
                 data['sch:datePublished'] = pubdate_from_meta
             else:
                 data['sch:datePublished'] = pubdate_from_html
@@ -217,7 +220,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if len(keywords) > 0:
             data['sch:keywords'] = keywords
 
-    return data
+        return data
+    else:
+        return None
 
 
 def excluded_tags_spec(tag):
