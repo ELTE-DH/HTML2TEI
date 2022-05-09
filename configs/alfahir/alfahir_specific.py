@@ -2,6 +2,7 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
+from bs4 import BeautifulSoup
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
@@ -293,8 +294,16 @@ BLACKLIST_SPEC = [url.strip() for url in
                   open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'alfahir_BLACKLIST.txt')).readlines()]
 
 
-MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
+MULTIPAGE_URL_END = re.compile(r'\?page=[0-9]*')
 
 
-def next_page_of_article_spec(_):
-    return None
+def next_page_of_article_spec(archive_page_raw_html):
+    ret = None
+    soup = BeautifulSoup(archive_page_raw_html, 'lxml')
+    next_page = soup.find('li', class_='pager__item pager__item--next')
+    if next_page is not None:
+        next_page_link = next_page.find('a')
+        if next_page_link is not None and 'href' in next_page_link.attrs:
+            url_end = next_page_link.attrs['href']
+            ret = f'https://alfahir.hu/kereso{url_end}'
+    return ret
