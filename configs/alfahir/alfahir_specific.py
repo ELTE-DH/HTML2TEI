@@ -287,6 +287,17 @@ MEDIA_LIST = []
 
 def decompose_spec(article_dec):
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
+    for bq in article_dec.find_all('blockquote', {'class': 'embedly-card'}):
+        for p in bq.find_all('p'):
+            if 'Log into Facebook to start sharing and connecting with your friends' in p.text:
+                p.string.replace_with('')
+        # Need to get rid of 'Log into Facebook' somehow
+        # for h4 in bq.find_all('h4'):
+        #     if 'Log into Facebook' in h4.string and h4.find('a', {'href': True}) is not None:
+        #         a = h4.find('a', {'href': True})
+        #         a.attrs = {'href': a.attrs['href']}
+        #         a.string.replace_with('')
+        #         h4.name = 'a'
     return article_dec
 
 
@@ -297,13 +308,11 @@ BLACKLIST_SPEC = [url.strip() for url in
 MULTIPAGE_URL_END = re.compile(r'\?page=[0-9]*')
 
 
-def next_page_of_article_spec(archive_page_raw_html):
+def next_page_of_article_spec(curr_html):
     ret = None
-    soup = BeautifulSoup(archive_page_raw_html, 'lxml')
-    next_page = soup.find('li', class_='pager__item pager__item--next')
-    if next_page is not None:
-        next_page_link = next_page.find('a')
-        if next_page_link is not None and 'href' in next_page_link.attrs:
-            url_end = next_page_link.attrs['href']
-            ret = f'https://alfahir.hu/kereso{url_end}'
+    soup = BeautifulSoup(curr_html, 'lxml')
+    next_page_button = soup.find('a', {'class': 'button', 'rel': 'next'})
+    if next_page_button is not None and 'href' in next_page_button.attrs:
+        url_end = next_page_button.attrs['href']
+        ret = f'https://alfahir.hu{url_end}'
     return ret
