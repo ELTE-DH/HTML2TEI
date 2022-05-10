@@ -305,7 +305,7 @@ BLACKLIST_SPEC = [url.strip() for url in
                   open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'alfahir_BLACKLIST.txt')).readlines()]
 
 
-MULTIPAGE_URL_END = re.compile(r'\?page=[0-9]*')
+MULTIPAGE_URL_END = re.compile(r'.*\?page=.*')
 
 
 def next_page_of_article_spec(curr_html):
