@@ -22,7 +22,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         return None
     date_tag = bs.find('span', class_='o-post__date')
     if date_tag is not None:
-        print(url, date_tag)
         parsed_date = parse_date(date_tag.text.strip(), '%Y. %m. %d. %H:%M')
         if parsed_date is not None:
             data['sch:datePublished'] = parsed_date
