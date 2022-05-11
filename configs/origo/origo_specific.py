@@ -80,23 +80,24 @@ NON_AUTHORS = ['', 'MTI']  # Empty string and Sources
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     
-    def _sort_authors(data, author_tag_list):
+    def _sort_authors(_data, author_tag_list):
         authors = [a.get_text(strip=True) for a in author_tag_list if a.get_text(strip=True) not in NON_AUTHORS]
         sources = [a.get_text(strip=True) for a in author_tag_list if a.get_text(strip=True) in NON_AUTHORS[1:]]
         if len(authors) > 0:
-            data['sch:author'] = authors
+            _data['sch:author'] = authors
         if len(sources) > 0:
-            data['sch:source'] = sources    
+            _data['sch:source'] = sources
+        return _data
 
-    def _date_from_url(data, url):
-        date_from_url = re.search(r'(?<=/)\d{8}', url).group(0)
+    def _date_from_url(_url):
+        date_from_url = re.search(r'(?<=/)\d{8}', _url).group(0)
         if date_from_url is not None:
             parsed_date_from_url = parse_date(date_from_url, "%Y%m%d")
             if parsed_date_from_url is not None:
-                data['sch:datePublished'] = parsed_date_from_url
+                return parsed_date_from_url
             else:
-                tei_logger.log('WARNING', f'{url} COULD NOT PARSE DATE FROM URL!')
-        
+                tei_logger.log('WARNING', f'{_url} COULD NOT PARSE DATE FROM URL!')
+                return None
 
     def _keywords(data, intext):
         keywords_from_meta = []
@@ -124,7 +125,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('DEBUG', f'{url} NO KEYWORDS FOUND')
         return data
 
-
     def _format1(data):
 
         # format 1 title
@@ -141,7 +141,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             
             authors_or_sources = article_info.find_all('span', class_='article-author')
             if len(authors_or_sources) > 0:
-                _sort_authors(data, authors_or_sources)
+                data = _sort_authors(data, authors_or_sources)
             else:
                 tei_logger.log('DEBUG', f'{url}: FORMAT 1 AUTHOR TAG NOT FOUND!')
 
@@ -178,7 +178,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 else:
                     tei_logger.log('DEBUG', f'{url}: FORMAT 1 KEYWORDS NOT FOUND!')
 
-
     def _format2(data):
         article_head_format_2 = bs.find('header', {'id': 'article-head'})
 
@@ -196,7 +195,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if d_and_a_tag is not None:
             authors_or_sources = d_and_a_tag.find_all('span', {'class': 'article-author'})
             if len(authors_or_sources) > 0:
-                _sort_authors(data, authors_or_sources)
+                data = _sort_authors(data, authors_or_sources)
             else:
                 tei_logger.log('DEBUG', f'{url}: FORMAT 2 AUTHOR STRING NOT PRESENT IN TAG!')
                 
@@ -208,10 +207,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 else:
                     tei_logger.log('WARNING', f'{url}: FORMAT 2 FAILED TO PARSE DATE PUBLISHED!')
             else:
-                _date_from_url(data, url)
+                data['sch:datePublished'] = _date_from_url(url)
         else:
             tei_logger.log('WARNING', f'{url}: FORMAT 2 DATE AND AUTHOR TAGS NOT FOUND!')
-
 
     def _format3(data): 
         # format 3 gallery
@@ -249,7 +247,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url} FORMAT 3 GALLERY LINK FAILED TO PARSE')
         # author never present on gallery article
 
-
     def _format4(data):
         # format 4 news feed
 
@@ -275,7 +272,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if len(split_url) > 4 and (split_url[4] or split_url[5]) == 'kozvetites':
             intext_keywords = ['közvetítés']
             data = _keywords(data, intext_keywords)
-
 
     def _format5(data):
         # format 5 - https://www.origo.hu/itthon/valasztas2010/20100210-ujabb-feltort-levelszekrenyek-utan-nyomoz-a-rendorseg.html
@@ -310,7 +306,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             authors_tag = header.find('span', {'class': 'author'})
             if authors_tag is not None:
                 authors_or_sources = authors_tag.find_all('a')
-                _sort_authors(data, authors_or_sources)
+                data = _sort_authors(data, authors_or_sources)
             else:
                 tei_logger.log('WARNING', f'{url} FORMAT 5 AUTHOR TAG NOT FOUND')
             date_tag = header.find('span', {'class': 'create_date'})
@@ -325,7 +321,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 else:
                     tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE EMPTY!')
         else:
-            print('here')
             header2 = bs.find('div', {'id': 'cikk'})
             
             if header2 is not None:
@@ -347,7 +342,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
             else:
                 tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE TAG NOT FOUND!')
-
 
     def _format6(data):
         # format 6 palyabea
@@ -379,10 +373,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             else:
                 tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE TAG NOT FOUND!')
         else:
-            _date_from_url(data, url)
+            format_6_date_from_url = _date_from_url(url)
+            if format_6_date_from_url is not None:
+                data['sch:datePublished'] = format_6_date_from_url
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE COULD NOT BE PARSED FROM URL!')
 
         # format 6 keywords
-        paly_head = palyabea_base.find('div', {'id':'left'})
+        paly_head = palyabea_base.find('div', {'id': 'left'})
         if paly_head is not None:
             paly_tags = paly_head.find_all('a', {'href': True, 'title': True, 'class': False})
             if len(paly_tags) > 0:
@@ -391,9 +389,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             else:
                 tei_logger.log('WARNING', f'{url} FORMAT 6 KEYWORD TAGS NOT FOUND!')
 
-
     def _format7(data):
-        tei_logger.log('WARNING', f'{url} FORMAT 7 !!!!!')
         pub_date_meta_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
         if pub_date_meta_tag is not None:
             parsed_pub_date = parse_date(pub_date_meta_tag['content'], "%Y-%m-%d")
@@ -402,7 +398,11 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             else:
                 tei_logger.log('WARNING', f'{url} FAILED TO PARSE FORMAT 7 PUBLISH DATE!')
         else:
-            tei_logger.log('WARNING', f'{url} FORMAT 7 PUBBLISH DATE TAG NOT FOUND!')
+            format_7_date_from_url = _date_from_url(url)
+            if format_7_date_from_url is not None:
+                data['sch:datePublished'] = format_7_date_from_url
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 7 PUBBLISH DATE TAG NOT FOUND!')
 
         mod_date_meta_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
         if mod_date_meta_tag is not None:
@@ -410,9 +410,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if mod_date_meta_tag is not None:
                 data['sch:datePublished'] = parsed_mod_date
             else:
-                tei_logger.log('WARNING', f'{url} FAILED TO PARSE FORMAT 7 MODIFICATION DATE!')
+                tei_logger.log('DEBUG', f'{url} FAILED TO PARSE FORMAT 7 MODIFICATION DATE!')
         else:
-            tei_logger.log('WARNING', f'{url} FORMAT 7 MODIFICATION DATE TAG NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url} FORMAT 7 MODIFICATION DATE TAG NOT FOUND!')
         
         title_tag = bs.find('title')
         if title_tag is not None:
@@ -438,15 +438,20 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 data['sch:articleSection'] = art_section
     
     def _format8(data):
-        return 'format 8'
-        print('format 8')
+        """
+        Most articles are from the USA 2008 election news column.
+        e.g.: https://www.origo.hu/amerikai-elnokvalasztas-2008/20080726-amerikai-
+        elnokvalasztas-barack-obama-demokrata-jelolt-kulpolitia-irak-afganisztan.html
+        No data is available from the htmls, even the title of the articles are missing.
+        """
+        data['sch:datePublished'] = _date_from_url(url)
 
     data = tei_defaultdict()
 
     data['sch:url'] = url
     split_url = url.split('/')
 
-    format_dict = {('header', ('class','article-head')): _format1,
+    format_dict = {('header', ('class', 'article-head')): _format1,
                     ('header', ('id', 'article-head')): _format2,
                     ('body', ('class', 'gallery')): _format3,
                     ('div', ('class', 'sportonline_header')): _format4,
@@ -458,8 +463,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     format_identified = False
     for key, format_option in format_dict.items():
-        if bs.find(key[0], {key[1][0]:key[1][1]}) is not None:
-            print(key)
+        if bs.find(key[0], {key[1][0]: key[1][1]}) is not None:
+
             format_option(data)
             format_identified = True
             break
@@ -474,8 +479,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if date_modified is not None:
             data['sch:dateModified'] = date_modified
         else:
-            tei_logger.log('WARNING', f'{url} DATE MODIFIED FAILED TO PARSE')
-
+            tei_logger.log('DEBUG', f'{url} DATE MODIFIED FAILED TO PARSE')
 
     # ARTICLE SECTION FROM LINK
     if data['sch:articleSection'] is None:
@@ -523,7 +527,6 @@ def excluded_tags_spec(tag):
 
     if tag.name == 'div' and 'data-date' in tag_attrs.keys():
         tag_attrs['data-date'] = '@DATE'
-        
 
     if tag.name == 'div' and 'data-time' in tag_attrs.keys():
         tag_attrs['data-time'] = '@DATE'
@@ -568,7 +571,7 @@ BLACKLIST_SPEC = [url.strip() for url in open(os_path_join(os_path_dirname(os_pa
 # http://:www.origo.hu/nagyvilag/20110402-radioaktiv-viz-omlik-a-tengerbe-japanban.html
 
 bad_url_list = [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
-                                                           'bad_reference_urls.txt')).readlines()] \
+                                            'bad_reference_urls.txt')).readlines()] \
                 + ['&lt;iframe', '&lt;blockquote']
                 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(s) for s in bad_url_list]))
