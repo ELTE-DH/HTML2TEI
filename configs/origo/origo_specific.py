@@ -8,7 +8,8 @@ from html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descen
 
 PORTAL_URL_PREFIX = 'https://www.origo.hu/'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',),{'class': 'col-xl-8'}),
+ARTICLE_ROOT_PARAMS_SPEC = [(('article',),{'class': 'article-body'}),
+                            (('div',),{'class': 'col-xl-8'}),
                             (('div',), {'class': 'swiper-wrapper'}),
                             (('article',), {'id': 'article-center'}),
                             (('article',), {'id': 'article-text'}),
@@ -86,24 +87,54 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
         if len(sources) > 0:
             data['sch:source'] = sources    
-    
-    data = tei_defaultdict()
-    data['sch:url'] = url
-    split_url = url.split('/')
 
-    intext_keywords = []  # defined in case no keywords are found from text
-    article_section = None  # defined in case no article section tags are found
+    def _date_from_url(data, url):
+        date_from_url = re.search(r'(?<=/)\d{8}', url).group(0)
+        if date_from_url is not None:
+            parsed_date_from_url = parse_date(date_from_url, "%Y%m%d")
+            if parsed_date_from_url is not None:
+                data['sch:datePublished'] = parsed_date_from_url
+            else:
+                tei_logger.log('WARNING', f'{url} COULD NOT PARSE DATE FROM URL!')
+        
 
-    article_head_format_1 = bs.find('header', class_='article-head')
-    if article_head_format_1 is not None: # format 1
+    def _keywords(data, intext):
+        keywords_from_meta = []
+        keywords_scripts = [a for a in bs.find_all('script') if 'window.exclusionTags' in a.text]
+        if len(keywords_scripts) > 0:
+            keywords_script = keywords_scripts[0]
+            if keywords_script is not None:
+                ks = keywords_script.text
+                i1 = ks.find('[')
+                i2 = ks.find(']')
+                keywords = ks[i1+1:i2].replace("'", '').split(',')
+                if len(keywords) > 0:
+                    keywords_from_meta = [k.strip() for k in keywords]
+        
+        # KEYWORDS FROM URL  TODO is this needed?
+        # 4 or 5 in URL_KEYWORDS then add to url_keywords
+        url_keywords = []
+        for k in [4, 5]:
+            if len(split_url) >= k+1 and split_url[k] in URL_KEYWORDS:
+                url_keywords.append(URL_KEYWORDS[split_url[k]])
+
+        if len(intext) > 0 or len(keywords_from_meta) > 0 or len(url_keywords) > 0:
+            data['sch:keywords'] = list(set(intext) | set(keywords_from_meta) | set(url_keywords))
+        else:
+            tei_logger.log('DEBUG', f'{url} NO KEYWORDS FOUND')
+        return data
+
+
+    def _format1(data):
 
         # format 1 title
-        title = article_head_format_1.find('h1', class_='article-title')
+        title = bs.find('h1', class_='article-title')
 
         if title is not None:
             data['sch:name'] = title.text.strip()
         else:
             tei_logger.log('WARNING', f'{url}: FORMAT 1 TITLE NOT FOUND IN URL!')
+
         # format 1 author and date published
         article_info = bs.find('div', class_='article-info')
         if article_info is not None:
@@ -123,6 +154,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
         else:
             tei_logger.log('WARNING', f'{url}: FORMAT 1 ARTICLE INFO NOT FOUND!')
+            
         # format 1 body contents
         article_body = bs.find('div', class_='col-xl-8')
         if article_body is not None:
@@ -131,9 +163,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if section_tag_f1 is not None:
                 section = section_tag_f1.get_text(strip=True)
                 if len(section) > 0:
-                    article_section = section
+                    data['sch:articleSection'] = section
             else:
                 tei_logger.log('WARNING', f'{url}: FORMAT 1 ARTICLE SECTION TAG NOT FOUND!')
+
             # format 1 keywords
             keywords_root = article_body.find('div', class_='article-meta')
             if keywords_root is not None:
@@ -141,190 +174,298 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 
                 if len(article_tags) > 0:
                     intext_keywords = article_tags
+                    data = _keywords(data, intext_keywords)
                 else:
                     tei_logger.log('DEBUG', f'{url}: FORMAT 1 KEYWORDS NOT FOUND!')
 
-    else:  # format 2
 
+    def _format2(data):
         article_head_format_2 = bs.find('header', {'id': 'article-head'})
-        if article_head_format_2 is not None:
-            # format 2 title
-            title_tag = article_head_format_2.find('h1')
+
+        # format 2 title
+        title_tag = article_head_format_2.find('h1')
+        if title_tag is not None:
+            title = title_tag.get_text(strip=True)
+            if len(title) > 0:
+                data['sch:name'] = title
+        else:
+            tei_logger.log('WARNING', f'{url}: FORMAT 2 TITLE NOT FOUND!')
+
+        # format 2 date published and author
+        d_and_a_tag = article_head_format_2.find('div', {'class': 'address top'})
+        if d_and_a_tag is not None:
+            authors_or_sources = d_and_a_tag.find_all('span', {'class': 'article-author'})
+            if len(authors_or_sources) > 0:
+                _sort_authors(data, authors_or_sources)
+            else:
+                tei_logger.log('DEBUG', f'{url}: FORMAT 2 AUTHOR STRING NOT PRESENT IN TAG!')
+                
+            date_pub_tag = d_and_a_tag.find('span', {'id': 'article-date', 'pubdate': 'pubdate', 'datetime': True})
+            if date_pub_tag is not None:
+                pub_date = parse_date(date_pub_tag['datetime'].strip(), '%Y-%m-%dT%H:%M')
+                if pub_date is not None:
+                    data['sch:datePublished'] = pub_date
+                else:
+                    tei_logger.log('WARNING', f'{url}: FORMAT 2 FAILED TO PARSE DATE PUBLISHED!')
+            else:
+                _date_from_url(data, url)
+        else:
+            tei_logger.log('WARNING', f'{url}: FORMAT 2 DATE AND AUTHOR TAGS NOT FOUND!')
+
+
+    def _format3(data): 
+        # format 3 gallery
+        gallery_base = bs.find('body', {'class': 'gallery'})  # TODO Is this okay as a base? 
+        g_header = gallery_base.find('header')
+        if g_header is not None:
+            title_tag = g_header.find('h1', {'class': 'gallery-title'})
             if title_tag is not None:
                 title = title_tag.get_text(strip=True)
                 if len(title) > 0:
                     data['sch:name'] = title
-            else:
-                tei_logger.log('WARNING', f'{url}: FORMAT 2 TITLE NOT FOUND!')
-            # format 2 date published and author
-            d_and_a_tag = article_head_format_2.find('div', {'class': 'address top'})
-            if d_and_a_tag is not None:
-                authors_or_sources = d_and_a_tag.find_all('span', {'class': 'article-author'})
-                if len(authors_or_sources) > 0:
-                    _sort_authors(data, authors_or_sources)
                 else:
-                    tei_logger.log('DEBUG', f'{url}: FORMAT 2 AUTHOR STRING NOT PRESENT IN TAG!')
-                    
-                date_pub_tag = d_and_a_tag.find('span', {'id': 'article-date', 'pubdate': 'pubdate', 'datetime': True})
+                    tei_logger.log('WARNING', f'{url}: FORMAT 3 GALLERY ARTICLE TITLE EMPTY!')
+            else:
+                tei_logger.log('WARNING', f'{url}: FORMAT 3 GALLERY ARTICLE TITLE NOT FOUND!')
+        else:
+            tei_logger.log('WARNING', f'{url}: FORMAT 3 GALLERY ARTICLE TITLE NOT FOUND!')
+
+        # format 3 publish date
+        pub_date_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
+        if pub_date_tag is not None:
+            pub_date = parse_date(pub_date_tag['content'], '%Y-%m-%d')
+            if pub_date is not None:
+                data['sch:datePublished'] = pub_date
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 3 FAILED TO PARSE PUBDATE OF GALLERY ARTICLE!')
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 3 PUBDATE NOT FOUND!')
+
+        # 'gallery' is added to keywords
+        if '/galeria/' in url:
+            intext_keywords = ['galéria']
+            data = _keywords(data, intext_keywords)
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 3 GALLERY LINK FAILED TO PARSE')
+        # author never present on gallery article
+
+
+    def _format4(data):
+        # format 4 news feed
+
+        title_tag = bs.find('title')
+        if title_tag is not None:
+            title = title_tag.get_text(strip=True)
+            if len(title) > 0:
+                data['sch:name'] = title
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 4 TITLE NOT FOUND!')
+        # format 4 publish date
+        pub_date_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
+        if pub_date_tag is not None:
+            pub_date = parse_date(pub_date_tag['content'], '%Y-%m-%d')
+            if pub_date is not None:
+                data['sch:datePublished'] = pub_date
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 4 PUB DATE FAILED TO PARSE!')
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 4 PUB DATE NOT FOUND!')
+
+        # format 4 keywords taken from url
+        if len(split_url) > 4 and (split_url[4] or split_url[5]) == 'kozvetites':
+            intext_keywords = ['közvetítés']
+            data = _keywords(data, intext_keywords)
+
+
+    def _format5(data):
+        # format 5 - https://www.origo.hu/itthon/valasztas2010/20100210-ujabb-feltort-levelszekrenyek-utan-nyomoz-a-rendorseg.html
+        article_body = bs.find('div', {'id': 'cikk'})
+        # format 5 title
+        title_tag1 = article_body.find('div', {'class': 'article_head'})
+        if title_tag1 is not None:
+            title_h1 = title_tag1.find('h1')
+            if title_h1 is not None:
+                title = title_h1.get_text(strip=True)
+                if len(title) > 0:
+                    data['sch:name'] = title
+                else:
+                    tei_logger.log('WARNING', f'{url} FORMAT 5 ARTICLE TITLE TAG EMPTY!')
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 5 ARTICLE TITLE TAG NOT FOUND!')
+        else:
+            title_tag2 = bs.find('h1', {'class': 'cikk-cim'})
+            if title_tag2 is not None:
+                title_h12 = title_tag2.get_text(strip=True)
+                if title_h12 is not None:
+                    data['sch:name'] = title_h12
+                else:
+                    tei_logger.log('WARNING', f'{url} FORMAT 5 ARTICLE TITLE TAG EMPTY!')
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 5 ARTICLE TITLE NOT FOUND')
+
+        # format 5 author and datePublished span class="cikk-datum">2009. 01. 11., 19:19</span>
+        header = article_body.find('div', {'id': 'cikk_fejlec'})
+        
+        if header is not None:
+            authors_tag = header.find('span', {'class': 'author'})
+            if authors_tag is not None:
+                authors_or_sources = authors_tag.find_all('a')
+                _sort_authors(data, authors_or_sources)
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 5 AUTHOR TAG NOT FOUND')
+            date_tag = header.find('span', {'class': 'create_date'})
+            if date_tag is not None:
+                pub_date = date_tag.get_text(strip=True)
+                if len(pub_date) > 0:
+                    parsed_pub = parse_date(pub_date.replace('Létrehozás dátuma: ', ''), "%Y. %m. %d., %H:%M")
+                    if parsed_pub is not None:
+                        data['sch:datePublished'] = parsed_pub
+                    else:
+                        tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE FAILED TO PARSE!')
+                else:
+                    tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE EMPTY!')
+        else:
+            print('here')
+            header2 = bs.find('div', {'id': 'cikk'})
+            
+            if header2 is not None:
+                author_tag = header2.find('a', {'class': 'cikk-szerzo'})
+                if author_tag is not None:
+                    author = author_tag.get_text(strip=True)
+                    if author is not None:
+                        if author in NON_AUTHORS[1:]:
+                            data['sch:source'] = [author]
+                        else:    
+                            data['sch:author'] = [author]
+                date_pub_tag = header2.find('span', {'class':'cikk-datum'})
                 if date_pub_tag is not None:
-                    pub_date = parse_date(date_pub_tag['datetime'].strip(), '%Y-%m-%dT%H:%M')
+                    pub_date = date_pub_tag.get_text(strip=True)
                     if pub_date is not None:
-                        data['sch:datePublished'] = pub_date
-                    else:
-                        tei_logger.log('WARNING', f'{url}: FORMAT 2 FAILED TO PARSE DATE PUBLISHED!')
-                else:
-                    tei_logger.log('WARNING', f'{url}: FORMAT 2 PUBLISH DATE NOT FOUND!')
+                        pub_date_parsed = parse_date(pub_date, "%Y. %m. %d., %H:%M")
+                        if pub_date_parsed is not None:
+                            data['sch:datePublished'] = pub_date_parsed
+
             else:
-                tei_logger.log('WARNING', f'{url}: FORMAT 2 DATE AND AUTHOR TAGS NOT FOUND!')
+                tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE TAG NOT FOUND!')
 
-        else:  # format 3 gallery
 
-            gallery_base = bs.find('body', {'class': 'gallery'})  # TODO Is this okay as a base? 
-            if gallery_base is not None:
-                g_header = gallery_base.find('header')
-                if g_header is not None:
-                    title_tag = g_header.find('h1', {'class': 'gallery-title'})
-                    if title_tag is not None:
-                        title = title_tag.get_text(strip=True)
-                        if len(title) > 0:
-                            data['sch:name'] = title
-                        else:
-                            tei_logger.log('WARNING', f'{url}: FORMAT 3 GALLERY ARTICLE TITLE EMPTY!')
+    def _format6(data):
+        # format 6 palyabea
+        palyabea_base = bs.find('body', {'id': '!BODY_ID'})
+        # format 6 title
+        title_tag = palyabea_base.find('div', {'class': 'title'})
+        if title_tag is not None:
+            title = title_tag.get_text(strip=True)
+            if len(title) > 0:
+                data['sch:name'] = title
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 6 ARTICLE TITLE TAG EMPTY!')
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 6 ARTICLE TITLE NOT FOUND!')
+        # format 6 pubdate
+        pubdate_tag = palyabea_base.find('div', {'class': 'date'})
+        if pubdate_tag is not None:
+            pubdate_span = pubdate_tag.find('span', {'class': False})
+            if pubdate_span is not None:
+                pubdate = pubdate_span.get_text(strip=True)
+                if len(pubdate) > 0:
+                    parsed_pub = parse_date(pubdate, "%Y. %B. %d.")
+                    if parsed_pub is not None:
+                        data['sch:datePublished'] = parsed_pub
                     else:
-                        tei_logger.log('WARNING', f'{url}: FORMAT 3 GALLERY ARTICLE TITLE NOT FOUND!')
+                        tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE FAILED TO PARSE!')
                 else:
-                    tei_logger.log('WARNING', f'{url}: FORMAT 3 GALLERY ARTICLE TITLE NOT FOUND!')
+                    tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE TAG EMPTY!')
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE TAG NOT FOUND!')
+        else:
+            _date_from_url(data, url)
 
-                # format 3 publish date
-                pub_date_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
-                if pub_date_tag is not None:
-                    pub_date = parse_date(pub_date_tag['content'], '%Y-%m-%d')
-                    if pub_date is not None:
-                        data['sch:datePublished'] = pub_date
-                    else:
-                        tei_logger.log('WARNING', f'{url} FORMAT 3 FAILED TO PARSE PUBDATE OF GALLERY ARTICLE!')
-                else:
-                    tei_logger.log('WARNING', f'{url} FORMAT 3 PUBDATE NOT FOUND!')
+        # format 6 keywords
+        paly_head = palyabea_base.find('div', {'id':'left'})
+        if paly_head is not None:
+            paly_tags = paly_head.find_all('a', {'href': True, 'title': True, 'class': False})
+            if len(paly_tags) > 0:
+                intext_keywords = [t.get_text(strip=True) for t in paly_tags if t.get_text(strip=True) != '']
+                data = _keywords(data, intext_keywords)
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 6 KEYWORD TAGS NOT FOUND!')
 
-                # 'gallery' is added to keywords
-                if len(split_url) > 4 and (split_url[4] or split_url[5]) == 'galeria':
-                    intext_keywords = ['galéria']
-                else:
-                    tei_logger.log('WARNING', f'{url} FORMAT 3 GALLERY LINK FAILED TO PARSE')
-                # author never present on gallery article
 
-            else:  # format 4 news feed
-                
-                sports_feed_header = bs.find('div', class_='sportonline_header')
-                if sports_feed_header is not None:
-                    title_tag = bs.find('title')
-                    if title_tag is not None:
-                        title = title_tag.get_text(strip=True)
-                        if len(title) > 0:
-                            data['sch:name'] = title
-                    else:
-                        tei_logger.log('WARNING', f'{url} FORMAT 4 TITLE NOT FOUND!')
-                    # format 4 publish date
-                    pub_date_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
-                    if pub_date_tag is not None:
-                        pub_date = parse_date(pub_date_tag['content'], '%Y-%m-%d')
-                        if pub_date is not None:
-                            data['sch:datePublished'] = pub_date
-                        else:
-                            tei_logger.log('WARNING', f'{url} FORMAT 4 PUB DATE FAILED TO PARSE!')
-                    else:
-                        tei_logger.log('WARNING', f'{url} FORMAT 4 PUB DATE NOT FOUND!')
+    def _format7(data):
+        tei_logger.log('WARNING', f'{url} FORMAT 7 !!!!!')
+        pub_date_meta_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
+        if pub_date_meta_tag is not None:
+            parsed_pub_date = parse_date(pub_date_meta_tag['content'], "%Y-%m-%d")
+            if parsed_pub_date is not None:
+                data['sch:datePublished'] = parsed_pub_date
+            else:
+                tei_logger.log('WARNING', f'{url} FAILED TO PARSE FORMAT 7 PUBLISH DATE!')
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 7 PUBBLISH DATE TAG NOT FOUND!')
 
-                    # format 4 keywords taken from url
-                    if len(split_url) > 4 and (split_url[4] or split_url[5]) == 'kozvetites':
-                        intext_keywords = ['közvetítés']
-                    
+        mod_date_meta_tag = bs.find('meta', {'name': 'publish-date', 'content': True})
+        if mod_date_meta_tag is not None:
+            parsed_mod_date = parse_date(mod_date_meta_tag['content'], "%Y-%m-%d")
+            if mod_date_meta_tag is not None:
+                data['sch:datePublished'] = parsed_mod_date
+            else:
+                tei_logger.log('WARNING', f'{url} FAILED TO PARSE FORMAT 7 MODIFICATION DATE!')
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 7 MODIFICATION DATE TAG NOT FOUND!')
+        
+        title_tag = bs.find('title')
+        if title_tag is not None:
+            title_text = title_tag.get_text(strip=True)
+            if title_text is not None:
+                data['sch:name'] = title_text
+            else:
+                tei_logger.log('WARNING', f'{url} FORMAT 7 TITLE TAG EMPTY!')
+        else:
+            tei_logger.log('WARNING', f'{url} FORMAT 7 TITLE TAG NOT FOUND!')
+        
+        keywords_tag = bs.find('div', {'class': 'article-meta'})
+        if keywords_tag is not None:
+            keyword_tags = keywords_tag.find_all('a', {'title': True})
+            if len(keyword_tags) > 0:
+                intext_keywords = [a['title'].strip() for a in keyword_tags]
+                data = _keywords(data, intext_keywords)
+        
+        art_section_tag = bs.find('span', {'class': 'opt-title'})
+        if art_section_tag is not None:
+            art_section = art_section_tag.get_text(strip=True)
+            if art_section is not None:
+                data['sch:articleSection'] = art_section
+    
+    def _format8(data):
+        return 'format 8'
+        print('format 8')
 
-                else:
-                    # format 5 - https://www.origo.hu/itthon/valasztas2010/20100210-ujabb-feltort-levelszekrenyek-utan-nyomoz-a-rendorseg.html
-                    article_body = bs.find('div', {'id': 'cikk'})
-                    if article_body is not None:
-                        # format 5 title
-                        title_tag = article_body.find('div', {'class': 'article_head'})
-                        if title_tag is not None:
-                            title_h1 = title_tag.find('h1')
-                            if title_h1 is not None:
-                                title = title_h1.get_text(strip=True)
-                                if len(title) > 0:
-                                    data['sch:name'] = title
-                                else:
-                                    tei_logger.log('WARNING', f'{url} FORMAT 5 ARTICLE TITLE TAG EMPTY!')
-                            else:
-                                tei_logger.log('WARNING', f'{url} FORMAT 5 ARTICLE TITLE NOT FOUND')
+    data = tei_defaultdict()
 
-                        # format 5 author and datePublished
-                        header = article_body.find('div', {'id': 'cikk_fejlec'})
-                        if header is not None:
-                            authors_tag = header.find('span', {'class': 'author'})
-                            if authors_tag is not None:
-                                authors_or_sources = authors_tag.find_all('a')
-                                _sort_authors(data, authors_or_sources)
-                            else:
-                                tei_logger.log('WARNING', f'{url} FORMAT 5 AUTHOR TAG NOT FOUND')
-                            date_tag = header.find('span', {'class': 'create_date'})
-                            if date_tag is not None:
-                                pub_date = date_tag.get_text(strip=True)
-                                if len(pub_date) > 0:
-                                    parsed_pub = parse_date(pub_date.replace('Létrehozás dátuma: ', ''), "%Y. %m. %d., %H:%M")
-                                    if parsed_pub is not None:
-                                        data['sch:datePublished'] = parsed_pub
-                                    else:
-                                        tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE FAILED TO PARSE!')
-                                else:
-                                    tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE EMPTY!')
-                            else:
-                                tei_logger.log('WARNING', f'{url} FORMAT 5 PUB DATE TAG NOT FOUND!')
+    data['sch:url'] = url
+    split_url = url.split('/')
 
-                    else:
-                        # format 6 palyabea
-                        palyabea_base = bs.find('body', {'id': '!BODY_ID'})
-                        if palyabea_base is not None:
-                            # format 6 title
-                            title_tag = palyabea_base.find('div', {'class': 'title'})
-                            if title_tag is not None:
-                                title = title_tag.get_text(strip=True)
-                                if len(title) > 0:
-                                    data['sch:name'] = title
-                                else:
-                                    tei_logger.log('WARNING', f'{url} FORMAT 6 ARTICLE TITLE TAG EMPTY!')
-                            else:
-                                tei_logger.log('WARNING', f'{url} FORMAT 6 ARTICLE TITLE NOT FOUND!')
-                            # format 6 pubdate
-                            pubdate_tag = palyabea_base.find('div', {'class': 'date'})
-                            if pubdate_tag is not None:
-                                pubdate_span = pubdate_tag.find('span', {'class': False})
-                                if pubdate_span is not None:
-                                    pubdate = pubdate_span.get_text(strip=True)
-                                    if len(pubdate) > 0:
-                                        print(pubdate)
-                                        parsed_pub = parse_date(pubdate, "%Y. %B. %d.")
-                                        if parsed_pub is not None:
-                                            data['sch:datePublished'] = parsed_pub
-                                        else:
-                                            tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE FAILED TO PARSE!')
-                                    else:
-                                        tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE TAG EMPTY!')
-                                else:
-                                    tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE TAG NOT FOUND!')
-                            else:
-                                tei_logger.log('WARNING', f'{url} FORMAT 6 PUB DATE TAG NOT FOUND!')
+    format_dict = {('header', ('class','article-head')): _format1,
+                    ('header', ('id', 'article-head')): _format2,
+                    ('body', ('class', 'gallery')): _format3,
+                    ('div', ('class', 'sportonline_header')): _format4,
+                    ('div', ('id', 'cikk')): _format5,
+                    ('body', ('id', '!BODY_ID')): _format6,
+                    ('article', ('class', 'article-body')): _format7,
+                    ('div', ('id', 'kenyer-szov')): _format8,
+                    }
 
-                            # format 6 keywords
-                            paly_head = palyabea_base.find('div', {'id':'left'})
-                            if paly_head is not None:
-                                paly_tags = paly_head.find_all('a', {'href': True, 'title': True, 'class': False})
-                                if len(paly_tags) > 0:
-                                    intext_keywords = [t.get_text(strip=True) for t in paly_tags if t.get_text(strip=True) != '']
-                                else:
-                                    tei_logger.log('WARNING', f'{url} FORMAT 6 KEYWORD TAGS NOT FOUND!')
-
-                        else:
-                            tei_logger.log('WARNING', f'{url} ARTICLE FORMAT UNACCOUNTED FOR!')
+    format_identified = False
+    for key, format_option in format_dict.items():
+        if bs.find(key[0], {key[1][0]:key[1][1]}) is not None:
+            print(key)
+            format_option(data)
+            format_identified = True
+            break
+    if format_identified is False:
+        tei_logger.log('WARNING', f'{url} ARTICLE FORMAT UNACCOUNTED FOR!')
+        return None
 
     # DATE MODIFIED from META TAG - same in all <meta name="modified-date" content="2022-03-17" />
     date_modified_tag = bs.find('meta', {'name': 'modified-date', 'content': True})
@@ -335,42 +476,13 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         else:
             tei_logger.log('WARNING', f'{url} DATE MODIFIED FAILED TO PARSE')
 
-    # KEYWORDS from SCRIPT TAG
-    keywords_from_meta = []
-    keywords_scripts = [a for a in bs.find_all('script') if 'window.exclusionTags' in a.text]
-    if len(keywords_scripts) > 0:
-        keywords_script = keywords_scripts[0]
-        if keywords_script is not None:
-            ks = keywords_script.text
-            i1 = ks.find('[')
-            i2 = ks.find(']')
-            keywords = ks[i1+1:i2].replace("'", '').split(',')
-            if len(keywords) > 0:
-                keywords_from_meta = keywords
-    
-    # KEYWORDS FROM URL  TODO is this needed?
-    # 4 or 5 in URL_KEYWORDS then add to url_keywords
-    url_keywords = []
-    for k in [4, 5]:
-        try:
-            if len(split_url) >= k+1 and split_url[k] in URL_KEYWORDS:
-                url_keywords.append(URL_KEYWORDS[split_url[k]])
-        except:
-            print(url)
-
-    if len(intext_keywords) > 0 or len(keywords_from_meta) > 0 or len(url_keywords) > 0:
-        data['sch:keywords'] = list(set(intext_keywords) | set(keywords_from_meta) | set(url_keywords))
-    else:
-        tei_logger.log('DEBUG', f'{url} NO KEYWORDS FOUND')
 
     # ARTICLE SECTION FROM LINK
-    if article_section is None:
+    if data['sch:articleSection'] is None:
         if split_url[3] in SUBJ_DICT.keys():
             data['sch:articleSection'] = SUBJ_DICT[split_url[3]]
         else:
-            tei_logger.log('WARNING', f'{url} NEWSFEED ARTICLE SECTION UNACCOUNTED FOR')
-    else:
-        data['sch:articleSection'] = article_section
+            tei_logger.log('WARNING', f'{url} ARTICLE SECTION UNACCOUNTED FOR IN SUBJ_DICT!')
 
     return data
 
@@ -378,6 +490,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 def excluded_tags_spec(tag):
 
     tag_attrs = tag.attrs
+
+    if tag.name == 'td' and 'title' in tag_attrs.keys():
+        tag['title'] = '@TITLE'
 
     if tag.name == 'text' and 'y' in tag_attrs.keys():
         tag['y'] = '@NUM'
