@@ -91,8 +91,11 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     def _date_from_url(_url):
         date_from_url = re.search(r'(?<=/)\d{8}', _url).group(0)
+
         if date_from_url is not None:
-            parsed_date_from_url = parse_date(date_from_url, "%Y%m%d")
+
+            parsed_date_from_url = parse_date(str(date_from_url), "%Y%m%d")
+            print(parsed_date_from_url)
             if parsed_date_from_url is not None:
                 return parsed_date_from_url
             else:
@@ -452,14 +455,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     split_url = url.split('/')
 
     format_dict = {('header', ('class', 'article-head')): _format1,
-                    ('header', ('id', 'article-head')): _format2,
-                    ('body', ('class', 'gallery')): _format3,
-                    ('div', ('class', 'sportonline_header')): _format4,
-                    ('div', ('id', 'cikk')): _format5,
-                    ('body', ('id', '!BODY_ID')): _format6,
-                    ('article', ('class', 'article-body')): _format7,
-                    ('div', ('id', 'kenyer-szov')): _format8,
-                    }
+                   ('header', ('id', 'article-head')): _format2,
+                   ('body', ('class', 'gallery')): _format3,
+                   ('div', ('class', 'sportonline_header')): _format4,
+                   ('div', ('id', 'cikk')): _format5,
+                   ('body', ('id', '!BODY_ID')): _format6,
+                   ('article', ('class', 'article-body')): _format7,
+                   ('div', ('id', 'kenyer-szov')): _format8,
+                   }
 
     format_identified = False
     for key, format_option in format_dict.items():
@@ -550,6 +553,8 @@ BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('div',), {'id': 'lablec'}),
+          (('div',), {'class': 'aside-content'}),
+          (('div',), {'class': 'dinamic-related', 'id': 'related-articles'}),
           ]
 
 MEDIA_LIST = []
