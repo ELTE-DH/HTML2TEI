@@ -10,7 +10,7 @@ REPLACE_IN_URL = (('%2F', '/'), ('%&', '%25&'), ('[', '%5B'), (']', '%5D'), ('%?
                   ('\"ttp:', 'http:'), ('\\', ''), ('Http', 'http'), ('http//www.', 'http://www.'),
                   ('\"', ''), ('http://tp://', 'http://'), ('http://ps://', 'http://'), ('https://ftp://', 'https://'),
                   ('https://ttp://', 'https://'), (': ', '%3A '), ('https://ttps://', 'https://'),
-                  ('.hu:', '.hu'), ('http%2', ''),  ('.com:', '.com'))
+                  ('.hu:', '.hu'), ('http%2', ''),  ('.com:', '.com'), ('https://:', 'https://'))
 SLASH_DOT = {'/', '.'}
 
 
