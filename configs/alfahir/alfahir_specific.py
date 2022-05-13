@@ -236,16 +236,13 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
-    # if tag.name not in HTML_BASICS:
-    #     tag.name = 'else'
-    # tag.attrs = {}
     return tag
 
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
 LINKS_SPEC = BASIC_LINK_ATTRS | {'object', 'params', 'blockquote'}
-DECOMP = [# (('div',), {'class': 'field field-name-field-media-index-foto-video'}),
+DECOMP = [
           (('div',), {'class': 'field field--name-dynamic-token-fieldnode-fb-buttons field--type-ds'
                                ' field--label-hidden field--item'}),
           (('div',), {'class': 'field field--name-dynamic-copy-fieldnode-fb-buttons2 field--type-ds'
@@ -259,14 +256,11 @@ DECOMP = [# (('div',), {'class': 'field field-name-field-media-index-foto-video'
           (('div',), {'class': 'article-content-authors'}),
           (('div',), {'class': 'article-footer'}),
           (('div',), {'class': 'article-dates'}),
-          # (('div',), {'class': 'group-header'}), # contains post time
           (('div',), {'class': 'group-footer'}),
           (('div',), {'class': 'view-header'}),
-          # (('div',), {'class': 'group-left'}),  # can contain post authors (not always)
           (('div',), {'class': 'fb-like'}),
           (('h4',), {'class': 'esemeny-title'}),
           (('noscript',), {}),
-          # (('section',), {}),
           (('script',), {}),
           (('ins',), {})
           ]
@@ -278,26 +272,19 @@ LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([
     ]))
 
 MEDIA_LIST = []
-# (('img',), {}),
-#               (('iframe',), {}),
-#               (('figure',), {}),
-#               (('blockquote',), {'class': 'embedly-card'}),
-#               (('div',), {'class': 'fb-page fb_iframe_widget'}),
-#               (('div',), {'class': 'video-embed-field-provider-youtube video-embed-field-responsive-video form-group'})
+
 
 def decompose_spec(article_dec):
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
+    # Some social blockquote tags have a paragraph tag of generic Facebook text in them
+    # https://alfahir.hu/2020/10/11/borsod_6_borsodi_idokozi_valasztas_biro_laszlo_koncz_zsofia_percrol_percre?page=2
+
     for bq in article_dec.find_all('blockquote', {'class': 'embedly-card'}):
         for p in bq.find_all('p'):
             if 'Log into Facebook to start sharing and connecting with your friends' in p.text:
-                p.string.replace_with('')
-        # Need to get rid of 'Log into Facebook' somehow
-        # for h4 in bq.find_all('h4'):
-        #     if 'Log into Facebook' in h4.string and h4.find('a', {'href': True}) is not None:
-        #         a = h4.find('a', {'href': True})
-        #         a.attrs = {'href': a.attrs['href']}
-        #         a.string.replace_with('')
-        #         h4.name = 'a'
+                p.decompose()
+
+
     return article_dec
 
 
