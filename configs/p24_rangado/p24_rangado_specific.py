@@ -14,7 +14,6 @@ ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post'})]
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
-    tei_logger.log('WARNING', f'{url}: HERE!')
     data = tei_defaultdict()
     data['sch:url'] = url
     article_root = bs.find('div', class_='site-content')
