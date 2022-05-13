@@ -21,7 +21,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     if article_root is None:
         tei_logger.log('WARNING', f'{url}: ARTICLE ROOT NOT FOUND/UNKNOWN ARTICLE SCHEME!')
         return None
-    date_tag = bs.find('span', class_='o-post__date')
+    # m-author__catDateTitulusCreateDate
+    date_tag = bs.find('span', class_='m-author__catDateTitulusCreateDate')
+    if date_tag is None:
+        date_tag = bs.find('span', class_='o-post__date')
     if date_tag is not None:
         parsed_date = parse_date(date_tag.text.strip(), '%Y. %m. %d. %H:%M')  # 2021. 04. 06. 20:39
         if parsed_date is not None:

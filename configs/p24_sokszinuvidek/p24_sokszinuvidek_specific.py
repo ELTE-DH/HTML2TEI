@@ -28,7 +28,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if parsed_date is not None:
             data['sch:datePublished'] = parsed_date
         else:
-            tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
+            tei_logger.log('WARNING', f'{url}: {date_tag.text.strip()} DATE FORMAT ERROR!')
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
     modified_date_tag = bs.find('span', class_='m-author__catDateTitulusUpdateDate')

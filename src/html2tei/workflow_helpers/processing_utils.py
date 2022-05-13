@@ -65,9 +65,9 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
             if article_url is None or article_url in blacklist:
                 article_url = None
             elif article_url not in warc_reader.url_index:
-                article_url = None
                 warc_logger.log('CRITICAL', f'The next_page URL {article_url} does not present'
                                             f' in the archive {warc_filenames}!')
+                article_url = None
 
         yield article, run_parameters  # Return the gathered article
 
