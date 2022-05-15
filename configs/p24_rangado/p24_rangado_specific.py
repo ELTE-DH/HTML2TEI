@@ -111,7 +111,8 @@ DECOMP = [(('div',), {'class': 'm-articRecommend'}),
           (('div',), {'class': 'banner_container'}),
           (('div',), {'class': 'm-articleListWidget'}),
           (('div',), {'id': 'post-tags-section'}),
-          (('script',), {})]
+          (('script',), {}),
+          (('li',), {'class': 'prev-btn'})]
 
 MEDIA_LIST = [(('iframe',), {'class': 'tableauViz'})]
 
