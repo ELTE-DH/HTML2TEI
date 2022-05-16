@@ -34,22 +34,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: {date_tag.text.strip()} DATE FORMAT ERROR!')
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
-    modified_date_tag = bs.find('span', class_='m-author__catDateTitulusUpdateDate')
+    modified_date_tag = bs.find('meta', property='article:modified_time')
     if modified_date_tag is not None:
-        parsed_moddate = parse_date(modified_date_tag.text.strip().replace('FRISSÍTVE: ', ''), '%Y. %m. %d. %H:%M')
-        # <span class="m-author__catDateTitulusUpdateDate">FRISSÍTVE: 2021. 05. 27. 00:30</span>
-        if parsed_moddate is not None:
-            data['sch:dateModified'] = parsed_moddate
-        else:
-            tei_logger.log('WARNING', f'{url}: MODIFIED DATE FORMAT ERROR!')
-    else:
-        mod = bs.find('meta', property='article:modified_time')
-        if mod is not None and len(mod.text.strip()) > 0:
-            tei_logger.log('WARNING', f'{url}: {mod} MODIFIED DATE EXISTS!')
+        parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
+        data['sch:dateModified'] = parsed_moddate
     keywords = bs.find('meta', {'name': 'keywords', 'content': True})
     if keywords is not None:
         keywords_list = keywords['content'].split(',')
-        while SECTION in keywords_list:
+        if keywords_list.count(SECTION) > 0:
             keywords_list.remove(SECTION)
         data['sch:keywords'] = keywords_list
     else:

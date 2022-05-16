@@ -4,19 +4,24 @@
 import re
 
 from bs4 import BeautifulSoup
-from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants,\
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://rangado.24.hu/'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post'})]
 
-# TODO
 SOURCE = ['Rangado', 'Szponzorált tartalom']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
+    # a class="m-livePost__backLink d-block"
+    backlink = bs.find('a', class_='m-livePost__backLink')
+    if backlink is not None:
+        tei_logger.log('WARNING', f'{url}: STANDALONE POST OF A FEED TYPE ARTICLE!')
+        return None
     article_root = bs.find('div', class_='site-content')
     if article_root is None:
         tei_logger.log('WARNING', f'{url}: ARTICLE ROOT NOT FOUND/UNKNOWN ARTICLE SCHEME!')
@@ -33,9 +38,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: {date_tag.text.strip()} DATE FORMAT ERROR!')
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
-    """    modified_date_tag = bs.find('meta', property='article:modified_time')
-    if modified_date_tag is not None:
-        parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')"""
     modified_date_tag = bs.find('span', class_='m-author__catDateTitulusUpdateDate')
     if modified_date_tag is not None:
         parsed_moddate = parse_date(modified_date_tag.text.strip().replace('FRISSÍTVE: ', ''), '%Y. %m. %d. %H:%M')
@@ -44,10 +46,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:dateModified'] = parsed_moddate
         else:
             tei_logger.log('WARNING', f'{url}: MODIFIED DATE FORMAT ERROR!')
-    else:
-        mod = bs.find('meta', property='article:modified_time')
-        if mod is not None and len(mod.text.strip()) > 0:
-            tei_logger.log('WARNING', f'{url}: {mod} MODIFIED DATE EXISTS!')
     keywords = bs.find('meta', {'name': 'keywords', 'content': True})
     if keywords is not None:
         keywords_list = keywords['content'].split(',')
@@ -59,9 +57,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         data['sch:name'] = title.text.strip()
     else:
         tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
-    authors_cont = article_root.find_all('a', class_='m-author__name')
+    authors_cont = [i.text.strip() for i in article_root.find_all('a', class_='m-author__name')]
     if len(authors_cont) > 0:
-        authors_cont = [i.text.strip() for i in authors_cont]
         authors, source_list = [], []
         [authors.append(i) if i not in SOURCE else source_list.append(i) for i in authors_cont]
         if len(source_list) > 0:
@@ -70,11 +67,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
     else:
         tei_logger.log('WARNING', f'{url}: AUTHOR OR SOURCE TAG NOT FOUND!')
-    section = article_root.find('a', class_='o-articleHead__catWrap')  # id='post-cat-title')
+    section = article_root.find('a', class_='o-articleHead__catWrap')
     if section is not None:
         data['sch:articleSection'] = section.text.strip()
     else:
-        # https://rangado.24.hu/nemzetkozi_foci/2019/05/29/hihetetlen-hazard-es-pedro-osszehozta-a-masodik-chelsea-golt/
         tei_logger.log('WARNING', f'{url}: SECTION TAG NOT FOUND!')
     return data
 
