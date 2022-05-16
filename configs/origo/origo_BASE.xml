@@ -60,7 +60,7 @@
                         <placeName>1443 Budapest, Pf: 201.</placeName>
                         <ref type="url" source="https://www.origo.hu/impresszum/index.html">
                             <!--KITÖLT: a portál DOI-ja pl.: https://doi.org/10.5281/zenodo --></ref>
-                        <date when="2020-02-02"/> <!-- CSAK TESZT DÁTUM!!! KITÖLT: impresszum letöltésének dátuma -->
+                        <date when="2022-05-16"/>
                     </publisher>
                     <pubPlace>
                         Budapest
@@ -71,7 +71,7 @@
                         <p>
 			                <ref type="url" source="https://www.origo.hu/impresszum/index.html">
                                 <!--KITÖLT: https://doi.org/ --></ref>
-                            <date when="2020-02-02"/><!-- CSAK TESZT DÁTUM!!! when: impresszum/jognyil crawl dátum -->
+                            <date when="2022-05-16"/>
 			            </p>
                     </availability>
                     <date></date>
@@ -113,6 +113,7 @@
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-0577-8706">Nagy Mihály</sch:contributor>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
                 </rdf:Description>
             </rdf:RDF>
