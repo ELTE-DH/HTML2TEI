@@ -11,7 +11,7 @@ PORTAL_URL_PREFIX = 'https://rangado.24.hu/'
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post'})]
 
 # TODO
-#SOURCE = ['Sokszínű Vidék', 'Szponzorált tartalom']
+SOURCE = ['Rangado', 'Szponzorált tartalom']
 
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
@@ -59,24 +59,23 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         data['sch:name'] = title.text.strip()
     else:
         tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
-    author = article_root.find_all('a', class_='m-author__name')
-    if len(author) > 0:
-        source_list = []
-        authors = []
-        author = [i.text.strip() for i in author]
-        """[authors.append(i) if i not in SOURCE else source_list.append(i) for i in author]
+    authors_cont = article_root.find_all('a', class_='m-author__name')
+    if len(authors_cont) > 0:
+        authors_cont = [i.text.strip() for i in authors_cont]
+        authors, source_list = [], []
+        [authors.append(i) if i not in SOURCE else source_list.append(i) for i in authors_cont]
         if len(source_list) > 0:
             data['sch:source'] = source_list
         if len(authors) > 0:
-            data['sch:author'] = authors"""
-        data['sch:author'] = author
+            data['sch:author'] = authors
     else:
-        tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-    section = article_root.find('a', id='post-cat-title')
+        tei_logger.log('WARNING', f'{url}: AUTHOR OR SOURCE TAG NOT FOUND!')
+    section = article_root.find('a', class_='o-articleHead__catWrap m-cat')  # id='post-cat-title')
     if section is not None:
         data['sch:articleSection'] = section.text.strip()
     else:
-        tei_logger.log('DEBUG', f'{url}: SECTION TAG NOT FOUND!')
+        # https://rangado.24.hu/nemzetkozi_foci/2019/05/29/hihetetlen-hazard-es-pedro-osszehozta-a-masodik-chelsea-golt/
+        tei_logger.log('WARNING', f'{url}: SECTION TAG NOT FOUND!')
     return data
 
 
