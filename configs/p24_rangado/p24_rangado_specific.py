@@ -70,7 +70,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
     else:
         tei_logger.log('WARNING', f'{url}: AUTHOR OR SOURCE TAG NOT FOUND!')
-    section = article_root.find('a', class_='o-articleHead__catWrap m-cat')  # id='post-cat-title')
+    section = article_root.find('a', class_='o-articleHead__catWrap')  # id='post-cat-title')
     if section is not None:
         data['sch:articleSection'] = section.text.strip()
     else:
