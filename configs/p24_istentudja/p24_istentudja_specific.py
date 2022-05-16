@@ -2,9 +2,9 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
-from bs4 import BeautifulSoup
 
-from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants,\
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://istentudja.24.hu/'
 
@@ -43,7 +43,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         keywords_list = keywords['content'].split(',')
         if keywords_list.count(SECTION) > 0:
             keywords_list.remove(SECTION)
-        data['sch:keywords'] = keywords_list
+            data['sch:articleSection'] = SECTION
+        if len(keywords_list) > 0:
+            data['sch:keywords'] = keywords_list
     else:
         tei_logger.log('WARNING', f'{url}: KEYWORDS NOT FOUND!')
     title = article_root.find('h1', class_='o-post__title')
@@ -65,7 +67,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
     else:
         tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-    data['sch:articleSection'] = SECTION
     return data
 
 
@@ -119,17 +120,5 @@ LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
 
-def next_page_of_article_spec(curr_html):
-    # Rangado 24.hu operates with a reverse multipage logic: the start page is the newest page of the article
-    bs = BeautifulSoup(curr_html, 'lxml')
-    current_page = bs.find('span', class_='page-numbers current')
-    if current_page is not None and current_page.get_text().isdecimal():
-        current_page_num = int(current_page.get_text())
-        other_pages = bs.find_all('a', class_='page-numbers')
-        for i in other_pages:
-            # Filter span to avoid other tags with class page-numbers (next page button is unreliable!)
-            if i.find('span') is None and int(i.get_text()) + 1 == current_page_num and 'href' in i.attrs.keys():
-                next_link = i.attrs['href']
-                return next_link
+def next_page_of_article_spec(_):
     return None
-

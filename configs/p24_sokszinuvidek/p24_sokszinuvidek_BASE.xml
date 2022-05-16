@@ -69,7 +69,7 @@
                         <p><ref type="url" source="https://24.hu/felhasznalasi-feltetelek/"><!--KITÖLT https://doi.org/--></ref>
                         <date when="2021-09-07"/></p>
                     </availability>
-                    <date></date><!-- cikk megjelenésének dátuma 'when' attribútumba /nem ismert (a kód tölti)-->
+                    <date></date>
                 </bibl>
             </sourceDesc>
         </fileDesc>
@@ -80,7 +80,6 @@
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
                     <sch:ispartOf rdf:resource="https://sokszinuvidek.24.hu/">24.hu Sokszínű Vidék</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
-                    <!-- ide töltődik ki a cikkből kinyert többi meta -->
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
             </rdf:RDF>

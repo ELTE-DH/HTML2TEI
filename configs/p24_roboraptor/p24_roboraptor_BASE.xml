@@ -69,7 +69,7 @@
                         <p><ref type="url" source="https://24.hu/felhasznalasi-feltetelek/"><!--KITÖLT https://doi.org/--></ref>
                         <date when="2021-09-07"/></p>
                     </availability>
-                    <date></date><!-- cikk megjelenésének dátuma 'when' attribútumba /nem ismert (a kód tölti)-->
+                    <date></date>
                 </bibl>
             </sourceDesc>
         </fileDesc>
