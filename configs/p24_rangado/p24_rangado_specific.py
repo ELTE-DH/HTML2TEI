@@ -9,7 +9,8 @@ from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees
 
 PORTAL_URL_PREFIX = 'https://rangado.24.hu/'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post'})]
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post__cntWrap wpb_wrapper'})]
+# (('div',), {'class': 'o-post'})] korábbi    <div class="o-post__body o-postCnt post-body"
 
 SOURCE = ['Rangado', 'Szponzorált tartalom']
 
@@ -107,7 +108,11 @@ DECOMP = [(('div',), {'class': 'm-articRecommend'}),
           (('div',), {'class': 'm-articleListWidget'}),
           (('div',), {'id': 'post-tags-section'}),
           (('script',), {}),
-          (('li',), {'class': 'prev-btn'})]
+          #(('li',), {'class': 'prev-btn'}),
+          #(('div',), {'class': 'm-livePost__pager'})
+          ]
+#<div class=m-livePost__pager pager cf>
+# <div class="banner-container clearfix ">
 
 MEDIA_LIST = [(('iframe',), {'class': 'tableauViz'})]
 
