@@ -284,7 +284,6 @@ def decompose_spec(article_dec):
             if 'Log into Facebook to start sharing and connecting with your friends' in p.text:
                 p.decompose()
 
-
     return article_dec
 
 
