@@ -9,6 +9,8 @@ from bs4 import BeautifulSoup
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, \
     tei_defaultdict
 
+from article_dictionary import IDENTICAL_ARTICLES
+
 PORTAL_URL_PREFIX = 'https://www.blikk.hu'
 
 ARTICLE_ROOT_PARAMS_SPEC = [
@@ -101,7 +103,8 @@ SUBJECT_DICT = {'eletmod': 'életmód',
                 'vizes-vb': 'vizes-vb',
                 'foci-vb-2018': 'foci-vb-2018',
                 'magyar-japan-noi-vizilabda': 'magyar-japan-noi-vizilabda',
-                'egyeni': 'egyéni'
+                'egyeni': 'egyéni',
+                'olimpia2021': 'olimpia2021'
                 }
 
 
@@ -109,6 +112,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     """author tag does not exist"""
     data = tei_defaultdict()
     data['sch:url'] = url
+
+    # There were 8761 articles found where the entire article is identical to another 
+    # published under a different URL. These articles have been paired up and the existance
+    # of an identical article is noted using the sch:sameAs schema.org notation. 
+    if url in IDENTICAL_ARTICLES.keys():
+        data['sch:sameAs'] = IDENTICAL_ARTICLES[url]
 
     article_root = bs.find('section', {'class': 'leftSide'})
     if article_root is not None:
