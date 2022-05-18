@@ -59,7 +59,7 @@
                     <publisher><orgName>HVG Kiadó Zrt.</orgName>
                         <placeName>1037 Budapest, Montevideo utca 14.</placeName>
                         <ref type="url" source="https://hvg.hu/egyeb/impresszum">
-                            <!--KITÖLT: a portál DOI-ja pl.: https://doi.org/10.5281/zenodo.--></ref>
+                            https://doi.org/10.5281/zenodo.6546191</ref>
                         <date when="2021-09-07"/>
                     </publisher>
                     <pubPlace>
@@ -76,7 +76,7 @@
                         </p>
                         <p>
                             <ref type="url" source="https://hvg.hu/egyeb/impresszum">
-                            <!--KITÖLT: https://doi.org/</ref> --></ref>
+                            https://doi.org/10.5281/zenodo.6546191</ref>
                             <date when="2021-09-07"/>
                         </p>
                     </availability>
@@ -98,11 +98,52 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6546191">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2021-09-02T19:51:04/2021-10-16T16:25:30</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6546191"/>
+                    <sch:identifier>[{'checksum': '984d54aa861babcb7ff3529d329a4957',
+                     'filename': 'hashsums',
+                     'filesize': 5990,
+                     'id': 'ec558fba-6a32-42c6-a104-a4b5c1e6d4af',
+                     'links': {'download': 'https://zenodo.org/api/files/cfd75421-ba8a-4ee4-a5fb-c9c6b271ea72/hashsums',
+                               'self': 'https://zenodo.org/api/deposit/depositions/6546191/files/ec558fba-6a32-42c6-a104-a4b5c1e6d4af'}},
+                     {'checksum': 'e9bc29d72602dd7178c5b9b829b45eb4',
+                      'filename': 'hvg-archive_new2.warc.gz',
+                      'filesize': 366529630,
+                      'id': '26d315ae-6611-432f-8732-c7ebedf426b1',
+                      'links': {'download': 'https://zenodo.org/api/files/cfd75421-ba8a-4ee4-a5fb-c9c6b271ea72/hvg-archive_new2.warc.gz',
+                                'self': 'https://zenodo.org/api/deposit/depositions/6546191/files/26d315ae-6611-432f-8732-c7ebedf426b1'}},
+                     {'checksum': '60b30b04c8202eea7839ed2cdb628f94',
+                      'filename': 'hvg-articles_new2.warc.gz',
+                      'filesize': 7278870742,
+                      'id': '0e02160a-9193-4c9c-966d-b7752d21d3d0',
+                      'links': {'download': 'https://zenodo.org/api/files/cfd75421-ba8a-4ee4-a5fb-c9c6b271ea72/hvg-articles_new2.warc.gz',
+                                'self': 'https://zenodo.org/api/deposit/depositions/6546191/files/0e02160a-9193-4c9c-966d-b7752d21d3d0'}},
+                     {'checksum': 'd4fa27c4235294a8cbee8e6d7caa3e98',
+                      'filename': 'hvg_rights_statements.warc.gz',
+                      'filesize': 30977, 'id': '03d38746-3b8b-48e8-a9d7-2b89a6ca23fc',
+                      'links': {'download': 'https://zenodo.org/api/files/cfd75421-ba8a-4ee4-a5fb-c9c6b271ea72/hvg_rights_statements.warc.gz',
+                                'self': 'https://zenodo.org/api/deposit/depositions/6546191/files/03d38746-3b8b-48e8-a9d7-2b89a6ca23fc'}},
+                     {'checksum': 'b63d30a9832b4eef41c0fbd17690ac7b',
+                      'filename': 'log.log',
+                      'filesize': 2767471, 
+                      'id': '0396a64e-f273-484b-a29b-6f7de3e2e5af',
+                      'links': {'download': 'https://zenodo.org/api/files/cfd75421-ba8a-4ee4-a5fb-c9c6b271ea72/log.log',
+                                'self': 'https://zenodo.org/api/deposit/depositions/6546191/files/0396a64e-f273-484b-a29b-6f7de3e2e5af'}},
+                     {'checksum': '30b8cbdea6c7e4de81ec37afea6def2d',
+                      'filename': 'logs.zip',
+                      'filesize': 5615973,
+                      'id': '43ff2506-9e28-4693-a8bc-5feb4bfdc321',
+                      'links': {'download': 'https://zenodo.org/api/files/cfd75421-ba8a-4ee4-a5fb-c9c6b271ea72/logs.zip',
+                                'self': 'https://zenodo.org/api/deposit/depositions/6546191/files/43ff2506-9e28-4693-a8bc-5feb4bfdc321'}},
+                     {'checksum': '40cca1040dafae15717da01bd76d4755', 
+                      'filename': 'script.sh', 
+                      'filesize': 405, 
+                      'id': '6d0ee095-c281-479e-b534-e35b3bf73a50', 
+                      'links': {'download': 'https://zenodo.org/api/files/cfd75421-ba8a-4ee4-a5fb-c9c6b271ea72/script.sh', 
+                      'self': 'https://zenodo.org/api/deposit/depositions/6546191/files/6d0ee095-c281-479e-b534-e35b3bf73a50'}}]
+                      </sch:identifier>
                     <sch:identifier>d6b4779b-8254-4fa5-b39e-31941a86bef5</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
@@ -118,6 +159,7 @@
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-0577-8706">Nagy Mihály</sch:contributor>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
                 </rdf:Description>
             </rdf:RDF>
