@@ -2,9 +2,11 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
+from langdetect import detect
 
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
-from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants,\
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://www.vadhajtasok.hu/'
 
@@ -20,6 +22,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
     article_root = bs.find('div', class_='entry-content content-article')
+    lang = detect(article_root.text)
+    if lang == 'en':
+        data['sch:availableLanguage'] = 'en'
     info_root = bs.find('div', class_='cs-entry__header-info')
     if article_root is not None:
         if info_root is None:
@@ -79,7 +84,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     (source_raw.startswith('Forrás:') or source_raw.startswith('Írta:') or
                      source_raw in SOURCE_2):
                 data['originalAuthorString'] = [source_raw]
-
         else:
             tei_logger.log('DEBUG', f'{url}: SOURCE NOT FOUND!')
         return data
