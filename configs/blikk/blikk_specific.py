@@ -237,9 +237,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 def excluded_tags_spec(tag):
     tag_attrs = tag.attrs
 
+    if tag.name == 'div' and 'class' in tag_attrs.keys() \
+        and tag_attrs['class'] == 'pulsembed_embed' and 'data-author-name' in tag_attrs.keys():
+        tag.attrs['data-author-name'] = '@DATA-AUTHOR-NAME'
 
     if tag.name == 'div' and 'data-embed-id' in tag_attrs.keys():
-        tag_attrs['data-embed-id'] = '@DATA-EMBED-ID'
+        tag.attrs['data-embed-id'] = '@DATA-EMBED-ID'
 
     return tag
 
