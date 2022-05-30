@@ -8,8 +8,9 @@ from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees
 
 PORTAL_URL_PREFIX = 'https://roboraptor.24.hu/'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'wpb_wrapper'})]
-
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'm-post24'})] #[(('div',), {'class': 'wpb_wrapper'})]
+# <div class="o-post o-cnt m-post24 col-md-8 hir24-post  _ce_measure_column">   ha ez akkor
+# ebben: https://roboraptor.24.hu/2016/05/09/vegre-egy-szuperhosfilm-amiben-nem-kell-hibakat-keresni/   <div class="m-videoArtic__wrap m-embedRespo -v16by9">
 
 SECTION_OR_SOURCE = 'roboraptor'
 
