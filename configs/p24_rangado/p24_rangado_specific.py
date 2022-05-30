@@ -24,7 +24,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     # TODO: https://rangado.24.hu/magyar_foci/2020/11/18/magyarorszag-torokorszag-nemzetek-ligaja/#csoportgyoztes-a-magyar-valogatott-a-nemzetek-ligajaban
     backlink = bs.find('a', class_='m-livePost__backLink')
     if backlink is not None:
-        tei_logger.log('WARNING', f'{url}: STANDALONE POST OF A FEED TYPE ARTICLE!')
+        #tei_logger.log('WARNING', f'{url}: STANDALONE POST OF A FEED TYPE ARTICLE!')
         return None
     article_root = bs.find('div', class_='site-content')
     if article_root is None:
