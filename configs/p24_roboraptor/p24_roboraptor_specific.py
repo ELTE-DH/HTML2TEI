@@ -8,7 +8,8 @@ from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees
 
 PORTAL_URL_PREFIX = 'https://roboraptor.24.hu/'
 
-ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'm-post24'})] #[(('div',), {'class': 'wpb_wrapper'})]
+ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'site-content'})]
+#[(('div',), {'class': ['o-cnt', 'm-post24']})] #[(('div',), {'class': 'wpb_wrapper'})]
 # <div class="o-post o-cnt m-post24 col-md-8 hir24-post  _ce_measure_column">   ha ez akkor
 # ebben: https://roboraptor.24.hu/2016/05/09/vegre-egy-szuperhosfilm-amiben-nem-kell-hibakat-keresni/   <div class="m-videoArtic__wrap m-embedRespo -v16by9">
 
@@ -93,6 +94,8 @@ def excluded_tags_spec(tag):
         tag_attrs['content'] = '@content'
     elif tag.name == 'iframe' and 'title' in tag_attrs.keys():
         tag_attrs['title'] = '@title'
+    elif tag.name == 'span' and 'class' in tag_attrs.keys() and 'highlight' in tag_attrs['class'][0]:
+        tag.attrs['class'] = '@'+ tag.attrs['class'][0]
     return tag
 
 
@@ -110,7 +113,15 @@ DECOMP = [(('div',), {'class': 'o-post__author'}),
           (('p',), {'class': '_ce_measure_widget'}),
           (('div',), {'class': 'a-hirstartRecommender'}),
           (('script',), {}),
-          (('style',), {})]
+          (('style',), {}),
+          (('div',), {'class': 'o-articleHead'}),
+          (('div',), {'class': 'sidebar'}),
+          (('div',), {'class': 'post-pager-wrapper'}),
+          (('div',), {'class': 'm-btnsRow'}),
+          (('div',), {'id': 'stickyHomePageRecommender'}),
+          (('div',), {'id': 'stickyHomePageLabel'})
+          ]
+
 
 MEDIA_LIST = []
 

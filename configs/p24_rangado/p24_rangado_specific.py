@@ -124,7 +124,7 @@ def decompose_spec(article_dec):
     return article_dec
 
 
-BLACKLIST_SPEC = []
+BLACKLIST_SPEC = ['https://rangado.24.hu/informacio/2011/05/14/szerzoi-jogok/', 'https://rangado.24.hu/hirek/2013/11/06/facebook-2/']
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 MULTIPAGE_URL_END = re.compile(r'.*/[1-9]/')
