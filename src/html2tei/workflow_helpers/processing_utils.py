@@ -51,7 +51,6 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
         # Articles first pages not on blacklist
         article = []
         while article_url is not None:
-            print(article_url)
             # Process URL and append page data to article list
             _, _, resp = warc_reader.get_records(article_url)  # From WebArticleCurator
             warc_response_datetime, warc_id, raw_html = extract_resp_record_data(resp)

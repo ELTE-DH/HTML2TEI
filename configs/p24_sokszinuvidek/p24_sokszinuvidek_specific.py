@@ -31,11 +31,11 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: {date_tag.text.strip()} DATE FORMAT ERROR!')
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
-    modified_date_tag = bs.find('meta', property='article:modified_time')
-    if modified_date_tag is not None:
-        parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
-        if parsed_moddate > parsed_date:
-            data['sch:dateModified'] = parsed_moddate
+    # modified_date_tag = bs.find('meta', property='article:modified_time')
+    # if modified_date_tag is not None:
+    #    parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
+    #    if parsed_moddate > parsed_date:
+    #        data['sch:dateModified'] = parsed_moddate
     keywords = bs.find('meta', {'name': 'keywords', 'content': True})
     if keywords is not None:
         keywords_list = keywords['content'].split(',')

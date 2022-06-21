@@ -120,6 +120,12 @@ MEDIA_LIST = [(('iframe',), {'class': 'tableauViz'})]
 
 
 def decompose_spec(article_dec):
+    # TODO https://rangado.24.hu/nb1/2015/04/29/sztevanovics-fojtogatta-a-munkatarsat/
+    t = 'Gyorsan szeretnél értesülni a Rangadó.hu híreiről? Csatlakozz hozzánk! Klikk és like a Facebookon!'
+    for a in article_dec.find_all('a', {'target': '_blank'}):
+        if a.text.strip() == t:
+            a.decompose()
+
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     return article_dec
 
