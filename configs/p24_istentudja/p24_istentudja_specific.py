@@ -3,7 +3,8 @@
 
 import re
 
-from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants,\
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://istentudja.24.hu/'
 
@@ -30,24 +31,21 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if parsed_date is not None:
             data['sch:datePublished'] = parsed_date
         else:
-            tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
+            tei_logger.log('WARNING', f'{url}: {date_tag.text.strip()} DATE FORMAT ERROR!')
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
     modified_date_tag = bs.find('meta', property='article:modified_time')
     if modified_date_tag is not None:
         parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
-        if parsed_moddate is not None:
-            data['sch:dateModified'] = parsed_moddate
-        else:
-            tei_logger.log('WARNING', f'{url}: MODIFIED DATE FORMAT ERROR!')
-    else:
-        tei_logger.log('DEBUG', f'{url}: MODIFIED DATE NOT FOUND IN URL!')
+        data['sch:dateModified'] = parsed_moddate
     keywords = bs.find('meta', {'name': 'keywords', 'content': True})
     if keywords is not None:
         keywords_list = keywords['content'].split(',')
-        while SECTION in keywords_list:
+        if keywords_list.count(SECTION) > 0:
             keywords_list.remove(SECTION)
-        data['sch:keywords'] = keywords_list
+            data['sch:articleSection'] = SECTION
+        if len(keywords_list) > 0:
+            data['sch:keywords'] = keywords_list
     else:
         tei_logger.log('WARNING', f'{url}: KEYWORDS NOT FOUND!')
     title = article_root.find('h1', class_='o-post__title')
@@ -69,7 +67,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
     else:
         tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-    data['sch:articleSection'] = SECTION
     return data
 
 
