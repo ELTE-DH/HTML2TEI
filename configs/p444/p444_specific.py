@@ -6,11 +6,10 @@ import re
 from bs4 import BeautifulSoup
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 
-from src.html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict, BASIC_LINK_ATTRS
+from src.html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://444.hu/'
 ARTICLE_ROOT_PARAMS_SPEC = [(('section',), {'id': 'main-section'})]
-# (('main',), {'id': 'content-main'})]
 
 HIGHLIGHT = re.compile(r'.*highlight.*')
 A_TAGS = {'a', '0_MDESC_a'}
@@ -54,7 +53,13 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             authors_list = [au.text.strip() for au in authors_tag]
             data['sch:author'] = authors_list
         else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+            # <a class="fS eD f4 eS eT eU eV f9 fg" href="/author/czinkoczis">Czinkóczi Sándor
+            authors = [a.text.strip() for a in bs.find_all('a', {'href': re.compile("/author/.*")})]
+            if len(authors) > 0:
+                data['sch:author'] = authors
+                print(url, authors)
+            else:
+                tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
 
     section = raw_meta.find(class_='byline__category')
     if section is not None:
