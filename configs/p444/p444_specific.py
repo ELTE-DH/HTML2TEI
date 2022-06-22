@@ -2,7 +2,7 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
 import re
-
+from langdetect import detect
 from bs4 import BeautifulSoup
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 
@@ -18,6 +18,11 @@ A_TAGS = {'a', '0_MDESC_a'}
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
+    article_root = bs.find('section', {'id': 'main-section'})
+    lang = detect(article_root.text)
+    if lang != 'hu':
+        data['sch:availableLanguage'] = lang
+        tei_logger.log('WARNING', f'{url}: DETECTED LANGUAGE: {lang}')
     dates_cont = []
     raw_meta = bs.find('div', {'id': 'headline'})
     title = bs.find('meta', {'name': 'title'})
@@ -57,7 +62,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             authors = [a.text.strip() for a in bs.find_all('a', {'href': re.compile("/author/.*")})]
             if len(authors) > 0:
                 data['sch:author'] = authors
-                print(url, authors)
             else:
                 tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
 
