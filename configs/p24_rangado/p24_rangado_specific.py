@@ -4,6 +4,7 @@
 import re
 
 from bs4 import BeautifulSoup
+from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants,\
     tei_defaultdict
 
@@ -11,8 +12,6 @@ PORTAL_URL_PREFIX = 'https://rangado.24.hu/'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post__cntWrap wpb_wrapper'}),
                             (('div',), {'class': 'm-wideContent__cnt'})]  # 8 db ilyen cikk:
-# https://rangado.24.hu/valogatott/2019/03/22/szlovakia-magyarorszag-eb-selejtezo-nagyszombat-valogatott-szurkolok-riport/
-# (('div',), {'class': 'o-post'})] korábbi    <div class="o-post__body o-postCnt post-body"   < ebben nincs benne a lead
 
 SOURCE = ['Rangado', 'Szponzorált tartalom']
 
@@ -20,12 +19,13 @@ SOURCE = ['Rangado', 'Szponzorált tartalom']
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
+    print(url)
     # a class="m-livePost__backLink d-block"
-    # TODO: https://rangado.24.hu/magyar_foci/2020/11/18/magyarorszag-torokorszag-nemzetek-ligaja/#csoportgyoztes-a-magyar-valogatott-a-nemzetek-ligajaban
     backlink = bs.find('a', class_='m-livePost__backLink')
     if backlink is not None:
-        #tei_logger.log('WARNING', f'{url}: STANDALONE POST OF A FEED TYPE ARTICLE!')
+        tei_logger.log('WARNING', f'{url}: STANDALONE POST OF A FEED TYPE ARTICLE!')
         return None
+
     article_root = bs.find('div', class_='site-content')
     if article_root is None:
         tei_logger.log('WARNING', f'{url}: ARTICLE ROOT NOT FOUND/UNKNOWN ARTICLE SCHEME!')
@@ -125,12 +125,14 @@ def decompose_spec(article_dec):
     for a in article_dec.find_all('a', {'target': '_blank'}):
         if a.text.strip() == t:
             a.decompose()
-
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     return article_dec
 
 
-BLACKLIST_SPEC = ['https://rangado.24.hu/informacio/2011/05/14/szerzoi-jogok/', 'https://rangado.24.hu/hirek/2013/11/06/facebook-2/']
+BLACKLIST_SPEC = ['https://rangado.24.hu/informacio/2011/05/14/szerzoi-jogok/',
+                  'https://rangado.24.hu/hirek/2013/11/06/facebook-2/'] + \
+                 [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
+                                                           'rangado_hashtag_anchor.txt')).readlines()]
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 MULTIPAGE_URL_END = re.compile(r'.*/[1-9]/')
