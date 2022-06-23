@@ -115,7 +115,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:dateModified'] = max(dates_cont)
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
-    print(data)
     return data
 
 
