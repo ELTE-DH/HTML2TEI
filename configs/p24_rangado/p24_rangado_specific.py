@@ -19,8 +19,6 @@ SOURCE = ['Rangado', 'Szponzorált tartalom']
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
-    print(url)
-    # a class="m-livePost__backLink d-block"
     backlink = bs.find('a', class_='m-livePost__backLink')
     if backlink is not None:
         tei_logger.log('WARNING', f'{url}: STANDALONE POST OF A FEED TYPE ARTICLE!')
@@ -30,7 +28,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     if article_root is None:
         tei_logger.log('WARNING', f'{url}: ARTICLE ROOT NOT FOUND/UNKNOWN ARTICLE SCHEME!')
         return None
-    # m-author__catDateTitulusCreateDate
     date_tag = bs.find('span', class_='m-author__catDateTitulusCreateDate')
     if date_tag is None:
         date_tag = bs.find('span', class_='o-post__date')
