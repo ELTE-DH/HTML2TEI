@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
-
+import json
 import re
 import ast
 from collections import defaultdict
 from bs4 import BeautifulSoup
 
 from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, \
-    tei_defaultdict, create_new_tag_with_string
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://telex.hu'
 
@@ -97,9 +97,7 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = []
 
 MULTIPAGE_URL_END = re.compile(r'.*oldal=.')
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok'
-                                                   '-hazai-kuton?utm_source%3_Dtelex&amp;utm_medium=article&amp'
-                                                   ';utm_campaign=kifogyott_premium_uzemanyag']))
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-']))
 
 
 def next_page_of_article_spec(curr_html):  # https://telex.hu/koronavirus/2020/11/12/koronavirus-pp-2020-11-12/elo
@@ -121,19 +119,26 @@ def transform_to_html(url, raw_html, warc_logger):
     report_root = soup.find('div', {'id': 'liveblog-items-container'})
     root = soup.find('div', {'class': 'article-html-content'})
     if report_root is not None and len(root.text) < 60:
-        return hibrid_builder(url, soup)
+        reports_list = extract_sections_content_from_raw_html(soup)
+        return hibrid_builder(url, reports_list, raw_html)
     return raw_html
 
 
-def hibrid_builder(url, html_soup):
-    reports = extract_sections_content_from_raw_html(html_soup)
-    reports_root = html_soup.find('div', {'id': 'liveblog-items-container'})
+def hibrid_builder(url, reports, raw):  # BS4 InnerHTML hack!
+    report_container = []
     for report in reports:
-        report_tag = html_soup.new_tag('report')
+        post_elems = []
         for k, v in report.items():
-            create_new_tag_with_string(html_soup, v, k, report_tag)
-        reports_root.append(report_tag)
-    return str(html_soup)
+            tag_text = f'<{k}>{v}</{k}>'
+            post_elems.append(tag_text)
+        joined_elems = ''.join(post_elems)
+        report_block = f'<report>{joined_elems}</report>'
+        report_container.append(report_block)
+
+    reports_text = '\n'.join(report_container)
+    raw = raw.replace('<div id="liveblog-items-container"><!----></div>',
+                      f'<div id="liveblog-items-container">{reports_text}</div>')
+    return raw
 
 
 def extract_sections_content_from_raw_html(soup):
@@ -173,7 +178,7 @@ def extract_sections_content_from_raw_html(soup):
                 # CONTENT EXTRACTION
                 content_string_with_escapes = re.search(regex_for_content, section_tag_text).group(0)
                 try:
-                    content_string = ast.literal_eval(content_string_with_escapes)  # interprets escape characters
+                    content_string = json.loads(content_string_with_escapes)
                     match_dict['post_content'] = content_string
                 except ValueError:  # malformed node in cases where content is 'aB'
                     pass

@@ -16,7 +16,7 @@ def _handle_linebreaks_in_json_string(bs, fragment_bs_tag, json_string):
     for line in json_string.split('\n'):
         line_stripped = line.strip()
         if len(line_stripped) > 0:
-            if '<' in line_stripped:  # TODO teszt
+            if '<' in line_stripped:
                 inner_html = BeautifulSoup(line_stripped, 'html.parser')
                 fragment_bs_tag.append(inner_html)
             else:
