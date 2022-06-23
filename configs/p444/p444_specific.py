@@ -20,7 +20,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
     data['sch:url'] = url
     article_root = bs.find('section', {'id': 'main-section'})
     lang = detect(article_root.text)
-    if lang != 'hu':
+    if lang not in {'hu', 'ca'}:
         data['sch:availableLanguage'] = lang
         tei_logger.log('WARNING', f'{url}: DETECTED LANGUAGE: {lang}')
     dates_cont = []
