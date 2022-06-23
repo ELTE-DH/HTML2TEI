@@ -25,13 +25,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         tei_logger.log('WARNING', f'{url}: DETECTED LANGUAGE: {lang}')
     dates_cont = []
     raw_meta = bs.find('div', {'id': 'headline'})
-    title = bs.find('meta', {'name': 'title'})
+    title = bs.find('h1')
     if title is not None:
         data['sch:name'] = title.text.strip()
     else:
-        title = bs.find('h1')
+        title = bs.find('meta', {'name': 'title', 'content': True})
         if title is not None:
-            data['sch:name'] = title.text.strip()
+            titletext = title.attrs['content']
+            data['sch:name'] = titletext
         else:
             tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
 
@@ -114,6 +115,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:dateModified'] = max(dates_cont)
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
+    print(data)
     return data
 
 
