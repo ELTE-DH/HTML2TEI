@@ -197,7 +197,6 @@ def decompose_spec(article_dec):
     # after 2020: <a class="pr-box pr-box--compact pr-box--centered" href="https://membership.444.hu">
     for h2 in article_dec.find_all('h2'):
         for a in h2.find_all('a', {'href': 'direkt36_spec'}):
-            print(h2)
             a.decompose()
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     return article_dec
