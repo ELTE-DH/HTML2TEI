@@ -43,7 +43,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         keywords_list = keywords['content'].split(',')
         if keywords_list.count(SECTION) > 0:
             keywords_list.remove(SECTION)
-            data['sch:articleSection'] = SECTION
+            # data['sch:articleSection'] = SECTION
         if len(keywords_list) > 0:
             data['sch:keywords'] = keywords_list
     else:
