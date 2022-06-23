@@ -212,14 +212,16 @@ def merge_multipage_article_metadata(multipage_article):
                     max_pub = max(max_pub, meta_values)
                 elif meta_name == 'sch:dateModified':
                     max_mod = max(max_mod, meta_values)
-            elif meta_name not in merged_meta_dict.keys():
-                merged_meta_dict[meta_name] = meta_values
             elif isinstance(meta_values, list):
                 valami = meta_name_cache[meta_name]
                 for meta_value in meta_values:
                     if meta_value not in valami:
                         valami.add(meta_value)
-                        merged_meta_dict[meta_name].append(meta_value)
+            elif meta_name not in merged_meta_dict.keys():
+                merged_meta_dict[meta_name] = meta_values
+    for meta_k, meta_v in meta_name_cache.items():
+        merged_meta_dict[meta_k] = meta_v
+
     if min_pub != datetime(MAXYEAR, 1, 1):
         merged_meta_dict['sch:datePublished'] = min_pub
     if max_mod != datetime(MINYEAR, 1, 1):
