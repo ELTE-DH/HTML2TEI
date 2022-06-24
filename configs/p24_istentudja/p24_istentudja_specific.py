@@ -3,14 +3,13 @@
 
 import re
 
-from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
+from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants,\
+    tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://istentudja.24.hu/'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'o-post'})]
 
-HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
-               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
 
 SOURCE = '24.hu'
 SECTION = 'isten tudja'
@@ -32,24 +31,21 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if parsed_date is not None:
             data['sch:datePublished'] = parsed_date
         else:
-            tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
+            tei_logger.log('WARNING', f'{url}: {date_tag.text.strip()} DATE FORMAT ERROR!')
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
-    modified_date_tag = bs.find('meta', property='article:modified_time')
-    if modified_date_tag is not None:
-        parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
-        if parsed_moddate is not None:
-            data['sch:dateModified'] = parsed_moddate
-        else:
-            tei_logger.log('WARNING', f'{url}: MODIFIED DATE FORMAT ERROR!')
-    else:
-        tei_logger.log('DEBUG', f'{url}: MODIFIED DATE NOT FOUND IN URL!')
+    # modified_date_tag = bs.find('meta', property='article:modified_time')
+    # if modified_date_tag is not None:
+    #    parsed_moddate = parse_date(modified_date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
+    #    data['sch:dateModified'] = parsed_moddate
     keywords = bs.find('meta', {'name': 'keywords', 'content': True})
     if keywords is not None:
         keywords_list = keywords['content'].split(',')
-        while SECTION in keywords_list:
+        if keywords_list.count(SECTION) > 0:
             keywords_list.remove(SECTION)
-        data['sch:keywords'] = keywords_list
+            # data['sch:articleSection'] = SECTION
+        if len(keywords_list) > 0:
+            data['sch:keywords'] = keywords_list
     else:
         tei_logger.log('WARNING', f'{url}: KEYWORDS NOT FOUND!')
     title = article_root.find('h1', class_='o-post__title')
@@ -71,14 +67,23 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
     else:
         tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-    data['sch:articleSection'] = SECTION
     return data
 
 
 def excluded_tags_spec(tag):
-    if tag.name not in HTML_BASICS:
-        tag.name = 'else'
-    tag.attrs = {}
+    tag_attrs = tag.attrs
+    if 'data-hash' in tag_attrs.keys():
+        tag_attrs['data-hash'] = '@data-hash'
+    if 'data-desc' in tag_attrs.keys():
+        tag_attrs['data-desc'] = '@data-desc'
+    if 'data-title' in tag_attrs.keys():
+        tag_attrs['data-title'] = '@data-title'
+    elif tag.name == 'a' and 'id' in tag_attrs.keys():
+        tag_attrs['id'] = '@id'
+    elif tag.name == 'meta' and 'content' in tag_attrs.keys():
+        tag_attrs['content'] = '@content'
+    elif tag.name == 'iframe' and 'title' in tag_attrs.keys():
+        tag_attrs['title'] = '@title'
     return tag
 
 
@@ -100,8 +105,7 @@ DECOMP = [(('div',), {'class': 'o-post__author'}),
           (('script',), {}),
           (('style',), {})]
 
-MEDIA_LIST = [(('figure',), {}),
-              (('iframe',), {})]
+MEDIA_LIST = []
 
 
 def decompose_spec(article_dec):

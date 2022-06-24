@@ -58,7 +58,7 @@
                     <title></title>
                     <publisher><orgName>Central Médiacsoport</orgName>
                         <placeName>1037 Budapest, Montevideo u. 9.</placeName>
-                        <ref type="url" source="https://24.hu/impresszum/">https://doi.org/10.5281/zenodo.6721324</ref>
+                        <ref type="url" source="https://24.hu/impresszum/">https://doi.org/10.5281/zenodo.6720738</ref>
                         <date when="2021-09-07"/>
                     </publisher>
                     <pubPlace>
@@ -66,7 +66,7 @@
                         <ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
                     <availability><p>Copyright © 2021 Central Médiacsoport Zrt.</p>
-                        <p><ref type="url" source="https://24.hu/felhasznalasi-feltetelek/">https://doi.org/10.5281/zenodo.6721324</ref>
+                        <p><ref type="url" source="https://24.hu/felhasznalasi-feltetelek/">https://doi.org/10.5281/zenodo.6720738</ref>
                         <date when="2021-09-07"/></p>
                     </availability>
                     <date></date>
@@ -78,7 +78,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://roboraptor.24.hu/">24.hu - Roboraptor</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://sokszinuvidek.24.hu/">24.hu - Rangadó</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -87,14 +87,14 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6721324">
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6720738">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>
-                        2021-09-02T19:51:38/2021-09-02T20:08:15
+                        2021-10-16T10:37:23/2021-10-16T13:04:25
                     </sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6721324"/>
-                    <sch:identifier>[{"checksum":"31160c24505f0bc7933d1209cad118a0","filename":"24hu_rights_statements.warc.gz","filesize":438501,"id":"0322e24f-b0f7-45e6-ba57-777a7124a9bb","links":{"download":"https://zenodo.org/api/files/ea855d33-ef59-4368-9c01-f25309d2e07e/24hu_rights_statements.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6721324/files/0322e24f-b0f7-45e6-ba57-777a7124a9bb"}},{"checksum":"7e4b440a5aead8b642fa90d17cdb83c5","filename":"hashsums","filesize":6005,"id":"9033e5f8-8edd-4a00-bc08-460d5682fd68","links":{"download":"https://zenodo.org/api/files/ea855d33-ef59-4368-9c01-f25309d2e07e/hashsums","self":"https://zenodo.org/api/deposit/depositions/6721324/files/9033e5f8-8edd-4a00-bc08-460d5682fd68"}},{"checksum":"9c651f8b195f9998ae262269454c3286","filename":"log.log","filesize":9068,"id":"16bd69ce-c752-4ab8-a714-d94f69f17bd4","links":{"download":"https://zenodo.org/api/files/ea855d33-ef59-4368-9c01-f25309d2e07e/log.log","self":"https://zenodo.org/api/deposit/depositions/6721324/files/16bd69ce-c752-4ab8-a714-d94f69f17bd4"}},{"checksum":"bc018453f90548113e4e4e635259f349","filename":"logs.zip","filesize":44393,"id":"7eae310c-b0c9-4233-919b-dcd0e9db2a89","links":{"download":"https://zenodo.org/api/files/ea855d33-ef59-4368-9c01-f25309d2e07e/logs.zip","self":"https://zenodo.org/api/deposit/depositions/6721324/files/7eae310c-b0c9-4233-919b-dcd0e9db2a89"}},{"checksum":"fd7868f406a2ce9751acc5699c1e7f5a","filename":"roboraptor_24hu-archive.warc.gz","filesize":16843192,"id":"4d2158b0-263e-4a8a-b18e-84dc9f28d57c","links":{"download":"https://zenodo.org/api/files/ea855d33-ef59-4368-9c01-f25309d2e07e/roboraptor_24hu-archive.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6721324/files/4d2158b0-263e-4a8a-b18e-84dc9f28d57c"}},{"checksum":"9002e46b2a1ad570c021782d4bc2e9d2","filename":"roboraptor_24hu-articles.warc.gz","filesize":171678471,"id":"bbebd7b3-f7a5-440f-ae33-ab076becbeca","links":{"download":"https://zenodo.org/api/files/ea855d33-ef59-4368-9c01-f25309d2e07e/roboraptor_24hu-articles.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6721324/files/bbebd7b3-f7a5-440f-ae33-ab076becbeca"}},{"checksum":"90f15285cbf3acd8921950161285a648","filename":"script.sh","filesize":447,"id":"a1dbdc04-5e30-4a7f-b0cc-03114be273d1","links":{"download":"https://zenodo.org/api/files/ea855d33-ef59-4368-9c01-f25309d2e07e/script.sh","self":"https://zenodo.org/api/deposit/depositions/6721324/files/a1dbdc04-5e30-4a7f-b0cc-03114be273d1"}}]</sch:identifier>
-                    <sch:identifier>urn:uuid:65ca6034-1e56-4952-8953-2ce894e6d64e</sch:identifier> </rdf:Description>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6720738"/>
+                    <sch:identifier>[{"checksum":"3c4fd43481472f3ba0252dde87091142","filename":"24hurangado_rights_statements.warc.gz","filesize":433357,"id":"2a3a7414-b27d-432b-bda8-3fb9e36745ec","links":{"download":"https://zenodo.org/api/files/751f2a6f-13d4-4057-bd67-d8b24e9138e4/24hurangado_rights_statements.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6720738/files/2a3a7414-b27d-432b-bda8-3fb9e36745ec"}},{"checksum":"73683c06194439c770cd264f05248580","filename":"hashsums","filesize":6016,"id":"8b65416b-8fe2-48f3-9a9c-0de84851180a","links":{"download":"https://zenodo.org/api/files/751f2a6f-13d4-4057-bd67-d8b24e9138e4/hashsums","self":"https://zenodo.org/api/deposit/depositions/6720738/files/8b65416b-8fe2-48f3-9a9c-0de84851180a"}},{"checksum":"4c116cc600b6a522fe4009b4846ec9fa","filename":"log.log","filesize":392420,"id":"66940943-48a3-417c-85b9-5677ed0165c5","links":{"download":"https://zenodo.org/api/files/751f2a6f-13d4-4057-bd67-d8b24e9138e4/log.log","self":"https://zenodo.org/api/deposit/depositions/6720738/files/66940943-48a3-417c-85b9-5677ed0165c5"}},{"checksum":"4dd5bb15715845bf7c2b5b08a828b9a0","filename":"logs.zip","filesize":1834910,"id":"af7cea28-c4c5-47bd-8c94-f0febd7028e9","links":{"download":"https://zenodo.org/api/files/751f2a6f-13d4-4057-bd67-d8b24e9138e4/logs.zip","self":"https://zenodo.org/api/deposit/depositions/6720738/files/af7cea28-c4c5-47bd-8c94-f0febd7028e9"}},{"checksum":"67bc38c34b529d536a2270897d6692a8","filename":"rangado_24hu-archive_new3.warc.gz","filesize":781427961,"id":"922cfcc8-dc57-4337-ba56-e0cba167e4d1","links":{"download":"https://zenodo.org/api/files/751f2a6f-13d4-4057-bd67-d8b24e9138e4/rangado_24hu-archive_new3.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6720738/files/922cfcc8-dc57-4337-ba56-e0cba167e4d1"}},{"checksum":"b19cbbe93cc1e042cca858e3d44e01bc","filename":"rangado_24hu-articles_new3.warc.gz","filesize":12342187539,"id":"4ba1d8c3-da78-4e6b-82e8-6407abf21eed","links":{"download":"https://zenodo.org/api/files/751f2a6f-13d4-4057-bd67-d8b24e9138e4/rangado_24hu-articles_new3.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6720738/files/4ba1d8c3-da78-4e6b-82e8-6407abf21eed"}},{"checksum":"d5bcad37970833e54104dda5daf614b2","filename":"script.sh","filesize":442,"id":"33ab578a-24df-4287-9ff1-d1bb6483bb31","links":{"download":"https://zenodo.org/api/files/751f2a6f-13d4-4057-bd67-d8b24e9138e4/script.sh","self":"https://zenodo.org/api/deposit/depositions/6720738/files/33ab578a-24df-4287-9ff1-d1bb6483bb31"}}]</sch:identifier>
+                    <sch:identifier>urn:uuid:bff9aa1e-e0b6-44de-bf1d-eb2100ee6a71</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
