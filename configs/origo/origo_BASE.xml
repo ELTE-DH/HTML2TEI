@@ -60,18 +60,19 @@
                         <placeName>1443 Budapest, Pf: 201.</placeName>
                         <ref type="url" source="https://www.origo.hu/impresszum/index.html">
                             <!--KITÖLT: a portál DOI-ja pl.: https://doi.org/10.5281/zenodo --></ref>
-                        <!--<date when=""/>KITÖLT: impresszum letöltésének dátuma -->
+                        <date when="2020-02-02"/> <!-- CSAK TESZT DÁTUM!!! KITÖLT: impresszum letöltésének dátuma -->
                     </publisher>
                     <pubPlace>
                         Budapest
                         <ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
-                    <availability><p>AZ ORIGO KIADÓJA A NEW WAVE MEDIA GROUP KFT. © MINDEN JOG FENNTARTVA.</p>
+                    <availability>
+                        <p>AZ ORIGO KIADÓJA A NEW WAVE MEDIA GROUP KFT. © MINDEN JOG FENNTARTVA.</p>
                         <p>
-			    <ref type="url" source="https://www.origo.hu/impresszum/index.html">
-                            <!--KITÖLT: https://doi.org/ --></ref>
-                            <!--<date when=""/> when: impresszum/jognyil crawl dátum -->
-			</p>
+			                <ref type="url" source="https://www.origo.hu/impresszum/index.html">
+                                <!--KITÖLT: https://doi.org/ --></ref>
+                            <date when="2020-02-02"/><!-- CSAK TESZT DÁTUM!!! when: impresszum/jognyil crawl dátum -->
+			            </p>
                     </availability>
                     <date></date>
                 </bibl>
