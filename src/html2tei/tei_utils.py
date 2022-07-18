@@ -169,6 +169,40 @@ def complex_wrapping(bs, root_tag, default_wrapper, article_url, tei_logger):
         root_tag.extend(root_contents)
 
 
+def complex_wrapping_for_news_feed(bs, article_tag, default_wrapper, article_url, tei_logger):
+    """Divergent block types may occur between [news]feed blocks (<div type="feed">) that cause validation error,
+    The feed-type articles should be built up of <div>-s at the level below the root of the article.
+    """
+    naked_text, child_tags, desc_tags = imtext_children_descendants_of_tag(article_tag)
+    if child_tags != {'div'}:
+        tei_logger.log('DEBUG', f'complex_wrapping_for_news_feed in {article_url}')
+        root_contents = []
+        naked_text_and_inline_tag = ''
+        contents_list = copy(article_tag.contents)
+        for it, elem in enumerate(contents_list):
+            if (isinstance(contents_list[it], NavigableString) and not contents_list[it].isspace() and
+                len(contents_list[it].strip()) > 0) or \
+                    (isinstance(contents_list[it], Tag) and contents_list[it].name != 'div'):
+                if isinstance(naked_text_and_inline_tag, Tag):
+                    naked_text_and_inline_tag.append(contents_list[it])
+                else:
+                    naked_text_and_inline_tag = bs.new_tag(default_wrapper)
+                    naked_text_and_inline_tag.append(contents_list[it])
+            elif isinstance(contents_list[it], Tag) and contents_list[it].name == 'div':
+                # the second part of the condition is redundant
+                if isinstance(naked_text_and_inline_tag, Tag):
+                    root_contents.append(naked_text_and_inline_tag)
+                root_contents.append(contents_list[it])
+                naked_text_and_inline_tag = ''
+        if isinstance(naked_text_and_inline_tag, Tag):
+            root_contents.append(naked_text_and_inline_tag)
+        article_tag.clear()
+        article_tag.extend(root_contents)
+        for div_tag in article_tag.find_all('div'):
+            #  It calls the general complex wrapping function to check the internal structure of the newly created divs.
+            complex_wrapping(bs, div_tag, 'p', article_url, tei_logger)
+
+
 def normal_tag_to_tei_xml_converter(bs, article):
     """It replaces the temporary label names with valid TEI labels and inserts the extra levels required by the TEI"""
     for tag in article.find_all():
@@ -210,6 +244,9 @@ def normal_tag_to_tei_xml_converter(bs, article):
         elif tag_name == 'valaszblokk':
             tag.name = 'list'
             tag.attrs = {'type': 'quiz'}
+        elif tag_name == 'editorial_note':
+            tag.name = 'note'
+            tag.attrs = {'type': 'editorial'}
         elif tag_name == 'social_media':
             flo_root = bs.new_tag('floatingText')
             flo_root.attrs = {'type': 'social_media_content'}

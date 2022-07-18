@@ -10,7 +10,7 @@ from ..correctors.link_corrector import link_corrector
 from ..correctors.unicode_error import unicode_test, article_encoding_correction
 from ..tei_utils import immediate_text, imtext_children_descendants_of_tag, to_friendly, \
     real_text_length, language_attr_recognition, complex_wrapping, normal_tag_to_tei_xml_converter, unwrap_all, \
-    decompose_all
+    decompose_all, complex_wrapping_for_news_feed
 
 TABLE_CELL = {'oszlop', 'tablazat_cimsor'}
 
@@ -44,6 +44,7 @@ def correct_and_store_link(tag, link, portal_url_prefix, portal_url_filter, extr
           - repairable
           - unrepairable
     """
+    link = link.strip()
     link_original = link
     tag.attrs.clear()
     link_new = link_corrector(link, portal_url_prefix, portal_url_filter, extra_key, article_url)
@@ -500,7 +501,11 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
                 tag.name = 'to_unwrap'  # Tags that only currently do not contain text
         else:  # Unrated tags
             tei_logger.log('WARNING', f'{article_url} The tag is not in the dictionary.'
+<<<<<<< HEAD
                                       f'The dictionary needs to be updated ({tag.name}, {tag_exl}, {tag})')
+=======
+                                      f'The dictionary needs to be updated ({tag.name}, {tag.attrs}, {tag_exl})')
+>>>>>>> origin
             tag.name = 'to_unwrap'
 
 
@@ -631,6 +636,9 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     if real_text_length(article) == 0 and len(article.find_all()) == 0:
         tei_logger.log('WARNING', f'{article_url}: ARTICLE BODY IS EMPTY!')
         return 'EMPTY ARTICLE'
+
+    if article.find('div', {'type': 'feed'}) is not None:
+        complex_wrapping_for_news_feed(bs, article, 'div', article_url, tei_logger)
 
     tei_body_contents_list = prepare_tei_body(art_child_tags, art_naked_text, article, bs, article_url, tei_logger)
 

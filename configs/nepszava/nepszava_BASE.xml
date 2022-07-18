@@ -47,7 +47,8 @@
                 <availability>
                     <p>Metadata: IN COPYRIGHT - NON-COMMERCIAL USE PERMITTED<ref type="url"
                         >http://rightsstatements.org/vocab/InC-NC/1.0/</ref></p>
-                    <p>Text: IN COPYRIGHT <ref type="url">http://rightsstatements.org/vocab/InC/1.0/</ref>
+                    <p>Text: IN COPYRIGHT <ref type="url"
+                        >http://rightsstatements.org/vocab/InC/1.0/</ref>
                     </p>
                 </availability>
                 <idno type="PID"></idno>
@@ -55,15 +56,16 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName>Magyar Jeti Zrt.</orgName>
-                        <placeName>1024 Budapest, Margit krt. 5/b</placeName>
-                        <ref type="url" source="https://444.hu/impresszum">https://doi.org/10.5281/zenodo.6326248</ref>
-                        <date when="2020-12-01"/>
+                    <publisher><orgName>XXI. század Média Kft.</orgName>
+                        <placeName>Kiadó és szerkesztőség: 1191 Budapest, Vak Bottyán u. 75/A-C.</placeName>
+                        <ref type="url" source="https://nepszava.hu/oldal/impresszum/">https://doi.org/10.5281/zenodo.6327180</ref>
+                        <date when="2021-09-13"/>
                     </publisher>
-                    <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref></pubPlace>
-                    <availability><p>© 2021 Magyar Jeti Zrt.<date when="2020-12-01"/></p>
-                        <p><ref type="url" source="https://444.hu/szerzoi-jogok">https://doi.org/10.5281/zenodo.6326248</ref>
-                            <date when="2021-01-07"/></p>
+                    <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref>
+                    </pubPlace>
+                    <availability><p>Copyright (©) 2022 – XXI. század Média Kft.</p>
+                        <p><ref type="url" source="https://nepszava.hu/oldal/impresszum/">https://doi.org/10.5281/zenodo.6327180</ref>
+                            <date when="2021-09-13"/></p>
                     </availability>
                     <date></date>
                 </bibl>
@@ -74,7 +76,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="https://444.hu/">444</sch:ispartOf>
+                    <sch:ispartOf rdf:resource="https://nepszava.hu/">Népszava</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -83,12 +85,12 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6326248">
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6327180">
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2019-03-13T13:25:02/2021-03-09T10:03:26</sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6326248"/>
-                    <sch:identifier>[{'checksum': 'c9272e29d5cbfde5d5260b9d9324e37d', 'filename': '444-archive_new4.warc.gz', 'filesize': 129489098, 'id': '672e1a69-b165-451c-850a-3828ccd75eae', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/444-archive_new4.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/672e1a69-b165-451c-850a-3828ccd75eae'}}, {'checksum': '213e443482c6410d3152ab62f5a4bfca', 'filename': '444-articles_new4.warc.gz', 'filesize': 3251973099, 'id': 'a5c61e6f-59f9-478c-855f-8a79606ceef7', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/444-articles_new4.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/a5c61e6f-59f9-478c-855f-8a79606ceef7'}}, {'checksum': 'ea2f52cefa8691226d97247e66236622', 'filename': '444_rights_statements.warc.gz', 'filesize': 40599, 'id': '76d74fba-dc20-4d90-aa99-d1a33b5a7242', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/444_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/76d74fba-dc20-4d90-aa99-d1a33b5a7242'}}, {'checksum': '6d4ee25cf8c8bcd8c7e20e564fbc0c64', 'filename': 'hashsums', 'filesize': 5990, 'id': 'a1330d6f-b3d2-49eb-99dd-bd2b0c28375d', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/hashsums', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/a1330d6f-b3d2-49eb-99dd-bd2b0c28375d'}}, {'checksum': '3427dcee6e76ae826fb6acc60ac0a5d1', 'filename': 'log.log', 'filesize': 383296, 'id': 'a41d8c78-c5c9-488c-9ca6-74466fe0ce51', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/a41d8c78-c5c9-488c-9ca6-74466fe0ce51'}}, {'checksum': '1ee67cd1a9d28a3335e1ceace5bdf6be', 'filename': 'logs.zip', 'filesize': 4718057, 'id': 'caebdf59-948c-4d09-a600-0de213f98e93', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/caebdf59-948c-4d09-a600-0de213f98e93'}}, {'checksum': '95f5668c5d7109604b58a46346ea966b', 'filename': 'script.sh', 'filesize': 529, 'id': '4e0c3848-253b-4c3d-96b2-de98cf931735', 'links': {'download': 'https://zenodo.org/api/files/ac1503cf-7177-4c56-97d0-56ef4f5e3dbc/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/6326248/files/4e0c3848-253b-4c3d-96b2-de98cf931735'}}]</sch:identifier>
-                    <sch:identifier>9d8abc05-9925-4a6f-bd2e-cda364f58997</sch:identifier> </rdf:Description>
+                    <sch:sdDatePublished>2021-10-13 17:20:25/2021-10-16 12:55:35</sch:sdDatePublished>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6327180"/>
+                    <sch:identifier>[{'checksum': '17e1d28046468dd8e42116e7062861c5', 'filename': 'hashsums', 'filesize': 6003, 'id': 'ba609bee-6c47-4b64-9fee-f13d59229204', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/hashsums', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/ba609bee-6c47-4b64-9fee-f13d59229204'}}, {'checksum': 'ac7809903322bda6339c31950efd4dac', 'filename': 'log.log', 'filesize': 17204879, 'id': 'd0481af5-3516-47e9-a50a-35c9df9c096e', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/log.log', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/d0481af5-3516-47e9-a50a-35c9df9c096e'}}, {'checksum': 'a5d87a3ee2975d8dd1888ecd7137115a', 'filename': 'logs.zip', 'filesize': 6916693, 'id': '3dd472f9-26d5-41ab-8713-96581244f3b8', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/logs.zip', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/3dd472f9-26d5-41ab-8713-96581244f3b8'}}, {'checksum': '2b02d101a71c89699ef95969b3d75e59', 'filename': 'nepszava-archive_new.warc.gz', 'filesize': 72685409, 'id': 'f0f69a95-8bc5-44f5-9b18-84e56aa2383b', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/nepszava-archive_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/f0f69a95-8bc5-44f5-9b18-84e56aa2383b'}}, {'checksum': '0098bd012f3a7da1d1cbfd22eb12f206', 'filename': 'nepszava-articles_new.warc.gz', 'filesize': 691915808, 'id': 'f79fe481-c904-42a1-ae28-7d2c872d32e1', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/nepszava-articles_new.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/f79fe481-c904-42a1-ae28-7d2c872d32e1'}}, {'checksum': '739e2b78e7fc77d09f84312b26e35201', 'filename': 'nepszava_rights_statements.warc.gz', 'filesize': 30841, 'id': 'f712070b-2f5d-4ac9-894d-2214476b0658', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/nepszava_rights_statements.warc.gz', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/f712070b-2f5d-4ac9-894d-2214476b0658'}}, {'checksum': '565330926b28223a394ef0bb4adfe4f9', 'filename': 'script.sh', 'filesize': 419, 'id': 'd6e873a8-f81b-4c88-a949-78552a93659e', 'links': {'download': 'https://zenodo.org/api/files/ec0afb4a-27ed-45c7-90ce-8fab11d8b1f7/script.sh', 'self': 'https://zenodo.org/api/deposit/depositions/6327180/files/d6e873a8-f81b-4c88-a949-78552a93659e'}}]</sch:identifier>
+                    <sch:identifier>9d184181-3cf0-45aa-9ff2-54decaf902a8</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -116,4 +118,3 @@
         </body>
     </text>
 </TEI>
-
