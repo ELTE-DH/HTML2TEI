@@ -100,6 +100,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
+    if tag.name == 'li' and 'data-leiras' in tag.attrs and tag['data-leiras'] == ' \r\n':
+        tag['data-leiras'] = tag['data-leiras'].strip()
+        
     # if tag.name not in HTML_BASICS:
     #     tag.name = 'else'
     # tag.attrs = {}
@@ -124,7 +127,8 @@ DECOMP = [(('div',), {'class': 'banner-wrapper bgr mb-2 mt-2'}),
           (('div',), {'class': 'share-box'}),
           (('div',), {'class': 'fb-like'}),
           (('div',), {'class': 'wrap'}),
-          (('script',), {})]
+          (('script',), {}),
+          (('ul',), {'class': 'card-buttons'})]
 
 MEDIA_LIST = [(('div',), {'class': 'image image-div inner'}),
               (('div',), {'data-blocktype': 'Cikk_Oldal_Embed'}),
