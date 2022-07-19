@@ -100,14 +100,22 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
 
 def excluded_tags_spec(tag):
-    if tag.name not in HTML_BASICS:
-        tag.name = 'else'
-    tag.attrs = {}
+    if tag.name == 'li' and 'data-leiras' in tag.attrs and tag['data-leiras'] == ' \r\n':
+        tag['data-leiras'] = tag['data-leiras'].strip()
+        
+    # if tag.name not in HTML_BASICS:
+    #     tag.name = 'else'
+    # tag.attrs = {}
     return tag
 
 
 BLOCK_RULES_SPEC = {}
-BIGRAM_RULES_SPEC = {}
+BIGRAM_RULES_SPEC = {'table_text': {('media_hivatkozas', 'det_by_any_desc'): ('media_tartalom', 'media_hivatkozas')},
+                    'lista': {('media_hivatkozas', 'det_by_any_desc'): ('to_unwrap', 'media_hivatkozas')},
+                    'listaelem': {('media_hivatkozas', 'det_by_any_desc'): ('to_unwrap', 'media_hivatkozas')},
+                    'kiemelt': {('media_hivatkozas', 'det_by_any_desc'): ('to_unwrap', 'media_hivatkozas')}
+                    }
+
 LINKS_SPEC = BASIC_LINK_ATTRS
 DECOMP = [(('div',), {'class': 'banner-wrapper bgr mb-2 mt-2'}),
           (('div',), {'class': 'blockquote orange'}),
@@ -119,12 +127,14 @@ DECOMP = [(('div',), {'class': 'banner-wrapper bgr mb-2 mt-2'}),
           (('div',), {'class': 'share-box'}),
           (('div',), {'class': 'fb-like'}),
           (('div',), {'class': 'wrap'}),
-          (('script',), {})]
+          (('script',), {}),
+          (('ul',), {'class': 'card-buttons'})]
 
 MEDIA_LIST = [(('div',), {'class': 'image image-div inner'}),
               (('div',), {'data-blocktype': 'Cikk_Oldal_Embed'}),
-              (('div',), {'class': 'inner-cikkbox cikkbox-img align-left'}),
-              (('table',), {})]
+              (('div',), {'class': 'inner-cikkbox cikkbox-img align-left'})
+              # (('table',), {})
+              ]
 
 
 def decompose_spec(article_dec):
@@ -136,8 +146,17 @@ BLACKLIST_SPEC = ['https://magyarnarancs.hu/film2/kinn-az orosz-vadonban-a-jegme
                   'https://magyarnarancs.hu/belpol/orban-merkel talalkozo-kiegyeznek-dontetlenben-93514',
                   'https://magyarnarancs.hu/egotripp/-75067']
 
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
+_filter_link_list = ['https://w.soundcloud.com/player/?url=https  %3A//api.soundcloud.com/tracks/173157757&colo  r=ff5500&auto_play=false&hide_related=fal  se&show_comments=true&show_user=true&  show_reposts=false',
+                     'https://w.soundcloud.com/player/?url=https  %3A//api.soundcloud.com/tracks/173157758&colo  r=ff5500&auto_play=false&hide_related=fal  se&show_comments=true&show_user=true&  show_reposts=false',
+                     'https://w.soundcloud.com/player/?url=https  %3A//api.soundcloud.com/tracks/173157759&colo  r=ff5500&auto_play=false&hide_related=fal  se&show_comments=true&show_user=true&  show_reposts=false',
+                     'https://w.soundcloud.com/player/?url=https  %3A//api.soundcloud.com/tracks/173157761&colo  r=ff5500&auto_play=false&hide_related=fal  se&show_comments=true&show_user=true&  show_reposts=false',
+                     'https://w.soundcloud.com/player/?url=https  ://api.soundcloud.com/tracks/173157759&amp;colo  r=ff5500&amp;auto_pl$y=false&amp;hide_related=fal  se&amp;show_comments=true&amp;show_user=true&amp;  show_reposts=false" rend="embedded_content" resp="script" type="corrected',
+                     'https://w.soundcloud.com/player/?url=https  ://api.soundcloud.com/tracks/173157759&amp;colo  r=ff5500&amp;auto_play=false&amp;hide_related=fal  se&amp;show_comments=true&amp;show_user=true&amp;  show_reposts=false" rend="embedded_content" resp="script" type="corrected',
+                     'http://www.blikk.hu/sztarvilag/sztarsztorik/demjen-rozsi-akos-meg-finoman-is-fogalmazott-a-nokrol/d717vjs :']
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(l) for l in _filter_link_list]))
+
+                                                   
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
 
 

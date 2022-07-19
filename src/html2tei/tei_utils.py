@@ -29,6 +29,8 @@ def to_friendly(ch, excluded_tags_fun):
         attrs = ''
     if '\n' in attrs:
         attrs = attrs.replace('\n', ' ')
+    if '\r' in attrs:
+        attrs = attrs.replace('\r', ' ')
     return f'<{ch.name}{attrs}>'
 
 

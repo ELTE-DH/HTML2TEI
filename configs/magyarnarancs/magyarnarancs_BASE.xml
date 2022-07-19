@@ -58,8 +58,7 @@
                     <title></title>
                     <publisher><orgName>Magyarnarancs.hu Lapkiadó Kft.</orgName>
                         <placeName>1094 Budapest, Ferenc tér 1.</placeName>
-                        <ref type="url" source="https://magyarnarancs.hu/rolunk/a_lap_imresszum-77332">
-                            <!--KITÖLT: a portál DOI-ja pl.: https://doi.org/10.5281/zenodo.--></ref>
+                        <ref type="url" source="https://magyarnarancs.hu/rolunk/a_lap_imresszum-77332"></ref>
                         <date when="2021-09-07"/>
                     </publisher>
                     <pubPlace>
@@ -68,8 +67,7 @@
                     </pubPlace>
                     <availability><p>@ Copyright 2021 Magyar Narancs Minden jog fenntartva!</p>
                         <p>
-                            <ref type="url" source="https://magyarnarancs.hu/rolunk/a_lap_imresszum-77332">
-                            <!--KITÖLT: https://doi.org/</ref> --></ref>
+                            <ref type="url" source="https://magyarnarancs.hu/rolunk/a_lap_imresszum-77332"></ref>
                             <date when="2021-09-07"/>
                         </p>
                     </availability>
@@ -91,12 +89,12 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6861923">
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished>2021-09-02T19:50:56/2021-09-07T11:50:32</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
-                    <sch:identifier>d19a04e3-27cd-444a-8c6f-29e58d9aa3e2</sch:identifier> </rdf:Description>
+                    <sch:sdDatePublished>2021-09-02T19:50:56/2022-03-05T00:08:26</sch:sdDatePublished>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6861923"/>
+                    <sch:identifier>[{"checksum": "dc2e66ef5084a44ee2d840dce56e8e99","filename": "hashsums","filesize": 7003,"id": "9270e6c5-f499-498a-9d25-83210932263e","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/hashsums","self": "https://zenodo.org/api/deposit/depositions/6861923/files/9270e6c5-f499-498a-9d25-83210932263e"}},{"checksum": "00e22415e3abe557050956429c7760b8","filename": "known_bad_urls.txt","filesize": 181,"id": "edaaa9a8-43b7-473b-8143-0f5896a82800","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/known_bad_urls.txt","self": "https://zenodo.org/api/deposit/depositions/6861923/files/edaaa9a8-43b7-473b-8143-0f5896a82800"}},{"checksum": "719fd9be6923a7628bb7c03c0e990dd0","filename": "log.log","filesize": 1433040,"id": "90d36534-e1f8-4c83-a8ca-b11fa3810f26","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/log.log","self": "https://zenodo.org/api/deposit/depositions/6861923/files/90d36534-e1f8-4c83-a8ca-b11fa3810f26"}},{"checksum": "f1ef4c3a757e38cb03b75cddbb4c31a7","filename": "logs.zip","filesize": 2507381,"id": "4c7eec3c-7397-4c89-bce5-91040d02f76e","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/logs.zip","self": "https://zenodo.org/api/deposit/depositions/6861923/files/4c7eec3c-7397-4c89-bce5-91040d02f76e"}},{"checksum": "cc583f1796f31495166305b3345b10a9","filename": "magyarnarancs-archive_new3.warc.gz","filesize": 106116627,"id": "8a11102b-31f7-4fa7-b0b0-513772b0fad5","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/magyarnarancs-archive_new3.warc.gz","self": "https://zenodo.org/api/deposit/depositions/6861923/files/8a11102b-31f7-4fa7-b0b0-513772b0fad5"}},{"checksum": "053083f8fb2a8a7b6446ff60ecd3ddc0","filename": "magyarnarancs-articles_new3.warc.gz","filesize": 1669598291,"id": "eb2ad5de-a4ef-4d88-b9b4-6890f09e0e6d","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/magyarnarancs-articles_new3.warc.gz","self": "https://zenodo.org/api/deposit/depositions/6861923/files/eb2ad5de-a4ef-4d88-b9b4-6890f09e0e6d"}},{"checksum": "6fdae265aa88e21e416b38d82db1d6c1","filename": "magyarnarancs_rights_statements.warc.gz","filesize": 16434,"id": "27d5169a-7226-421f-8e4c-b0fe70a67df3","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/magyarnarancs_rights_statements.warc.gz","self": "https://zenodo.org/api/deposit/depositions/6861923/files/27d5169a-7226-421f-8e4c-b0fe70a67df3"}},{"checksum": "ec6b604aca7e8f22a2aa88eff8ab017a","filename": "script.sh","filesize": 484,"id": "8f1edda3-fd23-4453-acb9-42cebbf38643","links": {"download": "https://zenodo.org/api/files/26165584-1eb8-4658-89ee-97bd5f7660b1/script.sh","self": "https://zenodo.org/api/deposit/depositions/6861923/files/8f1edda3-fd23-4453-acb9-42cebbf38643"}}]</sch:identifier>
+                    <sch:identifier>ed9a10c1-06e1-414d-a922-0b111dec123d</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -111,6 +109,7 @@
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-0577-8706">Nagy Mihály</sch:contributor>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
                 </rdf:Description>
             </rdf:RDF>
