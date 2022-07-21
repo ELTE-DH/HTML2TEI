@@ -2,6 +2,7 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*
 
 import re
+from langdetect import detect
 from bs4 import BeautifulSoup
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 from html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict, BASIC_LINK_ATTRS
@@ -471,15 +472,18 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 
     format_identified = False
     for c, (key, format_option) in enumerate(format_dict.items()):
-        
-        if bs.find(key[0], {key[1][0]: key[1][1]}) is not None:
+        article_root = bs.find(key[0], {key[1][0]: key[1][1]})
+        if article_root is not None:
+            lang = detect(article_root.text)
+            if lang not in {'hu', 'ca'}:
+                data['sch:availableLanguage'] = lang
+                tei_logger.log('WARNING', f'{url}: DETECTED LANGUAGE: {lang}')
             print(c+1)
             format_option(data)
             format_identified = True
             break
     if format_identified is False:
         tei_logger.log('WARNING', f'{url} ARTICLE FORMAT UNACCOUNTED FOR!')
-        return None
 
     # DATE MODIFIED from META TAG - same in all <meta name="modified-date" content="2022-03-17" />
     date_modified_tag = bs.find('meta', {'name': 'modified-date', 'content': True})
@@ -590,8 +594,8 @@ BLACKLIST_SPEC = []
 # http://:www.origo.hu/nagyvilag/20110402-radioaktiv-viz-omlik-a-tengerbe-japanban.html
 
 bad_url_list = [url.strip() for url in open(os_path_join(os_path_dirname(os_path_abspath(__file__)),
-                                            'bad_reference_urls.txt')).readlines()] \
-                + ['&lt;iframe', '&lt;blockquote']
+                                            'bad_reference_urls.txt')).readlines()] # \
+                # + ['&lt;iframe', '&lt;blockquote']
                 
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join([re.escape(s) for s in bad_url_list]))
 
