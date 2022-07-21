@@ -242,6 +242,17 @@ python-versions = ">=3.6"
 data = ["language-data (>=1.1,<2.0)"]
 
 [[package]]
+name = "langdetect"
+version = "1.0.9"
+description = "Language detection library ported from Google's language-detection."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+
+[[package]]
 name = "lxml"
 version = "4.7.1"
 description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
@@ -681,7 +692,7 @@ trafilatura = ["trafilatura"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "358f8099ac49795984fa9e6b6c1ba93d415319c7ae8dc7b449e5269952aea7d4"
+content-hash = "3c2373409032258a6d75513a5dc70e7d844f767b4ca5a96b397b3499aa9c3bcf"
 
 [metadata.files]
 atomicwrites = [
@@ -783,6 +794,10 @@ justext = [
 langcodes = [
     {file = "langcodes-3.3.0-py3-none-any.whl", hash = "sha256:4d89fc9acb6e9c8fdef70bcdf376113a3db09b67285d9e1d534de6d8818e7e69"},
     {file = "langcodes-3.3.0.tar.gz", hash = "sha256:794d07d5a28781231ac335a1561b8442f8648ca07cd518310aeb45d6f0807ef6"},
+]
+langdetect = [
+    {file = "langdetect-1.0.9-py2-none-any.whl", hash = "sha256:7cbc0746252f19e76f77c0b1690aadf01963be835ef0cd4b56dddf2a8f1dfc2a"},
+    {file = "langdetect-1.0.9.tar.gz", hash = "sha256:cbc1fef89f8d062739774bd51eda3da3274006b3661d199c2655f6b3f6d605a0"},
 ]
 lxml = [
     {file = "lxml-4.7.1-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:d546431636edb1d6a608b348dd58cc9841b81f4116745857b6cb9f8dadb2725f"},
