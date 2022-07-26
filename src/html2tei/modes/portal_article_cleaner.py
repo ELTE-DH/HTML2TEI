@@ -29,7 +29,7 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
     :param multipage_warc_datas
     """
     url = meta_data['sch:url']
-    art_date_pub = meta_data['sch:datePublished']
+    art_date_pub = meta_data.get('sch:datePublished') 
     # FILENAME + TEIPID
     # 1. TEI PID generation
     tei_pid = str(uuid5(NAMESPACE_URL, f'{url} {warc_date}'))
@@ -174,7 +174,12 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
         for url, page_contents in article_body_contents.items():
             div = beauty_xml.new_tag('div')
             div.attrs = {'source': url, 'type': 'page'}
-            div.extend(page_contents)
+            if page_contents == 'EMPTY ARTICLE':
+                note = beauty_xml.new_tag('note')
+                note.append('EMPTY ARTICLE')
+                div.append(note)
+            else:
+                div.extend(page_contents)
             body.append(div)
     if multipage_warc_datas is not None:
         note_tag = beauty_xml.new_tag('note')
