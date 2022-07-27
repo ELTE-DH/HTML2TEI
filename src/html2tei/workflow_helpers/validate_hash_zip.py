@@ -18,6 +18,7 @@ from mthasher import MtHasher, ALGORITHMS_GUARANTEED
 NOT_ALNUM_WS_OR_DASH = re_compile(r'[^\w\s-]')
 MORE_DASH_OR_WS = re_compile(r'[-\s]+')
 
+
 # Only init_output_writer is used outside of this file
 
 
@@ -98,6 +99,7 @@ class StoreFilesWithReadableName:
     """Store output files in bad_urls_dir directory for later examination
         (no zipping, no validation, filenames are slugified urls)
     """
+
     def __init__(self, tei_logger, bad_urls_dir, zipfile_name=None, hashsums_filename=None, hash_algos=None,
                  tei_schema=None):
         # To be a drop-in replacement
@@ -127,6 +129,7 @@ class StoreFilesWithReadableName:
 class ValidatorHasherCompressor:
     """Validate output TEI XML files, zip the valid ones and compute their hashsums, invalid XMLs go
         to bad_urls_dir directory with UUID filenames"""
+
     def __init__(self, tei_logger, bad_urls_dir, zipfile_name, hashsums_filename, hash_algos=ALGORITHMS_GUARANTEED,
                  tei_schema='https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng'):
         # Init Zipfile
@@ -160,7 +163,7 @@ class ValidatorHasherCompressor:
             if close is not None:
                 close()
 
-    def process_one_file(self, url, desired_filename, filename_suff, raw_xml_str):
+    def process_one_file_origi(self, url, desired_filename, filename_suff, raw_xml_str):
 
         xml_etree = etree.fromstring(raw_xml_str)
         xml_filename = check_for_filename_collision(url, desired_filename, filename_suff, self._assigned_filenames,
@@ -179,5 +182,27 @@ class ValidatorHasherCompressor:
         else:
             with open(os_path_join(self._bad_urls_dir, out_filename), 'wb') as fh:
                 fh.write(raw_xml_str)
+
+        return xml_filename
+
+    def process_one_file(self, url, desired_filename, filename_suff, raw_xml_str):
+
+        #xml_etree = etree.fromstring(raw_xml_str)
+        xml_filename = check_for_filename_collision(url, desired_filename, filename_suff, self._assigned_filenames,
+                                                    self._tei_logger)
+        out_filename = os_path_basename(xml_filename)
+        """try:
+            self._validator.assert_(xml_etree)
+            valid = True
+        except AssertionError as err:
+            self._tei_logger.log('ERROR', 'TEI validation error:', url, out_filename, err)
+            valid = False"""
+        if True:#valid:
+            digests = self._hasher.hash_file(BytesIO(raw_xml_str))
+            self._zipfile.writestr(xml_filename, raw_xml_str)
+            print(out_filename, url, *digests, sep='\t', file=self._hashsums_fh)
+        """else:
+            with open(os_path_join(self._bad_urls_dir, out_filename), 'wb') as fh:
+                fh.write(raw_xml_str)"""
 
         return xml_filename

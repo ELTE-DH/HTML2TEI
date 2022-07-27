@@ -16,7 +16,7 @@ from ..workflow_helpers.processing_utils import run_single_process, run_multiple
 DUPL_METAS = {'sch:keywords', 'sch:author', 'sch:contentLocation', 'sch:artist', 'sch:source'}
 
 
-def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents, multipage_warc_datas=None):
+def tei_writer_origi(warc_date, warc_id, xml_string, meta_data, article_body_contents, multipage_warc_datas=None):
     """
     Function for writing an article into a file in TEI format
      The input dictionary is used to generate tags from key-value pairs except special keys which are handled separately
@@ -192,6 +192,79 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
             note_tag.append(note_p)
         tei_change = beauty_xml.find('change', source=True)
         tei_change.append(note_tag)
+    pretty_xml = beauty_xml.prettify().encode('UTF-8')
+    return final_name, final_suff, pretty_xml, art_date_pub
+
+
+def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents, multipage_warc_datas=None):
+    """
+    Function for writing an article into a file in TEI format
+     The input dictionary is used to generate tags from key-value pairs except special keys which are handled separately
+    :param warc_date:
+    :param warc_id:
+    :param xml_string:
+    :param meta_data: a prepared dictionary contains the meta-data to be written
+    :param article_body_contents: a list of Tag()-s which is written without further examination.
+       Note: Individual subtrees must be cleaned before this function!
+    :param multipage_warc_datas
+    """
+    url = meta_data['sch:url']
+    art_date_pub = meta_data.get('sch:datePublished')
+    # FILENAME + TEIPID
+    # 1. TEI PID generation
+    tei_pid = str(uuid5(NAMESPACE_URL, f'{url} {warc_date}'))
+    # 2. Filename production (organized in a date folder)
+    if art_date_pub is not None:
+        art_date_pub_fn = art_date_pub.date().isoformat()
+        meta_data['sch:datePublished'] = art_date_pub.isoformat()
+    else:
+        art_date_pub_fn = 'unknown_date'
+    final_name = os_path_join(str(art_date_pub_fn), tei_pid)
+    final_suff = '.xml'
+    """article_author = None
+    article_title = meta_data['sch:name']
+    if 'sch:author' in meta_data.keys():
+        article_author = meta_data['sch:author']
+   """
+    beauty_xml = BeautifulSoup(xml_string, features='lxml-xml') # TODO: HTML?
+    """
+    # XENODATA 1: metadata of article source
+    xeno_meta_datas = beauty_xml.find('rdf:Description')
+    xeno_meta_datas.attrs['rdf:about'] = url
+    for k, v in meta_data.items():
+        if v is not None:
+            if k == 'subsection':
+                one_meta = beauty_xml.new_tag('sch:articleSection')
+                one_meta.string = v
+                xeno_meta_datas.find('sch:articleSection').append(one_meta)
+            elif k in DUPL_METAS:
+                for dupl in v:
+                    create_new_tag_with_string(beauty_xml, dupl, k, xeno_meta_datas)
+            else:
+                if k == 'sch:inLanguage':
+                    xeno_meta_datas.find('sch:inLanguage').string = v
+                else:
+                    create_new_tag_with_string(beauty_xml, v, k, xeno_meta_datas)"""
+
+    # FILL TEI BODY
+    body = beauty_xml.body
+    """if article_title is None:
+        article_title = 'unknown'
+    article_title_tag = beauty_xml.new_tag('head', type='title')
+    article_title_tag.string = article_title
+    body.append(article_title_tag)
+    if 'sch:alternateName' in meta_data.keys():
+        article_alternate_title = meta_data['sch:alternateName']
+        article_subtitle_tag = beauty_xml.new_tag('head', type='subtitle')
+        article_subtitle_tag.string = article_alternate_title
+        body.append(article_subtitle_tag)"""
+    if not isinstance(article_body_contents, dict):
+        if not article_body_contents == 'EMPTY ARTICLE':
+            body.extend(article_body_contents)#[0][1])
+    else:
+        for url, page_contents in article_body_contents.items():
+            body.extend(page_contents)
+
     pretty_xml = beauty_xml.prettify().encode('UTF-8')
     return final_name, final_suff, pretty_xml, art_date_pub
 

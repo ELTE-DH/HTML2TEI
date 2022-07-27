@@ -506,7 +506,7 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
             tag.name = 'to_unwrap'
 
 
-def article_body_converter(tei_logger, article_url, raw_html, spec_params):
+def article_body_converter_origi(tei_logger, article_url, raw_html, spec_params):
     """This function cleans and converts HTML content into a valid TEI XML"""
     article_roots, decompose_fun, excluded_tags_fun, tag_normal_dict, link_attrs, block_dict, change_by_bigram, \
         portal_url_prefix, portal_url_filter = spec_params
@@ -638,5 +638,31 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
         complex_wrapping_for_news_feed(bs, article, 'div', article_url, tei_logger)
 
     tei_body_contents_list = prepare_tei_body(art_child_tags, art_naked_text, article, bs, article_url, tei_logger)
+
+    return tei_body_contents_list
+
+
+def article_body_converter(tei_logger, article_url, raw_html, spec_params):
+    """This function cleans and converts HTML content into a valid TEI XML"""
+    article_roots, decompose_fun, excluded_tags_fun, tag_normal_dict, link_attrs, block_dict, change_by_bigram, \
+        portal_url_prefix, portal_url_filter = spec_params
+    raw_html = raw_html.replace('<br>', ' ')
+    bs = BeautifulSoup(raw_html, 'lxml')
+    for args, kwargs in article_roots:
+        article = bs.find(*args, **kwargs)
+        if article is not None:
+            break
+    else:
+        tei_logger.log('WARNING', f'{article_url} ARTICLE BODY ROOT NOT FOUND!')
+        return None
+
+    if unicode_test(article.text) > 25 or article.text.count("00e1") > 10:
+        # These two numbers are an approximation to separate normal coded and faulty items.
+        article = article_encoding_correction(article, decompose_fun)
+        tei_logger.log('WARNING', f'{article_url} BAD ENCODING (ARTICLE BODY)!')
+    decompose_fun(article)
+
+    tei_body_contents_list = article.find_all(recursive=False)
+    # prepare_tei_body(art_child_tags, art_naked_text, article, bs, article_url, tei_logger)
 
     return tei_body_contents_list

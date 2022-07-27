@@ -169,7 +169,8 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
     # Base TEI XML file reading stuff
     if run_params.get('w_specific_tei_base_file', False):
         tei_logger.log('INFO', 'Loading portal specific TEI base file')
-        tei_base_dir_and_name = os_path_join(configs_dir, portal_name, f'{portal_name}_BASE.xml')
+        #tei_base_dir_and_name = os_path_join(configs_dir, portal_name, f'{portal_name}_BASE.xml')
+        tei_base_dir_and_name = os_path_join('/home/eltedh/PycharmProjects/HTML2TEI/configs', 'example', f'training_BASE.html')
         check_exists(tei_base_dir_and_name, tei_logger)
         portal_xml_string = read_portal_tei_base_file(tei_base_dir_and_name, tei_logger)
     else:
