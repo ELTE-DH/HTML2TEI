@@ -618,6 +618,9 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
             if art_child.name == 'figure':
                 art_child.wrap(bs.new_tag('p'))
                 break
+    elif 'note' in art_child_tags:
+        for n in article.find_all('note', recursive=False):
+            n.wrap(bs.new_tag('p'))
 
     # Not valid by TEI schema if there is only one figure in the floatingText (an extra 'p' level must be inserted)
     for flo in article.find_all('body'):

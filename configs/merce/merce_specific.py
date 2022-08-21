@@ -54,6 +54,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
             if len(authors) > 1:
                 print('Több szerző', url)
+    # TODO: mérce vendégszerző, név a cikk alján: https://merce.hu/2017/09/01/megmentheti-e_emmanuel_macron_a_kelet-europaiakat_a_kizsakmanyolastol/
     # else: tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
     # <div class="featured-tag">
     """is_section = bs.find('div', {'class': 'featured-tag'})
@@ -69,7 +70,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:keywords'] = tags
     else:
         tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
-    # class="track-act post-tag-orban_viktor" data-act="tag">Orbán Viktor</a></li><li><a href="https://merce.hu/tag/kormany/" class="track-act post-tag-kormany" data-act="tag">kormány</a></li>
+    # class="track-act post-tag-orban_viktor" data-act="tag">Orbán Viktor</a></li><li>
+    # <a href="https://merce.hu/tag/kormany/" class="track-act post-tag-kormany" data-act="tag">kormány</a></li>
+
     # <li><a href="https://merce.hu/tag/gazdasag/" class="track-act post-tag-gazdasag" data-act="tag">gazdaság</a>
     return data
 
@@ -85,18 +88,21 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
-LINKS_SPEC = {}
+LINKS_SPEC = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_iframe', 'param'}
 DECOMP = []
 # https://merce.hu/2022/06/15/londoni-civilek-blokadja-es-az-emberi-jogok-europai-birosaga-akadalyozta-meg-az-elso-ruandaba-torteno-kitoloncolast-angliabol/
 # támogatás <div class="mrc-bnr-plchldr mrc-bnr-plc-article_inside mrc-bnr-plcd" data-place="article_inside" data-add-class="">
 # NEM KUKA,ikább szerk. jegyz: <div class="mrc-bnr-plchldr mrc-bnr-plc-article_begin mrc-bnr-plcd"  de mindenhol az??
-#támogass kattintós: https://merce.hu/2017/07/22/ne_ketsebesseges_hanem_kozos_europai_unioban_gondolkodjunk/
+# támogass kattintós: https://merce.hu/2017/07/22/ne_ketsebesseges_hanem_kozos_europai_unioban_gondolkodjunk/
 # <a href="http://kettosmerce.blog.hu/2014/12/06/tamogass_318" onclick="ga('blogCustomPrimaryGATracking.send', 'event', 'tamogatas-oldal', 'banner-click-cikkozepi', window.location.pathname);" target="_blank" rel="noopener"><img src="http://m.blog.hu/ke/kettosmerce/image/szazalek-banner-anim2.gif" alt="szazalek-banner-anim2.gif" class="imgnotext"></a>
 
 MEDIA_LIST = []
 
 
 def decompose_spec(article_dec):
+    # TODO: https://merce.hu/2020/07/31/zenes-tuntetest-szerveznek-a-rendezvenyszektor-bajbajutottjaiert/
+    # <div class="box">Ez a cikk több mint 2 éves.</div>
+    # <div class="mrc-bnr-plchldr mrc-bnr-plc-article_begin mrc-bnr-plcd" data-place="article_begin" data-add-class=""><div class="mrc-bnr-inside"><h4 style="font-size: 14px; text-align: left;">A Mércét ingyen és reklámok nélkül olvashatod. Ezt az olvasóink támogatása biztosítja. Rád is szükségünk van. <a href="https://merce.hu/redirect/172878/">Támogass minket!</a></h4></div></di
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     return article_dec
 
