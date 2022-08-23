@@ -140,7 +140,7 @@ def safe_setlocale(name):
         try:
             yield setlocale(LC_ALL, name)
         except locale_Error as e:
-            e.message = f'Could not set locale ({name}) it may not be available on the system! Details: {e.message}'
+            e.message = f'Could not set locale ({name}) it may not be available on the system! Details: {e}'
             raise
         finally:
             setlocale(LC_ALL, saved)
