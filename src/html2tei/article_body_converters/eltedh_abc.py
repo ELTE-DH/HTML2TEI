@@ -117,6 +117,7 @@ def rename_by_bigram_rules(article, change_by_bigram, article_url, tei_logger):
                     for c in tag.find_all(second_part_tag):
                         c.name = child_level_name
                     tag.name = parent_level_name
+                    print("BIGRAM_RULES", tag)
                     break
                 elif second_part_tag in child_tags and \
                         (case == 'det_by_any_child' or
@@ -518,7 +519,8 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     else:
         tei_logger.log('WARNING', f'{article_url} ARTICLE BODY ROOT NOT FOUND!')
         return None
-
+    if article_url == 'https://merce.hu/2016/04/03/2014-ben_v_keruleti_penzbol_finansziroztak_az_ellenzeki_polgarmester-jelolt_juhasz_peter_lejaratasat/':
+        print(article)
     if unicode_test(article.text) > 25 or article.text.count("00e1") > 10:
         # These two numbers are an approximation to separate normal coded and faulty items.
         article = article_encoding_correction(article, decompose_fun)
@@ -607,7 +609,14 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     article.name = 'body'
     article.attrs.clear()
     normal_tag_to_tei_xml_converter(bs, article)
-
+    if article_url in {'https://merce.hu/2016/04/03/2014-ben_v_keruleti_penzbol_finansziroztak_az_ellenzeki_polgarmester-jelolt_juhasz_peter_lejaratasat/',
+                       'https://merce.hu/2016/02/01/nyolc_varosban_tuntetnek_szerdan_minden_amit_a_tanarok_tiltakozasarol_tudni_kell/',
+                       'https://merce.hu/2017/04/03/higgyunk_orban_joszandekaban_az_eddig_is_bejott/',
+                       'https://merce.hu/2019/05/03/sokat-segit-a-munkam-soran-hogy-egyre-tobben-szeretik-a-mercet/',
+                       'ttps://merce.hu/2021/07/31/elegedetlen-szakmai-szervezetek-es-meg-elegedetlenebb-dolgozok-a-jarvany-ota-eloszor-mentek-utcara-az-egeszsegugyi-dolgozok/',
+                       'https://merce.hu/2019/08/31/hongkongban-ujra-osszecsaptak-a-tuntetok-a-rendorokkel-utcai-harcok-alakultak-ki/'}:
+        print('>>>', article_url)
+        print(article)
     # 12) Checking the structure of the article(<body>) and generating the output of the TEI file printout
     art_naked_text, art_child_tags, art_desc_tags = imtext_children_descendants_of_tag(article)
 

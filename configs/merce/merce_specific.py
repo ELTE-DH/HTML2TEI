@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
-PORTAL_URL_PREFIX = 'https://dummy.hu'
+PORTAL_URL_PREFIX = 'https://merce.hu'
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': 'entry-content'})]  #
 
@@ -87,7 +87,15 @@ def excluded_tags_spec(tag):
 
 
 BLOCK_RULES_SPEC = {}
-BIGRAM_RULES_SPEC = {}
+BIGRAM_RULES_SPEC = {'szakasz': {('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap')},
+                     'idezet': {('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap')},
+                     'doboz': {('merce_gomb', 'det_any_desc'): ('editorial_note', 'unwrap'),
+                               ('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap')}}
+#   szakasz jegyz_jelzo
+#   idezet jegyz_jelzo
+#   doboz merce_gomb
+# CSAK SZÖVEGRŐL: <p>Ha szívesen olvasol és nézel hasonló közvetítéseket, ttps://merce.hu/2021/07/31/elegedetlen-szakmai-szervezetek-es-meg-elegedetlenebb-dolgozok-a-jarvany-ota-eloszor-mentek-utcara-az-egeszsegugyi-dolgozok/ https://merce.hu/pp/2021/07/31/orszagszerte-tuntetnek-az-egeszsegugyi-szakdolgozok-percrol-percre-a-mercen/a-szakdolgozok-munkaja-szolgalat-de-nem-szolgasag/
+# <p>Tudósításunk itt zárul,
 LINKS_SPEC = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_iframe', 'param'}
 DECOMP = []
 # https://merce.hu/2022/06/15/londoni-civilek-blokadja-es-az-emberi-jogok-europai-birosaga-akadalyozta-meg-az-elso-ruandaba-torteno-kitoloncolast-angliabol/
