@@ -35,7 +35,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:datePublished'] = parsed_date
         else:
             tei_logger.log('WARNING', f'{url}: DATE TAG NOT FOUND!')
-    #data['sch:dateModified'] = write_it
+    # data['sch:dateModified'] = write_it
     # else: tei_logger.log('WARNING', f'{url}: MODIFIED DATE TEXT FORMAT ERROR!')
     title = bs.find('h1', {'class': 'entry-title'})
     if title is not None:
@@ -72,7 +72,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         tei_logger.log('DEBUG', f'{url}: TAGS NOT FOUND!')
     # class="track-act post-tag-orban_viktor" data-act="tag">Orbán Viktor</a></li><li>
     # <a href="https://merce.hu/tag/kormany/" class="track-act post-tag-kormany" data-act="tag">kormány</a></li>
-
     # <li><a href="https://merce.hu/tag/gazdasag/" class="track-act post-tag-gazdasag" data-act="tag">gazdaság</a>
     return data
 
@@ -88,29 +87,27 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {'szakasz': {('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap')},
-                     'idezet': {('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap')},
+                     'idezet': {('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap'),
+                                ('Támogass havi', 'det_by_string'): ('editorial_note', 'unwrap'),
+                                ('Kövesd a szerző bejegyzéseit a', 'det_by_string'): ('editorial_note', 'unwrap')},
                      'doboz': {('merce_gomb', 'det_any_desc'): ('editorial_note', 'unwrap'),
-                               ('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap')}}
-#   szakasz jegyz_jelzo
-#   idezet jegyz_jelzo
-#   doboz merce_gomb
-# CSAK SZÖVEGRŐL: <p>Ha szívesen olvasol és nézel hasonló közvetítéseket, ttps://merce.hu/2021/07/31/elegedetlen-szakmai-szervezetek-es-meg-elegedetlenebb-dolgozok-a-jarvany-ota-eloszor-mentek-utcara-az-egeszsegugyi-dolgozok/ https://merce.hu/pp/2021/07/31/orszagszerte-tuntetnek-az-egeszsegugyi-szakdolgozok-percrol-percre-a-mercen/a-szakdolgozok-munkaja-szolgalat-de-nem-szolgasag/
-# <p>Tudósításunk itt zárul,
+                               ('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap'),
+                               ('Paypal-en', 'det_by_string'): ('editorial_note', 'unwrap'),
+                               ('Ez a cikk eredetileg a Kettős Mércén', 'det_by_string'): ('editorial_note', 'unwrap'),  # Ez a cikk több mint 5 éves.
+                               ('Ez a cikk több mint ', 'det_by_string'): ('editorial_note', 'unwrap'),
+                               ('Kövesd a szerző bejegyzéseit a', 'det_by_string'): ('editorial_note', 'unwrap')},
+                     'bekezdes': {('Tudósításunk itt zárul, köszönjük a kitartó figyelmet!', 'det_by_string'): ('editorial_note', 'unwrap'),
+                                  ('Ha szívesen olvasol és nézel hasonló közvetítéseket', 'det_by_string'): ('editorial_note', 'unwrap')}
+                                }
+                    # TODO ilyen lesz az új cikkekben>>>>: "Egyedi nézőpontunk van  https://merce.hu/2018/05/01/marki-zay-peter-videoval-cafolta-a-fideszes-kepviselo-hamis-allitasat/
+
 LINKS_SPEC = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_iframe', 'param'}
 DECOMP = []
-# https://merce.hu/2022/06/15/londoni-civilek-blokadja-es-az-emberi-jogok-europai-birosaga-akadalyozta-meg-az-elso-ruandaba-torteno-kitoloncolast-angliabol/
-# támogatás <div class="mrc-bnr-plchldr mrc-bnr-plc-article_inside mrc-bnr-plcd" data-place="article_inside" data-add-class="">
-# NEM KUKA,ikább szerk. jegyz: <div class="mrc-bnr-plchldr mrc-bnr-plc-article_begin mrc-bnr-plcd"  de mindenhol az??
-# támogass kattintós: https://merce.hu/2017/07/22/ne_ketsebesseges_hanem_kozos_europai_unioban_gondolkodjunk/
-# <a href="http://kettosmerce.blog.hu/2014/12/06/tamogass_318" onclick="ga('blogCustomPrimaryGATracking.send', 'event', 'tamogatas-oldal', 'banner-click-cikkozepi', window.location.pathname);" target="_blank" rel="noopener"><img src="http://m.blog.hu/ke/kettosmerce/image/szazalek-banner-anim2.gif" alt="szazalek-banner-anim2.gif" class="imgnotext"></a>
 
 MEDIA_LIST = []
 
 
 def decompose_spec(article_dec):
-    # TODO: https://merce.hu/2020/07/31/zenes-tuntetest-szerveznek-a-rendezvenyszektor-bajbajutottjaiert/
-    # <div class="box">Ez a cikk több mint 2 éves.</div>
-    # <div class="mrc-bnr-plchldr mrc-bnr-plc-article_begin mrc-bnr-plcd" data-place="article_begin" data-add-class=""><div class="mrc-bnr-inside"><h4 style="font-size: 14px; text-align: left;">A Mércét ingyen és reklámok nélkül olvashatod. Ezt az olvasóink támogatása biztosítja. Rád is szükségünk van. <a href="https://merce.hu/redirect/172878/">Támogass minket!</a></h4></div></di
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     return article_dec
 
@@ -142,3 +139,6 @@ def next_page_of_article_spec(curr_html):
             ret = f'{url}/{pars}'
         return ret
     return None
+
+# TEST
+# https://merce.hu/2017/07/22/ne_ketsebesseges_hanem_kozos_europai_unioban_gondolkodjunk/
