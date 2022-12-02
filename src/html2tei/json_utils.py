@@ -2,6 +2,7 @@
 # -*- coding: utf-8, vim: expandtab:ts=4
 
 import json
+import re
 
 from bs4 import BeautifulSoup
 
@@ -15,12 +16,12 @@ def _handle_linebreaks_in_json_string(bs, fragment_bs_tag, json_string):
     for line in json_string.split('\n'):
         line_stripped = line.strip()
         if len(line_stripped) > 0:
-            if '<' in line_stripped:  # TODO teszt
+            if '<' in line_stripped:
                 inner_html = BeautifulSoup(line_stripped, 'html.parser')
                 fragment_bs_tag.append(inner_html)
             else:
                 paragraph = bs.new_tag('p')
-                paragraph.string = line_stripped
+                paragraph.string = nonbreaking_replacer(line_stripped)
                 fragment_bs_tag.append(paragraph)
     return fragment_bs_tag
 
@@ -48,7 +49,7 @@ def _json_wrapping(url, bs, fragment, logger):
                 inner_html = BeautifulSoup(tag_string, 'html.parser')
                 fragment_as_tag.append(inner_html)
             else:
-                fragment_as_tag.string = tag_string.strip()
+                fragment_as_tag.string = nonbreaking_replacer(tag_string.strip())
     else:
         print('UNKNOWN JSON FRAGMENT', url, fragment)
         logger.log('WARNING', f'{url}: UNKNOWN JSON FRAGMENT')
@@ -68,20 +69,27 @@ def _json_block_wrapping(url, bs, block_list):
         return block_div   # TODO else None!
 
 
+def nonbreaking_replacer(text):
+    # https://nepszava.hu/json/cikk.json?id=3094323_a-liverpool-hetet-a-manchester-united-hatot-kapott
+    # 1a06bd99-2770-5ee3-a2bb-d05022d4231c.xml 2020-10-05
+    text = re.sub(r'(&nbsp;)+', '\N{NO-BREAK SPACE}', text)
+    return text
+
+
 def json_to_html(a_url, json_str, w_logger):
     json_data = json.loads(json_str)
     init_bs = BeautifulSoup('<html><head/><body></body></html>', 'lxml')
     whole = init_bs.new_tag('json_article')
     json_meta_part = dict((key, value) for key, value in json_data.items() if key != 'content')
     json_str = json.dumps(json_meta_part)
-    whole.string = json_str
+    whole.string = nonbreaking_replacer(json_str)
     init_bs.head.append(whole)
     article_root = init_bs.new_tag('article_body_root')
     if 'lead' in json_data.keys():
         lead = json_data['lead']
         if lead is not False:
             lead_tag = init_bs.new_tag('lead')
-            lead_tag.string = lead
+            lead_tag.string = nonbreaking_replacer(lead)
             article_root.append(lead_tag)
     if 'lead_img' in json_data.keys():
         leadimg = json_data['lead_img']

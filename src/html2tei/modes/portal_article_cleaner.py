@@ -29,7 +29,7 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
     :param multipage_warc_datas
     """
     url = meta_data['sch:url']
-    art_date_pub = meta_data['sch:datePublished']
+    art_date_pub = meta_data.get('sch:datePublished') 
     # FILENAME + TEIPID
     # 1. TEI PID generation
     tei_pid = str(uuid5(NAMESPACE_URL, f'{url} {warc_date}'))
@@ -174,7 +174,12 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
         for url, page_contents in article_body_contents.items():
             div = beauty_xml.new_tag('div')
             div.attrs = {'source': url, 'type': 'page'}
-            div.extend(page_contents)
+            if page_contents == 'EMPTY ARTICLE':
+                note = beauty_xml.new_tag('note')
+                note.append('EMPTY ARTICLE')
+                div.append(note)
+            else:
+                div.extend(page_contents)
             body.append(div)
     if multipage_warc_datas is not None:
         note_tag = beauty_xml.new_tag('note')
@@ -212,14 +217,16 @@ def merge_multipage_article_metadata(multipage_article):
                     max_pub = max(max_pub, meta_values)
                 elif meta_name == 'sch:dateModified':
                     max_mod = max(max_mod, meta_values)
-            elif meta_name not in merged_meta_dict.keys():
-                merged_meta_dict[meta_name] = meta_values
             elif isinstance(meta_values, list):
                 valami = meta_name_cache[meta_name]
                 for meta_value in meta_values:
                     if meta_value not in valami:
                         valami.add(meta_value)
-                        merged_meta_dict[meta_name].append(meta_value)
+            elif meta_name not in merged_meta_dict.keys():
+                merged_meta_dict[meta_name] = meta_values
+    for meta_k, meta_v in meta_name_cache.items():
+        merged_meta_dict[meta_k] = meta_v
+
     if min_pub != datetime(MAXYEAR, 1, 1):
         merged_meta_dict['sch:datePublished'] = min_pub
     if max_mod != datetime(MINYEAR, 1, 1):

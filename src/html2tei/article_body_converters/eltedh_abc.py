@@ -10,7 +10,7 @@ from ..correctors.link_corrector import link_corrector
 from ..correctors.unicode_error import unicode_test, article_encoding_correction
 from ..tei_utils import immediate_text, imtext_children_descendants_of_tag, to_friendly, \
     real_text_length, language_attr_recognition, complex_wrapping, normal_tag_to_tei_xml_converter, unwrap_all, \
-    decompose_all
+    decompose_all, complex_wrapping_for_news_feed
 
 TABLE_CELL = {'oszlop', 'tablazat_cimsor'}
 
@@ -198,7 +198,8 @@ def block_structure(article, bs, block_dict, article_url, tei_logger):
     for a_list in article.find_all('lista'):
         for list_root_child in a_list:
             if list_root_child.name != 'listaelem':
-                list_root_child.wrap(bs.new_tag('listaelem'))
+                if isinstance(list_root_child, Tag) or (isinstance(list_root_child, NavigableString) and len(list_root_child.text.strip()) > 0):
+                    list_root_child.wrap(bs.new_tag('listaelem'))
 
 
 def correct_table_structure(article, bs, article_url, tei_logger):
@@ -632,6 +633,9 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     if real_text_length(article) == 0 and len(article.find_all()) == 0:
         tei_logger.log('WARNING', f'{article_url}: ARTICLE BODY IS EMPTY!')
         return 'EMPTY ARTICLE'
+
+    if article.find('div', {'type': 'feed'}) is not None:
+        complex_wrapping_for_news_feed(bs, article, 'div', article_url, tei_logger)
 
     tei_body_contents_list = prepare_tei_body(art_child_tags, art_naked_text, article, bs, article_url, tei_logger)
 

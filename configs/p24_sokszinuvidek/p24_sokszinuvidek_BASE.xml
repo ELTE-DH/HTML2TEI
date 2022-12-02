@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-        schematypens="http://purl.oclc.org/dsdl/schematron"?>
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -46,9 +46,9 @@
                 <date>2020</date>
                 <availability>
                     <p>Metadata: IN COPYRIGHT - NON-COMMERCIAL USE PERMITTED<ref type="url"
-                    >http://rightsstatements.org/vocab/InC-NC/1.0/</ref></p>
+                        >http://rightsstatements.org/vocab/InC-NC/1.0/</ref></p>
                     <p>Text: IN COPYRIGHT <ref type="url"
-                    >http://rightsstatements.org/vocab/InC/1.0/</ref>
+                        >http://rightsstatements.org/vocab/InC/1.0/</ref>
                     </p>
                 </availability>
                 <idno type="PID"></idno>
@@ -56,51 +56,49 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName>Duna Médiaszolgáltató Nonprofit Zrt.</orgName>
-                        <placeName>1038 Budapest, Bojtár utca 41-47.</placeName>
-                        <ref type="url" source="https://hirado.hu/impresszum/">
-                        <!--KITÖLT  literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo.--> </ref>
-                        <date when="2021-11-29"/>
+                    <publisher><orgName>Central Médiacsoport</orgName>
+                        <placeName>1037 Budapest, Montevideo u. 9.</placeName>
+                        <ref type="url" source="https://24.hu/impresszum/">https://doi.org/10.5281/zenodo.6721180</ref>
+                        <date when="2021-09-07"/>
                     </publisher>
                     <pubPlace>
                         Budapest
                         <ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
-                    <availability><p>A hirado.hu minden tartalma szerzői jogi védelem alatt áll. A honlapon elhelyezett szövegek a lapra való hivatkozással szabadon idézhetőek. A fotók és mozgóképek egészének, illetve azok részeinek felhasználásához azonban az Duna Médiszolgáltató Nonprofit Zrt. Online Médiaszolgáltatási Igazgatóság előzetes, írásbeli engedélye szükséges.</p>
-                        <p><ref type="url" source="https://hirado.hu/impresszum/">https://doi.org/</ref>
-                            <date when="2021-11-29"/>
-                        </p>
+                    <availability><p>Copyright © 2021 Central Médiacsoport Zrt.</p>
+                        <p><ref type="url" source="https://24.hu/felhasznalasi-feltetelek/">https://doi.org/10.5281/zenodo.6721180</ref>
+                        <date when="2021-09-07"/></p>
                     </availability>
                     <date></date>
                 </bibl>
             </sourceDesc>
         </fileDesc>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                  xmlns:sch="https://schema.org" xmlns:skos="http://www.w3.org/2008/05/skos-xl#">
+            xmlns:sch="https://schema.org" xmlns:skos="http://www.w3.org/2008/05/skos-xl#">
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="">Hirado.hu</sch:ispartOf>https://hirado.hu/
+                    <sch:ispartOf rdf:resource="https://sokszinuvidek.24.hu/">24.hu - Sokszínű vidék</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                  xmlns:sch="https://schema.org">
+            xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.6721180">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>
-                        2021-10-10T15:46:40/2021-10-16T21:38:36
+                        2021-10-16T10:37:23/2021-10-16T13:04:25
                     </sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
-                    <sch:identifier>8c9b3307-7df0-4f89-8a24-2143d2ab186e</sch:identifier> </rdf:Description>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.6721180"/>
+                    <sch:identifier>[{"checksum":"31160c24505f0bc7933d1209cad118a0","filename":"24hu_rights_statements.warc.gz","filesize":438501,"id":"1aeb80c1-6c91-4df8-b962-000beaa87461","links":{"download":"https://zenodo.org/api/files/ce6fd94f-5d42-4b82-9302-996b77b79239/24hu_rights_statements.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6721180/files/1aeb80c1-6c91-4df8-b962-000beaa87461"}},{"checksum":"527c05eb9d5daf01c07158b81c8d5baa","filename":"hashsums","filesize":6013,"id":"9478311d-32fe-4e4d-ae58-32163114fdb8","links":{"download":"https://zenodo.org/api/files/ce6fd94f-5d42-4b82-9302-996b77b79239/hashsums","self":"https://zenodo.org/api/deposit/depositions/6721180/files/9478311d-32fe-4e4d-ae58-32163114fdb8"}},{"checksum":"3d2c71d600802408f96c5f830f8f9ae6","filename":"log.log","filesize":58892,"id":"d3de0e14-0fa1-4806-a059-a73c3bc741cd","links":{"download":"https://zenodo.org/api/files/ce6fd94f-5d42-4b82-9302-996b77b79239/log.log","self":"https://zenodo.org/api/deposit/depositions/6721180/files/d3de0e14-0fa1-4806-a059-a73c3bc741cd"}},{"checksum":"fce391f1dba0a4211b40bcadeea0054f","filename":"logs.zip","filesize":301798,"id":"16d3b4b2-59e4-4efa-be62-5c7a4393fab1","links":{"download":"https://zenodo.org/api/files/ce6fd94f-5d42-4b82-9302-996b77b79239/logs.zip","self":"https://zenodo.org/api/deposit/depositions/6721180/files/16d3b4b2-59e4-4efa-be62-5c7a4393fab1"}},{"checksum":"a07f93f1e72c5fa39e5b507ff4878b87","filename":"script.sh","filesize":395,"id":"640ed2a8-469c-4b1d-8a39-94f93ead0718","links":{"download":"https://zenodo.org/api/files/ce6fd94f-5d42-4b82-9302-996b77b79239/script.sh","self":"https://zenodo.org/api/deposit/depositions/6721180/files/640ed2a8-469c-4b1d-8a39-94f93ead0718"}},{"checksum":"b1fde27d8e1544252e9a5f7838331b0b","filename":"sokszinuvidek_24hu-archive2.warc.gz","filesize":103343253,"id":"502da19f-6f0f-4f3b-954d-a52053437124","links":{"download":"https://zenodo.org/api/files/ce6fd94f-5d42-4b82-9302-996b77b79239/sokszinuvidek_24hu-archive2.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6721180/files/502da19f-6f0f-4f3b-954d-a52053437124"}},{"checksum":"59029b77488f8c19307b1354dcdeb954","filename":"sokszinuvidek_24hu-articles2.warc.gz","filesize":1447403824,"id":"135443fe-e495-4c82-bf2c-959e792e2627","links":{"download":"https://zenodo.org/api/files/ce6fd94f-5d42-4b82-9302-996b77b79239/sokszinuvidek_24hu-articles2.warc.gz","self":"https://zenodo.org/api/deposit/depositions/6721180/files/135443fe-e495-4c82-bf2c-959e792e2627"}}]</sch:identifier>
+                    <sch:identifier>urn:uuid:efbd675f-4eb2-4c84-b3db-9f578fc2aaaf</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                  xmlns:sch="https://schema.org">
+            xmlns:sch="https://schema.org">
             <rdf:RDF>
                 <rdf:Description rdf:about="teiPid">
                     <sch:identifier></sch:identifier>

@@ -1,0 +1,417 @@
+frequency	tag	average_word_count	average_descendant_num	immediate_texts_average_length	URL_example	hivatkozas	preserved_attribute
+1849495	<div class=cikktext>	35.20325386	1.111051395	29.4642278	https://kuruc.info/r/2/91514/ https://kuruc.info/r/3/142955/ https://kuruc.info/r/2/69291/ https://kuruc.info/r/2/94283/ https://kuruc.info/r/6/136872/	bekezdes	default
+391427	<b>	18.85323445	0.3473751172	18.62172257	https://kuruc.info/r/2/237320/ https://kuruc.info/r/1/25518/ https://kuruc.info/r/2/218644/ https://kuruc.info/r/4/176570/ https://kuruc.info/r/1/54215/	felkover	default
+141705	<span style=@STYLE>	12.14326947	0.3516319114	11.4241417	https://kuruc.info/r/20/58587/ https://kuruc.info/r/1/159023/ https://kuruc.info/r/4/135642/ https://kuruc.info/r/1/5837/ https://kuruc.info/r/4/206809/	kiemelt	default
+140837	<td>	3.021194714	3.581296108	3.013071849	https://kuruc.info/r/2/181373/ https://kuruc.info/r/4/19741/ https://kuruc.info/r/2/221319/ https://kuruc.info/r/4/196941/ https://kuruc.info/r/4/198008/	oszlop	default
+139620	<tr>	3.052621401	4.630833691	0	https://kuruc.info/r/6/131916/ https://kuruc.info/r/2/96696/ https://kuruc.info/r/2/225542/ https://kuruc.info/r/6/121903/ https://kuruc.info/r/2/96810/	sor	default
+124021	<a href=@LINK>	7.887083639	0.2015545754	7.2092952	https://kuruc.info/r/22/28412/ https://kuruc.info/r/7/49043/ https://kuruc.info/r/35/38339/ https://kuruc.info/r/23/140881/ https://kuruc.info/r/6/72825/	hivatkozas	href
+123719	<table class=cikkkepc>	3.200098611	5.819453762	0	https://kuruc.info/r/6/186122/ https://kuruc.info/r/26/84248/ https://kuruc.info/r/2/183707/ https://kuruc.info/r/1/150221/ https://kuruc.info/r/4/153809/	table_text	default
+77545	<i>	13.31936295	0.3608872268	11.71875685	https://kuruc.info/r/4/38574/ https://kuruc.info/r/6/51336/ https://kuruc.info/r/3/25781/ https://kuruc.info/r/6/50196/ https://kuruc.info/r/4/44646/	dolt	default
+47669	<a href=@LINK target=@target>	2.711405735	0.2675533365	2.096687575	https://kuruc.info/r/2/59248/ https://kuruc.info/r/39/20475/ https://kuruc.info/r/1/19792/ https://kuruc.info/r/49/118886/ https://kuruc.info/r/22/92198/	hivatkozas	href
+22636	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK width=@STYLE>	0.001634564411	0.002429757908	0.0003975967485	https://kuruc.info/r/57/124137/ https://kuruc.info/r/34/157915/ https://kuruc.info/r/34/90765/ https://kuruc.info/r/34/85334/ https://kuruc.info/r/34/163121/	beagyazott_tartalom	src
+15596	<strong>	14.90516799	0.5023724032	13.0539882	https://kuruc.info/r/7/55063/ https://kuruc.info/r/3/54417/ https://kuruc.info/r/49/53417/ https://kuruc.info/r/8/14896/ https://kuruc.info/r/2/62727/	felkover	default
+10679	<blockquote>	65.97125199	2.751381215	0.1369042045	https://kuruc.info/r/6/192183/ https://kuruc.info/r/2/193841/ https://kuruc.info/r/6/227906/ https://kuruc.info/r/2/226267/ https://kuruc.info/r/6/205638/	idezet	default
+9361	<table class=cikkkepl>	1.585941673	4.031620553	0	https://kuruc.info/r/6/195594/ https://kuruc.info/r/6/12093/ https://kuruc.info/r/50/70948/ https://kuruc.info/r/3/136198/ https://kuruc.info/r/3/5816/	table_text	default
+8641	<div class=cikktext style=@STYLE>	28.80939706	2.232264784	8.639740771	https://kuruc.info/r/35/27773/ https://kuruc.info/r/9/124873/ https://kuruc.info/r/2/6074/ https://kuruc.info/r/26/71400/ https://kuruc.info/r/50/140335/	default	default
+8108	<li>	13.874815	0.09718796251	13.48939319	https://kuruc.info/r/4/138808/ https://kuruc.info/r/1/193242/ https://kuruc.info/r/2/204074/ https://kuruc.info/r/39/202439/ https://kuruc.info/r/6/230468/	listaelem	default
+7554	<div>	34.05718824	3.251257612	20.51085518	https://kuruc.info/r/9/219243/ https://kuruc.info/r/9/205689/ https://kuruc.info/r/1/45840/ https://kuruc.info/r/3/119847/ https://kuruc.info/r/4/195172/	default	default
+7244	<em>	11.07606295	0.3289618995	10.48012148	https://kuruc.info/r/1/8316/ https://kuruc.info/r/1/6224/ https://kuruc.info/r/1/14473/ https://kuruc.info/r/1/10618/ https://kuruc.info/r/1/3027/	kiemelt	default
+5789	<table class=cikkkepr>	1.820176196	4.045085507	0	https://kuruc.info/r/2/115665/ https://kuruc.info/r/4/53041/ https://kuruc.info/r/26/29043/ https://kuruc.info/r/50/105552/ https://kuruc.info/r/50/145128/	table_text	default
+5777	<center>	0.533841094	4.580405055	0.03669724771	https://kuruc.info/r/34/73754/ https://kuruc.info/r/52/58240/ https://kuruc.info/r/34/61870/ https://kuruc.info/r/2/72415/ https://kuruc.info/r/34/33920/	default	default
+5548	<object height=@STYLE width=@STYLE>	0.004325883201	3.888608508	0	https://kuruc.info/r/52/56569/ https://kuruc.info/r/40/30496/ https://kuruc.info/r/34/52939/ https://kuruc.info/r/35/46644/ https://kuruc.info/r/23/70860/	default	default
+5526	<span>	28.57021354	1.259500543	24.73814694	https://kuruc.info/r/7/204485/ https://kuruc.info/r/1/42093/ https://kuruc.info/r/3/64454/ https://kuruc.info/r/50/80693/ https://kuruc.info/r/2/82342/	default	default
+4705	<font>	11.8053135	0.5164718385	8.625929862	https://kuruc.info/r/26/9721/ https://kuruc.info/r/1/9345/ https://kuruc.info/r/7/589/ https://kuruc.info/r/2/1018/ https://kuruc.info/r/35/15490/	default	default
+4233	<div style=@STYLE>	21.0822112	2.626978502	15.04181432	https://kuruc.info/r/64/226526/ https://kuruc.info/r/9/186870/ https://kuruc.info/r/2/217846/ https://kuruc.info/r/2/191781/ https://kuruc.info/r/1/6334/	default	default
+2685	<a data-saferedirecturl=@LINK href=@LINK target=@target>	1.429422719	0.02309124767	1.38547486	https://kuruc.info/r/9/231304/ https://kuruc.info/r/9/224913/ https://kuruc.info/r/9/164190/ https://kuruc.info/r/3/172914/ https://kuruc.info/r/9/181591/	hivatkozas	href
+2287	<font size=@STYLE>	33.66375164	2.104940971	14.59772628	https://kuruc.info/r/1/18724/ https://kuruc.info/r/26/18836/ https://kuruc.info/r/7/19041/ https://kuruc.info/r/39/52967/ https://kuruc.info/r/37/14607/	cimsor	default
+2105	<div class=cikktext dir=ltr lang=en>	23.26413302	2.718289786	21.32731591	https://kuruc.info/r/6/173520/ https://kuruc.info/r/59/199422/ https://kuruc.info/r/6/224596/ https://kuruc.info/r/4/214771/ https://kuruc.info/r/4/205478/	bekezdes	default
+1650	<sup>	1.004848485	0.006060606061	1.000606061	https://kuruc.info/r/9/52371/ https://kuruc.info/r/2/76676/ https://kuruc.info/r/9/99041/ https://kuruc.info/r/7/86871/ https://kuruc.info/r/9/95133/	felsoindex	default
+1607	<a href=@LINK style=@STYLE>	3.970130678	0.1966397013	3.35594275	https://kuruc.info/r/1/5063/ https://kuruc.info/r/1/15824/ https://kuruc.info/r/1/15532/ https://kuruc.info/r/4/39593/ https://kuruc.info/r/7/592/	hivatkozas	href
+1574	<ul>	68.53113088	5.418043202	0	https://kuruc.info/r/2/231940/ https://kuruc.info/r/2/239679/ https://kuruc.info/r/2/142061/ https://kuruc.info/r/2/219343/ https://kuruc.info/r/6/192546/	lista	default
+1457	<font face=@STYLE size=@STYLE>	17.37062457	1.776938916	13.24571036	https://kuruc.info/r/1/18437/ https://kuruc.info/r/2/4400/ https://kuruc.info/r/2/6275/ https://kuruc.info/r/35/21908/ https://kuruc.info/r/4/95/	default	default
+1374	<a href=@LINK style=@STYLE target=@target>	4.887918486	1.344978166	4.441775837	https://kuruc.info/r/1/18606/ https://kuruc.info/r/1/17911/ https://kuruc.info/r/35/8397/ https://kuruc.info/r/1/8963/ https://kuruc.info/r/26/19964/	hivatkozas	href
+1323	<blockquote class=twitter-tweet data-lang=hu>	29.35978836	4.704459562	4.206349206	https://kuruc.info/r/4/201802/ https://kuruc.info/r/4/171660/ https://kuruc.info/r/4/179715/ https://kuruc.info/r/4/176242/ https://kuruc.info/r/4/201917/	social_media	default
+1129	<u>	4.408325952	0.52170062	2.951284322	https://kuruc.info/r/35/15680/ https://kuruc.info/r/35/53886/ https://kuruc.info/r/6/205739/ https://kuruc.info/r/26/24081/ https://kuruc.info/r/1/8308/	alahuzott	default
+1060	<iframe allowfullscreen= frameborder=@NUM height=@STYLE src=@LINK title=YouTube video player width=@STYLE>	0.0009433962264	0.003773584906	0.0009433962264	https://kuruc.info/r/34/77397/ https://kuruc.info/r/2/74576/ https://kuruc.info/r/34/78197/ https://kuruc.info/r/34/76144/ https://kuruc.info/r/34/77426/	beagyazott_tartalom	src
+871	<blockquote class=twitter-tweet>	32.12629162	5.047072331	4.327210103	https://kuruc.info/r/4/227500/ https://kuruc.info/r/64/239182/ https://kuruc.info/r/4/216292/ https://kuruc.info/r/6/221622/ https://kuruc.info/r/4/219699/	social_media	default
+833	<font face=@STYLE>	17.65786315	1.363745498	3.081632653	https://kuruc.info/r/50/133171/ https://kuruc.info/r/23/53184/ https://kuruc.info/r/9/132768/ https://kuruc.info/r/2/5074/ https://kuruc.info/r/1/6564/	default	default
+801	<a class=alcikkheader alcikktovabb href=@LINK style=@STYLE>	8.218476904	0.002496878901	8.218476904	https://kuruc.info/r/6/52747/ https://kuruc.info/r/42/55721/ https://kuruc.info/r/6/58339/ https://kuruc.info/r/52/57077/ https://kuruc.info/r/3/56509/	hivatkozas	href
+617	<div align=@STYLE class=cikktext>	22.45380875	1.205834684	11.39059968	https://kuruc.info/r/4/149564/ https://kuruc.info/r/35/60990/ https://kuruc.info/r/1/50873/ https://kuruc.info/r/3/4950/ https://kuruc.info/r/35/21587/	bekezdes	default
+581	<td valign=@STYLE>	0.8537005164	1.006884682	0	https://kuruc.info/r/35/44091/ https://kuruc.info/r/53/117123/ https://kuruc.info/r/20/21554/ https://kuruc.info/r/6/131184/	oszlop	default
+536	<o:p>	0.0223880597	0.1026119403	0.0223880597	https://kuruc.info/r/4/41/ https://kuruc.info/r/1/3159/ https://kuruc.info/r/1/7970/ https://kuruc.info/r/7/169/ https://kuruc.info/r/35/26776/	default	default
+501	<span align=@STYLE border=@NUM class=cikkdoboz style=@STYLE>	70.74451098	0.9640718563	67.4011976	https://kuruc.info/r/4/83078/ https://kuruc.info/r/52/66517/ https://kuruc.info/r/4/178392/ https://kuruc.info/r/6/84521/ https://kuruc.info/r/4/213544/	doboz	default
+487	<font color=>	13.86447639	1.453798768	0.6694045175	https://kuruc.info/r/9/212857/ https://kuruc.info/r/6/13593/ https://kuruc.info/r/6/70492/ https://kuruc.info/r/50/144842/ https://kuruc.info/r/26/161472/	default	default
+307	<td class=@NUM>	1.557003257	0.02605863192	1.511400651	https://kuruc.info/r/2/115198/ https://kuruc.info/r/2/115123/ https://kuruc.info/r/2/115339/	oszlop	default
+279	<cikkdobozleft>	58.36200717	0.935483871	57.92114695	https://kuruc.info/r/4/163038/ https://kuruc.info/r/58/150204/ https://kuruc.info/r/4/191648/ https://kuruc.info/r/8/146114/ https://kuruc.info/r/6/223368/	doboz	default
+268	<span class=txt>	171.0895522	8.555970149	162.0410448	https://kuruc.info/r/1/7268/ https://kuruc.info/r/1/524/ https://kuruc.info/r/1/2021/ https://kuruc.info/r/4/2140/ https://kuruc.info/r/1/8224/	bekezdes	default
+226	<blockquote class=twitter-video data-lang=hu>	23.90265487	4.924778761	4.026548673	https://kuruc.info/r/4/185844/ https://kuruc.info/r/4/177669/ https://kuruc.info/r/4/166828/ https://kuruc.info/r/4/168710/ https://kuruc.info/r/4/174113/	social_media	default
+216	<div align=@STYLE class=cikktext style=@STYLE>	9.763888889	2.416666667	2.685185185	https://kuruc.info/r/50/217984/ https://kuruc.info/r/50/215424/ https://kuruc.info/r/1/18437/ https://kuruc.info/r/20/2049/ https://kuruc.info/r/35/50173/	bekezdes	default
+214	<div align=@STYLE>	2.294392523	0.238317757	1.929906542	https://kuruc.info/r/1/6372/ https://kuruc.info/r/1/10168/ https://kuruc.info/r/23/76437/ https://kuruc.info/r/7/222537/ https://kuruc.info/r/6/144662/	bekezdes	default
+187	<a href=@LINK target=@target title=@title>	3.374331551	0.1711229947	2.417112299	https://kuruc.info/r/6/218562/ https://kuruc.info/r/4/170983/ https://kuruc.info/r/26/77790/ https://kuruc.info/r/4/171246/ https://kuruc.info/r/2/77383/	hivatkozas	href
+180	<strike>	2.722222222	0.2333333333	1.538888889	https://kuruc.info/r/2/185169/ https://kuruc.info/r/4/223928/ https://kuruc.info/r/26/82951/ https://kuruc.info/r/4/142758/ https://kuruc.info/r/6/77153/	athuzott	default
+168	<span class=cikklead style=@STYLE>	33.17261905	0.3988095238	32.94047619	https://kuruc.info/r/1/455/ https://kuruc.info/r/1/5429/ https://kuruc.info/r/4/2180/ https://kuruc.info/r/1/2654/ https://kuruc.info/r/1/2223/	vez_bekezdes	default
+153	<font size=@STYLE style=@STYLE>	30.67973856	3.888888889	13.79738562	https://kuruc.info/r/1/2371/ https://kuruc.info/r/22/11309/ https://kuruc.info/r/2/4834/ https://kuruc.info/r/1/19433/ https://kuruc.info/r/3/450/	default	default
+148	<script type=@LONG>	44.14189189	0	44.14189189	https://kuruc.info/r/4/144470/ https://kuruc.info/r/6/155790/ https://kuruc.info/r/6/144247/ https://kuruc.info/r/2/148427/ https://kuruc.info/r/2/146468/	decompose	default
+118	<del>	1.957627119	0.01694915254	1.949152542	https://kuruc.info/r/2/213215/ https://kuruc.info/r/2/223530/ https://kuruc.info/r/6/188246/ https://kuruc.info/r/2/136599/ https://kuruc.info/r/2/220730/	athuzott	default
+113	<span lang=HU style=@STYLE>	25.76106195	2.371681416	21.45132743	https://kuruc.info/r/1/6399/ https://kuruc.info/r/1/7022/ https://kuruc.info/r/3/7506/ https://kuruc.info/r/35/54423/ https://kuruc.info/r/8/55/	default	default
+110	<div class=fb-xfbml-parse-ignore>	21.13636364	3.818181818	0.06363636364	https://kuruc.info/r/2/146819/ https://kuruc.info/r/6/145773/ https://kuruc.info/r/20/144121/ https://kuruc.info/r/6/147455/ https://kuruc.info/r/2/150680/	default	default
+104	<blockquote cite=@LINK>	22.01923077	2.894230769	2.461538462	https://kuruc.info/r/6/148977/ https://kuruc.info/r/2/154488/ https://kuruc.info/r/2/148427/ https://kuruc.info/r/1/152938/ https://kuruc.info/r/6/144247/	beagyazott_tartalom	cite
+103	<div class=cikktext dir=ltr lang=fr>	23.66019417	2.737864078	21.62135922	https://kuruc.info/r/4/170074/ https://kuruc.info/r/4/165403/ https://kuruc.info/r/4/195141/ https://kuruc.info/r/4/159760/ https://kuruc.info/r/4/175131/	bekezdes	default
+102	<div class=fb-post data-href=@LINK data-width=@STYLE>	21.17647059	4.833333333	0	https://kuruc.info/r/2/150191/ https://kuruc.info/r/2/150576/ https://kuruc.info/r/2/148366/ https://kuruc.info/r/1/154067/ https://kuruc.info/r/6/137070/	social_media	data-href
+101	<div id=fb-root>	0.1287128713	0.009900990099	0.1188118812	https://kuruc.info/r/2/150259/ https://kuruc.info/r/1/152938/ https://kuruc.info/r/1/157096/ https://kuruc.info/r/6/154573/ https://kuruc.info/r/2/148427/	default	default
+98	<div class=cikktext dir=ltr lang=de>	20.24489796	3.244897959	17.86734694	https://kuruc.info/r/4/166684/ https://kuruc.info/r/6/221325/ https://kuruc.info/r/4/162932/ https://kuruc.info/r/4/193029/ https://kuruc.info/r/4/159428/	bekezdes	default
+97	<blockquote class=twitter-tweet data-lang=en>	32.37113402	3.989690722	4.268041237	https://kuruc.info/r/4/173797/ https://kuruc.info/r/4/179331/ https://kuruc.info/r/4/190608/ https://kuruc.info/r/4/199499/ https://kuruc.info/r/4/170083/	social_media	default
+92	<span id=maskwindow>	56.59782609	3.097826087	46.09782609	https://kuruc.info/r/35/30277/ https://kuruc.info/r/35/23014/ https://kuruc.info/r/35/22098/ https://kuruc.info/r/35/24821/ https://kuruc.info/r/35/11428/	default	default
+88	<cikkdobozright>	65.44318182	1.534090909	60.57954545	https://kuruc.info/r/7/227194/ https://kuruc.info/r/2/218179/ https://kuruc.info/r/3/159007/ https://kuruc.info/r/4/139468/ https://kuruc.info/r/2/141322/	doboz	default
+87	<em style=@STYLE>	10.25287356	0.8505747126	10.22988506	https://kuruc.info/r/35/10780/ https://kuruc.info/r/1/7022/ https://kuruc.info/r/1/8122/ https://kuruc.info/r/1/13492/ https://kuruc.info/r/2/7307/	kiemelt	default
+77	<blockquote class=twitter-tweet lang=hu>	21.7012987	4.467532468	3.909090909	https://kuruc.info/r/4/149058/ https://kuruc.info/r/4/148963/ https://kuruc.info/r/4/150767/ https://kuruc.info/r/4/149034/ https://kuruc.info/r/4/144708/	social_media	default
+72	<span class=@STYLE style=@STYLE>	23.86111111	5.138888889	2	https://kuruc.info/r/2/56380/ https://kuruc.info/r/2/62201/ https://kuruc.info/r/23/53184/ https://kuruc.info/r/6/60687/ https://kuruc.info/r/2/66663/	default	default
+71	<strong style=@STYLE>	12.11267606	1.098591549	9.915492958	https://kuruc.info/r/1/1057/ https://kuruc.info/r/35/9793/ https://kuruc.info/r/1/6060/ https://kuruc.info/r/4/203/ https://kuruc.info/r/2/9160/	felkover	default
+62	<div class=cikktext dir=ltr lang=es>	21.53225806	3.161290323	19.29032258	https://kuruc.info/r/4/203471/ https://kuruc.info/r/64/225039/ https://kuruc.info/r/4/189169/ https://kuruc.info/r/4/189720/ https://kuruc.info/r/4/204258/	bekezdes	default
+61	<time datetime=@NUM style=@STYLE>	7.524590164	0	7.524590164	https://kuruc.info/r/6/191171/ https://kuruc.info/r/6/176162/ https://kuruc.info/r/6/208967/ https://kuruc.info/r/4/195172/ https://kuruc.info/r/2/171657/	default	default
+58	<div class=cikktext dir=ltr lang=und>	6.637931034	2.448275862	4.482758621	https://kuruc.info/r/4/166828/ https://kuruc.info/r/3/219443/ https://kuruc.info/r/4/238341/ https://kuruc.info/r/2/220910/ https://kuruc.info/r/4/174585/	bekezdes	default
+58	<a href=@LINK title=@title>	4.586206897	0.08620689655	4.551724138	https://kuruc.info/r/34/95236/ https://kuruc.info/r/26/93351/ https://kuruc.info/r/6/67025/ https://kuruc.info/r/6/91492/ https://kuruc.info/r/34/61591/	hivatkozas	href
+55	<small>	8.836363636	1.309090909	3.018181818	https://kuruc.info/r/2/56083/ https://kuruc.info/r/52/56215/ https://kuruc.info/r/6/54739/ https://kuruc.info/r/23/119312/ https://kuruc.info/r/52/56232/	default	default
+53	<span class=cikklead>	51.45283019	3.056603774	31.1509434	https://kuruc.info/r/1/47/ https://kuruc.info/r/1/5013/ https://kuruc.info/r/2/6593/ https://kuruc.info/r/1/2286/ https://kuruc.info/r/1/1801/	default	default
+53	<div dir=ltr>	512.6981132	17.32075472	267.6603774	https://kuruc.info/r/9/193198/ https://kuruc.info/r/9/197418/ https://kuruc.info/r/9/190195/ https://kuruc.info/r/9/191121/ https://kuruc.info/r/9/192016/	bekezdes	default
+49	<blockquote cite=@LINK class=fb-xfbml-parse-ignore>	28.69387755	2.510204082	4.081632653	https://kuruc.info/r/2/172274/ https://kuruc.info/r/4/180053/ https://kuruc.info/r/34/167125/ https://kuruc.info/r/2/171567/ https://kuruc.info/r/2/170997/	beagyazott_tartalom	cite
+48	<span lang=HU>	25.47916667	1.645833333	23.64583333	https://kuruc.info/r/1/7022/ https://kuruc.info/r/3/7207/ https://kuruc.info/r/35/54423/ https://kuruc.info/r/1/7186/ https://kuruc.info/r/3/7506/	default	default
+46	<td nowrap=nowrap>	0.9782608696	1.043478261	0	https://kuruc.info/r/6/144662/	oszlop	default
+46	<melleklet_span lang=en-us>	18.17391304	0.2826086957	18.04347826	https://kuruc.info/r/22/1762/	unwrap	default
+43	<div class=alcikklistabox data-cf-modified-ab220bd2d55afffbee15ce2c-= onclick=@LONG style=@STYLE>	10.46511628	4.372093023	0	https://kuruc.info/r/35/44091/	default	default
+43	<span class=listadatum style=@STYLE>	1	0	1	https://kuruc.info/r/35/44091/	default	default
+41	<blockquote class=twitter-tweet data-conversation=none data-lang=hu>	29.68292683	4.56097561	4.219512195	https://kuruc.info/r/4/202331/ https://kuruc.info/r/4/197153/ https://kuruc.info/r/4/197054/ https://kuruc.info/r/4/198332/ https://kuruc.info/r/4/200947/	social_media	default
+40	<tr valign=@STYLE>	9.025	7.3	0	https://kuruc.info/r/2/113417/ https://kuruc.info/r/9/107485/ https://kuruc.info/r/35/75654/	sor	default
+39	<ol>	113.8974359	7.871794872	0	https://kuruc.info/r/2/145035/ https://kuruc.info/r/1/174270/ https://kuruc.info/r/3/210194/ https://kuruc.info/r/58/206567/ https://kuruc.info/r/2/194925/	lista	default
+39	<span id=maskwindow name=maskwindow>	94.23076923	4.333333333	72.02564103	https://kuruc.info/r/35/60200/ https://kuruc.info/r/22/32608/ https://kuruc.info/r/35/11727/ https://kuruc.info/r/35/63387/ https://kuruc.info/r/35/67020/	default	default
+39	<melleklet_span lang=hu>	1	0	1	https://kuruc.info/r/22/1762/	default	default
+37	<blockquote class=instagram-media data-instgrm-permalink=@LINK data-instgrm-version=@NUM style=@STYLE>	17.05405405	31.78378378	0	https://kuruc.info/r/6/198658/ https://kuruc.info/r/6/213473/ https://kuruc.info/r/6/195529/ https://kuruc.info/r/4/195172/ https://kuruc.info/r/34/201572/	social_media	data-instgrm-permalink
+36	<u1:p>	0.02777777778	0	0.02777777778	https://kuruc.info/r/3/7207/	default	default
+35	<table>	148.5142857	151.2857143	0	https://kuruc.info/r/53/117123/ https://kuruc.info/r/49/200940/ https://kuruc.info/r/58/180585/ https://kuruc.info/r/2/115123/ https://kuruc.info/r/2/164454/	table_text	default
+35	<tbody>	150.7714286	153.1714286	0	https://kuruc.info/r/49/115911/ https://kuruc.info/r/2/181951/ https://kuruc.info/r/49/175628/ https://kuruc.info/r/53/151807/ https://kuruc.info/r/6/131184/	default	default
+35	<a data-saferedirecturl=@LINK href=@LINK rel=noopener noreferrer target=@target>	2.971428571	0.02857142857	2.885714286	https://kuruc.info/r/20/197236/	hivatkozas	href
+32	<div class=cikktext dir=ltr lang=it>	21.9375	2.625	19.90625	https://kuruc.info/r/4/237016/ https://kuruc.info/r/2/176087/ https://kuruc.info/r/4/203409/ https://kuruc.info/r/4/181276/ https://kuruc.info/r/6/196584/	bekezdes	default
+32	<span name=maskwindow>	40.09375	1.34375	28.15625	https://kuruc.info/r/22/32608/ https://kuruc.info/r/35/11727/ https://kuruc.info/r/35/67225/ https://kuruc.info/r/35/11770/ https://kuruc.info/r/35/60200/	default	default
+30	<blockquote class=instagram-media data-instgrm-captioned= data-instgrm-permalink=@LINK data-instgrm-version=@NUM style=@STYLE>	69.93333333	30.56666667	0	https://kuruc.info/r/22/182470/ https://kuruc.info/r/6/209996/ https://kuruc.info/r/6/201640/ https://kuruc.info/r/6/209808/ https://kuruc.info/r/2/208610/	social_media	data-instgrm-permalink
+29	<h4>	8.931034483	0.3793103448	4.517241379	https://kuruc.info/r/40/33561/ https://kuruc.info/r/7/34477/ https://kuruc.info/r/2/32064/ https://kuruc.info/r/2/32047/ https://kuruc.info/r/2/31752/	cimsor	default
+29	<h3>	81.24137931	2.689655172	4.862068966	https://kuruc.info/r/40/28100/ https://kuruc.info/r/6/39405/ https://kuruc.info/r/40/29498/ https://kuruc.info/r/40/28817/ https://kuruc.info/r/40/28369/	cimsor	default
+29	<li class=MsoNormal style=@STYLE>	22.10344828	3.379310345	10.79310345	https://kuruc.info/r/50/61364/	listaelem	default
+27	<a href=@LINK rel=nofollow style=@STYLE target=@target>	1.222222222	0	1.222222222	https://kuruc.info/r/2/235285/ https://kuruc.info/r/2/197240/ https://kuruc.info/r/2/234228/ https://kuruc.info/r/2/238729/ https://kuruc.info/r/2/177959/	hivatkozas	href
+27	<div class=v>	26.44444444	10.88888889	0.4444444444	https://kuruc.info/r/46/44782/ https://kuruc.info/r/46/45746/ https://kuruc.info/r/46/44890/	bekezdes	default
+26	<div class=cikktext dir=ltr lang=ru>	17.84615385	1.884615385	16.46153846	https://kuruc.info/r/58/160364/ https://kuruc.info/r/4/184085/ https://kuruc.info/r/6/227361/ https://kuruc.info/r/6/178006/ https://kuruc.info/r/4/223504/	bekezdes	default
+25	<div class=fb-video data-href=@LINK data-show-text=false data-width=@STYLE>	33.32	3.16	0	https://kuruc.info/r/4/177090/ https://kuruc.info/r/2/172045/ https://kuruc.info/r/34/174437/ https://kuruc.info/r/2/171567/ https://kuruc.info/r/6/184431/	social_media	data-href
+25	<a href=@LINK rel=noopener target=@target>	2	0.24	1.64	https://kuruc.info/r/6/239475/ https://kuruc.info/r/2/202997/ https://kuruc.info/r/2/187901/ https://kuruc.info/r/2/195626/ https://kuruc.info/r/7/189946/	hivatkozas	href
+25	<div class=cikktext dir=ltr lang=tr>	16.2	2.16	14.76	https://kuruc.info/r/4/179078/ https://kuruc.info/r/6/199453/ https://kuruc.info/r/6/225084/ https://kuruc.info/r/4/171491/ https://kuruc.info/r/4/195825/	bekezdes	default
+23	<a href=@LINK id=@LONG rel=nofollow target=@target>	2.652173913	0.1304347826	2.47826087	https://kuruc.info/r/1/192184/ https://kuruc.info/r/6/189144/ https://kuruc.info/r/4/141804/ https://kuruc.info/r/56/209236/ https://kuruc.info/r/6/195121/	hivatkozas	href
+22	<span dir=RTL>	3.136363636	0	3.136363636	https://kuruc.info/r/4/202968/ https://kuruc.info/r/4/220062/ https://kuruc.info/r/6/203966/ https://kuruc.info/r/4/201917/ https://kuruc.info/r/6/238962/	default	default
+21	<div class=cikktext dir=ltr lang=nl>	18.28571429	3.238095238	16.66666667	https://kuruc.info/r/4/212538/ https://kuruc.info/r/4/181022/ https://kuruc.info/r/6/205335/ https://kuruc.info/r/4/169274/ https://kuruc.info/r/4/189598/	bekezdes	default
+21	<sub>	1.047619048	0.2380952381	1.047619048	https://kuruc.info/r/9/225591/ https://kuruc.info/r/35/29976/ https://kuruc.info/r/6/202402/ https://kuruc.info/r/9/234024/ https://kuruc.info/r/59/156807/	alsoindex	default
+20	<span lang=EN style=@STYLE>	40.3	6.6	7.6	https://kuruc.info/r/35/29519/	default	default
+20	<div class=fb-post data-href=@LINK data-show-text=true data-width=@STYLE>	21.8	3.95	0	https://kuruc.info/r/6/182429/ https://kuruc.info/r/2/177759/ https://kuruc.info/r/6/177018/ https://kuruc.info/r/2/172274/ https://kuruc.info/r/6/227622/	social_media	data-href
+19	<div class=cikktext dir=ltr lang=hu>	21.47368421	2.157894737	20.05263158	https://kuruc.info/r/2/156994/ https://kuruc.info/r/59/219478/ https://kuruc.info/r/6/217450/ https://kuruc.info/r/2/227840/ https://kuruc.info/r/6/196485/	bekezdes	default
+19	<div class=cikktext dir=rtl lang=iw>	19.05263158	1.894736842	17.78947368	https://kuruc.info/r/4/228966/ https://kuruc.info/r/4/163401/ https://kuruc.info/r/6/204468/ https://kuruc.info/r/6/192411/ https://kuruc.info/r/64/215301/	bekezdes	default
+19	<div class=cikktext dir=ltr lang=pl>	20.21052632	2.578947368	18.57894737	https://kuruc.info/r/4/236215/ https://kuruc.info/r/4/197699/ https://kuruc.info/r/4/236173/ https://kuruc.info/r/4/192941/ https://kuruc.info/r/64/239182/	bekezdes	default
+19	<font style=@STYLE>	28.47368421	0.6315789474	19.63157895	https://kuruc.info/r/3/450/ https://kuruc.info/r/34/62120/ https://kuruc.info/r/1/7695/ https://kuruc.info/r/2/1774/ https://kuruc.info/r/1/6212/	default	default
+19	<th>	1.052631579	0.2105263158	0.8421052632	https://kuruc.info/r/2/141322/ https://kuruc.info/r/2/164454/ https://kuruc.info/r/49/131543/	oszlop	default
+17	<span id=article_lead style=@STYLE>	19.47058824	1.529411765	17.70588235	https://kuruc.info/r/1/1048/ https://kuruc.info/r/1/1053/ https://kuruc.info/r/1/7852/ https://kuruc.info/r/6/341/ https://kuruc.info/r/4/342/	default	default
+17	<h2>	8.176470588	1.058823529	1.411764706	https://kuruc.info/r/35/31365/ https://kuruc.info/r/2/32121/ https://kuruc.info/r/40/28100/ https://kuruc.info/r/40/29498/ https://kuruc.info/r/1/32399/	cimsor	default
+17	<a aria-label=@LONG href=@LINK rel=noreferrer noopener target=@target>	2.058823529	0.3529411765	1.352941176	https://kuruc.info/r/6/200963/ https://kuruc.info/r/6/197102/ https://kuruc.info/r/1/220012/ https://kuruc.info/r/26/197574/ https://kuruc.info/r/2/195589/	hivatkozas	href
+17	<span class=@NUM>	19.76470588	1	17	https://kuruc.info/r/1/3537/ https://kuruc.info/r/6/3210/ https://kuruc.info/r/1/142/ https://kuruc.info/r/2/682/ https://kuruc.info/r/1/50208/	default	default
+17	<span class=content_blog_content>	28.47058824	1.352941176	23.23529412	https://kuruc.info/r/4/66002/ https://kuruc.info/r/1/32611/ https://kuruc.info/r/1/75445/ https://kuruc.info/r/2/18325/ https://kuruc.info/r/4/21572/	default	default
+16	<span class=txt style=@STYLE>	26.75	1	26.75	https://kuruc.info/r/1/2330/ https://kuruc.info/r/1/2698/ https://kuruc.info/r/1/2286/ https://kuruc.info/r/1/1663/ https://kuruc.info/r/1/3484/	default	default
+15	<a>	6.2	0.8	0.5333333333	https://kuruc.info/r/26/64627/ https://kuruc.info/r/9/146781/ https://kuruc.info/r/9/148277/ https://kuruc.info/r/35/10778/ https://kuruc.info/r/35/10608/	default	default
+15	<blockquote cite=@LINK class=tiktok-embed data-video-id=@NUM style=@STYLE>	17.8	8.733333333	0	https://kuruc.info/r/34/237322/ https://kuruc.info/r/6/225827/ https://kuruc.info/r/20/217218/ https://kuruc.info/r/26/234709/ https://kuruc.info/r/6/218234/	social_media	cite
+15	<section>	17.8	7.6	0	https://kuruc.info/r/20/217218/ https://kuruc.info/r/26/221049/ https://kuruc.info/r/6/218562/ https://kuruc.info/r/6/218234/ https://kuruc.info/r/6/225827/	default	default
+14	<blockquote class=twitter-video data-lang=en>	23.28571429	5.285714286	4.214285714	https://kuruc.info/r/4/182247/ https://kuruc.info/r/4/174317/ https://kuruc.info/r/2/184707/ https://kuruc.info/r/4/184619/ https://kuruc.info/r/4/181248/	social_media	default
+14	<span class=il>	1	0	1	https://kuruc.info/r/22/82876/ https://kuruc.info/r/46/44782/ https://kuruc.info/r/1/45840/ https://kuruc.info/r/6/55075/ https://kuruc.info/r/50/83309/	default	default
+13	<s>	1.076923077	0	1.076923077	https://kuruc.info/r/35/58019/ https://kuruc.info/r/7/214253/ https://kuruc.info/r/7/222537/ https://kuruc.info/r/35/25924/ https://kuruc.info/r/6/202999/	athuzott	default
+13	<span id=article_content style=@STYLE>	36.53846154	1.692307692	36.69230769	https://kuruc.info/r/1/1098/ https://kuruc.info/r/1/1056/ https://kuruc.info/r/1/340/ https://kuruc.info/r/1/25904/ https://kuruc.info/r/4/342/	default	default
+13	<blockquote class=twitter-tweet data-conversation=none>	33.92307692	4.384615385	3.923076923	https://kuruc.info/r/4/232103/ https://kuruc.info/r/4/201492/ https://kuruc.info/r/4/225776/ https://kuruc.info/r/6/221287/ https://kuruc.info/r/7/216847/	social_media	default
+12	<ul type=disc>	88.58333333	15.16666667	0	https://kuruc.info/r/23/127627/ https://kuruc.info/r/50/61364/ https://kuruc.info/r/50/221939/ https://kuruc.info/r/35/21587/	lista	default
+12	<span class=maincontent>	28.08333333	1.25	15.25	https://kuruc.info/r/22/2992/ https://kuruc.info/r/22/1905/ https://kuruc.info/r/22/1857/	default	default
+12	<li style=@STYLE>	14.33333333	1.416666667	9.666666667	https://kuruc.info/r/58/149830/ https://kuruc.info/r/9/97261/ https://kuruc.info/r/20/2049/	listaelem	default
+12	<blockquote style=@STYLE>	81.25	4.333333333	79.33333333	https://kuruc.info/r/35/29564/ https://kuruc.info/r/35/46563/ https://kuruc.info/r/35/35153/ https://kuruc.info/r/35/46107/	idezet	default
+11	<span id=@lbBodyNUM>	12.72727273	0	12.72727273	https://kuruc.info/r/4/130511/ https://kuruc.info/r/1/138637/ https://kuruc.info/r/2/221896/ https://kuruc.info/r/3/182273/ https://kuruc.info/r/4/151105/	default	default
+11	<span class=@reloadNUM>	0.6363636364	0	0.6363636364	https://kuruc.info/r/6/63577/ https://kuruc.info/r/26/55404/ https://kuruc.info/r/2/70719/ https://kuruc.info/r/6/52727/ https://kuruc.info/r/35/44091/	default	default
+11	<div class=cikktext dir=rtl lang=ar>	24.09090909	2.181818182	22.45454545	https://kuruc.info/r/6/161569/ https://kuruc.info/r/4/161365/ https://kuruc.info/r/4/216254/ https://kuruc.info/r/4/229409/ https://kuruc.info/r/4/171292/	bekezdes	default
+11	<div align=@STYLE style=@STYLE>	148.7272727	15.36363636	0.1818181818	https://kuruc.info/r/1/51484/ https://kuruc.info/r/1/49955/ https://kuruc.info/r/35/21908/ https://kuruc.info/r/6/207794/ https://kuruc.info/r/3/526/	default	default
+11	<a href=@LINK style=@STYLE target=@target title=@title>	4	0	4	https://kuruc.info/r/22/228088/ https://kuruc.info/r/2/233733/ https://kuruc.info/r/6/169881/ https://kuruc.info/r/20/217446/ https://kuruc.info/r/2/231339/	hivatkozas	href
+10	<font face=@STYLE size=@STYLE style=@STYLE>	45.8	2	44.8	https://kuruc.info/r/2/1999/ https://kuruc.info/r/1/4918/ https://kuruc.info/r/4/230/ https://kuruc.info/r/1/239/ https://kuruc.info/r/4/95/	default	default
+10	<a href=@LINK rel=noopener noreferrer target=@target>	1.9	0.1	1.8	https://kuruc.info/r/64/212595/ https://kuruc.info/r/4/229722/ https://kuruc.info/r/39/209238/	hivatkozas	href
+10	<a href=@LINK id=@LONG>	4.4	0.3	3.3	https://kuruc.info/r/4/135854/ https://kuruc.info/r/4/119844/	hivatkozas	href
+9	<span class=cim>	90.33333333	6.444444444	0.3333333333	https://kuruc.info/r/1/11615/ https://kuruc.info/r/1/14666/ https://kuruc.info/r/3/2750/ https://kuruc.info/r/1/335/ https://kuruc.info/r/1/5759/	default	default
+9	<style id=@STYLE type=text/css>	37	0	37	https://kuruc.info/r/34/13930/ https://kuruc.info/r/1/10153/ https://kuruc.info/r/35/11165/ https://kuruc.info/r/2/12351/ https://kuruc.info/r/2/11714/	default	default
+9	<span data-jsid=text>	11.77777778	0.5555555556	7	https://kuruc.info/r/6/72663/	default	default
+8	<div class=cikktext dir=ltr lang=in>	18.125	2.75	15.875	https://kuruc.info/r/4/217953/ https://kuruc.info/r/4/167829/ https://kuruc.info/r/4/193735/ https://kuruc.info/r/4/192668/ https://kuruc.info/r/6/189207/	bekezdes	default
+8	<a class=alcikkheader alcikktovabb href=@LINK>	5.875	0.125	5.875	https://kuruc.info/r/4/52864/ https://kuruc.info/r/2/35059/ https://kuruc.info/r/7/49620/ https://kuruc.info/r/26/51437/ https://kuruc.info/r/2/56364/	hivatkozas	href
+8	<div class=cikktext dir=ltr lang=pt>	26.25	3.625	24	https://kuruc.info/r/4/180883/ https://kuruc.info/r/4/228323/ https://kuruc.info/r/4/160694/ https://kuruc.info/r/4/238129/ https://kuruc.info/r/4/185885/	bekezdes	default
+8	<a href=@LINK style=@STYLE title=@title>	4.75	0	4.75	https://kuruc.info/r/4/48783/ https://kuruc.info/r/6/1914/ https://kuruc.info/r/34/45159/ https://kuruc.info/r/4/63296/ https://kuruc.info/r/35/100977/	hivatkozas	href
+8	<div title=@LONG>	158.625	19.25	87.25	https://kuruc.info/r/50/39307/	default	default
+7	<noscript>	0.7142857143	1.571428571	0.4285714286	https://kuruc.info/r/2/219422/ https://kuruc.info/r/2/174418/ https://kuruc.info/r/40/36114/ https://kuruc.info/r/4/156305/ https://kuruc.info/r/2/216768/	decompose	default
+7	<span class=content_blog_header>	20.14285714	0.8571428571	20.14285714	https://kuruc.info/r/4/40492/ https://kuruc.info/r/4/29679/ https://kuruc.info/r/35/29621/ https://kuruc.info/r/35/30614/ https://kuruc.info/r/2/65863/	default	default
+7	<span dir=ltr>	50.28571429	1.428571429	49.14285714	https://kuruc.info/r/9/160787/ https://kuruc.info/r/22/74719/ https://kuruc.info/r/37/42594/	default	default
+7	<a href=@LINK id=@LONG target=@target>	1.571428571	0	1.571428571	https://kuruc.info/r/2/134296/ https://kuruc.info/r/2/189416/ https://kuruc.info/r/6/190871/	hivatkozas	href
+7	<span class=st>	1	0	1	https://kuruc.info/r/4/137576/	default	default
+7	<span class=e id=@NUM>	6.857142857	0.8571428571	6.714285714	https://kuruc.info/r/6/20204/	default	default
+7	<span dir=auto>	5.857142857	0.1428571429	5.857142857	https://kuruc.info/r/2/236990/	default	default
+6	<div class=cikktext dir=ltr lang=sv>	20.83333333	5.5	18.33333333	https://kuruc.info/r/4/209180/ https://kuruc.info/r/59/218262/ https://kuruc.info/r/4/146820/ https://kuruc.info/r/4/189930/	bekezdes	default
+6	<span class=@ahirekszovegNUM>	53.5	4.666666667	37.83333333	https://kuruc.info/r/1/8122/ https://kuruc.info/r/1/6060/ https://kuruc.info/r/1/1302/	default	default
+6	<span align=@STYLE class=szoveg>	234.1666667	21.66666667	225.1666667	https://kuruc.info/r/1/287/ https://kuruc.info/r/1/147/ https://kuruc.info/r/1/335/	default	default
+6	<div class=cikktext dir=ltr lang=cs>	23.83333333	1.5	22.33333333	https://kuruc.info/r/4/227321/ https://kuruc.info/r/35/230102/ https://kuruc.info/r/4/197365/ https://kuruc.info/r/2/204112/ https://kuruc.info/r/1/234312/	bekezdes	default
+6	<blockquote class=instagram-media data-instgrm-captioned= data-instgrm-version=@NUM style=@STYLE>	141.1666667	7	0	https://kuruc.info/r/6/169241/ https://kuruc.info/r/34/177733/ https://kuruc.info/r/2/171657/ https://kuruc.info/r/4/178179/ https://kuruc.info/r/49/175410/	default	default
+6	<blockquote class=twitter-tweet data-lang=de>	31.83333333	2.666666667	4.166666667	https://kuruc.info/r/1/190152/ https://kuruc.info/r/4/176086/	default	default
+6	<span lang=DE style=@STYLE>	42.83333333	4.833333333	38	https://kuruc.info/r/35/17438/	default	default
+6	<div class=k>	19.33333333	0.8333333333	10.16666667	https://kuruc.info/r/46/44782/	default	default
+6	<a dir=auto href=@LINK spellcheck=false style-scope=@STYLE>	1	0	1	https://kuruc.info/r/2/236990/	hivatkozas	href
+5	<div class=cikktext dir=ltr lang=ca>	35.4	2.6	34	https://kuruc.info/r/4/201379/ https://kuruc.info/r/4/187739/ https://kuruc.info/r/4/188944/ https://kuruc.info/r/4/228881/ https://kuruc.info/r/4/189169/	bekezdes	default
+5	<a aria-label=itt (új fülön nyitja meg) href=@LINK rel=noreferrer noopener target=@target>	1	0	1	https://kuruc.info/r/1/220012/	hivatkozas	href
+5	<span class=gI>	1.6	0.6	0.6	https://kuruc.info/r/2/70501/ https://kuruc.info/r/50/144091/ https://kuruc.info/r/1/49092/ https://kuruc.info/r/6/75437/ https://kuruc.info/r/49/63274/	default	default
+5	<span lang=RO style=@STYLE>	9.2	2.8	7	https://kuruc.info/r/23/80422/ https://kuruc.info/r/6/236/	default	default
+5	<a class=embedly-card data-card-via=@LINK href=@LINK>	1	0	1	https://kuruc.info/r/6/221419/ https://kuruc.info/r/2/222343/ https://kuruc.info/r/2/223005/ https://kuruc.info/r/2/220462/	hivatkozas	href
+5	<div class=cikktext dir=ltr lang=ja>	4.8	3	4.2	https://kuruc.info/r/4/235485/ https://kuruc.info/r/6/207289/ https://kuruc.info/r/6/238088/ https://kuruc.info/r/4/204383/	bekezdes	default
+5	<a href=@LINK role=button>	2.2	0	2.2	https://kuruc.info/r/2/146468/ https://kuruc.info/r/6/152044/ https://kuruc.info/r/2/146802/ https://kuruc.info/r/39/153620/ https://kuruc.info/r/4/184122/	hivatkozas	href
+5	<b style=@STYLE>	1.6	0	1.6	https://kuruc.info/r/2/172057/ https://kuruc.info/r/35/28401/ https://kuruc.info/r/4/195509/ https://kuruc.info/r/2/195241/	felkover	default
+5	<div class=fb-video data-href=@LINK data-show-text=true data-width=@STYLE>	31	3.8	0	https://kuruc.info/r/34/163059/ https://kuruc.info/r/6/174296/ https://kuruc.info/r/2/179848/ https://kuruc.info/r/3/179516/ https://kuruc.info/r/34/170898/	default	default
+5	<div class=TWIIGSPOLL>	3	3	0	https://kuruc.info/r/1/74509/ https://kuruc.info/r/6/61980/	default	default
+5	<div class=TWIIGSPOLLpolllink style=@STYLE>	3	1	0	https://kuruc.info/r/6/61980/ https://kuruc.info/r/1/74509/	default	default
+5	<a class=TWIIGSPOLLmorelink href=@LINK style=@STYLE>	3	0	3	https://kuruc.info/r/1/74509/ https://kuruc.info/r/6/61980/	hivatkozas	href
+5	<div class=row cf>	174.2	62.4	0	https://kuruc.info/r/46/44782/	default	default
+5	<i style=@STYLE>	2.8	0	2.8	https://kuruc.info/r/20/31582/	dolt	default
+4	<div class=cikktext dir=ltr lang=da>	25.25	4.75	21	https://kuruc.info/r/4/196291/ https://kuruc.info/r/4/192844/ https://kuruc.info/r/4/166394/	bekezdes	default
+4	<span class=byline>	1.5	0.25	1.5	https://kuruc.info/r/20/36261/	default	default
+4	<style type=text/css>	30.75	0	30.75	https://kuruc.info/r/35/35564/ https://kuruc.info/r/4/63381/ https://kuruc.info/r/23/47571/ https://kuruc.info/r/39/36093/	default	default
+4	<div class=cikktext dir=ltr lang=tl>	17	4.75	14.25	https://kuruc.info/r/6/196882/ https://kuruc.info/r/4/163383/ https://kuruc.info/r/4/202209/ https://kuruc.info/r/6/231457/	bekezdes	default
+4	<a href=@LINK rel=nofollow target=@target>	1.25	0	1.25	https://kuruc.info/r/39/14258/ https://kuruc.info/r/1/9020/ https://kuruc.info/r/6/183527/	hivatkozas	href
+4	<td rowspan=@NUM>	1	0	1	https://kuruc.info/r/49/131543/	oszlop	default
+4	<caption>	6	1	0.5	https://kuruc.info/r/49/115911/ https://kuruc.info/r/58/180585/ https://kuruc.info/r/49/175628/	default	default
+4	<cite>	13	0.5	13.25	https://kuruc.info/r/1/1049/ https://kuruc.info/r/7/196099/	default	default
+4	<span class=cikkdatum>	27	0.5	23.25	https://kuruc.info/r/1/1001/	default	default
+4	<span class=content_blog_lead style=@STYLE>	25.5	0.5	25.5	https://kuruc.info/r/1/38662/ https://kuruc.info/r/1/32611/ https://kuruc.info/r/2/18325/	default	default
+4	<span class=tartalom>	1	2.5	0	https://kuruc.info/r/1/6564/	default	default
+3	<span class=content_blog_subheader>	15	0.6666666667	9.333333333	https://kuruc.info/r/52/57548/	default	default
+3	<span class=@STYLE>	7.666666667	3.333333333	1.666666667	https://kuruc.info/r/1/10050/	default	default
+3	<div class=fb-video data-allowfullscreen=@NUM data-href=@LONG>	18.66666667	5	0	https://kuruc.info/r/34/156959/ https://kuruc.info/r/34/156609/ https://kuruc.info/r/4/145203/	default	default
+3	<div class=entry>	1659.666667	112.6666667	5.333333333	https://kuruc.info/r/35/46563/ https://kuruc.info/r/40/29070/ https://kuruc.info/r/35/35153/	default	default
+3	<div class=wp-caption @STYLE id=@attachmentNUM style=@STYLE>	10.33333333	3	0	https://kuruc.info/r/40/29070/	default	default
+3	<div class=text>	31	1	14	https://kuruc.info/r/3/344/ https://kuruc.info/r/1/527/	default	default
+3	<th role=columnheader button tabindex=@NUM title=Sort ascending>	1.333333333	0	1.333333333	https://kuruc.info/r/9/187476/	oszlop	default
+3	<span class=szoveg>	35.66666667	0.6666666667	5.666666667	https://kuruc.info/r/1/335/ https://kuruc.info/r/35/29878/ https://kuruc.info/r/1/147/	default	default
+3	<a class=no href=@LINK>	11.66666667	1.666666667	0	https://kuruc.info/r/35/22194/ https://kuruc.info/r/35/22916/ https://kuruc.info/r/35/28732/	hivatkozas	href
+3	<div class=fb-video data-allowfullscreen=@NUM data-href=@LINK>	30.33333333	4.333333333	0	https://kuruc.info/r/2/155565/ https://kuruc.info/r/6/157032/	default	default
+3	<span class=@NUM style=@STYLE>	7	1	7	https://kuruc.info/r/1/3537/	default	default
+3	<div class=cikktext id=lead>	46.66666667	4	0	https://kuruc.info/r/1/196/ https://kuruc.info/r/26/6529/ https://kuruc.info/r/1/4613/	kiemelt	default
+3	<div class=arr>	3.333333333	3	0	https://kuruc.info/r/4/21838/	default	default
+3	<span class=commentBody data-jsid=text>	15.66666667	0.3333333333	15.66666667	https://kuruc.info/r/22/86884/ https://kuruc.info/r/22/86107/	default	default
+3	<div class=cikktext data-resizable=@NUM>	20.66666667	0.6666666667	9	https://kuruc.info/r/6/127007/ https://kuruc.info/r/1/128266/	default	default
+3	<span id=@LONG>	3	1.666666667	1.333333333	https://kuruc.info/r/9/167201/ https://kuruc.info/r/2/133024/	default	default
+3	<span class=szoveg-alcim>	12.33333333	1.666666667	0	https://kuruc.info/r/1/640/ https://kuruc.info/r/1/5566/	default	default
+3	<span class=text_exposed_show>	60.33333333	1	60.33333333	https://kuruc.info/r/35/77479/	default	default
+3	<div id=text>	136	9	0	https://kuruc.info/r/35/10609/ https://kuruc.info/r/1/701/ https://kuruc.info/r/1/153/	default	default
+3	<span id=text>	59.66666667	0.3333333333	59.66666667	https://kuruc.info/r/21/48725/ https://kuruc.info/r/35/52203/	default	default
+3	<a href=@LINK id=@tcountNUM target=@target>	2	0	2	https://kuruc.info/r/6/170357/ https://kuruc.info/r/39/162579/	hivatkozas	href
+3	<skype:span class=skype_tb_injectionIn id=@skypeNUM>	1	1	0	https://kuruc.info/r/2/10874/ https://kuruc.info/r/3/14812/	default	default
+3	<skype:span class=skype_tb_innerText id=@innerTextNUM>	1	0	1	https://kuruc.info/r/3/14812/ https://kuruc.info/r/2/10874/	default	default
+3	<div class=cikktext dir=ltr lang=lv>	20.33333333	4.666666667	16	https://kuruc.info/r/4/181261/ https://kuruc.info/r/4/201379/ https://kuruc.info/r/4/174560/	bekezdes	default
+3	<blockquote class=twitter-video lang=hu>	21.33333333	4.666666667	3.666666667	https://kuruc.info/r/4/149592/ https://kuruc.info/r/4/151817/	default	default
+3	<span lang=hu>	10.33333333	1.333333333	0	https://kuruc.info/r/1/86109/	default	default
+3	<span class=HcCDpe>	3	1.333333333	0	https://kuruc.info/r/1/32503/	default	default
+3	<span class=lDACoc>	3	0.3333333333	3	https://kuruc.info/r/1/32503/	default	default
+3	<div class=newslead>	6.333333333	3.333333333	0	https://kuruc.info/r/20/1270/	default	default
+3	<div class=gradback @alcikklistaboxNUM cikkbanner style=@STYLE>	2	1	0	https://kuruc.info/r/35/44091/	default	default
+2	<div class=cikktext dir=ltr lang=sr>	28.5	3	26	https://kuruc.info/r/4/193521/ https://kuruc.info/r/4/197279/	bekezdes	default
+2	<a data-recommendation=jobb_hasab data-recommendation-id=@NUM data-recommendation-preview=@LONG href=@LINK id=@LONG target=@target title=@title>	2.5	0	2.5	https://kuruc.info/r/6/190871/ https://kuruc.info/r/6/195121/	hivatkozas	href
+2	<a class=piros href=@LINK style=@STYLE>	2.5	0	2.5	https://kuruc.info/r/1/44262/	hivatkozas	href
+2	<div class=cikktext dir=ltr lang=uk>	18.5	1	17.5	https://kuruc.info/r/4/176441/ https://kuruc.info/r/3/225337/	bekezdes	default
+2	<blockquote class=twitter-tweet data-lang=ru>	25	5.5	4	https://kuruc.info/r/4/205530/ https://kuruc.info/r/6/205527/	default	default
+2	<div data-miniapp-id=@NUM>	6	18.5	0	https://kuruc.info/r/2/195840/ https://kuruc.info/r/6/231476/	default	default
+2	<blockquote class=reddit-card data-card-created=@NUM>	14.5	2	1	https://kuruc.info/r/49/202323/ https://kuruc.info/r/6/215013/	default	default
+2	<div class=cikktext dir=ltr lang=ro>	17.5	6	14	https://kuruc.info/r/6/231457/ https://kuruc.info/r/1/188838/	bekezdes	default
+2	<span class=alcim style=@STYLE>	9.5	1	9.5	https://kuruc.info/r/1/687/ https://kuruc.info/r/7/4367/	default	default
+2	<div class=getty embed image style=@STYLE>	8	5	0	https://kuruc.info/r/4/161991/ https://kuruc.info/r/4/166619/	default	default
+2	<st1:metricconverter productid=@NUM w:st=on>	2	0	2	https://kuruc.info/r/22/2110/	default	default
+2	<a class=network data-cf-modified-0f2e358fad87db69197a2f89-= href=@LINK onmouseout=@LONG onmouseover=@LONG target=@target>	1	1	0	https://kuruc.info/r/35/11727/	hivatkozas	href
+2	<div class=mva>	10	3.5	0	https://kuruc.info/r/4/21838/	default	default
+2	<h3 align=@STYLE style=@STYLE>	4	6	0	https://kuruc.info/r/23/3055/	cimsor	default
+2	<span class=p_title>	3	0	3	https://kuruc.info/r/42/63198/	default	default
+2	<a data-cf-modified-e4587d769bbb652a7c68e352-= href=@LINK onclick=@LONG target=@target>	1	0.5	0.5	https://kuruc.info/r/1/61600/	hivatkozas	href
+2	<tr bgcolor=>	6	8	0	https://kuruc.info/r/49/131543/	sor	default
+2	<th colspan=@NUM>	1	0.5	0.5	https://kuruc.info/r/2/164454/ https://kuruc.info/r/49/131543/	oszlop	default
+2	<st1:personname>	1	0.5	0.5	https://kuruc.info/r/35/26840/ https://kuruc.info/r/35/26776/	default	default
+2	<span class=sg>	1	1	0.5	https://kuruc.info/r/20/41833/ https://kuruc.info/r/20/21554/	default	default
+2	<div class=cikktext dir=ltr lang=eu>	11	2.5	9	https://kuruc.info/r/4/203566/ https://kuruc.info/r/4/176218/	bekezdes	default
+2	<blockquote class=instagram-media data-instgrm-version=@NUM style=@STYLE>	12.5	6	0	https://kuruc.info/r/6/176162/ https://kuruc.info/r/4/156904/	default	default
+2	<span class=p>	32	0	32	https://kuruc.info/r/50/85880/	default	default
+2	<div class=gmail_quote>	898	33	0	https://kuruc.info/r/20/44974/ https://kuruc.info/r/34/51730/	default	default
+2	<div class=cikktext dir=ltr lang=el>	16.5	5.5	12.5	https://kuruc.info/r/4/182291/ https://kuruc.info/r/4/156907/	bekezdes	default
+2	<div class=cikktext id=fbccaller style=@STYLE>	2	3	0	https://kuruc.info/r/34/151855/ https://kuruc.info/r/2/165957/	default	default
+2	<span class=disqus-comment-count data-disqus-identifier=@NUM>	2	0	2	https://kuruc.info/r/2/165957/ https://kuruc.info/r/34/151855/	default	default
+2	<span id=__firefox-findbar-search-id style=@STYLE>	1	0	1	https://kuruc.info/r/20/20788/	default	default
+2	<div class=cikktext dir=rtl lang=fa>	14	1.5	12.5	https://kuruc.info/r/4/206944/ https://kuruc.info/r/4/206943/	bekezdes	default
+2	<span class=GramE>	1	0	1	https://kuruc.info/r/22/2344/	default	default
+2	<div class=cikktext id=kopf>	39	1	0	https://kuruc.info/r/2/75547/ https://kuruc.info/r/6/42116/	default	default
+2	<div class=kep kep_szeles keret>	8.5	3	0	https://kuruc.info/r/2/75547/	default	default
+2	<div class=kepala>	8.5	0	8.5	https://kuruc.info/r/2/75547/	default	default
+2	<span class=xpbanana title=@LONG>	1	1	0.5	https://kuruc.info/r/9/25466/	default	default
+2	<h1 style=@STYLE>	3.5	2	1.5	https://kuruc.info/r/39/19841/ https://kuruc.info/r/34/19750/	default	default
+2	<blockquote cite=@LONG>	11	2.5	3	https://kuruc.info/r/4/145203/ https://kuruc.info/r/2/142383/	default	default
+2	<blockquote dir=ltr style=@STYLE>	5.5	4	0	https://kuruc.info/r/1/6564/ https://kuruc.info/r/1/10785/	default	default
+2	<a data-cf-modified-f2b78aa85729a2105f1021ac-= href=@LINK onclick=@LONG rel=enclosure>	1.5	0.5	1.5	https://kuruc.info/r/34/27758/	hivatkozas	href
+2	<strong class=bbcode bold>	6.5	0	6.5	https://kuruc.info/r/1/32503/	felkover	default
+2	<script language=javascript type=@LONG>	1	0	1	https://kuruc.info/r/1/13660/	decompose	default
+2	<address style=@STYLE>	4	2	0	https://kuruc.info/r/20/2049/	default	default
+2	<a data-cf-modified-8beaaaefcf29831467f18e78-= href=@LINK onclick=@LONG target=@target>	1	3	0	https://kuruc.info/r/20/31103/	hivatkozas	href
+2	<div class=cikktext dir=ltr lang=ko>	39.5	9.5	34	https://kuruc.info/r/4/186853/	bekezdes	default
+2	<span class=alcim>	142	7.5	0	https://kuruc.info/r/1/47/ https://kuruc.info/r/1/1482/	default	default
+2	<span aria-live=polite class=fbPhotosPhotoCaption data-ft={"tn":"K"} id=fbPhotoSnowliftCaption tabindex=@NUM>	8.5	1.5	0	https://kuruc.info/r/1/198230/	default	default
+2	<span class=hasCaption>	8.5	0.5	8.5	https://kuruc.info/r/1/198230/	default	default
+2	<a class=topofpage href=@LINK>	3	0	3	https://kuruc.info/r/35/44091/	hivatkozas	href
+2	<font class=@NUM>	0.5	2	0	https://kuruc.info/r/4/4691/ https://kuruc.info/r/4/5048/	default	default
+2	<div pullquote-align-full=@STYLE vcard=>	23	2.5	0	https://kuruc.info/r/3/202954/	default	default
+2	<a class=network data-cf-modified-85994e60bf781f07aa9b8392-= href=@LINK onmouseout=@LONG onmouseover=@LONG target=@target>	1	1.5	0	https://kuruc.info/r/35/11812/	hivatkozas	href
+1	<div class=cikktext dir=ltr lang=lt>	6	1	5	https://kuruc.info/r/6/188943/	bekezdes	default
+1	<a class=gie-single href=@LINK id=@SwQfFnqNUM style=@STYLE target=@target>	4	0	4	https://kuruc.info/r/4/187290/	hivatkozas	href
+1	<strong id=_user_futarposta@freemail.hu>	37	4	38	https://kuruc.info/r/2/8051/	felkover	default
+1	<div class=wp-video style=@STYLE>	1	3	0	https://kuruc.info/r/2/185518/	default	default
+1	<video class=wp-video-shortcode controls=controls height=@STYLE id=@videoNUM preload=metadata width=@STYLE>	1	2	0	https://kuruc.info/r/2/185518/	default	default
+1	<div class=tenor-gif-embed data-aspect-ratio=1.33333 data-postid=@NUM data-share-method=host data-width=@STYLE>	7	2	1	https://kuruc.info/r/6/235765/	default	default
+1	<div id=primary>	2276	103	0	https://kuruc.info/r/40/29070/	default	default
+1	<div class=post-meta>	13	6	0	https://kuruc.info/r/40/29070/	default	default
+1	<h1 class=post-title id=@NUM>	8	0	8	https://kuruc.info/r/40/29070/	default	default
+1	<div class=post-content>	2263	89	0	https://kuruc.info/r/40/29070/	default	default
+1	<div class=snap_preview>	2263	88	0	https://kuruc.info/r/40/29070/	default	default
+1	<a data-cf-modified-079f8e586d392ef58c06b70a-= href=@LINK onclick=@LONG target=@target>	4	1	0	https://kuruc.info/r/1/30786/	hivatkozas	href
+1	<div class=cikktext dir=rtl lang=ps>	56	2	55	https://kuruc.info/r/4/238141/	bekezdes	default
+1	<blockquote class=twitter-tweet data-conversation=none lang=hu>	26	5	5	https://kuruc.info/r/4/150190/	default	default
+1	<table sortable=>	116	150	0	https://kuruc.info/r/9/187476/	table_text	default
+1	<thead>	4	4	0	https://kuruc.info/r/9/187476/	default	default
+1	<caption style=@STYLE>	9	0	9	https://kuruc.info/r/4/134769/	default	default
+1	<a aria-label=vádolva (új fülön nyitja meg) href=@LINK rel=noreferrer noopener target=@target>	1	0	1	https://kuruc.info/r/1/220012/	hivatkozas	href
+1	<div id=videoDivContent style=@STYLE>	6	7	0	https://kuruc.info/r/6/184017/	default	default
+1	<div class=tumblr-post data-did=@LONG data-href=@LINK>	1	1	0	https://kuruc.info/r/22/182470/	default	default
+1	<span class=go>	2	0	2	https://kuruc.info/r/49/63274/	default	default
+1	<div class=body>	2	2	0	https://kuruc.info/r/26/13686/	default	default
+1	<a akarunk= g= href=@LINK mutatni= t= title=@title>	6	0	6	https://kuruc.info/r/2/80676/	hivatkozas	href
+1	<a class=textm>	291	7	294	https://kuruc.info/r/7/169/	hivatkozas	default
+1	<a class=textm style=@STYLE>	2	0	2	https://kuruc.info/r/7/169/	hivatkozas	default
+1	<font class=heading size=@STYLE>	49	5	49	https://kuruc.info/r/3/526/	default	default
+1	<font class=normal size=@STYLE style=@STYLE>	787	26	779	https://kuruc.info/r/3/526/	default	default
+1	<iframe frameborder=@NUM height=@STYLE marginheight=@STYLE marginwidth=@STYLE src=@LINK width=@STYLE>	1	0	1	https://kuruc.info/r/1/34888/	beagyazott_tartalom	src
+1	<a href=@LINK roma= target=@target title=@title>	4	0	4	https://kuruc.info/r/35/21705/	hivatkozas	href
+1	<a data-cf-modified-e6c00def0b3a2acd8f12b1a1-= href=@LINK onclick=@LINK>	1	0	1	https://kuruc.info/r/1/926/	hivatkozas	href
+1	<a data-cf-modified-b79fcc987eda7b2f6379573b-= href=@LINK onclick=@LONG target=@target>	1	0	1	https://kuruc.info/r/10/18278/	hivatkozas	href
+1	<a a= ezt= href=@LINK j= mondta= title=@title volna=>	7	0	7	https://kuruc.info/r/34/76299/	hivatkozas	href
+1	<a hisztiznek= hogy= href=@LINK nem= title=@title>	6	0	6	https://kuruc.info/r/2/74024/	hivatkozas	href
+1	<a data-cf-modified-c4359233929ad87e0ae02dc3-= href=@LINK onclick=@LONG target=@target>	1	3	0	https://kuruc.info/r/10/22973/	hivatkozas	href
+1	<div class=ii gt id=:137>	25	8	0	https://kuruc.info/r/3/36933/	default	default
+1	<div lang=HU>	61	124	0	https://kuruc.info/r/1/18437/	default	default
+1	<font face=@STYLE style=@STYLE>	2	1	0	https://kuruc.info/r/22/2110/	default	default
+1	<div class=mxb>	5	2	0	https://kuruc.info/r/4/21838/	default	default
+1	<div class=sh>	5	1	0	https://kuruc.info/r/4/21838/	default	default
+1	<div class=cap>	9	1	0	https://kuruc.info/r/4/21838/	default	default
+1	<td class=sibtbg>	30	34	0	https://kuruc.info/r/4/21838/	oszlop	default
+1	<div class=miiib>	10	16	0	https://kuruc.info/r/4/21838/	default	default
+1	<div class=qboxflr>	21	28	0	https://kuruc.info/r/4/21838/	default	default
+1	<a class=lp href=@LINK>	3	1	0	https://kuruc.info/r/4/21838/	hivatkozas	href
+1	<div class=qbox>	18	18	0	https://kuruc.info/r/4/21838/	default	default
+1	<div class=info>	2	2	0	https://kuruc.info/r/4/21838/	default	default
+1	<div class=links>	4	4	0	https://kuruc.info/r/4/21838/	default	default
+1	<a data-cf-modified-2b9c2612fe094337ccd2b123-= href=@LINK onclick=@LONG target=@target>	1	1	0	https://kuruc.info/r/10/22980/	hivatkozas	href
+1	<ul style=@STYLE>	14	12	0	https://kuruc.info/r/9/97261/	lista	default
+1	<div class=cikktext id=@LONG>	77	1	74	https://kuruc.info/r/6/190871/	default	default
+1	<span class=tweet-text>	10	0	10	https://kuruc.info/r/22/85877/	default	default
+1	<h1 align=@STYLE style=@STYLE>	6	4	0	https://kuruc.info/r/23/3055/	default	default
+1	<h2 align=@STYLE style=@STYLE>	8	7	0	https://kuruc.info/r/23/3055/	cimsor	default
+1	<a style=@STYLE>	30	0	30	https://kuruc.info/r/35/11009/	hivatkozas	default
+1	<a data-cf-modified-7933a65a655e821ab8787c89-= href=@LINK onclick=@STYLE>	7	0	7	https://kuruc.info/r/22/75399/	hivatkozas	href
+1	<div class=cikktext dir=ltr lang=fi>	22	7	19	https://kuruc.info/r/2/175409/	bekezdes	default
+1	<blockquote class=twitter-tweet data-lang=da>	21	3	4	https://kuruc.info/r/4/200362/	default	default
+1	<blockquote class=twitter-tweet data-cards=hidden data-lang=hu>	42	3	4	https://kuruc.info/r/2/182139/	default	default
+1	<div field-type-text=>	26	1	0	https://kuruc.info/r/9/113338/	default	default
+1	<a data-saferedirecturl=@LINK href=@LINK target=@target title=@title>	1	1	0	https://kuruc.info/r/58/175127/	hivatkozas	href
+1	<a class=network data-cf-modified-de54470b4aa1d173eeddb249-= href=@LINK onmouseout=@LONG onmouseover=@LONG target=@target>	1	1	0	https://kuruc.info/r/35/11770/	hivatkozas	href
+1	<a data-recommendation=bekezdes_utan data-recommendation-id=@NUM data-recommendation-preview=@LONG href=@LINK id=@LONG target=@target title=@title>	2	1	0	https://kuruc.info/r/1/192184/	hivatkozas	href
+1	<font class=hir_szerzo>	4	0	4	https://kuruc.info/r/1/10515/	default	default
+1	<a data-cf-modified-ccba0e70e2a6256250d77b96-= href=@LINK onclick=@STYLE>	5	0	5	https://kuruc.info/r/6/76690/	hivatkozas	href
+1	<a class=IMAIL href=@LINK>	1	0	1	https://kuruc.info/r/2/6275/	hivatkozas	href
+1	<a data-cf-modified-19c55a8ddbe2d4e916cfa71d-= href=@LINK onclick=@LONG target=@target>	1	0	1	https://kuruc.info/r/10/17099/	hivatkozas	href
+1	<div class=cikktext dir=ltr lang=th>	15	1	14	https://kuruc.info/r/6/197585/	bekezdes	default
+1	<div class=article-details-body-container>	12	5	0	https://kuruc.info/r/6/236998/	default	default
+1	<div class=article-video>	12	4	0	https://kuruc.info/r/6/236998/	default	default
+1	<div class=article-video-details>	12	3	0	https://kuruc.info/r/6/236998/	default	default
+1	<em class=article-video-caption>	12	1	0	https://kuruc.info/r/6/236998/	kiemelt	default
+1	<div id=@NUM>	1530	1021	0	https://kuruc.info/r/20/21554/	default	default
+1	<div bg=>	1530	1020	0	https://kuruc.info/r/20/21554/	default	default
+1	<a data-cf-modified-1aa0aad54ad9152c41d2453a-= href=@LINK onclick=@LONG target=@target>	1	0	1	https://kuruc.info/r/20/21554/	hivatkozas	href
+1	<span class=gmail_quote>	35	4	33	https://kuruc.info/r/35/27772/	default	default
+1	<a aria-label=művelnek (új fülön nyitja meg) href=@LINK rel=noreferrer noopener target=@target>	1	1	0	https://kuruc.info/r/2/195589/	hivatkozas	href
+1	<a aria-label=@nyitjaNUM href=@LINK rel=noreferrer noopener target=@target>	2	0	2	https://kuruc.info/r/2/195589/	hivatkozas	href
+1	<span class=text_exposed_hide>	1	0	1	https://kuruc.info/r/35/77479/	default	default
+1	<span class=td>	44	3	44	https://kuruc.info/r/1/2548/	default	default
+1	<a data-cf-modified-b0345ca5730310ca61f77cf0-= href=@LINK onclick=@LONG target=@target>	1	1	0	https://kuruc.info/r/34/11671/	hivatkozas	href
+1	<span class=forras style=@STYLE>	8	0	8	https://kuruc.info/r/1/12121/	default	default
+1	<span class=cimlapileadket>	28	1	28	https://kuruc.info/r/1/322/	default	default
+1	<big>	52	2	0	https://kuruc.info/r/2/36283/	default	default
+1	<a name=a>	10	0	10	https://kuruc.info/r/35/44299/	hivatkozas	default
+1	<skype:span class=skype_tb_injection context=0040-745-568605 data-cf-modified-b61d5d1c937fd3d3c5aa412d-= durex=@NUM iamrtl=@NUM id=@STYLE onclick=@LONG oncontextmenu=@LONG onmousedown=@LONG onmouseout=@LONG onmouseover=@LONG onmouseup=@LONG title=@LONG>	1	10	0	https://kuruc.info/r/3/14812/	default	default
+1	<skype:span class=skype_tb_injection context=0040-743-030628 data-cf-modified-b61d5d1c937fd3d3c5aa412d-= durex=@NUM iamrtl=@NUM id=@STYLE onclick=@LONG oncontextmenu=@LONG onmousedown=@LONG onmouseout=@LONG onmouseover=@LONG onmouseup=@LONG title=@LONG>	1	10	0	https://kuruc.info/r/3/14812/	default	default
+1	<ol style=@STYLE>	15	6	0	https://kuruc.info/r/9/105196/	lista	default
+1	<span class=alairas>	9	1	0	https://kuruc.info/r/6/72628/	default	default
+1	<span class=post-author vcard>	7	2	0	https://kuruc.info/r/3/86264/	default	default
+1	<span class=fn>	7	1	7	https://kuruc.info/r/3/86264/	default	default
+1	<div class=watlinks style=@STYLE>	16	4	3	https://kuruc.info/r/34/34045/	default	default
+1	<a class=waturl href=@LINK target=@target>	8	1	0	https://kuruc.info/r/34/34045/	hivatkozas	href
+1	<a class=waturl alttheme href=@LINK title=@title>	1	0	1	https://kuruc.info/r/34/34045/	hivatkozas	href
+1	<a class=waturl altrubrique href=@LINK title=@title>	4	0	4	https://kuruc.info/r/34/34045/	hivatkozas	href
+1	<span class=small>	1	0	1	https://kuruc.info/r/2/86246/	default	default
+1	<a data-cf-modified-779fa04e25d93598fca0ebb7-= href=@LINK onclick=@LONG target=@target>	1	0	1	https://kuruc.info/r/10/19743/	hivatkozas	href
+1	<span class=textBodyA>	1	0	1	https://kuruc.info/r/2/74669/	default	default
+1	<span class=lead style=@STYLE>	5	1	5	https://kuruc.info/r/6/11399/	default	default
+1	<iframe class=scribd_iframe_embed data-aspect-ratio=0.7077769049489395 data-auto-height=@STYLE height=@STYLE id=@NUM p= scrolling=no src=@LINK title=@LONG width=@STYLE>	2	1	0	https://kuruc.info/r/2/184316/	beagyazott_tartalom	src
+1	<a class=spreaker-player data-autoplay=false data-cover=@LINK data-height=@STYLE data-playlist=false data-resource=@episodeNUM data-theme=light data-width=@STYLE href=@LINK>	13	0	13	https://kuruc.info/r/4/175955/	hivatkozas	href
+1	<span class=bekezdes>	5	0	5	https://kuruc.info/r/26/86251/	default	default
+1	<span class=misspell suggestions=@LONG>	1	0	1	https://kuruc.info/r/26/46251/	default	default
+1	<span class=misspell suggestions=>	1	0	1	https://kuruc.info/r/26/46251/	default	default
+1	<a data-cf-modified-8b4535f96bd58387dc737b1a-= href=@LINK onclick=@LONG target=@target>	1	1	1	https://kuruc.info/r/10/18280/	hivatkozas	href
+1	<a aria-label= (opens in a new tab) href=@LINK rel=noreferrer noopener target=@target>	2	1	0	https://kuruc.info/r/2/198864/	hivatkozas	href
+1	<span dir=RTL style=@STYLE>	2	0	2	https://kuruc.info/r/6/203966/	default	default
+1	<ol type=a>	7	5	0	https://kuruc.info/r/1/16893/	lista	default
+1	<blockquote class=imgur-embed-pub data-id=@NUM lang=en>	9	1	0	https://kuruc.info/r/6/207868/	default	default
+1	<th rowspan=@NUM>	3	0	3	https://kuruc.info/r/2/164454/	oszlop	default
+1	<st1:stockticker>	1	2	0	https://kuruc.info/r/35/26840/	default	default
+1	<div class=cikktext dir=ltr lang=no>	8	3	5	https://kuruc.info/r/2/230277/	bekezdes	default
+1	<div class=im>	130	30	0	https://kuruc.info/r/1/79531/	default	default
+1	<melleklet_span lang=en-us style=@STYLE>	3	0	3	https://kuruc.info/r/22/1762/	default	default
+1	<melleklet_span lang=hu style=@STYLE>	1	0	1	https://kuruc.info/r/22/1762/	default	default
+1	<audio class=wp-audio-shortcode controls=controls id=@audioNUM preload=none style=@STYLE>	1	2	0	https://kuruc.info/r/2/235399/	default	default
+1	<span class=Normal id=@LONG>	116	84	0	https://kuruc.info/r/1/6564/	default	default
+1	<table bgcolor=>	3	8	0	https://kuruc.info/r/22/36153/	table_text	default
+1	<a data-cf-modified-62522063fc892cdeee2ed329-= href=@LINK onclick=@LONG target=@target>	1	5	0	https://kuruc.info/r/6/23279/	hivatkozas	href
+1	<div class=cikktext dir=ltr lang=sl>	19	1	18	https://kuruc.info/r/4/168220/	bekezdes	default
+1	<div class=ii gt id=:134>	1774	36	0	https://kuruc.info/r/20/44974/	default	default
+1	<div id=@contentNUM>	3	4	0	https://kuruc.info/r/34/27758/	default	default
+1	<span class=content_blog_content style=@STYLE>	24	0	24	https://kuruc.info/r/4/18527/	default	default
+1	<span class=content_blog_lead>	411	9	411	https://kuruc.info/r/2/18325/	default	default
+1	<a class=bb-url href=@LINK>	5	0	5	https://kuruc.info/r/1/13660/	hivatkozas	href
+1	<td colspan=@NUM>	2	1	0	https://kuruc.info/r/2/182071/	oszlop	default
+1	<span class=nfakPe>	1	0	1	https://kuruc.info/r/34/33842/	default	default
+1	<span class=gD style=@STYLE>	2	0	2	https://kuruc.info/r/6/75437/	default	default
+1	<a data-cf-modified-c9bbc7503579408d0b97ba61-= href=@LINK onclick=@LONG target=@target>	1	1	0	https://kuruc.info/r/34/11673/	hivatkozas	href
+1	<ol style=@STYLE type=@NUM>	50	20	0	https://kuruc.info/r/20/2049/	lista	default
+1	<span class=lead>	50	0	50	https://kuruc.info/r/1/32741/	default	default
+1	<skype:span class=skype_tb_injection context=36-30-643-24-30 data-cf-modified-499c4497574e35d2036286ea-= durex=@NUM id=@STYLE onclick=@LONG oncontextmenu=@LONG onmousedown=@LONG onmouseout=@LONG onmouseover=@LONG onmouseup=@LONG title=@LONG>	1	6	0	https://kuruc.info/r/2/10874/	default	default
+1	<font class=content>	27	0	27	https://kuruc.info/r/1/6618/	default	default
+1	<a data-cf-modified-360d5f18f15969010f861339-= href=@LINK onclick=@LONG target=@target>	1	0	1	https://kuruc.info/r/10/20230/	hivatkozas	href
+1	<a data-cf-modified-24716be841dd175e3afcf899-= href=@LINK onclick=@LONG target=@target>	1	1	2	https://kuruc.info/r/35/20629/	hivatkozas	href
+1	<span id=result_box lang=en>	2	1	0	https://kuruc.info/r/59/185324/	default	default
+1	<span title=@LONG>	2	0	2	https://kuruc.info/r/59/185324/	default	default
+1	<address>	6	1	0	https://kuruc.info/r/1/18538/	default	default
+1	<h1>	8	2	0	https://kuruc.info/r/1/15116/	default	default
+1	<div class=cikktext dir=rtl lang=und>	24	3	22	https://kuruc.info/r/6/225836/	bekezdes	default
+1	<div class=ii gt id=@NUM>	54	2	0	https://kuruc.info/r/23/59672/	default	default
+1	<st1:city style=@STYLE>	1	1	0	https://kuruc.info/r/35/17300/	default	default
+1	<st1:place>	1	0	1	https://kuruc.info/r/35/17300/	default	default
+1	<div class=newsdate>	4	1	0	https://kuruc.info/r/20/1270/	default	default
+1	<div class=frisshirekcim style=@STYLE>	6	0	6	https://kuruc.info/r/35/44091/	default	default
+1	<div class=alcikklista>	450	231	0	https://kuruc.info/r/35/44091/	default	default
+1	<div class=hirszerzo>	5	3	7	https://kuruc.info/r/9/357/	default	default
+1	<span id=@cphContentNUM>	1	0	1	https://kuruc.info/r/2/75106/	default	default
