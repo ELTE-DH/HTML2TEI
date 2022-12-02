@@ -25,9 +25,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         tei_logger.log('WARNING', f'{url}: DETECTED LANGUAGE: {lang}')
     dates_cont = []
     raw_meta = bs.find('div', {'id': 'headline'})
-    title = bs.find('h1')
+
+    title = bs.find('meta', {'property': 'og:title', 'content': True})
+
+    # TODO conflict   title = bs.find('h1')
     if title is not None:
-        data['sch:name'] = title.text.strip()
+        data['sch:name'] = title['content'].replace(' - 444', '').strip()
     else:
         title = bs.find('meta', {'name': 'title', 'content': True})
         if title is not None:

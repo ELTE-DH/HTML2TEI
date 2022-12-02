@@ -97,6 +97,7 @@ def decompose_spec(article_dec):
 BLACKLIST_SPEC = []
 
 MULTIPAGE_URL_END = re.compile(r'.*oldal=.')
+
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-']))
 
 
