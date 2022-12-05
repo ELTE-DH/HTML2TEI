@@ -205,9 +205,7 @@ def block_structure(article, bs, block_dict, article_url, tei_logger):
     for a_list in article.find_all('lista'):
         for list_root_child in a_list:
             if list_root_child.name != 'listaelem':
-                if list_root_child.name is None and list_root_child.text.strip() == '':
-                    del list_root_child
-                else:
+                if isinstance(list_root_child, Tag) or (isinstance(list_root_child, NavigableString) and len(list_root_child.text.strip()) > 0):
                     list_root_child.wrap(bs.new_tag('listaelem'))
 
 

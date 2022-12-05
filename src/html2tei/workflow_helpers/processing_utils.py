@@ -25,8 +25,10 @@ def extract_resp_record_data(resp):
         date_format = '%Y-%m-%dT%H:%M:%SZ'
     warc_response_datetime = datetime.strptime(warc_response_date, date_format)
     warc_id = resp.rec_headers.get_header('WARC-Record-ID')
-    raw_html = resp.content_stream().read().decode(resp.rec_headers.get_header('WARC-X-Detected-Encoding'))
-
+    try:
+        raw_html = resp.content_stream().read().decode(resp.rec_headers.get_header('WARC-X-Detected-Encoding'))
+    except UnicodeDecodeError:
+        raw_html = None
     return warc_response_datetime, warc_id, raw_html
 
 
@@ -54,20 +56,25 @@ def aggregated_multipage_articles_gen(warc_level_params, run_parameters):
             # Process URL and append page data to article list
             _, _, resp = warc_reader.get_records(article_url)  # From WebArticleCurator
             warc_response_datetime, warc_id, raw_html = extract_resp_record_data(resp)
+            if raw_html is None:
+                warc_logger.log('CRITICAL', f'UnicodeDecodeError {article_url} in the archive {warc_filenames}!')
+                article_url = None
+
             date_min = min(date_min, warc_response_datetime)
             date_max = max(date_max, warc_response_datetime)
             raw_html = transform_to_html_fun(article_url, raw_html, warc_logger)
             article.append((article_url, warc_response_datetime, warc_id, raw_html))
 
             # Generate next page URL
-            article_url = next_page_of_article_fun(raw_html)
+            if article_url is not None:
+                article_url = next_page_of_article_fun(raw_html)
 
             if article_url is None or article_url in blacklist:
                 article_url = None
             elif article_url not in warc_reader.url_index:
-                article_url = None
                 warc_logger.log('CRITICAL', f'The next_page URL {article_url} does not present'
                                             f' in the archive {warc_filenames}!')
+                article_url = None
 
         yield article, run_parameters  # Return the gathered article
 
@@ -140,7 +147,7 @@ def safe_setlocale(name):
         try:
             yield setlocale(LC_ALL, name)
         except locale_Error as e:
-            e.message = f'Could not set locale ({name}) it may not be available on the system! Details: {e.message}'
+            e.message = f'Could not set locale ({name}) it may not be available on the system! Details: {e}'
             raise
         finally:
             setlocale(LC_ALL, saved)
@@ -163,6 +170,9 @@ def process_article(params):
     """
     article_list, (tei_logger, article_roots, decomp_fun, excluded_tags_fun, sub_fun, sub_fun_params) = params
     for article_url, warc_date, warc_id, raw_html in article_list:
+        if raw_html is None:
+            tei_logger.log('CRITICAL', f'UnicodeDecodeError {article_url}!')
+            return
         bs = BeautifulSoup(raw_html, 'lxml')
         for args, kwargs in article_roots:
             article_body_root = bs.find(*args, **kwargs)

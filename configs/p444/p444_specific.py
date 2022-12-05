@@ -2,15 +2,14 @@
 # -*- coding: utf-8, vim: expandtab:ts=4 -*-
 
 import re
-
+from langdetect import detect
 from bs4 import BeautifulSoup
 from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 
-from src.html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict, BASIC_LINK_ATTRS
+from src.html2tei import parse_date, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://444.hu/'
 ARTICLE_ROOT_PARAMS_SPEC = [(('section',), {'id': 'main-section'})]
-# (('main',), {'id': 'content-main'})]
 
 HIGHLIGHT = re.compile(r'.*highlight.*')
 A_TAGS = {'a', '0_MDESC_a'}
@@ -19,103 +18,106 @@ A_TAGS = {'a', '0_MDESC_a'}
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
-    report_dates_cont = []
-
+    article_root = bs.find('section', {'id': 'main-section'})
+    lang = detect(article_root.text)
+    if lang not in {'hu', 'ca'}:
+        data['sch:availableLanguage'] = lang
+        tei_logger.log('WARNING', f'{url}: DETECTED LANGUAGE: {lang}')
+    dates_cont = []
     raw_meta = bs.find('div', {'id': 'headline'})
-    title = bs.find('meta', {'name': 'title'})
+
+    title = bs.find('meta', {'property': 'og:title', 'content': True})
+
+    # TODO conflict   title = bs.find('h1')
     if title is not None:
-        data['sch:name'] = title.text.strip()
+        data['sch:name'] = title['content'].replace(' - 444', '').strip()
     else:
-        tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
+        title = bs.find('meta', {'name': 'title', 'content': True})
+        if title is not None:
+            titletext = title.attrs['content']
+            data['sch:name'] = titletext
+        else:
+            tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND!')
 
-    if raw_meta is not None:
-        basic_article = False
+    date_tag = bs.find('meta', property='article:published_time')  # 2021-05-11T19:31:11+02:00"
+    if date_tag is not None:
+        parsed_date = parse_date(date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
+        dates_cont.append(parsed_date)
+    modified_date = bs.find('meta', property='article:modified_time').attrs['content']
+    if modified_date is not None:
+        parsed_moddate = parse_date(modified_date[:19], '%Y-%m-%dT%H:%M:%S')
+        dates_cont.append(parsed_moddate)
+    lead_tag = bs.find('meta', {'name': 'description'})
+    if lead_tag is not None:
+        lead_text = lead_tag.attrs['content'].strip()
+        data['sch:abstract'] = lead_text
+
+    authors_list = raw_meta.find(class_='byline__authors')
+    if authors_list is not None:
+        authors_list = [a.text.strip() for a in authors_list.find_all('a')]
+        data['sch:author'] = authors_list
     else:
-        tei_logger.log('WARNING', f'{url}: ARTICLE BODY NOT FOUND OR UNKNOWN ARTICLE SCHEME!')
-        return None
-    if basic_article in [True, False]:
-        date_tag = bs.find('meta', property='article:published_time')  # 2021-05-11T19:31:11+02:00"
-        if date_tag is not None:
-            parsed_date = parse_date(date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
-            report_dates_cont.append(parsed_date)
-
-        modified_date = bs.find('meta', property='article:modified_time').attrs['content']
-        if modified_date is not None:
-            parsed_moddate = parse_date(modified_date[:19], '%Y-%m-%dT%H:%M:%S')
-            report_dates_cont.append(parsed_moddate)
-        lead_tag = bs.find('meta', {'name': 'description'})
-        if lead_tag is not None:
-            lead_text = lead_tag.attrs['content'].strip()
-            data['sch:abstract'] = lead_text
-
-    if basic_article is True:
-        authors_list = raw_meta.find(class_='byline__authors')
-        if authors_list is not None:
-            authors_list = [a.text.strip() for a in authors_list.find_all('a')]
-            data['sch:author'] = authors_list
-        else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
-        section = raw_meta.find(class_='byline__category')
-        if section is not None:
-            data['sch:articleSection'] = section.text.strip()
-        else:
-            tei_logger.log('DEBUG', f'{url}: SECTION TAG NOT FOUND!')
-        keywords_root = bs.find('meta', {'name': 'keywords'})
-        if keywords_root is not None:
-            keywords_list = keywords_root.attrs['content'].split(',')
-            data['sch:keywords'] = keywords_list
-        else:
-            tei_logger.log('DEBUG', f'{url}: KEYWORDS NOT FOUND!')
-        lead_tag = bs.find('meta', {'name': 'description'})
-        if lead_tag is not None:
-            lead_text = lead_tag.attrs['content'].strip()
-            data['sch:abstract'] = lead_text
-
-    elif not basic_article:
-        # https://444.hu/2015/11/16/orban-viktor-europat-megtamadtak-elo
-        report_dates = bs.find_all('a', class_='report__date')
-        if report_dates:
-            if report_dates[0].find('div', class_='report__time'):  # 2016. 06. 14., kedd
-                for one_date_tag in report_dates:
-                    datetime_str = ''
-                    for d in one_date_tag.contents:
-                        d_str = d.text.strip()
-                        if len(d_str) == 5:
-                            datetime_str = d_str
-                        elif len(d_str) > 5:
-                            datetime_str = f'{d_str[0:13]} {datetime_str}'
-                    parsed_date = parse_date(datetime_str, '%Y. %m. %d. %H:%M')
-                    if parsed_date:
-                        report_dates_cont.append(parsed_date)
-            else:
-                for rep in report_dates:    # '2014. október. 26., vasárnap, 19:57'
-                    rep_span = rep.find('span')
-                    if rep_span is not None:
-                        parsed_rep_datetime = parse_date(rep_span.text.strip(), '%Y. %B. %d., %A, %H:%M')
-                        if parsed_rep_datetime is not None:
-                            report_dates_cont.append(parsed_rep_datetime)
-
-        # The scheme of broadcasts is different, metadata is handled differently
         authors_tag = bs.find_all(class_='report__author')
-        if authors_tag is not None:
+        if len(authors_tag) > 0:
             authors_list = [au.text.strip() for au in authors_tag]
             data['sch:author'] = authors_list
         else:
-            authors_list = raw_meta.find_all(class_='byline__authors')
-            if len(authors_list) > 0:
-                authors_list = [a.find('a').text.strip() for a in authors_list]
-                data['sch:author'] = authors_list
+            # <a class="fS eD f4 eS eT eU eV f9 fg" href="/author/czinkoczis">Czinkóczi Sándor
+            authors = [a.text.strip() for a in bs.find_all('a', {'href': re.compile("/author/.*")})]
+            if len(authors) > 0:
+                data['sch:author'] = authors
             else:
                 tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+
+    section = raw_meta.find(class_='byline__category')
+    if section is not None:
+        data['sch:articleSection'] = section.text.strip()
+    else:
         section = bs.find('meta', {'itemprop': 'articleSection'})
         if section is not None and 'content' in section.attrs.keys():
             data['sch:articleSection'] = section.attrs['content'].strip()
-    if len(report_dates_cont) > 0:
-        data['sch:datePublished'] = min(report_dates_cont)
-        data['sch:dateModified'] = max(report_dates_cont)
+        else:
+            tei_logger.log('DEBUG', f'{url}: SECTION TAG NOT FOUND!')
+    keywords_root = bs.find('meta', {'name': 'keywords'})
+    if keywords_root is not None:
+        keywords_list = keywords_root.attrs['content'].split(',')
+        data['sch:keywords'] = keywords_list
+    else:
+        tei_logger.log('DEBUG', f'{url}: KEYWORDS NOT FOUND!')
+    lead_tag = bs.find('meta', {'name': 'description'})
+    if lead_tag is not None:
+        lead_text = lead_tag.attrs['content'].strip()
+        data['sch:abstract'] = lead_text
+
+    # https://444.hu/2015/11/16/orban-viktor-europat-megtamadtak-elo
+    report_dates = bs.find_all('a', class_='report__date')
+    if report_dates:
+        if report_dates[0].find('div', class_='report__time'):  # 2016. 06. 14., kedd
+            for one_date_tag in report_dates:
+                datetime_str = ''
+                for d in one_date_tag.contents:
+                    d_str = d.text.strip()
+                    if len(d_str) == 5:
+                        datetime_str = d_str
+                    elif len(d_str) > 5:
+                        datetime_str = f'{d_str[0:13]} {datetime_str}'
+                parsed_date = parse_date(datetime_str, '%Y. %m. %d. %H:%M')
+                if parsed_date:
+                    dates_cont.append(parsed_date)
+        else:
+            for rep in report_dates:    # '2014. október. 26., vasárnap, 19:57'
+                rep_span = rep.find('span')
+                if rep_span is not None:
+                    parsed_rep_datetime = parse_date(rep_span.text.strip(), '%Y. %B. %d., %A, %H:%M')
+                    if parsed_rep_datetime is not None:
+                        dates_cont.append(parsed_rep_datetime)
+
+    if len(dates_cont) > 0:
+        data['sch:datePublished'] = min(dates_cont)
+        if data['sch:datePublished'] != data['sch:dateModified']:
+            data['sch:dateModified'] = max(dates_cont)
     else:
         tei_logger.log('WARNING', f'{url}: DATE NOT FOUND IN URL!')
-
     return data
 
 
@@ -133,7 +135,7 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {'szakasz': {('temp_table_id', 'det_by_child'): ('table_text', 'temp')}}
 
-LINKS_SPEC = BASIC_LINK_ATTRS.add('blockquote')
+LINKS_SPEC = {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_iframe', 'blockquote'}
 DECOMP = [(('div',), {'id': 'headline'}),
           (('div',), {'class': 'hide-print'}),
           (('div',), {'class': 'hide-for-print'}),
@@ -198,7 +200,6 @@ def decompose_spec(article_dec):
     # after 2020: <a class="pr-box pr-box--compact pr-box--centered" href="https://membership.444.hu">
     for h2 in article_dec.find_all('h2'):
         for a in h2.find_all('a', {'href': 'direkt36_spec'}):
-            print(h2)
             a.decompose()
     decompose_listed_subtrees_and_mark_media_descendants(article_dec, DECOMP, MEDIA_LIST)
     return article_dec

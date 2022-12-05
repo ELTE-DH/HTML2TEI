@@ -62,7 +62,8 @@ BLACKLIST_SPEC = ['https://nepszava.hu/json/cikk.json?id=1029976_felpalyas-utzar
                   'https://nepszava.hu/json/cikk.json?id=1029970_emelkedtek-az-indexek-europaban',
                   'https://nepszava.hu/json/cikk.json?id=1029966_reumatapaszra-csaptak-le-a-vamosok']
 
-LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok-hazai-kuton?utm_source', 'https://t.co/lBab7TS3kq%22%3Epic.twitter.com/lBab7TS3kq%3C/a%3E%3C/p%3E%26mdash%3B%20%uD835%uDC12%uD835%uDC2E%uD835%uDC1C%uD835%uDC21%uD835%uDC22%uD835%uDC2D%uD835%uDC21%uD835%uDC2B%uD835%uDC1A%20%uD835%uDC12%uD835%uDC1E%uD835%uDC1E%uD835%uDC2D%uD835%uDC21%uD835%uDC1A%uD835%uDC2B%uD835%uDC1A%uD835%uDC26%uD835%uDC1A%uD835%uDC27%20%28@suchisoundlover%29%20%3Ca%20href=%22']))
+
+LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['data:text/html;charset=utf-8','https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok-hazai-kuton?utm_source', 'https://t.co/lBab7TS3kq%22%3Epic.twitter.com/lBab7TS3kq%3C/a%3E%3C/p%3E%26mdash%3B%20%uD835%uDC12%uD835%uDC2E%uD835%uDC1C%uD835%uDC21%uD835%uDC22%uD835%uDC2D%uD835%uDC21%uD835%uDC2B%uD835%uDC1A%20%uD835%uDC12%uD835%uDC1E%uD835%uDC1E%uD835%uDC2D%uD835%uDC21%uD835%uDC1A%uD835%uDC2B%uD835%uDC1A%uD835%uDC26%uD835%uDC1A%uD835%uDC27%20%28@suchisoundlover%29%20%3Ca%20href=%22']))
 # https://alapjarat.hu/aktualis/elfogyott-shell-v-power-95-sok-hazai-kuton?utm_source%3_Dtelex&amp;utm_medium=article&amp;utm_campaign=kifogyott_premium_uzemanyag
 
 MULTIPAGE_URL_END = re.compile(r'^\b$')  # Dummy
