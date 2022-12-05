@@ -131,6 +131,13 @@ def rename_by_bigram_rules(article, change_by_bigram, article_url, tei_logger):
                         c.name = child_level_name
                     tag.name = parent_level_name
                     break
+        else:
+            if any(st in tag.text for st in second_tags_of_bigram):
+                for second_part_tag, case in change_by_bigram[tag.name].keys():
+                    parent_level_name, child_level_name = change_by_bigram[tag.name][(second_part_tag, case)]
+                    if case == 'det_by_string' and second_part_tag in tag.text:
+                        tag.name = parent_level_name
+                        break
 
 
 def block_specific_renaming(article, block_dict, article_url, tei_logger):
@@ -519,13 +526,11 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     else:
         tei_logger.log('WARNING', f'{article_url} ARTICLE BODY ROOT NOT FOUND!')
         return None
-
     if unicode_test(article.text) > 25 or article.text.count("00e1") > 10:
         # These two numbers are an approximation to separate normal coded and faulty items.
         article = article_encoding_correction(article, decompose_fun)
         tei_logger.log('WARNING', f'{article_url} BAD ENCODING (ARTICLE BODY)!')
     decompose_fun(article)
-    article.name = 'article_body_root'
     for element in article(text=lambda text: isinstance(text, Comment)):
         element.extract()  # Delete the Comments
     # 1) Renaming based on manually evaluated tag table(dictionary)
@@ -619,6 +624,9 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
             if art_child.name == 'figure':
                 art_child.wrap(bs.new_tag('p'))
                 break
+    elif 'note' in art_child_tags:
+        for n in article.find_all('note', recursive=False):
+            n.wrap(bs.new_tag('p'))
 
     # Not valid by TEI schema if there is only one figure in the floatingText (an extra 'p' level must be inserted)
     for flo in article.find_all('body'):
