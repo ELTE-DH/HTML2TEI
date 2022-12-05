@@ -205,7 +205,10 @@ def block_structure(article, bs, block_dict, article_url, tei_logger):
     for a_list in article.find_all('lista'):
         for list_root_child in a_list:
             if list_root_child.name != 'listaelem':
-                list_root_child.wrap(bs.new_tag('listaelem'))
+                if list_root_child.name is None and list_root_child.text.strip() == '':
+                    del list_root_child
+                else:
+                    list_root_child.wrap(bs.new_tag('listaelem'))
 
 
 def correct_table_structure(article, bs, article_url, tei_logger):

@@ -56,17 +56,15 @@
             <sourceDesc>
                 <bibl>
                     <title></title>
-                    <publisher><orgName><!--KITÖLT kiadó az impresszumból --></orgName>
-                        <placeName><!--KITÖLT kiadó székhelye --></placeName>
-                        <!--<ref type="url" source="">KITÖLT source="impresszum url-je", literal: a portál DOI-ja pl https://doi.org/10.5281/zenodo. </ref>-->
+                    <publisher><orgName>Kettős Mérce Blog Egyesület; elnök: Papp Gáspár</orgName>
+                        <placeName>1089 Budapest, Orczy út 46-48</placeName>
+                        <ref type="url" source="https://merce.hu/impresszum/">https://doi.org/10.5281/zenodo.</ref>
                         <date when="2022-06-15"/>
                     </publisher>
-                    <pubPlace>
-                        <!--KITÖLT:  pl: Budapest -->
-                        <ref type="url"><!--KITÖLT:  pl: http://www.geonames.org/3054643 --></ref>
+                    <pubPlace>Budapest<ref type="url">http://www.geonames.org/3054643</ref>
                     </pubPlace>
                     <availability><p>© Mérce 2022</p>
-                        <p><ref type="url" source="https://merce.hu/mi-a-merce/">https://doi.org/</ref>
+                        <p><ref type="url" source="https://merce.hu/mi-a-merce/">https://doi.org/10.5281/zenodo.</ref>
                             <date when="2022-06-15"/></p>
                     </availability>
                     <date></date>
@@ -78,7 +76,7 @@
             <rdf:RDF>
                 <rdf:Description rdf:about="">
                     <sch:type rdf:resource="https://schema.org/NewsArticle"/>
-                    <sch:ispartOf rdf:resource="">Mérce</sch:ispartOf><!--KITÖLT: resource: portál főoldal url-je pl: https://abcug.hu/" -->
+                    <sch:ispartOf rdf:resource="https://merce.hu/">Mérce</sch:ispartOf>
                     <sch:inLanguage>hun</sch:inLanguage>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC-EDU/1.0/">In Copyright</sch:license>
                 </rdf:Description>
@@ -87,11 +85,11 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished>2021-11-30T14:17:15/2021-11-30 17:21:15</sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo."/>
+                    <sch:identifier>WARC_HASH</sch:identifier>
                     <sch:identifier>653d973c-09fd-46e1-94aa-e6c24582b9ba</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>

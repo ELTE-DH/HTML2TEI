@@ -95,7 +95,8 @@ BIGRAM_RULES_SPEC = {'szakasz': {('jegyz_jelzo', 'det_any_desc'): ('editorial_no
                                ('Paypal-en', 'det_by_string'): ('editorial_note', 'unwrap'),
                                ('Ez a cikk eredetileg a Kettős Mércén', 'det_by_string'): ('editorial_note', 'unwrap'),  # Ez a cikk több mint 5 éves.
                                ('Ez a cikk több mint ', 'det_by_string'): ('editorial_note', 'unwrap'),
-                               ('Kövesd a szerző bejegyzéseit a', 'det_by_string'): ('editorial_note', 'unwrap')},
+                               ('Kövesd a szerző bejegyzéseit a', 'det_by_string'): ('editorial_note', 'unwrap'),
+                               ('Ezt a cikket eredetileg az AVM', 'det_by_string'): ('editorial_note', 'unwrap')},
                      'bekezdes': {('Tudósításunk itt zárul, köszönjük a kitartó figyelmet!', 'det_by_string'): ('editorial_note', 'unwrap'),
                                   ('Ha szívesen olvasol és nézel hasonló közvetítéseket', 'det_by_string'): ('editorial_note', 'unwrap')}
                                 }
@@ -142,3 +143,5 @@ def next_page_of_article_spec(curr_html):
 
 # TEST
 # https://merce.hu/2017/07/22/ne_ketsebesseges_hanem_kozos_europai_unioban_gondolkodjunk/
+# file:///home/eltedh/PycharmProjects/HTML2TEI/TESZT/merce/2017-11-25/96b5008b-72f4-5c7c-ab57-85bd4d08e174.xml üres item a "Hogyan változhatna" előtt !
+# file:///home/eltedh/PycharmProjects/HTML2TEI/TESZT/merce/2009-07-31/8f68658d-02b9-5ed1-a799-1d533f23ddf0.xml   editorial a végén
