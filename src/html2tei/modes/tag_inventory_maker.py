@@ -7,7 +7,7 @@ from random import sample as random_sample
 
 from ..tei_utils import immediate_text, to_friendly
 from ..workflow_helpers.processing_utils import run_single_process, dummy_fun, process_article
-
+from .inventory_filler import *
 
 def summarize_children_or_subtree(tag_dict, recursive, article_url, article_body_root, excluded_tags_fun):
     """This function summarizes the properties of each occurrence of the tags (direct or all descendants):
@@ -58,6 +58,10 @@ def final_summarize_children_or_subtree(dates, out_files, tag_dict, tei_logger):
             category = 'default'
             out_file = out_text_fh
         rename = 'default'
+        if root_name_attr.startswith('<0_DECOMPOSED_'):
+            rename = 'decompose'
+            #root_name_attr = root_name_attr.replace('<0_DECOMPOSED_', '<')
+        category, rename = line_evaluation(root_name_attr, category, rename)
         print(freq, root_name_attr, avg_no_of_words, avg_no_of_descendants, avg_len_of_immediate_text, example_links,
               category, rename, sep='\t', file=out_file)
 
@@ -67,6 +71,8 @@ def init_portal(log_dir, output_dir, run_params, portal_name, tei_logger, warc_l
     _ = log_dir, warc_level_params  # Silence IDE
 
     article_root_params, decompose_spec, excluded_tags_spec = rest_config_params[1:4]
+    # TODO: itt beolvashatná a text/notext-et is és akkor ezzel a funkcióval lehetne frissíteni a szótárt
+    #  (kell egy olyan paraméter, hogy akarjuk/nem)
 
     recursive = run_params.get('recursive')
     if recursive is None:

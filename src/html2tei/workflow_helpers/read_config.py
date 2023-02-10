@@ -162,6 +162,12 @@ def read_portalspec_config(configs_dir, portal_name, warc_dir, warc_name, log_di
         tag_normal_dict, portal_specific_block_rules = \
             load_portal_specific_dicts(text_tags_normal_fn, notext_tags_normal_fn, block_rules_spec,
                                        tei_logger)
+        linkattrs = set()
+        for tname, twoparam in tag_normal_dict.items():
+            norm_name, is_link_attr = twoparam.split('\t')
+            if is_link_attr != 'default':
+                linkattrs.add(tname[1:tname.find(' ')])
+        links |= linkattrs  # TODO: a text+notext-ből veszi ki, mikhez van link
     else:
         tei_logger.log('INFO', 'Not loading portal specific dicts')
         tag_normal_dict, portal_specific_block_rules = None, None

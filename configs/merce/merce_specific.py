@@ -93,7 +93,7 @@ BIGRAM_RULES_SPEC = {'szakasz': {('jegyz_jelzo', 'det_any_desc'): ('editorial_no
                      'doboz': {('merce_gomb', 'det_any_desc'): ('editorial_note', 'unwrap'),
                                ('jegyz_jelzo', 'det_any_desc'): ('editorial_note', 'unwrap'),
                                ('Paypal-en', 'det_by_string'): ('editorial_note', 'unwrap'),
-                               ('Ez a cikk eredetileg a Kettős Mércén', 'det_by_string'): ('editorial_note', 'unwrap'),  # Ez a cikk több mint 5 éves.
+                               ('Ez a cikk eredetileg a Kettős Mércén', 'det_by_string'): ('editorial_note', 'unwrap'),
                                ('Ez a cikk több mint ', 'det_by_string'): ('editorial_note', 'unwrap'),
                                ('Kövesd a szerző bejegyzéseit a', 'det_by_string'): ('editorial_note', 'unwrap'),
                                ('Ezt a cikket eredetileg az AVM', 'det_by_string'): ('editorial_note', 'unwrap')},

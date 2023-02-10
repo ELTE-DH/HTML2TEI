@@ -91,7 +91,14 @@ def mark_media_descendants(whole_article, media_params):
 
 def decompose_listed_subtrees_and_mark_media_descendants(article_dec, decomp, media_list):
     """This function combines marking the lower level of the media blocks and deleting tags to be deleted"""
-    decomposing(article_dec, decomp)
+    #decomposing(article_dec, decomp)
+    for args, kwargs in decomp:
+        for it in article_dec.find_all(*args, **kwargs):
+            for c in it.find_all():
+                if not c.name.startswith('0_DECOMPOSED_'):
+                    c.name = f'0_DECOMPOSED_{c.name}'
+            it.name = f'0_DECOMPOSED_{it.name}'
+    #return whole_article
     mark_media_descendants(article_dec, media_list)
 
 

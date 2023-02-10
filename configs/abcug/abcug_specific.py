@@ -65,6 +65,7 @@ BLOCK_RULES_SPEC = {'idezet': {'rename': {'cimsor': 'felkover'}}, 'lista': {'inv
 BIGRAM_RULES_SPEC = {'bekezdes': {('media_hivatkozas', 'det_by_child'): ('media_tartalom', 'media_hivatkozas')}}
 
 LINKS_SPEC = BASIC_LINK_ATTRS
+# {'a', '0_MDESC_a', 'img', '0_MDESC_img', 'iframe', '0_MDESC_iframe'}
 DECOMP = [(('div',), {'class': 'postend-widget'}),
           (('div',), {'class': 'post-information'}),
           (('script',), {})]
