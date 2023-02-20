@@ -58,9 +58,8 @@
                     <title></title>
                     <publisher><orgName>New Wave Media Group Kft.</orgName>
                         <placeName>1443 Budapest, Pf: 201.</placeName>
-                        <ref type="url" source="https://www.origo.hu/impresszum/index.html">
-                            <!--KITÖLT: a portál DOI-ja pl.: https://doi.org/10.5281/zenodo --></ref>
-                        <date when="2020-02-02"/> <!-- CSAK TESZT DÁTUM!!! KITÖLT: impresszum letöltésének dátuma -->
+                        <ref type="url" source="https://www.origo.hu/impresszum/index.html">https://doi.org/10.5281/zenodo.7037527</ref>
+                        <date when="2022-05-16"/>
                     </publisher>
                     <pubPlace>
                         Budapest
@@ -69,9 +68,8 @@
                     <availability>
                         <p>AZ ORIGO KIADÓJA A NEW WAVE MEDIA GROUP KFT. © MINDEN JOG FENNTARTVA.</p>
                         <p>
-			                <ref type="url" source="https://www.origo.hu/impresszum/index.html">
-                                <!--KITÖLT: https://doi.org/ --></ref>
-                            <date when="2020-02-02"/><!-- CSAK TESZT DÁTUM!!! when: impresszum/jognyil crawl dátum -->
+			                <ref type="url" source="https://www.origo.hu/impresszum/index.html">https://doi.org/10.5281/zenodo.7037527</ref>
+                            <date when="2022-05-16"/>
 			            </p>
                     </availability>
                     <date></date>
@@ -92,13 +90,104 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about=""><!--KITÖLT: about: Zenodo link, pl: https://doi.org/10.5281/zenodo.3974489 -->
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.7037527">
                     <sch:type>WARC/1.1</sch:type>
-                    <sch:sdDatePublished><!--KITÖLT: a crawling időintervalluma pl 2020-01-01T23:40:00/2020-01-01T23:45:00 (a html2tei bármely log-jának végéről kiolvasható a teljes warc futtatásával)-->
+                    <sch:sdDatePublished>2022-05-18T16:11:40/2022-02-21T20:15:31
                     </sch:sdDatePublished>
-                    <sch:identifier rdf:about=""/><!-- KITÖLT ua. mint a Description about 3 sorral feljebb https://doi.org/10.5281/zenodo.3974489 -->
-                    <sch:identifier><!-- KITÖLT: ZENODO HASH --></sch:identifier>
-                    <sch:identifier><!-- KITÖLT:a WARCINFO-ból kiolvasható (zcat WARCNAME.warc.gz | less) WARC-Record-ID, pl: 930b53b8-ef8e-4406-be4d-37ad64e9a549--></sch:identifier> </rdf:Description>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.7037527"/>
+                    <sch:identifier>[{
+                                        "checksum": "af9e4eeba2260697183d6e4df70316d2",
+                                        "filename": "content_not_available_at_crawl.txt",
+                                        "filesize": 2871,
+                                        "id": "dc43ca8b-117c-415a-8f18-e8b5019a2c0b",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/content_not_available_at_crawl.txt",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/dc43ca8b-117c-415a-8f18-e8b5019a2c0b"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "26673e60a1bd72b0a956fedde918f92d",
+                                        "filename": "hashsums",
+                                        "filesize": 7978,
+                                        "id": "93dd6406-1318-4625-a0e7-136d4c145238",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/hashsums",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/93dd6406-1318-4625-a0e7-136d4c145238"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "8c79b98ae2d1e2b1cc41436930c5dfa2",
+                                        "filename": "known_bad_urls.txt",
+                                        "filesize": 9653,
+                                        "id": "989af136-8833-4d7a-96c9-7855e1be4a21",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/known_bad_urls.txt",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/989af136-8833-4d7a-96c9-7855e1be4a21"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "122a60e4ee22eafa3bd7c01c338359e8",
+                                        "filename": "log.log",
+                                        "filesize": 904629,
+                                        "id": "d94709fc-b331-4153-8154-38c08939d0d2",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/log.log",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/d94709fc-b331-4153-8154-38c08939d0d2"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "d3f9e93df719f1c078939ae36a58700a",
+                                        "filename": "logs.zip",
+                                        "filesize": 16689949,
+                                        "id": "0e86bcd3-10f3-4c71-a56f-c774b8c2acdb",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/logs.zip",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/0e86bcd3-10f3-4c71-a56f-c774b8c2acdb"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "e48e7b65fb2a93001633b41c7cc5e0a5",
+                                        "filename": "origo-archive_new9.warc.gz",
+                                        "filesize": 101264331,
+                                        "id": "4b469fed-a4f7-4279-b5d3-ce7052f13c75",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/origo-archive_new9.warc.gz",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/4b469fed-a4f7-4279-b5d3-ce7052f13c75"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "6cb159a4496308c3776970ca94d5d3f3",
+                                        "filename": "origo-articles_new9.warc.gz",
+                                        "filesize": 9898910598,
+                                        "id": "8cbf9b8e-5030-4902-b167-cdcbfdc6e21a",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/origo-articles_new9.warc.gz",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/8cbf9b8e-5030-4902-b167-cdcbfdc6e21a"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "7fbead1f9c27cb05ebbeea3d1af9a16f",
+                                        "filename": "origo_rights_statements.warc.gz",
+                                        "filesize": 10376,
+                                        "id": "2bf4a8b1-6952-49dd-b7a4-5858249a64be",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/origo_rights_statements.warc.gz",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/2bf4a8b1-6952-49dd-b7a4-5858249a64be"
+                                        }
+                                    },
+                                    {
+                                        "checksum": "81bfcb73fd98b98224ccc9ea889d6799",
+                                        "filename": "script.sh",
+                                        "filesize": 501,
+                                        "id": "1db0fc0e-e56f-456c-a7ac-74cc2b7b8b78",
+                                        "links": {
+                                            "download": "https://zenodo.org/api/files/b3b77430-5462-4205-a2a6-95524fbad8e6/script.sh",
+                                            "self": "https://zenodo.org/api/deposit/depositions/7037527/files/1db0fc0e-e56f-456c-a7ac-74cc2b7b8b78"
+                                        }
+                                    }
+                                ]
+                    </sch:identifier>
+                    <sch:identifier>ba4114fd-63db-4c2d-b058-df5dcd3fd39b</sch:identifier> </rdf:Description>
             </rdf:RDF>
         </xenoData>
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -113,6 +202,7 @@
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-8090-3661">Indig Balázs</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0001-9199-1759">Fellegi Zsófia</sch:contributor>
                     <sch:contributor rdf:resource="https://orcid.org/0000-0002-2558-0633">Sárközi-Lindner Zsófia</sch:contributor>
+                    <sch:contributor rdf:resource="https://orcid.org/0000-0002-0577-8706">Nagy Mihály</sch:contributor>
                     <sch:license rdf:resource="http://rightsstatements.org/vocab/InC/1.0/"/>
                 </rdf:Description>
             </rdf:RDF>
