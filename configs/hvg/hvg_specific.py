@@ -3,6 +3,7 @@
 
 import re
 from bs4 import BeautifulSoup
+from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, tei_defaultdict
 
 PORTAL_URL_PREFIX = 'https://hvg.hu/'
@@ -296,7 +297,8 @@ BLACKLIST_SPEC = [
     'https://hvg.hu/sport/20180325_Forma1_Vettel_nyerte_az_idenynyitot',
     'https://hvg.hu/elet/20200509_Csak_ugy_potyognak_az_elefantbebik_a_pragai_allatkertben',
     'https://hvg.hu/vilag/20130215_Oroszorszag_meteor',
-]
+] + [url.strip() for url in
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'spec_blacklist_hvg.txt')).readlines()]
 
 MULTIPAGE_URL_END = re.compile(r'.*\?isPrintView.*')
 # https://hvg.hu/sport/20210614_foci_eb_euro_2020_junius_14_percrol_percre/2?isPrintView=False&liveReportItemId=0&isPreview=False&ver=1&order=desc

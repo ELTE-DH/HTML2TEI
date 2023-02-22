@@ -59,8 +59,11 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
     tei_tag_list = []
     tei_body = soup.find('body')
     if tei_body is not None:
-
-        # INVALID CORRECTIONS
+        tei_body.name = 'p'
+        tei_body.wrap(soup.new_tag('body'))
+        for t in tei_body.find_all():
+            t.unwrap()
+        """# INVALID CORRECTIONS
         # 1. head h1 or h2
         heads = tei_body.find_all('head')
         if len(heads) > 0:
@@ -79,7 +82,8 @@ def process_article(one_page_of_article_things, body_log, get_meta_fun, spec_bod
         # 5. graphic tag attributes
         # 6. ref tag
 
-        tei_tag_list = [tag for tag in tei_body.find_all(recursive=False)]
+        tei_tag_list = [tag for tag in tei_body.find_all(recursive=False)]"""
+
 
     if len(tei_tag_list) == 0:
         tei_tag_list = _create_empty_paragraph_list(url, body_log)
