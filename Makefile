@@ -38,29 +38,32 @@ install-dep-packages:
 .PHONY: install-dep-packages
 
 venv:
-	@poetry install --no-root
+	@python3 -m venv venv
+	@./venv/bin/pip install poetry
+	@./venv/bin/poetry env use python3
+	@./venv/bin/poetry install --all-extras --no-root
 .PHONY: venv
 
 build: install-dep-packages venv __extra-deps
-	@poetry build
+	@./venv/bin/poetry build
 .PHONY: build
 
 # Install the actual wheel package to test it in later steps
 install: build
-	 @poetry run pip install --upgrade dist/*.whl
+	 @./venv/bin/poetry run pip install --upgrade dist/*.whl
 .PHONY: install
 
 # Upload to PyPi with poetry (with token if $$PYPI_TOKEN is specified)
 upload:
-	@[[ ! -z "$(PYPI_TOKEN)" ]] && poetry publish --username "__token__" --password $(PYPI_TOKEN) || poetry publish
+	@[[ ! -z "$(PYPI_TOKEN)" ]] && ./venv/bin/poetry publish --username "__token__" --password $(PYPI_TOKEN) || ./venv/bin/poetry publish
 .PHONY: upload
 
 test:
-	@poetry run python -m pytest --verbose tests/
+	@./venv/bin/poetry run python -m pytest --verbose tests/
 .PHONY: test
 
 clean: __clean-extra-deps
-	@rm -rf dist/ .pytest_cache/ $$(poetry env info -p)
+	@rm -rf dist/ .pytest_cache/ $$(./venv/bin/poetry env info -p)
 .PHONY: clean
 
 # Do actual release with new version. Originally from: https://github.com/mittelholcz/contextfun
@@ -81,16 +84,16 @@ __release:
 		(echo -e "$(RED)Do not call this target!\nUse 'release-major', 'release-minor' or 'release-patch'!$(NOCOLOR)"; \
 		 exit 1)
 	@[[ -z $$(git status --porcelain) ]] || (echo "$(RED)Working dir is dirty!$(NOCOLOR)"; exit 1)
-	@# Update dependencies before buiding and testing (closest to clean install)
-	@poetry update
+	@# Update dependencies before building and testing (closest to clean install)
+	@./venv/bin/poetry update
 	@# poetry version will modify pyproject.toml only. The other steps must be done manually.
-	@poetry version $(BUMP)
+	@./venv/bin/poetry version $(BUMP)
 	@# Add modified files to git before commit
 	@git add pyproject.toml poetry.lock
 	@# Clean install with (built package) and test
 	@make all
 	@# Create release commit and git tag
-	@make -S __commit_to_origin NEWVER=$$(poetry run python src/$(MODULE)/version.py)
+	@make -S __commit_to_origin NEWVER=$$(./venv/bin/poetry run python src/$(MODULE)/version.py)
 .PHONY: __release
 
 __commit_to_origin:
