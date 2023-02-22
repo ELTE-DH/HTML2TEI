@@ -78,8 +78,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 if note_block_tag is not None:
                     author_or_source = note_block_tag.find('div', class_='text-wrap').get_text(strip=True)
                     if author_or_source is not None:
+                        #print(url, note_block_tag)
                         if author_or_source in SOURCE or author_or_source in SOURCE_SECONDARY:
                             data["sch:source"] = [author_or_source]
+                            data['originalAuthorString'] = [author_or_source]
                         else:
                             # split by: ANY OF THESE ',-–' CHARACTERS FOLLOWED BY WHITESPACE '\s' AND NOT 'a ', 'az ',
                             # 'A ' or 'Az '
@@ -87,15 +89,23 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                             split_list = re.split("[,\-\–]\s(?!a\s|az\s|A\s|Az\s)", author_or_source)
                             if len(split_list) > 0 and split_list[0] != '':
                                 source_list, author_list = [], []
-                                for author in split_list:
-                                    if author in SOURCE or author in SOURCE_SECONDARY:
-                                        source_list.append(author.strip())
-                                    else:
-                                        author_list.append(author.strip())
+                                for author_ in split_list:   # TODO: ez egy rovat tkp.: Olvasói vélemény
+                                    # Olvasói vélemény | Szerző: Ádám Attila
+                                    authors = re.split('/|\|', author_)
+                                    for author in authors:
+                                        if author in SOURCE or author in SOURCE_SECONDARY:
+
+                                            source_list.append(author.strip())
+                                        else:
+                                            author = author.replace('Szerző:', '').replace('szerző:', '')
+                                            author_list.append(author.strip())
                                 if len(author_list) > 0:
                                     data['sch:author'] = author_list
                                 if len(source_list) > 0:
                                     data['sch:source'] = source_list
+                                if len(author_list+source_list) > 1:    # TODO: van más feltétel?
+                                    data['originalAuthorString'] = [author_or_source]
+                        # data['AuthorString_extracted_from_content'] = author_or_source
                     else:
                         tei_logger.log('DEBUG', f'{url}: AUTHOR TAG TEXT EMPTY!')
 

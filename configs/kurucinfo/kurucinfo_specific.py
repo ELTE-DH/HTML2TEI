@@ -16,7 +16,7 @@ HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
-    
+
     # MISSING FROM PORTAL: data['sch:dateModified']
 
     # ARTICLE SECTION
@@ -29,7 +29,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: ARTICLE SECTION TAG PARSE ERROR!')
     else:
         tei_logger.log('WARNING', f'{url}: ARTICLE SECTION NOT FOUND!')
-    
+
     article_root = bs.find('div', {'class': 'tblot'})
     if article_root is not None:
 
@@ -39,9 +39,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             title_text = title_tag.get_text(strip=True)
             if title_text is not None:
                 data['sch:name'] = title_text
-            else: 
+            else:
                 tei_logger.log('WARNING', f'{url}: TITLE TAG EMPTY!')
-        else: 
+        else:
             tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
 
         # AUTHOR / https://kuruc.info/r/6/150707/
@@ -55,6 +55,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 if 1 < len(split_t) <= 3 and ('(' or ')') not in tag_text and all([w[0].isupper() for w in split_t]):
                     data['sch:author'] = [tag_text]
                     data['originalAuthorString'] = [possible_author_tag.get_text(strip=True)]
+                    data['AuthorString_extracted_from_content'] = possible_author_tag.text
                 else:
                     tei_logger.log('DEBUG', f'{url}: AUTHOR TAG EMPTY!')
             else:
@@ -63,25 +64,25 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         # KEYWORDS and DATE PUBLISHED
         meta_header = article_root.find('p', {'class': 'cikkdatum'})
         if meta_header is not None:
-            
+
             # keywords
             a_tags = meta_header.find_all('a', href=re.compile('/t/[0-9]'))
             if len(a_tags) > 0:
                 data['sch:keywords'] = [t.get_text(strip=True) for t in a_tags if len(t.get_text(strip=True)) > 0]
             else:
                 tei_logger.log('INFO', f'{url}: KEYWORDS NOT FOUND!')
-                
+
             # datePublished
             date_published_tag = meta_header.find('span', {'itemprop': "datePublished"})
             if date_published_tag is not None:
                 date_published_raw = date_published_tag.get_text(strip=True)
                 if date_published_raw is not None:
                     data['sch:datePublished'] = parse_date(date_published_raw, "%Y. %B %d. %H:%M")
-                else: 
+                else:
                     tei_logger.log('WARNING', f'{url}: DATE FORMAT ERROR!')
-            else: 
+            else:
                 tei_logger.log('WARNING', f'{url}: DATE TAG NOT FOUND!')
-            
+
         else:
             tei_logger.log('WARNING', f'{url}: META HEADER [datePublished, keywords] NOT FOUND!')
 

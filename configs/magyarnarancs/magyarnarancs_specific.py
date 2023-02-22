@@ -22,6 +22,15 @@ SOURCE = ['narancs.hu', 'narancs. hu', 'narancs hu', 'narancs', 'narancs.', 'nar
           'narancs.hu/Republikon', 'MTI/narancs', 'narancs hu.', 'MTI/Világgazdaság/narancs.hu', 'narancs.hu - B. T.',
           'transindex.ro', 'MTI-OS', 'nrancs.hu']
 
+SOURCE_SOLO = {'narancs.hu', 'szegeder.hu', 'MTA', 'narancs', 'HVG', 'narancs hu', 'Markó Anita', 'narancs hu.', 'Guardian', 'Telex', 'Narancs.hu', 'Fizetett tartalom', 'MTI', 'narancsfül', 'narancs.', 'transindex.ro', 'Amnesty', 'media1.hu', 'Narancsfül', 'narancsblog', 'Reuters', 'narancs. hu', 'Narancs', 'narancsszem', 'M', 'Republikon', 'nrancs.hu', 'narancs.hu-összeállítás', 'TASZ', 'narancs.hu - B. T.', 'Magyar Narancs', 'narancs.hu-MTI', 'Világgazdaság', 'Police.hu', 'OS', 'Szabad ország', 'MTI-OS', 'narancs.h', 'Narancs-összeállítás', 'MT'}
+
+def author_source_norm(extracted_meta):
+    ret_list = []
+    if isinstance(extracted_meta, list):
+        for meta in extracted_meta:
+            ret_list.extend([m.strip() for m in re.split(',|-|/|–|;| és |', meta) if len(m.strip()) > 0])
+        return ret_list
+    return [m.strip() for m in re.split(',|-|/|–|;| és ', extracted_meta) if len(m.strip())>0]
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
@@ -71,19 +80,28 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if subtitle is not None:
             data['sch:alternateName'] = subtitle.text.strip()
         author_or_source = [t.text.strip() for t in meta_root.find_all('span', class_='author-name')]
+        author_or_source = author_source_norm(author_or_source)
         author_list, source_list = [], []
-        [source_list.append(creator) if creator in SOURCE else author_list.append(creator) for creator in
+        [source_list.append(creator) if creator in SOURCE_SOLO else author_list.append(creator) for creator in
          author_or_source]
         if len(author_list) > 0 or len(source_list) > 0:
             author_list_corr = []
             if len(author_list) > 0:
                 for auth in author_list:
                     if ',' in auth:
-                        author_list_corr.extend(one_author.strip() for one_author in auth.split('\''))
+                        if '(' not in auth:
+                            author_list_corr.extend(one_author.strip() for one_author in auth.split(','))
+                            data['originalAuthorString'] = [auth]
+                        else:
+                            # Szlankó Bálint (Argandab-folyóvölgy, Kandahár)
+                            data['originalAuthorString'] = [auth]
+                            auth = auth[0:auth.index('(')]
+                            author_list_corr.extend(one_author.strip() for one_author in auth.split(','))
                     else:
                         author_list_corr.append(auth)
                 data['sch:author'] = author_list_corr
             if len(source_list) > 0:
+
                 data['sch:source'] = source_list
         else:
             tei_logger.log('DEBUG', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
@@ -102,10 +120,6 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
 def excluded_tags_spec(tag):
     if tag.name == 'li' and 'data-leiras' in tag.attrs and tag['data-leiras'] == ' \r\n':
         tag['data-leiras'] = tag['data-leiras'].strip()
-        
-    # if tag.name not in HTML_BASICS:
-    #     tag.name = 'else'
-    # tag.attrs = {}
     return tag
 
 

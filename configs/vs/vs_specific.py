@@ -33,15 +33,27 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         author_tag = meta_root.find('span', itemprop='author')
         if author_tag is not None:
             author_text = author_tag.text.strip()
+            authorlist = []
             """valójában ritkán van 'és', de a köv. sor az egyszerű esetet is kezeli"""
             # https://vs.hu/sport/osszes/magyarorszag-spanyolorszag-percrol-percre-1211#!s184
-            if ' – ' in author_text:
-                author_text = author_text.split(' – ')
+            if '– ' in author_text:
+                authorlist = []
+                sourcelist = []
+                data['originalAuthorString'] = [author_text]
+                #print('EREDETI:', author_text.split('– '), url)
+                [sourcelist.append(au.strip()) if 'MTI' in au.strip() else authorlist.append(au.strip()) for au in author_text.split('– ') if len(au.strip()) > 0 and len(au.strip()) is not None]
+                if len(sourcelist) > 0:
+                    data['sch:source'] = sourcelist
+                    '''print(authorlist, data['sch:source'], url)
+                else:
+                    print('???', author_text,  url)'''
             elif ' és ' in author_text:
-                author_text = author_text.split(' és ')
+                data['originalAuthorString'] = [author_text]
+                authorlist = author_text.split(' és ')
             else:
-                author_text = [author_text]
-            data['sch:author'] = author_text
+                authorlist = [author_text]
+            data['sch:author'] = authorlist
+
         else:
             tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
         keywords_list = [t.text.strip() for t in meta_root.find_all('a', class_='tag')]
