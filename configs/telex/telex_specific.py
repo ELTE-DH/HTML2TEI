@@ -5,7 +5,7 @@ import re
 import ast
 from collections import defaultdict
 from bs4 import BeautifulSoup
-
+from os.path import join as os_path_join, dirname as os_path_dirname, abspath as os_path_abspath
 from src.html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and_mark_media_descendants, \
     tei_defaultdict
 
@@ -94,7 +94,8 @@ def decompose_spec(article_dec):
     return article_dec
 
 
-BLACKLIST_SPEC = []
+BLACKLIST_SPEC = [url.strip() for url in
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'spec_blacklist_telex.txt')).readlines()]
 
 MULTIPAGE_URL_END = re.compile(r'.*oldal=.')
 

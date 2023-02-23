@@ -139,7 +139,9 @@ def decompose_spec(article_dec):
 LINK_FILTER_SUBSTRINGS_SPEC = re.compile('|'.join(['LINK_FILTER_DUMMY_STRING']))
 
 BLACKLIST_SPEC = [url.strip() for url in
-                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'valasz_BLACKLIST.txt')).readlines()]
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'valasz_BLACKLIST.txt')).readlines()] +\
+                 [url.strip() for url in
+                  open(os_path_join(os_path_dirname(os_path_abspath(__file__)), 'spec_blacklist_valasz.txt')).readlines()]
 
 MULTIPAGE_URL_END = re.compile(r'.*?page=.')
 
