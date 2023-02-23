@@ -28,7 +28,7 @@ def author_source_norm(extracted_meta):
     ret_list = []
     if isinstance(extracted_meta, list):
         for meta in extracted_meta:
-            ret_list.extend([m.strip() for m in re.split(',|-|/|–|;| és |', meta) if len(m.strip()) > 0])
+            ret_list.extend([m.strip() for m in re.split(',|-|/|–|;| és ', meta) if len(m.strip()) > 0])
         return ret_list
     return [m.strip() for m in re.split(',|-|/|–|;| és ', extracted_meta) if len(m.strip())>0]
 
@@ -79,8 +79,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         subtitle = bs.find('h3', class_='card-subtitle')
         if subtitle is not None:
             data['sch:alternateName'] = subtitle.text.strip()
-        author_or_source = [t.text.strip() for t in meta_root.find_all('span', class_='author-name')]
-        author_or_source = author_source_norm(author_or_source)
+        author_or_source_o = [t.text.strip() for t in meta_root.find_all('span', class_='author-name')]
+        author_or_source = author_source_norm(author_or_source_o)
+        if len(author_or_source) > len(author_or_source_o):
+            data['originalAuthorString'] = author_or_source_o
         author_list, source_list = [], []
         [source_list.append(creator) if creator in SOURCE_SOLO else author_list.append(creator) for creator in
          author_or_source]

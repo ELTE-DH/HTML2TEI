@@ -87,7 +87,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 data['originalAuthorString'] = author_or_source_raw
             authors_l, sources_l = [], []
             [sources_l.append(creator) if creator in SOURCE_NORM else authors_l.append(creator) for creator in
-             author_or_source]
+             authors_list]
             if len(authors_l) > 0:
                 data['sch:author'] = authors_l
             if len(sources_l) > 0:

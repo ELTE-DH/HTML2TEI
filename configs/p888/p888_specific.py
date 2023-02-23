@@ -91,7 +91,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                                 source_list, author_list = [], []
                                 for author_ in split_list:   # TODO: ez egy rovat tkp.: Olvasói vélemény
                                     # Olvasói vélemény | Szerző: Ádám Attila
-                                    authors = re.split('/|\|', author_)
+                                    authors = re.split('/|\||-|;|–', author_)
                                     for author in authors:
                                         if author in SOURCE or author in SOURCE_SECONDARY:
 
