@@ -58,13 +58,13 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             sources = [m.strip() for m in re.split(',|/| - |;| és ', source.text.strip().replace('Hírforrás: ', '')) if len(m.strip()) > 0]
             if len(sources) > 1:
                 data['originalAuthorString'] = [source.text.strip()]
-            data['sch:source'] = source.text.strip()
-        if author_tags is None and source is None:
+                data['sch:source'] = sources
+        if author_tags is None and source is None:  # The following code fragment is probably redundant.
             # The source and author fields can co-exist
             article_source = article_root.find('span', class_='forras')
             article_author2 = article_root.find('span', class_='szerzo')
             if article_source is not None:
-                data['sch:source'] = article_source.text.strip()
+                data['sch:source'] = [article_source.text.strip()]
             if article_author2 is not None:
                 data['sch:author'] = [article_author2.text.strip()]
         keyword_root = bs.find('aside', class_='breadcrumb')
