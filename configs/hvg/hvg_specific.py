@@ -35,6 +35,24 @@ SOURCE = ['hvg.hu', 'MTI', 'MTI/hvg.hu', 'MTI / hvg.hu', 'Marabu', 'HVG', 'Eduli
           'MTI/Népszava', 'MTI/dpa/Hszinhua', 'OTS/MTI', 'BBC/MTI', 'MTI/Bors', 'MTI/Reuters/AP', 'MTI/AP', 
           'MTI/AFP/Reuters', 'MTI/Reuters/Hszinhua', 'MTI/Blikk', 'HVG/MTI']
 
+SOURCE_NORM = {'EFE', 'HavariaPress', 'dpa', 'businesstraveller', 'Kisalföld', 'D.P.', 'dehir.hu', 'f1-live.hu',
+               'MT Zrt.', 'MTI', 'Bankmonitor.hu', 'manna.ro', 'pecsma.hu', 'foodnetwork', 'InfoRádió', 'VG',
+               'TV2', 'delmagyar.hu', 'Népszava', 'OTS', 'transindex.ro', 'portfolio.hu', 'honvedelem.hu',
+               'HVG Extra Business', 'CNN', 'napi.hu', 'MTI-OS', 'Index', 'met.hu', 'Utinform.hu',
+               'nyugat.hu', 'BBC', 'kemma.hu', 'turizmus.com', 'Jobline.hu', 'AP', 'muosz.hu',
+               'élelmiszer online', 'MNO', 'baon.hu', 'teol.hu', 'ITAR-TASZSZ', 'Blikk', 'hirado.hu',
+               'HVG Extra Pszichológia', 'indohaz.hu', 'Bors', 'Számlázz.hu', 'Napi.hu', 'bankmonitor.hu',
+               'Hszinhua', 'MTI ', 'HVG Konferencia', 'DW', 'Inforádió', 'Zgut Edit', 'Dow Jones', 'Origo',
+               'Eduline', 'OS', 'Világgazdaság', 'MR1-Kossuth Rádió', 'szoljon.hu', 'hvg.hu', 'Észak-Magyarország',
+               'VinceBudapest', 'vendeglatasmagazin.hu', 'termekmix.hu', 'AFP', 'nso.hu', 'termekmix.com', 'benke',
+               'f1-live', 'BiztosDöntés.hu', 'ingatlanmenedzser.hu', 'kisalföld.hu', 'atlatszo.blog.hu', 'Travellina',
+               'merites.hu', 'Euronews', 'Marabu', 'sonline.hu', ' hvg.hu', 'EUrologus', 'Tények', 'Reuters',
+               'Magyar Nemzet', 'DPA', 'MTA', '- esel -', 'eduline.hu', 'MLF', 'HVG', 'Adozona.hu', 'mult-kor.hu',
+               'REUTERS', 'I.N.', 'Népszabadság', 'police.hu', 'Bank360.hu'}
+
+
+def author_source_norm(extracted_meta):
+    return [m.strip() for m in re.split(',|-|/|–|;| és ', extracted_meta) if len(m.strip())>0]
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
@@ -61,12 +79,20 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
         author_or_source_tag = article_root.find('div', class_='author-name')
         if author_or_source_tag is not None:
-            author_or_source = author_or_source_tag.text.strip().\
-                replace('\r', '').replace('\n', '').replace('\t', '').replace('Követés', '')
-            if author_or_source in SOURCE:
-                data['sch:source'] = [author_or_source]
-            else:
-                data['sch:author'] = [author_or_source]
+            author_or_source_raw = author_or_source_tag.text.strip().\
+                replace('\r', '').replace('\n', '').replace('\t', '')
+            author_or_source = author_or_source_raw.replace('Követés', '')
+            authors_list = author_source_norm(author_or_source)
+            if author_or_source != author_or_source_raw or len(authors_list) > 1:
+                data['originalAuthorString'] = author_or_source_raw
+            authors_l, sources_l = [], []
+            [sources_l.append(creator) if creator in SOURCE_NORM else authors_l.append(creator) for creator in
+             authors_list]
+            if len(authors_l) > 0:
+                data['sch:author'] = authors_l
+            if len(sources_l) > 0:
+                data['sch:source'] = sources_l
+
         else:
             tei_logger.log('DEBUG', f'{url}: AUTHOR / SOURCE TAG NOT FOUND!')
         keywords_root = article_root.find('div', class_='article-tags')
@@ -99,6 +125,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 if beg != -1 and end != -1:
                     author = auth_string[beg+1:end+1]
                     data['sch:author'] = [author]
+                    data['originalAuthorString'] = auth_string
                 else:
                     tei_logger.log('DEBUG', f'{url} NO AUTHOR FOUND!')
 

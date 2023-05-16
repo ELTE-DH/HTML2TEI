@@ -83,7 +83,14 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if len(source_raw) > 0 and len(source_raw.split()) < 6 and \
                     (source_raw.startswith('Forrás:') or source_raw.startswith('Írta:') or
                      source_raw in SOURCE_2):
-                data['originalAuthorString'] = [source_raw]
+                if source_raw.startswith('Írta:'):
+                    data['sch:author'] = source_raw.replace('Írta:', '').strip().split(',')
+                elif source_raw.startswith('Forrás:') or source_raw in SOURCE_2:
+                    data['sch:source'] = [m.strip() for m in re.split(',|-|/|–| és |;', source_raw.replace('Forrás:', '').strip()) if 'Fotó:' not in m and len(m.strip())>0]
+                    if len(data['sch:source'])> 1:
+                        data['originalAuthorString'] = source_raw
+                data['AuthorString_extracted_from_content'] = source_raw
+
         else:
             tei_logger.log('DEBUG', f'{url}: SOURCE NOT FOUND!')
         return data

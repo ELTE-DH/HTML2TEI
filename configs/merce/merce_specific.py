@@ -54,7 +54,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = authors
             if len(authors) > 1:
                 print('Több szerző', url)
-    # TODO: mérce vendégszerző, név a cikk alján: https://merce.hu/2017/09/01/megmentheti-e_emmanuel_macron_a_kelet-europaiakat_a_kizsakmanyolastol/
+    else:
+        # TODO 1 <a href="https://avm.merce.hu/author/evatessza/" title="Udvarhelyi Tessza cikkei" class="author url fn track-act-up" rel="author">Udvarhelyi Tessza</a>
+    # TODO 2: mérce vendégszerző, név a cikk alján: https://merce.hu/2017/09/01/megmentheti-e_emmanuel_macron_a_kelet-europaiakat_a_kizsakmanyolastol/
     # else: tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
     # <div class="featured-tag">
     """is_section = bs.find('div', {'class': 'featured-tag'})
