@@ -167,7 +167,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                     if post_author is not None:
                         data['sch:author'] = [post_author.text.strip()]
                     else:
-                        tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
+                        # https://index.hu/belfold/2020/05/07/koronavirus_kormanyinfo_sajtotajekoztato_elo_kozvetites/
+                        authors = [a.text.strip() for a in bs.find_all('span', class_='c-human_details_infos_name')]
+                        if len(authors) > 0:
+                            data['sch:author'] = authors
+                        else:
+                            tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
 
         cimkek = bs.find('ul', class_=["cikk-cimkek", "m-tag-list"])
         if cimkek is not None:
@@ -283,7 +288,8 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {'kviz': {'rename': {'lista': 'valaszblokk', 'listaelem': 'valasz'}}}
 BIGRAM_RULES_SPEC = {'kviz': {('listaelem', 'det_by_any_desc'): ('kviz', 'valasz')}}
 LINKS_SPEC = BASIC_LINK_ATTRS
-DECOMP = [(('div',), {'id': 'microsite-microsite'}),
+DECOMP = []
+"""(('div',), {'id': 'microsite-microsite'}),
           (('div',), {'class': 'linkpreview'}),  # Kapcsolódó cikkek
           (('div',), {'class': 'cikk-bottom-text-ad'}),
           (('div',), {'class': 'cikk-inline-ad'}),
@@ -307,11 +313,10 @@ DECOMP = [(('div',), {'id': 'microsite-microsite'}),
           (('div',), {'class': 'tab-right'}),
           (('div',), {'class': 't-article-info'}),
           (('ul',), {'class': 'm-tag-list'}),
-          (('aside',), {}),
+          (('aside',), {}), #TODO MÉGSE
           (('div',), {'class': 'pagination'}),
           (('nav',), {'class': 'pagination'}),
-          (('div',), {'class': 'nm_supported__wrapper'}),
-          ]
+          (('div',), {'class': 'nm_supported__wrapper'}),]"""
 # <div class=miniapp socialbox id=@STYLE>
 MEDIA_LIST = []
 
