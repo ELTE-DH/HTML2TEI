@@ -288,8 +288,8 @@ def excluded_tags_spec(tag):
 BLOCK_RULES_SPEC = {'kviz': {'rename': {'lista': 'valaszblokk', 'listaelem': 'valasz'}}}
 BIGRAM_RULES_SPEC = {'kviz': {('listaelem', 'det_by_any_desc'): ('kviz', 'valasz')}}
 LINKS_SPEC = BASIC_LINK_ATTRS
-DECOMP = []
-"""(('div',), {'id': 'microsite-microsite'}),
+DECOMP = [
+(('div',), {'id': 'microsite-microsite'}),
           (('div',), {'class': 'linkpreview'}),  # Kapcsolódó cikkek
           (('div',), {'class': 'cikk-bottom-text-ad'}),
           (('div',), {'class': 'cikk-inline-ad'}),
@@ -316,7 +316,9 @@ DECOMP = []
           (('aside',), {}), #TODO MÉGSE
           (('div',), {'class': 'pagination'}),
           (('nav',), {'class': 'pagination'}),
-          (('div',), {'class': 'nm_supported__wrapper'}),]"""
+          (('div',), {'class': 'nm_supported__wrapper'}),
+            (('span',), {'class': 'count'})]    # TODO új
+# <0_DECOMPOSED_span class=count>]
 # <div class=miniapp socialbox id=@STYLE>
 MEDIA_LIST = []
 

@@ -91,13 +91,13 @@ def mark_media_descendants(whole_article, media_params):
 
 def decompose_listed_subtrees_and_mark_media_descendants(article_dec, decomp, media_list):
     """This function combines marking the lower level of the media blocks and deleting tags to be deleted"""
-    #decomposing(article_dec, decomp)
-    for args, kwargs in decomp:
+    decomposing(article_dec, decomp)
+    """for args, kwargs in decomp:
         for it in article_dec.find_all(*args, **kwargs):
             for c in it.find_all():
                 if not c.name.startswith('0_DECOMPOSED_'):
                     c.name = f'0_DECOMPOSED_{c.name}'
-            it.name = f'0_DECOMPOSED_{it.name}'
+            it.name = f'0_DECOMPOSED_{it.name}'"""
     #return whole_article
     mark_media_descendants(article_dec, media_list)
 
@@ -181,7 +181,7 @@ def complex_wrapping_for_news_feed(bs, article_tag, default_wrapper, article_url
     The feed-type articles should be built up of <div>-s at the level below the root of the article.
     """
     naked_text, child_tags, desc_tags = imtext_children_descendants_of_tag(article_tag)
-    if child_tags != {'div'}:
+    if child_tags != {'div'} or naked_text:
         tei_logger.log('DEBUG', f'complex_wrapping_for_news_feed in {article_url}')
         root_contents = []
         naked_text_and_inline_tag = ''
@@ -207,7 +207,8 @@ def complex_wrapping_for_news_feed(bs, article_tag, default_wrapper, article_url
         article_tag.extend(root_contents)
         for div_tag in article_tag.find_all('div'):
             #  It calls the general complex wrapping function to check the internal structure of the newly created divs.
-            complex_wrapping(bs, div_tag, 'div', article_url, tei_logger)
+            complex_wrapping(bs, div_tag, 'p', article_url, tei_logger)
+
 
 
 def normal_tag_to_tei_xml_converter(bs, article):
