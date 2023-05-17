@@ -207,7 +207,7 @@ def complex_wrapping_for_news_feed(bs, article_tag, default_wrapper, article_url
         article_tag.extend(root_contents)
         for div_tag in article_tag.find_all('div'):
             #  It calls the general complex wrapping function to check the internal structure of the newly created divs.
-            complex_wrapping(bs, div_tag, 'p', article_url, tei_logger)
+            complex_wrapping(bs, div_tag, 'div', article_url, tei_logger)
 
 
 def normal_tag_to_tei_xml_converter(bs, article):

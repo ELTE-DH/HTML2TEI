@@ -89,10 +89,10 @@
         <xenoData xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
             xmlns:sch="https://schema.org">
             <rdf:RDF>
-                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.4899569">
+                <rdf:Description rdf:about="https://doi.org/10.5281/zenodo.#####">
                     <sch:type>WARC/1.1</sch:type>
                     <sch:sdDatePublished></sch:sdDatePublished>
-                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.4899569"/>
+                    <sch:identifier rdf:about="https://doi.org/10.5281/zenodo.#####"/>
                     <sch:identifier></sch:identifier>
                     <sch:identifier></sch:identifier> </rdf:Description>
             </rdf:RDF>
