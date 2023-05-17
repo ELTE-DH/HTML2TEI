@@ -508,10 +508,10 @@ def normal_tag_names_by_dict_new(article, bs, excluded_tags_fun, tag_normal_dict
                     and tag.name not in link_attrs and tag.name != 'to_decompose':
                 tag.name = 'to_unwrap'  # Tags that only currently do not contain text
         else:  # Unrated tags
-            tei_logger.log('WARNING', f'{article_url} The tag is not in the dictionary.'
+            """tei_logger.log('WARNING', f'{article_url} The tag is not in the dictionary.'
                                       f'The dictionary needs to be updated ({tag.name}, {tag.attrs}, {tag_exl})')
-            tag.name = 'to_unwrap'
-
+            tag.name = 'to_unwrap'"""
+            tag.name = 'to_decompose'
 
 def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     """This function cleans and converts HTML content into a valid TEI XML"""
