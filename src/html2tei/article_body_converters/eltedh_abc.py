@@ -518,7 +518,12 @@ def article_body_converter(tei_logger, article_url, raw_html, spec_params):
     article_roots, decompose_fun, excluded_tags_fun, tag_normal_dict, link_attrs, block_dict, change_by_bigram, \
         portal_url_prefix, portal_url_filter = spec_params
     raw_html = raw_html.replace('<br>', ' ')
-    bs = BeautifulSoup(raw_html, 'lxml')
+    try:
+        bs = BeautifulSoup(raw_html, 'lxml')
+    except AssertionError as err:
+        print('ERROR', 'BS error:', article_url)
+        return []
+
     for args, kwargs in article_roots:
         article = bs.find(*args, **kwargs)
         if article is not None:

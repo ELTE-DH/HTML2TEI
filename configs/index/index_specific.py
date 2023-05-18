@@ -207,7 +207,8 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             title = bs.find('h1', {'class': True})
             if title is not None:
                 data['sch:name'] = title.text.strip()
-            tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
+            else:
+                tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
         author_and_date = [li.text.strip() for li in bs.find_all('li', class_='article-meta-item')]
         if len(author_and_date) > 0:
             authors = []
