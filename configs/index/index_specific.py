@@ -211,17 +211,18 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         author_and_date = [li.text.strip() for li in bs.find_all('li', class_='article-meta-item')]
         if len(author_and_date) > 0:
             authors = []
-            the_date = None
+            the_date = False
             for m in reversed(author_and_date):
                 if the_date is None:
                     parsed_date = parse_date(m, '%Y.%m.%d.')
                     if parsed_date is not None:
                         data['sch:datePublished'] = parsed_date
+                        the_date = True
                 else:
                     authors.append(m)
             if len(authors) > 0:
                 data['sch:author'] = authors
-            if the_date is None:
+            if not the_date:
                 tei_logger.log('WARNING', f'{url}  UNKNOWN DATE FORMAT 4')
         else:
             date_tag = bs.find('meta', {'property': 'og:updated_time'})
