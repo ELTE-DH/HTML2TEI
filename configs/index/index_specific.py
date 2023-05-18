@@ -213,7 +213,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             authors = []
             the_date = False
             for m in reversed(author_and_date):
-                if the_date is None:
+                if the_date is False:
                     parsed_date = parse_date(m, '%Y.%m.%d.')
                     if parsed_date is not None:
                         data['sch:datePublished'] = parsed_date
