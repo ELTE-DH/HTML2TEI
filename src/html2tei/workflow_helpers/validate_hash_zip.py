@@ -161,14 +161,17 @@ class ValidatorHasherCompressor:
                 close()
 
     def process_one_file(self, url, desired_filename, filename_suff, raw_xml_str):
-
-        xml_etree = etree.fromstring(raw_xml_str)
         xml_filename = check_for_filename_collision(url, desired_filename, filename_suff, self._assigned_filenames,
                                                     self._tei_logger)
         out_filename = os_path_basename(xml_filename)
         try:
-            self._validator.assert_(xml_etree)
-            valid = True
+            xml_etree = etree.fromstring(raw_xml_str)
+            try:
+                self._validator.assert_(xml_etree)
+                valid = True
+            except AssertionError as err:
+                self._tei_logger.log('ERROR', 'TEI validation error:', url, out_filename, err)
+                valid = False
         except AssertionError as err:
             self._tei_logger.log('ERROR', 'TEI validation error:', url, out_filename, err)
             valid = False

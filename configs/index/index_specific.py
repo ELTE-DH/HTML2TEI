@@ -204,17 +204,31 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if title is not None:
             data['sch:name'] = title.text.strip()
         else:
+            title = bs.find('h1', {'class': True})
+            if title is not None:
+                data['sch:name'] = title.text.strip()
             tei_logger.log('WARNING', f'{url}: TITLE NOT FOUND IN URL!')
         author_and_date = [li.text.strip() for li in bs.find_all('li', class_='article-meta-item')]
         if len(author_and_date) > 0:
-            data['sch:author'] = [author_and_date[0]]
-            pub_date_text = author_and_date[1]
-            parsed_date = parse_date(pub_date_text, '%Y.%m.%d.')
-            if parsed_date is not None:
-                data['sch:datePublished'] = parsed_date
-            else:
+            authors = []
+            the_date = None
+            for m in reversed(author_and_date):
+                if the_date is None:
+                    parsed_date = parse_date(m, '%Y.%m.%d.')
+                    if parsed_date is not None:
+                        data['sch:datePublished'] = parsed_date
+                else:
+                    authors.append(m)
+            if len(authors) > 0:
+                data['sch:author'] = authors
+            if the_date is None:
                 tei_logger.log('WARNING', f'{url}  UNKNOWN DATE FORMAT 4')
         else:
+            date_tag = bs.find('meta', {'property': 'og:updated_time'})
+            if date_tag is not None and 'content' in date_tag.attrs.keys():
+                parsed_date = parse_date(date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
+                if parsed_date:
+                    data['sch:datePublished'] = parsed_date
             tei_logger.log('WARNING', f'{url}: AUTHOR TAG AND DATE CONTAINER NOT FOUND!')
 
         cimkek = bs.find('ul', class_="cikk-cimkek-list")
