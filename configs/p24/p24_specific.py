@@ -8,7 +8,7 @@ from html2tei import parse_date, BASIC_LINK_ATTRS, decompose_listed_subtrees_and
 PORTAL_URL_PREFIX = 'https://24.hu'
 
 HTML_BASICS = {'p', 'h3', 'h2', 'h4', 'h5', 'em', 'i', 'b', 'strong', 'mark', 'u', 'sub', 'sup', 'del', 'strike',
-               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript'}
+               'ul', 'ol', 'li', 'table', 'tr', 'td', 'th', 'quote', 'figure', 'iframe', 'script', 'noscript', 'footer'}
 
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'class': ['o-post__cntWrap']}),
                             (('div',), {'class': ['m-wideContent__cnt']})
@@ -156,7 +156,7 @@ def excluded_tags_spec(tag):
 
 BLOCK_RULES_SPEC = {}
 BIGRAM_RULES_SPEC = {}
-LINKS_SPEC = {}
+LINKS_SPEC = BASIC_LINK_ATTRS
 
 # The only container which has the whole article in it also contains a bunch of ads and recommendations
 DECOMP = [(('div',), {'class': 'o-post__authorShare m-social cf _ce_measure_widget'}),
