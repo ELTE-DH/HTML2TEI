@@ -173,7 +173,12 @@ def process_article(params):
         if raw_html is None:
             tei_logger.log('CRITICAL', f'UnicodeDecodeError {article_url}!')
             return
-        bs = BeautifulSoup(raw_html, 'lxml')
+        try:
+            bs = BeautifulSoup(raw_html, 'lxml')
+        except EncodingWarning:
+            print('BLACKLIST', article_url)
+            return None, None
+        
         for args, kwargs in article_roots:
             article_body_root = bs.find(*args, **kwargs)
             if article_body_root is not None:
