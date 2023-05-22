@@ -199,6 +199,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         return data
 
     elif 'https://femina.hu/' in url:  # bs.find('header', class_='m-femina-header')
+        # TODO: ez a közvetítés hogy néz ki https://divany.hu/offline/2016/05/11/kovesse_velunk_eloben_a_bocuse_d_or_europai_dontojet/?p=2%3A
         # https://femina.hu/egeszseg/koronavirus-immunitas/
         title = bs.find('div', class_='cim')
         if title is not None:
