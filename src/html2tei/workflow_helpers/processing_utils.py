@@ -175,7 +175,7 @@ def process_article(params):
             return
         try:
             bs = BeautifulSoup(raw_html, 'lxml')
-        except EncodingWarning:
+        except ValueError:
             print('BLACKLIST', article_url)
             return None, None
         
