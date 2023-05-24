@@ -30,7 +30,7 @@ def process_article(article_page_tups, tei_logger, spec_get_meta_fun, spec_body_
     (one_url, warc_response_datetime, warc_id, raw_html) = article_page_tups
     try:
         bs = BeautifulSoup(raw_html, 'lxml')
-    except EncodingWarning:
+    except ValueError:
         print('BLACKLIST', one_url)
         return None, None
     meta = spec_get_meta_fun(tei_logger, one_url, bs)
