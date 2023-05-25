@@ -28,6 +28,9 @@ def process_article(article_page_tups, tei_logger, spec_get_meta_fun, spec_body_
     """It executes our own metadata extraction and text extraction, normalization,
         TEI to XML conversion method per URL"""
     (one_url, warc_response_datetime, warc_id, raw_html) = article_page_tups
+    if raw_html is None:
+        print('BLACKLIST', one_url)
+        return None, None
     try:
         bs = BeautifulSoup(raw_html, 'lxml')
     except ValueError:
