@@ -161,10 +161,10 @@ class ValidatorHasherCompressor:
                 close()
 
     def process_one_file(self, url, desired_filename, filename_suff, raw_xml_str):
-        xml_filename = check_for_filename_collision(url, desired_filename, filename_suff, self._assigned_filenames,
-                                                    self._tei_logger)
+        xml_filename = check_for_filename_collision(url, desired_filename, filename_suff, self._assigned_filenames, self._tei_logger)
         out_filename = os_path_basename(xml_filename)
         xml_etree, valid = False, False
+        print(url)
         try:
             xml_etree = etree.fromstring(raw_xml_str)
         except AssertionError as err:
