@@ -232,7 +232,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                 parsed_date = parse_date(date_tag.attrs['content'][:19], '%Y-%m-%dT%H:%M:%S')
                 if parsed_date:
                     data['sch:datePublished'] = parsed_date
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG AND DATE CONTAINER NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: AUTHOR TAG AND DATE CONTAINER NOT FOUND!')
 
         cimkek = bs.find('ul', class_="cikk-cimkek-list")
         if cimkek is not None:

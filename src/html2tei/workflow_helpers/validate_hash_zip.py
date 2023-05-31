@@ -13,6 +13,7 @@ from os.path import basename as os_path_basename, isabs as os_path_isabs, isdir 
 
 import certifi
 from lxml import etree
+from lxml.etree import XMLSyntaxError
 from mthasher import MtHasher, ALGORITHMS_GUARANTEED
 
 NOT_ALNUM_WS_OR_DASH = re_compile(r'[^\w\s-]')
@@ -163,13 +164,14 @@ class ValidatorHasherCompressor:
     def process_one_file(self, url, desired_filename, filename_suff, raw_xml_str):
         xml_filename = check_for_filename_collision(url, desired_filename, filename_suff, self._assigned_filenames, self._tei_logger)
         out_filename = os_path_basename(xml_filename)
-        xml_etree, valid = False, False
+        xml_etree, xml_etree_success, valid = None, False, False
         try:
             xml_etree = etree.fromstring(raw_xml_str)
-        except AssertionError as err:
-            self._tei_logger.log('ERROR', 'TEI validation error:', url, out_filename, err)
+            xml_etree_success = True
+        except XMLSyntaxError as err:
+            self._tei_logger.log('ERROR', 'TEI syntax error:', url, out_filename, err)
             valid = False
-        if xml_etree:
+        if xml_etree_success:   # TODO: without any hack
             try:
                 self._validator.assert_(xml_etree)
                 valid = True
