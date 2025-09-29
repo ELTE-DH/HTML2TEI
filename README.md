@@ -208,3 +208,11 @@ pages 33-41 Marseille, France 2020](https://www.aclweb.org/anthology/2020.wac-1.
     ISBN = "979-10-95546-68-9",
 }
 ```
+
+# Acknowledgements
+
+The authors acknowledge the support of the National Laboratory for Digital
+Heritage. Project no. 2022-2.1.1-NL-2022-00009 has been implemented with the
+support provided by the Ministry of Culture and Innovation of Hungary from the
+National Research, Development and Innovation Fund, financed under the
+2022-2.1.1-NL funding scheme.
