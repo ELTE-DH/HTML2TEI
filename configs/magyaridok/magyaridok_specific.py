@@ -48,9 +48,12 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             data['sch:author'] = [author.text.strip()]
         elif source is not None:
             # In case if not an author, only source (MTI)
-            data['sch:source'] = source.text.strip()
+            source_text = source.text.strip()
+            data['sch:source'] = [s.strip() for s in source_text.split(',')]
+            if len(data['sch:source']) > 1:
+                data['originalAuthorString'] = [source_text]
         else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
         article_tags = []
         section_line = article_root.find('span', class_='en-article-header-column')
         if section_line is not None:

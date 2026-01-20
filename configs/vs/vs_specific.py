@@ -11,6 +11,16 @@ PORTAL_URL_PREFIX = 'https://vs.hu'
 ARTICLE_ROOT_PARAMS_SPEC = [(('div',), {'itemprop': 'articleBody'})]
 
 
+def author_source_norm(extracted_meta):
+    # SPEC VS.HU
+    ret_list = []
+    if isinstance(extracted_meta, list):
+        for meta in extracted_meta:
+            ret_list.extend([m.strip() for m in re.split(',|/|– |;| és ', meta) if len(m.strip()) > 0])
+        return ret_list
+    return [m.strip() for m in re.split(',|/|– |;| és ', extracted_meta) if len(m.strip())>0]
+
+
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
     data['sch:url'] = url
@@ -31,19 +41,21 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         else:
             tei_logger.log('WARNING', f'{url}: TITLE TAG NOT FOUND!')
         author_tag = meta_root.find('span', itemprop='author')
-        if author_tag is not None:
+        if author_tag is not None:  # MTI/VS.hu": 704
             author_text = author_tag.text.strip()
-            """valójában ritkán van 'és', de a köv. sor az egyszerű esetet is kezeli"""
+            creatorlist = author_source_norm(author_text)
+            if len(creatorlist) > 1:
+                data['originalAuthorString'] = [author_text]
             # https://vs.hu/sport/osszes/magyarorszag-spanyolorszag-percrol-percre-1211#!s184
-            if ' – ' in author_text:
-                author_text = author_text.split(' – ')
-            elif ' és ' in author_text:
-                author_text = author_text.split(' és ')
-            else:
-                author_text = [author_text]
-            data['sch:author'] = author_text
+            authorlist = []
+            sourcelist = []
+            [sourcelist.append(au.strip()) if 'MTI' in au.strip() else authorlist.append(au.strip()) for au in creatorlist]
+            if len(sourcelist) > 0:
+                data['sch:source'] = sourcelist
+            if len(authorlist) > 0:
+                data['sch:author'] = authorlist
         else:
-            tei_logger.log('WARNING', f'{url}: AUTHOR TAG NOT FOUND!')
+            tei_logger.log('DEBUG', f'{url}: AUTHOR TAG NOT FOUND!')
         keywords_list = [t.text.strip() for t in meta_root.find_all('a', class_='tag')]
         if len(keywords_list) > 0:
             data['sch:articleSection'] = keywords_list[0]

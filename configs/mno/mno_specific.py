@@ -48,7 +48,7 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
         if author is not None:
             data['sch:author'] = [author.text.strip()]
         elif source is not None:
-            data['sch:source'] = source.text.strip()
+            data['sch:source'] = [source.text.strip()]
         else:
             tei_logger.log('DEBUG', f'{url}  AUTHOR AND SOURCE TAG NOT FOUND!')
 

@@ -96,9 +96,18 @@ def tei_writer(warc_date, warc_id, xml_string, meta_data, article_body_contents,
                                'The original contains the following strings: '
         for auth in original_author_string:
             create_new_tag_with_string(beauty_xml, auth, 'p', note_tag_auth)
-
         tei_change = beauty_xml.find('change', source=True)
         tei_change.append(note_tag_auth)
+    if 'AuthorString_extracted_from_content' in meta_data.keys():
+        original_author_from_content = meta_data['AuthorString_extracted_from_content']
+        del meta_data['AuthorString_extracted_from_content']
+        note_tag_auth2 = beauty_xml.new_tag('note')
+        note_tag_auth2.string = 'The string referring to the author or the source was extracted from the content of' \
+                                ' the article, since it was not clearly annotated by the portal. ' \
+                                'The original was the following: '
+        create_new_tag_with_string(beauty_xml, original_author_from_content, 'p', note_tag_auth2)
+        tei_change = beauty_xml.find('change', source=True)
+        tei_change.append(note_tag_auth2)
 
     # XENODATA 1: metadata of article source
     xeno_meta_datas = beauty_xml.find('rdf:Description')

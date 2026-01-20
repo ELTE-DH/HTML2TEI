@@ -34,6 +34,9 @@ SOURCE_LIST = ['Alfahír', 'police.hu', 'Index.hu', '444.hu', 'BBC', 'mti - bari
                'hvg.hu - barikad.hu', 'MTI, Népszabadság'
                ]
 
+def author_source_norm(extracted_meta):
+    return [m.strip() for m in re.split(',| - |/| – ', extracted_meta) if len(m.strip())>0]
+
 
 def get_meta_from_articles_spec(tei_logger, url, bs):
     data = tei_defaultdict()
@@ -194,7 +197,9 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
             if source_in_text_tag is not None:
                 source_in_text_tag_text = source_in_text_tag.find('div', class_='field--item').get_text(strip=True)
                 if source_in_text_tag_text is not None:
-                    data['sch:source'] = source_in_text_tag_text
+                    data['sch:source'] = author_source_norm(source_in_text_tag_text)
+                    if len(data['sch:source'])> 1:
+                        data['originalAuthorString'] = source_in_text_tag_text
 
             # Sometimes implicitly inserted into a <p> tag
             else:
@@ -222,7 +227,10 @@ def get_meta_from_articles_spec(tei_logger, url, bs):
                             if len(source_in_text_4) < 40:
                                 source_text = source_in_text_4.strip()
                     if source_text in SOURCE_LIST:  # Above code allows minimal mistakes - invalid sources are filtered
-                        data['sch:source'] = [source_text]
+                        data['sch:source'] = author_source_norm(source_text)
+                        if len(data['sch:source'])> 1:
+                            data['originalAuthorString'] = source_text
+                        data['AuthorString_extracted_from_content'] = source_text
                 else:
                     tei_logger.log('DEBUG', f'{url}: SOURCE TAG NOT FOUND!')
 
